@@ -1,0 +1,16 @@
+{
+  "id": "coving_90",
+  "name": {"en": "Coving"},
+  "size": [2.4, 0.09, 0.081],
+  "group": "architecture",
+  "room": ["living", "dining", "bedroom", "hall", "kids", "office", "kitchen", "bath"],
+  "tags": ["coving", "cornice", "ceiling trim", "ceiling moulding", "plaster cove", "crown moulding", "white", "90mm", "plain"],
+  "family": "coving",
+  "variant": {"en": "Plain, 90 mm"},
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "loft", "x": 0, "z": -0.1236, "w": 1, "d": 0.7529, "y": 0.6667, "h": 0.3333, "color": "white", "tx": 0, "tz": 0, "tw": 1, "td": 1},
+    {"shape": "loft", "x": 0, "z": -0.2683, "w": 1, "d": 0.4635, "y": 0.3333, "h": 0.3333, "color": "white", "tx": 0, "tz": -0.1236, "tw": 1, "td": 0.7529},
+    {"shape": "loft", "x": 0, "z": -0.4667, "w": 1, "d": 0.0667, "y": 0, "h": 0.3333, "color": "white", "tx": 0, "tz": -0.2683, "tw": 1, "td": 0.4635}
+  ]
+}

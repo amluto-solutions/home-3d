@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "Adiciona uma página na barra lateral para desenhar a casa e vê-la em 3D."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "O Home 3D já está configurado."
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "Pergunte à casa",
+      "description": "Envia uma frase às visualizações abertas do Home 3D: «Mostra a sala de estar» a exibe, e as perguntas são respondidas pelos módulos instalados («O que está aberto?»). A primeira visualização que entender a frase responde.",
+      "fields": {
+        "text": {
+          "name": "Frase",
+          "description": "O que mostrar ou perguntar, do jeito que você falaria."
+        },
+        "screen": {
+          "name": "Tela",
+          "description": "Só reage a visualização com este nome de tela (definido nas configurações da visualização ou na opção de tela do cartão). Vazio: todas as visualizações abertas."
+        },
+        "speak": {
+          "name": "Falar",
+          "description": "A visualização fala a resposta com o texto para fala do Assist (desligado: só a exibe)."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Onde o Home 3D aparece. O link no painel e o cartão do dashboard funcionam de qualquer forma, e você ainda pode ocultar a entrada para você nas configurações da barra lateral do próprio Home Assistant.",
+        "data": {
+          "show_in_sidebar": "Mostrar na barra lateral",
+          "restore_picture_days": "Manter imagens dos pontos de restauração (dias)"
+        },
+        "data_description": {
+          "restore_picture_days": "Uma imagem de fundo ou de tela que só um ponto de restauração mais antigo ainda usa é mantida por esse número de dias após a criação desse ponto, e depois removida na próxima inicialização. Um ponto de restauração cuja imagem sumiu é restaurado sem ela. 0 remove essas imagens imediatamente."
+        }
+      }
+    }
+  }
+}

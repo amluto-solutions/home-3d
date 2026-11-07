@@ -1,0 +1,28 @@
+{
+  "id": "treadmill_compact",
+  "name": {"en": "Treadmill"},
+  "size": [0.7, 1.5, 1.25],
+  "group": "sport",
+  "room": ["hobby", "garage", "bedroom", "living", "utility", "loft", "office"],
+  "tags": ["treadmill", "running machine", "jogging", "cardio", "gym", "home gym", "fitness", "run", "compact", "folding", "walking pad", "small"],
+  "family": "treadmill",
+  "variant": {"en": "Compact folding, 70 × 150 cm"},
+  "electric": true,
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": -0.08, "w": 0.7714, "d": 0.7333, "y": 0.096, "h": 0.08, "color": "#2c2f33", "round": 0.2},
+    {"shape": "box", "x": 0, "z": -0.08, "w": 0.6286, "d": 0.6933, "y": 0.18, "h": 0.0096, "color": "#17171a"},
+    {"shape": "box", "x": -0.3571, "z": -0.08, "w": 0.0857, "d": 0.7333, "y": 0.112, "h": 0.064, "color": "#3a3d42"},
+    {"shape": "box", "x": 0.3571, "z": -0.08, "w": 0.0857, "d": 0.7333, "y": 0.112, "h": 0.064, "color": "#3a3d42"},
+    {"shape": "rbox", "x": 0, "z": 0.3667, "w": 0.8857, "d": 0.2533, "y": 0.08, "h": 0.144, "color": "#2c2f33", "round": 0.2},
+    {"shape": "cyl", "x": 0, "z": -0.4333, "w": 0.7143, "d": 0.0667, "y": 0.096, "h": 0.08, "color": "#25262a", "axis": "x"},
+    {"shape": "loft", "x": -0.3857, "z": 0.3667, "w": 0.0571, "d": 0.0267, "y": 0.16, "h": 0.64, "color": "#2c2f33", "tx": -0.3857, "tz": 0.3, "tw": 0.0571, "td": 0.0267},
+    {"shape": "loft", "x": 0.3857, "z": 0.3667, "w": 0.0571, "d": 0.0267, "y": 0.16, "h": 0.64, "color": "#2c2f33", "tx": 0.3857, "tz": 0.3, "tw": 0.0571, "td": 0.0267},
+    {"shape": "rbox", "x": 0, "z": 0.2867, "w": 0.6429, "d": 0.0933, "y": 0.76, "h": 0.176, "color": "#25262a", "round": 0.2},
+    {"shape": "box", "x": 0, "z": 0.3367, "w": 0.4286, "d": 0.0067, "y": 0.808, "h": 0.08, "color": "#8fd0ff"},
+    {"shape": "cyl", "x": -0.4, "z": 0.1333, "w": 0.05, "d": 0.3667, "y": 0.714, "h": 0.028, "color": "#2c2f33", "axis": "z"},
+    {"shape": "cyl", "x": 0.4, "z": 0.1333, "w": 0.05, "d": 0.3667, "y": 0.714, "h": 0.028, "color": "#2c2f33", "axis": "z"},
+    {"shape": "box", "x": -0.3857, "z": -0.0533, "w": 0.05, "d": 0.0233, "y": 0.68, "h": 0.056, "color": "#2c2f33"},
+    {"shape": "box", "x": 0.3857, "z": -0.0533, "w": 0.05, "d": 0.0233, "y": 0.68, "h": 0.056, "color": "#2c2f33"},
+    {"shape": "cyl", "x": 0, "z": -0.4467, "w": 0.8571, "d": 0.02, "y": 0.028, "h": 0.024, "color": "#25262a", "axis": "x"}
+  ]
+}

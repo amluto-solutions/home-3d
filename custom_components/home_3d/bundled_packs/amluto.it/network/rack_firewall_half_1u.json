@@ -1,0 +1,22 @@
+{
+  "id": "rack_firewall_half_1u",
+  "name": {"en": "Rack firewall half-width 1U"},
+  "size": [0.22, 0.17, 0.0437],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "surface",
+  "tags": ["firewall", "router", "pfsense", "opnsense", "gateway", "half width", "1u", "rack mount", "19 inch", "rack"],
+  "family": "rack_firewall",
+  "variant": {"en": "Firewall half-width 1U"},
+  "electric": true,
+  "watts": 15,
+  "rack": {"u": 1, "width": "half"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0029, "w": 1.0, "d": 0.9941, "y": 0.0, "h": 1.0, "color": "#3b4048", "edges": "faint"},
+    {"shape": "box", "x": -0.3318, "z": 0.4882, "w": 0.2455, "d": 0.0235, "y": 0.3627, "h": 0.2746, "color": "#0a0b0d"},
+    {"shape": "box", "x": 0.4455, "z": 0.4882, "w": 0.0182, "d": 0.0235, "y": 0.7712, "h": 0.0915, "color": "accent"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

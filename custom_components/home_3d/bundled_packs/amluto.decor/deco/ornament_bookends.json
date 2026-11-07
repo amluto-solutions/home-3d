@@ -1,0 +1,17 @@
+{
+  "id": "ornament_bookends",
+  "name": {"en": "Bookends"},
+  "size": [0.28, 0.12, 0.17],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "hall", "office", "kids"],
+  "tags": ["bookend", "book ends", "metal", "shelf", "decor", "ornament", "pair"],
+  "family": "bookends",
+  "variant": {"en": "Pair, metal"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": -0.4286, "z": 0, "w": 0.0429, "d": 1, "y": 0, "h": 1, "color": "#2a2b2e"},
+    {"shape": "box", "x": -0.3571, "z": 0, "w": 0.1786, "d": 1, "y": 0, "h": 0.0706, "color": "#2a2b2e"},
+    {"shape": "box", "x": 0.4286, "z": 0, "w": 0.0429, "d": 1, "y": 0, "h": 1, "color": "#2a2b2e"},
+    {"shape": "box", "x": 0.3571, "z": 0, "w": 0.1786, "d": 1, "y": 0, "h": 0.0706, "color": "#2a2b2e"}
+  ]
+}

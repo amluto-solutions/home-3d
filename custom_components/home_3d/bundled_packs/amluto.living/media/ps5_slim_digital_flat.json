@@ -1,0 +1,27 @@
+{
+  "id": "ps5_slim_digital_flat",
+  "name": {"en": "PlayStation 5 Slim (digital)"},
+  "size": [0.358, 0.216, 0.08],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["ps5", "playstation 5", "playstation5", "sony", "gaming", "console", "games console", "ps5 slim (digital)"],
+  "family": "ps5_slim_digital",
+  "variant": {"en": "Flat"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 180,
+  "parts": [
+    {"shape": "cyl", "x": -0.4162, "z": -0.3611, "w": 0.0559, "d": 0.0926, "y": 0.0, "h": 0.075, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4162, "z": 0.3611, "w": 0.0559, "d": 0.0926, "y": 0.0, "h": 0.075, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4162, "z": -0.3611, "w": 0.0559, "d": 0.0926, "y": 0.0, "h": 0.075, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4162, "z": 0.3611, "w": 0.0559, "d": 0.0926, "y": 0.0, "h": 0.075, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.3525, "h": 0.37, "color": "#16171a", "round": 0.1},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.97, "y": 0.075, "h": 0.2775, "color": "white", "round": 0.2},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.97, "y": 0.7225, "h": 0.2775, "color": "white", "round": 0.2},
+    {"shape": "box", "x": 0.34, "z": 0.4931, "w": 0.18, "d": 0.0139, "y": 0.26, "h": 0.0462, "color": "#4aa3ff", "edges": "faint"},
+    {"shape": "cyl", "x": 0.43, "z": 0.4931, "w": 0.0447, "d": 0.0139, "y": 0.26, "h": 0.2, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "book_open",
+  "name": {"en": "Books"},
+  "size": [0.3, 0.2, 0.03],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "hall", "office", "kids"],
+  "tags": ["books", "reading", "bookshelf", "stack of books", "library", "open", "reading", "novel"],
+  "family": "books",
+  "variant": {"en": "Open book"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 0.2, "color": "#3a4f6d"},
+    {"shape": "loft", "x": -0.25, "z": 0, "w": 0.5, "d": 0.95, "y": 0.2, "h": 0.6667, "color": "#f2ecdc", "tx": 0, "tz": 0, "tw": 0.4667, "td": 0.95},
+    {"shape": "loft", "x": 0.25, "z": 0, "w": 0.5, "d": 0.95, "y": 0.2, "h": 0.6667, "color": "#f2ecdc", "tx": 0, "tz": 0, "tw": 0.4667, "td": 0.95}
+  ]
+}

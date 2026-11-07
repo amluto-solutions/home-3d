@@ -1,0 +1,1 @@
+var n=["hs","rgb","rgbw","rgbww","xy"];function a(t){let o=t.attributes.supported_color_modes??[],s=o.some(e=>n.includes(e));return{dim:o.some(e=>e!=="onoff"),color:s,temp:o.includes("color_temp")}}var r=4;function b(t){return((t.attributes.supported_features??0)&r)!==0&&typeof t.attributes.current_position=="number"}export{a,b};

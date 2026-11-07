@@ -1,0 +1,17 @@
+{
+  "id": "zbt1_skyconnect",
+  "name": {"en": "Home Assistant Connect ZBT-1 (SkyConnect)"},
+  "size": [0.0385,0.018,0.01],
+  "group": "tech",
+  "room": ["office", "utility", "hall", "living", "loft"],
+  "tags": ["zbt-1", "zbt1", "skyconnect", "sky connect", "thread", "thread dongle", "thread stick", "matter", "home assistant connect", "nabu casa", "zigbee stick", "zigbee dongle"],
+  "family": "zigbee_stick",
+  "variant": {"en": "ZBT-1 / SkyConnect"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": -0.3442, "z": 0, "w": 0.3117, "d": 0.6667, "y": 0.275, "h": 0.45, "color": "metal"},
+    {"shape": "rbox", "x": 0.1558, "z": 0, "w": 0.6883, "d": 1, "y": 0, "h": 1, "color": "white", "round": 0.25},
+    {"shape": "box", "x": 0.2922, "z": 0, "w": 0.0779, "d": 0.1111, "y": 0.96, "h": 0.04, "color": "#46d36a", "glow": true}
+  ]
+}

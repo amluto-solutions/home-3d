@@ -1,0 +1,18 @@
+{
+  "id": "filament_pendant",
+  "name": {"en": "Filament bulb pendant"},
+  "size": [0.1, 0.1, 0.9],
+  "group": "lamp",
+  "room": ["kitchen", "dining", "living", "hall"],
+  "tags": ["pendant", "bare bulb", "edison bulb", "filament", "vintage", "industrial", "hanging light"],
+  "family": "filament_pendant",
+  "variant": {"en": "Single"},
+  "mount": "ceiling",
+  "light": "pendant",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9722, "h": 0.0278, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.08, "d": 0.08, "y": 0.2111, "h": 0.7611, "color": "dark", "fix": "wd"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.35, "d": 0.35, "y": 0.1444, "h": 0.0722, "color": "metal", "fix": "wdh"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.64, "d": 0.64, "y": 0.0, "h": 0.1556, "color": "white", "glow": true, "fix": "h", "profile": [[0.0, 0.0], [0.45, 0.04], [0.92, 0.28], [1, 0.48], [0.82, 0.72], [0.42, 0.88], [0.36, 1], [0.0, 1]]}
+  ]
+}

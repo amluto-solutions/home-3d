@@ -1,0 +1,22 @@
+{
+  "id": "mic_stand_boom_desk",
+  "name": {"en": "Desk mic stand, short tripod boom, with mic"},
+  "size": [0.34, 0.5, 0.35],
+  "group": "media",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["desk boom", "tripod", "k&m 23200", "mic stand", "boom arm", "dynamic mic", "microphone", "streaming", "audio"],
+  "family": "mic_stand_boom",
+  "variant": {"en": "Desk"},
+  "mount": "floor",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.01, "w": 0.4412, "d": 0.036, "y": 0.0, "h": 0.0514, "color": "dark", "rot": 90},
+    {"shape": "box", "x": -0.191, "z": -0.235, "w": 0.4412, "d": 0.036, "y": 0.0, "h": 0.0514, "color": "dark", "rot": 210},
+    {"shape": "box", "x": 0.191, "z": -0.235, "w": 0.4412, "d": 0.036, "y": 0.0, "h": 0.0514, "color": "dark", "rot": 330},
+    {"shape": "cyl", "x": 0.0, "z": -0.16, "w": 0.0588, "d": 0.04, "y": 0.0571, "h": 0.8571, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.16, "w": 0.1471, "d": 0.1, "y": 0.8571, "h": 0.1143, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.06, "w": 0.0588, "d": 0.6, "y": 0.9143, "h": 0.0571, "color": "metal", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3, "w": 0.1471, "d": 0.1, "y": 0.8286, "h": 0.1429, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.24, "w": 0.1618, "d": 0.34, "y": 0.7429, "h": 0.1571, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.44, "w": 0.1912, "d": 0.1, "y": 0.7286, "h": 0.1857, "color": "#2b2f36", "axis": "z"}
+  ]
+}

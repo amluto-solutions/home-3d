@@ -1,0 +1,52 @@
+{
+  "id": "sunnersta_mini_kitchen",
+  "name": {
+    "en": "Mini-kitchen 112 cm"
+  },
+  "size": [
+    1.12,
+    0.56,
+    1.39
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen",
+    "utility",
+    "hobby",
+    "garage",
+    "loft"
+  ],
+  "tags": [
+    "kitchenette",
+    "compact kitchen",
+    "sink unit",
+    "studio",
+    "tea point",
+    "white",
+    "steel"
+  ],
+  "ikea": "SUNNERSTA",
+  "surface": true,
+  "parts": [
+    {"shape": "cyl", "x": -0.4821, "z": -0.4643, "w": 0.0223, "d": 0.0446, "y": 0, "h": 0.6187, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4821, "z": 0.4643, "w": 0.0223, "d": 0.0446, "y": 0, "h": 0.6187, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4821, "z": -0.4643, "w": 0.0223, "d": 0.0446, "y": 0.6403, "h": 0.3597, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.4821, "z": -0.4643, "w": 0.0223, "d": 0.0446, "y": 0, "h": 0.6187, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4821, "z": 0.4643, "w": 0.0223, "d": 0.0446, "y": 0, "h": 0.6187, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4821, "z": -0.4643, "w": 0.0223, "d": 0.0446, "y": 0.6403, "h": 0.3597, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.6187, "h": 0.0216, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9643, "d": 0.9286, "y": 0.1007, "h": 0.0144, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0.2232, "z": 0.0357, "w": 0.3929, "d": 0.7143, "y": 0.6403, "h": 0.0043, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0.2232, "z": 0.0536, "w": 0.3393, "d": 0.5714, "y": 0.6439, "h": 0.0022, "color": "#8b9198", "fix": "h"},
+    {"shape": "cyl", "x": 0.2232, "z": -0.3571, "w": 0.0357, "d": 0.0714, "y": 0.6403, "h": 0.2014, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.2232, "z": -0.2143, "w": 0.0223, "d": 0.3036, "y": 0.8273, "h": 0.018, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.4643, "w": 0.9643, "d": 0.0446, "y": 0.9784, "h": 0.018, "color": "metal", "axis": "x", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": -0.4643, "w": 0.9643, "d": 0.0357, "y": 0.8058, "h": 0.0144, "color": "metal", "axis": "x", "fix": "h"},
+    {"shape": "box", "x": -0.2679, "z": -0.3393, "w": 0.2232, "d": 0.25, "y": 0.8633, "h": 0.0108, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3393, "z": -0.3571, "w": 0.0714, "d": 0.1429, "y": 0.8741, "h": 0.0719, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.2411, "z": -0.3571, "w": 0.0714, "d": 0.1429, "y": 0.8741, "h": 0.0719, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0446, "z": -0.4464, "w": 0.0054, "d": 0.0357, "y": 0.7338, "h": 0.0719, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.1071, "z": -0.4464, "w": 0.0054, "d": 0.0357, "y": 0.7338, "h": 0.0719, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.1696, "z": -0.4464, "w": 0.0054, "d": 0.0357, "y": 0.7338, "h": 0.0719, "color": "metal", "fix": "wdh"}
+  ]
+}

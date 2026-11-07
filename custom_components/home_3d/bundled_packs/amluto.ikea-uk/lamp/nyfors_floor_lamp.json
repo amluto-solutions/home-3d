@@ -1,0 +1,36 @@
+{
+  "id": "nyfors_floor_lamp",
+  "name": {
+    "en": "Floor lamp, height adjustable 138-168 cm"
+  },
+  "size": [
+    0.38,
+    0.38,
+    1.68
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "floor lamp",
+    "standard lamp",
+    "adjustable height",
+    "nickel-plated",
+    "white",
+    "fabric shade"
+  ],
+  "ikea": "NYFORS",
+  "light": "floor",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.7368, "d": 0.7368, "y": 0, "h": 0.0119, "color": "metal", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0737, "d": 0.0737, "y": 0.0119, "h": 0.6786, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0526, "d": 0.0526, "y": 0.6548, "h": 0.1786, "color": "metal", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.7857, "h": 0.2143, "color": "white", "edges": "faint", "profile": [[1.0, 0], [0.947, 1], [0.884, 1], [0.937, 0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.2632, "d": 0.2632, "y": 0.8333, "h": 0.0595, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

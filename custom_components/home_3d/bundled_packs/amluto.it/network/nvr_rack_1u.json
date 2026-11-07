@@ -1,0 +1,33 @@
+{
+  "id": "nvr_rack_1u",
+  "name": {"en": "Network video recorder, rack"},
+  "size": [0.443, 0.285, 0.044],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage", "living"],
+  "tags": ["nvr", "cctv recorder", "camera recorder", "unifi protect", "video recorder", "surveillance", "hard drives"],
+  "family": "nvr",
+  "variant": {"en": "1U rack"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.493, "w": 0.8646, "d": 0.014, "y": 0.0909, "h": 0.8182, "color": "#2a2d33"},
+    {"shape": "box", "x": -0.333, "z": 0.486, "w": 0.1084, "d": 0.014, "y": 0.1591, "h": 0.6818, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.333, "z": 0.4965, "w": 0.0181, "d": 0.007, "y": 0.2727, "h": 0.0909, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": -0.2111, "z": 0.486, "w": 0.1084, "d": 0.014, "y": 0.1591, "h": 0.6818, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.2111, "z": 0.4965, "w": 0.0181, "d": 0.007, "y": 0.2727, "h": 0.0909, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": -0.0892, "z": 0.486, "w": 0.1084, "d": 0.014, "y": 0.1591, "h": 0.6818, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.0892, "z": 0.4965, "w": 0.0181, "d": 0.007, "y": 0.2727, "h": 0.0909, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": 0.0327, "z": 0.486, "w": 0.1084, "d": 0.014, "y": 0.1591, "h": 0.6818, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.0327, "z": 0.4965, "w": 0.0181, "d": 0.007, "y": 0.2727, "h": 0.0909, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": 0.1546, "z": 0.486, "w": 0.1084, "d": 0.014, "y": 0.1591, "h": 0.6818, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.1546, "z": 0.4965, "w": 0.0181, "d": 0.007, "y": 0.2727, "h": 0.0909, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": 0.2765, "z": 0.486, "w": 0.1084, "d": 0.014, "y": 0.1591, "h": 0.6818, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.2765, "z": 0.4965, "w": 0.0181, "d": 0.007, "y": 0.2727, "h": 0.0909, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": 0.3984, "z": 0.486, "w": 0.1084, "d": 0.014, "y": 0.1591, "h": 0.6818, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.3984, "z": 0.4965, "w": 0.0181, "d": 0.007, "y": 0.2727, "h": 0.0909, "color": "#46d36a", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

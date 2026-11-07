@@ -1,0 +1,38 @@
+{
+  "id": "vimle_footstool_storage",
+  "name": {
+    "en": "Footstool with storage"
+  },
+  "size": [
+    0.98,
+    0.73,
+    0.48
+  ],
+  "group": "seating",
+  "room": [
+    "living",
+    "conservatory",
+    "bedroom"
+  ],
+  "tags": [
+    "footstool",
+    "pouffe",
+    "ottoman",
+    "storage",
+    "lift-up lid",
+    "beige",
+    "grey",
+    "black",
+    "dark brown"
+  ],
+  "ikea": "VIMLE",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.125, "h": 0.625, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9796, "d": 0.9726, "y": 0.7292, "h": 0.2708, "color": "cushion", "round": 0.3},
+    {"shape": "box", "x": 0.0, "z": 0.4932, "w": 0.9388, "d": 0.0082, "y": 0.7396, "h": 0.0125, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": -0.4388, "z": -0.4178, "w": 0.0408, "d": 0.0548, "y": 0, "h": 0.125, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.4388, "z": 0.4178, "w": 0.0408, "d": 0.0548, "y": 0, "h": 0.125, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4388, "z": -0.4178, "w": 0.0408, "d": 0.0548, "y": 0, "h": 0.125, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4388, "z": 0.4178, "w": 0.0408, "d": 0.0548, "y": 0, "h": 0.125, "color": "dark", "fix": "wdh"}
+  ]
+}

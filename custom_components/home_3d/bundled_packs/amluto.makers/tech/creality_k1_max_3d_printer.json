@@ -1,0 +1,51 @@
+{
+  "id": "creality_k1_max_3d_printer",
+  "name": {
+    "en": "Creality K1 Max"
+  },
+  "size": [
+    0.435,
+    0.462,
+    0.526
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage"
+  ],
+  "tags": [
+    "3d printer",
+    "printer",
+    "creality",
+    "maker",
+    "filament",
+    "fdm",
+    "k1 max",
+    "corexy"
+  ],
+  "family": "creality_k1_max",
+  "variant": {
+    "en": "Printer only"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0649, "w": 1, "d": 0.8701, "y": 0, "h": 0.075, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": -0.3485, "w": 1, "d": 0.0433, "y": 0.075, "h": 0.85, "color": "body"},
+    {"shape": "box", "x": -0.477, "z": 0.0866, "w": 0.046, "d": 0.8268, "y": 0.075, "h": 0.85, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.477, "z": 0.0866, "w": 0.046, "d": 0.8268, "y": 0.075, "h": 0.85, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0649, "w": 1, "d": 0.8701, "y": 0.925, "h": 0.075, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.487, "w": 0.908, "d": 0.0173, "y": 0.0952, "h": 0.83, "color": "glass"},
+    {"shape": "box", "x": 0.0, "z": 0.0649, "w": 0.908, "d": 0.0261, "y": 0.78, "h": 0.03, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.1519, "w": 0.62, "d": 0.5395, "y": 0.26, "h": 0.02, "color": "metal"},
+    {"shape": "rbox", "x": 0.0, "z": 0.1519, "w": 0.12, "d": 0.1044, "y": 0.75, "h": 0.08, "color": "dark", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": 0.413, "w": 0.8, "d": 0.0305, "y": 0.88, "h": 0.02, "color": "#fff1d0", "glow": true},
+    {"shape": "rbox", "x": 0.3, "z": 0.4913, "w": 0.22, "d": 0.013, "y": 0.015, "h": 0.045, "color": "accent", "edges": "glow", "round": 0.2},
+    {"shape": "cyl", "x": 0.0, "z": -0.4351, "w": 0.45, "d": 0.1169, "y": 0.45, "h": 0.3955, "color": "accent", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": -0.4351, "w": 0.069, "d": 0.1299, "y": 0.6275, "h": 0.0404, "color": "metal"},
+    {"shape": "cyl", "x": 0.3, "z": 0.4654, "w": 0.0805, "d": 0.0649, "y": 0.875, "h": 0.0808, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.3, "z": 0.4913, "w": 0.0506, "d": 0.013, "y": 0.882, "h": 0.0485, "color": "glass", "axis": "z"}
+  ],
+  "symbol": [{"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}, {"shape": "rect", "x": 0, "z": 0, "w": 0.8, "d": 0.8}]
+}

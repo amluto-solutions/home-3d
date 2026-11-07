@@ -1,0 +1,16 @@
+{
+  "id": "ornament_orbs_3",
+  "name": {"en": "Decorative orbs"},
+  "size": [0.28, 0.2, 0.13],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "hall", "office"],
+  "tags": ["ornament", "spheres", "balls", "decorative balls", "bowl filler", "decor", "set of three"],
+  "family": "orbs",
+  "variant": {"en": "Set of 3"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "sphere", "x": -0.2679, "z": 0, "w": 0.4643, "d": 0.65, "y": 0, "h": 1, "color": "#b8964a"},
+    {"shape": "sphere", "x": 0.25, "z": -0.125, "w": 0.3929, "d": 0.55, "y": 0, "h": 0.8462, "color": "#e9e4d6"},
+    {"shape": "sphere", "x": 0, "z": 0.275, "w": 0.3214, "d": 0.45, "y": 0, "h": 0.6923, "color": "#3f4a52"}
+  ]
+}

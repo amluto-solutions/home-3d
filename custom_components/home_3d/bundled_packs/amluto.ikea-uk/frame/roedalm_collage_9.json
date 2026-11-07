@@ -1,0 +1,47 @@
+{
+  "id": "roedalm_collage_9",
+  "name": {
+    "en": "Collage frame for 9 pictures"
+  },
+  "size": [
+    0.46,
+    0.03,
+    0.61
+  ],
+  "group": "frame",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "office"
+  ],
+  "tags": [
+    "collage frame",
+    "multi frame",
+    "picture frame",
+    "9 pictures",
+    "black",
+    "mount"
+  ],
+  "ikea": "RÖDALM",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4333, "w": 1, "d": 0.1333, "y": 0, "h": 1, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9672, "h": 0.0328, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0328, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.4783, "z": 0.0, "w": 0.0435, "d": 1, "y": 0.0328, "h": 0.9344, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.4783, "z": 0.0, "w": 0.0435, "d": 1, "y": 0.0328, "h": 0.9344, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 0.913, "d": 0.1, "y": 0.0328, "h": 0.9344, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.2853, "z": 0.3167, "w": 0.2283, "d": 0.0667, "y": 0.6762, "h": 0.2295, "color": "#a9b8b4", "fix": "d"},
+    {"shape": "box", "x": -0.0, "z": 0.3167, "w": 0.2283, "d": 0.0667, "y": 0.6762, "h": 0.2295, "color": "#c4b49a", "fix": "d"},
+    {"shape": "box", "x": 0.2853, "z": 0.3167, "w": 0.2283, "d": 0.0667, "y": 0.6762, "h": 0.2295, "color": "#9fb0c0", "fix": "d"},
+    {"shape": "box", "x": -0.2853, "z": 0.3167, "w": 0.2283, "d": 0.0667, "y": 0.3852, "h": 0.2295, "color": "#b9a9b4", "fix": "d"},
+    {"shape": "box", "x": -0.0, "z": 0.3167, "w": 0.2283, "d": 0.0667, "y": 0.3852, "h": 0.2295, "color": "#a8bda3", "fix": "d"},
+    {"shape": "box", "x": 0.2853, "z": 0.3167, "w": 0.2283, "d": 0.0667, "y": 0.3852, "h": 0.2295, "color": "#a9b8b4", "fix": "d"},
+    {"shape": "box", "x": -0.2853, "z": 0.3167, "w": 0.2283, "d": 0.0667, "y": 0.0943, "h": 0.2295, "color": "#c4b49a", "fix": "d"},
+    {"shape": "box", "x": -0.0, "z": 0.3167, "w": 0.2283, "d": 0.0667, "y": 0.0943, "h": 0.2295, "color": "#9fb0c0", "fix": "d"},
+    {"shape": "box", "x": 0.2853, "z": 0.3167, "w": 0.2283, "d": 0.0667, "y": 0.0943, "h": 0.2295, "color": "#b9a9b4", "fix": "d"}
+  ]
+}

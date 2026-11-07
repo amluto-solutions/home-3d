@@ -1,0 +1,29 @@
+{
+  "id": "ct_clamp_box",
+  "name": {"en": "CT clamp box"},
+  "size": [0.22, 0.1, 0.34],
+  "group": "energy",
+  "room": ["hall", "garage", "utility"],
+  "tags": ["ct clamp", "current clamp", "energy monitor", "power monitor", "shelly", "3em", "em3", "pro 3em", "electricity monitor"],
+  "family": "energy_monitor",
+  "variant": {"en": "Three clamps"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.3,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.05, "w": 1, "d": 0.9, "y": 0.3529, "h": 0.6471, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.41, "w": 0.9091, "d": 0.08, "y": 0.3824, "h": 0.5882, "color": "glass"},
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 0.3182, "d": 0.4, "y": 0.5882, "h": 0.2647, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.46, "w": 0.1818, "d": 0.04, "y": 0.7647, "h": 0.0353, "color": "white"},
+    {"shape": "cyl", "x": 0.0909, "z": 0.46, "w": 0.0364, "d": 0.04, "y": 0.6765, "h": 0.0235, "color": "#46d36a", "axis": "z"},
+    {"shape": "cyl", "x": -0.2727, "z": 0.0, "w": 0.0455, "d": 0.1, "y": 0.1176, "h": 0.2353, "color": "dark"},
+    {"shape": "rbox", "x": -0.2727, "z": 0.0, "w": 0.1818, "d": 0.3, "y": 0.0, "h": 0.1324, "color": "#c62828", "round": 0.3},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0455, "d": 0.1, "y": 0.1176, "h": 0.2353, "color": "dark"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.1818, "d": 0.3, "y": 0.0, "h": 0.1324, "color": "#2b2b2b", "round": 0.3},
+    {"shape": "cyl", "x": 0.2727, "z": 0.0, "w": 0.0455, "d": 0.1, "y": 0.1176, "h": 0.2353, "color": "dark"},
+    {"shape": "rbox", "x": 0.2727, "z": 0.0, "w": 0.1818, "d": 0.3, "y": 0.0, "h": 0.1324, "color": "#9e9e9e", "round": 0.3}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

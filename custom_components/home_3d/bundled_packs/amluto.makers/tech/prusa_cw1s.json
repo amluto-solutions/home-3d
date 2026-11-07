@@ -1,0 +1,104 @@
+{
+  "id": "prusa_cw1s",
+  "name": {
+    "en": "Prusa CW1S curing and washing machine"
+  },
+  "size": [
+    0.218,
+    0.232,
+    0.345
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage"
+  ],
+  "tags": [
+    "prusa",
+    "cw1s",
+    "resin",
+    "wash",
+    "cure",
+    "curing",
+    "washing",
+    "maker"
+  ],
+  "family": "prusa_cw1s",
+  "variant": {
+    "en": "Wash and cure"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 0.7246,
+      "color": "body",
+      "round": 0.12
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.4935,
+      "w": 0.76,
+      "d": 0.0129,
+      "y": 0.1159,
+      "h": 0.2319,
+      "color": "dark",
+      "round": 0.1
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.4968,
+      "w": 0.6,
+      "d": 0.0065,
+      "y": 0.2029,
+      "h": 0.058,
+      "color": "#f37021"
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.7246,
+      "h": 0.2754,
+      "color": "glass",
+      "round": 0.25
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": -0.34,
+      "w": 0.4,
+      "d": 0.12,
+      "y": 0.9652,
+      "h": 0.0348,
+      "color": "#f37021"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    },
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 0.8,
+      "d": 0.8
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "kerb_dropped_granite",
+  "name": {"en": "Dropped kerb (driveway crossover), granite"},
+  "size": [3.0, 0.4, 0.25],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["kerb", "dropped kerb", "crossover", "driveway entrance", "pavement"],
+  "family": "kerb_dropped_granite",
+  "variant": {"en": "3 m wide"},
+  "parts": [
+    {"shape": "box", "x": -0.3667, "z": -0.25, "w": 0.2667, "d": 0.375, "y": 0, "h": 1, "color": "#8c8e91"},
+    {"shape": "box", "x": 0.3667, "z": -0.25, "w": 0.2667, "d": 0.375, "y": 0, "h": 1, "color": "#8c8e91"},
+    {"shape": "loft", "x": -0.1833, "z": -0.125, "w": 0.1, "d": 0.625, "y": 0, "h": 0.68, "color": "#8c8e91", "tx": -0.1833, "tz": -0.125, "tw": 0.1, "td": 0.625},
+    {"shape": "loft", "x": 0.1833, "z": -0.125, "w": 0.1, "d": 0.625, "y": 0, "h": 0.68, "color": "#8c8e91", "tx": 0.1833, "tz": -0.125, "tw": 0.1, "td": 0.625},
+    {"shape": "box", "x": 0.0, "z": -0.125, "w": 0.2667, "d": 0.375, "y": 0, "h": 0.16, "color": "#8c8e91"},
+    {"shape": "box", "x": 0.0, "z": 0.3, "w": 0.2667, "d": 0.4, "y": 0, "h": 0.08, "color": "#7e8082"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.2667, "d": 0.5, "y": 0, "h": 0.1, "color": "#a85a46"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

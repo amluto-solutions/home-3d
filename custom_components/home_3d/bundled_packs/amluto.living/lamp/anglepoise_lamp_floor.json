@@ -1,0 +1,21 @@
+{
+  "id": "anglepoise_lamp_floor",
+  "name": {"en": "Anglepoise floor lamp"},
+  "size": [0.28, 0.62, 1.42],
+  "group": "lamp",
+  "room": ["office", "living", "bedroom"],
+  "tags": ["floor light", "task lamp", "swing arm", "adjustable lamp", "reading lamp", "standard lamp"],
+  "family": "anglepoise_lamp",
+  "variant": {"en": "Floor"},
+  "light": "floor",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.2581, "w": 1, "d": 0.4516, "y": 0.0, "h": 0.0229, "color": "dark", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": -0.2581, "w": 0.0893, "d": 0.0403, "y": 0.0176, "h": 0.6338, "color": "dark"},
+    {"shape": "loft", "x": -0.0429, "z": -0.2581, "w": 0.0429, "d": 0.0194, "y": 0.6479, "h": 0.2817, "color": "dark", "tx": -0.0429, "tz": 0.0, "tw": 0.0429, "td": 0.0194},
+    {"shape": "loft", "x": 0.0429, "z": -0.2581, "w": 0.0429, "d": 0.0194, "y": 0.6479, "h": 0.2817, "color": "dark", "tx": 0.0429, "tz": 0.0, "tw": 0.0429, "td": 0.0194},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1429, "d": 0.0484, "y": 0.919, "h": 0.0211, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.1734, "w": 0.0571, "d": 0.3468, "y": 0.9239, "h": 0.0113, "color": "dark", "axis": "z"},
+    {"shape": "lathe", "x": 0.0, "z": 0.3468, "w": 0.6429, "d": 0.2903, "y": 0.7817, "h": 0.1408, "color": "dark", "profile": [[0.9, 0.0], [1, 0.03], [0.85, 0.35], [0.45, 0.75], [0.3, 1], [0.0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.3468, "w": 0.5786, "d": 0.2613, "y": 0.7732, "h": 0.0113, "color": "white", "glow": true}
+  ]
+}

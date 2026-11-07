@@ -1,0 +1,28 @@
+{
+  "id": "goxlr_mini",
+  "name": {"en": "TC-Helicon GoXLR Mini"},
+  "size": [0.132, 0.168, 0.07],
+  "group": "media",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["goxlr mini", "goxlr", "tc-helicon", "tc helicon", "mixer", "streaming", "audio"],
+  "family": "goxlr",
+  "variant": {"en": "Mini"},
+  "electric": true,
+  "watts": 2.5,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "dark", "round": 0.12},
+    {"shape": "cyl", "x": -0.315, "z": -0.05, "w": 0.126, "d": 0.099, "y": 0.98, "h": 0.02, "color": "metal"},
+    {"shape": "cyl", "x": -0.105, "z": -0.05, "w": 0.126, "d": 0.099, "y": 0.98, "h": 0.02, "color": "metal"},
+    {"shape": "cyl", "x": 0.105, "z": -0.05, "w": 0.126, "d": 0.099, "y": 0.98, "h": 0.02, "color": "metal"},
+    {"shape": "cyl", "x": 0.315, "z": -0.05, "w": 0.126, "d": 0.099, "y": 0.98, "h": 0.02, "color": "metal"},
+    {"shape": "rbox", "x": -0.3, "z": 0.12, "w": 0.15, "d": 0.15, "y": 0.98, "h": 0.02, "color": "#3a3d42", "round": 0.3},
+    {"shape": "rbox", "x": -0.1, "z": 0.12, "w": 0.15, "d": 0.15, "y": 0.98, "h": 0.02, "color": "#3a3d42", "round": 0.3},
+    {"shape": "rbox", "x": 0.1, "z": 0.12, "w": 0.15, "d": 0.15, "y": 0.98, "h": 0.02, "color": "#3a3d42", "round": 0.3},
+    {"shape": "rbox", "x": 0.3, "z": 0.12, "w": 0.15, "d": 0.15, "y": 0.98, "h": 0.02, "color": "#3a3d42", "round": 0.3},
+    {"shape": "rbox", "x": -0.3, "z": 0.32, "w": 0.15, "d": 0.15, "y": 0.98, "h": 0.02, "color": "#3a3d42", "round": 0.3},
+    {"shape": "rbox", "x": -0.1, "z": 0.32, "w": 0.15, "d": 0.15, "y": 0.98, "h": 0.02, "color": "#3a3d42", "round": 0.3},
+    {"shape": "rbox", "x": 0.1, "z": 0.32, "w": 0.15, "d": 0.15, "y": 0.98, "h": 0.02, "color": "#3a3d42", "round": 0.3},
+    {"shape": "rbox", "x": 0.3, "z": 0.32, "w": 0.15, "d": 0.15, "y": 0.98, "h": 0.02, "color": "#3a3d42", "round": 0.3}
+  ]
+}

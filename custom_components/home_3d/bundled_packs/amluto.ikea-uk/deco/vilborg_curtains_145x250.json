@@ -1,0 +1,43 @@
+{
+  "id": "vilborg_curtains_145x250",
+  "name": {
+    "en": "Room darkening curtains, 1 pair 145x250 cm"
+  },
+  "size": [
+    1.45,
+    0.08,
+    2.5
+  ],
+  "group": "deco",
+  "room": [
+    "bedroom",
+    "kids",
+    "living"
+  ],
+  "tags": [
+    "curtains",
+    "blackout",
+    "drapes",
+    "heading tape",
+    "beige",
+    "grey",
+    "dark grey-beige",
+    "pink"
+  ],
+  "ikea": "VILBORG",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.375, "w": 1, "d": 0.25, "y": 0.976, "h": 0.024, "color": "fabric", "fix": "h"},
+    {"shape": "cyl", "x": -0.4583, "z": -0.25, "w": 0.0958, "d": 0.75, "y": 0.004, "h": 0.972, "color": "fabric"},
+    {"shape": "cyl", "x": -0.375, "z": 0.0, "w": 0.0958, "d": 0.75, "y": 0.004, "h": 0.972, "color": "fabric"},
+    {"shape": "cyl", "x": -0.2917, "z": -0.25, "w": 0.0958, "d": 0.75, "y": 0.004, "h": 0.972, "color": "fabric"},
+    {"shape": "cyl", "x": -0.2083, "z": 0.0, "w": 0.0958, "d": 0.75, "y": 0.004, "h": 0.972, "color": "fabric"},
+    {"shape": "cyl", "x": -0.125, "z": -0.25, "w": 0.0958, "d": 0.75, "y": 0.004, "h": 0.972, "color": "fabric"},
+    {"shape": "cyl", "x": -0.0417, "z": 0.0, "w": 0.0958, "d": 0.75, "y": 0.004, "h": 0.972, "color": "fabric"},
+    {"shape": "cyl", "x": 0.0417, "z": -0.25, "w": 0.0958, "d": 0.75, "y": 0.004, "h": 0.972, "color": "fabric"},
+    {"shape": "cyl", "x": 0.125, "z": 0.0, "w": 0.0958, "d": 0.75, "y": 0.004, "h": 0.972, "color": "fabric"},
+    {"shape": "cyl", "x": 0.2083, "z": -0.25, "w": 0.0958, "d": 0.75, "y": 0.004, "h": 0.972, "color": "fabric"},
+    {"shape": "cyl", "x": 0.2917, "z": 0.0, "w": 0.0958, "d": 0.75, "y": 0.004, "h": 0.972, "color": "fabric"},
+    {"shape": "cyl", "x": 0.375, "z": -0.25, "w": 0.0958, "d": 0.75, "y": 0.004, "h": 0.972, "color": "fabric"},
+    {"shape": "cyl", "x": 0.4583, "z": 0.0, "w": 0.0958, "d": 0.75, "y": 0.004, "h": 0.972, "color": "fabric"}
+  ]
+}

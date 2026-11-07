@@ -1,0 +1,36 @@
+{
+  "id": "hektar_pendant_22",
+  "name": {
+    "en": "Industrial pendant lamp, 22 cm"
+  },
+  "size": [
+    0.22,
+    0.22,
+    0.75
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "pendant",
+    "ceiling light",
+    "industrial",
+    "dark grey",
+    "metal",
+    "bell"
+  ],
+  "ikea": "HEKTAR",
+  "light": "pendant",
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4545, "d": 0.4545, "y": 0.9667, "h": 0.0333, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0545, "d": 0.0545, "y": 0.3467, "h": 0.6267, "color": "dark", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.3467, "color": "dark", "profile": [[1.0, 0], [0.93, 0.25], [0.62, 0.62], [0.33, 0.9], [0.25, 1.0], [0, 1.0], [0.0, 0.96], [0.19, 0.96], [0.27, 0.86], [0.56, 0.58], [0.87, 0.21], [0.94, 0.0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.2727, "d": 0.2727, "y": 0.1213, "h": 0.08, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

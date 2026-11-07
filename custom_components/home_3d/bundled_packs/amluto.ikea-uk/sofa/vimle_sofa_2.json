@@ -1,0 +1,47 @@
+{
+  "id": "vimle_sofa_2",
+  "name": {
+    "en": "2-seat sofa"
+  },
+  "size": [
+    1.71,
+    0.98,
+    0.83
+  ],
+  "group": "sofa",
+  "room": [
+    "living",
+    "conservatory"
+  ],
+  "tags": [
+    "sofa",
+    "settee",
+    "couch",
+    "modular sofa",
+    "fabric sofa",
+    "beige",
+    "grey",
+    "grey-green",
+    "dark green",
+    "dark blue"
+  ],
+  "family": "vimle_sofa",
+  "variant": {
+    "en": "2-seat"
+  },
+  "ikea": "VIMLE",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0723, "h": 0.4337, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": 0.0, "z": -0.3776, "w": 0.8246, "d": 0.2449, "y": 0.4337, "h": 0.5663, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.2061, "z": 0.1122, "w": 0.4064, "d": 0.7551, "y": 0.4337, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.2061, "z": -0.1735, "w": 0.4006, "d": 0.2041, "y": 0.5542, "h": 0.4217, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.2061, "z": 0.1122, "w": 0.4064, "d": 0.7551, "y": 0.4337, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.2061, "z": -0.1735, "w": 0.4006, "d": 0.2041, "y": 0.5542, "h": 0.4217, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.4561, "z": 0.0, "w": 0.0877, "d": 1, "y": 0.0723, "h": 0.747, "color": "fabric", "fix": "w", "round": 0.3},
+    {"shape": "rbox", "x": 0.4561, "z": 0.0, "w": 0.0877, "d": 1, "y": 0.0723, "h": 0.747, "color": "fabric", "fix": "w", "round": 0.3},
+    {"shape": "box", "x": -0.4649, "z": -0.4388, "w": 0.0234, "d": 0.0408, "y": 0, "h": 0.0723, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.4649, "z": 0.4388, "w": 0.0234, "d": 0.0408, "y": 0, "h": 0.0723, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4649, "z": -0.4388, "w": 0.0234, "d": 0.0408, "y": 0, "h": 0.0723, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4649, "z": 0.4388, "w": 0.0234, "d": 0.0408, "y": 0, "h": 0.0723, "color": "dark", "fix": "wdh"}
+  ]
+}

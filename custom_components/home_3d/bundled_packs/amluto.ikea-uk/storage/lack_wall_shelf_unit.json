@@ -1,0 +1,43 @@
+{
+  "id": "lack_wall_shelf_unit",
+  "name": {
+    "en": "Wall shelf unit 30x190 cm"
+  },
+  "size": [
+    0.3,
+    0.28,
+    1.9
+  ],
+  "group": "storage",
+  "room": [
+    "living",
+    "hall",
+    "bedroom",
+    "kids",
+    "bath",
+    "office"
+  ],
+  "tags": [
+    "wall shelf",
+    "shelving",
+    "tall shelf",
+    "floating",
+    "white",
+    "black-brown",
+    "white stained oak effect",
+    "oak effect"
+  ],
+  "ikea": "LACK",
+  "mount": "wall",
+  "wall_y": 0.1,
+  "parts": [
+    {"shape": "box", "x": -0.4333, "z": 0.0, "w": 0.1333, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4333, "z": 0.0, "w": 0.1333, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7333, "d": 1, "y": 0.9789, "h": 0.0211, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7333, "d": 1, "y": 0, "h": 0.0211, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7333, "d": 0.9643, "y": 0.2061, "h": 0.0132, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7333, "d": 0.9643, "y": 0.3976, "h": 0.0132, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7333, "d": 0.9643, "y": 0.5892, "h": 0.0132, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7333, "d": 0.9643, "y": 0.7808, "h": 0.0132, "color": "white"}
+  ]
+}

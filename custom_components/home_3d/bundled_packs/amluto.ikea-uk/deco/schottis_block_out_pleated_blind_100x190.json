@@ -1,0 +1,54 @@
+{
+  "id": "schottis_block_out_pleated_blind_100x190",
+  "name": {
+    "en": "Block-out pleated blind, 100x190 cm"
+  },
+  "size": [
+    1.0,
+    0.03,
+    1.9
+  ],
+  "group": "deco",
+  "room": [
+    "bedroom",
+    "kids",
+    "living",
+    "office"
+  ],
+  "tags": [
+    "blind",
+    "blackout blind",
+    "paper blind",
+    "pleated",
+    "window",
+    "cordless",
+    "white",
+    "dark grey"
+  ],
+  "ikea": "SCHOTTIS",
+  "mount": "wall",
+  "wall_y": 0.3,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9842, "h": 0.0158, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.8, "y": 0, "h": 0.0105, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0667, "w": 0.99, "d": 0.5, "y": 0.0105, "h": 0.9737, "color": "fabric"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.0618, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.113, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.1643, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.2155, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.2668, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.318, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.3693, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.4205, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.4717, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.523, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.5742, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.6255, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.6767, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.728, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.7792, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.8305, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.8817, "h": 0.0021, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.99, "d": 0.1333, "y": 0.933, "h": 0.0021, "color": "dark", "fix": "h"}
+  ]
+}

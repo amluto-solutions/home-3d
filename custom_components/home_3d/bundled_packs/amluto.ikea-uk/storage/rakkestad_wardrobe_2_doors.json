@@ -1,0 +1,43 @@
+{
+  "id": "rakkestad_wardrobe_2_doors",
+  "name": {
+    "en": "Wardrobe with 2 doors"
+  },
+  "size": [
+    0.79,
+    0.55,
+    1.76
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "wardrobe",
+    "freestanding wardrobe",
+    "clothes storage",
+    "hanging rail",
+    "black-brown",
+    "white",
+    "budget"
+  ],
+  "family": "rakkestad_wardrobe",
+  "variant": {
+    "en": "2 doors · 79"
+  },
+  "ikea": "RAKKESTAD",
+  "parts": [
+    {"shape": "box", "x": -0.4886, "z": -0.0182, "w": 0.0228, "d": 0.9636, "y": 0, "h": 1, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4886, "z": -0.0182, "w": 0.0228, "d": 0.9636, "y": 0, "h": 1, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0182, "w": 1, "d": 0.9636, "y": 0.9898, "h": 0.0102, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0182, "w": 0.9544, "d": 0.9636, "y": 0, "h": 0.0102, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4927, "w": 0.9544, "d": 0.0145, "y": 0.0102, "h": 0.9795, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4273, "w": 0.9544, "d": 0.0327, "y": 0, "h": 0.0341, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.25, "z": 0.4818, "w": 0.4949, "d": 0.0327, "y": 0.0341, "h": 0.9636, "color": "wood"},
+    {"shape": "box", "x": -0.0633, "z": 0.5, "w": 0.0152, "d": 0.04, "y": 0.5227, "h": 0.0909, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.25, "z": 0.4818, "w": 0.4949, "d": 0.0327, "y": 0.0341, "h": 0.9636, "color": "wood"},
+    {"shape": "box", "x": 0.0633, "z": 0.5, "w": 0.0152, "d": 0.04, "y": 0.5227, "h": 0.0909, "color": "dark", "fix": "wdh"}
+  ]
+}

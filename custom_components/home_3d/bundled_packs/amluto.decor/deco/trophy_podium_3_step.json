@@ -1,0 +1,22 @@
+{
+  "id": "trophy_podium_3_step",
+  "name": {"en": "Winners podium, 3 step"},
+  "size": [0.36, 0.12, 0.16],
+  "group": "deco",
+  "room": ["living", "office", "hall", "study", "games", "dining"],
+  "tags": ["trophy", "award", "prize", "gold", "podium", "winners", "first second third", "silver", "bronze"],
+  "family": "trophy_podium",
+  "variant": {"en": "3 step"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": -0.3333, "z": 0.0, "w": 0.3333, "d": 1, "y": 0, "h": 0.65, "color": "#e9e4d6", "fix": "wd"},
+    {"shape": "box", "x": -0.3333, "z": 0.5, "w": 0.18, "d": 0.0333, "y": 0.2925, "h": 0.195, "color": "#c7cbd1", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.3333, "d": 1, "y": 0, "h": 1, "color": "#e9e4d6", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.18, "d": 0.0333, "y": 0.45, "h": 0.3, "color": "#d4af37", "fix": "wdh"},
+    {"shape": "box", "x": 0.3333, "z": 0.0, "w": 0.3333, "d": 1, "y": 0, "h": 0.45, "color": "#e9e4d6", "fix": "wd"},
+    {"shape": "box", "x": 0.3333, "z": 0.5, "w": 0.18, "d": 0.0333, "y": 0.2025, "h": 0.135, "color": "#b0763a", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

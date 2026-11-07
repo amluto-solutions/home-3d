@@ -1,0 +1,19 @@
+{
+  "id": "smart_speaker",
+  "name": {"en": "Smart speaker (mini)"},
+  "size": [0.098, 0.098, 0.042],
+  "group": "media",
+  "room": ["kitchen", "living", "bedroom", "kids", "office", "bath"],
+  "tags": ["nest mini", "google home", "echo dot", "alexa", "voice assistant", "speaker", "assistant"],
+  "family": "smart_speaker",
+  "variant": {"en": "Mini"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0, "h": 1, "color": "fabric", "profile": [[0.0, 0.0], [0.96, 0.0], [1, 0.25], [0.95, 0.7], [0.7, 1], [0.0, 1]]},
+    {"shape": "cyl", "x": -0.1531, "z": 0.0, "w": 0.051, "d": 0.051, "y": 0.9643, "h": 0.0357, "color": "white", "glow": true},
+    {"shape": "cyl", "x": -0.051, "z": 0.0, "w": 0.051, "d": 0.051, "y": 0.9643, "h": 0.0357, "color": "white", "glow": true},
+    {"shape": "cyl", "x": 0.051, "z": 0.0, "w": 0.051, "d": 0.051, "y": 0.9643, "h": 0.0357, "color": "white", "glow": true},
+    {"shape": "cyl", "x": 0.1531, "z": 0.0, "w": 0.051, "d": 0.051, "y": 0.9643, "h": 0.0357, "color": "white", "glow": true}
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "mittzon_desk_160x80",
+  "name": {
+    "en": "Desk 160x80 cm"
+  },
+  "size": [
+    1.6,
+    0.8,
+    0.75
+  ],
+  "group": "office",
+  "room": [
+    "office",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "MITTZON",
+    "desk",
+    "office desk",
+    "height adjustable 65-85 cm",
+    "white",
+    "walnut veneer",
+    "oak veneer",
+    "black"
+  ],
+  "family": "mittzon_desk",
+  "variant": {
+    "en": "160x80"
+  },
+  "ikea": "MITTZON",
+  "surface": true,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9667, "h": 0.0333, "color": "wood", "fix": "h", "round": 0.12},
+    {"shape": "box", "x": -0.4313, "z": 0.0, "w": 0.0375, "d": 0.85, "y": 0, "h": 0.04, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": -0.4313, "z": 0.0, "w": 0.0406, "d": 0.0813, "y": 0.04, "h": 0.8733, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4313, "z": 0.0, "w": 0.0312, "d": 0.0625, "y": 0.0933, "h": 0.8733, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.4313, "z": 0.0, "w": 0.0375, "d": 0.75, "y": 0.9133, "h": 0.0533, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.4313, "z": 0.0, "w": 0.0375, "d": 0.85, "y": 0, "h": 0.04, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.4313, "z": 0.0, "w": 0.0406, "d": 0.0813, "y": 0.04, "h": 0.8733, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4313, "z": 0.0, "w": 0.0312, "d": 0.0625, "y": 0.0933, "h": 0.8733, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.4313, "z": 0.0, "w": 0.0375, "d": 0.75, "y": 0.9133, "h": 0.0533, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": -0.25, "w": 0.8125, "d": 0.05, "y": 0.9, "h": 0.0667, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.3125, "z": 0.4625, "w": 0.05, "d": 0.0625, "y": 0.9333, "h": 0.0333, "color": "dark", "fix": "wdh"}
+  ]
+}

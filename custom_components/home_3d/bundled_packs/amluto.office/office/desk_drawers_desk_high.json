@@ -1,0 +1,26 @@
+{
+  "id": "desk_drawers_desk_high",
+  "name": {"en": "Desk drawers, desk height"},
+  "size": [0.4, 0.6, 0.72],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby"],
+  "tags": ["desk drawers", "pedestal", "drawer unit", "filing drawers", "mobile pedestal", "under desk"],
+  "family": "desk_drawers",
+  "variant": {"en": "Desk height"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0167, "w": 0.9, "d": 0.9, "y": 0.0, "h": 0.0278, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.015, "w": 1.0, "d": 0.97, "y": 0.0278, "h": 0.9722, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4825, "w": 0.985, "d": 0.025, "y": 0.8286, "h": 0.1686, "color": "body"},
+    {"shape": "box", "x": 0.0, "z": 0.4975, "w": 0.3, "d": 0.005, "y": 0.9375, "h": 0.0167, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4825, "w": 0.985, "d": 0.025, "y": 0.6255, "h": 0.1976, "color": "body"},
+    {"shape": "box", "x": 0.0, "z": 0.4975, "w": 0.3, "d": 0.005, "y": 0.7634, "h": 0.0167, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4825, "w": 0.985, "d": 0.025, "y": 0.4223, "h": 0.1976, "color": "body"},
+    {"shape": "box", "x": 0.0, "z": 0.4975, "w": 0.3, "d": 0.005, "y": 0.5602, "h": 0.0167, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4825, "w": 0.985, "d": 0.025, "y": 0.0306, "h": 0.3862, "color": "body"},
+    {"shape": "box", "x": 0.0, "z": 0.4975, "w": 0.3, "d": 0.005, "y": 0.3571, "h": 0.0167, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4, "z": 0.4975, "w": 0.0375, "d": 0.005, "y": 0.9583, "h": 0.0208, "color": "metal", "axis": "z", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

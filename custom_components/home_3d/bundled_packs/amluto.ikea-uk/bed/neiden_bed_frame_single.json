@@ -1,0 +1,45 @@
+{
+  "id": "neiden_bed_frame_single",
+  "name": {
+    "en": "Bed frame, Single 90x190"
+  },
+  "size": [
+    0.96,
+    1.95,
+    0.65
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "bed",
+    "bed frame",
+    "single",
+    "pine",
+    "solid wood",
+    "untreated",
+    "kids"
+  ],
+  "family": "neiden_bed_frame",
+  "variant": {
+    "en": "Single · 90x190"
+  },
+  "ikea": "NEIDEN",
+  "parts": [
+    {"shape": "box", "x": -0.4687, "z": -0.4846, "w": 0.0625, "d": 0.0308, "y": 0, "h": 1, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": -0.4687, "z": 0.4846, "w": 0.0625, "d": 0.0308, "y": 0, "h": 0.4615, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4687, "z": -0.4846, "w": 0.0625, "d": 0.0308, "y": 0, "h": 1, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4687, "z": 0.4846, "w": 0.0625, "d": 0.0308, "y": 0, "h": 0.4615, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": -0.4846, "w": 0.875, "d": 0.0154, "y": 0.8923, "h": 0.0923, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4846, "w": 0.875, "d": 0.0154, "y": 0.3538, "h": 0.0923, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.4846, "w": 0.875, "d": 0.0103, "y": 0.3077, "h": 0.5538, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4846, "w": 0.875, "d": 0.0103, "y": 0.3077, "h": 0.0308, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": -0.4844, "z": 0.0, "w": 0.0312, "d": 0.9487, "y": 0.3077, "h": 0.3077, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4844, "z": 0.0, "w": 0.0312, "d": 0.9487, "y": 0.3077, "h": 0.3077, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9375, "d": 0.9385, "y": 0.4, "h": 0.0308, "color": "wood"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9375, "d": 0.9744, "y": 0.4308, "h": 0.3077, "color": "white", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": -0.3769, "w": 0.7969, "d": 0.1641, "y": 0.7385, "h": 0.1846, "color": "cushion", "round": 0.45}
+  ]
+}

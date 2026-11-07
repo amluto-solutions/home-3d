@@ -1,0 +1,49 @@
+{
+  "id": "chest_of_drawers_5",
+  "name": {
+    "en": "5-drawer chest of drawers"
+  },
+  "size": [
+    0.9,
+    0.45,
+    1.05
+  ],
+  "group": "storage",
+  "family": "chest_of_drawers",
+  "variant": {
+    "en": "2 over 3"
+  },
+  "room": [
+    "bedroom",
+    "kids",
+    "hall",
+    "living"
+  ],
+  "tags": [
+    "chest",
+    "bedroom furniture",
+    "2 over 3"
+  ],
+  "parts": [
+    {"shape": "box", "x": -0.4444, "z": -0.3889, "w": 0.0444, "d": 0.0889, "y": 0, "h": 0.0952, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4444, "z": 0.3889, "w": 0.0444, "d": 0.0889, "y": 0, "h": 0.0952, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4444, "z": -0.3889, "w": 0.0444, "d": 0.0889, "y": 0, "h": 0.0952, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4444, "z": 0.3889, "w": 0.0444, "d": 0.0889, "y": 0, "h": 0.0952, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": -0.0222, "w": 1.0, "d": 0.9556, "y": 0.0952, "h": 0.881, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.9762, "h": 0.0238, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.2433, "z": 0.4778, "w": 0.4822, "d": 0.0444, "y": 0.7985, "h": 0.1701, "color": "white"},
+    {"shape": "box", "x": -0.2433, "z": 0.4989, "w": 0.1556, "d": 0.0022, "y": 0.9133, "h": 0.0152, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.2433, "z": 0.4778, "w": 0.4822, "d": 0.0444, "y": 0.7985, "h": 0.1701, "color": "white"},
+    {"shape": "box", "x": 0.2433, "z": 0.4989, "w": 0.1556, "d": 0.0022, "y": 0.9133, "h": 0.0152, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0.4778, "w": 0.9689, "d": 0.0444, "y": 0.5666, "h": 0.2281, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4989, "w": 0.1556, "d": 0.0022, "y": 0.7394, "h": 0.0152, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0.4778, "w": 0.9689, "d": 0.0444, "y": 0.3347, "h": 0.2281, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4989, "w": 0.1556, "d": 0.0022, "y": 0.5076, "h": 0.0152, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0.4778, "w": 0.9689, "d": 0.0444, "y": 0.1029, "h": 0.2281, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4989, "w": 0.1556, "d": 0.0022, "y": 0.2757, "h": 0.0152, "color": "metal", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.45, "x2": 0.5, "z2": 0.45}
+  ]
+}

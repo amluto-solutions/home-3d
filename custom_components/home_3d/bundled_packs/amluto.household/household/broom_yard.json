@@ -1,0 +1,17 @@
+{
+  "id": "broom_yard",
+  "name": {"en": "Broom"},
+  "size": [0.42, 0.16, 1.5],
+  "group": "household",
+  "room": ["utility", "kitchen", "hall", "garage", "garden"],
+  "tags": ["broom", "brush", "sweep", "cleaning", "sweeping brush", "sweeping", "stiff bristles", "outdoor", "yard", "patio", "garage"],
+  "family": "broom",
+  "variant": {"en": "Yard broom"},
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0.2813, "w": 1, "d": 0.375, "y": 0, "h": 0.0733, "color": "#c4a65f"},
+    {"shape": "box", "x": 0, "z": 0.2813, "w": 1, "d": 0.2813, "y": 0.0667, "h": 0.0333, "color": "#8a5a33"},
+    {"shape": "box", "x": 0, "z": 0.2813, "w": 0.119, "d": 0.3125, "y": 0.0733, "h": 0.0333, "color": "#8a5a33"},
+    {"shape": "loft", "x": 0, "z": 0.2813, "w": 0.0619, "d": 0.1625, "y": 0.08, "h": 0.92, "color": "#a9784a", "tx": 0, "tz": -0.4062, "tw": 0.0619, "td": 0.1625},
+    {"shape": "box", "x": 0, "z": -0.375, "w": 0.0714, "d": 0.1875, "y": 0.97, "h": 0.03, "color": "#2a2a2c"}
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "stockholm_tv_bench",
+  "name": {
+    "en": "TV bench with sliding doors"
+  },
+  "size": [
+    1.79,
+    0.42,
+    0.56
+  ],
+  "group": "media",
+  "room": [
+    "living"
+  ],
+  "tags": [
+    "STOCKHOLM",
+    "TV unit",
+    "media unit",
+    "TV stand",
+    "sliding doors",
+    "oak veneer",
+    "walnut veneer"
+  ],
+  "ikea": "STOCKHOLM 2025",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": -0.4944, "z": -0.0357, "w": 0.0112, "d": 0.9286, "y": 0.1786, "h": 0.8214, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4944, "z": -0.0357, "w": 0.0112, "d": 0.9286, "y": 0.1786, "h": 0.8214, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0357, "w": 1, "d": 0.9286, "y": 0.9643, "h": 0.0357, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0357, "w": 0.9777, "d": 0.9286, "y": 0.1786, "h": 0.0357, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4905, "w": 0.9777, "d": 0.019, "y": 0.2143, "h": 0.75, "color": "wood", "fix": "d"},
+    {"shape": "cyl", "x": -0.4679, "z": -0.3631, "w": 0.0196, "d": 0.0833, "y": 0, "h": 0.1786, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4679, "z": 0.3631, "w": 0.0196, "d": 0.0833, "y": 0, "h": 0.1786, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4679, "z": -0.3631, "w": 0.0196, "d": 0.0833, "y": 0, "h": 0.1786, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4679, "z": 0.3631, "w": 0.0196, "d": 0.0833, "y": 0, "h": 0.1786, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.25, "z": 0.4714, "w": 0.4978, "d": 0.0286, "y": 0.2054, "h": 0.7679, "color": "wood"},
+    {"shape": "box", "x": -0.4721, "z": 0.4905, "w": 0.0067, "d": 0.0095, "y": 0.3571, "h": 0.4643, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.25, "z": 0.4429, "w": 0.4978, "d": 0.0286, "y": 0.2054, "h": 0.7679, "color": "wood"},
+    {"shape": "box", "x": 0.4721, "z": 0.4619, "w": 0.0067, "d": 0.0095, "y": 0.3571, "h": 0.4643, "color": "dark", "fix": "wdh"}
+  ]
+}

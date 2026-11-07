@@ -1,0 +1,21 @@
+{
+  "id": "hose_reel_box",
+  "name": {"en": "Hose reel"},
+  "size": [0.42, 0.24, 0.48],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["hose reel", "garden hose", "hose", "watering", "hosepipe", "outside tap", "garden", "wall mounted", "retractable", "auto rewind"],
+  "family": "hose_reel",
+  "variant": {"en": "Wall box, auto-rewind"},
+  "mount": "wall",
+  "wall_y": 0.5,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4583, "w": 0.4762, "d": 0.0833, "y": 0.2083, "h": 0.625, "color": "dark"},
+    {"shape": "rbox", "x": 0.0, "z": -0.0208, "w": 1, "d": 0.875, "y": 0.0833, "h": 0.9167, "color": "#5f6b62", "round": 0.35},
+    {"shape": "cyl", "x": 0.0, "z": 0.45, "w": 0.619, "d": 0.1, "y": 0.2917, "h": 0.5417, "color": "#6e7a70", "axis": "z"},
+    {"shape": "cyl", "x": 0.2381, "z": 0.3333, "w": 0.0952, "d": 0.1667, "y": 0.0, "h": 0.125, "color": "#2f8a3a"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

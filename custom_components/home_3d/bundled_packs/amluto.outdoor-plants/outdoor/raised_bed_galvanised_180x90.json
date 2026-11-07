@@ -1,0 +1,20 @@
+{
+  "id": "raised_bed_galvanised_180x90",
+  "name": {"en": "Raised bed, galvanised steel, 1.8 × 0.9 m"},
+  "size": [1.8, 0.9, 0.45],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["raised bed", "vegetable bed", "planter", "grow bed", "galvanised steel"],
+  "family": "raised_bed_galvanised",
+  "variant": {"en": "1.8 × 0.9 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9778, "d": 0.9556, "y": 0, "h": 0.88, "color": "#4a3626", "top": "#52392a"},
+    {"shape": "box", "x": 0.0, "z": -0.4889, "w": 1, "d": 0.0222, "y": 0, "h": 1, "color": "#a9b0b4", "top": "#bdc4c8"},
+    {"shape": "box", "x": 0.0, "z": 0.4889, "w": 1, "d": 0.0222, "y": 0, "h": 1, "color": "#a9b0b4", "top": "#bdc4c8"},
+    {"shape": "box", "x": -0.4944, "z": 0.0, "w": 0.0111, "d": 0.9556, "y": 0, "h": 1, "color": "#a9b0b4", "top": "#bdc4c8"},
+    {"shape": "box", "x": 0.4944, "z": 0.0, "w": 0.0111, "d": 0.9556, "y": 0, "h": 1, "color": "#a9b0b4", "top": "#bdc4c8"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": false}
+  ]
+}

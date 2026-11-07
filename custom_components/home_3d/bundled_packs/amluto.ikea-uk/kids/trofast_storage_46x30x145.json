@@ -1,0 +1,58 @@
+{
+  "id": "trofast_storage_46x30x145",
+  "name": {
+    "en": "Storage combination with boxes 46x30x145 cm"
+  },
+  "size": [
+    0.46,
+    0.3,
+    1.45
+  ],
+  "group": "kids",
+  "room": [
+    "kids",
+    "bedroom",
+    "hobby"
+  ],
+  "tags": [
+    "TROFAST",
+    "toy storage",
+    "storage boxes",
+    "children's storage",
+    "white",
+    "light white stained pine",
+    "grey",
+    "light blue",
+    "green",
+    "pink"
+  ],
+  "family": "trofast_storage",
+  "variant": {
+    "en": "46x30x145"
+  },
+  "ikea": "TROFAST",
+  "parts": [
+    {"shape": "box", "x": -0.4804, "z": 0.0, "w": 0.0391, "d": 1, "y": 0, "h": 1, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4804, "z": 0.0, "w": 0.0391, "d": 1, "y": 0, "h": 1, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9876, "h": 0.0124, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9217, "d": 1, "y": 0.0138, "h": 0.0124, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4833, "w": 0.9217, "d": 0.0333, "y": 0.0138, "h": 0.9862, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.46, "w": 0.9087, "d": 0.0733, "y": 0.029, "h": 0.1513, "color": "accent"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.2609, "d": 0.02, "y": 0.1155, "h": 0.0138, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.0333, "w": 0.9217, "d": 0.9333, "y": 0.183, "h": 0.011, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.46, "w": 0.9087, "d": 0.0733, "y": 0.1913, "h": 0.1513, "color": "accent"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.2609, "d": 0.02, "y": 0.2778, "h": 0.0138, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.0333, "w": 0.9217, "d": 0.9333, "y": 0.3453, "h": 0.011, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.46, "w": 0.9087, "d": 0.0733, "y": 0.3536, "h": 0.1513, "color": "accent"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.2609, "d": 0.02, "y": 0.4401, "h": 0.0138, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.0333, "w": 0.9217, "d": 0.9333, "y": 0.5076, "h": 0.011, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.46, "w": 0.9087, "d": 0.0733, "y": 0.5159, "h": 0.1513, "color": "accent"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.2609, "d": 0.02, "y": 0.6024, "h": 0.0138, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.0333, "w": 0.9217, "d": 0.9333, "y": 0.6699, "h": 0.011, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.46, "w": 0.9087, "d": 0.0733, "y": 0.6782, "h": 0.1513, "color": "accent"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.2609, "d": 0.02, "y": 0.7647, "h": 0.0138, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.0333, "w": 0.9217, "d": 0.9333, "y": 0.8322, "h": 0.011, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.46, "w": 0.9087, "d": 0.0733, "y": 0.8405, "h": 0.1513, "color": "accent"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.2609, "d": 0.02, "y": 0.927, "h": 0.0138, "color": "white", "fix": "wdh"}
+  ]
+}

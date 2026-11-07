@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "Ajoute une page dans la barre latérale où tu dessines ton logement et le vois en 3D."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Home 3D est déjà configuré."
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "Interroger la maison",
+      "description": "Transmet une phrase aux vues Home 3D ouvertes : « Montre le salon » l'affiche, et les questions reçoivent une réponse des modules installés (« Qu'est-ce qui est ouvert ? »). La première vue qui comprend la phrase répond.",
+      "fields": {
+        "text": {
+          "name": "Phrase",
+          "description": "Ce qu'il faut afficher ou demander, tel que tu le dirais."
+        },
+        "screen": {
+          "name": "Écran",
+          "description": "Seule la vue portant ce nom d'écran réagit (défini dans les paramètres de la vue ou dans l'option écran de la carte). Vide : toutes les vues ouvertes."
+        },
+        "speak": {
+          "name": "Parler",
+          "description": "La vue énonce sa réponse avec la synthèse vocale d'Assist (désactivé : elle se contente de l'afficher)."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Où Home 3D apparaît. Le lien du panneau et la carte du tableau de bord fonctionnent dans les deux cas, et tu peux toujours masquer l'entrée pour toi dans les paramètres de la barre latérale de Home Assistant.",
+        "data": {
+          "show_in_sidebar": "Afficher dans la barre latérale",
+          "restore_picture_days": "Conserver les images des points de restauration (jours)"
+        },
+        "data_description": {
+          "restore_picture_days": "Une image d'arrière-plan ou d'écran qu'un point de restauration plus ancien est seul à utiliser est conservée ce nombre de jours après la création de ce point, puis supprimée au prochain démarrage. Un point de restauration dont l'image a disparu se restaure sans elle. 0 supprime immédiatement ces images."
+        }
+      }
+    }
+  }
+}

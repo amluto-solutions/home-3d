@@ -1,0 +1,49 @@
+{
+  "id": "smastad_platsa_wardrobe_60x57x181",
+  "name": {
+    "en": "Wardrobe with 2 doors, white/birch, 60x57x181 cm"
+  },
+  "size": [
+    0.6,
+    0.57,
+    1.81
+  ],
+  "group": "kids",
+  "room": [
+    "kids",
+    "bedroom"
+  ],
+  "tags": [
+    "SMASTAD",
+    "PLATSA",
+    "wardrobe",
+    "kids wardrobe",
+    "2 doors",
+    "children's storage",
+    "white",
+    "birch effect",
+    "STUVA"
+  ],
+  "family": "smastad_storage",
+  "variant": {
+    "en": "white/birch · 60x57x181"
+  },
+  "ikea": "SMÅSTAD / PLATSA",
+  "parts": [
+    {"shape": "box", "x": -0.494, "z": 0, "w": 0.012, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.494, "z": 0, "w": 0.012, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.9901, "h": 0.0099, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.976, "d": 1, "y": 0, "h": 0.0276, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.493, "w": 0.976, "d": 0.014, "y": 0.0276, "h": 0.9624, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.976, "d": 0.0316, "y": 0.0276, "h": 0.15839999999999999, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.08, "d": 0.0386, "y": 0.155, "h": 0.0066, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.2445, "z": 0.5, "w": 0.4835, "d": 0.0316, "y": 0.19, "h": 0.27599999999999997, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": -0.2445, "z": 0.5, "w": 0.08, "d": 0.0386, "y": 0.43499999999999994, "h": 0.0066, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.2445, "z": 0.5, "w": 0.4835, "d": 0.0316, "y": 0.47, "h": 0.516, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": -0.2445, "z": 0.5, "w": 0.08, "d": 0.0386, "y": 0.955, "h": 0.0066, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.2445, "z": 0.5, "w": 0.4835, "d": 0.0316, "y": 0.19, "h": 0.27599999999999997, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": 0.2445, "z": 0.5, "w": 0.08, "d": 0.0386, "y": 0.43499999999999994, "h": 0.0066, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.2445, "z": 0.5, "w": 0.4835, "d": 0.0316, "y": 0.47, "h": 0.516, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.2445, "z": 0.5, "w": 0.08, "d": 0.0386, "y": 0.955, "h": 0.0066, "color": "metal", "fix": "wdh"}
+  ]
+}

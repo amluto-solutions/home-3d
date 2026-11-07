@@ -1,0 +1,37 @@
+{
+  "id": "lisabo_table_140x78",
+  "name": {
+    "en": "Table 140x78 cm"
+  },
+  "size": [
+    1.4,
+    0.78,
+    0.74
+  ],
+  "group": "table",
+  "room": [
+    "dining",
+    "kitchen"
+  ],
+  "tags": [
+    "dining table",
+    "ash veneer",
+    "black",
+    "splayed legs",
+    "4 seats"
+  ],
+  "family": "lisabo_table",
+  "variant": {
+    "en": "140x78"
+  },
+  "ikea": "LISABO",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.973, "h": 0.027, "color": "wood", "fix": "h"},
+    {"shape": "loft", "x": -0.4643, "z": -0.4359, "w": 0.025, "d": 0.0449, "y": 0, "h": 0.973, "color": "wood", "tx": -0.4286, "tz": -0.3718, "tw": 0.0321, "td": 0.0577, "fix": "wd"},
+    {"shape": "loft", "x": -0.4643, "z": 0.4359, "w": 0.025, "d": 0.0449, "y": 0, "h": 0.973, "color": "wood", "tx": -0.4286, "tz": 0.3718, "tw": 0.0321, "td": 0.0577, "fix": "wd"},
+    {"shape": "loft", "x": 0.4643, "z": -0.4359, "w": 0.025, "d": 0.0449, "y": 0, "h": 0.973, "color": "wood", "tx": 0.4286, "tz": -0.3718, "tw": 0.0321, "td": 0.0577, "fix": "wd"},
+    {"shape": "loft", "x": 0.4643, "z": 0.4359, "w": 0.025, "d": 0.0449, "y": 0, "h": 0.973, "color": "wood", "tx": 0.4286, "tz": 0.3718, "tw": 0.0321, "td": 0.0577, "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8429, "d": 0.7179, "y": 0.8919, "h": 0.0811, "color": "wood", "fix": "h"}
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "rack_relay_25u",
+  "name": {"en": "Relay rack 19-inch 25U"},
+  "size": [0.597, 0.6, 1.252],
+  "group": "network",
+  "room": ["office", "garage", "utility", "loft"],
+  "tags": ["19 inch", "relay rack", "2 post", "telco rack", "rack"],
+  "family": "rack_relay",
+  "variant": {"en": "25U"},
+  "mount": "floor",
+  "rack_frame": {"u": 25, "form": "frame2", "bottom": 0.1},
+  "parts": [
+    {"shape": "box", "x": -0.4111, "z": -0.0125, "w": 0.067, "d": 0.1, "y": 0, "h": 1, "color": "dark", "edges": "faint", "fix": "w"},
+    {"shape": "box", "x": 0.4111, "z": -0.0125, "w": 0.067, "d": 0.1, "y": 0, "h": 1, "color": "dark", "edges": "faint", "fix": "w"},
+    {"shape": "box", "x": -0.3909, "z": 0.05, "w": 0.0266, "d": 0.025, "y": 0.0799, "h": 0.8876, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": 0.3909, "z": 0.05, "w": 0.0266, "d": 0.025, "y": 0.0799, "h": 0.8876, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": -0.4111, "z": 0, "w": 0.134, "d": 1, "y": 0, "h": 0.0399, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0.4111, "z": 0, "w": 0.134, "d": 1, "y": 0, "h": 0.0399, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.0125, "w": 0.7552, "d": 0.1, "y": 0.9681, "h": 0.0319, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.0125, "w": 0.7552, "d": 0.1, "y": 0, "h": 0.0399, "color": "dark", "edges": "faint", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.0625, "x2": 0.5, "z2": 0.0625}
+  ]
+}

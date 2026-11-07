@@ -1,0 +1,42 @@
+{
+  "id": "trotten_desk_160x80",
+  "name": {
+    "en": "Desk 160x80 cm"
+  },
+  "size": [
+    1.6,
+    0.8,
+    0.75
+  ],
+  "group": "office",
+  "room": [
+    "office",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "TROTTEN",
+    "desk",
+    "computer desk",
+    "white",
+    "anthracite",
+    "ash effect"
+  ],
+  "family": "trotten_desk",
+  "variant": {
+    "en": "160x80"
+  },
+  "ikea": "TROTTEN",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9667, "h": 0.0333, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4375, "z": 0.0, "w": 0.025, "d": 0.85, "y": 0, "h": 0.04, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": -0.4375, "z": -0.425, "w": 0.025, "d": 0.05, "y": 0, "h": 0.9667, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4375, "z": 0.425, "w": 0.025, "d": 0.05, "y": 0, "h": 0.9667, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4375, "z": 0.0, "w": 0.025, "d": 0.85, "y": 0.9, "h": 0.0667, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.4375, "z": 0.0, "w": 0.025, "d": 0.85, "y": 0, "h": 0.04, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.4375, "z": -0.425, "w": 0.025, "d": 0.05, "y": 0, "h": 0.9667, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4375, "z": 0.425, "w": 0.025, "d": 0.05, "y": 0, "h": 0.9667, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4375, "z": 0.0, "w": 0.025, "d": 0.85, "y": 0.9, "h": 0.0667, "color": "white", "fix": "wh"}
+  ]
+}

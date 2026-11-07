@@ -1,0 +1,112 @@
+{
+  "id": "boot_tray_75",
+  "name": {
+    "en": "Boot tray, 75 cm"
+  },
+  "size": [
+    0.75,
+    0.38,
+    0.03
+  ],
+  "group": "household",
+  "room": [
+    "hall",
+    "utility",
+    "garage",
+    "porch"
+  ],
+  "tags": [
+    "boot tray",
+    "shoe tray",
+    "boots",
+    "wellies",
+    "mat",
+    "rubber",
+    "porch",
+    "drip tray"
+  ],
+  "surface": true,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 1.0,
+      "color": "dark",
+      "round": 0.3
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.9467,
+      "d": 0.8947,
+      "y": 0.2,
+      "h": 0.1333,
+      "color": "#2a2c30"
+    },
+    {
+      "shape": "box",
+      "x": -0.4,
+      "z": 0.0,
+      "w": 0.0267,
+      "d": 0.7895,
+      "y": 0.2,
+      "h": 0.4,
+      "color": "dark"
+    },
+    {
+      "shape": "box",
+      "x": -0.24,
+      "z": 0.0,
+      "w": 0.0267,
+      "d": 0.7895,
+      "y": 0.2,
+      "h": 0.4,
+      "color": "dark"
+    },
+    {
+      "shape": "box",
+      "x": -0.08,
+      "z": 0.0,
+      "w": 0.0267,
+      "d": 0.7895,
+      "y": 0.2,
+      "h": 0.4,
+      "color": "dark"
+    },
+    {
+      "shape": "box",
+      "x": 0.08,
+      "z": 0.0,
+      "w": 0.0267,
+      "d": 0.7895,
+      "y": 0.2,
+      "h": 0.4,
+      "color": "dark"
+    },
+    {
+      "shape": "box",
+      "x": 0.24,
+      "z": 0.0,
+      "w": 0.0267,
+      "d": 0.7895,
+      "y": 0.2,
+      "h": 0.4,
+      "color": "dark"
+    },
+    {
+      "shape": "box",
+      "x": 0.4,
+      "z": 0.0,
+      "w": 0.0267,
+      "d": 0.7895,
+      "y": 0.2,
+      "h": 0.4,
+      "color": "dark"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "street_light_led_1arm_black_8m",
+  "name": {"en": "Modern LED street light, black, 8 m"},
+  "size": [1.5, 0.45, 8.0],
+  "group": "lamp",
+  "room": ["garden"],
+  "tags": ["street light", "lamp post", "LED", "streetlight", "road lighting", "column", "lighting"],
+  "family": "street_light_led_1arm_black",
+  "variant": {"en": "8 m"},
+  "electric": true,
+  "light": "garden",
+  "parts": [
+    {"shape": "lathe", "x": -0.4, "z": 0.0, "w": 0.2, "d": 0.6667, "y": 0, "h": 0.0312, "color": "#26272a", "profile": [[1, 0], [1, 0.1], [0.45, 0.2], [0.4, 1], [0, 1]]},
+    {"shape": "lathe", "x": -0.4, "z": 0.0, "w": 0.1067, "d": 0.3556, "y": 0.0312, "h": 0.9688, "color": "#26272a", "profile": [[1, 0], [0.75, 0.4], [0.5, 1], [0, 1]]},
+    {"shape": "loft", "x": -0.3333, "z": 0.0, "w": 0.08, "d": 0.2667, "y": 0.9563, "h": 0.0563, "color": "#26272a", "tx": 0.2, "tz": 0.0, "tw": 0.0467, "td": 0.1556},
+    {"shape": "box", "x": 0.28, "z": 0.0, "w": 0.4133, "d": 0.5778, "y": 0.985, "h": 0.0088, "color": "#222326"},
+    {"shape": "box", "x": 0.28, "z": 0.0, "w": 0.3733, "d": 0.4889, "y": 0.9825, "h": 0.0037, "color": "#fff1c9", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.35}
+  ]
+}

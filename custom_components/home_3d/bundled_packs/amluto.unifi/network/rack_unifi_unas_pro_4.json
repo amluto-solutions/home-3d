@@ -1,0 +1,27 @@
+{
+  "id": "rack_unifi_unas_pro_4",
+  "name": {"en": "UniFi UNAS Pro 4"},
+  "size": [0.4826, 0.4, 0.0437],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "surface",
+  "tags": ["nas", "storage", "unas pro 4", "4 bay", "1u", "unifi", "ubiquiti", "rack mount", "19 inch", "rack"],
+  "family": "rack_nas",
+  "variant": {"en": "UNAS Pro 4 1U"},
+  "electric": true,
+  "watts": 150,
+  "rack": {"u": 1},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0012, "w": 0.9163, "d": 0.9975, "y": 0.0, "h": 1.0, "color": "#cfd3d8", "edges": "faint"},
+    {"shape": "box", "x": -0.4793, "z": 0.495, "w": 0.0414, "d": 0.01, "y": 0.0, "h": 1.0, "color": "#cfd3d8"},
+    {"shape": "box", "x": 0.4793, "z": 0.495, "w": 0.0414, "d": 0.01, "y": 0.0, "h": 1.0, "color": "#cfd3d8"},
+    {"shape": "box", "x": -0.3464, "z": 0.495, "w": 0.183, "d": 0.01, "y": 0.1373, "h": 0.7254, "color": "#2a2d33"},
+    {"shape": "box", "x": -0.1572, "z": 0.495, "w": 0.183, "d": 0.01, "y": 0.1373, "h": 0.7254, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.032, "z": 0.495, "w": 0.183, "d": 0.01, "y": 0.1373, "h": 0.7254, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.2212, "z": 0.495, "w": 0.183, "d": 0.01, "y": 0.1373, "h": 0.7254, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.4254, "z": 0.495, "w": 0.0083, "d": 0.01, "y": 0.8169, "h": 0.0915, "color": "accent"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

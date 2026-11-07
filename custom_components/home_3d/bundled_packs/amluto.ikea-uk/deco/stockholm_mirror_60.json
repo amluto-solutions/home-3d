@@ -1,0 +1,33 @@
+{
+  "id": "stockholm_mirror_60",
+  "name": {
+    "en": "Round mirror 60 cm"
+  },
+  "size": [
+    0.6,
+    0.1,
+    0.6
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "hall",
+    "bedroom",
+    "bath",
+    "dining"
+  ],
+  "tags": [
+    "wall mirror",
+    "round",
+    "oak veneer",
+    "walnut veneer",
+    "wooden frame"
+  ],
+  "ikea": "STOCKHOLM",
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.2, "w": 1, "d": 0.6, "y": 0, "h": 1, "color": "wood", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.125, "w": 0.9083, "d": 0.6, "y": 0.0458, "h": 0.9083, "color": "glass", "axis": "z"}
+  ]
+}

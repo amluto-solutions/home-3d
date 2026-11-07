@@ -1,0 +1,39 @@
+{
+  "id": "franklin_bar_stool_63",
+  "name": {
+    "en": "Bar stool with backrest, foldable, 63 cm"
+  },
+  "size": [
+    0.5,
+    0.44,
+    0.95
+  ],
+  "group": "seating",
+  "room": [
+    "kitchen",
+    "dining"
+  ],
+  "tags": [
+    "bar stool",
+    "counter stool",
+    "folding stool",
+    "kitchen stool",
+    "counter height",
+    "black",
+    "white"
+  ],
+  "ikea": "FRANKLIN",
+  "parts": [
+    {"shape": "loft", "x": -0.475, "z": -0.4716, "w": 0.05, "d": 0.0568, "y": 0, "h": 0.6316, "color": "dark", "tx": -0.355, "tz": -0.3352, "tw": 0.05, "td": 0.0568, "fix": "wd"},
+    {"shape": "loft", "x": -0.475, "z": 0.4716, "w": 0.05, "d": 0.0568, "y": 0, "h": 0.6316, "color": "dark", "tx": -0.355, "tz": 0.3352, "tw": 0.05, "td": 0.0568, "fix": "wd"},
+    {"shape": "loft", "x": 0.475, "z": -0.4716, "w": 0.05, "d": 0.0568, "y": 0, "h": 0.6316, "color": "dark", "tx": 0.355, "tz": -0.3352, "tw": 0.05, "td": 0.0568, "fix": "wd"},
+    {"shape": "loft", "x": 0.475, "z": 0.4716, "w": 0.05, "d": 0.0568, "y": 0, "h": 0.6316, "color": "dark", "tx": 0.355, "tz": 0.3352, "tw": 0.05, "td": 0.0568, "fix": "wd"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0227, "w": 0.72, "d": 0.7727, "y": 0.6316, "h": 0.0316, "color": "dark", "round": 0.4},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.0455, "y": 0.2632, "h": 0.0211, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.04, "d": 0.7273, "y": 0.2632, "h": 0.0211, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4091, "w": 0.84, "d": 0.0455, "y": 0.2632, "h": 0.0211, "color": "dark", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": -0.3636, "w": 0.68, "d": 0.0682, "y": 0.8737, "h": 0.1053, "color": "dark", "tz": -0.4318, "tw": 0.72, "td": 0.0682},
+    {"shape": "loft", "x": -0.3, "z": -0.3182, "w": 0.04, "d": 0.0455, "y": 0.6632, "h": 0.2526, "color": "dark", "tz": -0.3864, "tw": 0.04, "td": 0.0455, "fix": "wd"},
+    {"shape": "loft", "x": 0.3, "z": -0.3182, "w": 0.04, "d": 0.0455, "y": 0.6632, "h": 0.2526, "color": "dark", "tz": -0.3864, "tw": 0.04, "td": 0.0455, "fix": "wd"}
+  ]
+}

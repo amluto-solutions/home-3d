@@ -1,0 +1,25 @@
+{
+  "id": "bread_bin_roll_top_cream",
+  "name": {"en": "Bread bin, roll top, cream"},
+  "size": [0.39, 0.27, 0.19],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "tags": ["bread bin", "bread box", "bread", "kitchen", "worktop"],
+  "family": "bread_bin",
+  "variant": {"en": "Roll top, cream"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#eae3cf", "round": 0.18},
+    {"shape": "box", "x": 0.0, "z": 0.4926, "w": 0.88, "d": 0.0222, "y": 0.14, "h": 0.07, "color": "#d9d1bb", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4926, "w": 0.88, "d": 0.0222, "y": 0.225, "h": 0.07, "color": "#d9d1bb", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4926, "w": 0.88, "d": 0.0222, "y": 0.31, "h": 0.07, "color": "#d9d1bb", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4926, "w": 0.88, "d": 0.0222, "y": 0.395, "h": 0.07, "color": "#d9d1bb", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4926, "w": 0.88, "d": 0.0222, "y": 0.48, "h": 0.07, "color": "#d9d1bb", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4926, "w": 0.88, "d": 0.0222, "y": 0.565, "h": 0.07, "color": "#d9d1bb", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4926, "w": 0.88, "d": 0.0222, "y": 0.65, "h": 0.07, "color": "#d9d1bb", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.1538, "d": 0.0593, "y": 0.8, "h": 0.0632, "color": "#25272b", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "lack_tv_bench_90",
+  "name": {
+    "en": "TV bench 90 cm"
+  },
+  "size": [
+    0.9,
+    0.36,
+    0.45
+  ],
+  "group": "media",
+  "room": [
+    "living",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "tv stand",
+    "tv unit",
+    "media unit",
+    "low",
+    "open shelves",
+    "white",
+    "black-brown",
+    "white stained oak effect",
+    "oak effect"
+  ],
+  "family": "lack_tv_bench",
+  "variant": {
+    "en": "90x36x45"
+  },
+  "ikea": "LACK",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8889, "h": 0.1111, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4722, "z": -0.4306, "w": 0.0556, "d": 0.1389, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4722, "z": 0.4306, "w": 0.0556, "d": 0.1389, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4722, "z": -0.4306, "w": 0.0556, "d": 0.1389, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4722, "z": 0.4306, "w": 0.0556, "d": 0.1389, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8889, "d": 0.7222, "y": 0.1778, "h": 0.0667, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8889, "d": 0.7222, "y": 0.5111, "h": 0.0444, "color": "white", "fix": "h"}
+  ]
+}

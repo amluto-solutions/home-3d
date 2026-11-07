@@ -1,0 +1,26 @@
+{
+  "id": "xbox_one_s_flat",
+  "name": {"en": "Xbox One S"},
+  "size": [0.2946, 0.2286, 0.0635],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["xbox one s", "xbox one", "xbox", "microsoft", "gaming", "console", "games console", "one s"],
+  "family": "xbox_one_s",
+  "variant": {"en": " flat"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 70,
+  "parts": [
+    {"shape": "cyl", "x": -0.3982, "z": -0.3688, "w": 0.0679, "d": 0.0875, "y": 0.0, "h": 0.0945, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3982, "z": 0.3688, "w": 0.0679, "d": 0.0875, "y": 0.0, "h": 0.0945, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3982, "z": -0.3688, "w": 0.0679, "d": 0.0875, "y": 0.0, "h": 0.0945, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3982, "z": 0.3688, "w": 0.0679, "d": 0.0875, "y": 0.0, "h": 0.0945, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0945, "h": 0.9055, "color": "white", "round": 0.12},
+    {"shape": "box", "x": -0.12, "z": 0.4934, "w": 0.45, "d": 0.0131, "y": 0.5925, "h": 0.0634, "color": "#101114"},
+    {"shape": "box", "x": 0.34, "z": 0.4934, "w": 0.18, "d": 0.0131, "y": 0.2756, "h": 0.0472, "color": "white", "edges": "faint"},
+    {"shape": "cyl", "x": 0.43, "z": 0.4934, "w": 0.0429, "d": 0.0131, "y": 0.2756, "h": 0.1992, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

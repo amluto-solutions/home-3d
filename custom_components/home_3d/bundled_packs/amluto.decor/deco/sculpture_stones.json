@@ -1,0 +1,18 @@
+{
+  "id": "sculpture_stones",
+  "name": {"en": "Stacked stones"},
+  "size": [0.2, 0.16, 0.3],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "hall", "office", "garden", "conservatory"],
+  "tags": ["sculpture", "cairn", "zen", "balancing stones", "pebbles", "ornament", "decor", "stone"],
+  "family": "sculpture_stones",
+  "variant": {"en": "Cairn of 4"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "sphere", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 0.2667, "color": "#8d8a84"},
+    {"shape": "sphere", "x": 0.05, "z": 0, "w": 0.8, "d": 0.8125, "y": 0.2333, "h": 0.2333, "color": "#a4a09a"},
+    {"shape": "sphere", "x": -0.05, "z": 0.0625, "w": 0.6, "d": 0.625, "y": 0.4333, "h": 0.2, "color": "#77746e"},
+    {"shape": "sphere", "x": 0, "z": 0, "w": 0.4, "d": 0.4375, "y": 0.6167, "h": 0.1667, "color": "#b5b1a8"},
+    {"shape": "sphere", "x": 0, "z": 0, "w": 0.2, "d": 0.2188, "y": 0.8, "h": 0.1167, "color": "#8d8a84"}
+  ]
+}

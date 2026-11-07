@@ -1,0 +1,18 @@
+{
+  "id": "plant_stand_mid_century",
+  "name": {"en": "Plant stand with pot"},
+  "size": [0.36, 0.36, 0.72],
+  "group": "table",
+  "family": "plant_stand",
+  "variant": {"en": "Mid-century, with pot"},
+  "room": ["living", "bedroom", "office", "conservatory"],
+  "tags": ["plant stand", "mid-century", "retro", "pot holder", "planter", "flower stand", "splayed legs"],
+  "parts": [
+    {"shape": "loft", "x": -0.4444, "z": -0.4444, "w": 0.0667, "d": 0.0667, "y": 0.0, "h": 0.5, "color": "wood", "tx": -0.3056, "tz": -0.3056, "tw": 0.0667, "td": 0.0667},
+    {"shape": "loft", "x": -0.4444, "z": 0.4444, "w": 0.0667, "d": 0.0667, "y": 0.0, "h": 0.5, "color": "wood", "tx": -0.3056, "tz": 0.3056, "tw": 0.0667, "td": 0.0667},
+    {"shape": "loft", "x": 0.4444, "z": -0.4444, "w": 0.0667, "d": 0.0667, "y": 0.0, "h": 0.5, "color": "wood", "tx": 0.3056, "tz": -0.3056, "tw": 0.0667, "td": 0.0667},
+    {"shape": "loft", "x": 0.4444, "z": 0.4444, "w": 0.0667, "d": 0.0667, "y": 0.0, "h": 0.5, "color": "wood", "tx": 0.3056, "tz": 0.3056, "tw": 0.0667, "td": 0.0667},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.8333, "d": 0.8333, "y": 0.2778, "h": 0.3333, "color": "pot", "profile": [[0, 0], [0.75, 0], [0.9, 0.5], [1, 1], [0, 1]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.9444, "d": 0.9444, "y": 0.5556, "h": 0.4444, "color": "plant"}
+  ]
+}

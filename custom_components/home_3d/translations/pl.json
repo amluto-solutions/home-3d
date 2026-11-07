@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "Dodaje stronę na pasku bocznym, na której rysujesz swój dom i widzisz go w 3D."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Home 3D jest już skonfigurowany."
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "Zapytaj dom",
+      "description": "Przekazuje zdanie otwartym widokom Home 3D: „Pokaż salon” pokazuje go, a na pytania odpowiadają zainstalowane moduły („Co jest otwarte?”). Odpowiada pierwszy widok, który rozumie zdanie.",
+      "fields": {
+        "text": {
+          "name": "Zdanie",
+          "description": "Co pokazać lub o co zapytać, tak jak byś to powiedział."
+        },
+        "screen": {
+          "name": "Ekran",
+          "description": "Reaguje tylko widok o tej nazwie ekranu (ustawianej w ustawieniach widoku lub w opcji ekranu karty). Puste: wszystkie otwarte widoki."
+        },
+        "speak": {
+          "name": "Mów",
+          "description": "Widok wypowiada odpowiedź za pomocą syntezatora mowy Assist (wyłączone: tylko ją wyświetla)."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Gdzie pojawia się Home 3D. Link w panelu i karta na pulpicie działają w obu przypadkach, a wpis możesz nadal ukryć dla siebie w ustawieniach paska bocznego Home Assistant.",
+        "data": {
+          "show_in_sidebar": "Pokaż na pasku bocznym",
+          "restore_picture_days": "Zachowuj obrazy punktów przywracania (dni)"
+        },
+        "data_description": {
+          "restore_picture_days": "Tło lub obraz ekranu, którego używa tylko starszy punkt przywracania, jest zachowywane tyle dni po jego utworzeniu, a potem usuwane przy następnym uruchomieniu. Punkt przywracania, którego obrazu już nie ma, przywraca się bez niego. 0 usuwa takie obrazy od razu."
+        }
+      }
+    }
+  }
+}

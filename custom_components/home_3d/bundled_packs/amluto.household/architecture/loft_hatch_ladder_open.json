@@ -1,0 +1,30 @@
+{
+  "id": "loft_hatch_ladder_open",
+  "name": {"en": "Loft hatch with ladder"},
+  "size": [0.7, 2, 2.45],
+  "group": "architecture",
+  "room": ["hall", "bedroom", "kids", "loft"],
+  "tags": ["loft hatch", "loft ladder", "attic ladder", "loft access", "roof space", "folding ladder", "sliding ladder", "open", "stairs", "attic"],
+  "family": "loft_hatch",
+  "variant": {"en": "Open, with ladder down"},
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.4, "w": 0.8857, "d": 0.03, "y": 0.9837, "h": 0.0163, "color": "white"},
+    {"shape": "box", "x": 0, "z": -0.26, "w": 0.8857, "d": 0.03, "y": 0.9837, "h": 0.0163, "color": "white"},
+    {"shape": "box", "x": -0.4429, "z": -0.33, "w": 0.0857, "d": 0.17, "y": 0.9837, "h": 0.0163, "color": "white"},
+    {"shape": "box", "x": 0.4429, "z": -0.33, "w": 0.0857, "d": 0.17, "y": 0.9837, "h": 0.0163, "color": "white"},
+    {"shape": "loft", "x": 0, "z": -0.31, "w": 0.8, "d": 0.015, "y": 0.8163, "h": 0.1673, "color": "#ece9e1", "tx": 0, "tz": -0.4, "tw": 0.8, "td": 0.015},
+    {"shape": "loft", "x": -0.3286, "z": 0.475, "w": 0.0571, "d": 0.02, "y": 0, "h": 0.9755, "color": "wood", "tx": -0.3286, "tz": -0.225, "tw": 0.0571, "td": 0.02},
+    {"shape": "loft", "x": 0.3286, "z": 0.475, "w": 0.0571, "d": 0.02, "y": 0, "h": 0.9755, "color": "wood", "tx": 0.3286, "tz": -0.225, "tw": 0.0571, "td": 0.02},
+    {"shape": "box", "x": 0, "z": 0.475, "w": 0.7143, "d": 0.03, "y": 0, "h": 0.0122, "color": "#2c2f33"},
+    {"shape": "box", "x": 0, "z": 0.405, "w": 0.6, "d": 0.035, "y": 0.0976, "h": 0.0102, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0.335, "w": 0.6, "d": 0.035, "y": 0.1951, "h": 0.0102, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0.265, "w": 0.6, "d": 0.035, "y": 0.2927, "h": 0.0102, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0.195, "w": 0.6, "d": 0.035, "y": 0.3902, "h": 0.0102, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0.125, "w": 0.6, "d": 0.035, "y": 0.4878, "h": 0.0102, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0.055, "w": 0.6, "d": 0.035, "y": 0.5853, "h": 0.0102, "color": "wood"},
+    {"shape": "box", "x": 0, "z": -0.015, "w": 0.6, "d": 0.035, "y": 0.6829, "h": 0.0102, "color": "wood"},
+    {"shape": "box", "x": 0, "z": -0.085, "w": 0.6, "d": 0.035, "y": 0.7804, "h": 0.0102, "color": "wood"},
+    {"shape": "box", "x": 0, "z": -0.155, "w": 0.6, "d": 0.035, "y": 0.878, "h": 0.0102, "color": "wood"}
+  ]
+}

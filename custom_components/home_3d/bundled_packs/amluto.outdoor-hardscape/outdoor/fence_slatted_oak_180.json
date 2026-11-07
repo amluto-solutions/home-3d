@@ -1,0 +1,31 @@
+{
+  "id": "fence_slatted_oak_180",
+  "name": {"en": "Horizontal slatted fence, oak, 1.8 m high"},
+  "size": [1.83, 0.1, 1.8],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["fence", "slatted", "contemporary fence", "composite", "horizontal", "boundary", "modern"],
+  "family": "fence_slatted_oak",
+  "variant": {"en": "1.8 m high"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.0167, "h": 0.0753, "color": "#a8794a"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.0986, "h": 0.0753, "color": "#af7e4d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.1806, "h": 0.0753, "color": "#a8794a"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.2625, "h": 0.0753, "color": "#af7e4d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.3444, "h": 0.0753, "color": "#a8794a"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.4264, "h": 0.0753, "color": "#af7e4d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.5083, "h": 0.0753, "color": "#a8794a"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.5903, "h": 0.0753, "color": "#af7e4d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.6722, "h": 0.0753, "color": "#a8794a"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.7542, "h": 0.0753, "color": "#af7e4d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.8361, "h": 0.0753, "color": "#a8794a"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.9181, "h": 0.0753, "color": "#af7e4d"},
+    {"shape": "box", "x": -0.4727, "z": 0.0, "w": 0.0546, "d": 1, "y": 0, "h": 1, "color": "#765534", "fix": "wd"},
+    {"shape": "box", "x": -0.4727, "z": 0.0, "w": 0.0546, "d": 1, "y": 0.9833, "h": 0.0167, "color": "#88623c", "fix": "wdh"},
+    {"shape": "box", "x": 0.4727, "z": 0.0, "w": 0.0546, "d": 1, "y": 0, "h": 1, "color": "#765534", "fix": "wd"},
+    {"shape": "box", "x": 0.4727, "z": 0.0, "w": 0.0546, "d": 1, "y": 0.9833, "h": 0.0167, "color": "#88623c", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

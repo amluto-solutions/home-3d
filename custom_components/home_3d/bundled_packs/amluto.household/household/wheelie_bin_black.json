@@ -1,0 +1,24 @@
+{
+  "id": "wheelie_bin_black",
+  "name": {"en": "Wheelie bin"},
+  "size": [0.58, 0.74, 1.07],
+  "group": "household",
+  "room": ["garden", "garage"],
+  "tags": ["bin", "rubbish bin", "dustbin", "refuse", "recycling", "garden waste", "general waste", "outdoor bin", "bin day"],
+  "family": "wheelie_bin",
+  "variant": {"en": "Black, general waste"},
+  "parts": [
+    {"shape": "loft", "x": 0.0, "z": 0.027, "w": 0.8276, "d": 0.7568, "y": 0.0467, "h": 0.8879, "color": "#2b2b2b", "tx": 0.0, "tz": 0.0, "tw": 0.9655, "td": 0.8649},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9189, "y": 0.9346, "h": 0.0327, "color": "#2b2b2b", "edges": "faint"},
+    {"shape": "loft", "x": 0.0, "z": 0.4527, "w": 1, "d": 0.0135, "y": 0.8972, "h": 0.0374, "color": "#2b2b2b", "tx": 0.0, "tz": 0.4595, "tw": 1, "td": 0.027},
+    {"shape": "cyl", "x": 0.0, "z": -0.4595, "w": 0.7931, "d": 0.0541, "y": 0.9065, "h": 0.0327, "color": "#2b2b2b", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3649, "w": 0.931, "d": 0.0405, "y": 0.0748, "h": 0.028, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": -0.4483, "z": -0.3649, "w": 0.0862, "d": 0.2703, "y": 0.0, "h": 0.1869, "color": "dark", "axis": "x", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4483, "z": -0.3649, "w": 0.0862, "d": 0.2703, "y": 0.0, "h": 0.1869, "color": "dark", "axis": "x", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.3649, "w": 0.3448, "d": 0.0811, "y": 0.0, "h": 0.0561, "color": "#2b2b2b"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.5, "z1": -0.4189, "x2": 0.5, "z2": -0.4189}
+  ]
+}

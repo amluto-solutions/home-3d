@@ -1,0 +1,28 @@
+{
+  "id": "trophy_cup_silver_medium",
+  "name": {"en": "Trophy cup, silver, medium"},
+  "size": [0.16, 0.16, 0.3],
+  "group": "deco",
+  "room": ["living", "office", "hall", "study", "games", "dining"],
+  "tags": ["trophy", "award", "prize", "silver", "cup", "champion", "winner", "loving cup"],
+  "family": "trophy_cup_silver",
+  "variant": {"en": "Medium"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.077, "color": "#2a2420", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.8, "y": 0.077, "h": 0.063, "color": "#3a312b", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.4, "d": 0.025, "y": 0.028, "h": 0.042, "color": "#d4af37", "fix": "wdh"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.3, "d": 0.3, "y": 0.14, "h": 0.28, "color": "#c7cbd1", "profile": [[0.6, 0], [1, 0], [0.4, 0.5], [0.3, 1], [0, 1]]},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.62, "d": 0.62, "y": 0.4, "h": 0.5, "color": "#c7cbd1", "profile": [[0, 0], [0.4, 0], [0.8, 0.35], [1, 1], [0.9, 1], [0.75, 0.5], [0, 0.4]]},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.5, "d": 0.5, "y": 0.88, "h": 0.12, "color": "#c7cbd1", "profile": [[0, 0], [1, 0], [0.7, 0.6], [0.15, 0.9], [0, 1]]},
+    {"shape": "box", "x": -0.4, "z": 0.0, "w": 0.05, "d": 0.05, "y": 0.64, "h": 0.16, "color": "#c7cbd1", "fix": "wd"},
+    {"shape": "box", "x": -0.34, "z": 0.0, "w": 0.12, "d": 0.05, "y": 0.76, "h": 0.04, "color": "#c7cbd1", "fix": "wd"},
+    {"shape": "box", "x": -0.34, "z": 0.0, "w": 0.12, "d": 0.05, "y": 0.62, "h": 0.04, "color": "#c7cbd1", "fix": "wd"},
+    {"shape": "box", "x": 0.4, "z": 0.0, "w": 0.05, "d": 0.05, "y": 0.64, "h": 0.16, "color": "#c7cbd1", "fix": "wd"},
+    {"shape": "box", "x": 0.34, "z": 0.0, "w": 0.12, "d": 0.05, "y": 0.76, "h": 0.04, "color": "#c7cbd1", "fix": "wd"},
+    {"shape": "box", "x": 0.34, "z": 0.0, "w": 0.12, "d": 0.05, "y": 0.62, "h": 0.04, "color": "#c7cbd1", "fix": "wd"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

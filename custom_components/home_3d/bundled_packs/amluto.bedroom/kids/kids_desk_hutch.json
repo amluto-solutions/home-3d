@@ -1,0 +1,24 @@
+{
+  "id": "kids_desk_hutch",
+  "name": {"en": "Kids desk"},
+  "size": [0.9, 0.5, 1.1],
+  "group": "kids",
+  "family": "kids_desk",
+  "variant": {"en": "With shelves"},
+  "room": ["kids", "bedroom"],
+  "tags": ["kids desk", "children's desk", "homework desk", "study desk", "small desk", "shelves", "hutch"],
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.5045, "h": 0.0227, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4889, "z": 0.0, "w": 0.0222, "d": 0.92, "y": 0.0, "h": 0.5045, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4889, "z": 0.0, "w": 0.0222, "d": 0.92, "y": 0.0, "h": 0.5045, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.44, "w": 0.9556, "d": 0.04, "y": 0.4182, "h": 0.0864, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.1944, "z": 0.48, "w": 0.2778, "d": 0.04, "y": 0.4273, "h": 0.0682, "color": "#f2c14e", "fix": "h"},
+    {"shape": "box", "x": 0.1944, "z": 0.497, "w": 0.0556, "d": 0.006, "y": 0.4545, "h": 0.0136, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.445, "w": 0.9556, "d": 0.03, "y": 0.0545, "h": 0.1273, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4889, "z": -0.28, "w": 0.0222, "d": 0.44, "y": 0.5273, "h": 0.4727, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4889, "z": -0.28, "w": 0.0222, "d": 0.44, "y": 0.5273, "h": 0.4727, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.28, "w": 0.9556, "d": 0.44, "y": 0.9818, "h": 0.0182, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.28, "w": 0.9556, "d": 0.44, "y": 0.7273, "h": 0.0182, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.49, "w": 0.9556, "d": 0.02, "y": 0.5273, "h": 0.4545, "color": "#4f86c6", "fix": "d"}
+  ]
+}

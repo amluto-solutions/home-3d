@@ -1,0 +1,11 @@
+{
+  "format": "home3d-pack",
+  "version": 2,
+  "id": "amluto.living",
+  "name": "Living",
+  "publisher": "Amluto Solutions",
+  "licence": "MIT",
+  "release": 5,
+  "description": "Sofas, seating, tables, lamps and media furniture for the living room, modelled for Home 3D from simple shapes. Ships with the app and works offline.",
+  "release_note": "Release 5: the pack's id is now amluto.living (it was theovencook.living); plans that name the old id still load (#424)."
+}

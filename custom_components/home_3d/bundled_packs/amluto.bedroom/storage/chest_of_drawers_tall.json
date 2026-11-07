@@ -1,0 +1,47 @@
+{
+  "id": "chest_of_drawers_tall",
+  "name": {
+    "en": "5-drawer tallboy"
+  },
+  "size": [
+    0.6,
+    0.45,
+    1.2
+  ],
+  "group": "storage",
+  "family": "chest_of_drawers",
+  "variant": {
+    "en": "Tallboy · 5 drawers"
+  },
+  "room": [
+    "bedroom",
+    "kids",
+    "hall",
+    "living"
+  ],
+  "tags": [
+    "chest",
+    "bedroom furniture",
+    "tallboy",
+    "tall chest"
+  ],
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.0222, "w": 0.9333, "d": 0.8667, "y": 0, "h": 0.05, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.0222, "w": 1.0, "d": 0.9556, "y": 0.05, "h": 0.9292, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.9792, "h": 0.0208, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.4778, "w": 0.9533, "d": 0.0444, "y": 0.792, "h": 0.1805, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4989, "w": 0.2333, "d": 0.0022, "y": 0.9242, "h": 0.0133, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0.4778, "w": 0.9533, "d": 0.0444, "y": 0.6082, "h": 0.1805, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4989, "w": 0.2333, "d": 0.0022, "y": 0.7403, "h": 0.0133, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0.4778, "w": 0.9533, "d": 0.0444, "y": 0.4243, "h": 0.1805, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4989, "w": 0.2333, "d": 0.0022, "y": 0.5565, "h": 0.0133, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0.4778, "w": 0.9533, "d": 0.0444, "y": 0.2405, "h": 0.1805, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4989, "w": 0.2333, "d": 0.0022, "y": 0.3727, "h": 0.0133, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0.4778, "w": 0.9533, "d": 0.0444, "y": 0.0567, "h": 0.1805, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4989, "w": 0.2333, "d": 0.0022, "y": 0.1888, "h": 0.0133, "color": "metal", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.45, "x2": 0.5, "z2": 0.45}
+  ]
+}

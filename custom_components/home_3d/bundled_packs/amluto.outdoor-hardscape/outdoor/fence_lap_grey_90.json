@@ -1,0 +1,27 @@
+{
+  "id": "fence_lap_grey_90",
+  "name": {"en": "Lap fence panel, grey, 0.9 m high"},
+  "size": [1.83, 0.1, 0.9],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["fence", "fence panel", "lap panel", "overlap", "garden fencing", "boundary", "timber"],
+  "family": "fence_lap_grey",
+  "variant": {"en": "0.9 m high"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.3, "w": 0.9016, "d": 0.3, "y": 0.1333, "h": 0.0556, "color": "#6c6c68"},
+    {"shape": "box", "x": 0.0, "z": -0.3, "w": 0.9016, "d": 0.3, "y": 0.5, "h": 0.0556, "color": "#6c6c68"},
+    {"shape": "box", "x": 0.0, "z": -0.3, "w": 0.9016, "d": 0.3, "y": 0.8333, "h": 0.0556, "color": "#6c6c68"},
+    {"shape": "box", "x": 0.0, "z": 0.15, "w": 0.9016, "d": 0.4, "y": 0.0444, "h": 0.1889, "color": "#9a9a94"},
+    {"shape": "box", "x": 0.0, "z": 0.19, "w": 0.9016, "d": 0.4, "y": 0.2222, "h": 0.1889, "color": "#a3a39d"},
+    {"shape": "box", "x": 0.0, "z": 0.15, "w": 0.9016, "d": 0.4, "y": 0.4, "h": 0.1889, "color": "#9a9a94"},
+    {"shape": "box", "x": 0.0, "z": 0.19, "w": 0.9016, "d": 0.4, "y": 0.5778, "h": 0.1889, "color": "#a3a39d"},
+    {"shape": "box", "x": 0.0, "z": 0.15, "w": 0.9016, "d": 0.4, "y": 0.7556, "h": 0.1889, "color": "#9a9a94"},
+    {"shape": "box", "x": -0.4754, "z": 0.0, "w": 0.0492, "d": 0.9, "y": 0, "h": 1, "color": "#7b7b76", "fix": "wd"},
+    {"shape": "box", "x": -0.4754, "z": 0.0, "w": 0.0492, "d": 0.9, "y": 0.9667, "h": 0.0333, "color": "#8d8d88", "fix": "wdh"},
+    {"shape": "box", "x": 0.4754, "z": 0.0, "w": 0.0492, "d": 0.9, "y": 0, "h": 1, "color": "#7b7b76", "fix": "wd"},
+    {"shape": "box", "x": 0.4754, "z": 0.0, "w": 0.0492, "d": 0.9, "y": 0.9667, "h": 0.0333, "color": "#8d8d88", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

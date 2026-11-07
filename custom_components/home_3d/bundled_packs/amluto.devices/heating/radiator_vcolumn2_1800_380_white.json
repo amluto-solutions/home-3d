@@ -1,0 +1,58 @@
+{
+  "id": "radiator_vcolumn2_1800_380_white",
+  "name": {
+    "en": "2-column vertical radiator"
+  },
+  "size": [
+    0.38,
+    0.1,
+    1.84
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "kitchen",
+    "hall",
+    "office",
+    "kids",
+    "bath",
+    "utility",
+    "conservatory"
+  ],
+  "tags": [
+    "radiator",
+    "column radiator",
+    "2 column",
+    "traditional",
+    "central heating",
+    "white",
+    "trv",
+    "vertical radiator",
+    "tall radiator"
+  ],
+  "family": "radiator_vcolumn2",
+  "variant": {
+    "en": "1800 × 380 mm, white"
+  },
+  "mount": "wall",
+  "wall_y": 0.11,
+  "parts": [
+    {"shape": "rbox", "x": -0.4145, "z": 0.0, "w": 0.0971, "d": 0.92, "y": 0.0543, "h": 0.913, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.2961, "z": 0.0, "w": 0.0971, "d": 0.92, "y": 0.0543, "h": 0.913, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.1776, "z": 0.0, "w": 0.0971, "d": 0.92, "y": 0.0543, "h": 0.913, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.0592, "z": 0.0, "w": 0.0971, "d": 0.92, "y": 0.0543, "h": 0.913, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.0592, "z": 0.0, "w": 0.0971, "d": 0.92, "y": 0.0543, "h": 0.913, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.1776, "z": 0.0, "w": 0.0971, "d": 0.92, "y": 0.0543, "h": 0.913, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.2961, "z": 0.0, "w": 0.0971, "d": 0.92, "y": 0.0543, "h": 0.913, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.4145, "z": 0.0, "w": 0.0971, "d": 0.92, "y": 0.0543, "h": 0.913, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.96, "y": 0.9674, "h": 0.0326, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.96, "y": 0.0217, "h": 0.0326, "color": "white", "round": 0.4},
+    {"shape": "box", "x": -0.3, "z": -0.4, "w": 0.0526, "d": 0.2, "y": 0.5109, "h": 0.0326, "color": "metal"},
+    {"shape": "box", "x": 0.3, "z": -0.4, "w": 0.0526, "d": 0.2, "y": 0.5109, "h": 0.0326, "color": "metal"},
+    {"shape": "cyl", "x": -0.3684, "z": -0.3, "w": 0.0579, "d": 0.22, "y": 0.0, "h": 0.0272, "color": "metal"},
+    {"shape": "cyl", "x": 0.3684, "z": -0.3, "w": 0.0579, "d": 0.22, "y": 0.0, "h": 0.0272, "color": "metal"},
+    {"shape": "cyl", "x": 0.3684, "z": -0.15, "w": 0.0921, "d": 0.35, "y": 0.0065, "h": 0.0152, "color": "metal"},
+    {"shape": "cyl", "x": 0.3684, "z": -0.15, "w": 0.0789, "d": 0.4, "y": 0.0076, "h": 0.013, "color": "accent"}
+  ]
+}

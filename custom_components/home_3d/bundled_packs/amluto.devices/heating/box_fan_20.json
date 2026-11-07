@@ -1,0 +1,78 @@
+{
+  "id": "box_fan_20",
+  "name": {
+    "en": "Box fan"
+  },
+  "size": [
+    0.54,
+    0.12,
+    0.57
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "kids",
+    "garage",
+    "hobby"
+  ],
+  "tags": [
+    "fan",
+    "cooling",
+    "summer",
+    "air movement",
+    "box fan",
+    "window fan",
+    "20 inch"
+  ],
+  "family": "box_fan",
+  "variant": {
+    "en": "50 cm (20 in)"
+  },
+  "electric": true,
+  "watts": 55,
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 1.0,
+      "color": "white"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.4583,
+      "w": 0.8889,
+      "d": 0.0833,
+      "y": 0.0789,
+      "h": 0.8421,
+      "color": "dark",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.4833,
+      "w": 0.1481,
+      "d": 0.1,
+      "y": 0.4649,
+      "h": 0.1404,
+      "color": "metal",
+      "axis": "z"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    }
+  ]
+}

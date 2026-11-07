@@ -1,0 +1,50 @@
+{
+  "id": "radiator_single_600_1000",
+  "name": {
+    "en": "Single panel radiator"
+  },
+  "size": [
+    1.0,
+    0.065,
+    0.64
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "kitchen",
+    "hall",
+    "office",
+    "kids",
+    "bath",
+    "utility",
+    "conservatory"
+  ],
+  "tags": [
+    "radiator",
+    "panel radiator",
+    "central heating",
+    "trv",
+    "type 11",
+    "k1",
+    "600 x 1000"
+  ],
+  "family": "radiator_single_panel",
+  "variant": {
+    "en": "600 × 1000 mm"
+  },
+  "mount": "wall",
+  "wall_y": 0.11,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.3154, "w": 1.0, "d": 0.3692, "y": 0.0625, "h": 0.9375, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.2231, "w": 0.96, "d": 0.5231, "y": 0.1094, "h": 0.8438, "color": "#e3e3de"},
+    {"shape": "box", "x": -0.494, "z": 0.0, "w": 0.012, "d": 0.97, "y": 0.0625, "h": 0.9375, "color": "#ececE7"},
+    {"shape": "box", "x": 0.494, "z": 0.0, "w": 0.012, "d": 0.97, "y": 0.0625, "h": 0.9375, "color": "#ececE7"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.9719, "h": 0.0281, "color": "white", "top": "#e9e9e4"},
+    {"shape": "box", "x": 0.0, "z": 0.12, "w": 0.95, "d": 0.5, "y": 0.9953, "h": 0.0047, "color": "dark"},
+    {"shape": "cyl", "x": -0.45, "z": -0.1923, "w": 0.022, "d": 0.3385, "y": 0.0, "h": 0.0781, "color": "metal"},
+    {"shape": "cyl", "x": 0.45, "z": -0.1923, "w": 0.022, "d": 0.3385, "y": 0.0, "h": 0.0781, "color": "metal"},
+    {"shape": "cyl", "x": 0.45, "z": 0.0385, "w": 0.035, "d": 0.5385, "y": 0.0187, "h": 0.0437, "color": "metal"},
+    {"shape": "cyl", "x": 0.45, "z": 0.0385, "w": 0.03, "d": 0.6154, "y": 0.0219, "h": 0.0375, "color": "accent"}
+  ]
+}

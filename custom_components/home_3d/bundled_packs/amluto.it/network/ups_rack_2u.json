@@ -1,0 +1,21 @@
+{
+  "id": "ups_rack_2u",
+  "name": {"en": "UPS, 2U rack"},
+  "size": [0.438, 0.4, 0.088],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage", "hobby"],
+  "tags": ["ups", "uninterruptible power", "battery backup", "surge", "apc", "power protection"],
+  "family": "ups",
+  "variant": {"en": "2U rack"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.495, "w": 0.863, "d": 0.01, "y": 0.1136, "h": 0.7727, "color": "#26282c"},
+    {"shape": "box", "x": 0.0, "z": 0.4975, "w": 0.274, "d": 0.005, "y": 0.5455, "h": 0.2273, "color": "#7fe3ff", "glow": true},
+    {"shape": "cyl", "x": 0.363, "z": 0.495, "w": 0.0365, "d": 0.01, "y": 0.5, "h": 0.1818, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "glattis_tray_38",
+  "name": {
+    "en": "Tray, brass-colour 38 cm"
+  },
+  "size": [
+    0.38,
+    0.38,
+    0.02
+  ],
+  "group": "tray",
+  "room": [
+    "living",
+    "dining",
+    "kitchen",
+    "bedroom",
+    "bath"
+  ],
+  "tags": [
+    "GLATTIS",
+    "tray",
+    "round tray",
+    "serving tray",
+    "brass-colour",
+    "metal",
+    "decorative tray"
+  ],
+  "ikea": "GLATTIS",
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#c8a45a", "profile": [[0.9, 0], [1, 0.45], [1, 1], [0.94, 1], [0.88, 0.3]]}
+  ]
+}

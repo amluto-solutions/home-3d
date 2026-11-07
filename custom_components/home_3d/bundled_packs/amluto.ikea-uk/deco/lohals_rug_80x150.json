@@ -1,0 +1,43 @@
+{
+  "id": "lohals_rug_80x150",
+  "name": {
+    "en": "Rug, flatwoven 80x150 cm"
+  },
+  "size": [
+    0.8,
+    1.5,
+    0.013
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "bedroom",
+    "dining",
+    "kids",
+    "office",
+    "hall"
+  ],
+  "tags": [
+    "LOHALS",
+    "rug",
+    "carpet",
+    "flatwoven",
+    "jute look",
+    "natural",
+    "area rug"
+  ],
+  "family": "lohals_rug",
+  "variant": {
+    "en": "80x150"
+  },
+  "ikea": "LOHALS",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.85, "color": "fabric"},
+    {"shape": "box", "x": -0.42, "z": 0.0, "w": 0.015, "d": 0.97, "y": 0, "h": 1, "color": "#8c7650", "fix": "wh"},
+    {"shape": "box", "x": -0.14, "z": 0.0, "w": 0.015, "d": 0.97, "y": 0, "h": 1, "color": "#8c7650", "fix": "wh"},
+    {"shape": "box", "x": 0.14, "z": 0.0, "w": 0.015, "d": 0.97, "y": 0, "h": 1, "color": "#8c7650", "fix": "wh"},
+    {"shape": "box", "x": 0.42, "z": 0.0, "w": 0.015, "d": 0.97, "y": 0, "h": 1, "color": "#8c7650", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": -0.48, "w": 0.97, "d": 0.008, "y": 0, "h": 1, "color": "#8c7650", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.48, "w": 0.97, "d": 0.008, "y": 0, "h": 1, "color": "#8c7650", "fix": "dh"}
+  ]
+}

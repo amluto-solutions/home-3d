@@ -1,0 +1,34 @@
+{
+  "id": "smart_extension_lead",
+  "name": {"en": "Smart plug"},
+  "size": [0.42, 0.07, 0.045],
+  "group": "energy",
+  "room": ["office", "living", "bedroom", "kitchen"],
+  "tags": ["smart socket", "smart plug", "wifi plug", "zigbee plug", "energy monitoring plug", "shelly plug", "tapo", "hive", "kasa", "extension lead", "power strip"],
+  "family": "smart_plug",
+  "variant": {"en": "4-way extension lead"},
+  "electric": true,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0, "h": 1, "color": "white", "round": 0.3},
+    {"shape": "box", "x": -0.3857, "z": 0.0, "w": 0.0095, "d": 0.1714, "y": 0.9778, "h": 0.0222, "color": "dark"},
+    {"shape": "box", "x": -0.3286, "z": 0.0, "w": 0.0095, "d": 0.1714, "y": 0.9778, "h": 0.0222, "color": "dark"},
+    {"shape": "box", "x": -0.3571, "z": -0.2143, "w": 0.0286, "d": 0.0571, "y": 0.9778, "h": 0.0222, "color": "dark"},
+    {"shape": "cyl", "x": -0.2857, "z": 0.3143, "w": 0.0143, "d": 0.0857, "y": 0.9778, "h": 0.0222, "color": "#4aa3ff"},
+    {"shape": "box", "x": -0.1714, "z": 0.0, "w": 0.0095, "d": 0.1714, "y": 0.9778, "h": 0.0222, "color": "dark"},
+    {"shape": "box", "x": -0.1143, "z": 0.0, "w": 0.0095, "d": 0.1714, "y": 0.9778, "h": 0.0222, "color": "dark"},
+    {"shape": "box", "x": -0.1429, "z": -0.2143, "w": 0.0286, "d": 0.0571, "y": 0.9778, "h": 0.0222, "color": "dark"},
+    {"shape": "cyl", "x": -0.0714, "z": 0.3143, "w": 0.0143, "d": 0.0857, "y": 0.9778, "h": 0.0222, "color": "#4aa3ff"},
+    {"shape": "box", "x": 0.0429, "z": 0.0, "w": 0.0095, "d": 0.1714, "y": 0.9778, "h": 0.0222, "color": "dark"},
+    {"shape": "box", "x": 0.1, "z": 0.0, "w": 0.0095, "d": 0.1714, "y": 0.9778, "h": 0.0222, "color": "dark"},
+    {"shape": "box", "x": 0.0714, "z": -0.2143, "w": 0.0286, "d": 0.0571, "y": 0.9778, "h": 0.0222, "color": "dark"},
+    {"shape": "cyl", "x": 0.1429, "z": 0.3143, "w": 0.0143, "d": 0.0857, "y": 0.9778, "h": 0.0222, "color": "#4aa3ff"},
+    {"shape": "box", "x": 0.2571, "z": 0.0, "w": 0.0095, "d": 0.1714, "y": 0.9778, "h": 0.0222, "color": "dark"},
+    {"shape": "box", "x": 0.3143, "z": 0.0, "w": 0.0095, "d": 0.1714, "y": 0.9778, "h": 0.0222, "color": "dark"},
+    {"shape": "box", "x": 0.2857, "z": -0.2143, "w": 0.0286, "d": 0.0571, "y": 0.9778, "h": 0.0222, "color": "dark"},
+    {"shape": "cyl", "x": 0.3571, "z": 0.3143, "w": 0.0143, "d": 0.0857, "y": 0.9778, "h": 0.0222, "color": "#4aa3ff"},
+    {"shape": "box", "x": 0.4524, "z": 0.0, "w": 0.0952, "d": 0.4286, "y": 0.9778, "h": 0.0222, "color": "#cfd2d6"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "vase_round",
+  "name": {
+    "en": "Round vase"
+  },
+  "size": [
+    0.24,
+    0.24,
+    0.24
+  ],
+  "group": "vase",
+  "tags": [
+    "vase",
+    "ceramic",
+    "flower vase",
+    "ornament",
+    "round",
+    "ginger jar",
+    "bulb"
+  ],
+  "family": "vase",
+  "variant": {
+    "en": "Round"
+  },
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "lathe",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1,
+      "d": 1,
+      "y": 0.0,
+      "h": 1,
+      "color": "pot",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.5,
+          0
+        ],
+        [
+          0.88,
+          0.15
+        ],
+        [
+          1,
+          0.42
+        ],
+        [
+          0.86,
+          0.75
+        ],
+        [
+          0.45,
+          0.9
+        ],
+        [
+          0.42,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  ]
+}

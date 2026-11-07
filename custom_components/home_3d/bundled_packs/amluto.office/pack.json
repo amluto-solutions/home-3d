@@ -1,0 +1,11 @@
+{
+  "format": "home3d-pack",
+  "version": 2,
+  "id": "amluto.office",
+  "name": "Office & tech",
+  "publisher": "Amluto Solutions",
+  "licence": "MIT",
+  "release": 4,
+  "description": "Desks, office furniture, computers, cameras and other tech, modelled for Home 3D from simple shapes. Ships with the app and works offline.",
+  "release_note": "Release 4: the pack's id is now amluto.office (it was theovencook.office); plans that name the old id still load (#424)."
+}

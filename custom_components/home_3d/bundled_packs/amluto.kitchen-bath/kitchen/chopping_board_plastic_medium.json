@@ -1,0 +1,18 @@
+{
+  "id": "chopping_board_plastic_medium",
+  "name": {"en": "Chopping board, white plastic, medium"},
+  "size": [0.4, 0.28, 0.02],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "tags": ["chopping board", "cutting board", "kitchen", "worktop", "white plastic"],
+  "family": "chopping_board_plastic",
+  "variant": {"en": "Medium 40×28"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#f3f3ef", "fix": "h"},
+    {"shape": "box", "x": 0.425, "z": 0.3, "w": 0.0625, "d": 0.0429, "y": 0.5, "h": 0.5, "color": "#101114", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "nesting_tables_3",
+  "name": {"en": "Nest of 3 tables"},
+  "size": [0.62, 0.42, 0.5],
+  "group": "table",
+  "family": "nesting_tables",
+  "variant": {"en": "Set of 3"},
+  "room": ["living", "bedroom", "conservatory"],
+  "tags": ["nest of tables", "nesting tables", "side table", "lamp table", "occasional table", "set"],
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": -0.0968, "z": -0.0238, "w": 0.8065, "d": 0.9524, "y": 0.956, "h": 0.044, "color": "wood"},
+    {"shape": "box", "x": -0.4605, "z": -0.4417, "w": 0.0403, "d": 0.0595, "y": 0.0, "h": 0.956, "color": "wood"},
+    {"shape": "box", "x": -0.4605, "z": 0.394, "w": 0.0403, "d": 0.0595, "y": 0.0, "h": 0.956, "color": "wood"},
+    {"shape": "box", "x": 0.2669, "z": -0.4417, "w": 0.0403, "d": 0.0595, "y": 0.0, "h": 0.956, "color": "wood"},
+    {"shape": "box", "x": 0.2669, "z": 0.394, "w": 0.0403, "d": 0.0595, "y": 0.0, "h": 0.956, "color": "wood"},
+    {"shape": "box", "x": 0.0484, "z": -0.0238, "w": 0.7097, "d": 0.8571, "y": 0.856, "h": 0.044, "color": "wood"},
+    {"shape": "box", "x": -0.2669, "z": -0.394, "w": 0.0403, "d": 0.0595, "y": 0.0, "h": 0.856, "color": "wood"},
+    {"shape": "box", "x": -0.2669, "z": 0.3464, "w": 0.0403, "d": 0.0595, "y": 0.0, "h": 0.856, "color": "wood"},
+    {"shape": "box", "x": 0.3637, "z": -0.394, "w": 0.0403, "d": 0.0595, "y": 0.0, "h": 0.856, "color": "wood"},
+    {"shape": "box", "x": 0.3637, "z": 0.3464, "w": 0.0403, "d": 0.0595, "y": 0.0, "h": 0.856, "color": "wood"},
+    {"shape": "box", "x": 0.1935, "z": -0.0238, "w": 0.6129, "d": 0.7619, "y": 0.756, "h": 0.044, "color": "wood"},
+    {"shape": "box", "x": -0.0734, "z": -0.3464, "w": 0.0403, "d": 0.0595, "y": 0.0, "h": 0.756, "color": "wood"},
+    {"shape": "box", "x": -0.0734, "z": 0.2988, "w": 0.0403, "d": 0.0595, "y": 0.0, "h": 0.756, "color": "wood"},
+    {"shape": "box", "x": 0.4605, "z": -0.3464, "w": 0.0403, "d": 0.0595, "y": 0.0, "h": 0.756, "color": "wood"},
+    {"shape": "box", "x": 0.4605, "z": 0.2988, "w": 0.0403, "d": 0.0595, "y": 0.0, "h": 0.756, "color": "wood"}
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "cloud_lamp",
+  "name": {
+    "en": "Cloud lamp"
+  },
+  "size": [
+    0.3,
+    0.18,
+    0.24
+  ],
+  "group": "lamp",
+  "room": [
+    "kids",
+    "bedroom",
+    "living"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "cloud lamp",
+    "kids lamp",
+    "nursery",
+    "night light",
+    "cotton",
+    "soft light",
+    "bedroom"
+  ],
+  "family": "cloud_lamp",
+  "variant": {
+    "en": "White"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4, "d": 0.6667, "y": 0, "h": 0.0625, "color": "white"},
+    {"shape": "sphere", "x": -0.2, "z": 0.0, "w": 0.4667, "d": 0.7778, "y": 0.0625, "h": 0.5833, "color": "white", "glow": true},
+    {"shape": "sphere", "x": 0.1667, "z": 0.0556, "w": 0.5333, "d": 0.8333, "y": 0.0625, "h": 0.6667, "color": "white", "glow": true},
+    {"shape": "sphere", "x": 0.0, "z": -0.1111, "w": 0.5333, "d": 0.7778, "y": 0.4167, "h": 0.5833, "color": "white", "glow": true},
+    {"shape": "sphere", "x": -0.3333, "z": 0.1667, "w": 0.3333, "d": 0.5556, "y": 0.2083, "h": 0.4167, "color": "white", "glow": true}
+  ]
+}

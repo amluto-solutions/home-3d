@@ -1,0 +1,44 @@
+{
+  "id": "skottorp_skaftet_arched_floor_lamp",
+  "name": {
+    "en": "Arched floor lamp, white fabric shade 213 cm"
+  },
+  "size": [
+    0.48,
+    1.75,
+    2.13
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "floor lamp",
+    "arched lamp",
+    "arc lamp",
+    "light grey",
+    "white",
+    "brass",
+    "nickel-plated",
+    "over sofa",
+    "skottorp",
+    "skaftet"
+  ],
+  "ikea": "SKOTTORP / SKAFTET",
+  "light": "floor",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.3629, "w": 1, "d": 0.2743, "y": 0, "h": 0.0235, "color": "metal", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3629, "w": 0.0625, "d": 0.0171, "y": 0.0235, "h": 0.7277, "color": "metal", "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": -0.3629, "w": 0.0583, "d": 0.016, "y": 0.7418, "h": 0.2066, "color": "metal", "tz": -0.2571, "tw": 0.0583, "td": 0.016, "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": -0.2571, "w": 0.0542, "d": 0.0149, "y": 0.939, "h": 0.0563, "color": "metal", "tz": -0.0286, "tw": 0.0542, "td": 0.0149, "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": 0.1429, "w": 0.0542, "d": 0.0149, "y": 0.9671, "h": 0.0282, "color": "metal", "tz": -0.0286, "tw": 0.0542, "td": 0.0149, "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": 0.38, "w": 0.05, "d": 0.0137, "y": 0.9155, "h": 0.0516, "color": "metal", "tz": 0.1429, "tw": 0.05, "td": 0.0137, "fix": "wd"},
+    {"shape": "cyl", "x": 0.0, "z": 0.38, "w": 0.0417, "d": 0.0114, "y": 0.892, "h": 0.0282, "color": "metal", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.38, "w": 0.875, "d": 0.24, "y": 0.7606, "h": 0.1455, "color": "white", "edges": "faint", "profile": [[1.0, 0], [1.0, 1], [0.943, 1], [0.943, 0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.38, "w": 0.1875, "d": 0.0514, "y": 0.7887, "h": 0.0423, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

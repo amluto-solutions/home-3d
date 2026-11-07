@@ -1,0 +1,39 @@
+{
+  "id": "nymane_table_lamp",
+  "name": {
+    "en": "Table lamp, dome shade 33 cm"
+  },
+  "size": [
+    0.24,
+    0.24,
+    0.33
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "table lamp",
+    "bedside lamp",
+    "dome",
+    "anthracite",
+    "white",
+    "metal shade"
+  ],
+  "family": "nymane_lamp",
+  "variant": {
+    "en": "Table 33"
+  },
+  "ikea": "NYMÅNE",
+  "light": "table",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.75, "d": 0.75, "y": 0, "h": 0.303, "color": "dark", "fix": "h", "profile": [[1, 0], [1, 0.55], [0.8, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0833, "d": 0.0833, "y": 0.2727, "h": 0.3939, "color": "dark", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.6061, "h": 0.3939, "color": "dark", "profile": [[1.0, 0], [0.97, 0.3], [0.82, 0.62], [0.52, 0.88], [0.22, 1.0], [0.0, 1.0], [0.0, 0.923], [0.137, 0.923], [0.437, 0.803], [0.737, 0.543], [0.887, 0.223], [0.917, 0.0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.2917, "d": 0.2917, "y": 0.6515, "h": 0.2121, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

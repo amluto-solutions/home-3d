@@ -1,0 +1,53 @@
+{
+  "id": "tjusig_hat_rack_79",
+  "name": {
+    "en": "Hat rack 79 cm"
+  },
+  "size": [
+    0.79,
+    0.32,
+    0.25
+  ],
+  "group": "storage",
+  "room": [
+    "hall",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "TJUSIG",
+    "hat rack",
+    "hat shelf",
+    "coat hooks",
+    "wall rack",
+    "white",
+    "black",
+    "steel"
+  ],
+  "ikea": "TJUSIG",
+  "mount": "wall",
+  "wall_y": 1.6,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4688, "w": 1, "d": 0.0625, "y": 0.48, "h": 0.4, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.3438, "w": 1, "d": 0.0938, "y": 0.952, "h": 0.048, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.1875, "w": 1, "d": 0.0938, "y": 0.952, "h": 0.048, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.0312, "w": 1, "d": 0.0938, "y": 0.952, "h": 0.048, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.125, "w": 1, "d": 0.0938, "y": 0.952, "h": 0.048, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.2812, "w": 1, "d": 0.0938, "y": 0.952, "h": 0.048, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4375, "w": 1, "d": 0.0938, "y": 0.952, "h": 0.048, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": -0.4873, "z": 0.0, "w": 0.0152, "d": 1, "y": 0.6, "h": 0.048, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4873, "z": -0.4688, "w": 0.0152, "d": 0.0375, "y": 0.52, "h": 0.48, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4873, "z": 0.0, "w": 0.0152, "d": 1, "y": 0.6, "h": 0.048, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4873, "z": -0.4688, "w": 0.0152, "d": 0.0375, "y": 0.52, "h": 0.48, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4, "z": -0.3438, "w": 0.0152, "d": 0.1875, "y": 0.4, "h": 0.048, "color": "white", "axis": "z", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.4, "z": -0.2344, "w": 0.0278, "d": 0.0687, "y": 0.384, "h": 0.088, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.2, "z": -0.3438, "w": 0.0152, "d": 0.1875, "y": 0.4, "h": 0.048, "color": "white", "axis": "z", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.2, "z": -0.2344, "w": 0.0278, "d": 0.0687, "y": 0.384, "h": 0.088, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3438, "w": 0.0152, "d": 0.1875, "y": 0.4, "h": 0.048, "color": "white", "axis": "z", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.0, "z": -0.2344, "w": 0.0278, "d": 0.0687, "y": 0.384, "h": 0.088, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2, "z": -0.3438, "w": 0.0152, "d": 0.1875, "y": 0.4, "h": 0.048, "color": "white", "axis": "z", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.2, "z": -0.2344, "w": 0.0278, "d": 0.0687, "y": 0.384, "h": 0.088, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4, "z": -0.3438, "w": 0.0152, "d": 0.1875, "y": 0.4, "h": 0.048, "color": "white", "axis": "z", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.4, "z": -0.2344, "w": 0.0278, "d": 0.0687, "y": 0.384, "h": 0.088, "color": "white", "fix": "wdh"}
+  ]
+}

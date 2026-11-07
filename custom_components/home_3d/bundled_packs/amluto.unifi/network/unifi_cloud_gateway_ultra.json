@@ -1,0 +1,16 @@
+{
+  "id": "unifi_cloud_gateway_ultra",
+  "name": {"en": "Cloud gateway, compact (Ultra / Max)"},
+  "size": [0.1418,0.1276,0.03],
+  "group": "network",
+  "room": ["office", "utility", "loft", "living", "hall"],
+  "tags": ["unifi", "cloud gateway", "ucg", "ucg-ultra", "ucg-max", "gateway", "router", "udm", "firewall", "broadband", "internet", "ubiquiti"],
+  "family": "unifi_gateway",
+  "variant": {"en": "Cloud Gateway Ultra / Max"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "round": 0.15},
+    {"shape": "box", "x": 0, "z": 0.4984, "w": 0.4231, "d": 0.0031, "y": 0.6667, "h": 0.1667, "color": "#4aa3ff", "glow": true}
+  ]
+}

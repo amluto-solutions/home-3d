@@ -1,0 +1,35 @@
+{
+  "id": "blidvader_table_lamp",
+  "name": {
+    "en": "Table lamp, ceramic base 50 cm"
+  },
+  "size": [
+    0.3,
+    0.3,
+    0.5
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "table lamp",
+    "ceramic",
+    "off-white",
+    "beige",
+    "fabric shade",
+    "organic"
+  ],
+  "ikea": "BLIDVÄDER",
+  "light": "table",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.5667, "d": 0.5667, "y": 0, "h": 0.48, "color": "white", "fix": "h", "profile": [[0.45, 0], [0.8, 0.1], [1, 0.35], [0.85, 0.7], [0.4, 0.92], [0.3, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0533, "d": 0.0533, "y": 0.46, "h": 0.14, "color": "metal", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.5, "h": 0.5, "color": "wood", "edges": "faint", "profile": [[1.0, 0], [0.733, 1], [0.653, 1], [0.92, 0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.2333, "d": 0.2333, "y": 0.64, "h": 0.14, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

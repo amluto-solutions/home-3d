@@ -1,0 +1,46 @@
+{
+  "id": "bergshult_wall_shelf_120x30",
+  "name": {
+    "en": "Wall shelf 120x30 cm"
+  },
+  "size": [
+    1.2,
+    0.3,
+    0.225
+  ],
+  "group": "storage",
+  "room": [
+    "living",
+    "bedroom",
+    "hall",
+    "kitchen",
+    "office",
+    "bath",
+    "kids"
+  ],
+  "tags": [
+    "BERGSHULT",
+    "SANDSHULT",
+    "wall shelf",
+    "shelf with brackets",
+    "white",
+    "white stained aspen",
+    "floating shelf"
+  ],
+  "family": "bergshult_shelf",
+  "variant": {
+    "en": "120x30"
+  },
+  "ikea": "BERGSHULT / SANDSHULT",
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8889, "h": 0.1111, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4167, "z": -0.4667, "w": 0.0183, "d": 0.0667, "y": 0, "h": 0.8889, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4167, "z": 0.0, "w": 0.0183, "d": 0.9, "y": 0.8, "h": 0.0889, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4167, "z": -0.3333, "w": 0.0183, "d": 0.04, "y": 0.0889, "h": 0.7111, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4167, "z": -0.4667, "w": 0.0183, "d": 0.0667, "y": 0, "h": 0.8889, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4167, "z": 0.0, "w": 0.0183, "d": 0.9, "y": 0.8, "h": 0.0889, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4167, "z": -0.3333, "w": 0.0183, "d": 0.04, "y": 0.0889, "h": 0.7111, "color": "wood", "fix": "wdh"}
+  ]
+}

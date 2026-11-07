@@ -1,0 +1,21 @@
+{
+  "id": "toaster_2_slice_cream",
+  "name": {"en": "Toaster, 2 slice, cream"},
+  "size": [0.28, 0.17, 0.19],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["toaster", "toast", "bread", "countertop"],
+  "family": "toaster",
+  "variant": {"en": "2 slice, cream"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#eae3cf", "round": 0.25},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7, "d": 0.35, "y": 0.95, "h": 0.06, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.4643, "z": 0.2, "w": 0.0357, "d": 0.1471, "y": 0.5, "h": 0.1579, "color": "#25272b", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.25, "z": 0.4824, "w": 0.0893, "d": 0.0706, "y": 0.4, "h": 0.1316, "color": "#25272b", "axis": "z", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

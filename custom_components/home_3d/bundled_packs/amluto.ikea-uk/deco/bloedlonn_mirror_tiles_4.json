@@ -1,0 +1,34 @@
+{
+  "id": "bloedlonn_mirror_tiles_4",
+  "name": {
+    "en": "Mirror tiles, set of 4 30x30 cm"
+  },
+  "size": [
+    0.62,
+    0.01,
+    0.62
+  ],
+  "group": "deco",
+  "room": [
+    "hall",
+    "bedroom",
+    "kids",
+    "bath"
+  ],
+  "tags": [
+    "mirror",
+    "mirror tiles",
+    "adhesive",
+    "frameless",
+    "set of 4"
+  ],
+  "ikea": "BLODLÖNN",
+  "mount": "wall",
+  "wall_y": 1.0,
+  "parts": [
+    {"shape": "box", "x": -0.2581, "z": 0.0, "w": 0.4839, "d": 1, "y": 0, "h": 0.4839, "color": "glass"},
+    {"shape": "box", "x": -0.2581, "z": 0.0, "w": 0.4839, "d": 1, "y": 0.5161, "h": 0.4839, "color": "glass"},
+    {"shape": "box", "x": 0.2581, "z": 0.0, "w": 0.4839, "d": 1, "y": 0, "h": 0.4839, "color": "glass"},
+    {"shape": "box", "x": 0.2581, "z": 0.0, "w": 0.4839, "d": 1, "y": 0.5161, "h": 0.4839, "color": "glass"}
+  ]
+}

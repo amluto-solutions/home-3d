@@ -1,0 +1,20 @@
+{
+  "id": "rog_ally",
+  "name": {"en": "ROG Ally-style handheld"},
+  "size": [0.28, 0.111, 0.0324],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["rog ally", "rog ally x", "asus", "legion go", "handheld", "gaming", "pc handheld", "console"],
+  "family": "pc_handheld",
+  "variant": {"en": "Handheld"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "white", "round": 0.3},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.58, "d": 0.85, "y": 0.97, "h": 0.03, "color": "glass", "edges": "faint"},
+    {"shape": "cyl", "x": -0.42, "z": -0.1, "w": 0.0643, "d": 0.1622, "y": 0.97, "h": 0.03, "color": "#101114"},
+    {"shape": "cyl", "x": 0.42, "z": -0.1, "w": 0.0643, "d": 0.1622, "y": 0.97, "h": 0.03, "color": "#101114"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

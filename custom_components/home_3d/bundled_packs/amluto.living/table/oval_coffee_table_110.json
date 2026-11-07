@@ -1,0 +1,135 @@
+{
+  "id": "oval_coffee_table_110",
+  "name": {
+    "en": "Oval two-tier coffee table 110"
+  },
+  "size": [
+    1.1,
+    0.6,
+    0.45
+  ],
+  "group": "table",
+  "room": [
+    "living"
+  ],
+  "tags": [
+    "coffee table",
+    "oval",
+    "two tier",
+    "shelf",
+    "lounge table"
+  ],
+  "family": "oval_coffee_table",
+  "variant": {
+    "en": "110 × 60"
+  },
+  "surface": true,
+  "parts": [
+    {
+      "shape": "lathe",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1,
+      "d": 1,
+      "y": 0.9333,
+      "h": 0.0667,
+      "color": "wood",
+      "fix": "h",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.97,
+          0
+        ],
+        [
+          1,
+          0.5
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "shape": "lathe",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.9091,
+      "d": 0.8667,
+      "y": 0.2667,
+      "h": 0.0444,
+      "color": "wood",
+      "fix": "h",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "shape": "cyl",
+      "x": -0.3331,
+      "z": -0.2481,
+      "w": 0.0318,
+      "d": 0.0583,
+      "y": 0.0,
+      "h": 0.9333,
+      "color": "wood",
+      "fix": "wd"
+    },
+    {
+      "shape": "cyl",
+      "x": -0.3331,
+      "z": 0.2481,
+      "w": 0.0318,
+      "d": 0.0583,
+      "y": 0.0,
+      "h": 0.9333,
+      "color": "wood",
+      "fix": "wd"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.3331,
+      "z": -0.2481,
+      "w": 0.0318,
+      "d": 0.0583,
+      "y": 0.0,
+      "h": 0.9333,
+      "color": "wood",
+      "fix": "wd"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.3331,
+      "z": 0.2481,
+      "w": 0.0318,
+      "d": 0.0583,
+      "y": 0.0,
+      "h": 0.9333,
+      "color": "wood",
+      "fix": "wd"
+    }
+  ]
+}

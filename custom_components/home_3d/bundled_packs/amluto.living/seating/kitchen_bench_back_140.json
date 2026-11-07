@@ -1,0 +1,22 @@
+{
+  "id": "kitchen_bench_back_140",
+  "name": {"en": "Kitchen bench with back"},
+  "size": [1.4, 0.45, 0.86],
+  "group": "seating",
+  "family": "kitchen_bench",
+  "variant": {"en": "With back · 140"},
+  "room": ["kitchen", "dining", "hall", "garden"],
+  "tags": ["bench", "dining bench", "kitchen bench", "farmhouse", "wooden bench", "seat", "settle"],
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.1111, "w": 1.0, "d": 0.7778, "y": 0.4884, "h": 0.0465, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4286, "z": 0.1111, "w": 0.0286, "d": 0.6444, "y": 0.0, "h": 0.4884, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4286, "z": 0.1111, "w": 0.0286, "d": 0.6444, "y": 0.0, "h": 0.4884, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.1111, "w": 0.8286, "d": 0.0667, "y": 0.093, "h": 0.0698, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4333, "w": 0.9429, "d": 0.0444, "y": 0.3953, "h": 0.093, "color": "wood", "fix": "h"},
+    {"shape": "loft", "x": -0.4286, "z": -0.2333, "w": 0.0286, "d": 0.0889, "y": 0.4884, "h": 0.5116, "color": "wood", "tx": -0.4286, "tz": -0.4333, "tw": 0.0286, "td": 0.0889, "fix": "w"},
+    {"shape": "loft", "x": 0.4286, "z": -0.2333, "w": 0.0286, "d": 0.0889, "y": 0.4884, "h": 0.5116, "color": "wood", "tx": 0.4286, "tz": -0.4333, "tw": 0.0286, "td": 0.0889, "fix": "w"},
+    {"shape": "loft", "x": 0.0, "z": -0.2867, "w": 0.8571, "d": 0.0556, "y": 0.6279, "h": 0.093, "color": "wood", "tx": 0.0, "tz": -0.3222, "tw": 0.8571, "td": 0.0556},
+    {"shape": "loft", "x": 0.0, "z": -0.34, "w": 0.8571, "d": 0.0556, "y": 0.7674, "h": 0.093, "color": "wood", "tx": 0.0, "tz": -0.3756, "tw": 0.8571, "td": 0.0556},
+    {"shape": "loft", "x": 0.0, "z": -0.3889, "w": 0.8571, "d": 0.0556, "y": 0.8953, "h": 0.093, "color": "wood", "tx": 0.0, "tz": -0.4244, "tw": 0.8571, "td": 0.0556}
+  ]
+}

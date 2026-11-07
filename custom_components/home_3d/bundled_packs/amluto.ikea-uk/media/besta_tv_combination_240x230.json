@@ -1,0 +1,47 @@
+{
+  "id": "besta_tv_combination_240x230",
+  "name": {
+    "en": "TV storage combination 240x42x230 cm"
+  },
+  "size": [
+    2.4,
+    0.42,
+    2.3
+  ],
+  "group": "media",
+  "room": [
+    "living"
+  ],
+  "tags": [
+    "tv unit",
+    "tv wall",
+    "media wall",
+    "wall storage",
+    "drawers",
+    "white",
+    "black-brown",
+    "white stained oak effect",
+    "light grey-beige"
+  ],
+  "family": "besta_tv_combination",
+  "variant": {
+    "en": "240x230"
+  },
+  "ikea": "BESTÅ",
+  "parts": [
+    {"shape": "box", "x": -0.375, "z": -0.0238, "w": 0.25, "d": 0.9524, "y": 0, "h": 1, "color": "white"},
+    {"shape": "box", "x": -0.375, "z": 0.4762, "w": 0.2483, "d": 0.0476, "y": 0.0022, "h": 0.9957, "color": "white"},
+    {"shape": "box", "x": -0.375, "z": 0.4524, "w": 0.2333, "d": 0.0476, "y": 0, "h": 0.0087, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.375, "z": -0.0238, "w": 0.25, "d": 0.9524, "y": 0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.375, "z": 0.4762, "w": 0.2483, "d": 0.0476, "y": 0.0022, "h": 0.9957, "color": "white"},
+    {"shape": "box", "x": 0.375, "z": 0.4524, "w": 0.2333, "d": 0.0476, "y": 0, "h": 0.0087, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.0238, "w": 0.5, "d": 0.9524, "y": 0, "h": 0.2087, "color": "white"},
+    {"shape": "box", "x": -0.125, "z": 0.4762, "w": 0.2483, "d": 0.0476, "y": 0.0022, "h": 0.2043, "color": "white"},
+    {"shape": "box", "x": -0.125, "z": 0.5, "w": 0.125, "d": 0.0095, "y": 0.1957, "h": 0.0026, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.125, "z": 0.4762, "w": 0.2483, "d": 0.0476, "y": 0.0022, "h": 0.2043, "color": "white"},
+    {"shape": "box", "x": 0.125, "z": 0.5, "w": 0.125, "d": 0.0095, "y": 0.1957, "h": 0.0026, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.2381, "w": 0.5, "d": 0.5238, "y": 0.8348, "h": 0.1652, "color": "white"},
+    {"shape": "box", "x": -0.125, "z": 0.0476, "w": 0.2483, "d": 0.0476, "y": 0.837, "h": 0.1609, "color": "white"},
+    {"shape": "box", "x": 0.125, "z": 0.0476, "w": 0.2483, "d": 0.0476, "y": 0.837, "h": 0.1609, "color": "white"}
+  ]
+}

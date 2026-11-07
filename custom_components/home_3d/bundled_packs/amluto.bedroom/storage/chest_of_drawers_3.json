@@ -1,0 +1,44 @@
+{
+  "id": "chest_of_drawers_3",
+  "name": {
+    "en": "3-drawer chest of drawers"
+  },
+  "size": [
+    0.8,
+    0.45,
+    0.78
+  ],
+  "group": "storage",
+  "family": "chest_of_drawers",
+  "variant": {
+    "en": "3 drawers"
+  },
+  "room": [
+    "bedroom",
+    "kids",
+    "hall",
+    "living"
+  ],
+  "tags": [
+    "chest",
+    "bedroom furniture"
+  ],
+  "parts": [
+    {"shape": "box", "x": -0.4375, "z": -0.3889, "w": 0.05, "d": 0.0889, "y": 0, "h": 0.1282, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4375, "z": 0.3889, "w": 0.05, "d": 0.0889, "y": 0, "h": 0.1282, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4375, "z": -0.3889, "w": 0.05, "d": 0.0889, "y": 0, "h": 0.1282, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4375, "z": 0.3889, "w": 0.05, "d": 0.0889, "y": 0, "h": 0.1282, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": -0.0222, "w": 1.0, "d": 0.9556, "y": 0.1282, "h": 0.8397, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.9679, "h": 0.0321, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.4778, "w": 0.965, "d": 0.0444, "y": 0.688, "h": 0.2697, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4989, "w": 0.175, "d": 0.0022, "y": 0.8833, "h": 0.0205, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0.4778, "w": 0.965, "d": 0.0444, "y": 0.4132, "h": 0.2697, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4989, "w": 0.175, "d": 0.0022, "y": 0.6085, "h": 0.0205, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0.4778, "w": 0.965, "d": 0.0444, "y": 0.1385, "h": 0.2697, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4989, "w": 0.175, "d": 0.0022, "y": 0.3338, "h": 0.0205, "color": "metal", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.45, "x2": 0.5, "z2": 0.45}
+  ]
+}

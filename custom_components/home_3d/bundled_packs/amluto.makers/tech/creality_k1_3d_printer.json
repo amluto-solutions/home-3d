@@ -1,0 +1,49 @@
+{
+  "id": "creality_k1_3d_printer",
+  "name": {
+    "en": "Creality K1"
+  },
+  "size": [
+    0.355,
+    0.355,
+    0.48
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage"
+  ],
+  "tags": [
+    "3d printer",
+    "printer",
+    "creality",
+    "maker",
+    "filament",
+    "fdm",
+    "k1",
+    "corexy"
+  ],
+  "family": "creality_k1",
+  "variant": {
+    "en": "Printer only"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.087, "w": 1, "d": 0.8261, "y": 0, "h": 0.075, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": -0.2971, "w": 1, "d": 0.058, "y": 0.075, "h": 0.85, "color": "body"},
+    {"shape": "box", "x": -0.4718, "z": 0.1159, "w": 0.0563, "d": 0.7681, "y": 0.075, "h": 0.85, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.4718, "z": 0.1159, "w": 0.0563, "d": 0.7681, "y": 0.075, "h": 0.85, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.087, "w": 1, "d": 0.8261, "y": 0.925, "h": 0.075, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.4826, "w": 0.8873, "d": 0.0232, "y": 0.0957, "h": 0.83, "color": "glass"},
+    {"shape": "box", "x": 0.0, "z": 0.087, "w": 0.8873, "d": 0.0248, "y": 0.78, "h": 0.03, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.1696, "w": 0.62, "d": 0.5122, "y": 0.26, "h": 0.02, "color": "metal"},
+    {"shape": "rbox", "x": 0.0, "z": 0.1696, "w": 0.12, "d": 0.0991, "y": 0.75, "h": 0.08, "color": "dark", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": 0.4174, "w": 0.8, "d": 0.0289, "y": 0.88, "h": 0.02, "color": "#fff1d0", "glow": true},
+    {"shape": "rbox", "x": 0.3, "z": 0.4884, "w": 0.22, "d": 0.0174, "y": 0.015, "h": 0.045, "color": "accent", "edges": "glow", "round": 0.2},
+    {"shape": "cyl", "x": 0.0, "z": -0.413, "w": 0.45, "d": 0.1565, "y": 0.45, "h": 0.3307, "color": "accent", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": -0.413, "w": 0.0845, "d": 0.1739, "y": 0.5947, "h": 0.0414, "color": "metal"}
+  ],
+  "symbol": [{"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}, {"shape": "rect", "x": 0, "z": 0, "w": 0.8, "d": 0.8}]
+}

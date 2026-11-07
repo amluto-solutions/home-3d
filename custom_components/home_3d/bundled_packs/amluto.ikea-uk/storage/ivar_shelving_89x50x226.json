@@ -1,0 +1,55 @@
+{
+  "id": "ivar_shelving_89x50x226",
+  "name": {
+    "en": "Shelving unit 89x50x226 cm"
+  },
+  "size": [
+    0.89,
+    0.5,
+    2.26
+  ],
+  "group": "storage",
+  "room": [
+    "utility",
+    "garage",
+    "hall",
+    "bedroom",
+    "hobby",
+    "kids"
+  ],
+  "tags": [
+    "IVAR",
+    "pine shelving",
+    "open shelves",
+    "solid pine",
+    "garage shelving",
+    "pantry",
+    "wood"
+  ],
+  "family": "ivar_shelving",
+  "variant": {
+    "en": "89x50x226"
+  },
+  "ikea": "IVAR",
+  "parts": [
+    {"shape": "box", "x": -0.4809, "z": -0.466, "w": 0.0382, "d": 0.068, "y": 0, "h": 1, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": -0.4809, "z": 0.466, "w": 0.0382, "d": 0.068, "y": 0, "h": 1, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4809, "z": -0.466, "w": 0.0382, "d": 0.068, "y": 0, "h": 1, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4809, "z": 0.466, "w": 0.0382, "d": 0.068, "y": 0, "h": 1, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9348, "d": 0.992, "y": 0.0442, "h": 0.008, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9348, "d": 0.992, "y": 0.2319, "h": 0.008, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9348, "d": 0.992, "y": 0.4195, "h": 0.008, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9348, "d": 0.992, "y": 0.6071, "h": 0.008, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9348, "d": 0.992, "y": 0.7947, "h": 0.008, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9348, "d": 0.992, "y": 0.9823, "h": 0.008, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4809, "z": 0.0, "w": 0.0225, "d": 0.864, "y": 0.0522, "h": 0.0133, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4809, "z": 0.0, "w": 0.0225, "d": 0.864, "y": 0.4274, "h": 0.0133, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4809, "z": 0.0, "w": 0.0225, "d": 0.864, "y": 0.8027, "h": 0.0133, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4809, "z": 0.0, "w": 0.0225, "d": 0.864, "y": 0.0522, "h": 0.0133, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4809, "z": 0.0, "w": 0.0225, "d": 0.864, "y": 0.4274, "h": 0.0133, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4809, "z": 0.0, "w": 0.0225, "d": 0.864, "y": 0.8027, "h": 0.0133, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.466, "w": 0.9236, "d": 0.03, "y": 0.0575, "h": 0.0442, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.466, "w": 0.9236, "d": 0.03, "y": 0.4327, "h": 0.0442, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.466, "w": 0.9236, "d": 0.03, "y": 0.808, "h": 0.0442, "color": "wood", "fix": "dh"}
+  ]
+}

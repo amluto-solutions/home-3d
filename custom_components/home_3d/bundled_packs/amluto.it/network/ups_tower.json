@@ -1,0 +1,27 @@
+{
+  "id": "ups_tower",
+  "name": {"en": "UPS, tower"},
+  "size": [0.15, 0.4, 0.28],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage", "hobby"],
+  "tags": ["ups", "uninterruptible power", "battery backup", "surge", "apc", "power protection"],
+  "family": "ups",
+  "variant": {"en": "Tower"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "dark", "round": 0.1},
+    {"shape": "box", "x": 0.0, "z": 0.495, "w": 0.84, "d": 0.01, "y": 0.0714, "h": 0.8571, "color": "#26282c"},
+    {"shape": "box", "x": -0.1333, "z": 0.4975, "w": 0.2, "d": 0.005, "y": 0.7857, "h": 0.0714, "color": "#7fe3ff", "glow": true},
+    {"shape": "cyl", "x": 0.2333, "z": 0.495, "w": 0.1067, "d": 0.01, "y": 0.8214, "h": 0.0571, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.4975, "w": 0.6, "d": 0.005, "y": 0.1071, "h": 0.0214, "color": "#141518"},
+    {"shape": "box", "x": 0.0, "z": 0.4975, "w": 0.6, "d": 0.005, "y": 0.1786, "h": 0.0214, "color": "#141518"},
+    {"shape": "box", "x": 0.0, "z": 0.4975, "w": 0.6, "d": 0.005, "y": 0.25, "h": 0.0214, "color": "#141518"},
+    {"shape": "box", "x": 0.0, "z": 0.4975, "w": 0.6, "d": 0.005, "y": 0.3214, "h": 0.0214, "color": "#141518"},
+    {"shape": "box", "x": 0.0, "z": 0.4975, "w": 0.6, "d": 0.005, "y": 0.3929, "h": 0.0214, "color": "#141518"},
+    {"shape": "box", "x": 0.0, "z": 0.4975, "w": 0.6, "d": 0.005, "y": 0.4643, "h": 0.0214, "color": "#141518"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

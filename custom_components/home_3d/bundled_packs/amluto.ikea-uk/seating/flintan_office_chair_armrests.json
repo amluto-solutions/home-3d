@@ -1,0 +1,54 @@
+{
+  "id": "flintan_office_chair_armrests",
+  "name": {
+    "en": "Office chair with armrests"
+  },
+  "size": [
+    0.71,
+    0.71,
+    1.08
+  ],
+  "group": "seating",
+  "room": [
+    "office",
+    "kids",
+    "bedroom"
+  ],
+  "tags": [
+    "desk chair",
+    "swivel chair",
+    "task chair",
+    "computer chair",
+    "black",
+    "beige",
+    "grey"
+  ],
+  "family": "flintan_office_chair",
+  "variant": {
+    "en": "With armrests"
+  },
+  "ikea": "FLINTAN",
+  "parts": [
+    {"shape": "loft", "x": 0.0, "z": 0.2218, "w": 0.4437, "d": 0.0704, "y": 0.0324, "h": 0.0324, "color": "dark", "tw": 0.4437, "td": 0.0493, "rot": -90.0, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4437, "w": 0.0704, "d": 0.0704, "y": 0, "h": 0.0324, "color": "dark", "fix": "wdh"},
+    {"shape": "loft", "x": -0.211, "z": 0.0685, "w": 0.4437, "d": 0.0704, "y": 0.0324, "h": 0.0324, "color": "dark", "tw": 0.4437, "td": 0.0493, "rot": -162.0, "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4219, "z": 0.1371, "w": 0.0704, "d": 0.0704, "y": 0, "h": 0.0324, "color": "dark", "fix": "wdh"},
+    {"shape": "loft", "x": -0.1304, "z": -0.1795, "w": 0.4437, "d": 0.0704, "y": 0.0324, "h": 0.0324, "color": "dark", "tw": 0.4437, "td": 0.0493, "rot": 126.0, "fix": "wdh"},
+    {"shape": "cyl", "x": -0.2608, "z": -0.3589, "w": 0.0704, "d": 0.0704, "y": 0, "h": 0.0324, "color": "dark", "fix": "wdh"},
+    {"shape": "loft", "x": 0.1304, "z": -0.1795, "w": 0.4437, "d": 0.0704, "y": 0.0324, "h": 0.0324, "color": "dark", "tw": 0.4437, "td": 0.0493, "rot": 54.0, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2608, "z": -0.3589, "w": 0.0704, "d": 0.0704, "y": 0, "h": 0.0324, "color": "dark", "fix": "wdh"},
+    {"shape": "loft", "x": 0.211, "z": 0.0685, "w": 0.4437, "d": 0.0704, "y": 0.0324, "h": 0.0324, "color": "dark", "tw": 0.4437, "td": 0.0493, "rot": -18.0, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4219, "z": 0.1371, "w": 0.0704, "d": 0.0704, "y": 0, "h": 0.0324, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1127, "d": 0.1127, "y": 0.0278, "h": 0.0556, "color": "dark", "fix": "wd"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0704, "d": 0.0704, "y": 0.0833, "h": 0.3056, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.3662, "d": 0.3662, "y": 0.3889, "h": 0.0278, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0423, "w": 0.6761, "d": 0.6901, "y": 0.4074, "h": 0.0741, "color": "fabric", "round": 0.35},
+    {"shape": "box", "x": 0.0, "z": -0.338, "w": 0.0845, "d": 0.0704, "y": 0.4167, "h": 0.1852, "color": "dark", "fix": "wh"},
+    {"shape": "rbox", "x": 0.0, "z": -0.3521, "w": 0.6479, "d": 0.0845, "y": 0.5556, "h": 0.4444, "color": "dark", "round": 0.3},
+    {"shape": "rbox", "x": 0.0, "z": -0.3028, "w": 0.5634, "d": 0.0282, "y": 0.6111, "h": 0.3333, "color": "fabric", "round": 0.3},
+    {"shape": "box", "x": -0.3662, "z": 0.0, "w": 0.0423, "d": 0.0704, "y": 0.4352, "h": 0.2222, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": -0.3662, "z": 0.0282, "w": 0.0986, "d": 0.3521, "y": 0.6481, "h": 0.0278, "color": "dark", "fix": "wdh", "round": 0.4},
+    {"shape": "box", "x": 0.3662, "z": 0.0, "w": 0.0423, "d": 0.0704, "y": 0.4352, "h": 0.2222, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.3662, "z": 0.0282, "w": 0.0986, "d": 0.3521, "y": 0.6481, "h": 0.0278, "color": "dark", "fix": "wdh", "round": 0.4}
+  ]
+}

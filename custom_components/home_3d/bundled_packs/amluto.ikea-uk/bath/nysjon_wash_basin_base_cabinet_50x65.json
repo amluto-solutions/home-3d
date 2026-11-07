@@ -1,0 +1,41 @@
+{
+  "id": "nysjon_wash_basin_base_cabinet_50x65",
+  "name": {
+    "en": "Wash-basin base cabinet with 2 doors 50x65 cm"
+  },
+  "size": [
+    0.5,
+    0.32,
+    0.65
+  ],
+  "group": "bath",
+  "room": [
+    "bath",
+    "utility"
+  ],
+  "tags": [
+    "NYSJON",
+    "vanity unit",
+    "basin cabinet",
+    "bathroom cabinet",
+    "no basin",
+    "white"
+  ],
+  "family": "nysjon_basin_cabinet",
+  "variant": {
+    "en": "Base 50x65"
+  },
+  "ikea": "NYSJÖN",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9531, "y": 0.1846, "h": 0.8154, "color": "white"},
+    {"shape": "cyl", "x": -0.44, "z": -0.3828, "w": 0.06, "d": 0.0938, "y": 0, "h": 0.1846, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.44, "z": 0.3828, "w": 0.06, "d": 0.0938, "y": 0, "h": 0.1846, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.44, "z": -0.3828, "w": 0.06, "d": 0.0938, "y": 0, "h": 0.1846, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.44, "z": 0.3828, "w": 0.06, "d": 0.0938, "y": 0, "h": 0.1846, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.25, "z": 0.4813, "w": 0.492, "d": 0.0562, "y": 0.2, "h": 0.7862, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.07, "z": 0.5, "w": 0.024, "d": 0.0687, "y": 0.4885, "h": 0.2154, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.25, "z": 0.4813, "w": 0.492, "d": 0.0562, "y": 0.2, "h": 0.7862, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.07, "z": 0.5, "w": 0.024, "d": 0.0687, "y": 0.4885, "h": 0.2154, "color": "metal", "fix": "wdh"}
+  ]
+}

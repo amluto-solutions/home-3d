@@ -1,0 +1,51 @@
+{
+  "id": "unifi_chime_wifi",
+  "name": {
+    "en": "UniFi WiFi Smart Chime"
+  },
+  "size": [
+    0.062,
+    0.0506,
+    0.062
+  ],
+  "group": "tech",
+  "tags": [
+    "chime",
+    "doorbell chime",
+    "plug-in chime",
+    "unifi",
+    "ubiquiti"
+  ],
+  "family": "unifi_chime",
+  "variant": {
+    "en": "WiFi Smart Chime"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 0.3,
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0.46,
+      "w": 0.3,
+      "d": 0.08,
+      "y": 0.35,
+      "h": 0.3,
+      "color": "#3a8dde",
+      "axis": "z",
+      "glow": true
+    }
+  ]
+}

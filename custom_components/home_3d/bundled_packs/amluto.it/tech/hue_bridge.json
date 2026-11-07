@@ -1,0 +1,17 @@
+{
+  "id": "hue_bridge",
+  "name": {"en": "Philips Hue Bridge"},
+  "size": [0.0909,0.0906,0.026],
+  "group": "tech",
+  "room": ["office", "utility", "hall", "living", "loft"],
+  "tags": ["hue", "philips hue", "hue bridge", "bridge", "zigbee", "smart lighting", "lights", "smart home", "gateway"],
+  "family": "smart_hub",
+  "variant": {"en": "Philips Hue Bridge"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "round": 0.25},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.484, "d": 0.4857, "y": 0.9846, "h": 0.0154, "color": "#d4d8de"},
+    {"shape": "box", "x": 0, "z": 0.4978, "w": 0.33, "d": 0.0044, "y": 0.3077, "h": 0.1538, "color": "#4aa3ff", "glow": true}
+  ]
+}

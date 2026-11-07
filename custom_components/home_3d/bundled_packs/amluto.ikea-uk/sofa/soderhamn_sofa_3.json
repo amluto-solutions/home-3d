@@ -1,0 +1,49 @@
+{
+  "id": "soderhamn_sofa_3",
+  "name": {
+    "en": "3-seat sofa, low"
+  },
+  "size": [
+    1.98,
+    0.99,
+    0.83
+  ],
+  "group": "sofa",
+  "room": [
+    "living",
+    "conservatory"
+  ],
+  "tags": [
+    "SODERHAMN",
+    "SÖDERHAMN",
+    "modular sofa",
+    "low sofa",
+    "deep seat",
+    "beige",
+    "light beige",
+    "dark grey",
+    "beige-brown",
+    "grey-blue"
+  ],
+  "family": "soderhamn_sofa",
+  "variant": {
+    "en": "3-seat"
+  },
+  "ikea": "SÖDERHAMN",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.1687, "h": 0.1325, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": 0.0, "z": -0.3737, "w": 0.9394, "d": 0.2525, "y": 0.3012, "h": 0.5783, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.3131, "z": 0.1263, "w": 0.3081, "d": 0.7374, "y": 0.3012, "h": 0.1807, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.3131, "z": -0.1566, "w": 0.303, "d": 0.1818, "y": 0.4819, "h": 0.5181, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.0, "z": 0.1263, "w": 0.3081, "d": 0.7374, "y": 0.3012, "h": 0.1807, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": -0.1566, "w": 0.303, "d": 0.1818, "y": 0.4819, "h": 0.5181, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.3131, "z": 0.1263, "w": 0.3081, "d": 0.7374, "y": 0.3012, "h": 0.1807, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.3131, "z": -0.1566, "w": 0.303, "d": 0.1818, "y": 0.4819, "h": 0.5181, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.4848, "z": 0.0, "w": 0.0303, "d": 1, "y": 0.1687, "h": 0.5783, "color": "fabric", "fix": "w", "round": 0.3},
+    {"shape": "rbox", "x": 0.4848, "z": 0.0, "w": 0.0303, "d": 1, "y": 0.1687, "h": 0.5783, "color": "fabric", "fix": "w", "round": 0.3},
+    {"shape": "box", "x": -0.4697, "z": -0.4394, "w": 0.0177, "d": 0.0354, "y": 0, "h": 0.1687, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.4697, "z": 0.4394, "w": 0.0177, "d": 0.0354, "y": 0, "h": 0.1687, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4697, "z": -0.4394, "w": 0.0177, "d": 0.0354, "y": 0, "h": 0.1687, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4697, "z": 0.4394, "w": 0.0177, "d": 0.0354, "y": 0, "h": 0.1687, "color": "dark", "fix": "wdh"}
+  ]
+}

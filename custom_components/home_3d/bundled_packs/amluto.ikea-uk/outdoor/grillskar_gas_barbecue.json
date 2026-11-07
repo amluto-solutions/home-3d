@@ -1,0 +1,43 @@
+{
+  "id": "grillskar_gas_barbecue",
+  "name": {
+    "en": "Gas barbecue 72 cm"
+  },
+  "size": [
+    0.72,
+    0.61,
+    1.2
+  ],
+  "group": "outdoor",
+  "room": [
+    "garden"
+  ],
+  "tags": [
+    "bbq",
+    "grill",
+    "barbecue",
+    "gas grill",
+    "outdoor kitchen",
+    "stainless steel",
+    "black"
+  ],
+  "family": "grillskar_outdoor_kitchen",
+  "variant": {
+    "en": "Gas barbecue 72"
+  },
+  "ikea": "GRILLSKÄR",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0333, "h": 0.7333, "color": "metal"},
+    {"shape": "box", "x": -0.25, "z": 0.4836, "w": 0.4722, "d": 0.0197, "y": 0.0667, "h": 0.4833, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.25, "z": 0.4836, "w": 0.4722, "d": 0.0197, "y": 0.0667, "h": 0.4833, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4836, "w": 0.9444, "d": 0.0197, "y": 0.6, "h": 0.1, "color": "metal", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.6, "d": 0.0361, "y": 0.5783, "h": 0.01, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.7667, "h": 0.0167, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9167, "d": 0.8033, "y": 0.7833, "h": 0.01, "color": "dark", "fix": "h"},
+    {"shape": "cyl", "x": -0.2083, "z": 0.5, "w": 0.0625, "d": 0.0492, "y": 0.6333, "h": 0.0375, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.5, "w": 0.0625, "d": 0.0492, "y": 0.6333, "h": 0.0375, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2083, "z": 0.5, "w": 0.0625, "d": 0.0492, "y": 0.6333, "h": 0.0375, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "loft", "x": 0.0, "z": -0.0656, "w": 0.9444, "d": 0.7705, "y": 0.7833, "h": 0.1833, "color": "metal", "tz": -0.1311, "tw": 0.8889, "td": 0.5082},
+    {"shape": "cyl", "x": 0.0, "z": 0.3934, "w": 0.6, "d": 0.041, "y": 0.8333, "h": 0.0208, "color": "metal", "axis": "x"}
+  ]
+}

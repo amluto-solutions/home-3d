@@ -1,0 +1,17 @@
+{
+  "id": "door_mat_75x45",
+  "name": {"en": "Door mat"},
+  "size": [0.75, 0.45, 0.015],
+  "group": "household",
+  "room": ["hall", "garden", "utility"],
+  "tags": ["doormat", "coir mat", "welcome mat", "entrance mat", "boot mat", "front door mat"],
+  "family": "door_mat",
+  "variant": {"en": "75 × 45 cm"},
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0, "h": 0.7333, "color": "dark", "round": 0.5, "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9467, "d": 0.9111, "y": 0.2, "h": 0.8, "color": "#b08850", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "fill": true}
+  ]
+}

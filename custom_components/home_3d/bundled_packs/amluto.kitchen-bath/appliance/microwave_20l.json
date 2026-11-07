@@ -1,0 +1,28 @@
+{
+  "id": "microwave_20l",
+  "name": {"en": "Microwave 20 l"},
+  "size": [0.45, 0.35, 0.26],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["microwave", "microwave oven", "combi", "grill"],
+  "family": "microwave",
+  "variant": {"en": "20 l"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": -0.3889, "z": -0.3571, "w": 0.0667, "d": 0.0857, "y": 0.0, "h": 0.0462, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3889, "z": 0.3571, "w": 0.0667, "d": 0.0857, "y": 0.0, "h": 0.0462, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3889, "z": -0.3571, "w": 0.0667, "d": 0.0857, "y": 0.0, "h": 0.0462, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3889, "z": 0.3571, "w": 0.0667, "d": 0.0857, "y": 0.0, "h": 0.0462, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": -0.0143, "w": 1.0, "d": 0.9714, "y": 0.0462, "h": 0.9538, "color": "white", "round": 0.06},
+    {"shape": "box", "x": -0.1222, "z": 0.4814, "w": 0.7111, "d": 0.02, "y": 0.0923, "h": 0.8615, "color": "dark", "top": "white"},
+    {"shape": "box", "x": -0.1333, "z": 0.4957, "w": 0.5111, "d": 0.0086, "y": 0.2385, "h": 0.5692, "color": "glass"},
+    {"shape": "box", "x": 0.3611, "z": 0.4814, "w": 0.2333, "d": 0.02, "y": 0.0923, "h": 0.8615, "color": "dark"},
+    {"shape": "box", "x": 0.3611, "z": 0.4957, "w": 0.1667, "d": 0.0086, "y": 0.7308, "h": 0.1154, "color": "#7fe3ff", "edges": "faint"},
+    {"shape": "cyl", "x": 0.3556, "z": 0.48, "w": 0.1111, "d": 0.04, "y": 0.3323, "h": 0.1923, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": 0.2333, "z1": -0.4429, "x2": 0.2333, "z2": 0.5}
+  ]
+}

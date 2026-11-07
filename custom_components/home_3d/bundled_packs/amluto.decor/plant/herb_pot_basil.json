@@ -1,0 +1,21 @@
+{
+  "id": "herb_pot_basil",
+  "name": {"en": "Basil plant"},
+  "size": [0.12, 0.12, 0.22],
+  "group": "plant",
+  "room": ["kitchen", "dining", "conservatory"],
+  "tags": ["herbs", "basil", "kitchen plants", "windowsill", "cooking", "herb pot", "pot plant"],
+  "family": "herb_pot",
+  "variant": {"en": "Basil"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0, "z": 0, "w": 0.9167, "d": 0.9167, "y": 0, "h": 0.4545, "color": "#b5653f", "profile": [[0, 0], [0.62, 0], [0.7, 0.04], [1, 0.9], [1, 1], [0.92, 1], [0.88, 0.9], [0, 0.88]]},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.7883, "d": 0.7883, "y": 0.3909, "h": 0.0091, "color": "#4a3726"},
+    {"shape": "sphere", "x": 0, "z": 0, "w": 0.75, "d": 0.75, "y": 0.4545, "h": 0.4091, "color": "#3f8a3f"},
+    {"shape": "sphere", "x": 0.1667, "z": 0, "w": 0.5, "d": 0.5, "y": 0.7273, "h": 0.2727, "color": "#4a9a4a"},
+    {"shape": "sphere", "x": -0.1667, "z": 0.0833, "w": 0.4167, "d": 0.4167, "y": 0.7727, "h": 0.2273, "color": "#58a858"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

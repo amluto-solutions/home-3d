@@ -1,0 +1,33 @@
+{
+  "id": "hydrangea_pink_medium",
+  "name": {"en": "Hydrangea, pink, medium"},
+  "size": [1.0, 1.0, 1.0],
+  "group": "plant",
+  "room": ["garden"],
+  "tags": ["hydrangea", "shrub", "mophead", "summer", "pink"],
+  "family": "hydrangea_pink",
+  "variant": {"en": "Medium (1 × 1 m)"},
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.05, "d": 0.05, "y": 0, "h": 0.2, "color": "#6b4c33"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.92, "d": 0.92, "y": 0.1, "h": 0.78, "color": "#3f7d3a"},
+    {"shape": "sphere", "x": 0.2579, "z": 0.0798, "w": 0.5, "d": 0.5, "y": 0.1, "h": 0.5, "color": "#3f7d3a"},
+    {"shape": "sphere", "x": 0.0038, "z": 0.27, "w": 0.5, "d": 0.5, "y": 0.13, "h": 0.5, "color": "#4e9147"},
+    {"shape": "sphere", "x": -0.2556, "z": 0.0871, "w": 0.5, "d": 0.5, "y": 0.1, "h": 0.5, "color": "#3f7d3a"},
+    {"shape": "sphere", "x": -0.1618, "z": -0.2162, "w": 0.5, "d": 0.5, "y": 0.13, "h": 0.5, "color": "#4e9147"},
+    {"shape": "sphere", "x": 0.1556, "z": -0.2207, "w": 0.5, "d": 0.5, "y": 0.1, "h": 0.5, "color": "#3f7d3a"},
+    {"shape": "sphere", "x": -0.021, "z": 0.239, "w": 0.2, "d": 0.2, "y": 0.7914, "h": 0.18, "color": "#e87fb0"},
+    {"shape": "sphere", "x": -0.334, "z": 0.0536, "w": 0.2, "d": 0.2, "y": 0.6697, "h": 0.18, "color": "#e87fb0"},
+    {"shape": "sphere", "x": -0.1929, "z": 0.3051, "w": 0.2, "d": 0.2, "y": 0.6296, "h": 0.18, "color": "#f2a7c9"},
+    {"shape": "sphere", "x": -0.3054, "z": -0.276, "w": 0.2, "d": 0.2, "y": 0.5093, "h": 0.18, "color": "#e87fb0"},
+    {"shape": "sphere", "x": 0.0042, "z": 0.393, "w": 0.2, "d": 0.2, "y": 0.5602, "h": 0.18, "color": "#e87fb0"},
+    {"shape": "sphere", "x": 0.4204, "z": 0.1708, "w": 0.2, "d": 0.2, "y": 0.3138, "h": 0.18, "color": "#f2a7c9"},
+    {"shape": "sphere", "x": -0.0125, "z": 0.3476, "w": 0.2, "d": 0.2, "y": 0.6536, "h": 0.18, "color": "#e87fb0"},
+    {"shape": "sphere", "x": -0.1512, "z": 0.1505, "w": 0.2, "d": 0.2, "y": 0.8141, "h": 0.18, "color": "#e87fb0"},
+    {"shape": "sphere", "x": -0.1572, "z": 0.3352, "w": 0.2, "d": 0.2, "y": 0.6114, "h": 0.18, "color": "#f2a7c9"},
+    {"shape": "sphere", "x": -0.2653, "z": -0.0022, "w": 0.2, "d": 0.2, "y": 0.7663, "h": 0.18, "color": "#e87fb0"},
+    {"shape": "sphere", "x": -0.06, "z": -0.4059, "w": 0.2, "d": 0.2, "y": 0.5134, "h": 0.18, "color": "#e87fb0"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

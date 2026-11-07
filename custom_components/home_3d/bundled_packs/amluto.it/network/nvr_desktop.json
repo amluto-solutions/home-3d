@@ -1,0 +1,20 @@
+{
+  "id": "nvr_desktop",
+  "name": {"en": "Network video recorder, desktop"},
+  "size": [0.13, 0.13, 0.26],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage", "living"],
+  "tags": ["nvr", "cctv recorder", "camera recorder", "unifi protect", "video recorder", "surveillance", "hard drives"],
+  "family": "nvr",
+  "variant": {"en": "Desktop"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "dark", "round": 0.08},
+    {"shape": "box", "x": 0.0, "z": 0.4885, "w": 0.6923, "d": 0.0231, "y": 0.1538, "h": 0.6923, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.0, "z": 0.4923, "w": 0.3077, "d": 0.0154, "y": 0.0962, "h": 0.0192, "color": "#4aa3ff", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "Přidá do postranního panelu stránku, kde nakreslíš svůj domov a uvidíš ho ve 3D."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Home 3D je již nastaven."
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "Zeptat se domu",
+      "description": "Předá větu otevřeným zobrazením Home 3D: „Ukaž obývák“ ho zobrazí, na otázky odpovídají nainstalované moduly („Co je otevřené?“). Odpoví první zobrazení, které větu pochopí.",
+      "fields": {
+        "text": {
+          "name": "Věta",
+          "description": "Co se má ukázat nebo zeptat, tak, jak byste to řekli."
+        },
+        "screen": {
+          "name": "Obrazovka",
+          "description": "Reaguje jen zobrazení s tímto názvem obrazovky (nastaveno v nastavení zobrazení nebo v možnosti karty screen). Prázdné: každé otevřené zobrazení."
+        },
+        "speak": {
+          "name": "Mluvit",
+          "description": "Zobrazení svou odpověď vysloví pomocí převodu textu na řeč služby Assist (vypnuto: pouze ji zobrazí)."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Kde se Home 3D zobrazí. Odkaz na panel i karta na dashboardu fungují v obou případech a položku si můžete stále skrýt v nastavení postranního panelu Home Assistant.",
+        "data": {
+          "show_in_sidebar": "Zobrazit v postranním panelu",
+          "restore_picture_days": "Uchovávat obrázky bodů obnovení (dny)"
+        },
+        "data_description": {
+          "restore_picture_days": "Pozadí nebo obrázek obrazovky, které používá pouze starší bod obnovení, se uchová tolik dní od vytvoření tohoto bodu, poté se při dalším spuštění odstraní. Bod obnovení, jehož obrázek zmizel, se obnoví bez něj. 0 takové obrázky odstraní hned."
+        }
+      }
+    }
+  }
+}

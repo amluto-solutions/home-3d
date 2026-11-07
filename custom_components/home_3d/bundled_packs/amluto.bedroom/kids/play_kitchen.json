@@ -1,0 +1,29 @@
+{
+  "id": "play_kitchen",
+  "name": {"en": "Play kitchen"},
+  "size": [0.75, 0.32, 0.95],
+  "group": "kids",
+  "family": "play_kitchen",
+  "variant": {"en": "Small"},
+  "room": ["kids", "living", "kitchen"],
+  "tags": ["play kitchen", "toy kitchen", "pretend play", "mini kitchen", "role play", "toy", "wooden toy"],
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.5263, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.5263, "h": 0.0211, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4688, "w": 1.0, "d": 0.0625, "y": 0.5474, "h": 0.4211, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.3125, "w": 1.0, "d": 0.375, "y": 0.9684, "h": 0.0211, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.2812, "w": 1.0, "d": 0.3125, "y": 0.7789, "h": 0.0211, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": -0.2333, "z": 0.4922, "w": 0.4, "d": 0.0156, "y": 0.1263, "h": 0.3368, "color": "white", "edges": "faint", "fix": "d"},
+    {"shape": "box", "x": -0.2333, "z": 0.4953, "w": 0.2933, "d": 0.0094, "y": 0.2105, "h": 0.1789, "color": "glass", "fix": "d"},
+    {"shape": "box", "x": -0.2333, "z": 0.4844, "w": 0.2933, "d": 0.0313, "y": 0.4211, "h": 0.0211, "color": "metal", "fix": "dh"},
+    {"shape": "cyl", "x": -0.34, "z": -0.1562, "w": 0.1467, "d": 0.3438, "y": 0.5474, "h": 0.0084, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.1267, "z": 0.1562, "w": 0.1467, "d": 0.3438, "y": 0.5474, "h": 0.0084, "color": "dark", "fix": "wdh"},
+    {"shape": "lathe", "x": 0.24, "z": 0.0312, "w": 0.3867, "d": 0.6875, "y": 0.4842, "h": 0.0684, "color": "metal", "profile": [[0, 0], [0.8, 0], [1, 1], [0.9, 1], [0.75, 0.2], [0, 0.2]]},
+    {"shape": "cyl", "x": 0.24, "z": -0.4375, "w": 0.0333, "d": 0.0781, "y": 0.5474, "h": 0.1684, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.24, "z": -0.3125, "w": 0.0333, "d": 0.25, "y": 0.6921, "h": 0.0263, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.38, "z": 0.4844, "w": 0.04, "d": 0.0313, "y": 0.4895, "h": 0.0316, "color": "#e0644f", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3133, "z": 0.4844, "w": 0.04, "d": 0.0313, "y": 0.4895, "h": 0.0316, "color": "#e0644f", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.2467, "z": 0.4844, "w": 0.04, "d": 0.0313, "y": 0.4895, "h": 0.0316, "color": "#e0644f", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.24, "z": 0.4922, "w": 0.3867, "d": 0.0156, "y": 0.1263, "h": 0.3368, "color": "white", "edges": "faint", "fix": "d"}
+  ]
+}

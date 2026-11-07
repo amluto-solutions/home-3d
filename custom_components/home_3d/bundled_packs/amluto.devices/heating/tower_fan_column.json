@@ -1,0 +1,21 @@
+{
+  "id": "tower_fan_column",
+  "name": {"en": "Tower fan"},
+  "size": [0.28, 0.28, 0.82],
+  "group": "heating",
+  "room": ["living", "bedroom", "office", "kids"],
+  "tags": ["fan", "cooling", "air cooler", "oscillating fan", "summer", "column fan", "pillar fan"],
+  "family": "tower_fan",
+  "variant": {"en": "Column"},
+  "electric": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0, "h": 0.0366, "color": "dark", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.6071, "d": 0.6071, "y": 0.0366, "h": 0.9634, "color": "white", "round": 0.5},
+    {"shape": "box", "x": 0.0, "z": 0.2857, "w": 0.2857, "d": 0.0714, "y": 0.122, "h": 0.7073, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4286, "d": 0.4286, "y": 0.9756, "h": 0.0244, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.1071, "z": 0.0714, "w": 0.1071, "d": 0.0714, "y": 0.9939, "h": 0.0061, "color": "#7fd0ff", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0.0, "z": 0.0, "r": 0.5}
+  ]
+}

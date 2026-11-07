@@ -1,0 +1,35 @@
+{
+  "id": "anker_solix_3_8kwh",
+  "name": {"en": "Anker SOLIX power station"},
+  "size": [0.69, 0.37, 0.42],
+  "group": "energy",
+  "room": ["office", "garage", "loft", "living", "garden"],
+  "tags": ["anker", "solix", "portable power station", "power station", "portable battery", "solar generator", "ecoflow", "power bank", "home backup"],
+  "family": "power_station",
+  "variant": {"en": "3.8 kWh with wheels"},
+  "electric": true,
+  "parts": [
+    {"shape": "cyl", "x": -0.413, "z": -0.3378, "w": 0.058, "d": 0.2973, "y": 0.0, "h": 0.2619, "color": "dark", "axis": "x", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.413, "z": 0.3649, "w": 0.058, "d": 0.1081, "y": 0.0, "h": 0.0952, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.413, "z": -0.3378, "w": 0.058, "d": 0.2973, "y": 0.0, "h": 0.2619, "color": "dark", "axis": "x", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.413, "z": 0.3649, "w": 0.058, "d": 0.1081, "y": 0.0, "h": 0.0952, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0714, "h": 0.9286, "color": "dark", "round": 0.12},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.971, "d": 0.9459, "y": 0.9286, "h": 0.0714, "color": "#5a5f66", "round": 0.3},
+    {"shape": "box", "x": 0.0, "z": 0.4919, "w": 0.8841, "d": 0.0162, "y": 0.2386, "h": 0.5571, "color": "#2b2f35"},
+    {"shape": "box", "x": -0.25, "z": 0.4946, "w": 0.22, "d": 0.0108, "y": 0.5357, "h": 0.1857, "color": "#7fd0ff"},
+    {"shape": "box", "x": 0.02, "z": 0.4946, "w": 0.0725, "d": 0.0108, "y": 0.3036, "h": 0.119, "color": "white"},
+    {"shape": "box", "x": 0.1287, "z": 0.4946, "w": 0.0725, "d": 0.0108, "y": 0.3036, "h": 0.119, "color": "white"},
+    {"shape": "box", "x": 0.2374, "z": 0.4946, "w": 0.0725, "d": 0.0108, "y": 0.3036, "h": 0.119, "color": "white"},
+    {"shape": "box", "x": -0.32, "z": 0.4946, "w": 0.0217, "d": 0.0108, "y": 0.35, "h": 0.019, "color": "white"},
+    {"shape": "box", "x": -0.2765, "z": 0.4946, "w": 0.0217, "d": 0.0108, "y": 0.35, "h": 0.019, "color": "white"},
+    {"shape": "box", "x": -0.233, "z": 0.4946, "w": 0.0217, "d": 0.0108, "y": 0.35, "h": 0.019, "color": "white"},
+    {"shape": "cyl", "x": 0.3841, "z": 0.4919, "w": 0.0435, "d": 0.0162, "y": 0.5821, "h": 0.0714, "color": "#46d36a", "axis": "z", "fix": "wdh"},
+    {"shape": "rbox", "x": -0.4275, "z": 0.0, "w": 0.087, "d": 0.7, "y": 0.9881, "h": 0.0119, "color": "#5a5f66", "round": 0.3},
+    {"shape": "rbox", "x": 0.4275, "z": 0.0, "w": 0.087, "d": 0.7, "y": 0.9881, "h": 0.0119, "color": "#5a5f66", "round": 0.3},
+    {"shape": "cyl", "x": -0.3, "z": -0.4459, "w": 0.0319, "d": 0.0595, "y": 0.4429, "h": 0.5571, "color": "metal"},
+    {"shape": "cyl", "x": 0.3, "z": -0.4459, "w": 0.0319, "d": 0.0595, "y": 0.4429, "h": 0.5571, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

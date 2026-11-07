@@ -1,0 +1,24 @@
+{
+  "id": "rug_160x230",
+  "name": {"en": "Rectangular rug 160 × 230 cm"},
+  "size": [1.6, 2.3, 0.012],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "kids", "office"],
+  "tags": ["rug", "carpet", "area rug", "floor rug", "rectangular"],
+  "family": "rug",
+  "variant": {"en": "160 × 230"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.85, "color": "#5b6b7a"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.9304, "y": 0.0, "h": 0.93, "color": "#cfc3ae"},
+    {"shape": "box", "x": 0.0, "z": 0.4304, "w": 0.8, "d": 0.0087, "y": 0.0, "h": 1.0, "color": "#5b6b7a", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.4304, "w": 0.8, "d": 0.0087, "y": 0.0, "h": 1.0, "color": "#5b6b7a", "fix": "d"},
+    {"shape": "box", "x": -0.4, "z": 0.0, "w": 0.0125, "d": 0.8609, "y": 0.0, "h": 1.0, "color": "#5b6b7a", "fix": "w"},
+    {"shape": "box", "x": 0.4, "z": 0.0, "w": 0.0125, "d": 0.8609, "y": 0.0, "h": 1.0, "color": "#5b6b7a", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.32, "d": 0.2583, "y": 0.0, "h": 0.97, "color": "#5b6b7a"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.2825, "d": 0.2322, "y": 0.0, "h": 1.0, "color": "#cfc3ae"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "rect", "x": 0, "z": 0, "w": 0.9, "d": 0.9304}
+  ]
+}

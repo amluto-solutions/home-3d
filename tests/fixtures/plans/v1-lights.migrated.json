@@ -1,0 +1,173 @@
+{
+  "version": 3,
+  "settings": {
+    "wall_exterior": 0.24,
+    "wall_interior": 0.12,
+    "grid": 0.05
+  },
+  "floors": [
+    {
+      "id": "g",
+      "name": "Ground floor",
+      "elevation": 0,
+      "height": 2.5,
+      "cut_height": 1.15,
+      "rooms": [
+        {
+          "id": "g_r1",
+          "name": "Lounge",
+          "area_id": null,
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "floor_material": "wood"
+        }
+      ],
+      "openings": [],
+      "furniture": [
+        {
+          "id": "lamp_sample_ceiling",
+          "type": "sofa",
+          "x": 1,
+          "z": 1,
+          "rotation": 0,
+          "w": 2,
+          "d": 0.9,
+          "h": 0.8,
+          "variant": null
+        },
+        {
+          "id": "lamp_sample_ceiling_2",
+          "type": "lamp_ceiling",
+          "x": 1,
+          "z": 2,
+          "rotation": 0,
+          "w": 0.4,
+          "d": 0.4,
+          "h": 0.08,
+          "variant": null,
+          "entity": "light.sample_ceiling",
+          "power": null
+        },
+        {
+          "id": "lamp_sample_reading",
+          "type": "lamp_floor",
+          "x": 3,
+          "z": 1,
+          "rotation": 0,
+          "w": 0.4,
+          "d": 0.4,
+          "h": 1.7,
+          "variant": null,
+          "entity": "light.sample_reading",
+          "power": null,
+          "name": "Reading lamp",
+          "aliases": [
+            "Reader"
+          ],
+          "show_name": true,
+          "glow_scale": 0.8,
+          "confirm": true,
+          "actions": {
+            "tap": {
+              "action": "toggle"
+            }
+          },
+          "marker": "always",
+          "icon": "floor-lamp"
+        },
+        {
+          "id": "lamp_sample_wall",
+          "type": "lamp_wall",
+          "x": 0.1,
+          "z": 1.5,
+          "rotation": 90,
+          "w": 0.22,
+          "d": 0.12,
+          "h": 0.2,
+          "variant": null,
+          "entity": "light.sample_wall",
+          "power": null,
+          "locked": true,
+          "mount_y": 1.8
+        }
+      ],
+      "placements": [
+        {
+          "entity_id": "light.sample_pinned",
+          "x": 2,
+          "z": 2,
+          "y": null,
+          "mount": "table",
+          "pin": true
+        },
+        {
+          "entity_id": "switch.sample_tv",
+          "x": 2,
+          "z": 0.2,
+          "y": null
+        }
+      ],
+      "background": null
+    },
+    {
+      "id": "u",
+      "name": "Upper floor",
+      "elevation": 2.7,
+      "height": 2.5,
+      "cut_height": 1.15,
+      "rooms": [
+        {
+          "id": "u_r1",
+          "name": "Lounge",
+          "area_id": null,
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          "floor_material": "wood"
+        }
+      ],
+      "openings": [],
+      "furniture": [],
+      "placements": [
+        {
+          "entity_id": "sensor.sample_upstairs",
+          "x": 1,
+          "z": 1,
+          "y": null
+        }
+      ],
+      "background": null
+    }
+  ]
+}

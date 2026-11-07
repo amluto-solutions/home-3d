@@ -1,0 +1,32 @@
+{
+  "id": "washing_line_rotary_4arm",
+  "name": {"en": "Rotary washing line"},
+  "size": [1.8, 1.8, 1.8],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["washing line", "rotary dryer", "rotary airer", "clothes line", "laundry", "drying", "whirligig", "umbrella airer", "clothes dryer"],
+  "family": "washing_line",
+  "variant": {"en": "Rotary, 4 arms, 50 m of line"},
+  "parts": [
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.0222, "d": 0.0222, "y": 0, "h": 0.9444, "color": "metal"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.0556, "d": 0.0556, "y": 0.9222, "h": 0.0278, "color": "#2c2f33"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 0.0139, "y": 0.9444, "h": 0.0139, "color": "metal", "rot": 45},
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 0.0139, "y": 0.9444, "h": 0.0139, "color": "metal", "rot": 135},
+    {"shape": "box", "x": 0, "z": 0.315, "w": 0.63, "d": 0.0022, "y": 0.95, "h": 0.0022, "color": "#e9e6dc"},
+    {"shape": "box", "x": 0, "z": -0.315, "w": 0.63, "d": 0.0022, "y": 0.95, "h": 0.0022, "color": "#e9e6dc"},
+    {"shape": "box", "x": 0.315, "z": 0, "w": 0.0022, "d": 0.63, "y": 0.95, "h": 0.0022, "color": "#e9e6dc"},
+    {"shape": "box", "x": -0.315, "z": 0, "w": 0.0022, "d": 0.63, "y": 0.95, "h": 0.0022, "color": "#e9e6dc"},
+    {"shape": "box", "x": 0, "z": 0.203, "w": 0.406, "d": 0.0022, "y": 0.95, "h": 0.0022, "color": "#e9e6dc"},
+    {"shape": "box", "x": 0, "z": -0.203, "w": 0.406, "d": 0.0022, "y": 0.95, "h": 0.0022, "color": "#e9e6dc"},
+    {"shape": "box", "x": 0.203, "z": 0, "w": 0.0022, "d": 0.406, "y": 0.95, "h": 0.0022, "color": "#e9e6dc"},
+    {"shape": "box", "x": -0.203, "z": 0, "w": 0.0022, "d": 0.406, "y": 0.95, "h": 0.0022, "color": "#e9e6dc"},
+    {"shape": "box", "x": 0, "z": 0.098, "w": 0.196, "d": 0.0022, "y": 0.95, "h": 0.0022, "color": "#e9e6dc"},
+    {"shape": "box", "x": 0, "z": -0.098, "w": 0.196, "d": 0.0022, "y": 0.95, "h": 0.0022, "color": "#e9e6dc"},
+    {"shape": "box", "x": 0.098, "z": 0, "w": 0.0022, "d": 0.196, "y": 0.95, "h": 0.0022, "color": "#e9e6dc"},
+    {"shape": "box", "x": -0.098, "z": 0, "w": 0.0022, "d": 0.196, "y": 0.95, "h": 0.0022, "color": "#e9e6dc"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.08},
+    {"shape": "rect", "x": 0, "z": 0, "w": 0.7, "d": 0.7}
+  ]
+}

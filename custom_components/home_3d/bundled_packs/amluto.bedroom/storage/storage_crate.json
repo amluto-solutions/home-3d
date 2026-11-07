@@ -1,0 +1,45 @@
+{
+  "id": "storage_crate",
+  "name": {
+    "en": "Storage crate"
+  },
+  "size": [
+    0.59,
+    0.4,
+    0.32
+  ],
+  "group": "storage",
+  "family": "storage_crate",
+  "variant": {
+    "en": "1 crate"
+  },
+  "room": [
+    "garage",
+    "utility",
+    "loft",
+    "hobby"
+  ],
+  "tags": [
+    "crate",
+    "heavy duty box",
+    "plastic crate",
+    "tote",
+    "stacking crate",
+    "workshop",
+    "garage storage"
+  ],
+  "parts": [
+    {"shape": "loft", "x": 0, "z": 0, "w": 0.9153, "d": 0.9, "y": 0, "h": 0.8906, "color": "dark", "tx": 0, "tz": 0, "tw": 0.9797, "td": 0.98},
+    {"shape": "box", "x": -0.2, "z": 0, "w": 0.0339, "d": 0.98, "y": 0.0938, "h": 0.7656, "color": "dark", "top": "dark"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.0339, "d": 0.98, "y": 0.0938, "h": 0.7656, "color": "dark", "top": "dark"},
+    {"shape": "box", "x": 0.2, "z": 0, "w": 0.0339, "d": 0.98, "y": 0.0938, "h": 0.7656, "color": "dark", "top": "dark"},
+    {"shape": "box", "x": -0.4729, "z": 0, "w": 0.0475, "d": 0.36, "y": 0.6719, "h": 0.1094, "color": "body"},
+    {"shape": "box", "x": 0.4729, "z": 0, "w": 0.0475, "d": 0.36, "y": 0.6719, "h": 0.1094, "color": "body"},
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.8906, "h": 0.0781, "color": "accent", "round": 0.25},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.7627, "d": 0.75, "y": 0.9688, "h": 0.0313, "color": "accent"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": -0.5, "x2": 0.5, "z2": 0.5}
+  ]
+}

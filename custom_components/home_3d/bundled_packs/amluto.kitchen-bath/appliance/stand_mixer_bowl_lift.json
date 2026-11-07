@@ -1,0 +1,28 @@
+{
+  "id": "stand_mixer_bowl_lift",
+  "name": {"en": "Stand mixer, bowl lift"},
+  "size": [0.3, 0.37, 0.42],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["stand mixer", "mixer", "food mixer", "baking", "kitchenaid", "bowl"],
+  "family": "stand_mixer",
+  "variant": {"en": "Bowl lift"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.0135, "w": 0.5667, "d": 0.973, "y": 0.0, "h": 0.1071, "color": "accent", "round": 0.4},
+    {"shape": "loft", "x": 0.0, "z": -0.3243, "w": 0.4333, "d": 0.2973, "y": 0.0952, "h": 0.6667, "color": "accent", "tx": 0.0, "tz": -0.3378, "tw": 0.3333, "td": 0.2432},
+    {"shape": "rbox", "x": 0.0, "z": -0.0135, "w": 0.5, "d": 0.9189, "y": 0.6905, "h": 0.3095, "color": "accent", "round": 0.45},
+    {"shape": "cyl", "x": 0.0, "z": 0.4459, "w": 0.2333, "d": 0.0676, "y": 0.75, "h": 0.1667, "color": "metal", "axis": "z"},
+    {"shape": "box", "x": -0.2567, "z": -0.1757, "w": 0.0133, "d": 0.1081, "y": 0.7857, "h": 0.0714, "color": "metal"},
+    {"shape": "box", "x": -0.3667, "z": -0.027, "w": 0.0667, "d": 0.3784, "y": 0.3095, "h": 0.0476, "color": "accent"},
+    {"shape": "box", "x": 0.3667, "z": -0.027, "w": 0.0667, "d": 0.3784, "y": 0.3095, "h": 0.0476, "color": "accent"},
+    {"shape": "lathe", "x": 0.0, "z": 0.1622, "w": 0.7667, "d": 0.6216, "y": 0.1071, "h": 0.4762, "color": "metal", "profile": [[0, 0], [0.5, 0], [0.85, 0.25], [1, 0.75], [1, 1], [0.92, 1], [0.85, 0.3], [0, 0.1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.1622, "w": 0.04, "d": 0.0324, "y": 0.2619, "h": 0.4286, "color": "metal"},
+    {"shape": "lathe", "x": 0.0, "z": 0.1622, "w": 0.2, "d": 0.1622, "y": 0.2381, "h": 0.1667, "color": "metal", "profile": [[0, 0], [1, 0.3], [0.6, 1], [0, 1]]}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": -0.0135, "w": 0.5667, "d": 0.973},
+    {"shape": "circle", "x": 0.0, "z": 0.1622, "r": 0.3833}
+  ]
+}

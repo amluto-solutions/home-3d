@@ -1,0 +1,22 @@
+{
+  "id": "rc_car_mini",
+  "name": {"en": "RC car, mini"},
+  "size": [0.17, 0.09, 0.06],
+  "group": "tech",
+  "room": ["hobby", "garage", "kids", "office", "living"],
+  "tags": ["rc car", "radio controlled", "toy car", "buggy", "hobby", "remote control", "crawler", "toy"],
+  "family": "rc_car",
+  "variant": {"en": "Mini"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": -0.2882, "z": -0.3889, "w": 0.3059, "d": 0.2222, "y": 0.0, "h": 0.8667, "color": "#1b1d21", "axis": "z"},
+    {"shape": "cyl", "x": -0.2882, "z": 0.3889, "w": 0.3059, "d": 0.2222, "y": 0.0, "h": 0.8667, "color": "#1b1d21", "axis": "z"},
+    {"shape": "cyl", "x": 0.2882, "z": -0.3889, "w": 0.3059, "d": 0.2222, "y": 0.0, "h": 0.8667, "color": "#1b1d21", "axis": "z"},
+    {"shape": "cyl", "x": 0.2882, "z": 0.3889, "w": 0.3059, "d": 0.2222, "y": 0.0, "h": 0.8667, "color": "#1b1d21", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.6471, "d": 0.4444, "y": 0.26, "h": 0.1667, "color": "dark"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.8235, "d": 0.7111, "y": 0.3333, "h": 0.4167, "color": "accent", "round": 0.4}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

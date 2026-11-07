@@ -1,0 +1,86 @@
+{
+  "id": "unifi_u6_enterprise",
+  "name": {
+    "en": "UniFi U6 Enterprise"
+  },
+  "size": [
+    0.22,
+    0.22,
+    0.048
+  ],
+  "group": "network",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "access point",
+    "wifi",
+    "wireless",
+    "u6 enterprise",
+    "u6-enterprise",
+    "wifi 6e"
+  ],
+  "family": "unifi_ap_ceiling",
+  "variant": {
+    "en": "U6 Enterprise"
+  },
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {
+      "shape": "lathe",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0.0758,
+      "h": 0.9242,
+      "color": "white",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          0.55,
+          0
+        ],
+        [
+          0.86,
+          0.12
+        ],
+        [
+          1,
+          0.55
+        ],
+        [
+          0.97,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 0.42,
+      "d": 0.42,
+      "y": 0.0242,
+      "h": 0.0515,
+      "color": "#4aa3ff"
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 0.36,
+      "d": 0.36,
+      "y": 0,
+      "h": 0.0758,
+      "color": "white"
+    }
+  ]
+}

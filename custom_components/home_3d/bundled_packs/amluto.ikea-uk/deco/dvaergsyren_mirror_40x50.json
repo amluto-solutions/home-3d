@@ -1,0 +1,36 @@
+{
+  "id": "dvaergsyren_mirror_40x50",
+  "name": {
+    "en": "Wooden-frame mirror 40x50 cm"
+  },
+  "size": [
+    0.4,
+    0.02,
+    0.5
+  ],
+  "group": "deco",
+  "room": [
+    "hall",
+    "bath",
+    "bedroom",
+    "living"
+  ],
+  "tags": [
+    "mirror",
+    "wall mirror",
+    "oak veneer",
+    "walnut veneer",
+    "wooden frame"
+  ],
+  "family": "dvaergsyren_mirror",
+  "variant": {
+    "en": "40x50"
+  },
+  "ikea": "DVÄRGSYREN",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.05, "w": 1, "d": 0.9, "y": 0, "h": 1, "color": "wood", "round": 0.02},
+    {"shape": "box", "x": 0.0, "z": 0.325, "w": 0.875, "d": 0.35, "y": 0.05, "h": 0.9, "color": "glass", "fix": "d"}
+  ]
+}

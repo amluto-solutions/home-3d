@@ -1,0 +1,98 @@
+{
+  "id": "uplighter_slim_floor",
+  "name": {
+    "en": "Slim floor uplighter"
+  },
+  "size": [
+    0.25,
+    0.25,
+    1.8
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "hall"
+  ],
+  "tags": [
+    "uplighter",
+    "floor lamp",
+    "uplight",
+    "slim",
+    "standard lamp",
+    "torchiere",
+    "black",
+    "dimmable"
+  ],
+  "family": "uplighter_slim",
+  "variant": {
+    "en": "Floor"
+  },
+  "light": "uplight",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 0.0111,
+      "color": "dark",
+      "fix": "h"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.088,
+      "d": 0.088,
+      "y": 0.0111,
+      "h": 0.9333,
+      "color": "dark",
+      "fix": "wd"
+    },
+    {
+      "shape": "lathe",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.8,
+      "d": 0.8,
+      "y": 0.9333,
+      "h": 0.0667,
+      "color": "dark",
+      "profile": [
+        [
+          0.15,
+          0
+        ],
+        [
+          0.6,
+          0.4
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.72,
+      "d": 0.72,
+      "y": 0.9917,
+      "h": 0.0067,
+      "color": "#fff2d6",
+      "glow": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "corner_desk_140x120_left",
+  "name": {"en": "Corner desk 140 × 120 cm, return left"},
+  "size": [1.4, 1.2, 0.74],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby"],
+  "tags": ["desk", "workstation", "computer desk", "study desk", "home office", "l-desk", "l-shaped desk", "corner desk", "gaming desk"],
+  "family": "corner_desk",
+  "variant": {"en": "140 × 120 left"},
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.25, "w": 1.0, "d": 0.5, "y": 0.9662, "h": 0.0338, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.3214, "z": 0.25, "w": 0.3571, "d": 0.5, "y": 0.9662, "h": 0.0338, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4786, "z": -0.475, "w": 0.0357, "d": 0.0417, "y": 0.0, "h": 0.9662, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": 0.4786, "z": -0.475, "w": 0.0357, "d": 0.0417, "y": 0.0, "h": 0.9662, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": -0.4786, "z": 0.475, "w": 0.0357, "d": 0.0417, "y": 0.0, "h": 0.9662, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": -0.1643, "z": 0.475, "w": 0.0357, "d": 0.0417, "y": 0.0, "h": 0.9662, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": 0.4786, "z": -0.025, "w": 0.0357, "d": 0.0417, "y": 0.0, "h": 0.9662, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": -0.4833, "w": 0.9143, "d": 0.0167, "y": 0.8581, "h": 0.1081, "color": "metal", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": -0.25, "w": 1.0, "d": 0.5},
+    {"shape": "rect", "x": -0.3214, "z": 0.25, "w": 0.3571, "d": 0.5}
+  ]
+}

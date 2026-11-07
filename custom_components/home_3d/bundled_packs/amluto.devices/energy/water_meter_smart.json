@@ -1,0 +1,21 @@
+{
+  "id": "water_meter_smart",
+  "name": {"en": "Smart water meter"},
+  "size": [0.26, 0.12, 0.14],
+  "group": "energy",
+  "tags": ["water meter", "smart water meter", "stopcock", "stop tap", "water supply", "mains water", "flow sensor", "utility meter", "in-line meter"],
+  "family": "water_meter",
+  "variant": {"en": "In-line"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 0.5,
+  "parts": [
+    {"shape": "cyl", "x": 0, "z": 0, "w": 1, "d": 0.22, "y": 0.05, "h": 0.3, "color": "#b87333", "axis": "x"},
+    {"shape": "box", "x": -0.38, "z": 0, "w": 0.14, "d": 0.4, "y": 0.02, "h": 0.4, "color": "#b87333"},
+    {"shape": "box", "x": 0.38, "z": 0, "w": 0.14, "d": 0.4, "y": 0.02, "h": 0.4, "color": "#b87333"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.5, "d": 0.8, "y": 0.22, "h": 0.4, "color": "#2b6fb0"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.4, "d": 0.65, "y": 0.62, "h": 0.1, "color": "glass"},
+    {"shape": "rbox", "x": 0, "z": 0.25, "w": 0.3, "d": 0.3, "y": 0.7, "h": 0.3, "color": "#f4f4ee", "round": 0.2},
+    {"shape": "cyl", "x": 0, "z": 0.38, "w": 0.06, "d": 0.06, "y": 0.82, "h": 0.06, "color": "#3a8dde", "glow": true}
+  ]
+}

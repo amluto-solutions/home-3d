@@ -1,0 +1,22 @@
+{
+  "id": "banana_stand",
+  "name": {"en": "Banana stand with bananas"},
+  "size": [0.2, 0.2, 0.36],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "tags": ["fruit bowl", "fruit basket", "fruit stand", "apples", "oranges", "kitchen", "worktop"],
+  "family": "fruit_basket",
+  "variant": {"en": "Banana stand"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.9, "y": 0, "h": 0.0417, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.05, "d": 0.05, "y": 0.0417, "h": 0.9, "color": "#c4c8cd", "fix": "wd"},
+    {"shape": "box", "x": 0.2, "z": 0.0, "w": 0.5, "d": 0.05, "y": 0.9, "h": 0.0278, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "loft", "x": 0.425, "z": -0.05, "w": 0.15, "d": 0.125, "y": 0.52, "h": 0.38, "color": "#e9d04a", "tx": 0.3, "tz": -0.05, "tw": 0.075, "td": 0.075, "fix": "wdh"},
+    {"shape": "loft", "x": 0.425, "z": 0.0, "w": 0.15, "d": 0.125, "y": 0.52, "h": 0.38, "color": "#e9d04a", "tx": 0.3, "tz": 0.0, "tw": 0.075, "td": 0.075, "fix": "wdh"},
+    {"shape": "loft", "x": 0.425, "z": 0.05, "w": 0.15, "d": 0.125, "y": 0.52, "h": 0.38, "color": "#e9d04a", "tx": 0.3, "tz": 0.05, "tw": 0.075, "td": 0.075, "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

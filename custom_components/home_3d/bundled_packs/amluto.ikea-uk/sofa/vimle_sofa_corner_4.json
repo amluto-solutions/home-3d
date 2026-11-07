@@ -1,0 +1,61 @@
+{
+  "id": "vimle_sofa_corner_4",
+  "name": {
+    "en": "Corner sofa, 4-seat"
+  },
+  "size": [
+    2.49,
+    2.49,
+    0.83
+  ],
+  "group": "sofa",
+  "room": [
+    "living",
+    "conservatory"
+  ],
+  "tags": [
+    "sofa",
+    "settee",
+    "couch",
+    "modular sofa",
+    "fabric sofa",
+    "beige",
+    "grey",
+    "grey-green",
+    "dark green",
+    "dark blue"
+  ],
+  "family": "vimle_sofa",
+  "variant": {
+    "en": "Corner 4-seat"
+  },
+  "ikea": "VIMLE",
+  "parts": [
+    {"shape": "rbox", "x": 0.1968, "z": -0.3032, "w": 0.6064, "d": 0.3936, "y": 0.0723, "h": 0.4337, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": 0.1968, "z": -0.4518, "w": 0.5462, "d": 0.0964, "y": 0.4337, "h": 0.5663, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": 0.0301, "z": -0.259, "w": 0.2691, "d": 0.2972, "y": 0.4337, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.0301, "z": -0.3715, "w": 0.2651, "d": 0.0803, "y": 0.5542, "h": 0.4217, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.3032, "z": -0.259, "w": 0.2691, "d": 0.2972, "y": 0.4337, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.3032, "z": -0.3715, "w": 0.2651, "d": 0.0803, "y": 0.5542, "h": 0.4217, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.4699, "z": -0.3032, "w": 0.0602, "d": 0.3936, "y": 0.0723, "h": 0.747, "color": "fabric", "fix": "w", "round": 0.3},
+    {"shape": "box", "x": -0.0823, "z": -0.4759, "w": 0.0161, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.0823, "z": -0.1305, "w": 0.0161, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4759, "z": -0.4759, "w": 0.0161, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4759, "z": -0.1305, "w": 0.0161, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": -0.3032, "z": -0.3032, "w": 0.3936, "d": 0.3936, "y": 0.0723, "h": 0.4337, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": -0.3032, "z": -0.4518, "w": 0.3936, "d": 0.0964, "y": 0.4337, "h": 0.5663, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.4518, "z": -0.3032, "w": 0.0964, "d": 0.3936, "y": 0.4337, "h": 0.5663, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.259, "z": -0.259, "w": 0.2972, "d": 0.2972, "y": 0.4337, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.3032, "z": 0.1968, "w": 0.3936, "d": 0.6064, "y": 0.0723, "h": 0.4337, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": -0.4518, "z": 0.1968, "w": 0.0964, "d": 0.5462, "y": 0.4337, "h": 0.5663, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.259, "z": 0.0301, "w": 0.2972, "d": 0.2691, "y": 0.4337, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.3715, "z": 0.0301, "w": 0.0803, "d": 0.2651, "y": 0.5542, "h": 0.4217, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.259, "z": 0.3032, "w": 0.2972, "d": 0.2691, "y": 0.4337, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.3715, "z": 0.3032, "w": 0.0803, "d": 0.2651, "y": 0.5542, "h": 0.4217, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.3032, "z": 0.4699, "w": 0.3936, "d": 0.0602, "y": 0.0723, "h": 0.747, "color": "fabric", "fix": "d", "round": 0.3},
+    {"shape": "box", "x": -0.4759, "z": -0.0823, "w": 0.0161, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "dwh"},
+    {"shape": "box", "x": -0.1305, "z": -0.0823, "w": 0.0161, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "dwh"},
+    {"shape": "box", "x": -0.4759, "z": 0.4759, "w": 0.0161, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "dwh"},
+    {"shape": "box", "x": -0.1305, "z": 0.4759, "w": 0.0161, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "dwh"}
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "hemnes_mirror_cabinet_1_door_63x98",
+  "name": {
+    "en": "Mirror cabinet with 1 door 63x98 cm"
+  },
+  "size": [
+    0.63,
+    0.16,
+    0.98
+  ],
+  "group": "bath",
+  "room": [
+    "bath",
+    "utility",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "mirror cabinet",
+    "bathroom mirror",
+    "wall cabinet",
+    "HEMNES",
+    "white stain",
+    "white"
+  ],
+  "family": "hemnes_mirror_cabinet",
+  "variant": {
+    "en": "1 door 63x98"
+  },
+  "ikea": "HEMNES",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "box", "x": -0.4873, "z": 0.0, "w": 0.0254, "d": 0.9125, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4873, "z": 0.0, "w": 0.0254, "d": 0.9125, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9125, "y": 0.9837, "h": 0.0163, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9125, "y": 0, "h": 0.0163, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4688, "w": 0.9492, "d": 0.0625, "y": 0.0163, "h": 0.9673, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.0625, "w": 0.9492, "d": 0.75, "y": 0.4, "h": 0.0122, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4562, "w": 0.9937, "d": 0.0875, "y": 0.0041, "h": 0.9918, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.9365, "d": 0.0187, "y": 0.0204, "h": 0.9592, "color": "glass", "fix": "d"},
+    {"shape": "box", "x": 0.4524, "z": 0.5, "w": 0.019, "d": 0.1375, "y": 0.449, "h": 0.102, "color": "metal", "fix": "wdh"}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "wooden_bed_small_double",
+  "name": {"en": "Small double wooden bed"},
+  "size": [1.29, 2.0, 0.95],
+  "group": "bed",
+  "family": "wooden_bed",
+  "variant": {"en": "Small double · 120 × 190"},
+  "room": ["bedroom", "kids"],
+  "tags": ["bed frame", "wooden bed", "solid wood", "slatted headboard", "footboard", "small double", "4ft", "bed"],
+  "parts": [
+    {"shape": "box", "x": -0.4767, "z": -0.485, "w": 0.0465, "d": 0.03, "y": 0.0, "h": 1.0, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": -0.4767, "z": 0.485, "w": 0.0465, "d": 0.03, "y": 0.0, "h": 0.5263, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": -0.4767, "z": 0.0, "w": 0.031, "d": 0.94, "y": 0.2105, "h": 0.1263, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": 0.4767, "z": -0.485, "w": 0.0465, "d": 0.03, "y": 0.0, "h": 1.0, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4767, "z": 0.485, "w": 0.0465, "d": 0.03, "y": 0.0, "h": 0.5263, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4767, "z": 0.0, "w": 0.031, "d": 0.94, "y": 0.2105, "h": 0.1263, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": 0.485, "w": 0.907, "d": 0.02, "y": 0.2105, "h": 0.1263, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.485, "w": 0.907, "d": 0.015, "y": 0.3789, "h": 0.1263, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.485, "w": 0.907, "d": 0.02, "y": 0.3368, "h": 0.0842, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.485, "w": 0.907, "d": 0.025, "y": 0.8947, "h": 0.0842, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": -0.3239, "z": -0.485, "w": 0.031, "d": 0.015, "y": 0.4211, "h": 0.4737, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": -0.1944, "z": -0.485, "w": 0.031, "d": 0.015, "y": 0.4211, "h": 0.4737, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": -0.0648, "z": -0.485, "w": 0.031, "d": 0.015, "y": 0.4211, "h": 0.4737, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0648, "z": -0.485, "w": 0.031, "d": 0.015, "y": 0.4211, "h": 0.4737, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.1944, "z": -0.485, "w": 0.031, "d": 0.015, "y": 0.4211, "h": 0.4737, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.3239, "z": -0.485, "w": 0.031, "d": 0.015, "y": 0.4211, "h": 0.4737, "color": "wood", "fix": "d"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0025, "w": 0.9302, "d": 0.945, "y": 0.3158, "h": 0.2105, "color": "white", "round": 0.2, "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0988, "w": 0.9457, "d": 0.7575, "y": 0.4737, "h": 0.1053, "color": "cushion", "round": 0.3, "fix": "dh"},
+    {"shape": "rbox", "x": -0.2326, "z": -0.375, "w": 0.4186, "d": 0.14, "y": 0.5263, "h": 0.1158, "color": "white", "round": 0.45, "fix": "dh"},
+    {"shape": "rbox", "x": 0.2326, "z": -0.375, "w": 0.4186, "d": 0.14, "y": 0.5263, "h": 0.1158, "color": "white", "round": 0.45, "fix": "dh"}
+  ]
+}

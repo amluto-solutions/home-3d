@@ -1,0 +1,11 @@
+{
+  "format": "home3d-pack",
+  "version": 2,
+  "id": "amluto.kitchen-bath",
+  "name": "Kitchen & bath",
+  "publisher": "Amluto Solutions",
+  "licence": "MIT",
+  "release": 4,
+  "description": "Kitchen units, appliances and bathroom fittings, modelled for Home 3D from simple shapes. Appliances can be linked to a switch and a power sensor. Ships with the app and works offline.",
+  "release_note": "Release 4: the pack's id is now amluto.kitchen-bath (it was theovencook.kitchen-bath); plans that name the old id still load (#424)."
+}

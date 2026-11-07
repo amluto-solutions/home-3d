@@ -1,0 +1,24 @@
+{
+  "id": "mirror_cabinet_800",
+  "name": {"en": "Mirror cabinet 800, three doors"},
+  "size": [0.8, 0.14, 0.7],
+  "group": "bath",
+  "room": ["bath"],
+  "tags": ["mirror cabinet", "bathroom cabinet", "medicine cabinet", "mirror", "wall cabinet"],
+  "family": "mirror_cabinet",
+  "variant": {"en": "800 three doors"},
+  "mount": "wall",
+  "wall_y": 1.15,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0714, "w": 1.0, "d": 0.8571, "y": 0.0, "h": 1.0, "color": "white"},
+    {"shape": "box", "x": -0.3333, "z": 0.4143, "w": 0.3283, "d": 0.1143, "y": 0.0, "h": 1.0, "color": "white"},
+    {"shape": "box", "x": -0.3333, "z": 0.4857, "w": 0.3183, "d": 0.0286, "y": 0.0057, "h": 0.9886, "color": "#b9c7cd"},
+    {"shape": "box", "x": 0.0, "z": 0.4143, "w": 0.3283, "d": 0.1143, "y": 0.0, "h": 1.0, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4857, "w": 0.3183, "d": 0.0286, "y": 0.0057, "h": 0.9886, "color": "#b9c7cd"},
+    {"shape": "box", "x": 0.3333, "z": 0.4143, "w": 0.3283, "d": 0.1143, "y": 0.0, "h": 1.0, "color": "white"},
+    {"shape": "box", "x": 0.3333, "z": 0.4857, "w": 0.3183, "d": 0.0286, "y": 0.0057, "h": 0.9886, "color": "#b9c7cd"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "nesting_tables_2",
+  "name": {"en": "Nest of 2 tables"},
+  "size": [0.56, 0.42, 0.5],
+  "group": "table",
+  "family": "nesting_tables",
+  "variant": {"en": "Set of 2"},
+  "room": ["living", "bedroom", "conservatory"],
+  "tags": ["nest of tables", "nesting tables", "side table", "lamp table", "occasional table", "set"],
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": -0.0536, "z": -0.0238, "w": 0.8929, "d": 0.9524, "y": 0.956, "h": 0.044, "color": "wood"},
+    {"shape": "box", "x": -0.4562, "z": -0.4417, "w": 0.0446, "d": 0.0595, "y": 0.0, "h": 0.956, "color": "wood"},
+    {"shape": "box", "x": -0.4562, "z": 0.394, "w": 0.0446, "d": 0.0595, "y": 0.0, "h": 0.956, "color": "wood"},
+    {"shape": "box", "x": 0.3491, "z": -0.4417, "w": 0.0446, "d": 0.0595, "y": 0.0, "h": 0.956, "color": "wood"},
+    {"shape": "box", "x": 0.3491, "z": 0.394, "w": 0.0446, "d": 0.0595, "y": 0.0, "h": 0.956, "color": "wood"},
+    {"shape": "box", "x": 0.1071, "z": -0.0238, "w": 0.7857, "d": 0.8571, "y": 0.856, "h": 0.044, "color": "wood"},
+    {"shape": "box", "x": -0.242, "z": -0.394, "w": 0.0446, "d": 0.0595, "y": 0.0, "h": 0.856, "color": "wood"},
+    {"shape": "box", "x": -0.242, "z": 0.3464, "w": 0.0446, "d": 0.0595, "y": 0.0, "h": 0.856, "color": "wood"},
+    {"shape": "box", "x": 0.4562, "z": -0.394, "w": 0.0446, "d": 0.0595, "y": 0.0, "h": 0.856, "color": "wood"},
+    {"shape": "box", "x": 0.4562, "z": 0.3464, "w": 0.0446, "d": 0.0595, "y": 0.0, "h": 0.856, "color": "wood"}
+  ]
+}

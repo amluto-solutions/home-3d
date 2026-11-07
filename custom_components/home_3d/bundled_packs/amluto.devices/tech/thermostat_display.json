@@ -1,0 +1,20 @@
+{
+  "id": "thermostat_display",
+  "name": {"en": "Wall thermostat (display)"},
+  "size": [0.09, 0.025, 0.11],
+  "group": "tech",
+  "tags": ["wall thermostat", "thermostat", "smart thermostat", "heating control", "room thermostat", "hive", "nest", "tado", "climate"],
+  "family": "thermostat",
+  "variant": {"en": "Display"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.5,
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": -0.25, "w": 1, "d": 0.5, "y": 0, "h": 1, "color": "white", "round": 0.25},
+    {"shape": "rbox", "x": 0, "z": 0.1, "w": 0.84, "d": 0.3, "y": 0.1, "h": 0.8, "color": "#f4f4ee", "round": 0.2},
+    {"shape": "rbox", "x": 0, "z": 0.3, "w": 0.6, "d": 0.12, "y": 0.38, "h": 0.4, "color": "dark", "round": 0.1},
+    {"shape": "box", "x": 0, "z": 0.38, "w": 0.3, "d": 0.05, "y": 0.5, "h": 0.18, "color": "#ff8a3a", "glow": true},
+    {"shape": "cyl", "x": -0.25, "z": 0.3, "w": 0.08, "d": 0.1, "y": 0.16, "h": 0.08, "color": "metal", "axis": "z"},
+    {"shape": "cyl", "x": 0.25, "z": 0.3, "w": 0.08, "d": 0.1, "y": 0.16, "h": 0.08, "color": "metal", "axis": "z"}
+  ]
+}

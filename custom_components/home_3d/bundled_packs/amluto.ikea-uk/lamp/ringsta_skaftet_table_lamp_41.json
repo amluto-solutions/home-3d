@@ -1,0 +1,41 @@
+{
+  "id": "ringsta_skaftet_table_lamp_41",
+  "name": {
+    "en": "Table lamp, white fabric shade 41 cm"
+  },
+  "size": [
+    0.19,
+    0.19,
+    0.41
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "table lamp",
+    "fabric shade",
+    "white",
+    "brass",
+    "nickel-plated",
+    "build your own lamp",
+    "ringsta",
+    "skaftet"
+  ],
+  "family": "ringsta_skaftet_lamp",
+  "variant": {
+    "en": "Table 41"
+  },
+  "ikea": "RINGSTA / SKAFTET",
+  "light": "table",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.7895, "d": 0.7895, "y": 0, "h": 0.0293, "color": "metal", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0737, "d": 0.0737, "y": 0.0244, "h": 0.4878, "color": "metal", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.561, "h": 0.439, "color": "white", "edges": "faint", "profile": [[1.0, 0], [1.0, 1], [0.874, 1], [0.874, 0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.3158, "d": 0.3158, "y": 0.6585, "h": 0.1463, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

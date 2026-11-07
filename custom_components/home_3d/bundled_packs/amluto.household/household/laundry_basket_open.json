@@ -1,0 +1,24 @@
+{
+  "id": "laundry_basket_open",
+  "name": {"en": "Laundry basket"},
+  "size": [0.5, 0.36, 0.3],
+  "group": "household",
+  "room": ["bedroom", "bath", "utility"],
+  "tags": ["laundry bin", "washing basket", "laundry hamper", "dirty clothes", "linen basket", "plastic basket"],
+  "family": "laundry_basket",
+  "variant": {"en": "Open, plastic"},
+  "parts": [
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.84, "d": 0.7778, "y": 0.0, "h": 1, "color": "white", "tx": 0.0, "tz": 0.0, "tw": 1, "td": 1},
+    {"shape": "box", "x": -0.4, "z": 0.0, "w": 0.06, "d": 0.3333, "y": 0.8, "h": 0.1167, "color": "dark"},
+    {"shape": "box", "x": 0.4, "z": 0.0, "w": 0.06, "d": 0.3333, "y": 0.8, "h": 0.1167, "color": "dark"},
+    {"shape": "box", "x": -0.32, "z": 0.4611, "w": 0.08, "d": 0.0333, "y": 0.2667, "h": 0.4667, "color": "#c9ced4"},
+    {"shape": "box", "x": -0.16, "z": 0.4611, "w": 0.08, "d": 0.0333, "y": 0.2667, "h": 0.4667, "color": "#c9ced4"},
+    {"shape": "box", "x": 0.0, "z": 0.4611, "w": 0.08, "d": 0.0333, "y": 0.2667, "h": 0.4667, "color": "#c9ced4"},
+    {"shape": "box", "x": 0.16, "z": 0.4611, "w": 0.08, "d": 0.0333, "y": 0.2667, "h": 0.4667, "color": "#c9ced4"},
+    {"shape": "box", "x": 0.32, "z": 0.4611, "w": 0.08, "d": 0.0333, "y": 0.2667, "h": 0.4667, "color": "#c9ced4"},
+    {"shape": "rbox", "x": 0.04, "z": 0.0, "w": 0.8, "d": 0.7222, "y": 0.9, "h": 0.1, "color": "fabric", "round": 0.5}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

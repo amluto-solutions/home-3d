@@ -1,0 +1,40 @@
+{
+  "id": "pax_corner_wardrobe_110x110x201",
+  "name": {
+    "en": "Corner wardrobe, 110/110x201 cm"
+  },
+  "size": [
+    1.1,
+    1.1,
+    2.01
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "wardrobe",
+    "corner wardrobe",
+    "fitted wardrobe",
+    "L-shaped",
+    "white",
+    "grey-beige",
+    "white stained oak effect"
+  ],
+  "family": "pax_wardrobe",
+  "variant": {
+    "en": "Corner 110/110x201"
+  },
+  "ikea": "PAX",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.2364, "w": 1, "d": 0.5273, "y": 0, "h": 1, "color": "white"},
+    {"shape": "box", "x": -0.2364, "z": 0.2636, "w": 0.5273, "d": 0.4727, "y": 0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.2636, "z": 0.0364, "w": 0.4691, "d": 0.0182, "y": 0.0025, "h": 0.995, "color": "white"},
+    {"shape": "box", "x": 0.0364, "z": 0.2636, "w": 0.0182, "d": 0.4691, "y": 0.0025, "h": 0.995, "color": "white"},
+    {"shape": "box", "x": 0.0564, "z": 0.4455, "w": 0.0109, "d": 0.0109, "y": 0.5, "h": 0.0995, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.4455, "z": 0.0564, "w": 0.0109, "d": 0.0109, "y": 0.5, "h": 0.0995, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.2364, "z": 0.0255, "w": 0.0036, "d": 0.0036, "y": 0, "h": 1, "color": "dark", "fix": "wd"}
+  ]
+}

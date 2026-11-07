@@ -1,0 +1,43 @@
+{
+  "id": "kleppstad_wardrobe_3_doors",
+  "name": {
+    "en": "Wardrobe with 3 doors"
+  },
+  "size": [
+    1.17,
+    0.55,
+    1.76
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "wardrobe",
+    "freestanding wardrobe",
+    "clothes storage",
+    "hanging rail",
+    "white"
+  ],
+  "family": "kleppstad_wardrobe",
+  "variant": {
+    "en": "3 doors 117"
+  },
+  "ikea": "KLEPPSTAD",
+  "parts": [
+    {"shape": "box", "x": -0.4932, "z": -0.0182, "w": 0.0137, "d": 0.9636, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4932, "z": -0.0182, "w": 0.0137, "d": 0.9636, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0182, "w": 1, "d": 0.9636, "y": 0.9909, "h": 0.0091, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0182, "w": 0.9726, "d": 0.9636, "y": 0, "h": 0.0091, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4927, "w": 0.9726, "d": 0.0145, "y": 0.0091, "h": 0.9818, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4273, "w": 0.9726, "d": 0.0327, "y": 0, "h": 0.0341, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.3333, "z": 0.4818, "w": 0.3299, "d": 0.0327, "y": 0.0341, "h": 0.9636, "color": "white"},
+    {"shape": "cyl", "x": -0.2094, "z": 0.5, "w": 0.0239, "d": 0.0436, "y": 0.5318, "h": 0.0159, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4818, "w": 0.3299, "d": 0.0327, "y": 0.0341, "h": 0.9636, "color": "white"},
+    {"shape": "cyl", "x": -0.1239, "z": 0.5, "w": 0.0239, "d": 0.0436, "y": 0.5318, "h": 0.0159, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.3333, "z": 0.4818, "w": 0.3299, "d": 0.0327, "y": 0.0341, "h": 0.9636, "color": "white"},
+    {"shape": "cyl", "x": 0.2094, "z": 0.5, "w": 0.0239, "d": 0.0436, "y": 0.5318, "h": 0.0159, "color": "metal", "axis": "z", "fix": "wdh"}
+  ]
+}

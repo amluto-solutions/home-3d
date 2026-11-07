@@ -1,0 +1,26 @@
+{
+  "id": "wii_flat",
+  "name": {"en": "Nintendo Wii"},
+  "size": [0.215, 0.157, 0.044],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["wii", "nintendo wii", "nintendo", "gaming", "console", "games console", "rvl-001"],
+  "family": "wii",
+  "variant": {"en": " flat"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 18,
+  "parts": [
+    {"shape": "cyl", "x": -0.3605, "z": -0.3089, "w": 0.093, "d": 0.1274, "y": 0.0, "h": 0.1364, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3605, "z": 0.3089, "w": 0.093, "d": 0.1274, "y": 0.0, "h": 0.1364, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3605, "z": -0.3089, "w": 0.093, "d": 0.1274, "y": 0.0, "h": 0.1364, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3605, "z": 0.3089, "w": 0.093, "d": 0.1274, "y": 0.0, "h": 0.1364, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.1364, "h": 0.8636, "color": "white", "round": 0.25},
+    {"shape": "box", "x": -0.12, "z": 0.4904, "w": 0.45, "d": 0.0191, "y": 0.6114, "h": 0.0682, "color": "#101114"},
+    {"shape": "box", "x": 0.34, "z": 0.4904, "w": 0.18, "d": 0.0191, "y": 0.3091, "h": 0.0682, "color": "#4aa3ff", "edges": "faint"},
+    {"shape": "cyl", "x": 0.43, "z": 0.4904, "w": 0.0389, "d": 0.0191, "y": 0.3091, "h": 0.19, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

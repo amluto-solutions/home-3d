@@ -1,0 +1,43 @@
+{
+  "id": "google_home",
+  "name": {
+    "en": "Google Home speaker"
+  },
+  "size": [
+    0.096,
+    0.096,
+    0.1425
+  ],
+  "group": "media",
+  "room": [
+    "living",
+    "kitchen",
+    "bedroom",
+    "kids",
+    "office",
+    "bath",
+    "hall",
+    "dining"
+  ],
+  "tags": [
+    "google home",
+    "google speaker",
+    "google assistant",
+    "smart speaker",
+    "voice assistant",
+    "speaker",
+    "assistant",
+    "media player"
+  ],
+  "family": "google_speaker",
+  "variant": {
+    "en": "Home"
+  },
+  "mount": "surface",
+  "electric": true,
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.9167, "d": 0.9167, "y": 0, "h": 0.4912, "color": "fabric", "profile": [[0.0, 0.0], [0.9091, 0.0], [1.0, 1.0], [0.0, 1.0]]},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.4912, "h": 0.5018, "color": "white", "profile": [[0.0, 0.0], [1.0, 0.0], [1.0, 0.979], [0.8958, 1.0], [0.0, 1.0]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.5208, "d": 0.5208, "y": 0.986, "h": 0.014, "color": "white", "glow": true}
+  ]
+}

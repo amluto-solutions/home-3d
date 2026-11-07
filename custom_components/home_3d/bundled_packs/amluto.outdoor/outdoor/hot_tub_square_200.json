@@ -1,0 +1,23 @@
+{
+  "id": "hot_tub_square_200",
+  "name": {"en": "Hot tub"},
+  "size": [2, 2, 0.92],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["hot tub", "spa", "jacuzzi", "6 person", "square", "jets", "garden", "relax", "heated", "cover"],
+  "family": "hot_tub",
+  "variant": {"en": "Square, 6 people, 2.0 m"},
+  "electric": true,
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 0.98, "d": 0.98, "y": 0, "h": 0.8043, "color": "#5a4a3e"},
+    {"shape": "box", "x": -0.3, "z": 0.491, "w": 0.17, "d": 0.005, "y": 0.1087, "h": 0.6522, "color": "#6c5848"},
+    {"shape": "box", "x": -0.1, "z": 0.491, "w": 0.17, "d": 0.005, "y": 0.1087, "h": 0.6522, "color": "#6c5848"},
+    {"shape": "box", "x": 0.1, "z": 0.491, "w": 0.17, "d": 0.005, "y": 0.1087, "h": 0.6522, "color": "#6c5848"},
+    {"shape": "box", "x": 0.3, "z": 0.491, "w": 0.17, "d": 0.005, "y": 0.1087, "h": 0.6522, "color": "#6c5848"},
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.7609, "h": 0.1304, "color": "#e9ecef", "round": 0.2},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.94, "d": 0.94, "y": 0.8696, "h": 0.0217, "color": "#2f6f8f"},
+    {"shape": "rbox", "x": 0, "z": 0, "w": 0.97, "d": 0.97, "y": 0.8913, "h": 0.1087, "color": "#3a3d42", "round": 0.2},
+    {"shape": "box", "x": 0, "z": 0.425, "w": 0.15, "d": 0.006, "y": 0.9348, "h": 0.0109, "color": "#5a5f66"},
+    {"shape": "box", "x": 0.475, "z": 0.45, "w": 0.04, "d": 0.03, "y": 0.0543, "h": 0.0326, "color": "#2c2f33"}
+  ]
+}

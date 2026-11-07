@@ -1,0 +1,41 @@
+{
+  "id": "askholmen_table_62x60",
+  "name": {
+    "en": "Outdoor table, foldable 62x60 cm"
+  },
+  "size": [
+    0.62,
+    0.6,
+    0.73
+  ],
+  "group": "outdoor",
+  "room": [
+    "garden",
+    "conservatory"
+  ],
+  "tags": [
+    "garden table",
+    "patio table",
+    "balcony table",
+    "slatted",
+    "acacia",
+    "dark brown"
+  ],
+  "family": "askholmen_table",
+  "variant": {
+    "en": "62x60 foldable"
+  },
+  "ikea": "ASKHOLMEN",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4067, "w": 1, "d": 0.1867, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.2033, "w": 1, "d": 0.1867, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0, "w": 1, "d": 0.1867, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2033, "w": 1, "d": 0.1867, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4067, "w": 1, "d": 0.1867, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "loft", "x": -0.2903, "z": -0.3667, "w": 0.0645, "d": 0.0667, "y": 0, "h": 0.9658, "color": "wood", "tz": 0.3333, "tw": 0.0645, "td": 0.0667, "fix": "w"},
+    {"shape": "loft", "x": -0.3548, "z": 0.3667, "w": 0.0645, "d": 0.0667, "y": 0, "h": 0.9658, "color": "wood", "tz": -0.3333, "tw": 0.0645, "td": 0.0667, "fix": "w"},
+    {"shape": "loft", "x": 0.2903, "z": -0.3667, "w": 0.0645, "d": 0.0667, "y": 0, "h": 0.9658, "color": "wood", "tz": 0.3333, "tw": 0.0645, "td": 0.0667, "fix": "w"},
+    {"shape": "loft", "x": 0.3548, "z": 0.3667, "w": 0.0645, "d": 0.0667, "y": 0, "h": 0.9658, "color": "wood", "tz": -0.3333, "tw": 0.0645, "td": 0.0667, "fix": "w"}
+  ]
+}

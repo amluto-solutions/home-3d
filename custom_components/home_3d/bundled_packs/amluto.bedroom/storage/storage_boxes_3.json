@@ -1,0 +1,53 @@
+{
+  "id": "storage_boxes_3",
+  "name": {
+    "en": "3 stacked storage boxes"
+  },
+  "size": [
+    0.6,
+    0.4,
+    0.93
+  ],
+  "group": "storage",
+  "family": "storage_boxes",
+  "variant": {
+    "en": "3 boxes"
+  },
+  "room": [
+    "office",
+    "loft",
+    "bedroom",
+    "garage",
+    "kids",
+    "utility"
+  ],
+  "tags": [
+    "plastic box",
+    "clear box",
+    "box with lid",
+    "stacking boxes",
+    "tote",
+    "loft storage"
+  ],
+  "parts": [
+    {"shape": "loft", "x": 0, "z": 0, "w": 0.9, "d": 0.875, "y": 0, "h": 0.3065, "color": "glass", "tx": 0, "tz": 0, "tw": 0.9667, "td": 0.96},
+    {"shape": "box", "x": -0.0333, "z": -0.025, "w": 0.6667, "d": 0.65, "y": 0.0054, "h": 0.1446, "color": "cushion"},
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.3065, "h": 0.0269, "color": "white", "round": 0.3},
+    {"shape": "box", "x": -0.4792, "z": 0, "w": 0.055, "d": 0.4, "y": 0.2527, "h": 0.0763, "color": "accent"},
+    {"shape": "box", "x": 0.4792, "z": 0, "w": 0.055, "d": 0.4, "y": 0.2527, "h": 0.0763, "color": "accent"},
+    {"shape": "loft", "x": 0, "z": 0, "w": 0.9, "d": 0.875, "y": 0.3333, "h": 0.3065, "color": "glass", "tx": 0, "tz": 0, "tw": 0.9667, "td": 0.96},
+    {"shape": "box", "x": -0.0333, "z": -0.025, "w": 0.6667, "d": 0.65, "y": 0.3387, "h": 0.1946, "color": "cushion"},
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.6398, "h": 0.0269, "color": "white", "round": 0.3},
+    {"shape": "box", "x": -0.4792, "z": 0, "w": 0.055, "d": 0.4, "y": 0.586, "h": 0.0763, "color": "accent"},
+    {"shape": "box", "x": 0.4792, "z": 0, "w": 0.055, "d": 0.4, "y": 0.586, "h": 0.0763, "color": "accent"},
+    {"shape": "loft", "x": 0, "z": 0, "w": 0.9, "d": 0.875, "y": 0.6667, "h": 0.3065, "color": "glass", "tx": 0, "tz": 0, "tw": 0.9667, "td": 0.96},
+    {"shape": "box", "x": -0.0333, "z": -0.025, "w": 0.6667, "d": 0.65, "y": 0.672, "h": 0.1446, "color": "cushion"},
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.9731, "h": 0.0269, "color": "white", "round": 0.3},
+    {"shape": "box", "x": -0.4792, "z": 0, "w": 0.055, "d": 0.4, "y": 0.9194, "h": 0.0763, "color": "accent"},
+    {"shape": "box", "x": 0.4792, "z": 0, "w": 0.055, "d": 0.4, "y": 0.9194, "h": 0.0763, "color": "accent"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "rect", "x": 0, "z": 0, "w": 0.9, "d": 0.85}
+  ]
+}

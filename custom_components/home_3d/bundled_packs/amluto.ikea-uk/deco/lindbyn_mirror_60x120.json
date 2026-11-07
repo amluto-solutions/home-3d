@@ -1,0 +1,37 @@
+{
+  "id": "lindbyn_mirror_60x120",
+  "name": {
+    "en": "Mirror, thin frame 60x120 cm"
+  },
+  "size": [
+    0.6,
+    0.03,
+    1.2
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "hall",
+    "bedroom",
+    "bath",
+    "dining"
+  ],
+  "tags": [
+    "mirror",
+    "wall mirror",
+    "thin frame",
+    "black",
+    "gold colour"
+  ],
+  "family": "lindbyn_mirror",
+  "variant": {
+    "en": "60x120"
+  },
+  "ikea": "LINDBYN",
+  "mount": "wall",
+  "wall_y": 0.9,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.1667, "w": 1, "d": 0.6667, "y": 0, "h": 1, "color": "dark", "round": 0.15},
+    {"shape": "box", "x": 0.0, "z": 0.1333, "w": 0.96, "d": 0.2, "y": 0.01, "h": 0.98, "color": "glass"}
+  ]
+}

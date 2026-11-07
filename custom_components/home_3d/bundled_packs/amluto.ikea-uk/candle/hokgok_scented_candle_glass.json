@@ -1,0 +1,34 @@
+{
+  "id": "hokgok_scented_candle_glass",
+  "name": {
+    "en": "Scented candle in glass 12 hr"
+  },
+  "size": [
+    0.05,
+    0.05,
+    0.05
+  ],
+  "group": "candle",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "bedroom"
+  ],
+  "tags": [
+    "HOKGOK",
+    "scented candle",
+    "candle in glass",
+    "jar candle",
+    "vanilla",
+    "apple",
+    "12 hr"
+  ],
+  "ikea": "HÖKGÖK",
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "glass", "profile": [[0.8, 0], [1, 0.1], [1, 1], [0.92, 1], [0.88, 0.1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.86, "y": 0.24, "h": 0.6, "color": "#e9dcc0", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.06, "d": 0.06, "y": 0.8, "h": 0.18, "color": "dark", "fix": "wdh"}
+  ]
+}

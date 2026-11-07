@@ -1,0 +1,49 @@
+{
+  "id": "unifi_up_airquality",
+  "name": {
+    "en": "UniFi Vape Detection and Air Quality Sensor"
+  },
+  "size": [
+    0.093,
+    0.0405,
+    0.093
+  ],
+  "group": "tech",
+  "tags": [
+    "air quality sensor",
+    "vape detector",
+    "up-airquality",
+    "unifi",
+    "ubiquiti"
+  ],
+  "family": "unifi_alarm",
+  "variant": {
+    "en": "Vape and Air Quality Sensor (UP-AirQuality)"
+  },
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0.45,
+      "w": 0.7,
+      "d": 0.1,
+      "y": 0.15,
+      "h": 0.7,
+      "color": "#e6e9ee",
+      "axis": "z"
+    }
+  ]
+}

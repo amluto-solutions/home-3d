@@ -1,0 +1,27 @@
+{
+  "id": "roof_window_mk06_blind",
+  "name": {"en": "Roof window with blind"},
+  "size": [0.78, 0.9539, 0.8285],
+  "group": "architecture",
+  "room": ["loft", "bedroom", "bath", "office", "kids"],
+  "tags": ["velux", "roof window", "skylight", "roof light", "rooflight", "loft window", "sloped ceiling", "dormer", "loft conversion", "blind", "blackout blind"],
+  "family": "roof_window",
+  "variant": {"en": "MK06, 78 × 118 cm"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.0,
+  "parts": [
+    {"shape": "loft", "x": -0.4487, "z": -0.4738, "w": 0.1026, "d": 0.0524, "y": 0.0422, "h": 0.9155, "color": "white", "tx": -0.4487, "tz": 0.4738, "tw": 0.1026, "td": 0.0524},
+    {"shape": "loft", "x": 0.4487, "z": -0.4738, "w": 0.1026, "d": 0.0524, "y": 0.0422, "h": 0.9155, "color": "white", "tx": 0.4487, "tz": 0.4738, "tw": 0.1026, "td": 0.0524},
+    {"shape": "loft", "x": 0.0, "z": -0.4738, "w": 0.8077, "d": 0.0524, "y": 0.0422, "h": 0.0732, "color": "white", "tx": 0.0, "tz": -0.398, "tw": 0.8077, "td": 0.0524},
+    {"shape": "loft", "x": 0.0, "z": 0.3601, "w": 0.8077, "d": 0.0524, "y": 0.8479, "h": 0.1099, "color": "white", "tx": 0.0, "tz": 0.4738, "tw": 0.8077, "td": 0.0524},
+    {"shape": "loft", "x": 0.0, "z": -0.398, "w": 0.8077, "d": 0.0314, "y": 0.13, "h": 0.7324, "color": "glass", "tx": 0.0, "tz": 0.3601, "tw": 0.8077, "td": 0.0314},
+    {"shape": "loft", "x": 0.0, "z": -0.398, "w": 0.7949, "d": 0.021, "y": 0.0865, "h": 0.7324, "color": "fabric", "tx": 0.0, "tz": 0.3601, "tw": 0.7949, "td": 0.021},
+    {"shape": "box", "x": 0.0, "z": 0.4379, "w": 0.7, "d": 0.0314, "y": 0.8425, "h": 0.0302, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.979},
+    {"shape": "line", "x1": -0.3974, "z1": -0.398, "x2": 0.3974, "z2": -0.398},
+    {"shape": "line", "x1": -0.3974, "z1": 0.3601, "x2": 0.3974, "z2": 0.3601}
+  ]
+}

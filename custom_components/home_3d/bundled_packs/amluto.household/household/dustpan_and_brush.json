@@ -1,0 +1,17 @@
+{
+  "id": "dustpan_and_brush",
+  "name": {"en": "Dustpan and brush"},
+  "size": [0.3, 0.3, 0.1],
+  "group": "household",
+  "room": ["utility", "kitchen", "hall", "garage"],
+  "tags": ["dustpan", "brush", "hand brush", "sweeping", "cleaning", "dust pan"],
+  "family": "dustpan",
+  "variant": {"en": "Dustpan and hand brush"},
+  "parts": [
+    {"shape": "loft", "x": -0.2, "z": 0.0667, "w": 0.7333, "d": 0.6667, "y": 0, "h": 0.3, "color": "#c0262b", "tx": -0.2, "tz": 0.0667, "tw": 0.7333, "td": 0.6667},
+    {"shape": "loft", "x": -0.2, "z": 0.3333, "w": 0.7333, "d": 0.1333, "y": 0, "h": 0.2, "color": "#d93a3f", "tx": -0.2, "tz": 0.3333, "tw": 0.7333, "td": 0.0667},
+    {"shape": "box", "x": -0.2, "z": -0.3, "w": 0.1667, "d": 0.4, "y": 0, "h": 0.8, "color": "#c0262b"},
+    {"shape": "box", "x": 0.3667, "z": 0, "w": 0.1667, "d": 0.6667, "y": 0, "h": 0.4, "color": "#2a5ea8"},
+    {"shape": "box", "x": 0.3667, "z": 0.3333, "w": 0.1667, "d": 0.1667, "y": 0, "h": 0.25, "color": "#6a6f77"}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "photo_frame_20x25",
+  "name": {"en": "Photo frame 20 × 25 cm"},
+  "size": [0.25, 0.1, 0.3],
+  "group": "frame",
+  "room": ["living", "dining", "bedroom", "hall", "office"],
+  "tags": ["photo", "picture", "frame", "standing frame", "desk frame"],
+  "family": "photo_frame",
+  "variant": {"en": "20 × 25 black"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": -0.456, "z": 0.25, "w": 0.088, "d": 0.14, "y": 0.0, "h": 1.0, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.456, "z": 0.25, "w": 0.088, "d": 0.14, "y": 0.0, "h": 1.0, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 1.0, "d": 0.14, "y": 0.9267, "h": 0.0733, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 1.0, "d": 0.14, "y": 0.0, "h": 0.0733, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.23, "w": 0.912, "d": 0.06, "y": 0.0367, "h": 0.9267, "color": "#efebe3"},
+    {"shape": "box", "x": 0.0, "z": 0.27, "w": 0.728, "d": 0.06, "y": 0.4613, "h": 0.4253, "color": "#3d5a73"},
+    {"shape": "box", "x": 0.0, "z": 0.27, "w": 0.728, "d": 0.06, "y": 0.1133, "h": 0.348, "color": "#e0d3b8"},
+    {"shape": "loft", "x": 0.0, "z": -0.32, "w": 0.18, "d": 0.06, "y": 0.0, "h": 0.62, "color": "dark", "tz": 0.06, "td": 0.06}
+  ]
+}

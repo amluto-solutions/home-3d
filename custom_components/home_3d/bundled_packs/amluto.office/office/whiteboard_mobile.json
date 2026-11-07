@@ -1,0 +1,30 @@
+{
+  "id": "whiteboard_mobile",
+  "name": {"en": "Mobile whiteboard 120 × 90"},
+  "size": [1.3, 0.55, 1.85],
+  "group": "office",
+  "room": ["office", "kids", "kitchen", "hobby", "hall"],
+  "tags": ["whiteboard", "dry wipe board", "white board", "magnetic board", "planner", "office board"],
+  "family": "whiteboard",
+  "variant": {"en": "Mobile 120 × 90"},
+  "parts": [
+    {"shape": "box", "x": -0.4769, "z": 0.0, "w": 0.0308, "d": 0.8909, "y": 0.0432, "h": 0.0162, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": -0.4769, "z": 0.0, "w": 0.0231, "d": 0.0545, "y": 0.0595, "h": 0.9405, "color": "metal", "fix": "w"},
+    {"shape": "cyl", "x": -0.4769, "z": -0.4273, "w": 0.0231, "d": 0.1091, "y": 0.0, "h": 0.0432, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4769, "z": 0.4273, "w": 0.0231, "d": 0.1091, "y": 0.0, "h": 0.0432, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.4769, "z": 0.0, "w": 0.0308, "d": 0.8909, "y": 0.0432, "h": 0.0162, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": 0.4769, "z": 0.0, "w": 0.0231, "d": 0.0545, "y": 0.0595, "h": 0.9405, "color": "metal", "fix": "w"},
+    {"shape": "cyl", "x": 0.4769, "z": -0.4273, "w": 0.0231, "d": 0.1091, "y": 0.0, "h": 0.0432, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4769, "z": 0.4273, "w": 0.0231, "d": 0.1091, "y": 0.0, "h": 0.0432, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9308, "d": 0.0364, "y": 0.1622, "h": 0.0108, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9231, "d": 0.0436, "y": 0.4595, "h": 0.4865, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.0236, "w": 0.9, "d": 0.0036, "y": 0.4676, "h": 0.4703, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0582, "w": 0.7692, "d": 0.0727, "y": 0.4595, "h": 0.0065, "color": "metal", "fix": "h"},
+    {"shape": "cyl", "x": -0.3077, "z": 0.0582, "w": 0.0923, "d": 0.0291, "y": 0.4659, "h": 0.0086, "color": "#c0392b", "axis": "x", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.2692, "z": 0.0582, "w": 0.0923, "d": 0.0291, "y": 0.4659, "h": 0.0086, "color": "#2c5fd6", "axis": "x", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.2308, "z": 0.0582, "w": 0.0923, "d": 0.0291, "y": 0.4659, "h": 0.0086, "color": "dark", "axis": "x", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

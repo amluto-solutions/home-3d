@@ -1,0 +1,24 @@
+{
+  "id": "picture_frame_30x40",
+  "name": {"en": "Picture frame 30 × 40 cm"},
+  "size": [0.33, 0.025, 0.43],
+  "group": "frame",
+  "room": ["living", "dining", "bedroom", "hall", "office"],
+  "tags": ["picture", "print", "poster", "art", "wall art", "frame", "framed print"],
+  "family": "picture_frame",
+  "variant": {"en": "30 × 40"},
+  "mount": "wall",
+  "wall_y": 1.3,
+  "parts": [
+    {"shape": "box", "x": -0.4621, "z": 0.0, "w": 0.0758, "d": 1.0, "y": 0.0, "h": 1.0, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.4621, "z": 0.0, "w": 0.0758, "d": 1.0, "y": 0.0, "h": 1.0, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.9419, "h": 0.0581, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.0581, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.25, "w": 0.9242, "d": 0.5, "y": 0.0291, "h": 0.9419, "color": "#efebe3"},
+    {"shape": "box", "x": 0.0, "z": -0.2, "w": 0.5685, "d": 0.5, "y": 0.4666, "h": 0.3679, "color": "#c98e6b"},
+    {"shape": "box", "x": 0.0, "z": -0.2, "w": 0.5685, "d": 0.5, "y": 0.1656, "h": 0.301, "color": "#5f7a6a"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

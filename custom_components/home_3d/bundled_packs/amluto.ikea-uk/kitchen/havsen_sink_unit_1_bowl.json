@@ -1,0 +1,44 @@
+{
+  "id": "havsen_sink_unit_1_bowl",
+  "name": {
+    "en": "Sink with visible front, 1 bowl, on base cabinet 62x48 cm"
+  },
+  "size": [
+    0.62,
+    0.62,
+    0.92
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen",
+    "utility"
+  ],
+  "tags": [
+    "sink",
+    "belfast sink",
+    "farmhouse sink",
+    "butler sink",
+    "ceramic",
+    "sink unit",
+    "white"
+  ],
+  "family": "havsen_sink",
+  "variant": {
+    "en": "Front, 1 bowl"
+  },
+  "ikea": "HAVSEN",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0484, "w": 0.9613, "d": 0.8387, "y": 0, "h": 0.087, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0161, "w": 0.9677, "d": 0.9677, "y": 0.087, "h": 0.8696, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": -0.3871, "w": 1, "d": 0.2258, "y": 0.9565, "h": 0.0413, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4823, "w": 0.9613, "d": 0.029, "y": 0.087, "h": 0.6478, "color": "body", "fix": "d"},
+    {"shape": "box", "x": -0.4194, "z": 0.5, "w": 0.0194, "d": 0.0355, "y": 0.5217, "h": 0.1739, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4839, "w": 1, "d": 0.0323, "y": 0.75, "h": 0.25, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.1129, "w": 1, "d": 0.7742, "y": 0.75, "h": 0.0326, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4677, "z": 0.1129, "w": 0.0645, "d": 0.7742, "y": 0.75, "h": 0.25, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4677, "z": 0.1129, "w": 0.0645, "d": 0.7742, "y": 0.75, "h": 0.25, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.2419, "w": 1, "d": 0.0645, "y": 0.75, "h": 0.25, "color": "white", "fix": "d"},
+    {"shape": "cyl", "x": 0.0, "z": 0.1129, "w": 0.1129, "d": 0.1129, "y": 0.7826, "h": 0.0033, "color": "metal", "fix": "wdh"}
+  ]
+}

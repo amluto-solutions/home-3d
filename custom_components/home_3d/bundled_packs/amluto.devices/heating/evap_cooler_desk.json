@@ -1,0 +1,76 @@
+{
+  "id": "evap_cooler_desk",
+  "name": {
+    "en": "Evaporative cooler"
+  },
+  "size": [
+    0.2,
+    0.15,
+    0.25
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "kids",
+    "conservatory"
+  ],
+  "tags": [
+    "cooling",
+    "evaporative cooler",
+    "air cooler",
+    "swamp cooler",
+    "humidifier",
+    "fan",
+    "climate"
+  ],
+  "family": "evaporative_cooler",
+  "variant": {
+    "en": "Desk 0.5 l"
+  },
+  "electric": true,
+  "watts": 10,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 1.0,
+      "color": "white",
+      "round": 0.15
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.5,
+      "w": 0.7,
+      "d": 0.0533,
+      "y": 0.55,
+      "h": 0.35,
+      "color": "dark"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.5,
+      "w": 0.5,
+      "d": 0.0533,
+      "y": 0.15,
+      "h": 0.3,
+      "color": "#7fd0ff"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    }
+  ]
+}

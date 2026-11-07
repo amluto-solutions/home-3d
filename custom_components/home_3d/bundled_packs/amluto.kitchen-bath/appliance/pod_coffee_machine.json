@@ -1,0 +1,23 @@
+{
+  "id": "pod_coffee_machine",
+  "name": {"en": "Pod coffee machine"},
+  "size": [0.13, 0.33, 0.26],
+  "group": "appliance",
+  "room": ["kitchen", "office"],
+  "tags": ["coffee machine", "coffee", "capsule", "pod", "espresso", "nespresso"],
+  "family": "coffee_machine",
+  "variant": {"en": "Pod"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.1364, "w": 1.0, "d": 0.7273, "y": 0.0, "h": 1.0, "color": "dark", "round": 0.2},
+    {"shape": "rbox", "x": 0.0, "z": 0.3182, "w": 1.0, "d": 0.3636, "y": 0.6923, "h": 0.3077, "color": "metal", "round": 0.25},
+    {"shape": "box", "x": 0.0, "z": 0.3561, "w": 0.8462, "d": 0.2576, "y": 0.0, "h": 0.0769, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.3561, "w": 0.7231, "d": 0.2273, "y": 0.4615, "h": 0.0192, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": 0.3485, "w": 0.1923, "d": 0.0606, "y": 0.6154, "h": 0.0769, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.4091, "w": 0.6923, "d": 0.0909, "y": 0.0769, "h": 0.7692, "color": "glass"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

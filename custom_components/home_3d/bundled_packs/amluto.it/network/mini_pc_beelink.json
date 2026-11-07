@@ -1,0 +1,17 @@
+{
+  "id": "mini_pc_beelink",
+  "name": {"en": "Mini PC, Beelink"},
+  "size": [0.115,0.102,0.039],
+  "group": "network",
+  "room": ["office", "utility", "loft", "living", "hall"],
+  "tags": ["beelink", "mini s12", "s12 pro", "n100", "mini pc", "nuc", "micro pc", "small pc", "home server", "server", "homelab"],
+  "family": "mini_pc",
+  "variant": {"en": "Beelink Mini S12 Pro"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#8a8f98", "round": 0.12},
+    {"shape": "box", "x": 0, "z": 0.4971, "w": 0.8, "d": 0.0059, "y": 0.3, "h": 0.3, "color": "dark"},
+    {"shape": "box", "x": -0.3, "z": 0.498, "w": 0.0174, "d": 0.0039, "y": 0.65, "h": 0.0513, "color": "#46d36a", "glow": true}
+  ]
+}

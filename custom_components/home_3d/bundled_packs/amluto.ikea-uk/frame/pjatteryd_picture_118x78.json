@@ -1,0 +1,39 @@
+{
+  "id": "pjatteryd_picture_118x78",
+  "name": {
+    "en": "Framed picture 118x78 cm"
+  },
+  "size": [
+    1.18,
+    0.03,
+    0.78
+  ],
+  "group": "frame",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "office"
+  ],
+  "tags": [
+    "PJATTERYD",
+    "picture",
+    "print",
+    "wall art",
+    "framed",
+    "gallery wall",
+    "poster"
+  ],
+  "family": "pjatteryd_picture",
+  "variant": {
+    "en": "118x78"
+  },
+  "ikea": "PJÄTTERYD",
+  "mount": "wall",
+  "wall_y": 1.06,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.8333, "y": 0, "h": 1, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.45, "w": 0.9661, "d": 0.0667, "y": 0.0256, "h": 0.9487, "color": "#6f8796", "fix": "d"}
+  ]
+}

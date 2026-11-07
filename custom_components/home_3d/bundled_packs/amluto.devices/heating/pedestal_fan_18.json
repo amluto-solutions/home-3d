@@ -1,0 +1,109 @@
+{
+  "id": "pedestal_fan_18",
+  "name": {
+    "en": "Pedestal fan"
+  },
+  "size": [
+    0.52,
+    0.52,
+    1.38
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "fan",
+    "cooling",
+    "summer",
+    "air movement",
+    "pedestal fan",
+    "stand fan",
+    "oscillating fan",
+    "18 inch"
+  ],
+  "family": "pedestal_fan",
+  "variant": {
+    "en": "46 cm (18 in)"
+  },
+  "electric": true,
+  "watts": 55,
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.8,
+      "d": 0.8,
+      "y": 0.0,
+      "h": 0.0181,
+      "color": "dark"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": -0.0769,
+      "w": 0.0673,
+      "d": 0.0673,
+      "y": 0.0181,
+      "h": 0.6283,
+      "color": "metal"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.1,
+      "w": 0.28,
+      "d": 0.16,
+      "y": 0.7651,
+      "h": 0.1017,
+      "color": "white",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.25,
+      "w": 1.0,
+      "d": 0.3,
+      "y": 0.6464,
+      "h": 0.3391,
+      "color": "glass",
+      "axis": "z",
+      "edges": "faint"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.45,
+      "w": 0.84,
+      "d": 0.0192,
+      "y": 0.6735,
+      "h": 0.2849,
+      "color": "white",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.46,
+      "w": 0.14,
+      "d": 0.0385,
+      "y": 0.7922,
+      "h": 0.0475,
+      "color": "metal",
+      "axis": "z"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "circle",
+      "x": 0,
+      "z": 0,
+      "r": 0.5
+    }
+  ]
+}

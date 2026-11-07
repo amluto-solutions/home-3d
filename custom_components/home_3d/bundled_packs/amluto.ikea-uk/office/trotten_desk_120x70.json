@@ -1,0 +1,42 @@
+{
+  "id": "trotten_desk_120x70",
+  "name": {
+    "en": "Desk 120x70 cm"
+  },
+  "size": [
+    1.2,
+    0.7,
+    0.75
+  ],
+  "group": "office",
+  "room": [
+    "office",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "TROTTEN",
+    "desk",
+    "computer desk",
+    "white",
+    "anthracite",
+    "ash effect"
+  ],
+  "family": "trotten_desk",
+  "variant": {
+    "en": "120x70"
+  },
+  "ikea": "TROTTEN",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9667, "h": 0.0333, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4167, "z": 0.0, "w": 0.0333, "d": 0.8286, "y": 0, "h": 0.04, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": -0.4167, "z": -0.4143, "w": 0.0333, "d": 0.0571, "y": 0, "h": 0.9667, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4167, "z": 0.4143, "w": 0.0333, "d": 0.0571, "y": 0, "h": 0.9667, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4167, "z": 0.0, "w": 0.0333, "d": 0.8286, "y": 0.9, "h": 0.0667, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.4167, "z": 0.0, "w": 0.0333, "d": 0.8286, "y": 0, "h": 0.04, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.4167, "z": -0.4143, "w": 0.0333, "d": 0.0571, "y": 0, "h": 0.9667, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4167, "z": 0.4143, "w": 0.0333, "d": 0.0571, "y": 0, "h": 0.9667, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4167, "z": 0.0, "w": 0.0333, "d": 0.8286, "y": 0.9, "h": 0.0667, "color": "white", "fix": "wh"}
+  ]
+}

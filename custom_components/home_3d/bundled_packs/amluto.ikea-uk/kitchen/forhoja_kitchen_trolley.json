@@ -1,0 +1,45 @@
+{
+  "id": "forhoja_kitchen_trolley",
+  "name": {
+    "en": "Kitchen trolley 100x43 cm"
+  },
+  "size": [
+    1.0,
+    0.43,
+    0.9
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen",
+    "dining"
+  ],
+  "tags": [
+    "trolley",
+    "cart",
+    "castors",
+    "drawers",
+    "kitchen island",
+    "birch"
+  ],
+  "ikea": "FÖRHÖJA",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9667, "h": 0.0333, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.46, "z": -0.4302, "w": 0.04, "d": 0.093, "y": 0.0667, "h": 0.9, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.46, "z": -0.4302, "w": 0.05, "d": 0.1163, "y": 0, "h": 0.0667, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.46, "z": 0.4302, "w": 0.04, "d": 0.093, "y": 0.0667, "h": 0.9, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.46, "z": 0.4302, "w": 0.05, "d": 0.1163, "y": 0, "h": 0.0667, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.46, "z": -0.4302, "w": 0.04, "d": 0.093, "y": 0.0667, "h": 0.9, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.46, "z": -0.4302, "w": 0.05, "d": 0.1163, "y": 0, "h": 0.0667, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.46, "z": 0.4302, "w": 0.04, "d": 0.093, "y": 0.0667, "h": 0.9, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.46, "z": 0.4302, "w": 0.05, "d": 0.1163, "y": 0, "h": 0.0667, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.88, "d": 0.8605, "y": 0.8111, "h": 0.1556, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.22, "z": 0.4419, "w": 0.43, "d": 0.0233, "y": 0.8167, "h": 0.1444, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": 0.22, "z": 0.4419, "w": 0.43, "d": 0.0233, "y": 0.8167, "h": 0.1444, "color": "wood", "fix": "dh"},
+    {"shape": "cyl", "x": -0.22, "z": 0.4721, "w": 0.025, "d": 0.0581, "y": 0.8778, "h": 0.0278, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.22, "z": 0.4721, "w": 0.025, "d": 0.0581, "y": 0.8778, "h": 0.0278, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.88, "d": 0.8605, "y": 0.4667, "h": 0.0222, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.88, "d": 0.8605, "y": 0.1333, "h": 0.0222, "color": "wood", "fix": "h"},
+    {"shape": "cyl", "x": 0.5, "z": 0.0, "w": 0.02, "d": 0.7209, "y": 0.7778, "h": 0.0222, "color": "metal", "axis": "z", "fix": "wh"}
+  ]
+}

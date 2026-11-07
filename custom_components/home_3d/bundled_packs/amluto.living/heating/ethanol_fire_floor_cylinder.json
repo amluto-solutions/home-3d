@@ -1,0 +1,49 @@
+{
+  "id": "ethanol_fire_floor_cylinder",
+  "name": {
+    "en": "Freestanding ethanol fire"
+  },
+  "size": [
+    0.36,
+    0.36,
+    1.11
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "conservatory",
+    "office"
+  ],
+  "tags": [
+    "ethanol fire",
+    "freestanding fire",
+    "floor fire",
+    "bioethanol",
+    "column fire",
+    "steel",
+    "flame"
+  ],
+  "family": "ethanol_fire_floor",
+  "variant": {
+    "en": "Column"
+  },
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.018, "color": "#2a2b2e"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8333, "d": 0.8333, "y": 0.018, "h": 0.8108, "color": "#4a4d52"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8889, "d": 0.8889, "y": 0.8288, "h": 0.0225, "color": "#2a2b2e"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.7222, "d": 0.7222, "y": 0.8514, "h": 0.0108, "color": "dark"},
+    {"shape": "loft", "x": -0.1667, "z": 0.0, "w": 0.1667, "d": 0.1, "y": 0.8559, "h": 0.1009, "color": "#ff8a2a", "tx": -0.1667, "tz": 0.0, "tw": 0.025, "td": 0.0167, "glow": true},
+    {"shape": "loft", "x": -0.0833, "z": 0.0, "w": 0.1667, "d": 0.1, "y": 0.8559, "h": 0.1315, "color": "#ffc24a", "tx": -0.0833, "tz": 0.0, "tw": 0.025, "td": 0.0167, "glow": true},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.1667, "d": 0.1, "y": 0.8559, "h": 0.1441, "color": "#ff8a2a", "tx": 0.0, "tz": 0.0, "tw": 0.025, "td": 0.0167, "glow": true},
+    {"shape": "loft", "x": 0.0833, "z": 0.0, "w": 0.1667, "d": 0.1, "y": 0.8559, "h": 0.1315, "color": "#ffc24a", "tx": 0.0833, "tz": 0.0, "tw": 0.025, "td": 0.0167, "glow": true},
+    {"shape": "loft", "x": 0.1667, "z": 0.0, "w": 0.1667, "d": 0.1, "y": 0.8559, "h": 0.1009, "color": "#ff8a2a", "tx": 0.1667, "tz": 0.0, "tw": 0.025, "td": 0.0167, "glow": true},
+    {"shape": "loft", "x": -0.1389, "z": 0.1667, "w": 0.1389, "d": 0.0833, "y": 0.8559, "h": 0.0757, "color": "#ff8a2a", "tx": -0.1389, "tz": 0.1667, "tw": 0.0208, "td": 0.0139, "glow": true},
+    {"shape": "loft", "x": 0.0, "z": 0.1667, "w": 0.1389, "d": 0.0833, "y": 0.8559, "h": 0.1081, "color": "#ffc24a", "tx": 0.0, "tz": 0.1667, "tw": 0.0208, "td": 0.0139, "glow": true},
+    {"shape": "loft", "x": 0.1389, "z": 0.1667, "w": 0.1389, "d": 0.0833, "y": 0.8559, "h": 0.0757, "color": "#ff8a2a", "tx": 0.1389, "tz": 0.1667, "tw": 0.0208, "td": 0.0139, "glow": true},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8389, "d": 0.8389, "y": 0.3604, "h": 0.0108, "color": "#2a2b2e"}
+  ]
+}

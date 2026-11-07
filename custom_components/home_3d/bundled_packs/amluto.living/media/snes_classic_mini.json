@@ -1,0 +1,20 @@
+{
+  "id": "snes_classic_mini",
+  "name": {"en": "SNES Classic Mini"},
+  "size": [0.135, 0.11, 0.04],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["snes classic", "snes mini", "classic mini", "nintendo", "gaming", "console", "retro", "super nintendo"],
+  "family": "snes",
+  "variant": {"en": "Mini"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 2,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#c9cbd0", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": 0.1, "w": 0.7, "d": 0.4, "y": 0.98, "h": 0.02, "color": "#8a8d93"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

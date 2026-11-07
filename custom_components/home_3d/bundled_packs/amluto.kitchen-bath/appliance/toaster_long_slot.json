@@ -1,0 +1,25 @@
+{
+  "id": "toaster_long_slot",
+  "name": {"en": "Long-slot toaster"},
+  "size": [0.42, 0.17, 0.2],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["toaster", "toast", "bread", "breakfast"],
+  "family": "toaster",
+  "variant": {"en": "Long slot"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9048, "d": 0.7647, "y": 0.0, "h": 0.06, "color": "dark", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.05, "h": 0.95, "color": "metal", "round": 0.18},
+    {"shape": "box", "x": 0.0, "z": -0.1471, "w": 0.7143, "d": 0.1176, "y": 0.98, "h": 0.02, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.1471, "w": 0.7143, "d": 0.1176, "y": 0.98, "h": 0.02, "color": "dark"},
+    {"shape": "box", "x": 0.4988, "z": 0.0, "w": 0.0024, "d": 0.1765, "y": 0.6, "h": 0.05, "color": "dark"},
+    {"shape": "box", "x": 0.4988, "z": 0.0, "w": 0.0024, "d": 0.1765, "y": 0.6, "h": 0.075, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4853, "w": 0.0833, "d": 0.0294, "y": 0.25, "h": 0.175, "color": "dark", "axis": "z"},
+    {"shape": "box", "x": -0.4845, "z": 0.0, "w": 0.0024, "d": 0.1412, "y": 0.4, "h": 0.35, "color": "dark"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "sonoff_zbdongle_e",
+  "name": {"en": "SONOFF ZBDongle-E Zigbee stick"},
+  "size": [0.075,0.0255,0.0135],
+  "group": "tech",
+  "room": ["office", "utility", "hall", "living", "loft"],
+  "tags": ["sonoff", "zbdongle-e", "zbdongle", "zigbee 3.0", "silicon labs", "ember", "zigbee stick", "zigbee dongle", "coordinator", "zigbee coordinator", "usb stick", "home assistant"],
+  "family": "zigbee_stick",
+  "variant": {"en": "SONOFF ZBDongle-E"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": -0.42, "z": 0, "w": 0.16, "d": 0.4706, "y": 0.3333, "h": 0.3333, "color": "metal"},
+    {"shape": "rbox", "x": 0.08, "z": 0, "w": 0.84, "d": 1, "y": 0, "h": 1, "color": "dark", "round": 0.25},
+    {"shape": "box", "x": 0.3933, "z": 0, "w": 0.04, "d": 0.0784, "y": 0.9704, "h": 0.0296, "color": "#46d36a", "glow": true}
+  ]
+}

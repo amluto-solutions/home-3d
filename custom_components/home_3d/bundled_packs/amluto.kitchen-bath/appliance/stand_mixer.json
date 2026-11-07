@@ -1,0 +1,26 @@
+{
+  "id": "stand_mixer",
+  "name": {"en": "Stand mixer"},
+  "size": [0.24, 0.37, 0.36],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["stand mixer", "mixer", "food mixer", "baking", "kitchenaid", "bowl"],
+  "family": "stand_mixer",
+  "variant": {"en": "Tilt head"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.0135, "w": 0.7083, "d": 0.973, "y": 0.0, "h": 0.125, "color": "accent", "round": 0.4},
+    {"shape": "loft", "x": 0.0, "z": -0.3243, "w": 0.5417, "d": 0.2973, "y": 0.1111, "h": 0.6111, "color": "accent", "tx": 0.0, "tz": -0.3378, "tw": 0.4167, "td": 0.2432},
+    {"shape": "rbox", "x": 0.0, "z": -0.0135, "w": 0.625, "d": 0.9189, "y": 0.6389, "h": 0.3611, "color": "accent", "round": 0.45},
+    {"shape": "cyl", "x": 0.0, "z": 0.4459, "w": 0.2917, "d": 0.0676, "y": 0.7083, "h": 0.1944, "color": "metal", "axis": "z"},
+    {"shape": "box", "x": -0.3208, "z": -0.1757, "w": 0.0167, "d": 0.1081, "y": 0.75, "h": 0.0833, "color": "metal"},
+    {"shape": "lathe", "x": 0.0, "z": 0.1622, "w": 0.8333, "d": 0.5405, "y": 0.125, "h": 0.4722, "color": "metal", "profile": [[0, 0], [0.5, 0], [0.85, 0.25], [1, 0.75], [1, 1], [0.92, 1], [0.85, 0.3], [0, 0.1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.1622, "w": 0.05, "d": 0.0324, "y": 0.3056, "h": 0.3333, "color": "metal"},
+    {"shape": "lathe", "x": 0.0, "z": 0.1622, "w": 0.25, "d": 0.1622, "y": 0.2778, "h": 0.1944, "color": "metal", "profile": [[0, 0], [1, 0.3], [0.6, 1], [0, 1]]}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": -0.0135, "w": 0.7083, "d": 0.973},
+    {"shape": "circle", "x": 0.0, "z": 0.1622, "r": 0.4167}
+  ]
+}

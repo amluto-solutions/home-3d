@@ -1,0 +1,19 @@
+{
+  "id": "streaming_stick",
+  "name": {"en": "Streaming stick"},
+  "size": [0.1, 0.03, 0.014],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "office", "loft"],
+  "tags": ["fire tv stick", "roku", "hdmi stick", "streaming", "streamer", "media player", "hdmi"],
+  "family": "streaming_device",
+  "variant": {"en": "Stick"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": -0.1, "z": 0.0, "w": 0.8, "d": 1.0, "y": 0.0, "h": 1.0, "color": "dark", "round": 0.35},
+    {"shape": "box", "x": 0.4, "z": 0.0, "w": 0.2, "d": 0.5333, "y": 0.2143, "h": 0.5714, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

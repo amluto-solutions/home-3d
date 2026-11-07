@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "Tilføjer en side i sidebjælken, hvor du tegner dit hjem og ser det i 3D."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Home 3D er allerede sat op."
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "Spørg huset",
+      "description": "Giver en sætning videre til de åbne Home 3D-visninger: „Vis stuen“ viser den, og spørgsmål besvares af de installerede moduler („Hvad er åbent?“). Den første visning, der forstår sætningen, svarer.",
+      "fields": {
+        "text": {
+          "name": "Sætning",
+          "description": "Hvad der skal vises eller spørges om, sådan som du ville sige det."
+        },
+        "screen": {
+          "name": "Skærm",
+          "description": "Kun visningen med dette skærmnavn reagerer (indstilles i visningens indstillinger eller i kortets muligheder for skærm). Tom: alle åbne visninger."
+        },
+        "speak": {
+          "name": "Tal",
+          "description": "Visningen siger sit svar med Assists tekst-til-tale (fra: den viser det kun)."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Hvor Home 3D vises. Panellinket og dashboardkortet virker begge veje, og du kan stadig skjule indgangen for dig selv i Home Assistants egne sidepanelindstillinger.",
+        "data": {
+          "show_in_sidebar": "Vis i sidepanel",
+          "restore_picture_days": "Behold billeder af gendannelsespunkter (dage)"
+        },
+        "data_description": {
+          "restore_picture_days": "Et baggrunds- eller skærmbillede, som kun et ældre gendannelsespunkt stadig bruger, gemmes så mange dage efter, at gendannelsespunktet blev oprettet, og fjernes så ved næste start. Et gendannelsespunkt, hvis billede er væk, gendannes uden det. 0 fjerner sådanne billeder med det samme."
+        }
+      }
+    }
+  }
+}

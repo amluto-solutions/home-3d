@@ -1,0 +1,18 @@
+{
+  "id": "mic_stand_straight_floor",
+  "name": {"en": "Floor mic stand, round base, with mic"},
+  "size": [0.26, 0.26, 1.6],
+  "group": "media",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["k&m 26010", "km 26010", "straight stand", "mic stand", "round base", "microphone", "streaming", "audio"],
+  "family": "mic_stand_round",
+  "variant": {"en": "Floor"},
+  "mount": "floor",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.0187, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0846, "d": 0.0846, "y": 0.0187, "h": 0.8563, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.1538, "d": 0.1538, "y": 0.875, "h": 0.0125, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1923, "d": 0.1923, "y": 0.8813, "h": 0.1062, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.25, "d": 0.25, "y": 0.9563, "h": 0.0375, "color": "#2b2f36"}
+  ]
+}

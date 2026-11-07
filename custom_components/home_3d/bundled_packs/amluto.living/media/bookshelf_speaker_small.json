@@ -1,0 +1,19 @@
+{
+  "id": "bookshelf_speaker_small",
+  "name": {"en": "Bookshelf speaker (small)"},
+  "size": [0.15, 0.2, 0.25],
+  "group": "media",
+  "room": ["living", "office", "bedroom"],
+  "tags": ["speaker", "hi-fi", "hifi", "stereo", "loudspeaker", "monitor speaker", "audio"],
+  "family": "bookshelf_speaker",
+  "variant": {"en": "Small"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.025, "w": 1, "d": 0.91, "y": 0.0, "h": 1, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.455, "w": 0.9733, "d": 0.05, "y": 0.008, "h": 0.984, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.48, "w": 0.72, "d": 0.03, "y": 0.12, "h": 0.432, "color": "metal", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.49, "w": 0.54, "d": 0.02, "y": 0.174, "h": 0.324, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.48, "w": 0.18, "d": 0.03, "y": 0.746, "h": 0.108, "color": "metal", "axis": "z"}
+  ]
+}

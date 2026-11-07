@@ -1,0 +1,58 @@
+{
+  "id": "ethanol_fire_wall_1400",
+  "name": {
+    "en": "Wall-mounted ethanol fire"
+  },
+  "size": [
+    1.4,
+    0.16,
+    0.36
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "conservatory",
+    "office"
+  ],
+  "tags": [
+    "ethanol fire",
+    "bioethanol",
+    "wall fire",
+    "wall mounted fireplace",
+    "flueless",
+    "flame",
+    "smart fire",
+    "remote controlled"
+  ],
+  "family": "ethanol_fire_wall",
+  "variant": {
+    "en": "140 cm"
+  },
+  "light": "wall",
+  "mount": "wall",
+  "wall_y": 0.9,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4375, "w": 1, "d": 0.125, "y": 0, "h": 1, "color": "#121214"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.1944, "color": "#26272a"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9167, "h": 0.0833, "color": "#26272a"},
+    {"shape": "box", "x": -0.4893, "z": 0.0, "w": 0.0214, "d": 1, "y": 0.1944, "h": 0.7222, "color": "#26272a"},
+    {"shape": "box", "x": 0.4893, "z": 0.0, "w": 0.0214, "d": 1, "y": 0.1944, "h": 0.7222, "color": "#26272a"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9143, "d": 0.625, "y": 0.1944, "h": 0.0556, "color": "#3a3b3e"},
+    {"shape": "loft", "x": -0.4214, "z": 0.0, "w": 0.0429, "d": 0.225, "y": 0.25, "h": 0.35, "color": "#ff8a2a", "tx": -0.4214, "tz": 0.0, "tw": 0.0064, "td": 0.0375, "glow": true},
+    {"shape": "loft", "x": -0.3512, "z": 0.0, "w": 0.0429, "d": 0.225, "y": 0.25, "h": 0.3888, "color": "#ffc24a", "tx": -0.3512, "tz": 0.0, "tw": 0.0064, "td": 0.0375, "glow": true},
+    {"shape": "loft", "x": -0.281, "z": 0.0, "w": 0.0429, "d": 0.225, "y": 0.25, "h": 0.425, "color": "#ff8a2a", "tx": -0.281, "tz": 0.0, "tw": 0.0064, "td": 0.0375, "glow": true},
+    {"shape": "loft", "x": -0.2107, "z": 0.0, "w": 0.0429, "d": 0.225, "y": 0.25, "h": 0.4561, "color": "#ffc24a", "tx": -0.2107, "tz": 0.0, "tw": 0.0064, "td": 0.0375, "glow": true},
+    {"shape": "loft", "x": -0.1405, "z": 0.0, "w": 0.0429, "d": 0.225, "y": 0.25, "h": 0.4799, "color": "#ff8a2a", "tx": -0.1405, "tz": 0.0, "tw": 0.0064, "td": 0.0375, "glow": true},
+    {"shape": "loft", "x": -0.0702, "z": 0.0, "w": 0.0429, "d": 0.225, "y": 0.25, "h": 0.4949, "color": "#ffc24a", "tx": -0.0702, "tz": 0.0, "tw": 0.0064, "td": 0.0375, "glow": true},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.0429, "d": 0.225, "y": 0.25, "h": 0.5, "color": "#ff8a2a", "tx": 0.0, "tz": 0.0, "tw": 0.0064, "td": 0.0375, "glow": true},
+    {"shape": "loft", "x": 0.0702, "z": 0.0, "w": 0.0429, "d": 0.225, "y": 0.25, "h": 0.4949, "color": "#ffc24a", "tx": 0.0702, "tz": 0.0, "tw": 0.0064, "td": 0.0375, "glow": true},
+    {"shape": "loft", "x": 0.1405, "z": 0.0, "w": 0.0429, "d": 0.225, "y": 0.25, "h": 0.4799, "color": "#ff8a2a", "tx": 0.1405, "tz": 0.0, "tw": 0.0064, "td": 0.0375, "glow": true},
+    {"shape": "loft", "x": 0.2107, "z": 0.0, "w": 0.0429, "d": 0.225, "y": 0.25, "h": 0.4561, "color": "#ffc24a", "tx": 0.2107, "tz": 0.0, "tw": 0.0064, "td": 0.0375, "glow": true},
+    {"shape": "loft", "x": 0.281, "z": 0.0, "w": 0.0429, "d": 0.225, "y": 0.25, "h": 0.425, "color": "#ff8a2a", "tx": 0.281, "tz": 0.0, "tw": 0.0064, "td": 0.0375, "glow": true},
+    {"shape": "loft", "x": 0.3512, "z": 0.0, "w": 0.0429, "d": 0.225, "y": 0.25, "h": 0.3888, "color": "#ffc24a", "tx": 0.3512, "tz": 0.0, "tw": 0.0064, "td": 0.0375, "glow": true},
+    {"shape": "loft", "x": 0.4214, "z": 0.0, "w": 0.0429, "d": 0.225, "y": 0.25, "h": 0.35, "color": "#ff8a2a", "tx": 0.4214, "tz": 0.0, "tw": 0.0064, "td": 0.0375, "glow": true}
+  ]
+}

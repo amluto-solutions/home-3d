@@ -1,0 +1,42 @@
+{
+  "id": "hemnes_bedside_table",
+  "name": {
+    "en": "Bedside table"
+  },
+  "size": [
+    0.46,
+    0.35,
+    0.7
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "drawers",
+    "chest",
+    "bedside table",
+    "nightstand",
+    "solid pine",
+    "white stain",
+    "black-brown",
+    "grey-green"
+  ],
+  "ikea": "HEMNES",
+  "parts": [
+    {"shape": "box", "x": -0.4804, "z": -0.0257, "w": 0.0391, "d": 0.9486, "y": 0.3571, "h": 0.6071, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4804, "z": -0.0257, "w": 0.0391, "d": 0.9486, "y": 0.3571, "h": 0.6071, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0257, "w": 0.9217, "d": 0.9486, "y": 0.3571, "h": 0.0257, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4886, "w": 0.9217, "d": 0.0229, "y": 0.3829, "h": 0.5557, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0143, "w": 1, "d": 1, "y": 0.9643, "h": 0.0357, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4457, "z": -0.4, "w": 0.1087, "d": 0.1429, "y": 0, "h": 0.3571, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4457, "z": 0.4, "w": 0.1087, "d": 0.1429, "y": 0, "h": 0.3571, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4457, "z": -0.4, "w": 0.1087, "d": 0.1429, "y": 0, "h": 0.3571, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4457, "z": 0.4, "w": 0.1087, "d": 0.1429, "y": 0, "h": 0.3571, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4143, "w": 0.7826, "d": 0.0571, "y": 0.3, "h": 0.0571, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0286, "w": 0.9217, "d": 0.8914, "y": 0.6429, "h": 0.0257, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4743, "w": 0.9826, "d": 0.0514, "y": 0.6714, "h": 0.29, "color": "white"},
+    {"shape": "cyl", "x": 0.0, "z": 0.5, "w": 0.0652, "d": 0.0686, "y": 0.8305, "h": 0.0429, "color": "wood", "axis": "z", "fix": "wdh"}
+  ]
+}

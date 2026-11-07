@@ -1,0 +1,28 @@
+{
+  "id": "network_switch_5",
+  "name": {"en": "Network switch, 5-port"},
+  "size": [0.1, 0.07, 0.025],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage", "living"],
+  "tags": ["network switch", "ethernet switch", "poe", "lan", "unifi", "gigabit", "patch", "ports"],
+  "family": "network_switch",
+  "variant": {"en": "5-port desktop"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "dark"},
+    {"shape": "box", "x": -0.32, "z": 0.4714, "w": 0.112, "d": 0.0571, "y": 0.25, "h": 0.45, "color": "#1b1d21", "fix": "wdh"},
+    {"shape": "box", "x": -0.32, "z": 0.4786, "w": 0.032, "d": 0.0429, "y": 0.75, "h": 0.12, "color": "#46d36a", "glow": true, "fix": "wdh"},
+    {"shape": "box", "x": -0.16, "z": 0.4714, "w": 0.112, "d": 0.0571, "y": 0.25, "h": 0.45, "color": "#1b1d21", "fix": "wdh"},
+    {"shape": "box", "x": -0.16, "z": 0.4786, "w": 0.032, "d": 0.0429, "y": 0.75, "h": 0.12, "color": "#46d36a", "glow": true, "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4714, "w": 0.112, "d": 0.0571, "y": 0.25, "h": 0.45, "color": "#1b1d21", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4786, "w": 0.032, "d": 0.0429, "y": 0.75, "h": 0.12, "color": "#46d36a", "glow": true, "fix": "wdh"},
+    {"shape": "box", "x": 0.16, "z": 0.4714, "w": 0.112, "d": 0.0571, "y": 0.25, "h": 0.45, "color": "#1b1d21", "fix": "wdh"},
+    {"shape": "box", "x": 0.16, "z": 0.4786, "w": 0.032, "d": 0.0429, "y": 0.75, "h": 0.12, "color": "#46d36a", "glow": true, "fix": "wdh"},
+    {"shape": "box", "x": 0.32, "z": 0.4714, "w": 0.112, "d": 0.0571, "y": 0.25, "h": 0.45, "color": "#1b1d21", "fix": "wdh"},
+    {"shape": "box", "x": 0.32, "z": 0.4786, "w": 0.032, "d": 0.0429, "y": 0.75, "h": 0.12, "color": "#46d36a", "glow": true, "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

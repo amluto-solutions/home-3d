@@ -1,0 +1,17 @@
+{
+  "id": "entity_sensor_marker",
+  "name": {"en": "Sensor marker (wall)"},
+  "size": [0.07, 0.025, 0.07],
+  "group": "tech",
+  "tags": ["sensor marker", "sensor", "any sensor", "generic sensor", "binary sensor", "temperature sensor", "humidity sensor", "placeholder"],
+  "family": "entity_marker",
+  "variant": {"en": "Sensor, wall"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.5,
+  "parts": [
+    {"shape": "cyl", "x": 0, "z": -0.22, "w": 1, "d": 0.55, "y": 0.0, "h": 1, "color": "white", "axis": "z"},
+    {"shape": "cyl", "x": 0, "z": 0.17, "w": 0.7, "d": 0.4, "y": 0.15000000000000002, "h": 0.7, "color": "#f4f4ee", "axis": "z"},
+    {"shape": "cyl", "x": 0, "z": 0.43, "w": 0.22, "d": 0.12, "y": 0.39, "h": 0.22, "color": "#3a8dde", "axis": "z", "glow": true}
+  ]
+}

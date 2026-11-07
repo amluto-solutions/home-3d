@@ -1,0 +1,42 @@
+{
+  "id": "olivblad_plant_stand_55x25",
+  "name": {
+    "en": "Plant stand for two pots 55x25 cm"
+  },
+  "size": [
+    0.55,
+    0.25,
+    0.56
+  ],
+  "group": "plant",
+  "room": [
+    "living",
+    "conservatory",
+    "hall",
+    "bedroom",
+    "garden"
+  ],
+  "tags": [
+    "plant stand",
+    "plant table",
+    "pot stand",
+    "metal",
+    "black",
+    "in/outdoor"
+  ],
+  "family": "olivblad_plant_stand",
+  "variant": {
+    "en": "Long 55x25x56"
+  },
+  "ikea": "OLIVBLAD",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9286, "h": 0.0714, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9636, "d": 0.92, "y": 0.9286, "h": 0.0732, "color": "pot", "fix": "h"},
+    {"shape": "box", "x": -0.4682, "z": -0.43, "w": 0.0273, "d": 0.06, "y": 0, "h": 0.9286, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.4682, "z": 0.43, "w": 0.0273, "d": 0.06, "y": 0, "h": 0.9286, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4682, "z": -0.43, "w": 0.0273, "d": 0.06, "y": 0, "h": 0.9286, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4682, "z": 0.43, "w": 0.0273, "d": 0.06, "y": 0, "h": 0.9286, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9455, "d": 0.88, "y": 0.2143, "h": 0.0214, "color": "dark", "fix": "h"}
+  ]
+}

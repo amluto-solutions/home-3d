@@ -1,0 +1,46 @@
+{
+  "id": "nest_audio",
+  "name": {
+    "en": "Google Nest Audio"
+  },
+  "size": [
+    0.126,
+    0.09,
+    0.175
+  ],
+  "group": "media",
+  "room": [
+    "living",
+    "kitchen",
+    "bedroom",
+    "kids",
+    "office",
+    "bath",
+    "hall",
+    "dining"
+  ],
+  "tags": [
+    "nest audio",
+    "google nest",
+    "google speaker",
+    "smart speaker",
+    "voice assistant",
+    "speaker",
+    "google assistant",
+    "media player"
+  ],
+  "family": "google_speaker",
+  "variant": {
+    "en": "Nest Audio"
+  },
+  "mount": "surface",
+  "electric": true,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9841, "d": 0.8667, "y": 0, "h": 1, "color": "fabric", "round": 0.3},
+    {"shape": "rbox", "x": 0.0, "z": 0.0222, "w": 1, "d": 0.8222, "y": 0, "h": 0.1714, "color": "#d8d8d4", "round": 0.3},
+    {"shape": "cyl", "x": -0.2976, "z": 0.4333, "w": 0.0952, "d": 0.1333, "y": 0.8571, "h": 0.0229, "color": "white", "glow": true},
+    {"shape": "cyl", "x": -0.0992, "z": 0.4333, "w": 0.0952, "d": 0.1333, "y": 0.8571, "h": 0.0229, "color": "white", "glow": true},
+    {"shape": "cyl", "x": 0.0992, "z": 0.4333, "w": 0.0952, "d": 0.1333, "y": 0.8571, "h": 0.0229, "color": "white", "glow": true},
+    {"shape": "cyl", "x": 0.2976, "z": 0.4333, "w": 0.0952, "d": 0.1333, "y": 0.8571, "h": 0.0229, "color": "white", "glow": true}
+  ]
+}

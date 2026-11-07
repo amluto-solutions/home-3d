@@ -1,0 +1,40 @@
+{
+  "id": "cordless_table_lamp",
+  "name": {
+    "en": "Cordless table lamp"
+  },
+  "size": [
+    0.14,
+    0.14,
+    0.215
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "garden"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "cordless lamp",
+    "rechargeable lamp",
+    "battery lamp",
+    "portable lamp",
+    "restaurant lamp",
+    "outdoor",
+    "terrace"
+  ],
+  "family": "cordless_table_lamp",
+  "variant": {
+    "en": "Bell"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.7857, "d": 0.7857, "y": 0, "h": 0.0698, "color": "dark"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0698, "h": 0.8837, "color": "white", "glow": true, "profile": [[0.0, 0.0], [0.7143, 0.0], [1.0, 0.2105], [0.8571, 0.7895], [0.5714, 1.0], [0.0, 1.0]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.2857, "d": 0.2857, "y": 0.9535, "h": 0.0465, "color": "dark"}
+  ]
+}

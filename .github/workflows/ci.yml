@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  push:
+    branches: [main, beta]
+  pull_request:
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 26
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - name: Build and check budgets
+        # --report lists each bundle's biggest inputs (#179), so growth can be put down to a module
+        run: npm run build -- --report
+      - name: Load the shipped bundles in a headless browser
+        # the panel with a fake Home Assistant: every tab, look and lazy bundle; fails on a console error or a failed
+        # request (#178). The runner's Chrome draws WebGL with SwiftShader.
+        run: npm run smoke
+      - name: Committed bundles are up to date
+        # the main bundle's chunks carry their hash in their name: a new or a left-over file counts too (#179)
+        run: |
+          git status --porcelain -- ../custom_components/home_3d/frontend
+          test -z "$(git status --porcelain -- ../custom_components/home_3d/frontend)"
+
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements_test.txt ruff mypy
+      - run: ruff check custom_components tests
+      - run: ruff format --check custom_components tests
+      - run: mypy custom_components/home_3d
+      - run: pytest -q
+
+  # The job above gets the newest test harness that still runs on Python 3.13 (an older Home Assistant). Current
+  # Home Assistant needs Python 3.14 and checks schemas with Probatio: the tests run there too (pointed out by
+  # hohoanganh). It only warns for now – a red run here means: look before the next release.
+  python-current-ha:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+      - run: pip install -r requirements_test.txt
+      - run: python -c "from homeassistant.const import __version__; print('Home Assistant', __version__)"
+      - run: pytest -q
+
+  hassfest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: home-assistant/actions/hassfest@master
+
+  hacs:
+    # HACS reads the repository from outside, which fails while it is private
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: hacs/action@main
+        with:
+          category: integration

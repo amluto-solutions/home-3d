@@ -1,0 +1,21 @@
+{
+  "id": "unifi_g4_instant",
+  "name": {"en": "UniFi G4 Instant camera"},
+  "size": [0.05, 0.06, 0.08],
+  "group": "tech",
+  "tags": ["security camera", "camera", "cctv", "unifi", "ubiquiti", "g4 instant", "uvc g4 instant"],
+  "family": "unifi_camera",
+  "variant": {"en": "G4 Instant"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 2.1,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4667, "w": 0.6, "d": 0.0667, "y": 0.0, "h": 0.375, "color": "white"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3167, "w": 0.68, "d": 0.2333, "y": 0.0, "h": 0.425, "color": "white", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": -0.1667, "w": 0.24, "d": 0.2, "y": 0.325, "h": 0.125, "color": "white"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0833, "w": 0.96, "d": 0.5667, "y": 0.4, "h": 0.6, "color": "white", "round": 0.2},
+    {"shape": "rbox", "x": 0.0, "z": 0.3833, "w": 0.88, "d": 0.1, "y": 0.4375, "h": 0.525, "color": "#1c222c", "round": 0.15},
+    {"shape": "cyl", "x": 0.0, "z": 0.45, "w": 0.36, "d": 0.1, "y": 0.6, "h": 0.225, "color": "#0b0f17", "axis": "z"},
+    {"shape": "cyl", "x": 0.28, "z": 0.4333, "w": 0.08, "d": 0.0667, "y": 0.875, "h": 0.05, "color": "#3a8dde", "axis": "z"}
+  ]
+}

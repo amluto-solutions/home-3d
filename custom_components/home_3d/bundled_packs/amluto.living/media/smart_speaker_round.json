@@ -1,0 +1,16 @@
+{
+  "id": "smart_speaker_round",
+  "name": {"en": "Smart speaker (round)"},
+  "size": [0.1, 0.1, 0.09],
+  "group": "media",
+  "room": ["kitchen", "living", "bedroom", "kids", "office"],
+  "tags": ["echo dot", "alexa", "amazon", "voice assistant", "speaker", "sphere", "assistant"],
+  "family": "smart_speaker",
+  "variant": {"en": "Round"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.7, "d": 0.7, "y": 0.0, "h": 0.1333, "color": "white", "glow": true},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0444, "h": 0.9556, "color": "fabric"}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "candle_pillar",
+  "name": {"en": "Pillar candle"},
+  "size": [0.08, 0.08, 0.15],
+  "group": "candle",
+  "room": ["living", "dining", "bedroom", "hall", "bath", "kitchen"],
+  "tags": ["candle", "pillar candle", "church candle", "wax"],
+  "family": "candle_pillar",
+  "variant": {"en": "Single"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9375, "d": 0.9375, "y": 0.0, "h": 0.8, "color": "#f1e7d3"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0375, "d": 0.0375, "y": 0.8, "h": 0.0533, "color": "#2b2b2b", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.15, "d": 0.15, "y": 0.84, "h": 0.16, "color": "#ffb648", "fix": "wdh"}
+  ]
+}

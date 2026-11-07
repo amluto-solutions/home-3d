@@ -1,0 +1,22 @@
+{
+  "id": "wall_render_white_180",
+  "name": {"en": "Rendered garden wall, white render, full height"},
+  "size": [2.0, 0.215, 1.8],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["wall", "garden wall", "rendered wall", "painted wall", "boundary", "plaster", "stucco"],
+  "family": "wall_render_white",
+  "variant": {"en": "Full height (1.8 m)"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.995, "d": 0.9535, "y": 0.0833, "h": 0.8889, "color": "#f1efe8"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0833, "color": "#aeaca7"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9722, "h": 0.0278, "color": "#d6d3ca"},
+    {"shape": "box", "x": -0.45, "z": 0.0, "w": 0.1, "d": 1, "y": 0, "h": 0.9722, "color": "#e7e5df", "fix": "wd"},
+    {"shape": "box", "x": -0.45, "z": 0.0, "w": 0.1, "d": 1, "y": 0.9444, "h": 0.0222, "color": "#c1bfba", "fix": "wdh"},
+    {"shape": "box", "x": 0.45, "z": 0.0, "w": 0.1, "d": 1, "y": 0, "h": 0.9722, "color": "#e7e5df", "fix": "wd"},
+    {"shape": "box", "x": 0.45, "z": 0.0, "w": 0.1, "d": 1, "y": 0.9444, "h": 0.0222, "color": "#c1bfba", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "clamp_desk_lamp",
+  "name": {
+    "en": "Clamp-on desk lamp"
+  },
+  "size": [
+    0.16,
+    0.4,
+    0.45
+  ],
+  "group": "lamp",
+  "room": [
+    "office",
+    "bedroom",
+    "kids",
+    "hobby"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "clamp lamp",
+    "clip on lamp",
+    "workshop lamp",
+    "desk clamp",
+    "adjustable",
+    "industrial",
+    "reading lamp"
+  ],
+  "family": "clamp_desk_lamp",
+  "variant": {
+    "en": "Metal"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 0.375, "d": 0.125, "y": 0, "h": 0.2222, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 0.375, "d": 0.2, "y": 0.2222, "h": 0.0444, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": 0.25, "w": 0.1562, "d": 0.0625, "y": 0.2667, "h": 0.7111, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.125, "d": 0.5, "y": 0.9556, "h": 0.0444, "color": "dark"},
+    {"shape": "lathe", "x": 0.0, "z": -0.3, "w": 1, "d": 0.4, "y": 0.7111, "h": 0.2667, "color": "dark", "profile": [[0.0, 0.0], [0.5, 0.0], [1.0, 0.8333], [1.0, 1.0], [0.5, 1.0], [0.0, 0.9167]]},
+    {"shape": "sphere", "x": 0.0, "z": -0.3, "w": 0.3125, "d": 0.125, "y": 0.6889, "h": 0.1111, "color": "white", "glow": true}
+  ]
+}

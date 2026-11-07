@@ -1,0 +1,16 @@
+{
+  "id": "cushion_bolster",
+  "name": {"en": "Bolster cushion"},
+  "size": [0.5, 0.18, 0.18],
+  "group": "cushion",
+  "room": ["living", "bedroom", "conservatory", "kids"],
+  "tags": ["cushion", "scatter cushion", "sofa cushion", "throw pillow", "pillow", "bolster", "neck roll", "cylinder"],
+  "family": "cushion",
+  "variant": {"en": "Bolster"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#8a9a7b", "axis": "x"},
+    {"shape": "sphere", "x": -0.48, "z": 0.0, "w": 0.04, "d": 0.1667, "y": 0.4167, "h": 0.1667, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.48, "z": 0.0, "w": 0.04, "d": 0.1667, "y": 0.4167, "h": 0.1667, "color": "dark", "fix": "wdh"}
+  ]
+}

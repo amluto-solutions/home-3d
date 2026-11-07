@@ -1,0 +1,52 @@
+{
+  "id": "unifi_usl_entry",
+  "name": {
+    "en": "UniFi Entry Sensor"
+  },
+  "size": [
+    0.0235,
+    0.0225,
+    0.0755
+  ],
+  "group": "tech",
+  "tags": [
+    "door sensor",
+    "window sensor",
+    "contact sensor",
+    "entry sensor",
+    "usl-entry",
+    "unifi",
+    "ubiquiti"
+  ],
+  "family": "unifi_sensor",
+  "variant": {
+    "en": "Entry Sensor (USL-Entry)"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.9,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "round": 0.3
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0.5,
+      "w": 0.4,
+      "d": 0.03,
+      "y": 0.78,
+      "h": 0.12,
+      "color": "#0b0f17",
+      "axis": "z"
+    }
+  ]
+}

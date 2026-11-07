@@ -1,0 +1,20 @@
+{
+  "id": "star_lamp_hanging",
+  "name": {"en": "Hanging star lamp"},
+  "size": [0.3, 0.05, 0.8],
+  "group": "lamp",
+  "room": ["kids", "bedroom", "living", "hall"],
+  "tags": ["star light", "window star", "paper star", "kids lamp", "christmas star", "pendant"],
+  "family": "star_lamp",
+  "variant": {"en": "Hanging"},
+  "mount": "ceiling",
+  "light": "pendant",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1667, "d": 1, "y": 0.9812, "h": 0.0187, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0267, "d": 0.16, "y": 0.325, "h": 0.6562, "color": "dark", "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.2245, "d": 0.8, "y": 0.2096, "h": 0.1296, "color": "white", "tx": 0.0, "tw": 0.0067, "glow": true},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.0067, "d": 0.8, "y": 0.0801, "h": 0.1296, "color": "white", "tx": 0.0, "tw": 0.951, "glow": true},
+    {"shape": "loft", "x": -0.294, "z": 0.0, "w": 0.0067, "d": 0.8, "y": 0.0, "h": 0.1296, "color": "white", "tx": 0.0, "tw": 0.363, "glow": true},
+    {"shape": "loft", "x": 0.294, "z": 0.0, "w": 0.0067, "d": 0.8, "y": 0.0, "h": 0.1296, "color": "white", "tx": 0.0, "tw": 0.363, "glow": true}
+  ]
+}

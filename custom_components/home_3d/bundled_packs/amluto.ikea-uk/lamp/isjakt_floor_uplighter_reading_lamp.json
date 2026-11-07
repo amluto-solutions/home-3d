@@ -1,0 +1,40 @@
+{
+  "id": "isjakt_floor_uplighter_reading_lamp",
+  "name": {
+    "en": "Floor uplighter with reading lamp, 180 cm"
+  },
+  "size": [
+    0.5,
+    0.24,
+    1.8
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "floor lamp",
+    "uplighter",
+    "reading lamp",
+    "nickel-plated",
+    "dimmable",
+    "led",
+    "2 in 1"
+  ],
+  "ikea": "ISJAKT",
+  "light": "uplight",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.48, "d": 1, "y": 0, "h": 0.0167, "color": "metal", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.044, "d": 0.0917, "y": 0.0167, "h": 0.8333, "color": "metal", "fix": "wd"},
+    {"shape": "lathe", "x": -0.24, "z": 0.0, "w": 0.4, "d": 0.8333, "y": 0.8556, "h": 0.1444, "color": "metal", "profile": [[0.0, 0.0], [0.45, 0.02], [0.8, 0.3], [1.0, 1.0], [0.9, 1.0], [0.68, 0.3], [0.0, 0.1]]},
+    {"shape": "cyl", "x": -0.24, "z": 0.0, "w": 0.34, "d": 0.7083, "y": 0.9944, "h": 0.0022, "color": "white", "glow": true, "fix": "h"},
+    {"shape": "box", "x": -0.12, "z": 0.0, "w": 0.24, "d": 0.0667, "y": 0.8444, "h": 0.0089, "color": "metal"},
+    {"shape": "box", "x": 0.18, "z": 0.0, "w": 0.36, "d": 0.0583, "y": 0.7222, "h": 0.0078, "color": "metal"},
+    {"shape": "cyl", "x": 0.4, "z": 0.0, "w": 0.16, "d": 0.3333, "y": 0.6556, "h": 0.0667, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4, "z": 0.0, "w": 0.12, "d": 0.25, "y": 0.6544, "h": 0.0028, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

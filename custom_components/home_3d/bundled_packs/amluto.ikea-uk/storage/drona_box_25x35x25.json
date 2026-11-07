@@ -1,0 +1,40 @@
+{
+  "id": "drona_box_25x35x25",
+  "name": {
+    "en": "Box 25x35x25 cm"
+  },
+  "size": [
+    0.25,
+    0.35,
+    0.25
+  ],
+  "group": "storage",
+  "room": [
+    "kids",
+    "bedroom",
+    "office",
+    "hall"
+  ],
+  "tags": [
+    "DRONA",
+    "fabric box",
+    "storage box",
+    "KALLAX box",
+    "shelf insert",
+    "dark grey",
+    "black",
+    "yellow",
+    "blue",
+    "light grey"
+  ],
+  "family": "drona_box",
+  "variant": {
+    "en": "25x35x25"
+  },
+  "ikea": "DRÖNA",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "fabric", "round": 0.06},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.52, "d": 0.0171, "y": 0.68, "h": 0.12, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.96, "d": 0.9714, "y": 0.988, "h": 0.012, "color": "dark", "fix": "h"}
+  ]
+}

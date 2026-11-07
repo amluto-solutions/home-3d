@@ -1,0 +1,23 @@
+{
+  "id": "rack_shelf_2u",
+  "name": {"en": "Rack shelf cantilever 2U"},
+  "size": [0.4826, 0.25, 0.0889],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "surface",
+  "surface": true,
+  "tags": ["shelf", "rack shelf", "cantilever shelf", "tray", "2u", "rack mount", "19 inch", "rack"],
+  "family": "rack_shelf",
+  "variant": {"en": "Cantilever 2U"},
+  "rack": {"u": 2, "shelf": true},
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 0.934, "d": 1, "y": 0, "h": 0.045, "color": "dark", "edges": "faint"},
+    {"shape": "box", "x": -0.479, "z": 0.48, "w": 0.042, "d": 0.04, "y": 0, "h": 1, "color": "dark"},
+    {"shape": "box", "x": 0.479, "z": 0.48, "w": 0.042, "d": 0.04, "y": 0, "h": 1, "color": "dark"},
+    {"shape": "box", "x": 0, "z": 0.48, "w": 0.934, "d": 0.04, "y": 0, "h": 0.25, "color": "dark"},
+    {"shape": "box", "x": 0, "z": -0.49, "w": 0.934, "d": 0.02, "y": 0, "h": 0.2, "color": "dark"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

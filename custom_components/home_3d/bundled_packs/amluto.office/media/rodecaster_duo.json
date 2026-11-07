@@ -1,0 +1,25 @@
+{
+  "id": "rodecaster_duo",
+  "name": {"en": "Rode RodeCaster Duo"},
+  "size": [0.235, 0.225, 0.076],
+  "group": "media",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["rodecaster duo", "rodecaster", "rode", "podcast mixer", "mixer", "streaming", "audio"],
+  "family": "rodecaster",
+  "variant": {"en": "Duo"},
+  "electric": true,
+  "watts": 10,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "dark", "round": 0.1},
+    {"shape": "box", "x": 0.0, "z": -0.3, "w": 0.7, "d": 0.25, "y": 0.98, "h": 0.02, "color": "glass"},
+    {"shape": "box", "x": -0.21, "z": 0.15, "w": 0.0255, "d": 0.35, "y": 0.98, "h": 0.02, "color": "#111418"},
+    {"shape": "box", "x": -0.21, "z": 0.17, "w": 0.04, "d": 0.06, "y": 0.98, "h": 0.02, "color": "metal"},
+    {"shape": "box", "x": 0.21, "z": 0.15, "w": 0.0255, "d": 0.35, "y": 0.98, "h": 0.02, "color": "#111418"},
+    {"shape": "box", "x": 0.21, "z": 0.17, "w": 0.04, "d": 0.06, "y": 0.98, "h": 0.02, "color": "metal"},
+    {"shape": "cyl", "x": -0.3, "z": 0.4, "w": 0.05, "d": 0.0522, "y": 0.98, "h": 0.02, "color": "metal"},
+    {"shape": "cyl", "x": -0.1, "z": 0.4, "w": 0.05, "d": 0.0522, "y": 0.98, "h": 0.02, "color": "metal"},
+    {"shape": "cyl", "x": 0.1, "z": 0.4, "w": 0.05, "d": 0.0522, "y": 0.98, "h": 0.02, "color": "metal"},
+    {"shape": "cyl", "x": 0.3, "z": 0.4, "w": 0.05, "d": 0.0522, "y": 0.98, "h": 0.02, "color": "metal"}
+  ]
+}

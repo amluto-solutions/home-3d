@@ -1,0 +1,25 @@
+{
+  "id": "dehumidifier_10l",
+  "name": {"en": "Dehumidifier"},
+  "size": [0.34, 0.24, 0.5],
+  "group": "heating",
+  "room": ["utility", "bedroom", "living", "bath", "loft", "garage", "hall"],
+  "tags": ["damp", "moisture", "humidity", "mould", "laundry", "drying", "water tank", "10 litre"],
+  "family": "dehumidifier",
+  "variant": {"en": "10 litres a day"},
+  "electric": true,
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.08, "h": 0.92, "color": "white", "round": 0.12},
+    {"shape": "rbox", "x": 0, "z": 0.06, "w": 0.82, "d": 0.05, "y": 0.12, "h": 0.3, "color": "glass", "round": 0.2},
+    {"shape": "box", "x": 0, "z": 0.46, "w": 0.7, "d": 0.0417, "y": 0.5, "h": 0.18, "color": "dark"},
+    {"shape": "box", "x": 0, "z": -0.1, "w": 0.78, "d": 0.5, "y": 0.976, "h": 0.024, "color": "dark", "top": "dark"},
+    {"shape": "box", "x": -0.2, "z": 0.46, "w": 0.1176, "d": 0.0417, "y": 0.85, "h": 0.04, "color": "accent"},
+    {"shape": "box", "x": 0.25, "z": 0.46, "w": 0.1471, "d": 0.0417, "y": 0.86, "h": 0.03, "color": "dark"},
+    {"shape": "box", "x": 0.4912, "z": 0, "w": 0.0353, "d": 0.35, "y": 0.62, "h": 0.12, "color": "dark"},
+    {"shape": "box", "x": -0.4912, "z": 0, "w": 0.0353, "d": 0.35, "y": 0.62, "h": 0.12, "color": "dark"},
+    {"shape": "cyl", "x": -0.3824, "z": -0.3333, "w": 0.1324, "d": 0.1875, "y": 0, "h": 0.09, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3824, "z": 0.3333, "w": 0.1324, "d": 0.1875, "y": 0, "h": 0.09, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3824, "z": -0.3333, "w": 0.1324, "d": 0.1875, "y": 0, "h": 0.09, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3824, "z": 0.3333, "w": 0.1324, "d": 0.1875, "y": 0, "h": 0.09, "color": "dark", "fix": "wdh"}
+  ]
+}

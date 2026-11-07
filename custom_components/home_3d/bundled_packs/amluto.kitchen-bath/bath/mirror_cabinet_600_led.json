@@ -1,0 +1,26 @@
+{
+  "id": "mirror_cabinet_600_led",
+  "name": {"en": "Mirror cabinet 600 with lights"},
+  "size": [0.6, 0.15, 0.7],
+  "group": "bath",
+  "room": ["bath"],
+  "tags": ["mirror cabinet", "bathroom cabinet", "medicine cabinet", "mirror", "wall cabinet", "illuminated", "led mirror", "demister"],
+  "family": "mirror_cabinet",
+  "variant": {"en": "600 with lights"},
+  "mount": "wall",
+  "wall_y": 1.15,
+  "light": "wall",
+  "electric": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0667, "w": 1.0, "d": 0.8667, "y": 0.0, "h": 1.0, "color": "white"},
+    {"shape": "box", "x": -0.25, "z": 0.42, "w": 0.4933, "d": 0.1067, "y": 0.0571, "h": 0.8857, "color": "white"},
+    {"shape": "box", "x": -0.25, "z": 0.4867, "w": 0.48, "d": 0.0267, "y": 0.0629, "h": 0.8743, "color": "#b9c7cd"},
+    {"shape": "box", "x": 0.25, "z": 0.42, "w": 0.4933, "d": 0.1067, "y": 0.0571, "h": 0.8857, "color": "white"},
+    {"shape": "box", "x": 0.25, "z": 0.4867, "w": 0.48, "d": 0.0267, "y": 0.0629, "h": 0.8743, "color": "#b9c7cd"},
+    {"shape": "box", "x": 0.0, "z": 0.4167, "w": 0.9333, "d": 0.1, "y": 0.95, "h": 0.0357, "color": "#fff3d6", "glow": true, "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4167, "w": 0.9333, "d": 0.1, "y": 0.0143, "h": 0.0357, "color": "#fff3d6", "glow": true, "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

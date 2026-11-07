@@ -1,0 +1,36 @@
+{
+  "id": "elloven_monitor_stand_drawer",
+  "name": {
+    "en": "Monitor stand with drawer"
+  },
+  "size": [
+    0.47,
+    0.26,
+    0.1
+  ],
+  "group": "office",
+  "room": [
+    "office",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "ELLOVEN",
+    "monitor stand",
+    "monitor riser",
+    "desk organiser",
+    "white",
+    "laptop stand"
+  ],
+  "ikea": "ELLOVEN",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8, "h": 0.2, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4787, "z": 0.0, "w": 0.0426, "d": 1, "y": 0, "h": 0.8, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.4787, "z": 0.0, "w": 0.0426, "d": 1, "y": 0, "h": 0.8, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": -0.4808, "w": 0.9149, "d": 0.0385, "y": 0, "h": 0.8, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9149, "d": 0.9231, "y": 0, "h": 0.08, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4654, "w": 0.9064, "d": 0.0692, "y": 0.12, "h": 0.66, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.2128, "d": 0.0154, "y": 0.58, "h": 0.12, "color": "dark", "fix": "wdh"}
+  ]
+}

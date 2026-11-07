@@ -1,0 +1,17 @@
+{
+  "id": "smart_display",
+  "name": {"en": "Smart display 7″"},
+  "size": [0.178, 0.067, 0.118],
+  "group": "media",
+  "room": ["kitchen", "living", "bedroom", "office", "hall"],
+  "tags": ["nest hub", "google", "echo show", "alexa", "smart screen", "assistant", "voice assistant"],
+  "family": "smart_display",
+  "variant": {"en": "7″"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.12, "w": 0.62, "d": 0.75, "y": 0.0, "h": 0.42, "color": "fabric", "round": 0.45},
+    {"shape": "box", "x": 0.0, "z": 0.3955, "w": 1, "d": 0.1791, "y": 0.1, "h": 0.9, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4851, "w": 0.8539, "d": 0.0299, "y": 0.1771, "h": 0.7458, "color": "glass", "screen": true}
+  ]
+}

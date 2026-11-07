@@ -1,0 +1,17 @@
+{
+  "id": "drum_table_lamp_large",
+  "name": {"en": "Drum table lamp (large)"},
+  "size": [0.4, 0.4, 0.62],
+  "group": "lamp",
+  "room": ["living", "dining", "bedroom", "hall", "office"],
+  "tags": ["table lamp", "bedside lamp", "lampshade", "drum shade", "ceramic lamp", "side lamp"],
+  "family": "drum_table_lamp",
+  "variant": {"en": "Large"},
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.5, "d": 0.5, "y": 0.0, "h": 0.5, "color": "pot", "profile": [[0.0, 0.0], [0.6, 0.0], [0.95, 0.25], [1, 0.5], [0.8, 0.85], [0.35, 0.95], [0.3, 1], [0.0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.07, "d": 0.07, "y": 0.5, "h": 0.0961, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.58, "h": 0.42, "color": "white", "glow": true}
+  ]
+}

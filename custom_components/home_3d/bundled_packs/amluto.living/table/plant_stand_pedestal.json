@@ -1,0 +1,16 @@
+{
+  "id": "plant_stand_pedestal",
+  "name": {"en": "Plant stand"},
+  "size": [0.3, 0.3, 0.75],
+  "group": "table",
+  "family": "plant_stand",
+  "variant": {"en": "Tall pedestal"},
+  "room": ["living", "hall", "conservatory"],
+  "tags": ["plant stand", "pedestal", "plinth", "jardiniere stand", "tall stand", "flower stand"],
+  "surface": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.9667, "h": 0.0333, "color": "wood", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.2, "d": 0.2, "y": 0.04, "h": 0.9267, "color": "wood", "fix": "wd"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8667, "d": 0.8667, "y": 0.0, "h": 0.04, "color": "wood", "fix": "h"}
+  ]
+}

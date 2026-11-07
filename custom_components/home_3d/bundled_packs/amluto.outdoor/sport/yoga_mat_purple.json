@@ -1,0 +1,13 @@
+{
+  "id": "yoga_mat_purple",
+  "name": {"en": "Yoga mat"},
+  "size": [0.61, 1.83, 0.01],
+  "group": "sport",
+  "room": ["living", "bedroom", "hobby", "loft", "office", "kids"],
+  "tags": ["yoga mat", "exercise mat", "pilates", "stretching", "fitness", "gym", "workout", "floor mat", "6mm"],
+  "family": "yoga_mat",
+  "variant": {"en": "Flat, purple"},
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#7a4fa5"}
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "id": "desk_fan_10",
+  "name": {
+    "en": "Desk fan"
+  },
+  "size": [
+    0.31,
+    0.29,
+    0.4
+  ],
+  "group": "heating",
+  "room": [
+    "office",
+    "bedroom",
+    "living",
+    "kids"
+  ],
+  "tags": [
+    "fan",
+    "cooling",
+    "summer",
+    "air movement",
+    "desk fan",
+    "table fan",
+    "oscillating fan",
+    "10 inch"
+  ],
+  "family": "desk_fan",
+  "variant": {
+    "en": "25 cm (10 in)"
+  },
+  "electric": true,
+  "watts": 24,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": -0.2,
+      "w": 0.6,
+      "d": 0.6,
+      "y": 0.0,
+      "h": 0.0625,
+      "color": "dark"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": -0.2,
+      "w": 0.0968,
+      "d": 0.1034,
+      "y": 0.0625,
+      "h": 0.25,
+      "color": "metal"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.1,
+      "w": 0.28,
+      "d": 0.16,
+      "y": 0.5255,
+      "h": 0.219,
+      "color": "white",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.25,
+      "w": 1.0,
+      "d": 0.1724,
+      "y": 0.27,
+      "h": 0.73,
+      "color": "glass",
+      "axis": "z",
+      "edges": "faint"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.45,
+      "w": 0.84,
+      "d": 0.0345,
+      "y": 0.3284,
+      "h": 0.6132,
+      "color": "white",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.46,
+      "w": 0.14,
+      "d": 0.069,
+      "y": 0.5839,
+      "h": 0.1022,
+      "color": "metal",
+      "axis": "z"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "circle",
+      "x": 0,
+      "z": 0,
+      "r": 0.45
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "usb_mic_stand",
+  "name": {"en": "USB desk mic on stand"},
+  "size": [0.16, 0.16, 0.28],
+  "group": "media",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["usb mic", "desk mic", "condenser mic", "podcast", "yeti style", "streaming mic", "audio"],
+  "family": "desk_mic",
+  "variant": {"en": "USB desk mic"},
+  "electric": true,
+  "watts": 2.5,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.0714, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.125, "d": 0.125, "y": 0.0714, "h": 0.3571, "color": "metal"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.75, "d": 0.375, "y": 0.4286, "h": 0.5357, "color": "#3a3d42", "round": 0.5},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.3125, "d": 0.0625, "y": 0.7143, "h": 0.1071, "color": "accent"}
+  ]
+}

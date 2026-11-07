@@ -1,0 +1,54 @@
+{
+  "id": "soderhamn_sofa_chaise_left",
+  "name": {
+    "en": "4-seat sofa with chaise longue, left"
+  },
+  "size": [
+    2.85,
+    1.51,
+    0.83
+  ],
+  "group": "sofa",
+  "room": [
+    "living",
+    "conservatory"
+  ],
+  "tags": [
+    "SODERHAMN",
+    "SÖDERHAMN",
+    "modular sofa",
+    "low sofa",
+    "deep seat",
+    "beige",
+    "light beige",
+    "dark grey",
+    "beige-brown",
+    "grey-blue"
+  ],
+  "family": "soderhamn_sofa",
+  "variant": {
+    "en": "4-seat + chaise left"
+  },
+  "ikea": "SÖDERHAMN",
+  "parts": [
+    {"shape": "rbox", "x": 0.1632, "z": -0.1722, "w": 0.6737, "d": 0.6556, "y": 0.1687, "h": 0.1325, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": 0.1526, "z": -0.4172, "w": 0.6526, "d": 0.1656, "y": 0.3012, "h": 0.5783, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.0649, "z": -0.0894, "w": 0.214, "d": 0.4834, "y": 0.3012, "h": 0.1807, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.0649, "z": -0.2748, "w": 0.2105, "d": 0.1192, "y": 0.4819, "h": 0.5181, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.1526, "z": -0.0894, "w": 0.214, "d": 0.4834, "y": 0.3012, "h": 0.1807, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.1526, "z": -0.2748, "w": 0.2105, "d": 0.1192, "y": 0.4819, "h": 0.5181, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.3702, "z": -0.0894, "w": 0.214, "d": 0.4834, "y": 0.3012, "h": 0.1807, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.3702, "z": -0.2748, "w": 0.2105, "d": 0.1192, "y": 0.4819, "h": 0.5181, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.4895, "z": -0.1722, "w": 0.0211, "d": 0.6556, "y": 0.1687, "h": 0.5783, "color": "fabric", "fix": "w", "round": 0.3},
+    {"shape": "box", "x": -0.1526, "z": -0.4603, "w": 0.0123, "d": 0.0232, "y": 0, "h": 0.1687, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.1526, "z": 0.1159, "w": 0.0123, "d": 0.0232, "y": 0, "h": 0.1687, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4789, "z": -0.4603, "w": 0.0123, "d": 0.0232, "y": 0, "h": 0.1687, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4789, "z": 0.1159, "w": 0.0123, "d": 0.0232, "y": 0, "h": 0.1687, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": -0.3368, "z": 0.0, "w": 0.3263, "d": 1, "y": 0.1687, "h": 0.1325, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": -0.3368, "z": -0.4172, "w": 0.3263, "d": 0.1656, "y": 0.3012, "h": 0.5783, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.3368, "z": 0.0828, "w": 0.3228, "d": 0.8278, "y": 0.3012, "h": 0.1807, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.3368, "z": -0.2748, "w": 0.3193, "d": 0.1192, "y": 0.4819, "h": 0.5181, "color": "cushion", "round": 0.35},
+    {"shape": "box", "x": -0.4789, "z": 0.4603, "w": 0.0123, "d": 0.0232, "y": 0, "h": 0.1687, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.1947, "z": 0.4603, "w": 0.0123, "d": 0.0232, "y": 0, "h": 0.1687, "color": "dark", "fix": "wdh"}
+  ]
+}

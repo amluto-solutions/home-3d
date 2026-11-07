@@ -1,0 +1,66 @@
+{
+  "id": "floor_lamp_simple",
+  "name": {
+    "en": "Drum floor lamp"
+  },
+  "size": [
+    0.4,
+    0.4,
+    1.6
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "standard lamp",
+    "floor light",
+    "shade"
+  ],
+  "light": "floor",
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 0.7,
+      "d": 0.7,
+      "y": 0,
+      "h": 0.02,
+      "color": "metal",
+      "fix": "h"
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 0.06,
+      "d": 0.06,
+      "y": 0.02,
+      "h": 0.8,
+      "color": "metal",
+      "fix": "wd"
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0.82,
+      "h": 0.18,
+      "color": "white",
+      "glow": true
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "circle",
+      "x": 0,
+      "z": 0,
+      "r": 0.5
+    }
+  ]
+}

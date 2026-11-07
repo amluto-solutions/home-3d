@@ -1,0 +1,33 @@
+{
+  "id": "givenergy_battery_9_twin",
+  "name": {"en": "GivEnergy battery"},
+  "size": [1.26, 0.22, 0.76],
+  "group": "energy",
+  "room": ["garage", "utility", "loft"],
+  "tags": ["home battery", "battery storage", "givenergy", "solar battery", "energy storage", "powerwall", "lithium battery"],
+  "family": "home_battery",
+  "variant": {"en": "2 × 9.5 kWh"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 0.4,
+  "parts": [
+    {"shape": "rbox", "x": -0.2619, "z": 0.0, "w": 0.4762, "d": 1, "y": 0.0, "h": 1, "color": "white", "round": 0.1},
+    {"shape": "box", "x": -0.2619, "z": 0.4909, "w": 0.4127, "d": 0.0182, "y": 0.78, "h": 0.0395, "color": "#cfd2d6"},
+    {"shape": "box", "x": -0.3095, "z": 0.4909, "w": 0.0198, "d": 0.0182, "y": 0.7, "h": 0.0105, "color": "#46d36a"},
+    {"shape": "box", "x": -0.2778, "z": 0.4909, "w": 0.0198, "d": 0.0182, "y": 0.7, "h": 0.0105, "color": "#46d36a"},
+    {"shape": "box", "x": -0.246, "z": 0.4909, "w": 0.0198, "d": 0.0182, "y": 0.7, "h": 0.0105, "color": "#46d36a"},
+    {"shape": "box", "x": -0.2143, "z": 0.4909, "w": 0.0198, "d": 0.0182, "y": 0.7, "h": 0.0105, "color": "#cfd2d6"},
+    {"shape": "box", "x": -0.2619, "z": -0.4091, "w": 0.2381, "d": 0.0909, "y": 0.0, "h": 0.0395, "color": "dark"},
+    {"shape": "rbox", "x": 0.2619, "z": 0.0, "w": 0.4762, "d": 1, "y": 0.0, "h": 1, "color": "white", "round": 0.1},
+    {"shape": "box", "x": 0.2619, "z": 0.4909, "w": 0.4127, "d": 0.0182, "y": 0.78, "h": 0.0395, "color": "#cfd2d6"},
+    {"shape": "box", "x": 0.2143, "z": 0.4909, "w": 0.0198, "d": 0.0182, "y": 0.7, "h": 0.0105, "color": "#46d36a"},
+    {"shape": "box", "x": 0.246, "z": 0.4909, "w": 0.0198, "d": 0.0182, "y": 0.7, "h": 0.0105, "color": "#46d36a"},
+    {"shape": "box", "x": 0.2778, "z": 0.4909, "w": 0.0198, "d": 0.0182, "y": 0.7, "h": 0.0105, "color": "#46d36a"},
+    {"shape": "box", "x": 0.3095, "z": 0.4909, "w": 0.0198, "d": 0.0182, "y": 0.7, "h": 0.0105, "color": "#cfd2d6"},
+    {"shape": "box", "x": 0.2619, "z": -0.4091, "w": 0.2381, "d": 0.0909, "y": 0.0, "h": 0.0395, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0635, "d": 0.1364, "y": 0.15, "h": 0.0395, "color": "dark", "axis": "x"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

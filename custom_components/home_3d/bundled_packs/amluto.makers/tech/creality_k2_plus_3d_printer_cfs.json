@@ -1,0 +1,56 @@
+{
+  "id": "creality_k2_plus_3d_printer_cfs",
+  "name": {
+    "en": "Creality K2 Plus with CFS"
+  },
+  "size": [
+    0.495,
+    0.515,
+    0.84
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage"
+  ],
+  "tags": [
+    "3d printer",
+    "printer",
+    "creality",
+    "maker",
+    "filament",
+    "fdm",
+    "k2 plus",
+    "corexy",
+    "multicolour"
+  ],
+  "family": "creality_k2_plus",
+  "variant": {
+    "en": "With CFS"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0571, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": -0.4818, "w": 1, "d": 0.0364, "y": 0.0571, "h": 0.6476, "color": "body"},
+    {"shape": "box", "x": -0.4857, "z": 0.0182, "w": 0.0286, "d": 0.9636, "y": 0.0571, "h": 0.6476, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.4857, "z": 0.0182, "w": 0.0286, "d": 0.9636, "y": 0.0571, "h": 0.6476, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.7048, "h": 0.0571, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.4891, "w": 0.9429, "d": 0.0145, "y": 0.069, "h": 0.6324, "color": "glass"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9429, "d": 0.03, "y": 0.5943, "h": 0.0229, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.1, "w": 0.62, "d": 0.62, "y": 0.1981, "h": 0.0152, "color": "metal"},
+    {"shape": "rbox", "x": 0.0, "z": 0.1, "w": 0.12, "d": 0.12, "y": 0.5714, "h": 0.061, "color": "dark", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": 0.4, "w": 0.8, "d": 0.035, "y": 0.6705, "h": 0.0152, "color": "#fff1d0", "glow": true},
+    {"shape": "rbox", "x": 0.3, "z": 0.4927, "w": 0.22, "d": 0.0109, "y": 0.0114, "h": 0.0343, "color": "accent", "edges": "glow", "round": 0.2},
+    {"shape": "cyl", "x": 0.3, "z": 0.4709, "w": 0.05, "d": 0.0545, "y": 0.6667, "h": 0.0476, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.3, "z": 0.4927, "w": 0.0314, "d": 0.0109, "y": 0.672, "h": 0.0286, "color": "glass", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.4286, "d": 0.5091, "y": 0.7619, "h": 0.2381, "color": "body"},
+    {"shape": "box", "x": 0.0, "z": 0.2473, "w": 0.3857, "d": 0.0091, "y": 0.7798, "h": 0.2024, "color": "glass"},
+    {"shape": "cyl", "x": -0.1479, "z": 0.0, "w": 0.0857, "d": 0.3564, "y": 0.7857, "h": 0.1667, "color": "accent", "axis": "z"},
+    {"shape": "cyl", "x": -0.0493, "z": 0.0, "w": 0.0857, "d": 0.3564, "y": 0.7857, "h": 0.1667, "color": "white", "axis": "z"},
+    {"shape": "cyl", "x": 0.0493, "z": 0.0, "w": 0.0857, "d": 0.3564, "y": 0.7857, "h": 0.1667, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.1479, "z": 0.0, "w": 0.0857, "d": 0.3564, "y": 0.7857, "h": 0.1667, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [{"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}, {"shape": "rect", "x": 0, "z": 0, "w": 0.8, "d": 0.8}]
+}

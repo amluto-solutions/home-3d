@@ -1,0 +1,35 @@
+{
+  "id": "knapper_standing_mirror",
+  "name": {
+    "en": "Standing mirror"
+  },
+  "size": [
+    0.48,
+    0.53,
+    1.6
+  ],
+  "group": "deco",
+  "room": [
+    "bedroom",
+    "hall",
+    "kids"
+  ],
+  "tags": [
+    "floor mirror",
+    "full-length mirror",
+    "dressing mirror",
+    "clothes hooks",
+    "white",
+    "black"
+  ],
+  "ikea": "KNAPPER",
+  "parts": [
+    {"shape": "loft", "x": 0.0, "z": 0.3396, "w": 1, "d": 0.0755, "y": 0, "h": 1, "color": "white", "tz": -0.1509, "tw": 1, "td": 0.0755},
+    {"shape": "loft", "x": 0.0, "z": 0.3726, "w": 0.8125, "d": 0.0113, "y": 0.025, "h": 0.925, "color": "glass", "tz": -0.0811, "tw": 0.8125, "td": 0.0113},
+    {"shape": "loft", "x": 0.0, "z": -0.434, "w": 0.1042, "d": 0.0755, "y": 0, "h": 0.85, "color": "white", "tz": -0.2264, "tw": 0.1042, "td": 0.0755},
+    {"shape": "box", "x": 0.0, "z": 0.3585, "w": 0.9583, "d": 0.1887, "y": 0.1875, "h": 0.0075, "color": "white", "fix": "h"},
+    {"shape": "cyl", "x": -0.25, "z": -0.2453, "w": 0.0521, "d": 0.0755, "y": 0.9, "h": 0.0156, "color": "white", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.2453, "w": 0.0521, "d": 0.0755, "y": 0.9, "h": 0.0156, "color": "white", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.25, "z": -0.2453, "w": 0.0521, "d": 0.0755, "y": 0.9, "h": 0.0156, "color": "white", "axis": "z", "fix": "wdh"}
+  ]
+}

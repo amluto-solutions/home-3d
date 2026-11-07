@@ -1,0 +1,40 @@
+{
+  "id": "micke_desk_73x50",
+  "name": {
+    "en": "Desk 73x50 cm"
+  },
+  "size": [
+    0.73,
+    0.5,
+    0.75
+  ],
+  "group": "office",
+  "room": [
+    "office",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "desk",
+    "computer desk",
+    "writing desk",
+    "drawers",
+    "cable outlet",
+    "white",
+    "black-brown",
+    "anthracite"
+  ],
+  "family": "micke_desk",
+  "variant": {
+    "en": "73x50"
+  },
+  "ikea": "MICKE",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9667, "h": 0.0333, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4877, "z": 0.0, "w": 0.0247, "d": 1, "y": 0, "h": 0.9667, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.48, "w": 0.9507, "d": 0.036, "y": 0.4667, "h": 0.4667, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.4877, "z": 0.0, "w": 0.0247, "d": 1, "y": 0, "h": 0.9667, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.48, "w": 0.9452, "d": 0.036, "y": 0.84, "h": 0.12, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.137, "d": 0.008, "y": 0.8933, "h": 0.016, "color": "dark", "fix": "wdh"}
+  ]
+}

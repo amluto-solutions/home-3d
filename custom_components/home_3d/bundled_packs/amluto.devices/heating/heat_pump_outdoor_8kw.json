@@ -1,0 +1,27 @@
+{
+  "id": "heat_pump_outdoor_8kw",
+  "name": {"en": "Heat pump outdoor unit"},
+  "size": [1.05, 0.48, 1.02],
+  "group": "heating",
+  "room": ["garden"],
+  "tags": ["air source heat pump", "ashp", "heat pump", "outdoor unit", "ecodan", "mitsubishi", "monobloc"],
+  "family": "heat_pump_outdoor",
+  "variant": {"en": "8.5 kW"},
+  "electric": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.3958, "w": 0.9048, "d": 0.1667, "y": 0.0, "h": 0.049, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.3958, "w": 0.9048, "d": 0.1667, "y": 0.0, "h": 0.049, "color": "dark", "fix": "dh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.049, "h": 0.951, "color": "white", "round": 0.05, "top": "#d9dadc"},
+    {"shape": "cyl", "x": -0.12, "z": 0.4875, "w": 0.6581, "d": 0.025, "y": 0.1858, "h": 0.6775, "color": "body", "axis": "z"},
+    {"shape": "cyl", "x": -0.12, "z": 0.4896, "w": 0.62, "d": 0.0208, "y": 0.2054, "h": 0.6382, "color": "dark", "axis": "z", "edges": "faint"},
+    {"shape": "cyl", "x": -0.12, "z": 0.4916, "w": 0.1116, "d": 0.0167, "y": 0.4671, "h": 0.1149, "color": "metal", "axis": "z"},
+    {"shape": "box", "x": 0.4048, "z": 0.4875, "w": 0.1524, "d": 0.025, "y": 0.35, "h": 0.45, "color": "#e8e9eb", "fix": "w"},
+    {"shape": "cyl", "x": 0.4429, "z": 0.3333, "w": 0.0381, "d": 0.25, "y": 0.1471, "h": 0.0392, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4429, "z": 0.3333, "w": 0.0381, "d": 0.25, "y": 0.2451, "h": 0.0392, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.4962, "z": 0.0, "w": 0.0076, "d": 0.8333, "y": 0.1471, "h": 0.7059, "color": "dark", "fix": "w"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.5, "z1": 0.5, "x2": 0.5, "z2": 0.5}
+  ]
+}

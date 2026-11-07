@@ -1,0 +1,17 @@
+{
+  "id": "smart_display_max",
+  "name": {"en": "Smart display 10″"},
+  "size": [0.25, 0.101, 0.182],
+  "group": "media",
+  "room": ["kitchen", "living", "bedroom", "office", "hall"],
+  "tags": ["nest hub", "google", "echo show", "alexa", "smart screen", "assistant", "voice assistant"],
+  "family": "smart_display",
+  "variant": {"en": "10″"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.12, "w": 0.62, "d": 0.75, "y": 0.0, "h": 0.42, "color": "fabric", "round": 0.45},
+    {"shape": "box", "x": 0.0, "z": 0.4307, "w": 1, "d": 0.1188, "y": 0.1, "h": 0.9, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4901, "w": 0.872, "d": 0.0198, "y": 0.1929, "h": 0.7143, "color": "glass", "screen": true}
+  ]
+}

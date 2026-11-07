@@ -1,0 +1,24 @@
+{
+  "id": "mouse_lamp",
+  "name": {"en": "Mouse lamp"},
+  "size": [0.17, 0.15, 0.3],
+  "group": "lamp",
+  "room": ["kids", "bedroom", "living"],
+  "tags": ["night light", "kids lamp", "nursery lamp", "animal lamp", "mouse", "table lamp"],
+  "family": "mouse_lamp",
+  "variant": {"en": "Sitting"},
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "sphere", "x": 0.0, "z": -0.0667, "w": 0.8235, "d": 0.8, "y": 0.0, "h": 0.6333, "color": "white", "glow": true},
+    {"shape": "sphere", "x": 0.0, "z": 0.0333, "w": 0.5882, "d": 0.6667, "y": 0.5167, "h": 0.3333, "color": "white", "glow": true},
+    {"shape": "lathe", "x": 0.0, "z": 0.3, "w": 0.2941, "d": 0.3333, "y": 0.6, "h": 0.1667, "color": "white", "glow": true, "profile": [[1, 0.0], [0.7, 0.6], [0.0, 1]]},
+    {"shape": "cyl", "x": -0.3059, "z": -0.0333, "w": 0.3882, "d": 0.08, "y": 0.75, "h": 0.22, "color": "white", "glow": true, "axis": "z"},
+    {"shape": "sphere", "x": -0.1176, "z": 0.3333, "w": 0.0706, "d": 0.0667, "y": 0.7167, "h": 0.04, "color": "dark"},
+    {"shape": "sphere", "x": -0.1647, "z": 0.2333, "w": 0.2353, "d": 0.2667, "y": 0.0133, "h": 0.0867, "color": "white", "glow": true},
+    {"shape": "cyl", "x": 0.3059, "z": -0.0333, "w": 0.3882, "d": 0.08, "y": 0.75, "h": 0.22, "color": "white", "glow": true, "axis": "z"},
+    {"shape": "sphere", "x": 0.1176, "z": 0.3333, "w": 0.0706, "d": 0.0667, "y": 0.7167, "h": 0.04, "color": "dark"},
+    {"shape": "sphere", "x": 0.1647, "z": 0.2333, "w": 0.2353, "d": 0.2667, "y": 0.0133, "h": 0.0867, "color": "white", "glow": true},
+    {"shape": "sphere", "x": 0.0, "z": 0.44, "w": 0.0824, "d": 0.0933, "y": 0.65, "h": 0.0467, "color": "accent"}
+  ]
+}

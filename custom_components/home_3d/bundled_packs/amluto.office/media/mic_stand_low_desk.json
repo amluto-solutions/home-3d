@@ -1,0 +1,18 @@
+{
+  "id": "mic_stand_low_desk",
+  "name": {"en": "Low desk mic stand, round base, with mic"},
+  "size": [0.16, 0.16, 0.3],
+  "group": "media",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["desk stand", "low profile", "mic stand", "round base", "microphone", "streaming", "audio"],
+  "family": "mic_stand_round",
+  "variant": {"en": "Desk"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.0667, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1125, "d": 0.1125, "y": 0.1, "h": 0.5333, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.25, "d": 0.25, "y": 0.6, "h": 0.0667, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.3125, "d": 0.3125, "y": 0.6333, "h": 0.3333, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4062, "d": 0.4062, "y": 0.8333, "h": 0.1667, "color": "#2b2f36"}
+  ]
+}

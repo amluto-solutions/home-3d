@@ -1,0 +1,25 @@
+{
+  "id": "robot_vacuum_dock",
+  "name": {"en": "Robot vacuum on self-emptying dock"},
+  "size": [0.36, 0.55, 0.46],
+  "group": "appliance",
+  "room": ["hall", "utility", "living", "kitchen", "bedroom", "office"],
+  "tags": ["robot vacuum", "self-emptying", "roomba", "robot hoover", "auto-empty", "vacuum cleaner", "hoover"],
+  "family": "vacuum",
+  "variant": {"en": "Robot, self-emptying dock"},
+  "electric": true,
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.1909, "w": 0.9444, "d": 0.6182, "y": 0.0, "h": 0.1957, "color": "dark", "profile": [[0, 0], [0.92, 0], [1, 0.2], [1, 0.75], [0.9, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0818, "w": 0.2222, "d": 0.1455, "y": 0.1848, "h": 0.0261, "color": "#2a2c30"},
+    {"shape": "box", "x": 0.0, "z": 0.4636, "w": 0.6667, "d": 0.0727, "y": 0.0435, "h": 0.1087, "color": "#3a3d42"},
+    {"shape": "cyl", "x": 0.1667, "z": 0.3, "w": 0.0333, "d": 0.0218, "y": 0.1859, "h": 0.0043, "color": "#7fe3ff", "edges": "faint"},
+    {"shape": "box", "x": 0.0, "z": -0.1091, "w": 0.8889, "d": 0.7818, "y": 0.0, "h": 0.0261, "color": "#2a2c30"},
+    {"shape": "rbox", "x": 0.0, "z": -0.3182, "w": 1.0, "d": 0.3636, "y": 0.0, "h": 1.0, "color": "white", "round": 0.12},
+    {"shape": "rbox", "x": 0.0, "z": -0.1436, "w": 0.8333, "d": 0.0218, "y": 0.5652, "h": 0.3696, "color": "dark", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": -0.1364, "w": 0.0333, "d": 0.0073, "y": 0.4783, "h": 0.0261, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": -0.3182, "w": 1.0, "d": 0.3636},
+    {"shape": "circle", "x": 0.0, "z": 0.1909, "r": 0.4722}
+  ]
+}

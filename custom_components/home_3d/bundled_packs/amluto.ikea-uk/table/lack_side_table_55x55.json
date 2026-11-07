@@ -1,0 +1,40 @@
+{
+  "id": "lack_side_table_55x55",
+  "name": {
+    "en": "Side table 55x55 cm"
+  },
+  "size": [
+    0.55,
+    0.55,
+    0.45
+  ],
+  "group": "table",
+  "room": [
+    "living",
+    "bedroom",
+    "kids",
+    "office"
+  ],
+  "tags": [
+    "end table",
+    "lamp table",
+    "coffee table",
+    "white",
+    "black-brown",
+    "white stained oak effect",
+    "yellow"
+  ],
+  "family": "lack_side_table",
+  "variant": {
+    "en": "55x55"
+  },
+  "ikea": "LACK",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8889, "h": 0.1111, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4545, "z": -0.4545, "w": 0.0909, "d": 0.0909, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4545, "z": 0.4545, "w": 0.0909, "d": 0.0909, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4545, "z": -0.4545, "w": 0.0909, "d": 0.0909, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4545, "z": 0.4545, "w": 0.0909, "d": 0.0909, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"}
+  ]
+}

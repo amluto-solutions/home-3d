@@ -1,0 +1,38 @@
+{
+  "id": "kungstarna_candlestick_19",
+  "name": {
+    "en": "Candlestick, glass/gold-colour 19 cm"
+  },
+  "size": [
+    0.09,
+    0.09,
+    0.185
+  ],
+  "group": "candle",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "bedroom"
+  ],
+  "tags": [
+    "KUNGSTARNA",
+    "candlestick",
+    "candle holder",
+    "glass",
+    "gold-colour",
+    "dinner candle",
+    "taper candle"
+  ],
+  "family": "kungstarna_holder",
+  "variant": {
+    "en": "Candlestick 19"
+  },
+  "ikea": "KUNGSTÄRNA",
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0649, "color": "#c8a45a", "fix": "wdh"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0649, "h": 0.9351, "color": "glass", "profile": [[0.95, 0], [0.6, 0.06], [0.2, 0.24], [0.16, 0.5], [0.3, 0.62], [0.7, 0.78], [0.8, 1], [0.7, 1], [0.5, 0.82]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.3333, "d": 0.3333, "y": 0.3784, "h": 0.0757, "color": "#c8a45a", "fix": "wdh"}
+  ]
+}

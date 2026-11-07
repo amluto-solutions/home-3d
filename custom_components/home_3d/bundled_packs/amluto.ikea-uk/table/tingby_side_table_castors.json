@@ -1,0 +1,40 @@
+{
+  "id": "tingby_side_table_castors",
+  "name": {
+    "en": "Side table on castors 50x50 cm"
+  },
+  "size": [
+    0.5,
+    0.5,
+    0.45
+  ],
+  "group": "table",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "side table",
+    "castors",
+    "wheels",
+    "mobile",
+    "white",
+    "grey",
+    "black"
+  ],
+  "ikea": "TINGBY",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9444, "h": 0.0556, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.96, "d": 0.96, "y": 0.3778, "h": 0.0444, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.465, "z": -0.465, "w": 0.07, "d": 0.07, "y": 0.1111, "h": 0.8333, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.465, "z": 0.465, "w": 0.07, "d": 0.07, "y": 0.1111, "h": 0.8333, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.465, "z": -0.465, "w": 0.07, "d": 0.07, "y": 0.1111, "h": 0.8333, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.465, "z": 0.465, "w": 0.07, "d": 0.07, "y": 0.1111, "h": 0.8333, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.465, "z": -0.465, "w": 0.09, "d": 0.09, "y": 0, "h": 0.1111, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.465, "z": 0.465, "w": 0.09, "d": 0.09, "y": 0, "h": 0.1111, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.465, "z": -0.465, "w": 0.09, "d": 0.09, "y": 0, "h": 0.1111, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.465, "z": 0.465, "w": 0.09, "d": 0.09, "y": 0, "h": 0.1111, "color": "dark", "fix": "wdh"}
+  ]
+}

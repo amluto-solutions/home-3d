@@ -1,0 +1,19 @@
+{
+  "id": "unifi_g3_flex",
+  "name": {"en": "UniFi G3 Flex camera"},
+  "size": [0.05, 0.085, 0.07],
+  "group": "tech",
+  "tags": ["security camera", "camera", "cctv", "unifi", "ubiquiti", "g3 flex", "uvc g3 flex"],
+  "family": "unifi_camera",
+  "variant": {"en": "G3 Flex"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 2.1,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.4529, "w": 1, "d": 0.0941, "y": 0.0, "h": 0.7143, "color": "white", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": -0.2765, "w": 0.28, "d": 0.2588, "y": 0.2571, "h": 0.2, "color": "white", "axis": "z"},
+    {"shape": "rbox", "x": 0.0, "z": 0.1294, "w": 0.92, "d": 0.6471, "y": 0.3143, "h": 0.6857, "color": "white", "round": 0.35},
+    {"shape": "rbox", "x": 0.0, "z": 0.4412, "w": 0.76, "d": 0.0706, "y": 0.3857, "h": 0.5429, "color": "#1c222c", "round": 0.3},
+    {"shape": "cyl", "x": 0.0, "z": 0.4706, "w": 0.4, "d": 0.0588, "y": 0.5143, "h": 0.2857, "color": "#0b0f17", "axis": "z"}
+  ]
+}

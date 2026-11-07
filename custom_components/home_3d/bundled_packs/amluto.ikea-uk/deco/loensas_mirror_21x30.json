@@ -1,0 +1,32 @@
+{
+  "id": "loensas_mirror_21x30",
+  "name": {
+    "en": "Small adhesive mirror 21x30 cm"
+  },
+  "size": [
+    0.21,
+    0.01,
+    0.3
+  ],
+  "group": "deco",
+  "room": [
+    "hall",
+    "bath",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "mirror",
+    "adhesive mirror",
+    "stick-on",
+    "frameless",
+    "small mirror"
+  ],
+  "ikea": "LÖNSÅS",
+  "mount": "wall",
+  "wall_y": 1.3,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.3, "w": 1, "d": 0.4, "y": 0, "h": 1, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.9619, "d": 0.6, "y": 0.0133, "h": 0.9733, "color": "glass", "fix": "d"}
+  ]
+}

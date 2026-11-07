@@ -1,0 +1,22 @@
+{
+  "id": "fire_extinguisher_water_6l",
+  "name": {"en": "Fire extinguisher"},
+  "size": [0.2015, 0.2015, 0.6],
+  "group": "household",
+  "room": ["hall", "kitchen", "garage", "utility", "hobby", "loft"],
+  "tags": ["fire safety", "extinguisher", "fire", "safety", "water", "foam", "6 litre"],
+  "family": "fire_extinguisher",
+  "variant": {"en": "Water or foam, 6 L"},
+  "parts": [
+    {"shape": "lathe", "x": 0, "z": 0, "w": 0.7692, "d": 0.7692, "y": 0, "h": 0.72, "color": "#c0262b", "profile": [[0, 0], [0.85, 0], [1, 0.06], [1, 0.82], [0.7, 0.95], [0.3, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.7692, "d": 0.7692, "y": 0.18, "h": 0.16, "color": "#f0e6c5"},
+    {"shape": "box", "x": 0, "z": 0.3885, "w": 0.4231, "d": 0.0199, "y": 0.2, "h": 0.12, "color": "#f2eee2"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.2308, "d": 0.2308, "y": 0.68, "h": 0.06, "color": "metal"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.3231, "d": 0.2308, "y": 0.72, "h": 0.07, "color": "#1c1c1e"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.2308, "d": 0.6154, "y": 0.79, "h": 0.04, "color": "#1c1c1e"},
+    {"shape": "box", "x": 0.2692, "z": 0, "w": 0.3846, "d": 0.1385, "y": 0.9, "h": 0.025, "color": "#1c1c1e"},
+    {"shape": "cyl", "x": -0.3462, "z": 0.2308, "w": 0.0923, "d": 0.0923, "y": 0.7, "h": 0.06, "color": "#e8d44a"},
+    {"shape": "cyl", "x": 0.3846, "z": 0.1538, "w": 0.0692, "d": 0.2308, "y": 0.7284, "h": 0.0233, "color": "#1c1c1e", "axis": "z"},
+    {"shape": "cyl", "x": 0.3846, "z": 0.2769, "w": 0.0923, "d": 0.0923, "y": 0.55, "h": 0.19, "color": "#1c1c1e"}
+  ]
+}

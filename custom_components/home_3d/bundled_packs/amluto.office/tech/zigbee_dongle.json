@@ -1,0 +1,20 @@
+{
+  "id": "zigbee_dongle",
+  "name": {"en": "Zigbee USB stick"},
+  "size": [0.1, 0.03, 0.02],
+  "group": "tech",
+  "room": ["office", "utility", "hall", "living", "loft"],
+  "tags": ["smart hub", "home assistant", "zigbee", "z-wave", "bridge", "gateway", "smart home", "controller"],
+  "family": "smart_hub",
+  "variant": {"en": "USB stick"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": -0.35, "z": 0.0, "w": 0.3, "d": 1.0, "y": 0.0, "h": 1.0, "color": "metal"},
+    {"shape": "rbox", "x": 0.15, "z": 0.0, "w": 0.7, "d": 1.0, "y": 0.0, "h": 1.0, "color": "white", "round": 0.3},
+    {"shape": "box", "x": 0.3, "z": 0.0, "w": 0.2, "d": 0.2667, "y": 0.95, "h": 0.05, "color": "#46d36a", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

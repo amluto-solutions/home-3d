@@ -1,0 +1,15 @@
+{
+  "id": "shure_sm57",
+  "name": {"en": "Shure SM57 instrument mic"},
+  "size": [0.032, 0.157, 0.032],
+  "group": "media",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["shure", "sm57", "instrument mic", "dynamic mic", "microphone", "streaming", "audio"],
+  "family": "shure_handheld",
+  "variant": {"en": "SM57"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.7, "y": 0.0, "h": 1.0, "color": "#3a3d42", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.3726, "w": 1.0, "d": 0.2548, "y": 0.0, "h": 1.0, "color": "metal", "axis": "z"}
+  ]
+}

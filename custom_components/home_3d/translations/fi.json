@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "Lisää sivupalkkiin sivun, jolla piirrät kotisi ja näet sen 3D:nä."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Home 3D on jo määritetty."
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "Kysy talolta",
+      "description": "Välittää lauseen avoimille Home 3D -näkymille: ”Näytä olohuone” näyttää sen, ja kysymyksiin vastaavat asennetut moduulit (”Mikä on auki?”). Ensimmäinen lauseen ymmärtävä näkymä vastaa.",
+      "fields": {
+        "text": {
+          "name": "Lause",
+          "description": "Mitä näytetään tai kysytään, sanottuna niin kuin sanoisit sen."
+        },
+        "screen": {
+          "name": "Näyttö",
+          "description": "Vain tällä näytön nimellä oleva näkymä reagoi (asetetaan näkymän asetuksissa tai kortin valintanäytössä). Tyhjä: kaikki avoimet näkymät."
+        },
+        "speak": {
+          "name": "Puhu",
+          "description": "Näkymä lausuu vastauksensa Assistin puheentuotolla (pois: se vain näyttää sen)."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Missä Home 3D näkyy. Paneelin linkki ja kojelautakortti toimivat molemmin tavoin, ja voit silti piilottaa kohteen itseltäsi Home Assistantin omissa sivupalkin asetuksissa.",
+        "data": {
+          "show_in_sidebar": "Näytä sivupalkissa",
+          "restore_picture_days": "Säilytä palautuspisteiden kuvat (päivää)"
+        },
+        "data_description": {
+          "restore_picture_days": "Taustakuva tai näyttökuva, jota vain vanhempi palautuspiste vielä käyttää, säilytetään niin monta päivää palautuspisteen luomisesta kuin tässä on määritetty, ja poistetaan seuraavassa käynnistyksessä. Palautuspiste, jonka kuva on kadonnut, palautuu ilman sitä. 0 poistaa tällaiset kuvat heti."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "smart_hub_box",
+  "name": {"en": "Smart home hub"},
+  "size": [0.112, 0.112, 0.03],
+  "group": "tech",
+  "room": ["office", "utility", "hall", "living", "loft"],
+  "tags": ["smart hub", "home assistant", "zigbee", "z-wave", "bridge", "gateway", "smart home", "controller"],
+  "family": "smart_hub",
+  "variant": {"en": "Box"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "white", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7857, "d": 0.7857, "y": 0.9667, "h": 0.0333, "color": "#26282c"},
+    {"shape": "box", "x": 0.0, "z": 0.4911, "w": 0.3571, "d": 0.0179, "y": 0.3333, "h": 0.1333, "color": "#4aa3ff", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "gamecube",
+  "name": {"en": "Nintendo GameCube"},
+  "size": [0.15, 0.161, 0.11],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["gamecube", "game cube", "nintendo gamecube", "nintendo", "gaming", "console", "retro", "dol-001"],
+  "family": "gamecube",
+  "variant": {"en": "Console"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 20,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.9, "color": "#5a4a8a", "round": 0.1},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.6, "d": 0.6, "y": 0.9, "h": 0.1, "color": "#2b2d31"},
+    {"shape": "box", "x": 0.0, "z": 0.46, "w": 0.3, "d": 0.04, "y": 0.3, "h": 0.04, "color": "#101114"},
+    {"shape": "box", "x": 0.32, "z": 0.47, "w": 0.14, "d": 0.02, "y": 0.65, "h": 0.12, "color": "#3a3d42"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

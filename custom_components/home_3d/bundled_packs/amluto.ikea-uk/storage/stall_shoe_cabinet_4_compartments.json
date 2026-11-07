@@ -1,0 +1,48 @@
+{
+  "id": "stall_shoe_cabinet_4_compartments",
+  "name": {
+    "en": "Shoe cabinet with 4 compartments"
+  },
+  "size": [
+    0.96,
+    0.17,
+    0.9
+  ],
+  "group": "storage",
+  "room": [
+    "hall"
+  ],
+  "tags": [
+    "STALL",
+    "shoe cabinet",
+    "shoe storage",
+    "slim shoe cabinet",
+    "hallway",
+    "white",
+    "flip-down doors"
+  ],
+  "family": "stall_shoe_cabinet",
+  "variant": {
+    "en": "4 compartments 96x17x90"
+  },
+  "ikea": "STÄLL",
+  "parts": [
+    {"shape": "box", "x": -0.4917, "z": 0.0, "w": 0.0167, "d": 0.9412, "y": 0.0333, "h": 0.9667, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4917, "z": 0.0, "w": 0.0167, "d": 0.9412, "y": 0.0333, "h": 0.9667, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9412, "y": 0.9822, "h": 0.0178, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 0.9412, "y": 0.0333, "h": 0.0178, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4706, "w": 0.9667, "d": 0.0471, "y": 0.0333, "h": 0.9667, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.0588, "w": 0.9688, "d": 0.7059, "y": 0, "h": 0.0333, "color": "dark", "fix": "wh"},
+    {"shape": "loft", "x": 0.0, "z": 0.4412, "w": 0.9604, "d": 0.0941, "y": 0.0611, "h": 0.2183, "color": "white", "tx": 0.0, "tz": 0.5, "tw": 0.9604, "td": 0.0941},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.125, "d": 0.0706, "y": 0.2428, "h": 0.0133, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 0.9412, "y": 0.2817, "h": 0.0111, "color": "white", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.4412, "w": 0.9604, "d": 0.0941, "y": 0.2928, "h": 0.2183, "color": "white", "tx": 0.0, "tz": 0.5, "tw": 0.9604, "td": 0.0941},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.125, "d": 0.0706, "y": 0.4744, "h": 0.0133, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 0.9412, "y": 0.5133, "h": 0.0111, "color": "white", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.4412, "w": 0.9604, "d": 0.0941, "y": 0.5244, "h": 0.2183, "color": "white", "tx": 0.0, "tz": 0.5, "tw": 0.9604, "td": 0.0941},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.125, "d": 0.0706, "y": 0.7061, "h": 0.0133, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 0.9412, "y": 0.745, "h": 0.0111, "color": "white", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.4412, "w": 0.9604, "d": 0.0941, "y": 0.7561, "h": 0.2183, "color": "white", "tx": 0.0, "tz": 0.5, "tw": 0.9604, "td": 0.0941},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.125, "d": 0.0706, "y": 0.9378, "h": 0.0133, "color": "metal", "fix": "wdh"}
+  ]
+}

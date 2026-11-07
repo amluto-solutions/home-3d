@@ -1,0 +1,24 @@
+{
+  "id": "label_printer_shipping",
+  "name": {"en": "Label printer, shipping labels"},
+  "size": [0.18, 0.23, 0.17],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby", "utility", "garage"],
+  "tags": ["label printer", "label maker", "dymo", "brother", "thermal printer", "labels", "printer"],
+  "family": "label_printer",
+  "variant": {"en": "Shipping labels"},
+  "electric": true,
+  "mount": "surface",
+  "role_names": {"white": "case", "dark": "details"},
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.5, "color": "dark", "round": 0.2},
+    {"shape": "rbox", "x": 0.0, "z": -0.0652, "w": 0.9444, "d": 0.8696, "y": 0.5, "h": 0.4882, "color": "dark", "round": 0.35},
+    {"shape": "box", "x": 0.0, "z": -0.0652, "w": 0.7778, "d": 0.6087, "y": 0.9882, "h": 0.0118, "color": "glass", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4913, "w": 0.5556, "d": 0.0174, "y": 0.4765, "h": 0.0353, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4348, "w": 0.5556, "d": 0.1304, "y": 0.4412, "h": 0.0353, "color": "white"},
+    {"shape": "cyl", "x": 0.3333, "z": 0.3478, "w": 0.0667, "d": 0.0522, "y": 0.5, "h": 0.0118, "color": "#46d36a", "edges": "faint"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

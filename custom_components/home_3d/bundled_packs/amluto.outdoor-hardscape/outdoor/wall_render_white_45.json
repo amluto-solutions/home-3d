@@ -1,0 +1,18 @@
+{
+  "id": "wall_render_white_45",
+  "name": {"en": "Rendered garden wall, white render, low"},
+  "size": [2.0, 0.215, 0.45],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["wall", "garden wall", "rendered wall", "painted wall", "boundary", "plaster", "stucco"],
+  "family": "wall_render_white",
+  "variant": {"en": "Low (0.45 m)"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.995, "d": 0.9535, "y": 0.3333, "h": 0.5556, "color": "#f1efe8"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.3333, "color": "#aeaca7"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8889, "h": 0.1111, "color": "#d6d3ca"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

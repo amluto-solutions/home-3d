@@ -1,0 +1,42 @@
+{
+  "id": "bondis_wall_clock_38",
+  "name": {
+    "en": "Wall clock, black 38 cm"
+  },
+  "size": [
+    0.38,
+    0.06,
+    0.38
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "kitchen",
+    "hall",
+    "bedroom",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "BONDIS",
+    "wall clock",
+    "clock",
+    "round clock",
+    "black",
+    "orange"
+  ],
+  "ikea": "BONDIS",
+  "mount": "wall",
+  "wall_y": 1.51,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.0333, "w": 1, "d": 0.9333, "y": 0, "h": 1, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.92, "d": 1, "y": 0.04, "h": 0.92, "color": "white", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 0.03, "d": 0.05, "y": 0.856, "h": 0.048, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.38, "z": 0.475, "w": 0.048, "d": 0.05, "y": 0.485, "h": 0.03, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 0.03, "d": 0.05, "y": 0.096, "h": 0.048, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.38, "z": 0.475, "w": 0.048, "d": 0.05, "y": 0.485, "h": 0.03, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.11, "z": 0.4833, "w": 0.22, "d": 0.05, "y": 0.485, "h": 0.03, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4833, "w": 0.025, "d": 0.05, "y": 0.5, "h": 0.32, "color": "dark", "fix": "dh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4917, "w": 0.05, "d": 0.0667, "y": 0.48, "h": 0.05, "color": "dark", "axis": "z", "fix": "wdh"}
+  ]
+}

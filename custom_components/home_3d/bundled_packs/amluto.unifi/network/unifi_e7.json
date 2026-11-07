@@ -1,0 +1,60 @@
+{
+  "id": "unifi_e7",
+  "name": {
+    "en": "UniFi E7"
+  },
+  "size": [
+    0.25,
+    0.25,
+    0.0435
+  ],
+  "group": "network",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "access point",
+    "wifi",
+    "wireless",
+    "e7",
+    "e7 enterprise"
+  ],
+  "family": "unifi_ap_ceiling",
+  "variant": {
+    "en": "E7"
+  },
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0.0758,
+      "h": 0.9242,
+      "color": "white",
+      "round": 0.12
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 0.3,
+      "d": 0.3,
+      "y": 0.0242,
+      "h": 0.0515,
+      "color": "#4aa3ff"
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 0.26,
+      "d": 0.26,
+      "y": 0,
+      "h": 0.0758,
+      "color": "white"
+    }
+  ]
+}

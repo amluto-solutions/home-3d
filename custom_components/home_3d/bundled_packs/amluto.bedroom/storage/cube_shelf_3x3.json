@@ -1,0 +1,48 @@
+{
+  "id": "cube_shelf_3x3",
+  "name": {
+    "en": "Cube shelf 3 × 3"
+  },
+  "size": [
+    1.115,
+    0.39,
+    1.115
+  ],
+  "group": "storage",
+  "family": "cube_shelf",
+  "variant": {
+    "en": "3 × 3 cubes"
+  },
+  "room": [
+    "living",
+    "office",
+    "kids",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "cube storage",
+    "cube unit",
+    "shelving unit",
+    "room divider",
+    "shelves",
+    "shelving",
+    "bookcase",
+    "storage unit"
+  ],
+  "parts": [
+    {"shape": "box", "x": -0.4825, "z": 0, "w": 0.035, "d": 1.0, "y": 0, "h": 1.0, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4825, "z": 0, "w": 0.035, "d": 1.0, "y": 0, "h": 1.0, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.93, "d": 1.0, "y": 0, "h": 0.035, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.93, "d": 1.0, "y": 0.965, "h": 0.035, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.1574, "z": 0, "w": 0.0143, "d": 1.0, "y": 0.035, "h": 0.93, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.1574, "z": 0, "w": 0.0143, "d": 1.0, "y": 0.035, "h": 0.93, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.93, "d": 1.0, "y": 0.3354, "h": 0.0143, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.93, "d": 1.0, "y": 0.6502, "h": 0.0143, "color": "white", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.1574, "z1": -0.5, "x2": -0.1574, "z2": 0.5},
+    {"shape": "line", "x1": 0.1574, "z1": -0.5, "x2": 0.1574, "z2": 0.5}
+  ]
+}

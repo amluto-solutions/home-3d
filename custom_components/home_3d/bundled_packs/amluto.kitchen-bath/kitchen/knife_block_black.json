@@ -1,0 +1,23 @@
+{
+  "id": "knife_block_black",
+  "name": {"en": "Knife block, black"},
+  "size": [0.11, 0.23, 0.3],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "tags": ["knife block", "knives", "chef knives", "kitchen", "worktop"],
+  "family": "knife_block",
+  "variant": {"en": "Black"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9, "y": 0, "h": 0.35, "color": "#25272b", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9, "y": 0.35, "h": 0.5, "color": "#25272b", "tx": 0.0, "tz": -0.12, "tw": 1, "td": 0.35},
+    {"shape": "box", "x": -0.36, "z": -0.1, "w": 0.1273, "d": 0.1304, "y": 0.85, "h": 0.15, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": -0.18, "z": -0.1, "w": 0.1273, "d": 0.1304, "y": 0.85, "h": 0.15, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.1, "w": 0.1273, "d": 0.1304, "y": 0.85, "h": 0.15, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.18, "z": -0.1, "w": 0.1273, "d": 0.1304, "y": 0.85, "h": 0.15, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.36, "z": -0.1, "w": 0.1273, "d": 0.1304, "y": 0.85, "h": 0.15, "color": "#101114", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "rug_200x290",
+  "name": {"en": "Rectangular rug 200 × 290 cm"},
+  "size": [2.0, 2.9, 0.012],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "kids", "office"],
+  "tags": ["rug", "carpet", "area rug", "floor rug", "rectangular"],
+  "family": "rug",
+  "variant": {"en": "200 × 290"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.85, "color": "#8a4b3c"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.92, "d": 0.9448, "y": 0.0, "h": 0.93, "color": "#d6cdbd"},
+    {"shape": "box", "x": 0.0, "z": 0.4448, "w": 0.84, "d": 0.0069, "y": 0.0, "h": 1.0, "color": "#8a4b3c", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.4448, "w": 0.84, "d": 0.0069, "y": 0.0, "h": 1.0, "color": "#8a4b3c", "fix": "d"},
+    {"shape": "box", "x": -0.42, "z": 0.0, "w": 0.01, "d": 0.8897, "y": 0.0, "h": 1.0, "color": "#8a4b3c", "fix": "w"},
+    {"shape": "box", "x": 0.42, "z": 0.0, "w": 0.01, "d": 0.8897, "y": 0.0, "h": 1.0, "color": "#8a4b3c", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.336, "d": 0.2669, "y": 0.0, "h": 0.97, "color": "#8a4b3c"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.306, "d": 0.2462, "y": 0.0, "h": 1.0, "color": "#d6cdbd"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "rect", "x": 0, "z": 0, "w": 0.92, "d": 0.9448}
+  ]
+}

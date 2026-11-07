@@ -1,0 +1,24 @@
+{
+  "id": "fire_pit_round_76",
+  "name": {"en": "Fire pit"},
+  "size": [0.76, 0.76, 0.5],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["fire pit", "firepit", "fire bowl", "patio heater", "garden fire", "logs", "round", "steel", "brazier"],
+  "family": "fire_pit",
+  "variant": {"en": "Round steel bowl, 76 cm"},
+  "parts": [
+    {"shape": "lathe", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.44, "h": 0.4, "color": "#4a4d52", "profile": [[0, 0], [0.45, 0], [1, 0.85], [1, 1], [0.96, 1], [0.5, 0.12], [0, 0.12]]},
+    {"shape": "loft", "x": 0.1579, "z": 0, "w": 0.0395, "d": 0.0395, "y": 0, "h": 0.52, "color": "#25262a", "tx": 0.3421, "tz": 0, "tw": 0.0395, "td": 0.0395},
+    {"shape": "loft", "x": -0.0789, "z": 0.1367, "w": 0.0395, "d": 0.0395, "y": 0, "h": 0.52, "color": "#25262a", "tx": -0.1711, "tz": 0.2963, "tw": 0.0395, "td": 0.0395},
+    {"shape": "loft", "x": -0.0789, "z": -0.1367, "w": 0.0395, "d": 0.0395, "y": 0, "h": 0.52, "color": "#25262a", "tx": -0.1711, "tz": -0.2963, "tw": 0.0395, "td": 0.0395},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.3947, "d": 0.3947, "y": 0.52, "h": 0.06, "color": "#3b2b22"},
+    {"shape": "cyl", "x": 0, "z": 0.0395, "w": 0.3947, "d": 0.1184, "y": 0.54, "h": 0.18, "color": "#5b4030", "axis": "x"},
+    {"shape": "cyl", "x": -0.0658, "z": 0, "w": 0.1053, "d": 0.3947, "y": 0.7, "h": 0.16, "color": "#6a4a36", "axis": "z"},
+    {"shape": "cyl", "x": 0.0395, "z": -0.0789, "w": 0.3553, "d": 0.1053, "y": 0.86, "h": 0.16, "color": "#5b4030", "axis": "x", "rot": 30}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5},
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.38}
+  ]
+}

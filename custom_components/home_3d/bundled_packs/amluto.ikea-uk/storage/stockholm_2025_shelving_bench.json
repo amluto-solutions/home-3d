@@ -1,0 +1,39 @@
+{
+  "id": "stockholm_2025_shelving_bench",
+  "name": {
+    "en": "Low shelving unit / bench 180 cm"
+  },
+  "size": [
+    1.8,
+    0.41,
+    0.44
+  ],
+  "group": "storage",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "office"
+  ],
+  "tags": [
+    "STOCKHOLM",
+    "bench",
+    "low shelf",
+    "tv bench",
+    "oak veneer"
+  ],
+  "family": "stockholm_2025_shelving",
+  "variant": {
+    "en": "Bench 180x44"
+  },
+  "ikea": "STOCKHOLM 2025",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9545, "h": 0.0455, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9889, "d": 0.9512, "y": 0.2182, "h": 0.0455, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4944, "z": 0.0, "w": 0.0111, "d": 0.9512, "y": 0, "h": 0.9545, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": -0.1667, "z": 0.0, "w": 0.0111, "d": 0.9512, "y": 0, "h": 0.9545, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.1667, "z": 0.0, "w": 0.0111, "d": 0.9512, "y": 0, "h": 0.9545, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4944, "z": 0.0, "w": 0.0111, "d": 0.9512, "y": 0, "h": 0.9545, "color": "wood", "fix": "w"}
+  ]
+}

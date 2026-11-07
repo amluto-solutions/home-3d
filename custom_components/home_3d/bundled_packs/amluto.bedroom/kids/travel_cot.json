@@ -1,0 +1,23 @@
+{
+  "id": "travel_cot",
+  "name": {"en": "Travel cot"},
+  "size": [1.26, 0.66, 0.76],
+  "group": "kids",
+  "family": "cot",
+  "variant": {"en": "Travel cot"},
+  "room": ["kids", "bedroom", "living"],
+  "tags": ["travel cot", "playpen", "play pen", "pack and play", "portable cot", "baby", "nursery", "mesh"],
+  "parts": [
+    {"shape": "rbox", "x": -0.4762, "z": -0.4545, "w": 0.0476, "d": 0.0909, "y": 0.0, "h": 1.0, "color": "dark", "round": 0.4, "fix": "wd"},
+    {"shape": "rbox", "x": -0.4762, "z": 0.4545, "w": 0.0476, "d": 0.0909, "y": 0.0, "h": 1.0, "color": "dark", "round": 0.4, "fix": "wd"},
+    {"shape": "rbox", "x": 0.4762, "z": -0.4545, "w": 0.0476, "d": 0.0909, "y": 0.0, "h": 1.0, "color": "dark", "round": 0.4, "fix": "wd"},
+    {"shape": "rbox", "x": 0.4762, "z": 0.4545, "w": 0.0476, "d": 0.0909, "y": 0.0, "h": 1.0, "color": "dark", "round": 0.4, "fix": "wd"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.9342, "h": 0.0658, "color": "dark", "round": 0.45, "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9683, "d": 0.9394, "y": 0.0, "h": 0.1579, "color": "dark", "round": 0.3, "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4659, "w": 0.9048, "d": 0.0076, "y": 0.1579, "h": 0.7763, "color": "glass", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4659, "w": 0.9048, "d": 0.0076, "y": 0.1579, "h": 0.7763, "color": "glass", "fix": "d"},
+    {"shape": "box", "x": -0.4821, "z": 0.0, "w": 0.004, "d": 0.8182, "y": 0.1579, "h": 0.7763, "color": "glass", "fix": "w"},
+    {"shape": "box", "x": 0.4821, "z": 0.0, "w": 0.004, "d": 0.8182, "y": 0.1579, "h": 0.7763, "color": "glass", "fix": "w"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9524, "d": 0.9091, "y": 0.1579, "h": 0.0658, "color": "white", "round": 0.3, "fix": "h"}
+  ]
+}

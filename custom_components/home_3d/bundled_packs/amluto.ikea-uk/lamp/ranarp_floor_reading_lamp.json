@@ -1,0 +1,41 @@
+{
+  "id": "ranarp_floor_reading_lamp",
+  "name": {
+    "en": "Floor lamp, swing arm reading light 153 cm"
+  },
+  "size": [
+    0.28,
+    0.76,
+    1.53
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "floor lamp",
+    "reading lamp",
+    "swing arm",
+    "black",
+    "off-white",
+    "standard lamp"
+  ],
+  "family": "ranarp_lamp",
+  "variant": {
+    "en": "Floor 153"
+  },
+  "ikea": "RANARP",
+  "light": "floor",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.3158, "w": 1, "d": 0.3684, "y": 0, "h": 0.0163, "color": "dark", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3158, "w": 0.0857, "d": 0.0316, "y": 0.0163, "h": 0.8693, "color": "dark", "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": -0.3158, "w": 0.0714, "d": 0.0263, "y": 0.8497, "h": 0.0654, "color": "dark", "tz": 0.0, "tw": 0.0714, "td": 0.0263, "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.0571, "d": 0.0211, "y": 0.902, "h": 0.0131, "color": "dark", "tz": 0.3158, "tw": 0.0571, "td": 0.0211, "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.3158, "w": 1, "d": 0.3684, "y": 0.8301, "h": 0.1699, "color": "dark", "edges": "faint", "profile": [[1.0, 0], [0.286, 1], [0.2, 1], [0.914, 0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.3158, "w": 0.25, "d": 0.0921, "y": 0.8693, "h": 0.0458, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

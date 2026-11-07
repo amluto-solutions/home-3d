@@ -1,0 +1,46 @@
+{
+  "id": "borrby_lantern_block_candle",
+  "name": {
+    "en": "Lantern for block candle 28 cm"
+  },
+  "size": [
+    0.15,
+    0.15,
+    0.28
+  ],
+  "group": "candle",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "garden",
+    "conservatory"
+  ],
+  "tags": [
+    "lantern",
+    "candle holder",
+    "hurricane",
+    "black",
+    "white",
+    "in/outdoor"
+  ],
+  "family": "borrby_lantern",
+  "variant": {
+    "en": "Block candle 28"
+  },
+  "ikea": "BORRBY",
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0536, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.7429, "h": 0.0429, "color": "dark", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.7857, "h": 0.1071, "color": "dark", "tw": 0.2, "td": 0.2},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.3333, "d": 0.0533, "y": 0.8929, "h": 0.1071, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": -0.4733, "z": -0.4733, "w": 0.0533, "d": 0.0533, "y": 0.0536, "h": 0.6893, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": -0.4733, "z": 0.4733, "w": 0.0533, "d": 0.0533, "y": 0.0536, "h": 0.6893, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.4733, "z": -0.4733, "w": 0.0533, "d": 0.0533, "y": 0.0536, "h": 0.6893, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.4733, "z": 0.4733, "w": 0.0533, "d": 0.0533, "y": 0.0536, "h": 0.6893, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.92, "d": 0.92, "y": 0.0536, "h": 0.6893, "color": "glass"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4667, "d": 0.4667, "y": 0.0536, "h": 0.2857, "color": "#f3ead8"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.08, "d": 0.08, "y": 0.3393, "h": 0.0893, "color": "#ffb648", "fix": "wdh"}
+  ]
+}

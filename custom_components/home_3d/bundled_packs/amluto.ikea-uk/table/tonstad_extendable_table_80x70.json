@@ -1,0 +1,42 @@
+{
+  "id": "tonstad_extendable_table_80x70",
+  "name": {
+    "en": "Extendable table 80/120x70 cm"
+  },
+  "size": [
+    0.8,
+    0.7,
+    0.75
+  ],
+  "group": "table",
+  "room": [
+    "dining",
+    "kitchen"
+  ],
+  "tags": [
+    "dining table",
+    "extending table",
+    "oak veneer",
+    "brown stained oak",
+    "off-white",
+    "seats 4"
+  ],
+  "family": "tonstad_extendable_table",
+  "variant": {
+    "en": "80/120x70"
+  },
+  "ikea": "TONSTAD",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.96, "h": 0.04, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4312, "z": -0.4214, "w": 0.0625, "d": 0.0714, "y": 0, "h": 0.96, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": -0.4312, "z": 0.4214, "w": 0.0625, "d": 0.0714, "y": 0, "h": 0.96, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4312, "z": -0.4214, "w": 0.0625, "d": 0.0714, "y": 0, "h": 0.96, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4312, "z": 0.4214, "w": 0.0625, "d": 0.0714, "y": 0, "h": 0.96, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.4214, "w": 0.8625, "d": 0.0286, "y": 0.8667, "h": 0.0933, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4214, "w": 0.8625, "d": 0.0286, "y": 0.8667, "h": 0.0933, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.4312, "z": 0.0, "w": 0.025, "d": 0.8429, "y": 0.8667, "h": 0.0933, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4312, "z": 0.0, "w": 0.025, "d": 0.8429, "y": 0.8667, "h": 0.0933, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.005, "d": 0.9714, "y": 0.9593, "h": 0.0013, "color": "dark", "fix": "wh"}
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "tagarp_floor_uplighter",
+  "name": {
+    "en": "Floor uplighter, bowl shade 180 cm"
+  },
+  "size": [
+    0.24,
+    0.24,
+    1.8
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "floor lamp",
+    "uplighter",
+    "uplight",
+    "black",
+    "white",
+    "bowl shade",
+    "standard lamp"
+  ],
+  "ikea": "TÅGARP",
+  "light": "uplight",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.875, "d": 0.875, "y": 0, "h": 0.0139, "color": "dark", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0917, "d": 0.0917, "y": 0.0139, "h": 0.8333, "color": "dark", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8333, "h": 0.1667, "color": "white", "profile": [[0.0, 0.0], [0.45, 0.02], [0.8, 0.3], [1.0, 1.0], [0.9166666666666666, 1.0], [0.6966666666666667, 0.3], [0.0, 0.1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8333, "d": 0.8333, "y": 0.9889, "h": 0.0022, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

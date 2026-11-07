@@ -1,0 +1,38 @@
+{
+  "id": "ikea_ps_2014_pendant_35",
+  "name": {
+    "en": "Pendant lamp, aluminium dome 35 cm"
+  },
+  "size": [
+    0.35,
+    0.35,
+    0.7
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "pendant",
+    "ceiling light",
+    "aluminium",
+    "silver",
+    "black",
+    "orange",
+    "modern",
+    "ps 2014"
+  ],
+  "ikea": "IKEA PS 2014",
+  "light": "pendant",
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.2857, "d": 0.2857, "y": 0.9643, "h": 0.0357, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0343, "d": 0.0343, "y": 0.2286, "h": 0.7429, "color": "dark", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.2286, "color": "metal", "profile": [[1.0, 0], [0.96, 0.3], [0.8, 0.6], [0.55, 0.85], [0.3, 1.0], [0, 1.0], [0.0, 0.97], [0.26, 0.97], [0.51, 0.82], [0.76, 0.57], [0.92, 0.27], [0.96, 0.0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.2, "d": 0.2, "y": 0.08, "h": 0.1, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "unifi_u7_industrial",
+  "name": {
+    "en": "UniFi U7 Industrial"
+  },
+  "size": [
+    0.17,
+    0.0412,
+    0.103
+  ],
+  "group": "network",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "access point",
+    "wifi",
+    "wireless",
+    "u7 industrial",
+    "u7-industrial",
+    "weatherproof",
+    "pole mount"
+  ],
+  "family": "unifi_ap_outdoor",
+  "variant": {
+    "en": "U7 Industrial"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 2.5,
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0,
+      "z": -0.4,
+      "w": 0.5,
+      "d": 0.2,
+      "y": 0.1,
+      "h": 0.8,
+      "color": "#8a9099"
+    },
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0.1,
+      "w": 1,
+      "d": 0.8,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "round": 0.2
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.495,
+      "w": 0.3,
+      "d": 0.01,
+      "y": 0.06,
+      "h": 0.03,
+      "color": "#4aa3ff"
+    }
+  ]
+}

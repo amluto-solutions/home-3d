@@ -1,0 +1,38 @@
+{
+  "id": "gurli_cushion_cover_50",
+  "name": {
+    "en": "Cushion cover 50x50 cm"
+  },
+  "size": [
+    0.5,
+    0.14,
+    0.5
+  ],
+  "group": "cushion",
+  "room": [
+    "living",
+    "bedroom",
+    "conservatory",
+    "kids"
+  ],
+  "tags": [
+    "GURLI",
+    "cushion",
+    "cushion cover",
+    "scatter cushion",
+    "cotton",
+    "unbleached",
+    "off-white",
+    "dark green",
+    "grey"
+  ],
+  "family": "gurli_cushion",
+  "variant": {
+    "en": "50x50"
+  },
+  "ikea": "GURLI",
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "cushion", "round": 0.5}
+  ]
+}

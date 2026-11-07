@@ -1,0 +1,26 @@
+{
+  "id": "ps4_flat",
+  "name": {"en": "PlayStation 4"},
+  "size": [0.265, 0.288, 0.039],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["ps4", "playstation 4", "sony", "gaming", "console", "games console", "playstation4", "ps4 slim"],
+  "family": "ps4",
+  "variant": {"en": " flat"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 90,
+  "parts": [
+    {"shape": "cyl", "x": -0.3868, "z": -0.3958, "w": 0.0755, "d": 0.0694, "y": 0.0, "h": 0.1538, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3868, "z": 0.3958, "w": 0.0755, "d": 0.0694, "y": 0.0, "h": 0.1538, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3868, "z": -0.3958, "w": 0.0755, "d": 0.0694, "y": 0.0, "h": 0.1538, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3868, "z": 0.3958, "w": 0.0755, "d": 0.0694, "y": 0.0, "h": 0.1538, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.1538, "h": 0.8462, "color": "#1c1d20", "round": 0.25},
+    {"shape": "box", "x": -0.12, "z": 0.4948, "w": 0.45, "d": 0.0104, "y": 0.6192, "h": 0.0769, "color": "#101114"},
+    {"shape": "box", "x": 0.34, "z": 0.4948, "w": 0.18, "d": 0.0104, "y": 0.3231, "h": 0.0769, "color": "#4aa3ff", "edges": "faint"},
+    {"shape": "cyl", "x": 0.43, "z": 0.4948, "w": 0.0274, "d": 0.0104, "y": 0.3231, "h": 0.1862, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

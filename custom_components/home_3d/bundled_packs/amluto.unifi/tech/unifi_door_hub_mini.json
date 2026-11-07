@@ -1,0 +1,64 @@
+{
+  "id": "unifi_door_hub_mini",
+  "name": {
+    "en": "UniFi Access Door Hub Mini"
+  },
+  "size": [
+    0.113,
+    0.0276,
+    0.066
+  ],
+  "group": "tech",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "access",
+    "door access",
+    "ua-hub-door-mini",
+    "hub",
+    "door controller",
+    "din rail",
+    "door hub mini"
+  ],
+  "family": "unifi_access_hub",
+  "variant": {
+    "en": "Door Hub Mini"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.4,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "#dfe3e8",
+      "round": 0.1
+    },
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0.45,
+      "w": 0.94,
+      "d": 0.1,
+      "y": 0.08,
+      "h": 0.84,
+      "color": "#1d2430",
+      "round": 0.05
+    },
+    {
+      "shape": "box",
+      "x": -0.35,
+      "z": 0.5,
+      "w": 0.1,
+      "d": 0.02,
+      "y": 0.82,
+      "h": 0.06,
+      "color": "#3a8dde"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "id": "sofa_bed_3_seater",
+  "name": {
+    "en": "Sofa bed, 3-seater"
+  },
+  "size": [
+    2.05,
+    0.92,
+    0.84
+  ],
+  "group": "sofa",
+  "room": [
+    "living",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "sofa bed",
+    "sleeper sofa",
+    "pull-out bed",
+    "guest bed",
+    "settee",
+    "3-seater",
+    "double"
+  ],
+  "family": "sofa_bed",
+  "variant": {
+    "en": "3-seater"
+  },
+  "parts": [
+    {
+      "shape": "box",
+      "x": -0.4756,
+      "z": -0.4457,
+      "w": 0.0195,
+      "d": 0.0435,
+      "y": 0.0,
+      "h": 0.119,
+      "color": "metal",
+      "fix": "wdh"
+    },
+    {
+      "shape": "box",
+      "x": -0.4756,
+      "z": 0.4457,
+      "w": 0.0195,
+      "d": 0.0435,
+      "y": 0.0,
+      "h": 0.119,
+      "color": "metal",
+      "fix": "wdh"
+    },
+    {
+      "shape": "box",
+      "x": 0.4756,
+      "z": -0.4457,
+      "w": 0.0195,
+      "d": 0.0435,
+      "y": 0.0,
+      "h": 0.119,
+      "color": "metal",
+      "fix": "wdh"
+    },
+    {
+      "shape": "box",
+      "x": 0.4756,
+      "z": 0.4457,
+      "w": 0.0195,
+      "d": 0.0435,
+      "y": 0.0,
+      "h": 0.119,
+      "color": "metal",
+      "fix": "wdh"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0054,
+      "w": 0.8732,
+      "d": 0.9457,
+      "y": 0.119,
+      "h": 0.3095,
+      "color": "fabric"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": -0.3913,
+      "w": 0.8732,
+      "d": 0.2174,
+      "y": 0.119,
+      "h": 0.8571,
+      "color": "fabric"
+    },
+    {
+      "shape": "rbox",
+      "x": -0.4683,
+      "z": 0.0,
+      "w": 0.0634,
+      "d": 1,
+      "y": 0.119,
+      "h": 0.619,
+      "color": "fabric",
+      "round": 0.2,
+      "fix": "w"
+    },
+    {
+      "shape": "rbox",
+      "x": 0.4683,
+      "z": 0.0,
+      "w": 0.0634,
+      "d": 1,
+      "y": 0.119,
+      "h": 0.619,
+      "color": "fabric",
+      "round": 0.2,
+      "fix": "w"
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0924,
+      "w": 0.8732,
+      "d": 0.7935,
+      "y": 0.4286,
+      "h": 0.1429,
+      "color": "cushion",
+      "round": 0.3
+    },
+    {
+      "shape": "rbox",
+      "x": -0.2911,
+      "z": -0.25,
+      "w": 0.2813,
+      "d": 0.1957,
+      "y": 0.5595,
+      "h": 0.4167,
+      "color": "cushion",
+      "round": 0.4
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": -0.25,
+      "w": 0.2813,
+      "d": 0.1957,
+      "y": 0.5595,
+      "h": 0.4167,
+      "color": "cushion",
+      "round": 0.4
+    },
+    {
+      "shape": "rbox",
+      "x": 0.2911,
+      "z": -0.25,
+      "w": 0.2813,
+      "d": 0.1957,
+      "y": 0.5595,
+      "h": 0.4167,
+      "color": "cushion",
+      "round": 0.4
+    }
+  ]
+}

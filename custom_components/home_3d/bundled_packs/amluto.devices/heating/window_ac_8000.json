@@ -1,0 +1,88 @@
+{
+  "id": "window_ac_8000",
+  "name": {
+    "en": "Window air conditioner"
+  },
+  "size": [
+    0.5,
+    0.49,
+    0.31
+  ],
+  "group": "heating",
+  "room": [
+    "bedroom",
+    "office",
+    "living",
+    "conservatory"
+  ],
+  "tags": [
+    "air conditioning",
+    "air con",
+    "aircon",
+    "ac",
+    "cooling",
+    "climate",
+    "window ac",
+    "8000 btu"
+  ],
+  "family": "window_ac",
+  "variant": {
+    "en": "8 000 BTU"
+  },
+  "electric": true,
+  "watts": 700,
+  "mount": "wall",
+  "wall_y": 0.9,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 1.0,
+      "color": "white",
+      "round": 0.08
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.5,
+      "w": 0.86,
+      "d": 0.0204,
+      "y": 0.62,
+      "h": 0.28,
+      "color": "dark"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.5,
+      "w": 0.7,
+      "d": 0.0204,
+      "y": 0.12,
+      "h": 0.4,
+      "color": "#dcdcdc"
+    },
+    {
+      "shape": "box",
+      "x": 0.32,
+      "z": 0.5,
+      "w": 0.14,
+      "d": 0.0204,
+      "y": 0.8,
+      "h": 0.1,
+      "color": "#7fd0ff"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    }
+  ]
+}

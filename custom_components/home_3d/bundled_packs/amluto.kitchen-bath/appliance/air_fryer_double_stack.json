@@ -1,0 +1,28 @@
+{
+  "id": "air_fryer_double_stack",
+  "name": {"en": "Air fryer, double stack (two drawers)"},
+  "size": [0.3, 0.4, 0.4],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["air fryer", "airfryer", "fryer", "cooking", "countertop", "ninja", "two drawers", "stacked"],
+  "family": "air_fryer",
+  "variant": {"en": "Double stack"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": -0.4, "z": -0.425, "w": 0.0833, "d": 0.0625, "y": 0, "h": 0.025, "color": "#25272b", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4, "z": 0.425, "w": 0.0833, "d": 0.0625, "y": 0, "h": 0.025, "color": "#25272b", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4, "z": -0.425, "w": 0.0833, "d": 0.0625, "y": 0, "h": 0.025, "color": "#25272b", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4, "z": 0.425, "w": 0.0833, "d": 0.0625, "y": 0, "h": 0.025, "color": "#25272b", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": -0.05, "w": 1, "d": 0.9, "y": 0.025, "h": 0.975, "color": "#25272b", "round": 0.12},
+    {"shape": "rbox", "x": 0.0, "z": 0.475, "w": 0.8667, "d": 0.075, "y": 0.075, "h": 0.36, "color": "#3a3d42", "round": 0.15},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.5, "d": 0.0625, "y": 0.275, "h": 0.0625, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.475, "w": 0.8667, "d": 0.075, "y": 0.475, "h": 0.36, "color": "#3a3d42", "round": 0.15},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.5, "d": 0.0625, "y": 0.675, "h": 0.0625, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4, "w": 0.7667, "d": 0.025, "y": 0.86, "h": 0.1, "color": "#2a2c30", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.425, "w": 0.4, "d": 0.01, "y": 0.88, "h": 0.025, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

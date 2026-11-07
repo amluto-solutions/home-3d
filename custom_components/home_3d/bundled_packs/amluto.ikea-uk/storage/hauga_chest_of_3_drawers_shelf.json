@@ -1,0 +1,48 @@
+{
+  "id": "hauga_chest_of_3_drawers_shelf",
+  "name": {
+    "en": "Chest of 3 drawers with shelf, 70x116 cm"
+  },
+  "size": [
+    0.7,
+    0.46,
+    1.16
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "drawers",
+    "chest",
+    "dresser",
+    "white",
+    "grey",
+    "open shelf"
+  ],
+  "family": "hauga_chest_of_drawers",
+  "variant": {
+    "en": "3 drawers and shelf · 70x116"
+  },
+  "ikea": "HAUGA",
+  "parts": [
+    {"shape": "box", "x": -0.4871, "z": -0.0196, "w": 0.0257, "d": 0.9609, "y": 0.0517, "h": 0.931, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4871, "z": -0.0196, "w": 0.0257, "d": 0.9609, "y": 0.0517, "h": 0.931, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0196, "w": 0.9486, "d": 0.9609, "y": 0.0517, "h": 0.0155, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4913, "w": 0.9486, "d": 0.0174, "y": 0.0672, "h": 0.9, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9828, "h": 0.0172, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4321, "z": -0.375, "w": 0.05, "d": 0.0761, "y": 0, "h": 0.0517, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4321, "z": 0.375, "w": 0.05, "d": 0.0761, "y": 0, "h": 0.0517, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4321, "z": -0.375, "w": 0.05, "d": 0.0761, "y": 0, "h": 0.0517, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4321, "z": 0.375, "w": 0.05, "d": 0.0761, "y": 0, "h": 0.0517, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.0217, "w": 0.9486, "d": 0.9174, "y": 0.7086, "h": 0.0155, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4804, "w": 0.9886, "d": 0.0391, "y": 0.4914, "h": 0.2155, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.2857, "d": 0.0478, "y": 0.6202, "h": 0.0103, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4804, "w": 0.9886, "d": 0.0391, "y": 0.2724, "h": 0.2155, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.2857, "d": 0.0478, "y": 0.4013, "h": 0.0103, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4804, "w": 0.9886, "d": 0.0391, "y": 0.0534, "h": 0.2155, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.2857, "d": 0.0478, "y": 0.1823, "h": 0.0103, "color": "dark", "fix": "wdh"}
+  ]
+}

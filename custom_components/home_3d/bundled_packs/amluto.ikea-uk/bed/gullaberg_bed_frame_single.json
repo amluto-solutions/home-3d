@@ -1,0 +1,44 @@
+{
+  "id": "gullaberg_bed_frame_single",
+  "name": {
+    "en": "Bed frame, Single 90x190"
+  },
+  "size": [
+    1.01,
+    1.98,
+    1.13
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "bed",
+    "bed frame",
+    "single",
+    "white",
+    "grey",
+    "storage boxes"
+  ],
+  "family": "gullaberg_bed_frame",
+  "variant": {
+    "en": "Single · 90x190"
+  },
+  "ikea": "GULLABERG",
+  "parts": [
+    {"shape": "box", "x": -0.4703, "z": -0.4848, "w": 0.0594, "d": 0.0303, "y": 0, "h": 1, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": -0.4703, "z": 0.4848, "w": 0.0594, "d": 0.0303, "y": 0, "h": 0.3628, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.4703, "z": -0.4848, "w": 0.0594, "d": 0.0303, "y": 0, "h": 1, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.4703, "z": 0.4848, "w": 0.0594, "d": 0.0303, "y": 0, "h": 0.3628, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": -0.4848, "w": 0.8812, "d": 0.0152, "y": 0.9381, "h": 0.0531, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4848, "w": 0.8812, "d": 0.0152, "y": 0.3009, "h": 0.0531, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.4848, "w": 0.8812, "d": 0.0101, "y": 0.177, "h": 0.7434, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4848, "w": 0.8812, "d": 0.0101, "y": 0.177, "h": 0.1062, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.4851, "z": 0.0, "w": 0.0297, "d": 0.9495, "y": 0.177, "h": 0.177, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4851, "z": 0.0, "w": 0.0297, "d": 0.9495, "y": 0.177, "h": 0.177, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9406, "d": 0.9394, "y": 0.2301, "h": 0.0177, "color": "wood"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.8911, "d": 0.9596, "y": 0.2478, "h": 0.177, "color": "white", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": -0.3788, "w": 0.7574, "d": 0.1616, "y": 0.4248, "h": 0.1062, "color": "cushion", "round": 0.45}
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "unifi_swiss_army_knife_ultra",
+  "name": {
+    "en": "UniFi Swiss Army Knife Ultra"
+  },
+  "size": [
+    0.137,
+    0.034,
+    0.084
+  ],
+  "group": "network",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "access point",
+    "wifi",
+    "wireless",
+    "swiss army knife ultra",
+    "uk-ultra",
+    "uk ultra"
+  ],
+  "family": "unifi_ap_wall",
+  "variant": {
+    "en": "Swiss Army Knife Ultra"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.5,
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0,
+      "z": -0.3333,
+      "w": 1,
+      "d": 0.3333,
+      "y": 0,
+      "h": 1,
+      "color": "white"
+    },
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0.1333,
+      "w": 0.814,
+      "d": 0.6,
+      "y": 0.0667,
+      "h": 0.8667,
+      "color": "white",
+      "round": 0.3
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.4833,
+      "w": 0.35,
+      "d": 0.0333,
+      "y": 0.8,
+      "h": 0.02,
+      "color": "#4aa3ff"
+    }
+  ]
+}

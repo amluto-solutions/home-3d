@@ -1,0 +1,41 @@
+{
+  "id": "dekad_alarm_clock_10",
+  "name": {
+    "en": "Alarm clock, black 10 cm"
+  },
+  "size": [
+    0.1,
+    0.06,
+    0.14
+  ],
+  "group": "deco",
+  "room": [
+    "bedroom",
+    "kids",
+    "office"
+  ],
+  "tags": [
+    "DEKAD",
+    "alarm clock",
+    "clock",
+    "bedside clock",
+    "twin bell",
+    "black",
+    "analogue"
+  ],
+  "ikea": "DEKAD",
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.05, "w": 1, "d": 0.9, "y": 0, "h": 0.7143, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9, "d": 1, "y": 0.0357, "h": 0.6429, "color": "white", "axis": "z"},
+    {"shape": "box", "x": 0.3, "z": 0.4833, "w": 0.4, "d": 0.05, "y": 0.3429, "h": 0.0286, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4833, "w": 0.04, "d": 0.05, "y": 0.3571, "h": 0.2143, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.3, "z": 0.0, "w": 0.36, "d": 0.6, "y": 0.7143, "h": 0.2143, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3, "z": -0.0, "w": 0.06, "d": 0.1, "y": 0.6571, "h": 0.0714, "color": "metal", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.3, "z": 0.0, "w": 0.36, "d": 0.6, "y": 0.7143, "h": 0.2143, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3, "z": -0.0, "w": 0.06, "d": 0.1, "y": 0.6571, "h": 0.0714, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.08, "d": 0.1333, "y": 0.7143, "h": 0.2857, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.34, "z": 0.0, "w": 0.12, "d": 0.5, "y": 0, "h": 0.0857, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.34, "z": 0.0, "w": 0.12, "d": 0.5, "y": 0, "h": 0.0857, "color": "dark", "fix": "wdh"}
+  ]
+}

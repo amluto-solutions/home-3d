@@ -1,0 +1,24 @@
+{
+  "id": "mobility_scooter_4_wheel",
+  "name": {"en": "Mobility scooter, 4 wheels"},
+  "size": [0.62, 1.35, 1.05],
+  "group": "vehicle",
+  "room": ["garage", "garden"],
+  "tags": ["mobility scooter", "disability", "powered", "scooter", "4 wheel", "road legal"],
+  "vehicle": true,
+  "electric": true,
+  "parts": [
+    {"shape": "cyl", "x": -0.4194, "z": -0.3815, "w": 0.1452, "d": 0.1926, "y": 0.0, "h": 0.2476, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.4194, "z": -0.3815, "w": 0.1452, "d": 0.1926, "y": 0.0, "h": 0.2476, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": -0.4194, "z": 0.3815, "w": 0.1452, "d": 0.1926, "y": 0.0, "h": 0.2476, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.4194, "z": 0.3815, "w": 0.1452, "d": 0.1926, "y": 0.0, "h": 0.2476, "color": "dark", "axis": "x"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.7, "d": 0.8, "y": 0.1143, "h": 0.1143, "color": "paint", "round": 0.3},
+    {"shape": "loft", "x": 0.0, "z": 0.25, "w": 0.65, "d": 0.3, "y": 0.2286, "h": 0.3333, "color": "paint", "tx": 0.0, "tz": 0.287, "tw": 0.5, "td": 0.1},
+    {"shape": "rbox", "x": 0.0, "z": -0.15, "w": 0.65, "d": 0.28, "y": 0.381, "h": 0.0952, "color": "fabric", "round": 0.3},
+    {"shape": "rbox", "x": 0.0, "z": -0.3, "w": 0.6, "d": 0.0593, "y": 0.4571, "h": 0.3429, "color": "fabric", "round": 0.3},
+    {"shape": "box", "x": -0.36, "z": -0.15, "w": 0.0645, "d": 0.25, "y": 0.5238, "h": 0.0381, "color": "dark"},
+    {"shape": "box", "x": 0.36, "z": -0.15, "w": 0.0645, "d": 0.25, "y": 0.5238, "h": 0.0381, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.3, "w": 0.6, "d": 0.037, "y": 0.9429, "h": 0.0476, "color": "dark"},
+    {"shape": "rbox", "x": 0.0, "z": -0.4, "w": 0.5, "d": 0.1481, "y": 0.2857, "h": 0.2381, "color": "dark", "round": 0.2}
+  ]
+}

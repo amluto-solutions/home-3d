@@ -1,0 +1,20 @@
+{
+  "id": "rgb_light_bar_flat",
+  "name": {"en": "RGB light bar (flat)"},
+  "size": [0.33, 0.04, 0.045],
+  "group": "lamp",
+  "room": ["living", "office", "bedroom", "hobby", "kids"],
+  "tags": ["rgb light bar", "light bar", "gaming light", "tv backlight", "govee", "led bar", "gaming", "ambient"],
+  "family": "rgb_light_bar",
+  "variant": {"en": "Flat"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 10,
+  "light": "strip",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "white", "round": 0.5, "glow": true, "edges": "glow"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "raspberry_pi_board",
+  "name": {"en": "Raspberry Pi 4 / 5 board"},
+  "size": [0.085,0.056,0.017],
+  "group": "tech",
+  "room": ["office", "hobby", "utility", "loft"],
+  "tags": ["raspberry pi", "pi", "pi 4", "pi 5", "rpi", "single board computer", "sbc", "pihole", "pi-hole", "homelab", "linux"],
+  "family": "raspberry_pi",
+  "variant": {"en": "Board"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 0.0941, "color": "#1f6f43"},
+    {"shape": "box", "x": -0.0118, "z": -0.4554, "w": 0.6, "d": 0.0893, "y": 0.0941, "h": 0.5, "color": "dark"},
+    {"shape": "box", "x": 0.4, "z": -0.3125, "w": 0.2, "d": 0.2679, "y": 0.0941, "h": 0.9059, "color": "metal"},
+    {"shape": "box", "x": 0.4, "z": 0.0536, "w": 0.2, "d": 0.2679, "y": 0.0941, "h": 0.9059, "color": "metal"},
+    {"shape": "box", "x": 0.3765, "z": 0.3571, "w": 0.2471, "d": 0.2857, "y": 0.0941, "h": 0.7941, "color": "metal"},
+    {"shape": "box", "x": -0.4, "z": 0.2143, "w": 0.0353, "d": 0.25, "y": 0.0941, "h": 0.0824, "color": "metal"},
+    {"shape": "box", "x": -0.1647, "z": 0.0893, "w": 0.1765, "d": 0.2679, "y": 0.0941, "h": 0.1647, "color": "metal"},
+    {"shape": "box", "x": -0.4353, "z": 0, "w": 0.0941, "d": 0.1964, "y": 0.0941, "h": 0.1471, "color": "dark"},
+    {"shape": "box", "x": -0.0588, "z": 0.3929, "w": 0.0941, "d": 0.1429, "y": 0.0941, "h": 0.1765, "color": "metal"}
+  ]
+}

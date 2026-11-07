@@ -1,0 +1,25 @@
+{
+  "id": "waffle_maker",
+  "name": {"en": "Waffle maker"},
+  "size": [0.27, 0.27, 0.12],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["grill", "countertop", "cooking", "waffle iron", "waffles"],
+  "family": "waffle_maker",
+  "variant": {"en": "Waffle maker"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.5, "color": "#25272b", "round": 0.15},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.96, "d": 0.96, "y": 0.5, "h": 0.5, "color": "#c4c8cd", "round": 0.25},
+    {"shape": "box", "x": 0.0, "z": -0.28, "w": 0.7, "d": 0.037, "y": 0.5, "h": 0.0333, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.14, "w": 0.7, "d": 0.037, "y": 0.5, "h": 0.0333, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7, "d": 0.037, "y": 0.5, "h": 0.0333, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.14, "w": 0.7, "d": 0.037, "y": 0.5, "h": 0.0333, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.28, "w": 0.7, "d": 0.037, "y": 0.5, "h": 0.0333, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.5, "d": 0.0926, "y": 0.4, "h": 0.1667, "color": "#25272b", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

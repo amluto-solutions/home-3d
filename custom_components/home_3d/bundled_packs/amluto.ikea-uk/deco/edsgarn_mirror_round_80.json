@@ -1,0 +1,34 @@
+{
+  "id": "edsgarn_mirror_round_80",
+  "name": {
+    "en": "Round mirror, aluminium frame 80 cm"
+  },
+  "size": [
+    0.8,
+    0.02,
+    0.8
+  ],
+  "group": "deco",
+  "room": [
+    "bath",
+    "hall",
+    "bedroom",
+    "living"
+  ],
+  "tags": [
+    "mirror",
+    "wall mirror",
+    "round",
+    "thin frame",
+    "walnut effect",
+    "oak effect",
+    "bathroom mirror"
+  ],
+  "ikea": "EDSGARN",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.05, "w": 1, "d": 0.9, "y": 0, "h": 1, "color": "wood", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.325, "w": 0.97, "d": 0.35, "y": 0.015, "h": 0.97, "color": "glass", "axis": "z"}
+  ]
+}

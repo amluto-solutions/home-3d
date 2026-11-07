@@ -1,0 +1,19 @@
+{
+  "id": "ikea_dirigera",
+  "name": {"en": "IKEA Dirigera hub"},
+  "size": [0.112,0.112,0.027],
+  "group": "tech",
+  "room": ["office", "utility", "hall", "living", "loft"],
+  "tags": ["ikea", "dirigera", "ikea hub", "zigbee", "thread", "matter", "smart home", "hub", "gateway", "bridge", "controller"],
+  "family": "smart_hub",
+  "variant": {"en": "IKEA Dirigera"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "profile": [[0,0],[0.93,0],[1,0.15],[1,0.8],[0.9,1],[0,1]]},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.3571, "d": 0.3571, "y": 0.9815, "h": 0.0185, "color": "#d4d8de"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

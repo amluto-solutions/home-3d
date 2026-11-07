@@ -1,0 +1,23 @@
+{
+  "id": "rack_switch_8_half_1u",
+  "name": {"en": "Rack switch 8-port half-width 1U"},
+  "size": [0.22, 0.2, 0.0437],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "surface",
+  "tags": ["switch", "network switch", "ethernet", "8 port", "half width", "1u", "rack mount", "19 inch", "rack"],
+  "family": "rack_switch",
+  "variant": {"en": "8-port half-width 1U"},
+  "electric": true,
+  "watts": 10,
+  "rack": {"u": 1, "width": "half"},
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "dark", "edges": "faint"},
+    {"shape": "box", "x": -0.16, "z": 0.488, "w": 0.34, "d": 0.024, "y": 0.3, "h": 0.4, "color": "#15171b"},
+    {"shape": "box", "x": 0.2, "z": 0.488, "w": 0.12, "d": 0.024, "y": 0.3, "h": 0.4, "color": "metal"},
+    {"shape": "box", "x": 0.4, "z": 0.488, "w": 0.025, "d": 0.024, "y": 0.62, "h": 0.14, "color": "accent"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

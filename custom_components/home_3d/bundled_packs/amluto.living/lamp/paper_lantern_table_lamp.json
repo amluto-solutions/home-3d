@@ -1,0 +1,40 @@
+{
+  "id": "paper_lantern_table_lamp",
+  "name": {
+    "en": "Paper lantern lamp"
+  },
+  "size": [
+    0.3,
+    0.3,
+    0.43
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "hall",
+    "dining"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "paper lamp",
+    "japanese lantern",
+    "rice paper",
+    "akari",
+    "lantern lamp",
+    "washi",
+    "ambient light"
+  ],
+  "family": "paper_lantern_table_lamp",
+  "variant": {
+    "en": "Cream paper"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4, "d": 0.4, "y": 0, "h": 0.0279, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.0667, "d": 0.0667, "y": 0.0279, "h": 0.186, "color": "wood"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.2093, "h": 0.7907, "color": "#f3ead8", "glow": true, "profile": [[0.0, 0.0], [0.6667, 0.0], [0.9333, 0.2353], [1.0, 0.5], [0.9333, 0.7647], [0.6667, 1.0], [0.0, 1.0]]}
+  ]
+}

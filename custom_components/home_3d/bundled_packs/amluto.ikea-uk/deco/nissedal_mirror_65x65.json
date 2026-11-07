@@ -1,0 +1,39 @@
+{
+  "id": "nissedal_mirror_65x65",
+  "name": {
+    "en": "Mirror, 65x65 cm"
+  },
+  "size": [
+    0.65,
+    0.03,
+    0.65
+  ],
+  "group": "deco",
+  "room": [
+    "bedroom",
+    "hall",
+    "bath",
+    "living"
+  ],
+  "tags": [
+    "wall mirror",
+    "framed mirror",
+    "square",
+    "white",
+    "black"
+  ],
+  "family": "nissedal_mirror",
+  "variant": {
+    "en": "65x65"
+  },
+  "ikea": "NISSEDAL",
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0538, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9462, "h": 0.0538, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4731, "z": 0.0, "w": 0.0538, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4731, "z": 0.0, "w": 0.0538, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.1333, "w": 0.8923, "d": 0.2, "y": 0.0538, "h": 0.8923, "color": "glass"}
+  ]
+}

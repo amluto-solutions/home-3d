@@ -1,0 +1,25 @@
+{
+  "id": "edging_block_red",
+  "name": {"en": "Block edging, red, 1 m"},
+  "size": [1.0, 0.1, 0.1],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["edging", "block edging", "path edging", "setts", "border", "driveway edging"],
+  "family": "edging_block_red",
+  "variant": {"en": "1 m"},
+  "parts": [
+    {"shape": "box", "x": -0.45, "z": 0.0, "w": 0.096, "d": 1, "y": 0, "h": 0.9, "color": "#9e5037"},
+    {"shape": "box", "x": -0.35, "z": 0.0, "w": 0.096, "d": 1, "y": 0, "h": 1, "color": "#a8553a"},
+    {"shape": "box", "x": -0.25, "z": 0.0, "w": 0.096, "d": 1, "y": 0, "h": 0.9, "color": "#b25a3d"},
+    {"shape": "box", "x": -0.15, "z": 0.0, "w": 0.096, "d": 1, "y": 0, "h": 1, "color": "#9e5037"},
+    {"shape": "box", "x": -0.05, "z": 0.0, "w": 0.096, "d": 1, "y": 0, "h": 0.9, "color": "#a8553a"},
+    {"shape": "box", "x": 0.05, "z": 0.0, "w": 0.096, "d": 1, "y": 0, "h": 1, "color": "#b25a3d"},
+    {"shape": "box", "x": 0.15, "z": 0.0, "w": 0.096, "d": 1, "y": 0, "h": 0.9, "color": "#9e5037"},
+    {"shape": "box", "x": 0.25, "z": 0.0, "w": 0.096, "d": 1, "y": 0, "h": 1, "color": "#a8553a"},
+    {"shape": "box", "x": 0.35, "z": 0.0, "w": 0.096, "d": 1, "y": 0, "h": 0.9, "color": "#b25a3d"},
+    {"shape": "box", "x": 0.45, "z": 0.0, "w": 0.096, "d": 1, "y": 0, "h": 1, "color": "#9e5037"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

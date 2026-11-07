@@ -1,0 +1,27 @@
+{
+  "id": "rack_unifi_unvr",
+  "name": {"en": "UniFi Network Video Recorder 4-bay"},
+  "size": [0.4826, 0.325, 0.0437],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "surface",
+  "tags": ["unifi", "ubiquiti", "unvr", "nvr", "protect", "1u", "rack mount", "19 inch", "rack"],
+  "family": "rack_nvr",
+  "variant": {"en": "UNVR 4-bay 1U"},
+  "electric": true,
+  "watts": 100,
+  "rack": {"u": 1},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0015, "w": 0.9163, "d": 0.9969, "y": 0.0, "h": 1.0, "color": "#cfd3d8", "edges": "faint"},
+    {"shape": "box", "x": -0.4793, "z": 0.4938, "w": 0.0414, "d": 0.0123, "y": 0.0, "h": 1.0, "color": "#cfd3d8"},
+    {"shape": "box", "x": 0.4793, "z": 0.4938, "w": 0.0414, "d": 0.0123, "y": 0.0, "h": 1.0, "color": "#cfd3d8"},
+    {"shape": "box", "x": -0.3001, "z": 0.4938, "w": 0.1918, "d": 0.0123, "y": 0.1831, "h": 0.6339, "color": "#2a2d33"},
+    {"shape": "box", "x": -0.1, "z": 0.4938, "w": 0.1918, "d": 0.0123, "y": 0.1831, "h": 0.6339, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.1, "z": 0.4938, "w": 0.1918, "d": 0.0123, "y": 0.1831, "h": 0.6339, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.3001, "z": 0.4938, "w": 0.1918, "d": 0.0123, "y": 0.1831, "h": 0.6339, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.4337, "z": 0.4938, "w": 0.0083, "d": 0.0123, "y": 0.0915, "h": 0.0915, "color": "accent"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

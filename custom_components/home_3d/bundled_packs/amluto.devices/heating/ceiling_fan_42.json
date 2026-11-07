@@ -1,0 +1,32 @@
+{
+  "id": "ceiling_fan_42",
+  "name": {"en": "Ceiling fan"},
+  "size": [1.07, 1.07, 0.42],
+  "group": "heating",
+  "room": ["bedroom", "living", "dining", "kitchen", "conservatory", "office"],
+  "tags": ["fan", "cooling", "summer", "blades", "air movement", "reversible", "42 inch"],
+  "family": "ceiling_fan",
+  "variant": {"en": "107 cm (42 in)"},
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.1308, "d": 0.1308, "y": 0.9048, "h": 0.0952, "color": "metal"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.028, "d": 0.028, "y": 0.7143, "h": 0.2143, "color": "metal"},
+    {"shape": "lathe", "x": 0, "z": 0, "w": 0.2056, "d": 0.2056, "y": 0.2381, "h": 0.2857, "color": "dark", "profile": [[0, 0], [0.7, 0], [1, 0.3], [1, 0.8], [0.6, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.0654, "d": 0.0654, "y": 0.1667, "h": 0.0714, "color": "dark"},
+    {"shape": "box", "x": 0.3133, "z": 0.1018, "w": 0.3411, "d": 0.1402, "y": 0.3571, "h": 0.0286, "color": "wood", "rot": 18, "top": "#b08a5e"},
+    {"shape": "box", "x": 0.1244, "z": 0.0404, "w": 0.0935, "d": 0.028, "y": 0.3571, "h": 0.0238, "color": "metal", "rot": 18},
+    {"shape": "box", "x": 0, "z": 0.3294, "w": 0.3411, "d": 0.1402, "y": 0.3571, "h": 0.0286, "color": "wood", "rot": 90, "top": "#b08a5e"},
+    {"shape": "box", "x": 0, "z": 0.1308, "w": 0.0935, "d": 0.028, "y": 0.3571, "h": 0.0238, "color": "metal", "rot": 90},
+    {"shape": "box", "x": -0.3133, "z": 0.1018, "w": 0.3411, "d": 0.1402, "y": 0.3571, "h": 0.0286, "color": "wood", "rot": 162, "top": "#b08a5e"},
+    {"shape": "box", "x": -0.1244, "z": 0.0404, "w": 0.0935, "d": 0.028, "y": 0.3571, "h": 0.0238, "color": "metal", "rot": 162},
+    {"shape": "box", "x": -0.1936, "z": -0.2665, "w": 0.3411, "d": 0.1402, "y": 0.3571, "h": 0.0286, "color": "wood", "rot": 234, "top": "#b08a5e"},
+    {"shape": "box", "x": -0.0769, "z": -0.1059, "w": 0.0935, "d": 0.028, "y": 0.3571, "h": 0.0238, "color": "metal", "rot": 234},
+    {"shape": "box", "x": 0.1936, "z": -0.2665, "w": 0.3411, "d": 0.1402, "y": 0.3571, "h": 0.0286, "color": "wood", "rot": 306, "top": "#b08a5e"},
+    {"shape": "box", "x": 0.0769, "z": -0.1059, "w": 0.0935, "d": 0.028, "y": 0.3571, "h": 0.0238, "color": "metal", "rot": 306}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5},
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.08}
+  ]
+}

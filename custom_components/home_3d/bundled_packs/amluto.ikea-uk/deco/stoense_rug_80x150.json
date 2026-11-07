@@ -1,0 +1,42 @@
+{
+  "id": "stoense_rug_80x150",
+  "name": {
+    "en": "Rug, low pile 80x150 cm"
+  },
+  "size": [
+    0.8,
+    1.5,
+    0.019
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "bedroom",
+    "dining",
+    "kids",
+    "office"
+  ],
+  "tags": [
+    "rug",
+    "carpet",
+    "area rug",
+    "low pile",
+    "off-white",
+    "pale pink",
+    "dark grey",
+    "beige"
+  ],
+  "family": "stoense_rug",
+  "variant": {
+    "en": "80x150"
+  },
+  "ikea": "STOENSE",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.9474, "color": "fabric"},
+    {"shape": "box", "x": 0.0, "z": -0.3333, "w": 0.85, "d": 0.02, "y": 0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": -0.1667, "w": 0.85, "d": 0.02, "y": 0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.85, "d": 0.02, "y": 0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.1667, "w": 0.85, "d": 0.02, "y": 0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.3333, "w": 0.85, "d": 0.02, "y": 0, "h": 1, "color": "white"}
+  ]
+}

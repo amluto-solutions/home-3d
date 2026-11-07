@@ -1,0 +1,23 @@
+{
+  "id": "tv_ambilight_43",
+  "name": {"en": "TV with Ambilight 43″"},
+  "size": [0.992, 0.075, 0.5635],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "office"],
+  "tags": ["television", "ambilight", "philips", "wall tv", "wall-mounted", "smart tv", "bias lighting"],
+  "family": "tv_ambilight",
+  "variant": {"en": "43″"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 0.8,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.3667, "w": 0.4032, "d": 0.2667, "y": 0.3, "h": 0.35, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.0333, "w": 0.7319, "d": 0.4, "y": 0.1174, "h": 0.7438, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": -0.0333, "w": 1, "d": 0.4, "y": 0.9787, "h": 0.0213, "color": "dark", "glow": true},
+    {"shape": "box", "x": -0.494, "z": -0.0333, "w": 0.0121, "d": 0.4, "y": 0.0489, "h": 0.9298, "color": "dark", "glow": true},
+    {"shape": "box", "x": 0.494, "z": -0.0333, "w": 0.0121, "d": 0.4, "y": 0.0489, "h": 0.9298, "color": "dark", "glow": true},
+    {"shape": "box", "x": 0.0, "z": 0.32, "w": 0.9758, "d": 0.3333, "y": 0.0, "h": 0.9787, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.4867, "w": 0.9597, "d": 0.0267, "y": 0.0142, "h": 0.9503, "color": "glass", "screen": true},
+    {"shape": "box", "x": 0.0, "z": 0.4733, "w": 0.0302, "d": 0.0533, "y": 0.0, "h": 0.0106, "color": "metal"}
+  ]
+}

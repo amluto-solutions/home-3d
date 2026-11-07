@@ -1,0 +1,19 @@
+{
+  "id": "radiator_valve_trv",
+  "name": {"en": "Radiator valve (TRV)"},
+  "size": [0.12, 0.06, 0.11],
+  "group": "heating",
+  "room": ["living", "bedroom", "kitchen", "bath", "hall", "office", "kids", "utility"],
+  "tags": ["trv", "thermostatic radiator valve", "radiator", "valve", "heating control", "thermostat", "radiator head"],
+  "family": "radiator_valve",
+  "variant": {"en": "Standard"},
+  "mount": "wall",
+  "wall_y": 0.12,
+  "parts": [
+    {"shape": "cyl", "x": 0.375, "z": 0, "w": 0.1333, "d": 0.2667, "y": 0, "h": 0.5909, "color": "metal"},
+    {"shape": "cyl", "x": 0.2917, "z": 0, "w": 0.4167, "d": 0.5667, "y": 0.5273, "h": 0.3091, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": -0.1042, "z": 0, "w": 0.625, "d": 0.8, "y": 0.4636, "h": 0.4364, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.1542, "z": 0, "w": 0.0667, "d": 0.8667, "y": 0.4455, "h": 0.4727, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": -0.125, "z": 0, "w": 0.2333, "d": 0.9, "y": 0.4364, "h": 0.4909, "color": "#c9c9c4", "axis": "x"}
+  ]
+}

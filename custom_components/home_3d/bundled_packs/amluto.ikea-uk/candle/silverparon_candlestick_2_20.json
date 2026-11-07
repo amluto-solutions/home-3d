@@ -1,0 +1,38 @@
+{
+  "id": "silverparon_candlestick_2_20",
+  "name": {
+    "en": "Candlestick for 2 candles, silver-colour 20 cm"
+  },
+  "size": [
+    0.165,
+    0.13,
+    0.2
+  ],
+  "group": "candle",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "bedroom"
+  ],
+  "tags": [
+    "SILVERPARON",
+    "candlestick",
+    "candle holder",
+    "double",
+    "silver-colour",
+    "2 candles",
+    "metal"
+  ],
+  "ikea": "SILVERPÄRON",
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.5455, "d": 0.6923, "y": 0, "h": 0.06, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.097, "d": 0.1231, "y": 0.06, "h": 0.5, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.78, "d": 0.1077, "y": 0.5, "h": 0.07, "color": "metal", "fix": "dh"},
+    {"shape": "cyl", "x": -0.37, "z": 0.0, "w": 0.0848, "d": 0.1077, "y": 0.5, "h": 0.3, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.37, "z": 0.0, "w": 0.1818, "d": 0.2308, "y": 0.79, "h": 0.21, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.37, "z": 0.0, "w": 0.0848, "d": 0.1077, "y": 0.5, "h": 0.3, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.37, "z": 0.0, "w": 0.1818, "d": 0.2308, "y": 0.79, "h": 0.21, "color": "metal", "fix": "wdh"}
+  ]
+}

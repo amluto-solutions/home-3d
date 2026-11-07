@@ -1,0 +1,22 @@
+{
+  "id": "nes",
+  "name": {"en": "Nintendo NES"},
+  "size": [0.255, 0.205, 0.095],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["nes", "nintendo entertainment system", "famicom", "nintendo", "gaming", "console", "retro", "nes-001"],
+  "family": "nes",
+  "variant": {"en": "Console"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 10,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.75, "color": "#b9bbbf", "round": 0.08},
+    {"shape": "box", "x": 0.0, "z": 0.05, "w": 0.7, "d": 0.3, "y": 0.75, "h": 0.25, "color": "#8a8d93"},
+    {"shape": "box", "x": -0.25, "z": 0.3, "w": 0.28, "d": 0.16, "y": 0.75, "h": 0.02, "color": "#3a3d42"},
+    {"shape": "box", "x": 0.25, "z": 0.3, "w": 0.2, "d": 0.16, "y": 0.75, "h": 0.02, "color": "#7a1f1f"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

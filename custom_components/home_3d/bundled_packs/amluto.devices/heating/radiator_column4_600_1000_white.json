@@ -1,0 +1,70 @@
+{
+  "id": "radiator_column4_600_1000_white",
+  "name": {
+    "en": "4-column horizontal radiator"
+  },
+  "size": [
+    1.0,
+    0.2,
+    0.64
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "kitchen",
+    "hall",
+    "office",
+    "kids",
+    "bath",
+    "utility",
+    "conservatory"
+  ],
+  "tags": [
+    "radiator",
+    "column radiator",
+    "4 column",
+    "traditional",
+    "central heating",
+    "white",
+    "trv"
+  ],
+  "family": "radiator_column4",
+  "variant": {
+    "en": "600 × 1000 mm, white"
+  },
+  "mount": "wall",
+  "wall_y": 0.11,
+  "parts": [
+    {"shape": "rbox", "x": -0.4677, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.4232, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.3786, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.3341, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.2895, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.245, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.2005, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.1559, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.1114, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.0668, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.0223, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.0223, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.0668, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.1114, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.1559, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.2005, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.245, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.2895, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.3341, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.3786, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.4232, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.4677, "z": 0.0, "w": 0.0365, "d": 0.92, "y": 0.1562, "h": 0.75, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.96, "y": 0.9063, "h": 0.0938, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.96, "y": 0.0625, "h": 0.0938, "color": "white", "round": 0.4},
+    {"shape": "box", "x": -0.3, "z": -0.45, "w": 0.02, "d": 0.1, "y": 0.5312, "h": 0.0938, "color": "metal"},
+    {"shape": "box", "x": 0.3, "z": -0.45, "w": 0.02, "d": 0.1, "y": 0.5312, "h": 0.0938, "color": "metal"},
+    {"shape": "cyl", "x": -0.45, "z": -0.4, "w": 0.022, "d": 0.11, "y": 0.0, "h": 0.0781, "color": "metal"},
+    {"shape": "cyl", "x": 0.45, "z": -0.4, "w": 0.022, "d": 0.11, "y": 0.0, "h": 0.0781, "color": "metal"},
+    {"shape": "cyl", "x": 0.45, "z": -0.325, "w": 0.035, "d": 0.175, "y": 0.0187, "h": 0.0437, "color": "metal"},
+    {"shape": "cyl", "x": 0.45, "z": -0.325, "w": 0.03, "d": 0.2, "y": 0.0219, "h": 0.0375, "color": "accent"}
+  ]
+}

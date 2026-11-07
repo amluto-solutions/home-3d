@@ -1,0 +1,69 @@
+{
+  "id": "unifi_unvr_instant",
+  "name": {
+    "en": "UniFi NVR Instant"
+  },
+  "size": [
+    0.22,
+    0.22,
+    0.047
+  ],
+  "group": "network",
+  "tags": [
+    "nvr",
+    "network video recorder",
+    "unvr instant",
+    "unvr-instant",
+    "protect",
+    "unifi",
+    "ubiquiti"
+  ],
+  "family": "unifi_nvr",
+  "variant": {
+    "en": "NVR Instant (UNVR-Instant)"
+  },
+  "electric": true,
+  "mount": "surface",
+  "room": [
+    "office",
+    "utility",
+    "loft",
+    "hall",
+    "garage",
+    "living"
+  ],
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "round": 0.08
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.49,
+      "w": 0.8,
+      "d": 0.02,
+      "y": 0.1,
+      "h": 0.8,
+      "color": "#2a2d33"
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.495,
+      "w": 0.3,
+      "d": 0.01,
+      "y": 0.05,
+      "h": 0.04,
+      "color": "#3a8dde",
+      "glow": true
+    }
+  ]
+}

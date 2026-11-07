@@ -1,0 +1,41 @@
+{
+  "id": "sannahed_frame_50x50",
+  "name": {
+    "en": "Deep box frame 50x50 cm"
+  },
+  "size": [
+    0.52,
+    0.06,
+    0.52
+  ],
+  "group": "frame",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "office"
+  ],
+  "tags": [
+    "picture frame",
+    "photo frame",
+    "box frame",
+    "deep frame",
+    "oak effect",
+    "black",
+    "white",
+    "mount"
+  ],
+  "ikea": "SANNAHED",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4667, "w": 1, "d": 0.0667, "y": 0, "h": 1, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9769, "h": 0.0231, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0231, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4885, "z": 0.0, "w": 0.0231, "d": 1, "y": 0.0231, "h": 0.9538, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4885, "z": 0.0, "w": 0.0231, "d": 1, "y": 0.0231, "h": 0.9538, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.075, "w": 0.9538, "d": 0.05, "y": 0.0231, "h": 0.9538, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.0417, "w": 0.5769, "d": 0.0333, "y": 0.2115, "h": 0.5769, "color": "#a9b8b4", "fix": "d"}
+  ]
+}

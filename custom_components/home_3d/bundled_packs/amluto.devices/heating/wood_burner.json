@@ -1,0 +1,32 @@
+{
+  "id": "wood_burner",
+  "name": {"en": "Wood burner"},
+  "size": [0.9, 0.6, 2.4],
+  "group": "heating",
+  "room": ["living", "dining", "conservatory"],
+  "tags": ["log burner", "stove", "wood stove", "multi-fuel", "fireplace", "hearth", "flue", "chimney"],
+  "family": "wood_burner",
+  "variant": {"en": "5 kW"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0, "h": 0.0167, "color": "dark", "top": "#4a4a4f", "fix": "h"},
+    {"shape": "cyl", "x": -0.2056, "z": -0.3333, "w": 0.0389, "d": 0.0583, "y": 0.0167, "h": 0.0417, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.2056, "z": 0.15, "w": 0.0389, "d": 0.0583, "y": 0.0167, "h": 0.0417, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2056, "z": -0.3333, "w": 0.0389, "d": 0.0583, "y": 0.0167, "h": 0.0417, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2056, "z": 0.15, "w": 0.0389, "d": 0.0583, "y": 0.0167, "h": 0.0417, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.0917, "w": 0.5, "d": 0.6167, "y": 0.0583, "h": 0.2167, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.0917, "w": 0.5333, "d": 0.6667, "y": 0.275, "h": 0.0104, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.2267, "w": 0.4333, "d": 0.02, "y": 0.0792, "h": 0.1667, "color": "dark", "edges": "faint", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.2333, "w": 0.3444, "d": 0.0133, "y": 0.0958, "h": 0.125, "color": "glass", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.1833, "w": 0.3222, "d": 0.05, "y": 0.0958, "h": 0.0375, "color": "#ff7a2a", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.1333, "w": 0.2778, "d": 0.1, "y": 0.1, "h": 0.025, "color": "wood", "axis": "x", "fix": "wdh"},
+    {"shape": "box", "x": 0.1944, "z": 0.2667, "w": 0.0222, "d": 0.05, "y": 0.1458, "h": 0.0417, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.23, "w": 0.3444, "d": 0.0167, "y": 0.0708, "h": 0.0063, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.125, "w": 0.1667, "d": 0.25, "y": 0.2854, "h": 0.7146, "color": "dark", "fix": "wd"},
+    {"shape": "cyl", "x": 0.0, "z": -0.125, "w": 0.1889, "d": 0.2833, "y": 0.2854, "h": 0.025, "color": "dark", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "rect", "x": 0.0, "z": -0.0917, "w": 0.5, "d": 0.6167, "fill": true},
+    {"shape": "circle", "x": 0.0, "z": -0.125, "r": 0.125}
+  ]
+}

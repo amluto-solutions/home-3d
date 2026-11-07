@@ -1,0 +1,61 @@
+{
+  "id": "smastad_loft_bed_3_drawers",
+  "name": {
+    "en": "Loft bed with desk and 3 drawers"
+  },
+  "size": [
+    2.07,
+    1.04,
+    1.82
+  ],
+  "group": "kids",
+  "room": [
+    "kids",
+    "bedroom"
+  ],
+  "tags": [
+    "SMASTAD",
+    "loft bed",
+    "high sleeper",
+    "bunk",
+    "bed with desk",
+    "single",
+    "white",
+    "white/birch"
+  ],
+  "family": "smastad_loft_bed",
+  "variant": {
+    "en": "3 drawers"
+  },
+  "ikea": "SMÅSTAD",
+  "parts": [
+    {"shape": "box", "x": -0.4855, "z": -0.4712, "w": 0.029, "d": 0.0577, "y": 0, "h": 1, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": -0.4855, "z": 0.4712, "w": 0.029, "d": 0.0577, "y": 0, "h": 1, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.4855, "z": -0.4712, "w": 0.029, "d": 0.0577, "y": 0, "h": 1, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.4855, "z": 0.4712, "w": 0.029, "d": 0.0577, "y": 0, "h": 1, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": -0.4712, "w": 0.942, "d": 0.0288, "y": 0.7143, "h": 0.0769, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4712, "w": 0.942, "d": 0.0288, "y": 0.7143, "h": 0.0769, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.4712, "w": 0.942, "d": 0.024, "y": 0.9011, "h": 0.0769, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": -0.1208, "z": 0.4712, "w": 0.7005, "d": 0.024, "y": 0.9011, "h": 0.0769, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": -0.4855, "z": 0.0, "w": 0.0121, "d": 0.8846, "y": 0.9011, "h": 0.0769, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.4855, "z": 0.0, "w": 0.0121, "d": 0.8846, "y": 0.9011, "h": 0.0769, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.942, "d": 0.9038, "y": 0.7802, "h": 0.011, "color": "wood"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9662, "d": 0.8654, "y": 0.7912, "h": 0.0769, "color": "white", "round": 0.25},
+    {"shape": "box", "x": -0.1208, "z": 0.0962, "w": 0.715, "d": 0.5769, "y": 0.3901, "h": 0.0137, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4614, "z": 0.0962, "w": 0.0097, "d": 0.5577, "y": 0, "h": 0.3901, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.3551, "z": 0.0481, "w": 0.2415, "d": 0.6731, "y": 0, "h": 0.011, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.3551, "z": 0.3846, "w": 0.2319, "d": 0.0192, "y": 0.011, "h": 0.1212, "color": "white"},
+    {"shape": "box", "x": 0.3551, "z": 0.399, "w": 0.058, "d": 0.0096, "y": 0.1026, "h": 0.0137, "color": "accent", "fix": "wdh"},
+    {"shape": "box", "x": 0.3551, "z": 0.3846, "w": 0.2319, "d": 0.0192, "y": 0.1355, "h": 0.1212, "color": "white"},
+    {"shape": "box", "x": 0.3551, "z": 0.399, "w": 0.058, "d": 0.0096, "y": 0.2271, "h": 0.0137, "color": "accent", "fix": "wdh"},
+    {"shape": "box", "x": 0.3551, "z": 0.3846, "w": 0.2319, "d": 0.0192, "y": 0.2601, "h": 0.1212, "color": "white"},
+    {"shape": "box", "x": 0.3551, "z": 0.399, "w": 0.058, "d": 0.0096, "y": 0.3516, "h": 0.0137, "color": "accent", "fix": "wdh"},
+    {"shape": "box", "x": 0.4903, "z": -0.3365, "w": 0.0193, "d": 0.0288, "y": 0, "h": 0.8077, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.4903, "z": 0.0481, "w": 0.0193, "d": 0.0288, "y": 0, "h": 0.8077, "color": "white", "fix": "wd"},
+    {"shape": "cyl", "x": 0.4903, "z": -0.1442, "w": 0.0121, "d": 0.3846, "y": 0.1346, "h": 0.0137, "color": "white", "axis": "z", "fix": "wh"},
+    {"shape": "cyl", "x": 0.4903, "z": -0.1442, "w": 0.0121, "d": 0.3846, "y": 0.2692, "h": 0.0137, "color": "white", "axis": "z", "fix": "wh"},
+    {"shape": "cyl", "x": 0.4903, "z": -0.1442, "w": 0.0121, "d": 0.3846, "y": 0.4038, "h": 0.0137, "color": "white", "axis": "z", "fix": "wh"},
+    {"shape": "cyl", "x": 0.4903, "z": -0.1442, "w": 0.0121, "d": 0.3846, "y": 0.5385, "h": 0.0137, "color": "white", "axis": "z", "fix": "wh"},
+    {"shape": "cyl", "x": 0.4903, "z": -0.1442, "w": 0.0121, "d": 0.3846, "y": 0.6731, "h": 0.0137, "color": "white", "axis": "z", "fix": "wh"}
+  ]
+}

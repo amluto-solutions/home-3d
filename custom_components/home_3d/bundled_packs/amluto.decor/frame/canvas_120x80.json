@@ -1,0 +1,20 @@
+{
+  "id": "canvas_120x80",
+  "name": {"en": "Canvas wall art"},
+  "size": [1.2, 0.04, 0.8],
+  "group": "frame",
+  "room": ["living", "dining", "bedroom", "hall", "office", "kids"],
+  "tags": ["canvas", "wall art", "painting", "print", "abstract", "picture", "art"],
+  "family": "canvas_wall_art",
+  "variant": {"en": "120 × 80, landscape"},
+  "mount": "wall",
+  "wall_y": 1.15,
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 0.85, "y": 0, "h": 1, "color": "#f4f1ea"},
+    {"shape": "box", "x": 0, "z": 0.4, "w": 0.96, "d": 0.1, "y": 0.02, "h": 0.96, "color": "#e6dcc2"},
+    {"shape": "box", "x": 0, "z": 0.4375, "w": 0.96, "d": 0.1, "y": 0.02, "h": 0.34, "color": "#4a6b52"},
+    {"shape": "box", "x": -0.12, "z": 0.4375, "w": 0.5, "d": 0.1, "y": 0.36, "h": 0.18, "color": "#b9c7a5"},
+    {"shape": "box", "x": 0.22, "z": 0.4375, "w": 0.3, "d": 0.1, "y": 0.52, "h": 0.3, "color": "#2c3e35"},
+    {"shape": "box", "x": -0.2, "z": 0.4375, "w": 0.4, "d": 0.1, "y": 0.14, "h": 0.1, "color": "#b9c7a5"}
+  ]
+}

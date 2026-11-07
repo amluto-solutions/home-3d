@@ -1,0 +1,56 @@
+{
+  "id": "hol_side_table",
+  "name": {
+    "en": "Side table, slatted, 50x50 cm"
+  },
+  "size": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "group": "table",
+  "room": [
+    "living",
+    "bedroom",
+    "conservatory"
+  ],
+  "tags": [
+    "coffee table",
+    "storage",
+    "slatted",
+    "acacia",
+    "solid wood",
+    "lift-off top",
+    "boho"
+  ],
+  "family": "hol_table",
+  "variant": {
+    "en": "50x50"
+  },
+  "ikea": "HOL",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": -0.46, "z": -0.46, "w": 0.08, "d": 0.08, "y": 0, "h": 1, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.46, "z": 0.46, "w": 0.08, "d": 0.08, "y": 0, "h": 1, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.46, "z": -0.46, "w": 0.08, "d": 0.08, "y": 0, "h": 1, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.46, "z": 0.46, "w": 0.08, "d": 0.08, "y": 0, "h": 1, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.408, "z": 0.0, "w": 0.184, "d": 1, "y": 0.96, "h": 0.04, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.204, "z": 0.0, "w": 0.184, "d": 1, "y": 0.96, "h": 0.04, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.0, "z": 0.0, "w": 0.184, "d": 1, "y": 0.96, "h": 0.04, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.204, "z": 0.0, "w": 0.184, "d": 1, "y": 0.96, "h": 0.04, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.408, "z": 0.0, "w": 0.184, "d": 1, "y": 0.96, "h": 0.04, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.48, "w": 0.84, "d": 0.03, "y": 0.16, "h": 0.16, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.48, "w": 0.84, "d": 0.03, "y": 0.16, "h": 0.16, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": -0.48, "z": 0.0, "w": 0.03, "d": 0.84, "y": 0.16, "h": 0.16, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.48, "z": 0.0, "w": 0.03, "d": 0.84, "y": 0.16, "h": 0.16, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.48, "w": 0.84, "d": 0.03, "y": 0.4, "h": 0.16, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.48, "w": 0.84, "d": 0.03, "y": 0.4, "h": 0.16, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": -0.48, "z": 0.0, "w": 0.03, "d": 0.84, "y": 0.4, "h": 0.16, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.48, "z": 0.0, "w": 0.03, "d": 0.84, "y": 0.4, "h": 0.16, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.48, "w": 0.84, "d": 0.03, "y": 0.64, "h": 0.16, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.48, "w": 0.84, "d": 0.03, "y": 0.64, "h": 0.16, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": -0.48, "z": 0.0, "w": 0.03, "d": 0.84, "y": 0.64, "h": 0.16, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.48, "z": 0.0, "w": 0.03, "d": 0.84, "y": 0.64, "h": 0.16, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.84, "d": 0.84, "y": 0.08, "h": 0.03, "color": "wood", "fix": "h"}
+  ]
+}

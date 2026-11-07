@@ -1,0 +1,43 @@
+{
+  "id": "homepod_mini",
+  "name": {
+    "en": "Apple HomePod mini"
+  },
+  "size": [
+    0.0976,
+    0.0976,
+    0.099
+  ],
+  "group": "media",
+  "room": [
+    "living",
+    "kitchen",
+    "bedroom",
+    "kids",
+    "office",
+    "bath",
+    "hall",
+    "dining"
+  ],
+  "tags": [
+    "homepod mini",
+    "apple homepod",
+    "siri",
+    "smart speaker",
+    "airplay",
+    "speaker",
+    "apple",
+    "media player"
+  ],
+  "family": "homepod",
+  "variant": {
+    "en": "mini"
+  },
+  "mount": "surface",
+  "electric": true,
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.9899, "color": "fabric", "profile": [[0.0, 0.0], [0.7172, 0.0], [0.9734, 0.2041], [1.0, 0.5102], [0.8197, 0.8673], [0.4098, 1.0], [0.0, 1.0]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4098, "d": 0.4098, "y": 0.9848, "h": 0.0152, "color": "white", "glow": true},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.7172, "d": 0.7172, "y": 0, "h": 0.0404, "color": "dark"}
+  ]
+}

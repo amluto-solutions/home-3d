@@ -1,0 +1,26 @@
+{
+  "id": "island_cooker_hood_900",
+  "name": {"en": "Island cooker hood 900"},
+  "size": [0.9, 0.6, 1.1],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["cooker hood", "extractor", "chimney hood", "range hood", "canopy", "stainless steel"],
+  "family": "cooker_hood",
+  "variant": {"en": "Island 900"},
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.0455, "color": "metal", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0455, "h": 0.1545, "color": "metal", "tx": 0.0, "tz": 0.0, "tw": 0.3333, "td": 0.4333, "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.2889, "d": 0.3667, "y": 0.2, "h": 0.8, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9333, "d": 0.9, "y": 0.0, "h": 0.0018, "color": "dark"},
+    {"shape": "cyl", "x": -0.25, "z": 0.3667, "w": 0.0556, "d": 0.0833, "y": 0.0, "h": 0.0027, "color": "#fff1d0", "glow": true},
+    {"shape": "cyl", "x": 0.25, "z": 0.3667, "w": 0.0556, "d": 0.0833, "y": 0.0, "h": 0.0027, "color": "#fff1d0", "glow": true},
+    {"shape": "box", "x": 0.0, "z": 0.4983, "w": 0.1778, "d": 0.0033, "y": 0.0136, "h": 0.0182, "color": "#7fe3ff", "edges": "faint"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.5, "z1": -0.5, "x2": 0.5, "z2": 0.5},
+    {"shape": "line", "x1": -0.5, "z1": 0.5, "x2": 0.5, "z2": -0.5}
+  ]
+}

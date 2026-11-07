@@ -1,0 +1,22 @@
+{
+  "id": "divan_bed_king",
+  "name": {"en": "King divan bed"},
+  "size": [1.5, 2.0, 0.62],
+  "group": "bed",
+  "family": "divan_bed",
+  "variant": {"en": "King · 150 × 200"},
+  "room": ["bedroom"],
+  "tags": ["divan", "divan base", "bed base", "mattress", "no headboard", "king size", "5ft", "bed"],
+  "parts": [
+    {"shape": "cyl", "x": -0.4567, "z": -0.4575, "w": 0.0333, "d": 0.025, "y": 0.0, "h": 0.0806, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4567, "z": 0.4575, "w": 0.0333, "d": 0.025, "y": 0.0, "h": 0.0806, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4567, "z": -0.4575, "w": 0.0333, "d": 0.025, "y": 0.0, "h": 0.0806, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4567, "z": 0.4575, "w": 0.0333, "d": 0.025, "y": 0.0, "h": 0.0806, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0806, "h": 0.5, "color": "fabric", "round": 0.08, "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9933, "d": 0.995, "y": 0.3226, "h": 0.0081, "color": "dark", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.5806, "h": 0.3871, "color": "white", "round": 0.2, "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.1, "w": 1.0, "d": 0.8, "y": 0.8387, "h": 0.1613, "color": "cushion", "round": 0.3, "fix": "dh"},
+    {"shape": "rbox", "x": -0.25, "z": -0.41, "w": 0.46, "d": 0.14, "y": 0.9194, "h": 0.0806, "color": "white", "round": 0.45, "fix": "dh"},
+    {"shape": "rbox", "x": 0.25, "z": -0.41, "w": 0.46, "d": 0.14, "y": 0.9194, "h": 0.0806, "color": "white", "round": 0.45, "fix": "dh"}
+  ]
+}

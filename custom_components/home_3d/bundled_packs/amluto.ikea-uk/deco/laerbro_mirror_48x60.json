@@ -1,0 +1,37 @@
+{
+  "id": "laerbro_mirror_48x60",
+  "name": {
+    "en": "Plain mirror 48x60 cm"
+  },
+  "size": [
+    0.48,
+    0.012,
+    0.6
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "hall",
+    "bedroom",
+    "bath",
+    "dining",
+    "kids"
+  ],
+  "tags": [
+    "mirror",
+    "wall mirror",
+    "frameless",
+    "plain mirror"
+  ],
+  "family": "laerbro_mirror",
+  "variant": {
+    "en": "48x60"
+  },
+  "ikea": "LÄRBRO",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.3333, "w": 1, "d": 0.3333, "y": 0, "h": 1, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.1667, "w": 0.9833, "d": 0.6667, "y": 0.0067, "h": 0.9867, "color": "glass", "fix": "d"}
+  ]
+}

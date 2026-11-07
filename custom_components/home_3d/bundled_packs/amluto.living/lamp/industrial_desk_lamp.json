@@ -1,0 +1,42 @@
+{
+  "id": "industrial_desk_lamp",
+  "name": {
+    "en": "Industrial desk lamp"
+  },
+  "size": [
+    0.22,
+    0.46,
+    0.32
+  ],
+  "group": "lamp",
+  "room": [
+    "office",
+    "living",
+    "hall"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "industrial lamp",
+    "factory lamp",
+    "metal dome",
+    "loft style",
+    "adjustable",
+    "workshop",
+    "black"
+  ],
+  "family": "industrial_desk_lamp",
+  "variant": {
+    "en": "Black dome"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.2174, "w": 0.7273, "d": 0.3478, "y": 0, "h": 0.0938, "color": "#3b3d41"},
+    {"shape": "box", "x": 0.0, "z": 0.2174, "w": 0.1136, "d": 0.0543, "y": 0.0938, "h": 0.875, "color": "#3b3d41"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.0909, "d": 0.4783, "y": 0.9375, "h": 0.0625, "color": "#3b3d41"},
+    {"shape": "lathe", "x": 0.0, "z": -0.2609, "w": 1, "d": 0.4783, "y": 0.4375, "h": 0.5625, "color": "#3b3d41", "profile": [[0.0, 0.0], [0.1818, 0.0], [0.9091, 0.2778], [1.0, 0.5556], [0.9091, 0.7222], [0.2727, 0.9444], [0.0, 1.0]]},
+    {"shape": "sphere", "x": 0.0, "z": -0.2609, "w": 0.2727, "d": 0.1304, "y": 0.5, "h": 0.1875, "color": "#ffe3a8", "glow": true},
+    {"shape": "cyl", "x": 0.0, "z": -0.2609, "w": 0.8182, "d": 0.3913, "y": 0.4375, "h": 0.0312, "color": "#ffe3a8", "glow": true}
+  ]
+}

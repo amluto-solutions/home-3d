@@ -1,0 +1,45 @@
+{
+  "id": "hovolm_rack_6_knobs",
+  "name": {
+    "en": "Rack with 6 knobs"
+  },
+  "size": [
+    0.57,
+    0.07,
+    0.07
+  ],
+  "group": "storage",
+  "room": [
+    "hall",
+    "bedroom",
+    "kids",
+    "bath"
+  ],
+  "tags": [
+    "HOVOLM",
+    "coat hooks",
+    "wall hooks",
+    "knob rack",
+    "hall rack",
+    "oak",
+    "wood"
+  ],
+  "ikea": "HÖVOLM",
+  "mount": "wall",
+  "wall_y": 1.4,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.3571, "w": 1, "d": 0.2857, "y": 0, "h": 1, "color": "wood", "fix": "dh"},
+    {"shape": "cyl", "x": -0.4123, "z": 0.0714, "w": 0.0526, "d": 0.7143, "y": 0.2857, "h": 0.4286, "color": "wood", "axis": "z", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.4123, "z": 0.3286, "w": 0.0614, "d": 0.3429, "y": 0.2143, "h": 0.5714, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.2474, "z": 0.0714, "w": 0.0526, "d": 0.7143, "y": 0.2857, "h": 0.4286, "color": "wood", "axis": "z", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.2474, "z": 0.3286, "w": 0.0614, "d": 0.3429, "y": 0.2143, "h": 0.5714, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.0825, "z": 0.0714, "w": 0.0526, "d": 0.7143, "y": 0.2857, "h": 0.4286, "color": "wood", "axis": "z", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.0825, "z": 0.3286, "w": 0.0614, "d": 0.3429, "y": 0.2143, "h": 0.5714, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0825, "z": 0.0714, "w": 0.0526, "d": 0.7143, "y": 0.2857, "h": 0.4286, "color": "wood", "axis": "z", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.0825, "z": 0.3286, "w": 0.0614, "d": 0.3429, "y": 0.2143, "h": 0.5714, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2474, "z": 0.0714, "w": 0.0526, "d": 0.7143, "y": 0.2857, "h": 0.4286, "color": "wood", "axis": "z", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.2474, "z": 0.3286, "w": 0.0614, "d": 0.3429, "y": 0.2143, "h": 0.5714, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4123, "z": 0.0714, "w": 0.0526, "d": 0.7143, "y": 0.2857, "h": 0.4286, "color": "wood", "axis": "z", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.4123, "z": 0.3286, "w": 0.0614, "d": 0.3429, "y": 0.2143, "h": 0.5714, "color": "wood", "fix": "wdh"}
+  ]
+}

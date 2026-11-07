@@ -1,0 +1,20 @@
+{
+  "id": "router_gateway_tower",
+  "name": {"en": "Gateway router, tower"},
+  "size": [0.11, 0.11, 0.2],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage", "living"],
+  "tags": ["router", "wifi router", "wi-fi", "broadband", "internet", "hub", "modem", "gateway"],
+  "family": "router",
+  "variant": {"en": "Tower"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "white", "profile": [[0, 0], [0.92, 0], [1, 0.05], [1, 0.95], [0.9, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.6364, "d": 0.6364, "y": 0.985, "h": 0.015, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.4909, "w": 0.5455, "d": 0.0182, "y": 0.75, "h": 0.04, "color": "#4aa3ff", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0.0, "z": 0.0, "r": 0.5}
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "ivar_cabinet_80x30x83",
+  "name": {
+    "en": "Cabinet 80x30x83 cm"
+  },
+  "size": [
+    0.8,
+    0.3,
+    0.83
+  ],
+  "group": "storage",
+  "room": [
+    "hall",
+    "bedroom",
+    "utility",
+    "kids"
+  ],
+  "tags": [
+    "IVAR",
+    "pine cabinet",
+    "shoe cabinet",
+    "solid pine",
+    "wood"
+  ],
+  "family": "ivar_shelving",
+  "variant": {
+    "en": "Cabinet 80x30x83"
+  },
+  "ikea": "IVAR",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.95, "y": 0, "h": 1, "color": "wood"},
+    {"shape": "box", "x": -0.25, "z": 0.48, "w": 0.495, "d": 0.06, "y": 0.0241, "h": 0.947, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.25, "z": 0.48, "w": 0.495, "d": 0.06, "y": 0.0241, "h": 0.947, "color": "wood", "fix": "d"},
+    {"shape": "cyl", "x": -0.0312, "z": 0.5, "w": 0.0375, "d": 0.0667, "y": 0.506, "h": 0.0361, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0312, "z": 0.5, "w": 0.0375, "d": 0.0667, "y": 0.506, "h": 0.0361, "color": "metal", "axis": "z", "fix": "wdh"}
+  ]
+}

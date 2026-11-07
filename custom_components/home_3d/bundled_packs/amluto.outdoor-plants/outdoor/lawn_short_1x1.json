@@ -1,0 +1,17 @@
+{
+  "id": "lawn_short_1x1",
+  "name": {"en": "Lawn, short, 1 × 1 m"},
+  "size": [1.0, 1.0, 0.03],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["lawn", "turf", "mown", "grass"],
+  "family": "lawn_short",
+  "variant": {"en": "1 × 1 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#4a3626"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.1667, "h": 1, "color": "#58a23e", "top": "#6cb84c"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

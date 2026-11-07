@@ -1,0 +1,25 @@
+{
+  "id": "raised_bed_180x90",
+  "name": {"en": "Raised bed"},
+  "size": [1.8, 0.9, 0.3],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["raised bed", "vegetable bed", "veg patch", "planter", "allotment", "garden bed", "timber", "growing", "sleepers", "vegetables"],
+  "family": "raised_bed",
+  "variant": {"en": "180 × 90 cm, 30 cm high"},
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0.4833, "w": 1, "d": 0.0333, "y": 0, "h": 0.4867, "color": "wood"},
+    {"shape": "box", "x": 0, "z": -0.4833, "w": 1, "d": 0.0333, "y": 0, "h": 0.4867, "color": "wood"},
+    {"shape": "box", "x": -0.4917, "z": 0, "w": 0.0167, "d": 0.9333, "y": 0, "h": 0.4867, "color": "wood"},
+    {"shape": "box", "x": 0.4917, "z": 0, "w": 0.0167, "d": 0.9333, "y": 0, "h": 0.4867, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0.4833, "w": 1, "d": 0.0333, "y": 0.5, "h": 0.4867, "color": "wood"},
+    {"shape": "box", "x": 0, "z": -0.4833, "w": 1, "d": 0.0333, "y": 0.5, "h": 0.4867, "color": "wood"},
+    {"shape": "box", "x": -0.4917, "z": 0, "w": 0.0167, "d": 0.9333, "y": 0.5, "h": 0.4867, "color": "wood"},
+    {"shape": "box", "x": 0.4917, "z": 0, "w": 0.0167, "d": 0.9333, "y": 0.5, "h": 0.4867, "color": "wood"},
+    {"shape": "box", "x": -0.4806, "z": -0.4611, "w": 0.0389, "d": 0.0778, "y": 0, "h": 1, "color": "#8a6a45"},
+    {"shape": "box", "x": -0.4806, "z": 0.4611, "w": 0.0389, "d": 0.0778, "y": 0, "h": 1, "color": "#8a6a45"},
+    {"shape": "box", "x": 0.4806, "z": -0.4611, "w": 0.0389, "d": 0.0778, "y": 0, "h": 1, "color": "#8a6a45"},
+    {"shape": "box", "x": 0.4806, "z": 0.4611, "w": 0.0389, "d": 0.0778, "y": 0, "h": 1, "color": "#8a6a45"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9667, "d": 0.9333, "y": 0.8333, "h": 0.1333, "color": "#4a3726"}
+  ]
+}

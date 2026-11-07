@@ -1,0 +1,38 @@
+{
+  "id": "lindbyn_mirror_round_50",
+  "name": {
+    "en": "Round mirror, thin frame 50 cm"
+  },
+  "size": [
+    0.5,
+    0.03,
+    0.5
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "hall",
+    "bedroom",
+    "bath",
+    "dining"
+  ],
+  "tags": [
+    "mirror",
+    "wall mirror",
+    "round",
+    "thin frame",
+    "black",
+    "gold colour"
+  ],
+  "family": "lindbyn_mirror",
+  "variant": {
+    "en": "round 50"
+  },
+  "ikea": "LINDBYN",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.0333, "w": 1, "d": 0.9333, "y": 0, "h": 1, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.3833, "w": 0.94, "d": 0.2333, "y": 0.03, "h": 0.94, "color": "glass", "axis": "z"}
+  ]
+}

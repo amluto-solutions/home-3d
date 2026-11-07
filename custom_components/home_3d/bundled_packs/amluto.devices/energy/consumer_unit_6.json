@@ -1,0 +1,30 @@
+{
+  "id": "consumer_unit_6",
+  "name": {"en": "Consumer unit"},
+  "size": [0.23, 0.11, 0.26],
+  "group": "energy",
+  "room": ["hall", "garage", "utility", "kitchen"],
+  "tags": ["fuse box", "fuse board", "distribution board", "breakers", "mcb", "rcbo", "rcd", "electrics", "meter cupboard"],
+  "family": "consumer_unit",
+  "variant": {"en": "6-way"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.5,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0909, "w": 1, "d": 0.8182, "y": 0.0, "h": 1, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.3909, "w": 0.9565, "d": 0.1818, "y": 0.0192, "h": 0.9615, "color": "#eceef0", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4818, "w": 0.7826, "d": 0.0364, "y": 0.3269, "h": 0.3462, "color": "glass"},
+    {"shape": "box", "x": 0.0, "z": 0.4455, "w": 0.7391, "d": 0.0545, "y": 0.3654, "h": 0.2692, "color": "white"},
+    {"shape": "box", "x": -0.2913, "z": 0.4728, "w": 0.113, "d": 0.0545, "y": 0.4769, "h": 0.0538, "color": "#c62828"},
+    {"shape": "box", "x": -0.2304, "z": 0.4728, "w": 0.0522, "d": 0.0545, "y": 0.4769, "h": 0.0538, "color": "#1e88e5"},
+    {"shape": "box", "x": -0.1522, "z": 0.4728, "w": 0.0391, "d": 0.0545, "y": 0.4769, "h": 0.0538, "color": "dark"},
+    {"shape": "box", "x": -0.0739, "z": 0.4728, "w": 0.0391, "d": 0.0545, "y": 0.4769, "h": 0.0538, "color": "dark"},
+    {"shape": "box", "x": 0.0043, "z": 0.4728, "w": 0.0391, "d": 0.0545, "y": 0.4769, "h": 0.0538, "color": "dark"},
+    {"shape": "box", "x": 0.0826, "z": 0.4728, "w": 0.0391, "d": 0.0545, "y": 0.4769, "h": 0.0538, "color": "dark"},
+    {"shape": "box", "x": 0.1609, "z": 0.4728, "w": 0.0391, "d": 0.0545, "y": 0.4769, "h": 0.0538, "color": "dark"},
+    {"shape": "box", "x": 0.2391, "z": 0.4728, "w": 0.0391, "d": 0.0545, "y": 0.4769, "h": 0.0538, "color": "dark"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

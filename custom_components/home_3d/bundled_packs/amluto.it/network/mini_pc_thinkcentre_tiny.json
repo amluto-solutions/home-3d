@@ -1,0 +1,17 @@
+{
+  "id": "mini_pc_thinkcentre_tiny",
+  "name": {"en": "Mini PC, ThinkCentre Tiny"},
+  "size": [0.179,0.183,0.0345],
+  "group": "network",
+  "room": ["office", "utility", "loft", "living", "hall"],
+  "tags": ["lenovo", "thinkcentre", "thinkcentre tiny", "m720q", "m70q", "m920q", "tiny", "mini pc", "nuc", "micro pc", "small pc", "home server"],
+  "family": "mini_pc",
+  "variant": {"en": "ThinkCentre Tiny"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#26282c", "round": 0.12},
+    {"shape": "box", "x": 0, "z": 0.4984, "w": 0.8, "d": 0.0033, "y": 0.3, "h": 0.3, "color": "dark"},
+    {"shape": "box", "x": -0.3, "z": 0.4989, "w": 0.0112, "d": 0.0022, "y": 0.65, "h": 0.058, "color": "#e2231a", "glow": true}
+  ]
+}

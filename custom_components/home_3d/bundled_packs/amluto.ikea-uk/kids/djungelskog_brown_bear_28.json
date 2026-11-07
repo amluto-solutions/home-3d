@@ -1,0 +1,42 @@
+{
+  "id": "djungelskog_brown_bear_28",
+  "name": {
+    "en": "Soft toy bear 28 cm"
+  },
+  "size": [
+    0.2,
+    0.18,
+    0.28
+  ],
+  "group": "kids",
+  "room": [
+    "kids",
+    "bedroom",
+    "living"
+  ],
+  "tags": [
+    "DJUNGELSKOG",
+    "teddy bear",
+    "soft toy",
+    "plush",
+    "cuddly toy",
+    "stuffed animal",
+    "brown bear"
+  ],
+  "ikea": "DJUNGELSKOG",
+  "parts": [
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.6071, "color": "wood"},
+    {"shape": "sphere", "x": 0.0, "z": 0.1111, "w": 0.8, "d": 0.7778, "y": 0.5, "h": 0.5, "color": "wood"},
+    {"shape": "sphere", "x": 0.0, "z": 0.4167, "w": 0.35, "d": 0.2778, "y": 0.6071, "h": 0.1786, "color": "cushion"},
+    {"shape": "sphere", "x": 0.0, "z": 0.5, "w": 0.125, "d": 0.1111, "y": 0.7143, "h": 0.0714, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.2, "z": 0.4722, "w": 0.09, "d": 0.0833, "y": 0.8036, "h": 0.0643, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.2, "z": 0.4722, "w": 0.09, "d": 0.0833, "y": 0.8036, "h": 0.0643, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.325, "z": 0.0, "w": 0.25, "d": 0.2222, "y": 0.8929, "h": 0.1429, "color": "wood", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.325, "z": 0.0, "w": 0.25, "d": 0.2222, "y": 0.8929, "h": 0.1429, "color": "wood", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.5, "z": 0.1667, "w": 0.3, "d": 0.3889, "y": 0.25, "h": 0.3214, "color": "wood", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.5, "z": 0.1667, "w": 0.3, "d": 0.3889, "y": 0.25, "h": 0.3214, "color": "wood", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.3, "z": 0.4444, "w": 0.35, "d": 0.5, "y": 0, "h": 0.1786, "color": "wood", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.3, "z": 0.4444, "w": 0.35, "d": 0.5, "y": 0, "h": 0.1786, "color": "wood", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.0, "z": 0.2222, "w": 0.5, "d": 0.5556, "y": 0.1786, "h": 0.3571, "color": "cushion"}
+  ]
+}

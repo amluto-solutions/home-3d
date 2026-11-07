@@ -1,0 +1,37 @@
+{
+  "id": "vindkast_floor_lamp",
+  "name": {
+    "en": "Floor lamp, layered white shade"
+  },
+  "size": [
+    0.38,
+    0.38,
+    1.44
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "floor lamp",
+    "standard lamp",
+    "white",
+    "layered shade",
+    "sculptural"
+  ],
+  "family": "vindkast_lamp",
+  "variant": {
+    "en": "Floor lamp"
+  },
+  "ikea": "VINDKAST",
+  "light": "floor",
+  "electric": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9474, "d": 0.9474, "y": 0, "h": 0.0139, "color": "white", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0526, "d": 0.0526, "y": 0.0139, "h": 0.8264, "color": "white", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8264, "h": 0.1736, "color": "white", "edges": "faint", "profile": [[0, 0], [0.55, 0.02], [0.85, 0.12], [1, 0.3], [0.95, 0.45], [1, 0.6], [0.88, 0.78], [0.62, 0.92], [0.3, 1], [0, 1]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.4211, "d": 0.4211, "y": 0.8611, "h": 0.0972, "color": "white", "glow": true}
+  ]
+}

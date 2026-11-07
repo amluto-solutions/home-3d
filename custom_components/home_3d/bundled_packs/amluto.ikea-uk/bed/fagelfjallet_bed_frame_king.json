@@ -1,0 +1,35 @@
+{
+  "id": "fagelfjallet_bed_frame_king",
+  "name": {
+    "en": "Bed frame, King 150x200"
+  },
+  "size": [
+    1.62,
+    2.07,
+    1.01
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom"
+  ],
+  "tags": [
+    "bed",
+    "bed frame",
+    "king",
+    "off-white",
+    "storage boxes"
+  ],
+  "variant": {
+    "en": "King · 150x200"
+  },
+  "ikea": "FÅGELFJÄLLET",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4903, "w": 1, "d": 0.0193, "y": 0, "h": 1, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4928, "w": 1, "d": 0.0145, "y": 0, "h": 0.3861, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.4907, "z": 0.0, "w": 0.0185, "d": 0.9517, "y": 0.198, "h": 0.198, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4907, "z": 0.0, "w": 0.0185, "d": 0.9517, "y": 0.198, "h": 0.198, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.963, "d": 0.942, "y": 0.2574, "h": 0.0198, "color": "wood"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9259, "d": 0.9662, "y": 0.2772, "h": 0.198, "color": "white", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": -0.3841, "w": 0.787, "d": 0.1546, "y": 0.4752, "h": 0.1188, "color": "cushion", "round": 0.45}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "shure_super_55",
+  "name": {"en": "Shure Super 55 deluxe vocal mic"},
+  "size": [0.1, 0.078, 0.188],
+  "group": "media",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["shure", "super 55", "55sh", "vintage mic", "elvis mic", "dynamic mic", "microphone", "streaming", "audio"],
+  "family": "shure_classic",
+  "variant": {"en": "Super 55"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.556, "d": 0.8974, "y": 0.0, "h": 0.9043, "color": "metal", "round": 0.4},
+    {"shape": "box", "x": 0.0, "z": 0.3205, "w": 0.5, "d": 0.2564, "y": 0.1064, "h": 0.6915, "color": "#1c1f24"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.3846, "y": 0.9043, "h": 0.0957, "color": "dark"}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "router_mesh_node",
+  "name": {"en": "Mesh Wi-Fi node"},
+  "size": [0.11, 0.11, 0.1],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage", "living"],
+  "tags": ["router", "wifi router", "wi-fi", "broadband", "internet", "hub", "modem", "gateway"],
+  "family": "router",
+  "variant": {"en": "Mesh node"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "white", "profile": [[0, 0], [0.88, 0], [1, 0.1], [1, 0.8], [0.85, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4545, "d": 0.4545, "y": 0.98, "h": 0.02, "color": "white", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0.0, "z": 0.0, "r": 0.5}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "mini_pc",
+  "name": {"en": "Mini PC"},
+  "size": [0.117, 0.112, 0.054],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby", "living", "loft"],
+  "tags": ["nuc", "intel nuc", "small form factor", "mini pc", "computer", "pc", "home server", "homelab"],
+  "family": "mini_pc",
+  "variant": {"en": "Small"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.037, "h": 0.9259, "color": "dark", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8291, "d": 0.8214, "y": 0.0, "h": 0.0741, "color": "#1a1b1e", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8291, "d": 0.8214, "y": 0.963, "h": 0.037, "color": "#26282c", "fix": "h"},
+    {"shape": "cyl", "x": 0.3291, "z": 0.4911, "w": 0.0684, "d": 0.0179, "y": 0.6667, "h": 0.1481, "color": "white", "axis": "z", "edges": "faint", "fix": "wdh"},
+    {"shape": "box", "x": -0.2564, "z": 0.4911, "w": 0.1197, "d": 0.0179, "y": 0.2778, "h": 0.1111, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": -0.0855, "z": 0.4911, "w": 0.1197, "d": 0.0179, "y": 0.2778, "h": 0.1111, "color": "#101114", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "tillreda_microwave_oven",
+  "name": {
+    "en": "Microwave oven 20 l"
+  },
+  "size": [
+    0.439,
+    0.34,
+    0.258
+  ],
+  "group": "appliance",
+  "room": [
+    "kitchen",
+    "office",
+    "utility"
+  ],
+  "tags": [
+    "microwave",
+    "freestanding",
+    "compact",
+    "700 W",
+    "white"
+  ],
+  "ikea": "TILLREDA",
+  "mount": "surface",
+  "electric": true,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0388, "h": 0.9612, "color": "white", "round": 0.08},
+    {"shape": "box", "x": -0.1139, "z": 0.5, "w": 0.6606, "d": 0.0176, "y": 0.1357, "h": 0.7364, "color": "dark", "top": "#202226", "fix": "d"},
+    {"shape": "box", "x": -0.1139, "z": 0.5, "w": 0.5011, "d": 0.0118, "y": 0.2326, "h": 0.5426, "color": "glass", "fix": "d"},
+    {"shape": "box", "x": 0.3645, "z": 0.5, "w": 0.205, "d": 0.0176, "y": 0.1357, "h": 0.7364, "color": "white", "fix": "d"},
+    {"shape": "cyl", "x": 0.3645, "z": 0.5, "w": 0.0911, "d": 0.0471, "y": 0.6589, "h": 0.155, "color": "#9aa0a6", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3645, "z": 0.5, "w": 0.0911, "d": 0.0471, "y": 0.3488, "h": 0.155, "color": "#9aa0a6", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4089, "z": -0.3824, "w": 0.0456, "d": 0.0588, "y": 0, "h": 0.0388, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4089, "z": 0.3824, "w": 0.0456, "d": 0.0588, "y": 0, "h": 0.0388, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4089, "z": -0.3824, "w": 0.0456, "d": 0.0588, "y": 0, "h": 0.0388, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4089, "z": 0.3824, "w": 0.0456, "d": 0.0588, "y": 0, "h": 0.0388, "color": "dark", "fix": "wdh"}
+  ]
+}

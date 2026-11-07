@@ -1,0 +1,38 @@
+{
+  "id": "sunrise_alarm_lamp",
+  "name": {
+    "en": "Sunrise alarm lamp"
+  },
+  "size": [
+    0.18,
+    0.18,
+    0.19
+  ],
+  "group": "lamp",
+  "room": [
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "sunrise alarm",
+    "wake up light",
+    "alarm clock lamp",
+    "bedside lamp",
+    "sleep light",
+    "dawn simulator",
+    "clock"
+  ],
+  "family": "sunrise_alarm_lamp",
+  "variant": {
+    "en": "Dome"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9444, "d": 0.9444, "y": 0, "h": 0.2368, "color": "white"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.2368, "h": 0.7632, "color": "white", "glow": true, "profile": [[0.0, 0.0], [1.0, 0.0], [1.0, 0.2069], [0.7778, 0.7586], [0.3333, 0.9655], [0.0, 1.0]]},
+    {"shape": "box", "x": 0.0, "z": 0.4556, "w": 0.2778, "d": 0.0222, "y": 0.0789, "h": 0.0947, "color": "dark"}
+  ]
+}

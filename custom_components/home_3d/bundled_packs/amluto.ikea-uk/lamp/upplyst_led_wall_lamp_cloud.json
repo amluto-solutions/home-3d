@@ -1,0 +1,34 @@
+{
+  "id": "upplyst_led_wall_lamp_cloud",
+  "name": {
+    "en": "LED wall lamp, cloud"
+  },
+  "size": [
+    0.3,
+    0.08,
+    0.19
+  ],
+  "group": "lamp",
+  "room": [
+    "kids",
+    "bedroom"
+  ],
+  "tags": [
+    "wall light",
+    "night light",
+    "cloud",
+    "children's lamp",
+    "white"
+  ],
+  "ikea": "UPPLYST",
+  "mount": "wall",
+  "wall_y": 1.3,
+  "light": "wall",
+  "electric": true,
+  "parts": [
+    {"shape": "sphere", "x": -0.2333, "z": 0.0, "w": 0.4667, "d": 1, "y": 0, "h": 0.6842, "color": "white", "glow": true},
+    {"shape": "sphere", "x": 0.2333, "z": 0.0, "w": 0.5, "d": 1, "y": 0, "h": 0.6316, "color": "white", "glow": true},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.5333, "d": 1, "y": 0.2632, "h": 0.7368, "color": "white", "glow": true},
+    {"shape": "box", "x": 0.0, "z": -0.4375, "w": 0.4, "d": 0.125, "y": 0.2632, "h": 0.3158, "color": "white"}
+  ]
+}

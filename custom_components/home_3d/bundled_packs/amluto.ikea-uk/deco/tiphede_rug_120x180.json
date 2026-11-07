@@ -1,0 +1,46 @@
+{
+  "id": "tiphede_rug_120x180",
+  "name": {
+    "en": "Rug, flatwoven 120x180 cm"
+  },
+  "size": [
+    1.2,
+    1.8,
+    0.01
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "bedroom",
+    "dining",
+    "kids",
+    "office",
+    "hall"
+  ],
+  "tags": [
+    "TIPHEDE",
+    "rug",
+    "carpet",
+    "flatwoven",
+    "natural",
+    "black",
+    "border",
+    "area rug"
+  ],
+  "family": "tiphede_rug",
+  "variant": {
+    "en": "120x180"
+  },
+  "ikea": "TIPHEDE",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.8, "color": "fabric"},
+    {"shape": "box", "x": 0.0, "z": -0.4611, "w": 0.9, "d": 0.0194, "y": 0, "h": 1, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.4278, "w": 0.9, "d": 0.0067, "y": 0, "h": 1, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4611, "w": 0.9, "d": 0.0194, "y": 0, "h": 1, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4278, "w": 0.9, "d": 0.0067, "y": 0, "h": 1, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": -0.4417, "z": 0.0, "w": 0.0292, "d": 0.9, "y": 0, "h": 1, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": -0.3917, "z": 0.0, "w": 0.01, "d": 0.9, "y": 0, "h": 1, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.4417, "z": 0.0, "w": 0.0292, "d": 0.9, "y": 0, "h": 1, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.3917, "z": 0.0, "w": 0.01, "d": 0.9, "y": 0, "h": 1, "color": "dark", "fix": "wh"}
+  ]
+}

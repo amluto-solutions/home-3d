@@ -1,0 +1,21 @@
+{
+  "id": "combi_boiler_floor",
+  "name": {"en": "Combi boiler (floor-standing)"},
+  "size": [0.6, 0.6, 0.9],
+  "group": "heating",
+  "tags": ["combi boiler", "boiler", "gas boiler", "central heating", "heating", "hot water", "worcester bosch", "vaillant", "baxi", "water heater", "floor standing boiler"],
+  "family": "combi_boiler",
+  "variant": {"en": "Floor-standing"},
+  "electric": true,
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": -0.05, "w": 1, "d": 0.9, "y": 0.04, "h": 0.94, "color": "white", "round": 0.05},
+    {"shape": "box", "x": -0.4, "z": -0.4, "w": 0.1, "d": 0.1, "y": 0, "h": 0.04, "color": "dark"},
+    {"shape": "box", "x": -0.4, "z": 0.4, "w": 0.1, "d": 0.1, "y": 0, "h": 0.04, "color": "dark"},
+    {"shape": "box", "x": 0.4, "z": -0.4, "w": 0.1, "d": 0.1, "y": 0, "h": 0.04, "color": "dark"},
+    {"shape": "box", "x": 0.4, "z": 0.4, "w": 0.1, "d": 0.1, "y": 0, "h": 0.04, "color": "dark"},
+    {"shape": "cyl", "x": 0.25, "z": -0.2, "w": 0.2, "d": 0.2, "y": 0.96, "h": 0.04, "color": "#e8e8e8"},
+    {"shape": "rbox", "x": 0, "z": 0.42, "w": 0.8, "d": 0.16, "y": 0.7, "h": 0.2, "color": "dark", "round": 0.1},
+    {"shape": "box", "x": -0.2, "z": 0.47, "w": 0.3, "d": 0.06, "y": 0.76, "h": 0.09, "color": "#3aa0ff", "glow": true},
+    {"shape": "cyl", "x": 0.2, "z": 0.47, "w": 0.1, "d": 0.06, "y": 0.75, "h": 0.1, "color": "metal", "axis": "z"}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "weight_bench_flat",
+  "name": {"en": "Weight bench"},
+  "size": [0.51, 1.16, 0.5],
+  "group": "sport",
+  "room": ["hobby", "garage", "bedroom", "living", "utility", "loft", "office"],
+  "tags": ["weight bench", "bench", "gym", "home gym", "weights", "strength", "fitness", "flat bench", "workout", "dumbbells"],
+  "family": "weight_bench",
+  "variant": {"en": "Flat"},
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 0.549, "d": 0.9914, "y": 0.84, "h": 0.16, "color": "#25262a", "round": 0.25},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.1569, "d": 0.0862, "y": 0, "h": 0.84, "color": "#2c2f33"},
+    {"shape": "box", "x": 0, "z": 0.431, "w": 0.9804, "d": 0.0517, "y": 0, "h": 0.1, "color": "#2c2f33"},
+    {"shape": "box", "x": 0, "z": -0.431, "w": 0.9804, "d": 0.0517, "y": 0, "h": 0.1, "color": "#2c2f33"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.1373, "d": 0.7759, "y": 0.72, "h": 0.12, "color": "#2c2f33"}
+  ]
+}

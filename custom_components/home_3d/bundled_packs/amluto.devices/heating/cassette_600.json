@@ -1,0 +1,124 @@
+{
+  "id": "cassette_600",
+  "name": {
+    "en": "Ceiling cassette air conditioner"
+  },
+  "size": [
+    0.62,
+    0.62,
+    0.306
+  ],
+  "group": "heating",
+  "room": [
+    "office",
+    "living",
+    "dining",
+    "hall",
+    "bedroom"
+  ],
+  "tags": [
+    "air conditioning",
+    "air con",
+    "aircon",
+    "cassette",
+    "ceiling cassette",
+    "cooling",
+    "climate",
+    "3.5 kw"
+  ],
+  "family": "air_conditioner",
+  "variant": {
+    "en": "Cassette 600 (3.5 kW)"
+  },
+  "electric": true,
+  "watts": 700,
+  "mount": "ceiling",
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.9274,
+      "d": 0.9274,
+      "y": 0.1503,
+      "h": 0.8497,
+      "color": "metal"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 0.1503,
+      "color": "white"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.55,
+      "d": 0.55,
+      "y": 0.0,
+      "h": 0.1569,
+      "color": "dark"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.46,
+      "w": 0.7,
+      "d": 0.0161,
+      "y": 0.0327,
+      "h": 0.098,
+      "color": "#dcdcdc"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": -0.46,
+      "w": 0.7,
+      "d": 0.0161,
+      "y": 0.0327,
+      "h": 0.098,
+      "color": "#dcdcdc"
+    },
+    {
+      "shape": "box",
+      "x": 0.46,
+      "z": 0.0,
+      "w": 0.0161,
+      "d": 0.7,
+      "y": 0.0327,
+      "h": 0.098,
+      "color": "#dcdcdc"
+    },
+    {
+      "shape": "box",
+      "x": -0.46,
+      "z": 0.0,
+      "w": 0.0161,
+      "d": 0.7,
+      "y": 0.0327,
+      "h": 0.098,
+      "color": "#dcdcdc"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    },
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 0.55,
+      "d": 0.55
+    }
+  ]
+}

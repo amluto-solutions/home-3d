@@ -1,0 +1,32 @@
+{
+  "id": "wall_brick_buff_180",
+  "name": {"en": "Brick garden wall, buff brick, full height"},
+  "size": [2.0, 0.215, 1.8],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["wall", "garden wall", "brick wall", "boundary", "brickwork", "masonry"],
+  "family": "wall_brick_buff",
+  "variant": {"en": "Full height (1.8 m)"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.995, "d": 0.9535, "y": 0, "h": 0.9722, "color": "#cdb98a"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0767, "h": 0.0067, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.16, "h": 0.0067, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.2433, "h": 0.0067, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.3267, "h": 0.0067, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.41, "h": 0.0067, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.4933, "h": 0.0067, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.5767, "h": 0.0067, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.66, "h": 0.0067, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.7433, "h": 0.0067, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8267, "h": 0.0067, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.91, "h": 0.0067, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9722, "h": 0.0278, "color": "#a0906c"},
+    {"shape": "box", "x": -0.42, "z": 0.0, "w": 0.165, "d": 1, "y": 0, "h": 1, "color": "#bdaa7f", "fix": "wd"},
+    {"shape": "box", "x": -0.42, "z": 0.0, "w": 0.165, "d": 1, "y": 0.9667, "h": 0.0333, "color": "#908261", "fix": "wdh"},
+    {"shape": "box", "x": 0.42, "z": 0.0, "w": 0.165, "d": 1, "y": 0, "h": 1, "color": "#bdaa7f", "fix": "wd"},
+    {"shape": "box", "x": 0.42, "z": 0.0, "w": 0.165, "d": 1, "y": 0.9667, "h": 0.0333, "color": "#908261", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

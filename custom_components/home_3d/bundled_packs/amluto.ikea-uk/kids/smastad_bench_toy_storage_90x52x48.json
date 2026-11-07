@@ -1,0 +1,40 @@
+{
+  "id": "smastad_bench_toy_storage_90x52x48",
+  "name": {
+    "en": "Bench with toy storage 90x52x48 cm"
+  },
+  "size": [
+    0.9,
+    0.52,
+    0.48
+  ],
+  "group": "kids",
+  "room": [
+    "kids",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "SMASTAD",
+    "toy box",
+    "storage bench",
+    "children's bench",
+    "white",
+    "grey-turquoise",
+    "pale pink"
+  ],
+  "family": "smastad_storage",
+  "variant": {
+    "en": "Bench 90x52"
+  },
+  "ikea": "SMÅSTAD",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0833, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.49, "z": 0.0, "w": 0.02, "d": 1, "y": 0.0833, "h": 0.7917, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.49, "z": 0.0, "w": 0.02, "d": 1, "y": 0.0833, "h": 0.7917, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.4827, "w": 1, "d": 0.0346, "y": 0.0833, "h": 0.7917, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4827, "w": 0.9556, "d": 0.0346, "y": 0.0833, "h": 0.7917, "color": "white", "fix": "d"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.875, "h": 0.125, "color": "body", "fix": "h", "round": 0.15},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.1556, "d": 0.0115, "y": 0.7083, "h": 0.0312, "color": "dark", "fix": "wdh"}
+  ]
+}

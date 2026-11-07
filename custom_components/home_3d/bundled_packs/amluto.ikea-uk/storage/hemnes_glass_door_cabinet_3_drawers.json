@@ -1,0 +1,52 @@
+{
+  "id": "hemnes_glass_door_cabinet_3_drawers",
+  "name": {
+    "en": "Glass-door cabinet with 3 drawers 90x197 cm"
+  },
+  "size": [
+    0.9,
+    0.37,
+    1.97
+  ],
+  "group": "storage",
+  "room": [
+    "living",
+    "dining"
+  ],
+  "tags": [
+    "display cabinet",
+    "vitrine",
+    "glass doors",
+    "cabinet",
+    "drawers",
+    "solid pine",
+    "white stain",
+    "black-brown",
+    "light brown",
+    "country",
+    "traditional"
+  ],
+  "ikea": "HEMNES",
+  "parts": [
+    {"shape": "box", "x": -0.4861, "z": 0.0, "w": 0.0278, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4861, "z": 0.0, "w": 0.0278, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9797, "h": 0.0203, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4459, "w": 0.9444, "d": 0.0541, "y": 0, "h": 0.0406, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4865, "w": 0.9444, "d": 0.027, "y": 0.0406, "h": 0.9391, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.3148, "z": 0.473, "w": 0.3081, "d": 0.0541, "y": 0.0431, "h": 0.0812, "color": "white"},
+    {"shape": "cyl", "x": -0.3148, "z": 0.5, "w": 0.0278, "d": 0.0649, "y": 0.0876, "h": 0.0127, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.473, "w": 0.3081, "d": 0.0541, "y": 0.0431, "h": 0.0812, "color": "white"},
+    {"shape": "cyl", "x": 0.0, "z": 0.5, "w": 0.0278, "d": 0.0649, "y": 0.0876, "h": 0.0127, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.3148, "z": 0.473, "w": 0.3081, "d": 0.0541, "y": 0.0431, "h": 0.0812, "color": "white"},
+    {"shape": "cyl", "x": 0.3148, "z": 0.5, "w": 0.0278, "d": 0.0649, "y": 0.0876, "h": 0.0127, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": -0.2361, "z": 0.473, "w": 0.4656, "d": 0.0541, "y": 0.1345, "h": 0.0305, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.2361, "z": 0.473, "w": 0.4656, "d": 0.0541, "y": 0.9492, "h": 0.0305, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.2361, "z": 0.4676, "w": 0.3944, "d": 0.0162, "y": 0.165, "h": 0.7843, "color": "glass"},
+    {"shape": "box", "x": 0.2361, "z": 0.473, "w": 0.4656, "d": 0.0541, "y": 0.1345, "h": 0.0305, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.2361, "z": 0.473, "w": 0.4656, "d": 0.0541, "y": 0.9492, "h": 0.0305, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.2361, "z": 0.4676, "w": 0.3944, "d": 0.0162, "y": 0.165, "h": 0.7843, "color": "glass"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9444, "d": 0.8919, "y": 0.3382, "h": 0.0091, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9444, "d": 0.8919, "y": 0.5419, "h": 0.0091, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9444, "d": 0.8919, "y": 0.7456, "h": 0.0091, "color": "white"}
+  ]
+}

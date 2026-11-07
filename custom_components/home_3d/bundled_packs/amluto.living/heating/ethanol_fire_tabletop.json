@@ -1,0 +1,50 @@
+{
+  "id": "ethanol_fire_tabletop",
+  "name": {
+    "en": "Tabletop ethanol fire"
+  },
+  "size": [
+    0.5,
+    0.14,
+    0.198
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "conservatory",
+    "office",
+    "garden"
+  ],
+  "tags": [
+    "ethanol fire",
+    "tabletop fire",
+    "bioethanol burner",
+    "table fire",
+    "flameless",
+    "patio",
+    "decor fire"
+  ],
+  "family": "ethanol_fire_tabletop",
+  "variant": {
+    "en": "50 cm"
+  },
+  "light": "table",
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0606, "color": "#2a2b2e"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.92, "d": 0.8571, "y": 0.0606, "h": 0.303, "color": "#c9c9c4"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.88, "d": 0.7143, "y": 0.3636, "h": 0.0303, "color": "dark"},
+    {"shape": "loft", "x": -0.36, "z": 0.0, "w": 0.1, "d": 0.2143, "y": 0.3939, "h": 0.4242, "color": "#ff8a2a", "tx": -0.36, "tz": 0.0, "tw": 0.015, "td": 0.0357, "glow": true},
+    {"shape": "loft", "x": -0.24, "z": 0.0, "w": 0.1, "d": 0.2143, "y": 0.3939, "h": 0.5152, "color": "#ffc24a", "tx": -0.24, "tz": 0.0, "tw": 0.015, "td": 0.0357, "glow": true},
+    {"shape": "loft", "x": -0.12, "z": 0.0, "w": 0.1, "d": 0.2143, "y": 0.3939, "h": 0.5817, "color": "#ff8a2a", "tx": -0.12, "tz": 0.0, "tw": 0.015, "td": 0.0357, "glow": true},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.1, "d": 0.2143, "y": 0.3939, "h": 0.6061, "color": "#ffc24a", "tx": 0.0, "tz": 0.0, "tw": 0.015, "td": 0.0357, "glow": true},
+    {"shape": "loft", "x": 0.12, "z": 0.0, "w": 0.1, "d": 0.2143, "y": 0.3939, "h": 0.5817, "color": "#ff8a2a", "tx": 0.12, "tz": 0.0, "tw": 0.015, "td": 0.0357, "glow": true},
+    {"shape": "loft", "x": 0.24, "z": 0.0, "w": 0.1, "d": 0.2143, "y": 0.3939, "h": 0.5152, "color": "#ffc24a", "tx": 0.24, "tz": 0.0, "tw": 0.015, "td": 0.0357, "glow": true},
+    {"shape": "loft", "x": 0.36, "z": 0.0, "w": 0.1, "d": 0.2143, "y": 0.3939, "h": 0.4242, "color": "#ff8a2a", "tx": 0.36, "tz": 0.0, "tw": 0.015, "td": 0.0357, "glow": true},
+    {"shape": "cyl", "x": -0.44, "z": -0.3571, "w": 0.04, "d": 0.1429, "y": 0, "h": 0.0606, "color": "dark"},
+    {"shape": "cyl", "x": 0.44, "z": 0.3571, "w": 0.04, "d": 0.1429, "y": 0, "h": 0.0606, "color": "dark"}
+  ]
+}

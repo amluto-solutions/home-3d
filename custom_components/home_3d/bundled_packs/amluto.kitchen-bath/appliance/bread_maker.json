@@ -1,0 +1,23 @@
+{
+  "id": "bread_maker",
+  "name": {"en": "Bread maker"},
+  "size": [0.25, 0.36, 0.3],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["bread maker", "breadmaker", "bread machine", "baking", "loaf"],
+  "family": "bread_maker",
+  "variant": {"en": "Standard"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.8667, "color": "white", "round": 0.15},
+    {"shape": "rbox", "x": 0.0, "z": -0.125, "w": 0.92, "d": 0.6944, "y": 0.85, "h": 0.1433, "color": "white", "round": 0.4, "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.1528, "w": 0.52, "d": 0.4167, "y": 0.99, "h": 0.01, "color": "glass", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.3542, "w": 0.84, "d": 0.2361, "y": 0.8333, "h": 0.05, "color": "#2a2c30", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.3194, "w": 0.32, "d": 0.0833, "y": 0.8833, "h": 0.0033, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.4861, "w": 0.68, "d": 0.0278, "y": 0.1, "h": 0.1, "color": "dark"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

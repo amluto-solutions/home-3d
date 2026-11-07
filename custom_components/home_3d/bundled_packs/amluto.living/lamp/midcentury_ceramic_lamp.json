@@ -1,0 +1,40 @@
+{
+  "id": "midcentury_ceramic_lamp",
+  "name": {
+    "en": "Mid-century ceramic lamp"
+  },
+  "size": [
+    0.28,
+    0.28,
+    0.58
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "hall",
+    "office"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "mid century lamp",
+    "retro",
+    "ceramic lamp",
+    "orange",
+    "1960s",
+    "vintage",
+    "bedside"
+  ],
+  "family": "midcentury_ceramic_lamp",
+  "variant": {
+    "en": "Amber glaze"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.7143, "d": 0.7143, "y": 0, "h": 0.5862, "color": "#d98a3a", "profile": [[0.0, 0.0], [0.5, 0.0], [0.9, 0.2059], [1.0, 0.4412], [0.7, 0.7353], [0.3, 0.9118], [0.2, 1.0], [0.0, 1.0]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1429, "d": 0.1429, "y": 0.5862, "h": 0.069, "color": "wood"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.6552, "h": 0.3448, "color": "#efe6d2", "tx": 0.0, "tz": 0.0, "tw": 0.5714, "td": 0.5714, "glow": true}
+  ]
+}

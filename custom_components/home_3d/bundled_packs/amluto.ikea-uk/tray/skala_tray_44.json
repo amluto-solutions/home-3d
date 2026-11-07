@@ -1,0 +1,32 @@
+{
+  "id": "skala_tray_44",
+  "name": {
+    "en": "Tray, birch 44 cm"
+  },
+  "size": [
+    0.44,
+    0.44,
+    0.03
+  ],
+  "group": "tray",
+  "room": [
+    "living",
+    "dining",
+    "kitchen",
+    "bedroom"
+  ],
+  "tags": [
+    "SKALA",
+    "tray",
+    "round tray",
+    "serving tray",
+    "birch",
+    "wood",
+    "ottoman tray"
+  ],
+  "ikea": "SKALA",
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "wood", "profile": [[0.9, 0], [1, 0.4], [1, 1], [0.95, 1], [0.9, 0.25]]}
+  ]
+}

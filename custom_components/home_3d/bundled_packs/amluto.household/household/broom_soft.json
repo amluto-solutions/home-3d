@@ -1,0 +1,17 @@
+{
+  "id": "broom_soft",
+  "name": {"en": "Broom"},
+  "size": [0.3, 0.16, 1.35],
+  "group": "household",
+  "room": ["utility", "kitchen", "hall", "garage", "garden"],
+  "tags": ["broom", "brush", "sweep", "cleaning", "sweeping brush", "sweeping", "soft bristles", "indoor", "brush"],
+  "family": "broom",
+  "variant": {"en": "Soft indoor broom"},
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0.2813, "w": 1, "d": 0.375, "y": 0, "h": 0.0815, "color": "#6a6f77"},
+    {"shape": "box", "x": 0, "z": 0.2813, "w": 1, "d": 0.2813, "y": 0.0741, "h": 0.037, "color": "#2a5ea8"},
+    {"shape": "box", "x": 0, "z": 0.2813, "w": 0.1667, "d": 0.3125, "y": 0.0815, "h": 0.037, "color": "#2a5ea8"},
+    {"shape": "loft", "x": 0, "z": 0.2813, "w": 0.0867, "d": 0.1625, "y": 0.0889, "h": 0.9111, "color": "#c4a06e", "tx": 0, "tz": -0.4062, "tw": 0.0867, "td": 0.1625},
+    {"shape": "box", "x": 0, "z": -0.375, "w": 0.1, "d": 0.1875, "y": 0.9667, "h": 0.0333, "color": "#2a2a2c"}
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "stockholm_2025_shelving_unit",
+  "name": {
+    "en": "Shelving unit, oak veneer 120x188 cm"
+  },
+  "size": [
+    1.2,
+    0.4,
+    1.88
+  ],
+  "group": "storage",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "office"
+  ],
+  "tags": [
+    "STOCKHOLM",
+    "bookcase",
+    "shelves",
+    "open shelving",
+    "oak veneer"
+  ],
+  "family": "stockholm_2025_shelving",
+  "variant": {
+    "en": "Shelving unit 120x188"
+  },
+  "ikea": "STOCKHOLM 2025",
+  "surface": false,
+  "parts": [
+    {"shape": "box", "x": -0.4917, "z": 0.0, "w": 0.0167, "d": 1, "y": 0, "h": 1, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4917, "z": 0.0, "w": 0.0167, "d": 1, "y": 0, "h": 1, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 1, "y": 0.9894, "h": 0.0106, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 0.9, "y": 0, "h": 0.0426, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.0167, "d": 0.975, "y": 0.0426, "h": 0.9468, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 0.975, "y": 0.2266, "h": 0.0106, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 0.975, "y": 0.416, "h": 0.0106, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 0.975, "y": 0.6053, "h": 0.0106, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 0.975, "y": 0.7947, "h": 0.0106, "color": "wood"}
+  ]
+}

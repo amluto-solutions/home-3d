@@ -1,0 +1,42 @@
+{
+  "id": "bissa_shoe_cabinet_3",
+  "name": {
+    "en": "Shoe cabinet with 3 compartments"
+  },
+  "size": [
+    0.49,
+    0.29,
+    1.35
+  ],
+  "group": "storage",
+  "room": [
+    "hall"
+  ],
+  "tags": [
+    "shoe storage",
+    "shoe rack",
+    "slim",
+    "tip-out",
+    "hallway",
+    "white",
+    "oak effect"
+  ],
+  "family": "bissa_shoe_cabinet",
+  "variant": {
+    "en": "3 compartments"
+  },
+  "ikea": "BISSA",
+  "parts": [
+    {"shape": "box", "x": -0.4837, "z": 0.0, "w": 0.0327, "d": 0.9655, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4837, "z": 0.0, "w": 0.0327, "d": 0.9655, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9655, "y": 0.9881, "h": 0.0119, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9347, "d": 0.9655, "y": 0, "h": 0.0119, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.469, "w": 0.9347, "d": 0.0276, "y": 0.0119, "h": 0.9763, "color": "white", "fix": "d"},
+    {"shape": "loft", "x": 0.0, "z": 0.4483, "w": 0.9918, "d": 0.069, "y": 0.0296, "h": 0.3205, "color": "white", "tz": 0.4138},
+    {"shape": "box", "x": 0.0, "z": 0.4897, "w": 0.2449, "d": 0.0414, "y": 0.3131, "h": 0.0148, "color": "dark", "fix": "wdh"},
+    {"shape": "loft", "x": 0.0, "z": 0.4483, "w": 0.9918, "d": 0.069, "y": 0.3531, "h": 0.3205, "color": "white", "tz": 0.4138},
+    {"shape": "box", "x": 0.0, "z": 0.4897, "w": 0.2449, "d": 0.0414, "y": 0.6365, "h": 0.0148, "color": "dark", "fix": "wdh"},
+    {"shape": "loft", "x": 0.0, "z": 0.4483, "w": 0.9918, "d": 0.069, "y": 0.6765, "h": 0.3205, "color": "white", "tz": 0.4138},
+    {"shape": "box", "x": 0.0, "z": 0.4897, "w": 0.2449, "d": 0.0414, "y": 0.96, "h": 0.0148, "color": "dark", "fix": "wdh"}
+  ]
+}

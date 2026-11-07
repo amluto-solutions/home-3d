@@ -1,0 +1,41 @@
+{
+  "id": "kleppstad_bed_frame_double",
+  "name": {
+    "en": "Bed frame with upholstered headboard, Double"
+  },
+  "size": [
+    1.41,
+    1.97,
+    0.86
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom"
+  ],
+  "tags": [
+    "bed",
+    "bed frame",
+    "upholstered headboard",
+    "double",
+    "white",
+    "beige"
+  ],
+  "family": "kleppstad_bed_frame",
+  "variant": {
+    "en": "Double · 135x190"
+  },
+  "ikea": "KLEPPSTAD",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.4746, "w": 0.9858, "d": 0.0406, "y": 0.2326, "h": 0.7674, "color": "fabric", "fix": "d", "round": 0.25},
+    {"shape": "box", "x": 0.0, "z": -0.4848, "w": 1, "d": 0.0203, "y": 0, "h": 0.2558, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4924, "w": 1, "d": 0.0152, "y": 0.093, "h": 0.2209, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.4894, "z": 0.0102, "w": 0.0213, "d": 0.9695, "y": 0.093, "h": 0.2209, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4894, "z": 0.0102, "w": 0.0213, "d": 0.9695, "y": 0.093, "h": 0.2209, "color": "white", "fix": "w"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0152, "w": 0.9574, "d": 0.9645, "y": 0.2791, "h": 0.2326, "color": "white", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": -0.3731, "w": 0.8138, "d": 0.1624, "y": 0.5116, "h": 0.1395, "color": "cushion", "round": 0.45},
+    {"shape": "box", "x": -0.484, "z": -0.4886, "w": 0.0319, "d": 0.0228, "y": 0, "h": 0.093, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.484, "z": 0.4886, "w": 0.0319, "d": 0.0228, "y": 0, "h": 0.093, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.484, "z": -0.4886, "w": 0.0319, "d": 0.0228, "y": 0, "h": 0.093, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.484, "z": 0.4886, "w": 0.0319, "d": 0.0228, "y": 0, "h": 0.093, "color": "white", "fix": "wdh"}
+  ]
+}

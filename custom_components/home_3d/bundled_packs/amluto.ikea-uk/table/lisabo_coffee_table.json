@@ -1,0 +1,34 @@
+{
+  "id": "lisabo_coffee_table",
+  "name": {
+    "en": "Coffee table, ash veneer 118x50 cm"
+  },
+  "size": [
+    1.18,
+    0.5,
+    0.5
+  ],
+  "group": "table",
+  "room": [
+    "living"
+  ],
+  "tags": [
+    "coffee table",
+    "scandi",
+    "splayed legs",
+    "shelf",
+    "ash veneer",
+    "black"
+  ],
+  "ikea": "LISABO",
+  "surface": true,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.95, "h": 0.05, "color": "wood", "fix": "h", "round": 0.4},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8644, "d": 0.8, "y": 0.83, "h": 0.12, "color": "wood", "fix": "h"},
+    {"shape": "loft", "x": -0.4492, "z": -0.4, "w": 0.0297, "d": 0.07, "y": 0, "h": 0.95, "color": "wood", "tx": -0.4153, "tz": -0.36, "tw": 0.0381, "td": 0.09, "fix": "wd"},
+    {"shape": "loft", "x": -0.4492, "z": 0.4, "w": 0.0297, "d": 0.07, "y": 0, "h": 0.95, "color": "wood", "tx": -0.4153, "tz": 0.36, "tw": 0.0381, "td": 0.09, "fix": "wd"},
+    {"shape": "loft", "x": 0.4492, "z": -0.4, "w": 0.0297, "d": 0.07, "y": 0, "h": 0.95, "color": "wood", "tx": 0.4153, "tz": -0.36, "tw": 0.0381, "td": 0.09, "fix": "wd"},
+    {"shape": "loft", "x": 0.4492, "z": 0.4, "w": 0.0297, "d": 0.07, "y": 0, "h": 0.95, "color": "wood", "tx": 0.4153, "tz": 0.36, "tw": 0.0381, "td": 0.09, "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7966, "d": 0.72, "y": 0.5, "h": 0.03, "color": "wood", "fix": "h"}
+  ]
+}

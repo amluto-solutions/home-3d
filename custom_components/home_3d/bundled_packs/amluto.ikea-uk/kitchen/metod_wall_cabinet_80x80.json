@@ -1,0 +1,44 @@
+{
+  "id": "metod_wall_cabinet_80x80",
+  "name": {
+    "en": "Wall cabinet with 2 doors 80x80 cm"
+  },
+  "size": [
+    0.8,
+    0.386,
+    0.8
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen",
+    "utility"
+  ],
+  "tags": [
+    "wall cupboard",
+    "wall unit",
+    "fitted kitchen",
+    "white",
+    "high-gloss white",
+    "anthracite",
+    "light grey",
+    "beige",
+    "grey-green",
+    "light green",
+    "oak effect",
+    "white wood effect"
+  ],
+  "family": "metod_wall_cabinet",
+  "variant": {
+    "en": "80x80"
+  },
+  "ikea": "METOD",
+  "mount": "wall",
+  "wall_y": 1.4,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0207, "w": 1, "d": 0.9585, "y": 0, "h": 1, "color": "white"},
+    {"shape": "box", "x": -0.25, "z": 0.4819, "w": 0.495, "d": 0.0466, "y": 0, "h": 0.995, "color": "body", "fix": "d"},
+    {"shape": "box", "x": -0.05, "z": 0.5, "w": 0.015, "d": 0.057, "y": 0.05, "h": 0.2, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.25, "z": 0.4819, "w": 0.495, "d": 0.0466, "y": 0, "h": 0.995, "color": "body", "fix": "d"},
+    {"shape": "box", "x": 0.05, "z": 0.5, "w": 0.015, "d": 0.057, "y": 0.05, "h": 0.2, "color": "metal", "fix": "wdh"}
+  ]
+}

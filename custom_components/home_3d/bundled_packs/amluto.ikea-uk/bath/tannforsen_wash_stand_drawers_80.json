@@ -1,0 +1,39 @@
+{
+  "id": "tannforsen_wash_stand_drawers_80",
+  "name": {
+    "en": "Wash-stand with drawers 80x48 cm"
+  },
+  "size": [
+    0.8,
+    0.48,
+    0.63
+  ],
+  "group": "bath",
+  "room": [
+    "bath",
+    "utility"
+  ],
+  "tags": [
+    "TANNFORSEN",
+    "wash-stand",
+    "vanity unit",
+    "basin cabinet",
+    "bathroom cabinet",
+    "no basin",
+    "white"
+  ],
+  "family": "tannforsen_wash_stand",
+  "variant": {
+    "en": "Drawers 80"
+  },
+  "ikea": "TÄNNFORSEN",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0208, "w": 1, "d": 0.9583, "y": 0.1111, "h": 0.8889, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": -0.0417, "w": 0.925, "d": 0.7917, "y": 0, "h": 0.1111, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4979, "w": 0.995, "d": 0.0375, "y": 0.6032, "h": 0.3746, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.15, "d": 0.0458, "y": 0.919, "h": 0.019, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4979, "w": 0.995, "d": 0.0375, "y": 0.127, "h": 0.4381, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.15, "d": 0.0458, "y": 0.5063, "h": 0.019, "color": "metal", "fix": "wdh"}
+  ]
+}

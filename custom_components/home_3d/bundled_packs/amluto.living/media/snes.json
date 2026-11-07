@@ -1,0 +1,23 @@
+{
+  "id": "snes",
+  "name": {"en": "Super Nintendo (SNES)"},
+  "size": [0.254, 0.2032, 0.068],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["snes", "super nintendo", "super famicom", "nintendo", "gaming", "console", "retro", "sns-001"],
+  "family": "snes",
+  "variant": {"en": "Console"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 10,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.6, "color": "#c9cbd0", "round": 0.12},
+    {"shape": "box", "x": 0.0, "z": -0.12, "w": 0.38, "d": 0.45, "y": 0.6, "h": 0.4, "color": "#9a9ea6"},
+    {"shape": "box", "x": -0.28, "z": 0.3, "w": 0.12, "d": 0.12, "y": 0.6, "h": 0.12, "color": "#6b4aa0"},
+    {"shape": "box", "x": 0.26, "z": 0.3, "w": 0.1, "d": 0.12, "y": 0.6, "h": 0.12, "color": "#6b4aa0"},
+    {"shape": "box", "x": 0.0, "z": 0.3, "w": 0.2, "d": 0.12, "y": 0.6, "h": 0.06, "color": "#101114"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

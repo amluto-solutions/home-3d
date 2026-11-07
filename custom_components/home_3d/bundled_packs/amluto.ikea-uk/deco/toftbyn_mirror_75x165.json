@@ -1,0 +1,30 @@
+{
+  "id": "toftbyn_mirror_75x165",
+  "name": {
+    "en": "Full-length mirror, framed 75x165 cm"
+  },
+  "size": [
+    0.75,
+    0.12,
+    1.65
+  ],
+  "group": "deco",
+  "room": [
+    "bedroom",
+    "hall",
+    "kids"
+  ],
+  "tags": [
+    "floor mirror",
+    "full-length mirror",
+    "leaning mirror",
+    "wall mirror",
+    "black",
+    "white"
+  ],
+  "ikea": "TOFTBYN",
+  "parts": [
+    {"shape": "loft", "x": 0.0, "z": 0.3333, "w": 1, "d": 0.3333, "y": 0, "h": 1, "color": "dark", "tx": 0.0, "tz": -0.3333, "tw": 1, "td": 0.3333},
+    {"shape": "loft", "x": 0.0, "z": 0.4712, "w": 0.92, "d": 0.0667, "y": 0.0182, "h": 0.9636, "color": "glass", "tx": 0.0, "tz": -0.1712, "tw": 0.92, "td": 0.0667}
+  ]
+}

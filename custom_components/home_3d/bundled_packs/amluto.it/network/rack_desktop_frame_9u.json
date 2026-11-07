@@ -1,0 +1,26 @@
+{
+  "id": "rack_desktop_frame_9u",
+  "name": {"en": "Desktop rack frame 19-inch 9U"},
+  "size": [0.504, 0.292, 0.451],
+  "group": "network",
+  "room": ["office", "hobby", "loft"],
+  "tags": ["19 inch", "desktop rack", "open frame", "2 post", "rack"],
+  "family": "rack_desktop_frame",
+  "variant": {"en": "9U"},
+  "mount": "surface",
+  "rack_frame": {"u": 9, "form": "frame2"},
+  "parts": [
+    {"shape": "box", "x": -0.47365, "z": -0.02565, "w": 0.0527, "d": 0.2055, "y": 0, "h": 1, "color": "dark", "edges": "faint", "fix": "w"},
+    {"shape": "box", "x": 0.47365, "z": -0.02565, "w": 0.0527, "d": 0.2055, "y": 0, "h": 1, "color": "dark", "edges": "faint", "fix": "w"},
+    {"shape": "box", "x": -0.46305, "z": 0.10275, "w": 0.0315, "d": 0.0513, "y": 0.0565, "h": 0.887, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": 0.46305, "z": 0.10275, "w": 0.0315, "d": 0.0513, "y": 0.0565, "h": 0.887, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": -0.4538, "z": 0, "w": 0.0924, "d": 1, "y": 0, "h": 0.1109, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0.4538, "z": 0, "w": 0.0924, "d": 1, "y": 0, "h": 0.1109, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.02565, "w": 0.8946, "d": 0.2055, "y": 0.9113, "h": 0.0887, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.02565, "w": 0.8946, "d": 0.2055, "y": 0, "h": 0.1109, "color": "dark", "edges": "faint", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.1284, "x2": 0.5, "z2": 0.1284}
+  ]
+}

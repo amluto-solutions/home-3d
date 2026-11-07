@@ -1,0 +1,25 @@
+{
+  "id": "shaker_wall_unit_600_900",
+  "name": {"en": "Shaker wall unit 600 × 900"},
+  "size": [0.6, 0.33, 0.9],
+  "group": "kitchen",
+  "room": ["kitchen", "utility"],
+  "tags": ["shaker", "kitchen cupboard", "fitted kitchen", "cabinet", "wall cupboard", "door"],
+  "family": "shaker_wall_unit",
+  "variant": {"en": "600 × 900"},
+  "mount": "wall",
+  "wall_y": 1.45,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0636, "w": 1.0, "d": 0.8727, "y": 0.0, "h": 1.0, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4, "w": 0.99, "d": 0.0545, "y": 0.0033, "h": 0.9933, "color": "body"},
+    {"shape": "box", "x": -0.445, "z": 0.4364, "w": 0.1, "d": 0.0182, "y": 0.0033, "h": 0.9933, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.445, "z": 0.4364, "w": 0.1, "d": 0.0182, "y": 0.0033, "h": 0.9933, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.4364, "w": 0.79, "d": 0.0182, "y": 0.0033, "h": 0.0667, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4364, "w": 0.79, "d": 0.0182, "y": 0.93, "h": 0.0667, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.445, "z": 0.4727, "w": 0.02, "d": 0.0545, "y": 0.0589, "h": 0.1444, "color": "metal", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.5, "z1": -0.5, "x2": 0.5, "z2": 0.5}
+  ]
+}

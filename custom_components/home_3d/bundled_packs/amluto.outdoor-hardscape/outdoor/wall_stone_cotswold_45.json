@@ -1,0 +1,26 @@
+{
+  "id": "wall_stone_cotswold_45",
+  "name": {"en": "Stone garden wall, Cotswold stone, low"},
+  "size": [2.0, 0.3, 0.45],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["wall", "garden wall", "stone wall", "boundary", "masonry", "dressed stone"],
+  "family": "wall_stone_cotswold",
+  "variant": {"en": "Low (0.45 m)"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.98, "d": 0.8667, "y": 0, "h": 0.8667, "color": "#796c53"},
+    {"shape": "rbox", "x": -0.3625, "z": 0.0, "w": 0.269, "d": 1, "y": 0.0133, "h": 0.4067, "color": "#c7b289", "round": 0.12},
+    {"shape": "rbox", "x": -0.1125, "z": 0.0, "w": 0.219, "d": 1, "y": 0.0133, "h": 0.4067, "color": "#cbb68c", "round": 0.12},
+    {"shape": "rbox", "x": 0.125, "z": 0.0, "w": 0.244, "d": 1, "y": 0.0133, "h": 0.4067, "color": "#c6b188", "round": 0.12},
+    {"shape": "rbox", "x": 0.375, "z": 0.0, "w": 0.244, "d": 1, "y": 0.0133, "h": 0.4067, "color": "#d3bd91", "round": 0.12},
+    {"shape": "rbox", "x": -0.425, "z": 0.0, "w": 0.144, "d": 1, "y": 0.4467, "h": 0.4067, "color": "#d7c194", "round": 0.12},
+    {"shape": "rbox", "x": -0.2125, "z": 0.0, "w": 0.269, "d": 1, "y": 0.4467, "h": 0.4067, "color": "#d1bb8f", "round": 0.12},
+    {"shape": "rbox", "x": 0.05, "z": 0.0, "w": 0.244, "d": 1, "y": 0.4467, "h": 0.4067, "color": "#b29f7a", "round": 0.12},
+    {"shape": "rbox", "x": 0.2875, "z": 0.0, "w": 0.219, "d": 1, "y": 0.4467, "h": 0.4067, "color": "#cbb68c", "round": 0.12},
+    {"shape": "rbox", "x": 0.45, "z": 0.0, "w": 0.094, "d": 1, "y": 0.4467, "h": 0.4067, "color": "#b7a47e", "round": 0.12},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8667, "h": 0.1333, "color": "#ab9975"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

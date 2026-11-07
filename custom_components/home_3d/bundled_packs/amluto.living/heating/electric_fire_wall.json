@@ -1,0 +1,49 @@
+{
+  "id": "electric_fire_wall",
+  "name": {
+    "en": "Wall-mounted electric fire"
+  },
+  "size": [
+    1.0,
+    0.12,
+    0.45
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "conservatory",
+    "office"
+  ],
+  "tags": [
+    "electric fire",
+    "wall fire",
+    "led flame",
+    "heater",
+    "fireplace",
+    "flame effect",
+    "log effect",
+    "smart fire"
+  ],
+  "family": "electric_fire_wall",
+  "variant": {
+    "en": "100 cm"
+  },
+  "light": "wall",
+  "mount": "wall",
+  "wall_y": 0.9,
+  "electric": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4167, "w": 1, "d": 0.1667, "y": 0, "h": 1, "color": "#121214"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1.0, "y": 0, "h": 0.1778, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1.0, "y": 0.8889, "h": 0.1111, "color": "dark"},
+    {"shape": "box", "x": -0.485, "z": 0.0, "w": 0.03, "d": 1.0, "y": 0.1778, "h": 0.7111, "color": "dark"},
+    {"shape": "box", "x": 0.485, "z": 0.0, "w": 0.03, "d": 1.0, "y": 0.1778, "h": 0.7111, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.6667, "y": 0.1778, "h": 0.0889, "color": "#2b1a12"},
+    {"shape": "box", "x": 0.0, "z": -0.0833, "w": 0.84, "d": 0.25, "y": 0.2667, "h": 0.2667, "color": "#ff8a2a", "glow": true},
+    {"shape": "box", "x": 0.0, "z": -0.1667, "w": 0.8, "d": 0.1667, "y": 0.5333, "h": 0.3111, "color": "#ffc24a", "glow": true},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.5, "d": 0.3333, "y": 0.2222, "h": 0.1111, "color": "#6a3b22"}
+  ]
+}

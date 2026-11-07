@@ -1,0 +1,27 @@
+{
+  "id": "rack_firewall_1u",
+  "name": {"en": "Rack firewall 1U (pfSense / OPNsense)"},
+  "size": [0.4826, 0.3, 0.0437],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "surface",
+  "tags": ["firewall", "router", "pfsense", "opnsense", "gateway", "1u", "rack mount", "19 inch", "rack"],
+  "family": "rack_firewall",
+  "variant": {"en": "Firewall 1U"},
+  "electric": true,
+  "watts": 40,
+  "rack": {"u": 1},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0017, "w": 0.9163, "d": 0.9967, "y": 0.0, "h": 1.0, "color": "#3b4048", "edges": "faint"},
+    {"shape": "box", "x": -0.4793, "z": 0.4933, "w": 0.0414, "d": 0.0133, "y": 0.0, "h": 1.0, "color": "#3b4048"},
+    {"shape": "box", "x": 0.4793, "z": 0.4933, "w": 0.0414, "d": 0.0133, "y": 0.0, "h": 1.0, "color": "#3b4048"},
+    {"shape": "box", "x": -0.3757, "z": 0.4933, "w": 0.1326, "d": 0.0133, "y": 0.3627, "h": 0.2746, "color": "#0a0b0d"},
+    {"shape": "box", "x": -0.2659, "z": 0.4933, "w": 0.0663, "d": 0.0133, "y": 0.3627, "h": 0.2746, "color": "#0a0b0d"},
+    {"shape": "box", "x": -0.1933, "z": 0.4933, "w": 0.029, "d": 0.0133, "y": 0.397, "h": 0.2059, "color": "metal"},
+    {"shape": "box", "x": -0.1581, "z": 0.4933, "w": 0.029, "d": 0.0133, "y": 0.397, "h": 0.2059, "color": "metal"},
+    {"shape": "box", "x": 0.4337, "z": 0.4933, "w": 0.0083, "d": 0.0133, "y": 0.8169, "h": 0.0915, "color": "accent"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

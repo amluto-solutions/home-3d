@@ -1,0 +1,23 @@
+{
+  "id": "house_lamp_tall",
+  "name": {"en": "House-shaped lamp (tall)"},
+  "size": [0.16, 0.12, 0.32],
+  "group": "lamp",
+  "room": ["kids", "bedroom", "living"],
+  "tags": ["house lamp", "night light", "kids lamp", "nursery lamp", "little house", "table lamp"],
+  "family": "house_lamp",
+  "variant": {"en": "Tall"},
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.875, "d": 0.8333, "y": 0.0, "h": 0.75, "color": "white"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.75, "h": 0.25, "color": "wood", "tw": 0.0125, "td": 1},
+    {"shape": "box", "x": 0.22, "z": -0.1, "w": 0.1375, "d": 0.1833, "y": 0.7812, "h": 0.1562, "color": "wood"},
+    {"shape": "box", "x": -0.18, "z": 0.4167, "w": 0.2, "d": 0.0333, "y": 0.0, "h": 0.1719, "color": "white", "glow": true},
+    {"shape": "box", "x": 0.18, "z": 0.4167, "w": 0.1875, "d": 0.0333, "y": 0.1156, "h": 0.1, "color": "white", "glow": true},
+    {"shape": "box", "x": 0.4375, "z": 0.0, "w": 0.025, "d": 0.25, "y": 0.1094, "h": 0.0938, "color": "white", "glow": true},
+    {"shape": "box", "x": -0.18, "z": 0.4167, "w": 0.1875, "d": 0.0333, "y": 0.4688, "h": 0.1, "color": "white", "glow": true},
+    {"shape": "box", "x": 0.18, "z": 0.4167, "w": 0.1875, "d": 0.0333, "y": 0.4688, "h": 0.1, "color": "white", "glow": true},
+    {"shape": "box", "x": 0.4375, "z": 0.0, "w": 0.025, "d": 0.25, "y": 0.5, "h": 0.0938, "color": "white", "glow": true}
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "vittsjo_nest_of_tables",
+  "name": {
+    "en": "Nest of 2 tables, metal and glass"
+  },
+  "size": [
+    0.9,
+    0.5,
+    0.5
+  ],
+  "group": "table",
+  "room": [
+    "living",
+    "bedroom"
+  ],
+  "tags": [
+    "VITTSJO",
+    "nest of tables",
+    "side table",
+    "glass top",
+    "metal",
+    "black-brown"
+  ],
+  "family": "vittsjo_table",
+  "variant": {
+    "en": "Nest of 2"
+  },
+  "ikea": "VITTSJÖ",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": -0.2222, "z": 0.0, "w": 0.5556, "d": 1, "y": 0.976, "h": 0.024, "color": "glass", "fix": "h"},
+    {"shape": "box", "x": -0.4911, "z": -0.484, "w": 0.0178, "d": 0.032, "y": 0, "h": 1, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.4911, "z": 0.484, "w": 0.0178, "d": 0.032, "y": 0, "h": 1, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0467, "z": -0.484, "w": 0.0178, "d": 0.032, "y": 0, "h": 1, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0467, "z": 0.484, "w": 0.0178, "d": 0.032, "y": 0, "h": 1, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.2222, "z": 0.0, "w": 0.5556, "d": 1, "y": 0.94, "h": 0.036, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0.2778, "z": -0.08, "w": 0.4444, "d": 0.84, "y": 0.876, "h": 0.024, "color": "glass", "fix": "h"},
+    {"shape": "box", "x": 0.0644, "z": -0.484, "w": 0.0178, "d": 0.032, "y": 0, "h": 0.9, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0644, "z": 0.324, "w": 0.0178, "d": 0.032, "y": 0, "h": 0.9, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.4911, "z": -0.484, "w": 0.0178, "d": 0.032, "y": 0, "h": 0.9, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.4911, "z": 0.324, "w": 0.0178, "d": 0.032, "y": 0, "h": 0.9, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.2778, "z": -0.08, "w": 0.4444, "d": 0.84, "y": 0.84, "h": 0.036, "color": "metal", "fix": "h"}
+  ]
+}

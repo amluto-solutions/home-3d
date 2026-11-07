@@ -1,0 +1,37 @@
+{
+  "id": "lettan_mirror_100x95",
+  "name": {
+    "en": "Frameless mirror 100x95 cm"
+  },
+  "size": [
+    1.0,
+    0.01,
+    0.95
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "hall",
+    "bedroom",
+    "bath",
+    "dining"
+  ],
+  "tags": [
+    "mirror",
+    "wall mirror",
+    "frameless",
+    "plain mirror",
+    "silver"
+  ],
+  "family": "lettan_mirror",
+  "variant": {
+    "en": "100x95"
+  },
+  "ikea": "LETTAN",
+  "mount": "wall",
+  "wall_y": 1.02,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.3, "w": 1, "d": 0.4, "y": 0, "h": 1, "color": "metal", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.992, "d": 0.6, "y": 0.0042, "h": 0.9916, "color": "glass", "fix": "d"}
+  ]
+}

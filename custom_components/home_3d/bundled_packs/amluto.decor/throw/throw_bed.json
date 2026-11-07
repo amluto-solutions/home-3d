@@ -1,0 +1,18 @@
+{
+  "id": "throw_bed",
+  "name": {"en": "Bed throw"},
+  "size": [1.6, 0.5, 0.025],
+  "group": "throw",
+  "room": ["bedroom"],
+  "tags": ["throw", "bed runner", "bed throw", "blanket", "fringed", "bedspread"],
+  "family": "throw",
+  "variant": {"en": "Across a bed"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9375, "d": 0.98, "y": 0.0, "h": 0.88, "color": "#5b6b7a"},
+    {"shape": "box", "x": -0.375, "z": 0.0, "w": 0.0187, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#d8cfbf", "fix": "w"},
+    {"shape": "box", "x": 0.375, "z": 0.0, "w": 0.0187, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#d8cfbf", "fix": "w"},
+    {"shape": "box", "x": -0.4844, "z": 0.0, "w": 0.0312, "d": 0.96, "y": 0.0, "h": 0.48, "color": "#5b6b7a"},
+    {"shape": "box", "x": 0.4844, "z": 0.0, "w": 0.0312, "d": 0.96, "y": 0.0, "h": 0.48, "color": "#5b6b7a"}
+  ]
+}

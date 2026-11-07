@@ -1,0 +1,28 @@
+{
+  "id": "rack_nas_1u_4bay",
+  "name": {"en": "Rack NAS 4-bay 1U"},
+  "size": [0.4826, 0.3275, 0.0437],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "surface",
+  "tags": ["nas", "rack nas", "synology", "storage", "4 bay", "1u", "rack mount", "19 inch", "rack"],
+  "family": "rack_nas",
+  "variant": {"en": "NAS 4-bay 1U"},
+  "electric": true,
+  "watts": 38,
+  "rack": {"u": 1},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0015, "w": 0.9163, "d": 0.9969, "y": 0.0, "h": 1.0, "color": "#3b4048", "edges": "faint"},
+    {"shape": "box", "x": -0.4793, "z": 0.4939, "w": 0.0414, "d": 0.0122, "y": 0.0, "h": 1.0, "color": "#3b4048"},
+    {"shape": "box", "x": 0.4793, "z": 0.4939, "w": 0.0414, "d": 0.0122, "y": 0.0, "h": 1.0, "color": "#3b4048"},
+    {"shape": "box", "x": -0.3464, "z": 0.4939, "w": 0.183, "d": 0.0122, "y": 0.1373, "h": 0.7254, "color": "#2a2d33"},
+    {"shape": "box", "x": -0.1572, "z": 0.4939, "w": 0.183, "d": 0.0122, "y": 0.1373, "h": 0.7254, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.032, "z": 0.4939, "w": 0.183, "d": 0.0122, "y": 0.1373, "h": 0.7254, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.2212, "z": 0.4939, "w": 0.183, "d": 0.0122, "y": 0.1373, "h": 0.7254, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.4254, "z": 0.4939, "w": 0.0083, "d": 0.0122, "y": 0.6796, "h": 0.0915, "color": "accent"},
+    {"shape": "box", "x": 0.4254, "z": 0.4939, "w": 0.0207, "d": 0.0122, "y": 0.1373, "h": 0.2288, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "ironing_board_folded",
+  "name": {"en": "Ironing board, folded"},
+  "size": [0.38, 0.08, 1.32],
+  "group": "household",
+  "room": ["utility", "bedroom", "kitchen"],
+  "tags": ["ironing board", "ironing", "iron", "laundry", "clothes"],
+  "family": "ironing_board",
+  "variant": {"en": "Folded"},
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.3125, "w": 1.0, "d": 0.375, "y": 0.0758, "h": 0.7348, "color": "fabric", "round": 0.4},
+    {"shape": "lathe", "x": 0.0, "z": 0.3125, "w": 1.0, "d": 0.375, "y": 0.6212, "h": 0.3788, "color": "fabric", "profile": [[0, 0], [1, 0], [1, 1], [0, 1]]},
+    {"shape": "box", "x": -0.4211, "z": -0.1875, "w": 0.0526, "d": 0.625, "y": 0.0, "h": 0.8485, "color": "metal"},
+    {"shape": "box", "x": 0.4211, "z": -0.1875, "w": 0.0526, "d": 0.625, "y": 0.0, "h": 0.8485, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

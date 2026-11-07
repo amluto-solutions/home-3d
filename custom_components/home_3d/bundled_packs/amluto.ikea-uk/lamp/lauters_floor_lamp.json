@@ -1,0 +1,38 @@
+{
+  "id": "lauters_floor_lamp",
+  "name": {
+    "en": "Tripod floor lamp, ash"
+  },
+  "size": [
+    0.62,
+    0.62,
+    1.51
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "floor lamp",
+    "tripod",
+    "standard lamp",
+    "ash",
+    "wood",
+    "white shade",
+    "drum shade",
+    "adjustable height"
+  ],
+  "ikea": "LAUTERS",
+  "light": "floor",
+  "electric": true,
+  "parts": [
+    {"shape": "loft", "x": 0.0, "z": 0.4516, "w": 0.0403, "d": 0.0403, "y": 0, "h": 0.6623, "color": "wood", "tx": 0.0, "tz": 0.0194, "tw": 0.0323, "td": 0.0323},
+    {"shape": "loft", "x": -0.3911, "z": -0.2258, "w": 0.0403, "d": 0.0403, "y": 0, "h": 0.6623, "color": "wood", "tx": -0.0168, "tz": -0.0097, "tw": 0.0323, "td": 0.0323},
+    {"shape": "loft", "x": 0.3911, "z": -0.2258, "w": 0.0403, "d": 0.0403, "y": 0, "h": 0.6623, "color": "wood", "tx": 0.0168, "tz": -0.0097, "tw": 0.0323, "td": 0.0323},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0484, "d": 0.0484, "y": 0.649, "h": 0.1656, "color": "wood", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.5968, "d": 0.5968, "y": 0.8013, "h": 0.1987, "color": "white", "edges": "faint", "profile": [[1, 0], [0.98, 1], [0.94, 1], [0.96, 0]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4839, "d": 0.4839, "y": 0.8079, "h": 0.0066, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

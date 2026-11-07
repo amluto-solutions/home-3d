@@ -1,0 +1,39 @@
+{
+  "id": "moon_lamp",
+  "name": {
+    "en": "Moon lamp"
+  },
+  "size": [
+    0.15,
+    0.15,
+    0.185
+  ],
+  "group": "lamp",
+  "room": [
+    "kids",
+    "bedroom",
+    "living"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "moon lamp",
+    "lunar lamp",
+    "night light",
+    "globe lamp",
+    "3d print",
+    "kids",
+    "planet"
+  ],
+  "family": "moon_lamp",
+  "variant": {
+    "en": "15 cm"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.6667, "d": 0.6667, "y": 0, "h": 0.1081, "color": "wood"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.3333, "d": 0.3333, "y": 0.1081, "h": 0.0811, "color": "wood"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.1892, "h": 0.8108, "color": "#f2e3a8", "glow": true}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "steam_deck",
+  "name": {"en": "Steam Deck"},
+  "size": [0.298, 0.117, 0.049],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["steam deck", "steam deck oled", "valve", "steam", "handheld", "gaming", "pc handheld", "console"],
+  "family": "steam_deck",
+  "variant": {"en": "Handheld"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#2a2c31", "round": 0.3},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.58, "d": 0.85, "y": 0.97, "h": 0.03, "color": "glass", "edges": "faint"},
+    {"shape": "cyl", "x": -0.42, "z": -0.1, "w": 0.0604, "d": 0.1538, "y": 0.97, "h": 0.03, "color": "#101114"},
+    {"shape": "cyl", "x": 0.42, "z": -0.1, "w": 0.0604, "d": 0.1538, "y": 0.97, "h": 0.03, "color": "#101114"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

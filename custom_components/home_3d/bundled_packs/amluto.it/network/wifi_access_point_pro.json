@@ -1,0 +1,16 @@
+{
+  "id": "wifi_access_point_pro",
+  "name": {"en": "Wi-Fi access point (ceiling, Pro)"},
+  "size": [0.197,0.197,0.035],
+  "group": "network",
+  "tags": ["u6 pro", "pro", "wifi 6", "access point", "wifi", "wireless", "unifi", "ap", "mesh", "u6", "ceiling ap"],
+  "family": "wifi_access_point",
+  "variant": {"en": "Ceiling, Pro"},
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "lathe", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.0758, "h": 0.9242, "color": "white", "profile": [[0,0],[0.55,0],[0.86,0.12],[1,0.55],[0.97,1],[0,1]]},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.42, "d": 0.42, "y": 0.0242, "h": 0.0515, "color": "#4aa3ff"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.36, "d": 0.36, "y": 0, "h": 0.0758, "color": "white"}
+  ]
+}

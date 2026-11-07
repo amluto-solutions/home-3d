@@ -1,0 +1,38 @@
+{
+  "id": "morbylanga_table_round_145",
+  "name": {
+    "en": "Round table 145 cm"
+  },
+  "size": [
+    1.45,
+    1.45,
+    0.75
+  ],
+  "group": "table",
+  "room": [
+    "dining",
+    "kitchen"
+  ],
+  "tags": [
+    "dining table",
+    "solid look",
+    "oak veneer",
+    "brown stained",
+    "6 seats"
+  ],
+  "family": "morbylanga_table",
+  "variant": {
+    "en": "Round 145"
+  },
+  "ikea": "MÖRBYLÅNGA",
+  "surface": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9467, "h": 0.0533, "color": "wood", "fix": "h"},
+    {"shape": "loft", "x": -0.2276, "z": -0.2276, "w": 0.0414, "d": 0.0414, "y": 0, "h": 0.9467, "color": "wood", "tx": -0.2069, "tz": -0.2069, "tw": 0.0483, "td": 0.0483, "fix": "wd"},
+    {"shape": "loft", "x": -0.2276, "z": 0.2276, "w": 0.0414, "d": 0.0414, "y": 0, "h": 0.9467, "color": "wood", "tx": -0.2069, "tz": 0.2069, "tw": 0.0483, "td": 0.0483, "fix": "wd"},
+    {"shape": "loft", "x": 0.2276, "z": -0.2276, "w": 0.0414, "d": 0.0414, "y": 0, "h": 0.9467, "color": "wood", "tx": 0.2069, "tz": -0.2069, "tw": 0.0483, "td": 0.0483, "fix": "wd"},
+    {"shape": "loft", "x": 0.2276, "z": 0.2276, "w": 0.0414, "d": 0.0414, "y": 0, "h": 0.9467, "color": "wood", "tx": 0.2069, "tz": 0.2069, "tw": 0.0483, "td": 0.0483, "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.5862, "d": 0.0276, "y": 0.84, "h": 0.1067, "color": "wood", "rot": 45, "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.5862, "d": 0.0276, "y": 0.84, "h": 0.1067, "color": "wood", "rot": -45, "fix": "h"}
+  ]
+}

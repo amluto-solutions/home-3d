@@ -1,0 +1,45 @@
+{
+  "id": "roedalm_frame_30x40",
+  "name": {
+    "en": "Wood-effect picture frame 30x40 cm"
+  },
+  "size": [
+    0.32,
+    0.03,
+    0.42
+  ],
+  "group": "frame",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "office"
+  ],
+  "tags": [
+    "picture frame",
+    "photo frame",
+    "birch effect",
+    "oak effect",
+    "walnut effect",
+    "black",
+    "white",
+    "mount"
+  ],
+  "family": "roedalm_frame",
+  "variant": {
+    "en": "30x40"
+  },
+  "ikea": "RÖDALM",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4333, "w": 1, "d": 0.1333, "y": 0, "h": 1, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9571, "h": 0.0429, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0429, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4719, "z": 0.0, "w": 0.0562, "d": 1, "y": 0.0429, "h": 0.9143, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4719, "z": 0.0, "w": 0.0562, "d": 1, "y": 0.0429, "h": 0.9143, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.35, "w": 0.8875, "d": 0.1, "y": 0.0429, "h": 0.9143, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4167, "w": 0.7, "d": 0.0667, "y": 0.1143, "h": 0.7714, "color": "#a9b8b4", "fix": "d"}
+  ]
+}

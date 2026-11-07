@@ -1,0 +1,27 @@
+{
+  "id": "projector",
+  "name": {"en": "Projector"},
+  "size": [0.33, 0.27, 0.12],
+  "group": "media",
+  "room": ["living", "loft", "bedroom", "office", "kids"],
+  "tags": ["projector", "beamer", "home cinema", "movie", "4k projector", "short throw"],
+  "family": "projector",
+  "variant": {"en": "Home cinema"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": -0.3788, "z": 0.3148, "w": 0.0758, "d": 0.0926, "y": 0.0, "h": 0.1, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3788, "z": 0.3148, "w": 0.0758, "d": 0.0926, "y": 0.0, "h": 0.1, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3148, "w": 0.0758, "d": 0.0926, "y": 0.0, "h": 0.1, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": -0.0185, "w": 1.0, "d": 0.963, "y": 0.1, "h": 0.9, "color": "dark", "round": 0.2},
+    {"shape": "cyl", "x": -0.2273, "z": 0.463, "w": 0.2727, "d": 0.0741, "y": 0.175, "h": 0.75, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": -0.2273, "z": 0.4926, "w": 0.1939, "d": 0.0148, "y": 0.2833, "h": 0.5333, "color": "glass", "axis": "z"},
+    {"shape": "box", "x": 0.2879, "z": 0.4611, "w": 0.303, "d": 0.0074, "y": 0.2667, "h": 0.0667, "color": "#26282c", "fix": "h"},
+    {"shape": "box", "x": 0.2879, "z": 0.4611, "w": 0.303, "d": 0.0074, "y": 0.4167, "h": 0.0667, "color": "#26282c", "fix": "h"},
+    {"shape": "box", "x": 0.2879, "z": 0.4611, "w": 0.303, "d": 0.0074, "y": 0.5667, "h": 0.0667, "color": "#26282c", "fix": "h"},
+    {"shape": "box", "x": 0.2879, "z": 0.4611, "w": 0.303, "d": 0.0074, "y": 0.7167, "h": 0.0667, "color": "#26282c", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

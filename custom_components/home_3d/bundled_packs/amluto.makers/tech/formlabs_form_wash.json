@@ -1,0 +1,95 @@
+{
+  "id": "formlabs_form_wash",
+  "name": {
+    "en": "Formlabs Form Wash"
+  },
+  "size": [
+    0.315,
+    0.293,
+    0.405
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage",
+    "loft",
+    "utility"
+  ],
+  "tags": [
+    "wash and cure",
+    "resin",
+    "uv",
+    "maker",
+    "post processing",
+    "formlabs"
+  ],
+  "family": "wash_cure",
+  "variant": {
+    "en": "Formlabs"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 0.8,
+      "color": "white",
+      "round": 0.08
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.8,
+      "h": 0.2,
+      "color": "#2a2d33",
+      "round": 0.1
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.4935,
+      "w": 0.5,
+      "d": 0.0129,
+      "y": 0.25,
+      "h": 0.35,
+      "color": "glass",
+      "round": 0.15
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.4935,
+      "w": 0.5,
+      "d": 0.0129,
+      "y": 0.0088,
+      "h": 0.0147,
+      "color": "#7fe3ff",
+      "glow": true
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    },
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 0.8,
+      "d": 0.8
+    }
+  ]
+}

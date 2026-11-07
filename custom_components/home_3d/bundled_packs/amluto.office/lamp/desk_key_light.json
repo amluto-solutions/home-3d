@@ -1,0 +1,21 @@
+{
+  "id": "desk_key_light",
+  "name": {"en": "Desk-clamp key light"},
+  "size": [0.2, 0.55, 0.45],
+  "group": "lamp",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["key light", "elgato key light", "light bar", "panel light", "video light", "streaming light", "clamp", "streaming", "audio"],
+  "family": "desk_key_light",
+  "variant": {"en": "Key light"},
+  "light": "table",
+  "electric": true,
+  "watts": 12,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.3636, "w": 0.25, "d": 0.1091, "y": 0.0, "h": 0.0889, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": -0.3636, "w": 0.15, "d": 0.0545, "y": 0.0889, "h": 0.7556, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": -0.0364, "w": 0.1, "d": 0.6364, "y": 0.8222, "h": 0.0444, "color": "metal", "axis": "z"},
+    {"shape": "rbox", "x": 0.0, "z": 0.3636, "w": 1.0, "d": 0.0545, "y": 0.6667, "h": 0.3333, "color": "white", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": 0.3909, "w": 0.9, "d": 0.0073, "y": 0.6889, "h": 0.2889, "color": "white", "glow": true}
+  ]
+}

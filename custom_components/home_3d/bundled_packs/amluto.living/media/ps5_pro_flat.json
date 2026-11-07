@@ -1,0 +1,28 @@
+{
+  "id": "ps5_pro_flat",
+  "name": {"en": "PlayStation 5 Pro"},
+  "size": [0.388, 0.216, 0.089],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["ps5", "playstation 5", "playstation5", "sony", "gaming", "console", "games console", "ps5 pro"],
+  "family": "ps5_pro",
+  "variant": {"en": "Flat"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 220,
+  "parts": [
+    {"shape": "cyl", "x": -0.4227, "z": -0.3611, "w": 0.0515, "d": 0.0926, "y": 0.0, "h": 0.0674, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4227, "z": 0.3611, "w": 0.0515, "d": 0.0926, "y": 0.0, "h": 0.0674, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4227, "z": -0.3611, "w": 0.0515, "d": 0.0926, "y": 0.0, "h": 0.0674, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4227, "z": 0.3611, "w": 0.0515, "d": 0.0926, "y": 0.0, "h": 0.0674, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.3472, "h": 0.373, "color": "#16171a", "round": 0.1},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.97, "y": 0.0674, "h": 0.2798, "color": "white", "round": 0.2},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.97, "y": 0.7202, "h": 0.2798, "color": "white", "round": 0.2},
+    {"shape": "box", "x": -0.12, "z": 0.4931, "w": 0.45, "d": 0.0139, "y": 0.5803, "h": 0.0653, "color": "#101114"},
+    {"shape": "box", "x": 0.34, "z": 0.4931, "w": 0.18, "d": 0.0139, "y": 0.2539, "h": 0.0466, "color": "#4aa3ff", "edges": "faint"},
+    {"shape": "cyl", "x": 0.43, "z": 0.4931, "w": 0.0412, "d": 0.0139, "y": 0.2539, "h": 0.1798, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "printer_cabinet",
+  "name": {
+    "en": "Printer cabinet"
+  },
+  "size": [
+    0.8,
+    0.6,
+    1.1
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage",
+    "loft",
+    "utility"
+  ],
+  "tags": [
+    "cabinet",
+    "printer table",
+    "3d printing",
+    "enclosure",
+    "storage",
+    "maker"
+  ],
+  "family": "printer_furniture",
+  "variant": {
+    "en": "Cabinet"
+  },
+  "electric": false,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 1.0,
+      "color": "white"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.4933,
+      "w": 0.95,
+      "d": 0.0133,
+      "y": 0.5091,
+      "h": 0.4727,
+      "color": "dark"
+    },
+    {
+      "shape": "rbox",
+      "x": -0.2375,
+      "z": 0.4933,
+      "w": 0.4625,
+      "d": 0.0133,
+      "y": 0.0364,
+      "h": 0.4545,
+      "color": "body",
+      "round": 0.05
+    },
+    {
+      "shape": "rbox",
+      "x": 0.2375,
+      "z": 0.4933,
+      "w": 0.4625,
+      "d": 0.0133,
+      "y": 0.0364,
+      "h": 0.4545,
+      "color": "body",
+      "round": 0.05
+    },
+    {
+      "shape": "box",
+      "x": -0.025,
+      "z": 0.495,
+      "w": 0.0075,
+      "d": 0.0067,
+      "y": 0.2545,
+      "h": 0.1091,
+      "color": "metal"
+    },
+    {
+      "shape": "box",
+      "x": 0.025,
+      "z": 0.495,
+      "w": 0.0075,
+      "d": 0.0067,
+      "y": 0.2545,
+      "h": 0.1091,
+      "color": "metal"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    },
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 0.8,
+      "d": 0.8
+    }
+  ]
+}

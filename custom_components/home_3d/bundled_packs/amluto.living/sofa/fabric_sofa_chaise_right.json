@@ -1,0 +1,219 @@
+{
+  "id": "fabric_sofa_chaise_right",
+  "name": {
+    "en": "Fabric sofa with chaise, right"
+  },
+  "size": [
+    2.5,
+    1.6,
+    0.86
+  ],
+  "group": "sofa",
+  "room": [
+    "living"
+  ],
+  "tags": [
+    "settee",
+    "couch",
+    "fabric sofa",
+    "upholstered",
+    "chaise",
+    "chaise end",
+    "right hand facing",
+    "3-seater"
+  ],
+  "family": "fabric_sofa",
+  "variant": {
+    "en": "Chaise right"
+  },
+  "role_names": {"wood": "legs"},
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0.476,
+      "z": -0.4625,
+      "w": 0.02,
+      "d": 0.0312,
+      "y": 0.0,
+      "h": 0.093,
+      "color": "wood",
+      "fix": "wdh"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.476,
+      "z": 0.0375,
+      "w": 0.02,
+      "d": 0.0312,
+      "y": 0.0,
+      "h": 0.093,
+      "color": "wood",
+      "fix": "wdh"
+    },
+    {
+      "shape": "cyl",
+      "x": -0.476,
+      "z": -0.4625,
+      "w": 0.02,
+      "d": 0.0312,
+      "y": 0.0,
+      "h": 0.093,
+      "color": "wood",
+      "fix": "wdh"
+    },
+    {
+      "shape": "cyl",
+      "x": -0.476,
+      "z": 0.0375,
+      "w": 0.02,
+      "d": 0.0312,
+      "y": 0.0,
+      "h": 0.093,
+      "color": "wood",
+      "fix": "wdh"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.476,
+      "z": 0.4625,
+      "w": 0.02,
+      "d": 0.0312,
+      "y": 0.0,
+      "h": 0.093,
+      "color": "wood",
+      "fix": "wdh"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.104,
+      "z": 0.4625,
+      "w": 0.02,
+      "d": 0.0312,
+      "y": 0.0,
+      "h": 0.093,
+      "color": "wood",
+      "fix": "wdh"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": -0.2062,
+      "w": 0.848,
+      "d": 0.525,
+      "y": 0.093,
+      "h": 0.3721,
+      "color": "fabric"
+    },
+    {
+      "shape": "box",
+      "x": 0.252,
+      "z": 0.2625,
+      "w": 0.344,
+      "d": 0.4375,
+      "y": 0.093,
+      "h": 0.3721,
+      "color": "fabric"
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": -0.4313,
+      "w": 0.848,
+      "d": 0.1375,
+      "y": 0.093,
+      "h": 0.907,
+      "color": "fabric",
+      "round": 0.25
+    },
+    {
+      "shape": "rbox",
+      "x": 0.46,
+      "z": 0.0,
+      "w": 0.08,
+      "d": 1,
+      "y": 0.093,
+      "h": 0.6512,
+      "color": "fabric",
+      "round": 0.35,
+      "fix": "w"
+    },
+    {
+      "shape": "rbox",
+      "x": -0.46,
+      "z": -0.2125,
+      "w": 0.08,
+      "d": 0.575,
+      "y": 0.093,
+      "h": 0.6512,
+      "color": "fabric",
+      "round": 0.35,
+      "fix": "w"
+    },
+    {
+      "shape": "rbox",
+      "x": 0.25,
+      "z": 0.0594,
+      "w": 0.336,
+      "d": 0.8688,
+      "y": 0.4651,
+      "h": 0.1512,
+      "color": "cushion",
+      "round": 0.3
+    },
+    {
+      "shape": "rbox",
+      "x": -0.045,
+      "z": -0.1531,
+      "w": 0.246,
+      "d": 0.4438,
+      "y": 0.4651,
+      "h": 0.1512,
+      "color": "cushion",
+      "round": 0.35
+    },
+    {
+      "shape": "rbox",
+      "x": -0.295,
+      "z": -0.1531,
+      "w": 0.246,
+      "d": 0.4438,
+      "y": 0.4651,
+      "h": 0.1512,
+      "color": "cushion",
+      "round": 0.35
+    },
+    {
+      "shape": "rbox",
+      "x": 0.28,
+      "z": -0.3375,
+      "w": 0.272,
+      "d": 0.125,
+      "y": 0.6047,
+      "h": 0.3721,
+      "color": "cushion",
+      "round": 0.4
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": -0.3375,
+      "w": 0.272,
+      "d": 0.125,
+      "y": 0.6047,
+      "h": 0.3721,
+      "color": "cushion",
+      "round": 0.4
+    },
+    {
+      "shape": "rbox",
+      "x": -0.28,
+      "z": -0.3375,
+      "w": 0.272,
+      "d": 0.125,
+      "y": 0.6047,
+      "h": 0.3721,
+      "color": "cushion",
+      "round": 0.4
+    }
+  ]
+}

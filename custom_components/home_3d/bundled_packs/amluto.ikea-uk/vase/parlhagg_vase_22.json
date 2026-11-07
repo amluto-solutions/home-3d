@@ -1,0 +1,34 @@
+{
+  "id": "parlhagg_vase_22",
+  "name": {
+    "en": "Vase, beige 22 cm"
+  },
+  "size": [
+    0.15,
+    0.15,
+    0.22
+  ],
+  "group": "vase",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "bedroom",
+    "bath",
+    "office"
+  ],
+  "tags": [
+    "PARLHAGG",
+    "vase",
+    "ceramic vase",
+    "beige",
+    "light pink",
+    "flowers",
+    "round vase"
+  ],
+  "ikea": "PÄRLHÄGG",
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#d9c7a8", "profile": [[0.42, 0], [0.82, 0.08], [1, 0.3], [0.94, 0.58], [0.6, 0.86], [0.46, 1], [0.34, 1], [0.3, 0.9]]}
+  ]
+}

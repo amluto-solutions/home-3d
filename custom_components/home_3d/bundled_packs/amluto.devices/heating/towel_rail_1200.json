@@ -1,0 +1,50 @@
+{
+  "id": "towel_rail_1200",
+  "name": {
+    "en": "Heated towel rail"
+  },
+  "size": [
+    0.64,
+    0.032,
+    1.2
+  ],
+  "group": "heating",
+  "room": [
+    "bath",
+    "kitchen",
+    "utility",
+    "bedroom"
+  ],
+  "tags": [
+    "radiator",
+    "towel rail",
+    "heated towel rail",
+    "towel radiator",
+    "ladder rail",
+    "trv",
+    "bathroom",
+    "chrome"
+  ],
+  "family": "towel_rail",
+  "variant": {
+    "en": "1200 × 500 mm"
+  },
+  "mount": "wall",
+  "wall_y": 0.2,
+  "parts": [
+    {"shape": "cyl", "x": -0.3719, "z": 0.0, "w": 0.0391, "d": 0.7812, "y": 0.0333, "h": 0.9667, "color": "metal"},
+    {"shape": "cyl", "x": 0.3719, "z": 0.0, "w": 0.0391, "d": 0.7812, "y": 0.0333, "h": 0.9667, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.75, "d": 0.6875, "y": 0.05, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.75, "d": 0.6875, "y": 0.1583, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.75, "d": 0.6875, "y": 0.2667, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.75, "d": 0.6875, "y": 0.375, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.75, "d": 0.6875, "y": 0.4833, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.75, "d": 0.6875, "y": 0.5917, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.75, "d": 0.6875, "y": 0.7, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.75, "d": 0.6875, "y": 0.8083, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.75, "d": 0.6875, "y": 0.9167, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.3719, "z": 0.0, "w": 0.0469, "d": 0.9375, "y": 0, "h": 0.0375, "color": "metal"},
+    {"shape": "cyl", "x": 0.4453, "z": 0.0, "w": 0.0938, "d": 0.9375, "y": 0, "h": 0.025, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.4953, "z": 0.0, "w": 0.0094, "d": 1, "y": 0, "h": 0.0267, "color": "accent", "axis": "x"}
+  ]
+}

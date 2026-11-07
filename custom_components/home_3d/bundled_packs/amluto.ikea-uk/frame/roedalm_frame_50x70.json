@@ -1,0 +1,45 @@
+{
+  "id": "roedalm_frame_50x70",
+  "name": {
+    "en": "Wood-effect picture frame 50x70 cm"
+  },
+  "size": [
+    0.52,
+    0.03,
+    0.72
+  ],
+  "group": "frame",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "office"
+  ],
+  "tags": [
+    "picture frame",
+    "photo frame",
+    "birch effect",
+    "oak effect",
+    "walnut effect",
+    "black",
+    "white",
+    "mount"
+  ],
+  "family": "roedalm_frame",
+  "variant": {
+    "en": "50x70"
+  },
+  "ikea": "RÖDALM",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4333, "w": 1, "d": 0.1333, "y": 0, "h": 1, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.975, "h": 0.025, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.025, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4827, "z": 0.0, "w": 0.0346, "d": 1, "y": 0.025, "h": 0.95, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4827, "z": 0.0, "w": 0.0346, "d": 1, "y": 0.025, "h": 0.95, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.35, "w": 0.9308, "d": 0.1, "y": 0.025, "h": 0.95, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4167, "w": 0.7769, "d": 0.0667, "y": 0.0806, "h": 0.8389, "color": "#a9b8b4", "fix": "d"}
+  ]
+}

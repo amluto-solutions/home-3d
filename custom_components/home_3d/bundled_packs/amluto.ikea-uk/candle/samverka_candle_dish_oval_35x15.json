@@ -1,0 +1,42 @@
+{
+  "id": "samverka_candle_dish_oval_35x15",
+  "name": {
+    "en": "Candle dish, oval white 35x15 cm"
+  },
+  "size": [
+    0.35,
+    0.15,
+    0.04
+  ],
+  "group": "candle",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "bedroom"
+  ],
+  "tags": [
+    "SAMVERKA",
+    "candle dish",
+    "candle tray",
+    "oval",
+    "white",
+    "ceramic",
+    "centrepiece"
+  ],
+  "family": "samverka_holder",
+  "variant": {
+    "en": "Oval dish 35x15"
+  },
+  "ikea": "SAMVERKA",
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "profile": [[0.8, 0], [1, 0.3], [1, 0.7], [0.9, 0.7], [0.78, 0.45]]},
+    {"shape": "cyl", "x": -0.3143, "z": 0.0, "w": 0.1086, "d": 0.2533, "y": 0.3, "h": 0.4, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3143, "z": 0.0, "w": 0.0971, "d": 0.2267, "y": 0.55, "h": 0.3, "color": "#f1ead9", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1086, "d": 0.2533, "y": 0.3, "h": 0.4, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0971, "d": 0.2267, "y": 0.55, "h": 0.3, "color": "#f1ead9", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3143, "z": 0.0, "w": 0.1086, "d": 0.2533, "y": 0.3, "h": 0.4, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3143, "z": 0.0, "w": 0.0971, "d": 0.2267, "y": 0.55, "h": 0.3, "color": "#f1ead9", "fix": "wdh"}
+  ]
+}

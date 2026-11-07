@@ -1,0 +1,313 @@
+import assert from "node:assert/strict";
+import { test } from "node:test";
+import { emptyBuilding, lockAlong, gangEntities, gangPlateWidth, gangsOf, floorElevation, newFloor, outdoorZones, zonesOf, openingPreset, openingStyle, normalizeBuilding, outdoorDrop, outdoorGround, resizeFurniture, roomTiles, sidelightLayout, spotGrid, surfaceHeight, syncCameraLooks, type Furniture } from "./model.ts";
+
+test("a sidelight sits opposite the hinge, on the hinge side when asked, and keeps the leaf at least half a metre", () => {
+  const none = {};
+  // hinge at the start: the panel at the end, the leaf from the start
+  let l = sidelightLayout(1.6, "sidelight", true, none)!;
+  assert.equal(l.panels.length, 1);
+  assert.ok(l.panels[0][0] > 0.8 && Math.abs(l.panels[0][1] - 1.58) < 1e-9);
+  assert.equal(l.x0, 0.02);
+  // on the hinge side instead
+  l = sidelightLayout(1.6, "sidelight", true, { sidelight_hinge: true })!;
+  assert.equal(l.panels[0][0], 0.02);
+  assert.ok(l.x0 > 0.3);
+  // own widths, left and right, with two sidelights
+  l = sidelightLayout(2.4, "sidelights", false, { sidelight_width: 0.3, sidelight_width2: 0.6 })!;
+  assert.ok(Math.abs(l.panels[0][1] - 0.32) < 1e-9 && Math.abs(l.panels[1][0] - 1.78) < 1e-9);
+  assert.ok(Math.abs(l.x1 - l.x0 - (2.4 - 0.04 - 0.9)) < 1e-9);
+  // too wide: both shrink so the leaf keeps 0.5 m
+  l = sidelightLayout(1.4, "sidelights", false, { sidelight_width: 1, sidelight_width2: 1 })!;
+  assert.ok(Math.abs(l.x1 - l.x0 - 0.5) < 1e-9);
+  assert.equal(sidelightLayout(1.0, "front", true, none), null);
+});
+
+test("a door without a style is a front door in an exterior wall and a room door inside", () => {
+  assert.equal(openingStyle({ type: "door", style: null }, true), "front");
+  assert.equal(openingStyle({ type: "door", style: null }, false), "interior");
+  assert.equal(openingStyle({ type: "door", style: "sidelight" }, false), "sidelight");
+  assert.equal(openingStyle({ type: "window", style: null }, true), "standard");
+  // a window style on a door (or garbage) falls back to the automatic choice
+  assert.equal(openingStyle({ type: "door", style: "bars" }, true), "front");
+  assert.equal(openingPreset({ type: "door", leaves: 1, sill: 0, style: "front_glass" }), "front");
+  assert.equal(openingPreset({ type: "door", leaves: 1, sill: 0, style: null }), "door");
+});
+
+test("a garage door is sectional unless it is an up-and-over door (#24)", () => {
+  assert.equal(openingStyle({ type: "garage", style: null }, true), "sectional");
+  assert.equal(openingStyle({ type: "garage", style: "up_and_over" }, true), "up_and_over");
+  // a door style on a garage, or a garage style on a door, falls back to the automatic choice
+  assert.equal(openingStyle({ type: "garage", style: "glass" }, true), "sectional");
+  assert.equal(openingStyle({ type: "door", style: "up_and_over" }, false), "interior");
+  assert.equal(openingPreset({ type: "garage", leaves: 1, sill: 0, style: "up_and_over" }), "garage");
+});
+
+const item = (type: string, x: number, z: number, h: number, extra: Partial<Furniture> = {}): Furniture => ({
+  id: `${type}_${x}`,
+  type,
+  x,
+  z,
+  rotation: 0,
+  w: 1,
+  d: 0.6,
+  h,
+  variant: null,
+  ...extra,
+});
+
+test("lights placed as devices become lamps of their mount type", () => {
+  const b = emptyBuilding();
+  const floor = newFloor("ground", "Ground", 0);
+  floor.placements = [
+    { entity_id: "light.ceiling", x: 1, z: 2, y: null, mount: null },
+    { entity_id: "light.lese", x: 3, z: 1, y: null, mount: "floor" },
+    { entity_id: "switch.tv", x: 2, z: 2, y: null },
+  ];
+  b.floors = [floor];
+  const out = normalizeBuilding(b).floors[0];
+  assert.deepEqual(
+    out.placements.map((p) => p.entity_id),
+    ["switch.tv"],
+  );
+  assert.deepEqual(
+    out.furniture.map((f) => [f.type, f.entity, f.x, f.z]),
+    [
+      ["lamp_ceiling", "light.ceiling", 1, 2],
+      ["lamp_floor", "light.lese", 3, 1],
+    ],
+  );
+  // normalising again changes nothing
+  assert.equal(normalizeBuilding(b).floors[0].furniture.length, 2);
+});
+
+test("a light's mount height becomes the lamp's mount_y (#381)", () => {
+  const b = emptyBuilding();
+  const floor = newFloor("ground", "Ground", 0);
+  floor.placements = [
+    { entity_id: "light.wall", x: 0, z: 1, y: 2.2, mount: "wall" },
+    { entity_id: "light.ceiling", x: 1, z: 2, y: null, mount: null },
+  ];
+  b.floors = [floor];
+  const out = normalizeBuilding(b).floors[0];
+  assert.equal(out.furniture.find((f) => f.entity === "light.wall")?.mount_y, 2.2);
+  assert.equal(out.furniture.find((f) => f.entity === "light.ceiling")?.mount_y, undefined);
+});
+
+test("a light turned back into a device pin stays a pin", () => {
+  const b = emptyBuilding();
+  const floor = newFloor("ground", "Ground", 0);
+  floor.placements = [{ entity_id: "light.ceiling", x: 1, z: 2, y: null, mount: "wall", pin: true }];
+  b.floors = [floor];
+  const out = normalizeBuilding(b).floors[0];
+  assert.deepEqual(out.placements.map((p) => p.entity_id), ["light.ceiling"]);
+  assert.equal(out.furniture.length, 0);
+});
+
+test("a table lamp stands on the furniture below it", () => {
+  const floor = newFloor("ground", "Ground", 0);
+  floor.furniture = [item("nightstand", 1, 1, 0.5), item("table", 4, 1, 0.75), item("sofa", 7, 1, 0.8)];
+  assert.equal(surfaceHeight(floor, 1.1, 1), 0.5);
+  assert.equal(surfaceHeight(floor, 4, 1.2), 0.75);
+  assert.equal(surfaceHeight(floor, 7, 1), 0, "no lamps on the sofa");
+  assert.equal(surfaceHeight(floor, 10, 10), 0);
+});
+
+test("a spot grid spreads lamps evenly and leaves out cells outside an L-shaped room", () => {
+  const square = { id: "r", name: "R", area_id: null, points: [[0, 0], [4, 0], [4, 2], [0, 2]] as [number, number][], floor_material: "wood" };
+  assert.deepEqual(spotGrid(square, 1, 2), [
+    [1, 1],
+    [3, 1],
+  ]);
+  const l = { ...square, points: [[0, 0], [4, 0], [4, 2], [2, 2], [2, 4], [0, 4]] as [number, number][] };
+  // 2 × 2 cells, the one at the bottom right lies outside the L
+  assert.equal(spotGrid(l, 2, 2).length, 3);
+});
+
+test("outdoor lamps stand on the ground, or on a terrace", () => {
+  const floor = newFloor("ground", "Ground", 0);
+  floor.outdoor = [{ id: "t", type: "terrace", points: [[0, 0], [4, 0], [4, 3], [0, 3]] }];
+  assert.equal(outdoorGround(floor, 10, 10), -0.2);
+  assert.ok(Math.abs(outdoorGround(floor, 2, 1) - (-0.2 + 0.12)) < 1e-9);
+  assert.equal(outdoorGround({ ...newFloor("upper", "Upper", 2.75), outdoor: [] }, 1, 1), 0);
+});
+
+test("resizing drags one corner while the opposite corner stays", () => {
+  const f: Furniture = { id: "f", type: "table", x: 1, z: 1, rotation: 0, w: 1, d: 1, h: 0.75, variant: null, entity: null, power: null };
+  // pull the front-right corner from (1.5, 1.5) to (2.5, 2)
+  assert.deepEqual(resizeFurniture(f, [1, 1], [2.5, 2], 0.05), { x: 1.5, z: 1.25, w: 2, d: 1.5 });
+  // turned by 90°: local x points along +z in the plan, so dragging along +z makes it wider
+  const turned = resizeFurniture({ ...f, rotation: 90 }, [1, 1], [0.5, 2.5], 0.05);
+  assert.equal(turned.w, 2);
+  assert.equal(turned.d, 1);
+  // never smaller than 10 cm
+  assert.equal(resizeFurniture(f, [1, 1], [0, 0], 0.05).w, 0.1);
+});
+
+test("floors from Home Assistant levels are stacked by level", () => {
+  assert.equal(floorElevation([], 0), 0);
+  assert.equal(floorElevation([], 1), 2.75);
+  assert.equal(floorElevation([], -1), -2.75);
+  // without a level, the new floor goes on top
+  assert.equal(floorElevation([newFloor("ground", "Ground", 0)], null), 2.75);
+});
+
+test("rooms for areas are laid out beside the existing rooms", () => {
+  const floor = newFloor("ground", "Ground", 0);
+  floor.rooms = [{ id: "r", name: "R", area_id: null, points: [[0, 0], [5, 0], [5, 4], [0, 4]], floor_material: "wood" }];
+  let n = 0;
+  const rooms = roomTiles(floor, [{ area_id: "a", name: "Kitchen" }, { area_id: "b", name: "Bathroom" }, { area_id: "c", name: "Hall" }, { area_id: "d", name: "Office" }], () => `t${n++}`);
+  assert.equal(rooms.length, 4);
+  assert.equal(rooms[0].name, "Kitchen");
+  assert.equal(rooms[0].area_id, "a");
+  assert.deepEqual(rooms[0].points[0], [6, 0]);
+  // three per row
+  assert.deepEqual(rooms[3].points[0], [6, 3.5]);
+});
+
+test("opening kinds: terrace doors are windows down to the floor, double ones have two leaves", () => {
+  assert.equal(openingPreset({ type: "window", leaves: 2, sill: 0 }), "terrace_double");
+  assert.equal(openingPreset({ type: "window", leaves: 1, sill: 0.9 }), "window");
+  assert.equal(openingPreset({ type: "door", leaves: 2, sill: 0 }), "door_double");
+  assert.equal(openingPreset({ type: "garage", leaves: 1, sill: 0 }), "garage");
+});
+
+test("a sloped area falls from its high edge to its low edge, lamps follow", () => {
+  const floor = newFloor("ground", "Ground", 0);
+  floor.outdoor = [{ id: "d", type: "driveway", points: [[0, 0], [10, 0], [10, 3], [0, 3]], slope: 1.2, slope_dir: "-x" }];
+  const a = floor.outdoor[0];
+  assert.equal(outdoorDrop(a, 10, 1), 0);
+  assert.ok(Math.abs(outdoorDrop(a, 0, 1) - 1.2) < 1e-9);
+  assert.ok(Math.abs(outdoorDrop(a, 5, 1) - 0.6) < 1e-9);
+  assert.ok(Math.abs(outdoorGround(floor, 5, 1) - (-0.2 + 0.02 - 0.6)) < 1e-9);
+});
+
+test("a patch cut out of a lawn decides the ground inside it", () => {
+  const floor = newFloor("ground", "Ground", 0);
+  floor.outdoor = [
+    { id: "l", type: "lawn", points: [[0, 0], [10, 0], [10, 10], [0, 10]] },
+    { id: "w", type: "wild", points: [[2, 2], [4, 2], [4, 4], [2, 4]], cut: true },
+  ];
+  assert.ok(Math.abs(outdoorGround(floor, 3, 3) - (-0.2 + 0.03)) < 1e-9);
+  assert.ok(Math.abs(outdoorGround(floor, 8, 8) - (-0.2 + 0.012)) < 1e-9);
+});
+
+test("a glass wall is a preset of its own (#163)", () => {
+  assert.equal(openingPreset({ type: "window", leaves: 1, sill: 0, style: "glass_wall" }), "glass_wall");
+  assert.equal(openingPreset({ type: "window", leaves: 1, sill: 0, style: null }), "terrace");
+});
+
+test("outdoor areas with a Home Assistant area act as rooms; hedges, fences and areas without one do not (#100)", () => {
+  const sq = (x: number): [number, number][] => [[x, 0], [x + 2, 0], [x + 2, 2], [x, 2]];
+  const floor = {
+    ...newFloor("f", "Ground", 0),
+    rooms: [{ id: "r", name: "Kitchen", area_id: "kitchen", points: sq(0), floor_material: "wood" }],
+    outdoor: [
+      { id: "g", type: "lawn" as const, points: sq(5), area_id: "garden", name: "Garden" },
+      { id: "t", type: "terrace" as const, points: sq(10) },
+      { id: "h", type: "hedge" as const, points: sq(15), area_id: "garden" },
+    ],
+  };
+  const zones = outdoorZones(floor);
+  assert.deepEqual(zones.map((z) => [z.id, z.name, z.area_id, z.outdoor]), [["g", "Garden", "garden", true]]);
+  assert.deepEqual(zonesOf(floor).map((z) => z.id), ["r", "g"]);
+});
+
+test("a wall switch or socket has one to four gangs; the same entity on two sockets counts once (#593)", () => {
+  assert.deepEqual(gangsOf({ gangs: null }), [{ entity: null }]);
+  assert.equal(gangsOf({ gangs: Array.from({ length: 6 }, () => ({ entity: null })) }).length, 4);
+  assert.equal(gangPlateWidth(1), 0.085);
+  assert.equal(gangPlateWidth(3), 0.227);
+  assert.equal(gangPlateWidth(9), gangPlateWidth(4));
+  assert.deepEqual(gangEntities({ gangs: [{ entity: "switch.sample_relay" }, { entity: "switch.sample_relay" }, { entity: "none" }, { entity: "light.sample_hall" }] }), ["switch.sample_relay", "light.sample_hall"]);
+});
+
+test("a lamp fits under a high worktop step and stands on the floor; on a kitchen worktop it stands on top (#614)", () => {
+  const floor = newFloor("f", "F", 0);
+  const top = (h: number): Furniture => ({ id: `w${h}`, type: "worktop", x: 1, z: 1, rotation: 0, w: 1, d: 0.6, h, variant: null });
+  floor.furniture = [top(1.6)];
+  assert.equal(surfaceHeight(floor, 1, 1, 0.45), 0);
+  assert.equal(surfaceHeight(floor, 1, 1, 1.8), 1.6);
+  assert.equal(surfaceHeight(floor, 1, 1), 1.6);
+  floor.furniture = [top(0.92)];
+  assert.equal(surfaceHeight(floor, 1, 1, 0.45), 0.92);
+});
+
+test("a lock sits on the main leaf of a double door, not on the seam (#645)", () => {
+  const terrace = { type: "window" as const, style: null, width: 2, leaves: 2 as const };
+  assert.equal(lockAlong(terrace, true), 0.5);
+  assert.equal(lockAlong(terrace, false), 1.5);
+  const single = { type: "door" as const, style: null, width: 0.9, leaves: 1 as const };
+  assert.equal(lockAlong(single, true), 0.45);
+  // a sidelight opposite the hinge: the lock stays on the leaf
+  const lit = { type: "door" as const, style: "sidelight" as const, width: 1.6, leaves: 1 as const };
+  const l = sidelightLayout(1.6, "sidelight", true, {})!;
+  assert.ok(Math.abs(lockAlong(lit, true) - (l.x0 + l.x1) / 2) < 1e-9);
+});
+
+test("a camera and its look stay together: either one moved takes the other along, the camera gone takes its look (#779)", () => {
+  const make = () => {
+    const b = emptyBuilding();
+    const f = newFloor("ground", "Ground", 0);
+    f.placements.push({ entity_id: "camera.sample_hall", x: 1, z: 1, y: null, rotation: 0 });
+    f.furniture.push({ id: "look", type: "camera_dome", x: 1, z: 1, rotation: 0, w: 0.2, d: 0.2, h: 0.2, variant: null, entity: "none", look_of: "camera.sample_hall" } as Furniture);
+    b.floors = [f];
+    return b;
+  };
+  const base = make();
+  const moved = structuredClone(base);
+  moved.floors[0].placements[0].x = 3;
+  syncCameraLooks(moved, base);
+  assert.equal(moved.floors[0].furniture[0].x, 3);
+  const dragged = structuredClone(base);
+  dragged.floors[0].furniture[0].z = 4;
+  dragged.floors[0].furniture[0].rotation = 90;
+  syncCameraLooks(dragged, base);
+  assert.equal(dragged.floors[0].placements[0].z, 4);
+  assert.equal(dragged.floors[0].placements[0].rotation, 90);
+  const gone = structuredClone(base);
+  gone.floors[0].placements = [];
+  syncCameraLooks(gone, base);
+  assert.equal(gone.floors[0].furniture.length, 0);
+});
+
+// ---- stair options in the item panel (#16)
+const stair = (over: Partial<Furniture> = {}): Furniture => ({ id: "s", type: "stairs", x: 0, z: 0, rotation: 0, w: 1, d: 3.2, h: 2.75, variant: null, ...over });
+
+test("stair limits: a turn or landing needs a flight longer than it is wide, the flat top leaves 0.2 m per remaining step", async () => {
+  const { stairLimits } = await import("./model.ts");
+  // 2.75 m rises in 15 risers
+  const plain = stairLimits(stair());
+  assert.equal(plain.canTurn, true);
+  assert.equal(plain.maxLanding, 14);
+  assert.ok(Math.abs(plain.maxTop - (3.2 - 0.2 * 15)) < 1e-9);
+  // a winder turn takes the first three steps off the straight flight, a landing that many
+  assert.ok(Math.abs(stairLimits(stair({ stair_turn: "left" })).maxTop - (3.2 - 0.2 * 12)) < 1e-9);
+  assert.ok(Math.abs(stairLimits(stair({ stair_landing: 5 })).maxTop - (3.2 - 0.2 * 10)) < 1e-9);
+  // too short to turn: no turn, no landing, as the 3D view ignores them there
+  const short = stairLimits(stair({ d: 1.2 }));
+  assert.equal(short.canTurn, false);
+  assert.equal(short.maxLanding, 0);
+  assert.equal(short.maxTop, 0);
+});
+
+test("stair option edits: choices exclude each other and stay inside what the 3D view can draw", async () => {
+  const { stairOptionPatch } = await import("./model.ts");
+  assert.deepEqual(stairOptionPatch(stair(), { stair_open: true }), { stair_open: true });
+  assert.deepEqual(stairOptionPatch(stair({ stair_open: true }), { stair_open: false }), { stair_open: null });
+  // a turn replaces a landing and the other way round
+  assert.deepEqual(stairOptionPatch(stair({ stair_landing: 3 }), { stair_turn: "right" }), { stair_turn: "right", stair_landing: null });
+  assert.deepEqual(stairOptionPatch(stair({ stair_turn: "left" }), { stair_landing: 3 }), { stair_landing: 3, stair_turn: null });
+  assert.deepEqual(stairOptionPatch(stair({ stair_turn: "left" }), { stair_turn: null }), { stair_turn: null });
+  // landing steps are whole risers, at most one short of the stair; none means none
+  assert.deepEqual(stairOptionPatch(stair(), { stair_landing: 2.6 }), { stair_landing: 3, stair_turn: null });
+  assert.deepEqual(stairOptionPatch(stair(), { stair_landing: 99 }), { stair_landing: 14, stair_turn: null });
+  assert.deepEqual(stairOptionPatch(stair({ stair_landing: 3 }), { stair_landing: 0 }), { stair_landing: null });
+  // the flat top is limited by what is left of the flight, and a longer landing pulls it in
+  assert.deepEqual(stairOptionPatch(stair(), { stair_top: 0.504 }), { stair_top: 0.2 });
+  assert.deepEqual(stairOptionPatch(stair({ stair_top: 0.2 }), { stair_top: 0 }), { stair_top: null });
+  assert.deepEqual(stairOptionPatch(stair({ stair_turn: "left", stair_top: 0.5 }), { stair_turn: null }), { stair_turn: null, stair_top: 0.2 });
+  assert.deepEqual(stairOptionPatch(stair({ stair_landing: 3, stair_top: 0.5 }), { stair_landing: 9 }), { stair_landing: 9, stair_turn: null });
+  // a stair too short for a turn keeps no turn
+  assert.deepEqual(stairOptionPatch(stair({ d: 1.2 }), { stair_turn: "left" }), { stair_turn: null });
+});

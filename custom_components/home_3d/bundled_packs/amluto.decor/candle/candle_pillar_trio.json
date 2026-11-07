@@ -1,0 +1,23 @@
+{
+  "id": "candle_pillar_trio",
+  "name": {"en": "Pillar candles on a plate"},
+  "size": [0.3, 0.13, 0.24],
+  "group": "candle",
+  "room": ["living", "dining", "bedroom", "hall", "bath", "kitchen"],
+  "tags": ["candle", "pillar candles", "candle plate", "trio", "three candles"],
+  "family": "candle_pillar",
+  "variant": {"en": "Trio on a plate"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.0625, "color": "wood", "profile": [[0.0, 0.0], [0.95, 0.0], [1, 1], [0.0, 1]]},
+    {"shape": "cyl", "x": -0.3, "z": 0.0, "w": 0.2333, "d": 0.5385, "y": 0.0625, "h": 0.4167, "color": "#f1e7d3"},
+    {"shape": "cyl", "x": -0.3, "z": 0.0, "w": 0.01, "d": 0.0231, "y": 0.4792, "h": 0.0333, "color": "#2b2b2b", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.3, "z": 0.0, "w": 0.04, "d": 0.0923, "y": 0.5042, "h": 0.1, "color": "#ffb648", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.2333, "d": 0.5385, "y": 0.0625, "h": 0.8333, "color": "#f1e7d3"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.01, "d": 0.0231, "y": 0.8958, "h": 0.0333, "color": "#2b2b2b", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.04, "d": 0.0923, "y": 0.9208, "h": 0.1, "color": "#ffb648", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3, "z": 0.0, "w": 0.2333, "d": 0.5385, "y": 0.0625, "h": 0.625, "color": "#f1e7d3"},
+    {"shape": "cyl", "x": 0.3, "z": 0.0, "w": 0.01, "d": 0.0231, "y": 0.6875, "h": 0.0333, "color": "#2b2b2b", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.3, "z": 0.0, "w": 0.04, "d": 0.0923, "y": 0.7125, "h": 0.1, "color": "#ffb648", "fix": "wdh"}
+  ]
+}

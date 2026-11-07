@@ -1,0 +1,25 @@
+{
+  "id": "ironing_board",
+  "name": {"en": "Ironing board"},
+  "size": [1.22, 0.38, 0.9],
+  "group": "household",
+  "room": ["utility", "bedroom", "kitchen"],
+  "tags": ["ironing board", "ironing", "iron", "laundry", "clothes"],
+  "family": "ironing_board",
+  "variant": {"en": "Standing"},
+  "parts": [
+    {"shape": "rbox", "x": 0.0533, "z": 0.0, "w": 0.6967, "d": 1.0, "y": 0.9667, "h": 0.0333, "color": "fabric", "round": 0.4, "fix": "h"},
+    {"shape": "lathe", "x": -0.2951, "z": 0.0, "w": 0.4098, "d": 1.0, "y": 0.9667, "h": 0.0333, "color": "fabric", "profile": [[0, 0], [1, 0], [1, 1], [0, 1]]},
+    {"shape": "box", "x": 0.4508, "z": 0.0, "w": 0.0984, "d": 0.7895, "y": 0.9722, "h": 0.0111, "color": "metal", "fix": "h"},
+    {"shape": "loft", "x": -0.2623, "z": -0.3421, "w": 0.0164, "d": 0.0526, "y": 0.0, "h": 0.9556, "color": "metal", "tx": 0.1475, "tz": -0.3421, "tw": 0.0164, "td": 0.0526},
+    {"shape": "loft", "x": 0.2459, "z": -0.3421, "w": 0.0164, "d": 0.0526, "y": 0.0, "h": 0.9556, "color": "metal", "tx": -0.1475, "tz": -0.3421, "tw": 0.0164, "td": 0.0526},
+    {"shape": "loft", "x": -0.2623, "z": 0.3421, "w": 0.0164, "d": 0.0526, "y": 0.0, "h": 0.9556, "color": "metal", "tx": 0.1475, "tz": 0.3421, "tw": 0.0164, "td": 0.0526},
+    {"shape": "loft", "x": 0.2459, "z": 0.3421, "w": 0.0164, "d": 0.0526, "y": 0.0, "h": 0.9556, "color": "metal", "tx": -0.1475, "tz": 0.3421, "tw": 0.0164, "td": 0.0526},
+    {"shape": "cyl", "x": -0.2623, "z": 0.0, "w": 0.0328, "d": 0.8947, "y": 0.0, "h": 0.0278, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.2459, "z": 0.0, "w": 0.0328, "d": 0.8947, "y": 0.0, "h": 0.0278, "color": "dark", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.1025, "z": 0.0, "w": 0.7951, "d": 1.0},
+    {"shape": "circle", "x": -0.2951, "z": 0.0, "r": 0.5}
+  ]
+}

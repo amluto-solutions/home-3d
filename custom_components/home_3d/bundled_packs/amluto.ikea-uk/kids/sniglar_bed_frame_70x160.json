@@ -1,0 +1,42 @@
+{
+  "id": "sniglar_bed_frame_70x160",
+  "name": {
+    "en": "Junior bed frame 70x160 cm"
+  },
+  "size": [
+    0.77,
+    1.65,
+    0.57
+  ],
+  "group": "kids",
+  "room": [
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "SNIGLAR",
+    "junior bed",
+    "toddler bed",
+    "children's bed",
+    "beech",
+    "slatted base",
+    "mattress 70x160"
+  ],
+  "family": "sniglar_cot",
+  "variant": {
+    "en": "Bed frame 70x160"
+  },
+  "ikea": "SNIGLAR",
+  "parts": [
+    {"shape": "box", "x": -0.474, "z": 0.0, "w": 0.0519, "d": 0.9758, "y": 0.1754, "h": 0.2105, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.474, "z": 0.0, "w": 0.0519, "d": 0.9758, "y": 0.1754, "h": 0.2105, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.4879, "w": 1, "d": 0.0242, "y": 0, "h": 1, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4879, "w": 1, "d": 0.0242, "y": 0, "h": 0.6316, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": -0.474, "z": -0.4879, "w": 0.0519, "d": 0.0242, "y": 0, "h": 1, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": -0.474, "z": 0.4879, "w": 0.0519, "d": 0.0242, "y": 0, "h": 0.6316, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.474, "z": -0.4879, "w": 0.0519, "d": 0.0242, "y": 0, "h": 1, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.474, "z": 0.4879, "w": 0.0519, "d": 0.0242, "y": 0, "h": 0.6316, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9221, "d": 0.9515, "y": 0.3158, "h": 0.0351, "color": "wood"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9091, "d": 0.9697, "y": 0.3509, "h": 0.2105, "color": "white", "round": 0.2}
+  ]
+}

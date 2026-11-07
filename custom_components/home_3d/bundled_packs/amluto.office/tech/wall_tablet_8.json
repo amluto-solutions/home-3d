@@ -1,0 +1,18 @@
+{
+  "id": "wall_tablet_8",
+  "name": {"en": "Wall tablet 8″"},
+  "size": [0.215, 0.025, 0.135],
+  "group": "tech",
+  "room": ["hall", "kitchen", "living", "office", "bedroom"],
+  "tags": ["tablet", "dashboard", "wall panel", "home assistant", "control panel", "ipad", "kiosk", "touch screen"],
+  "family": "wall_tablet",
+  "variant": {"en": "8″"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.3,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.26, "w": 1, "d": 0.48, "y": 0.0, "h": 1, "color": "white"},
+    {"shape": "rbox", "x": 0.0, "z": 0.22, "w": 0.9535, "d": 0.36, "y": 0.037, "h": 0.9259, "color": "dark", "round": 0.3},
+    {"shape": "box", "x": 0.0, "z": 0.46, "w": 0.8419, "d": 0.08, "y": 0.1259, "h": 0.7481, "color": "glass", "screen": true}
+  ]
+}

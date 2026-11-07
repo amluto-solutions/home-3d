@@ -1,0 +1,86 @@
+{
+  "id": "bladeless_fan_floor",
+  "name": {
+    "en": "Bladeless fan"
+  },
+  "size": [
+    0.3,
+    0.25,
+    1.0
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "fan",
+    "cooling",
+    "summer",
+    "air movement",
+    "bladeless fan",
+    "air multiplier",
+    "ring fan",
+    "pedestal fan"
+  ],
+  "family": "bladeless_fan",
+  "variant": {
+    "en": "Floor ring"
+  },
+  "electric": true,
+  "watts": 45,
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.8333,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 0.04,
+      "color": "white"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.2,
+      "d": 0.24,
+      "y": 0.04,
+      "h": 0.5,
+      "color": "white"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 0.2,
+      "y": 0.55,
+      "h": 0.42,
+      "color": "white",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.02,
+      "w": 0.7,
+      "d": 0.24,
+      "y": 0.61,
+      "h": 0.3,
+      "color": "dark",
+      "axis": "z"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "circle",
+      "x": 0,
+      "z": 0,
+      "r": 0.4
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "book_coffee_table",
+  "name": {"en": "Books"},
+  "size": [0.34, 0.27, 0.035],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "hall", "office", "kids"],
+  "tags": ["books", "reading", "bookshelf", "stack of books", "library", "coffee table book", "art book", "hardback", "large"],
+  "family": "books",
+  "variant": {"en": "Large coffee-table book"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9412, "d": 0.963, "y": 0, "h": 1, "color": "#1f1f22"},
+    {"shape": "box", "x": 0.0147, "z": 0, "w": 0.8824, "d": 0.9259, "y": 0.1143, "h": 0.7714, "color": "#efe7d3"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9412, "d": 0.963, "y": 0.8857, "h": 0.1143, "color": "#1f1f22"}
+  ]
+}

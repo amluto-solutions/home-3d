@@ -1,0 +1,51 @@
+{
+  "id": "unifi_usl_fob",
+  "name": {
+    "en": "UniFi Remote Control KeyFob"
+  },
+  "size": [
+    0.035,
+    0.0185,
+    0.067
+  ],
+  "group": "tech",
+  "tags": [
+    "keyfob",
+    "key fob",
+    "remote control",
+    "alarm remote",
+    "usl-fob",
+    "unifi",
+    "ubiquiti"
+  ],
+  "family": "unifi_sensor",
+  "variant": {
+    "en": "Remote Control KeyFob (USL-FOB)"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "round": 0.4
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0.2,
+      "w": 0.3,
+      "d": 0.5,
+      "y": 0.55,
+      "h": 0.3,
+      "color": "#3a8dde",
+      "axis": "y"
+    }
+  ]
+}

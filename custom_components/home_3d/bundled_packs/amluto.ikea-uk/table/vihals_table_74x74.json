@@ -1,0 +1,39 @@
+{
+  "id": "vihals_table_74x74",
+  "name": {
+    "en": "Table 74x74 cm"
+  },
+  "size": [
+    0.74,
+    0.74,
+    0.75
+  ],
+  "group": "table",
+  "room": [
+    "dining",
+    "kitchen"
+  ],
+  "tags": [
+    "dining table",
+    "kitchen table",
+    "white",
+    "2 seats"
+  ],
+  "family": "vihals_table",
+  "variant": {
+    "en": "74x74"
+  },
+  "ikea": "VIHALS",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9667, "h": 0.0333, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4426, "z": -0.4426, "w": 0.0608, "d": 0.0608, "y": 0, "h": 0.9667, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": -0.4426, "z": 0.4426, "w": 0.0608, "d": 0.0608, "y": 0, "h": 0.9667, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.4426, "z": -0.4426, "w": 0.0608, "d": 0.0608, "y": 0, "h": 0.9667, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.4426, "z": 0.4426, "w": 0.0608, "d": 0.0608, "y": 0, "h": 0.9667, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.4426, "w": 0.8851, "d": 0.027, "y": 0.8867, "h": 0.08, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4426, "w": 0.8851, "d": 0.027, "y": 0.8867, "h": 0.08, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.4426, "z": 0.0, "w": 0.027, "d": 0.8851, "y": 0.8867, "h": 0.08, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4426, "z": 0.0, "w": 0.027, "d": 0.8851, "y": 0.8867, "h": 0.08, "color": "white", "fix": "h"}
+  ]
+}

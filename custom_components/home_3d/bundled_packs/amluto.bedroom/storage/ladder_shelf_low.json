@@ -1,0 +1,46 @@
+{
+  "id": "ladder_shelf_low",
+  "name": {
+    "en": "Ladder shelf, low"
+  },
+  "size": [
+    0.6,
+    0.35,
+    1.5
+  ],
+  "group": "storage",
+  "family": "ladder_shelf",
+  "variant": {
+    "en": "4 shelves · 60 × 150"
+  },
+  "room": [
+    "living",
+    "bedroom",
+    "bath",
+    "hall"
+  ],
+  "tags": [
+    "leaning shelf",
+    "ladder bookcase",
+    "shelves",
+    "shelving",
+    "wall shelf"
+  ],
+  "parts": [
+    {"shape": "loft", "x": -0.4708, "z": 0.4571, "w": 0.0583, "d": 0.0857, "y": 0, "h": 1.0, "color": "wood", "tx": -0.4708, "tz": -0.4, "tw": 0.0583, "td": 0.0857, "fix": "w"},
+    {"shape": "loft", "x": 0.4708, "z": 0.4571, "w": 0.0583, "d": 0.0857, "y": 0, "h": 1.0, "color": "wood", "tx": 0.4708, "tz": -0.4, "tw": 0.0583, "td": 0.0857, "fix": "w"},
+    {"shape": "box", "x": 0, "z": -0.0229, "w": 0.8833, "d": 0.9429, "y": 0.04, "h": 0.0133, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4729, "w": 0.8833, "d": 0.0429, "y": 0.0533, "h": 0.02, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.1495, "w": 0.8833, "d": 0.701, "y": 0.3289, "h": 0.0133, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4786, "w": 0.8833, "d": 0.0429, "y": 0.3422, "h": 0.02, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.2733, "w": 0.8833, "d": 0.4533, "y": 0.6178, "h": 0.0133, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4786, "w": 0.8833, "d": 0.0429, "y": 0.6311, "h": 0.02, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.3971, "w": 0.8833, "d": 0.2057, "y": 0.9067, "h": 0.0133, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4786, "w": 0.8833, "d": 0.0429, "y": 0.92, "h": 0.02, "color": "wood", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": -0.3, "x2": 0.5, "z2": -0.3},
+    {"shape": "line", "x1": -0.5, "z1": 0.1, "x2": 0.5, "z2": 0.1}
+  ]
+}

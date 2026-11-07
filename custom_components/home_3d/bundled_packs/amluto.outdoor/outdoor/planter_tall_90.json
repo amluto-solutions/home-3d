@@ -1,0 +1,24 @@
+{
+  "id": "planter_tall_90",
+  "name": {"en": "Planter"},
+  "size": [0.36, 0.36, 1.3],
+  "group": "outdoor",
+  "room": ["garden", "conservatory"],
+  "tags": ["planter", "plant pot", "container", "pot", "patio planter", "garden", "flowers", "tall"],
+  "family": "planter",
+  "variant": {"en": "Tall, 90 cm"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8333, "d": 0.8333, "y": 0.0, "h": 0.0231, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0231, "h": 0.6462, "color": "pot"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.6692, "h": 0.0231, "color": "pot", "top": "#6b5440"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8611, "d": 0.8611, "y": 0.6769, "h": 0.0154, "color": "#4a3a2c"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.9, "y": 0.6462, "h": 0.3385, "color": "plant"},
+    {"shape": "sphere", "x": 0.1768, "z": 0.1768, "w": 0.45, "d": 0.45, "y": 0.6615, "h": 0.2369, "color": "plant"},
+    {"shape": "sphere", "x": -0.1768, "z": 0.1768, "w": 0.45, "d": 0.45, "y": 0.6615, "h": 0.2369, "color": "plant"},
+    {"shape": "sphere", "x": -0.1768, "z": -0.1768, "w": 0.45, "d": 0.45, "y": 0.6615, "h": 0.2369, "color": "plant"},
+    {"shape": "sphere", "x": 0.1768, "z": -0.1768, "w": 0.45, "d": 0.45, "y": 0.6615, "h": 0.2369, "color": "plant"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

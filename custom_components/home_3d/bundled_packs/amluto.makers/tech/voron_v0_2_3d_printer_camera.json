@@ -1,0 +1,52 @@
+{
+  "id": "voron_v0_2_3d_printer_camera",
+  "name": {
+    "en": "Voron 0.2 with camera"
+  },
+  "size": [
+    0.32,
+    0.32,
+    0.36
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage"
+  ],
+  "tags": [
+    "3d printer",
+    "printer",
+    "voron",
+    "maker",
+    "filament",
+    "fdm",
+    "voron 0",
+    "kit",
+    "corexy"
+  ],
+  "family": "voron_v0_2",
+  "variant": {
+    "en": "With camera"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.075, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": -0.4688, "w": 1, "d": 0.0625, "y": 0.075, "h": 0.85, "color": "body"},
+    {"shape": "box", "x": -0.4688, "z": 0.0312, "w": 0.0625, "d": 0.9375, "y": 0.075, "h": 0.85, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.4688, "z": 0.0312, "w": 0.0625, "d": 0.9375, "y": 0.075, "h": 0.85, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.925, "h": 0.075, "color": "dark"},
+    {"shape": "box", "x": -0.4625, "z": 0.4625, "w": 0.075, "d": 0.075, "y": 0.075, "h": 0.85, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4625, "z": 0.4625, "w": 0.075, "d": 0.075, "y": 0.075, "h": 0.85, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4813, "w": 0.875, "d": 0.025, "y": 0.1028, "h": 0.83, "color": "glass"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.875, "d": 0.03, "y": 0.78, "h": 0.03, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.1, "w": 0.62, "d": 0.62, "y": 0.26, "h": 0.02, "color": "metal"},
+    {"shape": "rbox", "x": 0.0, "z": 0.1, "w": 0.12, "d": 0.12, "y": 0.75, "h": 0.08, "color": "dark", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": 0.4, "w": 0.8, "d": 0.035, "y": 0.88, "h": 0.02, "color": "#fff1d0", "glow": true},
+    {"shape": "rbox", "x": 0.3, "z": 0.4875, "w": 0.22, "d": 0.0187, "y": 0.015, "h": 0.045, "color": "accent", "edges": "glow", "round": 0.2},
+    {"shape": "cyl", "x": 0.3, "z": 0.45, "w": 0.1094, "d": 0.0938, "y": 0.875, "h": 0.1111, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.3, "z": 0.4875, "w": 0.0687, "d": 0.0187, "y": 0.882, "h": 0.0667, "color": "glass", "axis": "z"}
+  ],
+  "symbol": [{"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}, {"shape": "rect", "x": 0, "z": 0, "w": 0.8, "d": 0.8}]
+}

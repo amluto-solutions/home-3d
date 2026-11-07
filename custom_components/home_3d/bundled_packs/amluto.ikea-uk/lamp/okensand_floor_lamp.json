@@ -1,0 +1,36 @@
+{
+  "id": "okensand_floor_lamp",
+  "name": {
+    "en": "Tripod floor lamp, beech"
+  },
+  "size": [
+    0.48,
+    0.48,
+    1.54
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "OKENSAND",
+    "floor lamp",
+    "tripod",
+    "standard lamp",
+    "beech",
+    "wood",
+    "white shade"
+  ],
+  "ikea": "ÖKENSAND",
+  "light": "floor",
+  "electric": true,
+  "parts": [
+    {"shape": "loft", "x": 0.0, "z": 0.4583, "w": 0.0521, "d": 0.0521, "y": 0, "h": 0.8117, "color": "wood", "tx": 0.0, "tz": 0.0417, "tw": 0.0417, "td": 0.0417},
+    {"shape": "loft", "x": -0.3969, "z": -0.2292, "w": 0.0521, "d": 0.0521, "y": 0, "h": 0.8117, "color": "wood", "tx": -0.0361, "tz": -0.0208, "tw": 0.0417, "td": 0.0417},
+    {"shape": "loft", "x": 0.3969, "z": -0.2292, "w": 0.0521, "d": 0.0521, "y": 0, "h": 0.8117, "color": "wood", "tx": 0.0361, "tz": -0.0208, "tw": 0.0417, "td": 0.0417},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.7292, "d": 0.7292, "y": 0.7662, "h": 0.2338, "color": "white", "edges": "faint", "profile": [[1, 0], [1, 0.75], [0.8, 0.95], [0.5, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.6667, "d": 0.6667, "y": 0.7727, "h": 0.0065, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

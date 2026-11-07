@@ -1,0 +1,42 @@
+{
+  "id": "ragrund_shelving_33x28x163",
+  "name": {
+    "en": "Shelving unit 33x28x163 cm"
+  },
+  "size": [
+    0.33,
+    0.28,
+    1.63
+  ],
+  "group": "bath",
+  "room": [
+    "bath",
+    "utility",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "RAGRUND",
+    "bathroom shelves",
+    "bamboo",
+    "slim shelving",
+    "narrow shelf",
+    "wood"
+  ],
+  "family": "ragrund_shelving",
+  "variant": {
+    "en": "33x28x163"
+  },
+  "ikea": "RÅGRUND",
+  "parts": [
+    {"shape": "box", "x": -0.4318, "z": -0.4196, "w": 0.0758, "d": 0.0893, "y": 0, "h": 1, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4318, "z": 0.4196, "w": 0.0758, "d": 0.0893, "y": 0, "h": 1, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4318, "z": -0.4196, "w": 0.0758, "d": 0.0893, "y": 0, "h": 1, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4318, "z": 0.4196, "w": 0.0758, "d": 0.0893, "y": 0, "h": 1, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9697, "d": 0.9643, "y": 0.0613, "h": 0.0123, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9697, "d": 0.9643, "y": 0.2638, "h": 0.0123, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9697, "d": 0.9643, "y": 0.4663, "h": 0.0123, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9697, "d": 0.9643, "y": 0.6687, "h": 0.0123, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9697, "d": 0.9643, "y": 0.8712, "h": 0.0123, "color": "wood", "fix": "h"}
+  ]
+}

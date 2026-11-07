@@ -1,0 +1,35 @@
+{
+  "id": "french_doors_120",
+  "name": {"en": "French doors"},
+  "size": [1.2, 0.1, 2.1],
+  "group": "architecture",
+  "room": ["living", "dining", "kitchen", "conservatory", "garden"],
+  "tags": ["french doors", "patio doors", "garden doors", "double doors", "glazed doors", "terrace door", "door", "upvc"],
+  "family": "french_doors",
+  "variant": {"en": "120 cm"},
+  "parts": [
+    {"shape": "box", "x": -0.4708, "z": 0.0, "w": 0.0583, "d": 1, "y": 0.0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.4708, "z": 0.0, "w": 0.0583, "d": 1, "y": 0.0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8833, "d": 1, "y": 0.9667, "h": 0.0333, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8833, "d": 1, "y": 0.0, "h": 0.0143, "color": "metal"},
+    {"shape": "box", "x": -0.4042, "z": 0.0, "w": 0.075, "d": 0.6, "y": 0.0143, "h": 0.9381, "color": "white"},
+    {"shape": "box", "x": -0.0375, "z": 0.0, "w": 0.075, "d": 0.6, "y": 0.0143, "h": 0.9381, "color": "white"},
+    {"shape": "box", "x": -0.2208, "z": 0.0, "w": 0.2917, "d": 0.6, "y": 0.9095, "h": 0.0429, "color": "white"},
+    {"shape": "box", "x": -0.2208, "z": 0.0, "w": 0.2917, "d": 0.6, "y": 0.0143, "h": 0.0857, "color": "white"},
+    {"shape": "box", "x": -0.2208, "z": 0.0, "w": 0.2917, "d": 0.2, "y": 0.1, "h": 0.8095, "color": "glass"},
+    {"shape": "box", "x": 0.0375, "z": 0.0, "w": 0.075, "d": 0.6, "y": 0.0143, "h": 0.9381, "color": "white"},
+    {"shape": "box", "x": 0.4042, "z": 0.0, "w": 0.075, "d": 0.6, "y": 0.0143, "h": 0.9381, "color": "white"},
+    {"shape": "box", "x": 0.2208, "z": 0.0, "w": 0.2917, "d": 0.6, "y": 0.9095, "h": 0.0429, "color": "white"},
+    {"shape": "box", "x": 0.2208, "z": 0.0, "w": 0.2917, "d": 0.6, "y": 0.0143, "h": 0.0857, "color": "white"},
+    {"shape": "box", "x": 0.2208, "z": 0.0, "w": 0.2917, "d": 0.2, "y": 0.1, "h": 0.8095, "color": "glass"},
+    {"shape": "box", "x": 0.0375, "z": -0.4, "w": 0.0208, "d": 0.2, "y": 0.4762, "h": 0.0762, "color": "metal"},
+    {"shape": "box", "x": 0.0792, "z": -0.4, "w": 0.0833, "d": 0.2, "y": 0.5095, "h": 0.0095, "color": "metal"},
+    {"shape": "box", "x": 0.0375, "z": 0.4, "w": 0.0208, "d": 0.2, "y": 0.4762, "h": 0.0762, "color": "metal"},
+    {"shape": "box", "x": 0.0792, "z": 0.4, "w": 0.0833, "d": 0.2, "y": 0.5095, "h": 0.0095, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.4417, "z1": 0.5, "x2": -0.1325, "z2": 0.5},
+    {"shape": "line", "x1": 0.4417, "z1": 0.5, "x2": 0.1325, "z2": 0.5}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "arc_table_lamp",
+  "name": {
+    "en": "Arc table lamp"
+  },
+  "size": [
+    0.2,
+    0.4,
+    0.38
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "office",
+    "bedroom"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "arc lamp",
+    "table arc",
+    "globe lamp",
+    "chrome",
+    "modern",
+    "overhang",
+    "hanging globe"
+  ],
+  "family": "arc_table_lamp",
+  "variant": {
+    "en": "Chrome"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.25, "w": 0.8, "d": 0.4, "y": 0, "h": 0.0789, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": 0.25, "w": 0.125, "d": 0.0625, "y": 0.0789, "h": 0.7895, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.1, "d": 0.5, "y": 0.8684, "h": 0.0526, "color": "metal"},
+    {"shape": "sphere", "x": 0.0, "z": -0.25, "w": 1, "d": 0.5, "y": 0.4737, "h": 0.5263, "color": "white", "glow": true}
+  ]
+}

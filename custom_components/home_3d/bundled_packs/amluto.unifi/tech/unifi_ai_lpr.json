@@ -1,0 +1,83 @@
+{
+ "id": "unifi_ai_lpr",
+ "name": {
+  "en": "UniFi AI LPR camera"
+ },
+ "size": [
+  0.13,
+  0.1514,
+  0.3029
+ ],
+ "group": "tech",
+ "tags": [
+  "security camera",
+  "camera",
+  "cctv",
+  "unifi",
+  "ubiquiti",
+  "ai lpr",
+  "uvc ai lpr"
+ ],
+ "family": "unifi_camera",
+ "variant": {
+  "en": "AI LPR"
+ },
+ "electric": true,
+ "mount": "wall",
+ "wall_y": 2.0,
+ "parts": [
+  {
+   "shape": "box",
+   "x": 0.0,
+   "z": -0.4624,
+   "w": 0.5385,
+   "d": 0.0793,
+   "y": 0.0,
+   "h": 1.0,
+   "color": "white"
+  },
+  {
+   "shape": "box",
+   "x": 0.0,
+   "z": -0.2972,
+   "w": 0.3077,
+   "d": 0.3963,
+   "y": 0.3632,
+   "h": 0.1321,
+   "color": "white"
+  },
+  {
+   "shape": "rbox",
+   "x": 0.0,
+   "z": 0.033,
+   "w": 1.0,
+   "d": 0.9313,
+   "y": 0.5612,
+   "h": 0.3962,
+   "color": "white",
+   "round": 0.25
+  },
+  {
+   "shape": "cyl",
+   "x": 0.0,
+   "z": 0.4624,
+   "w": 0.6154,
+   "d": 0.0396,
+   "y": 0.6273,
+   "h": 0.2641,
+   "color": "#1c222c",
+   "axis": "z"
+  },
+  {
+   "shape": "cyl",
+   "x": 0.0,
+   "z": 0.4822,
+   "w": 0.3077,
+   "d": 0.0198,
+   "y": 0.6933,
+   "h": 0.1321,
+   "color": "#0b0f17",
+   "axis": "z"
+  }
+ ]
+}

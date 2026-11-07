@@ -1,0 +1,50 @@
+{
+  "id": "unifi_up_viewport",
+  "name": {
+    "en": "UniFi Protect Viewport"
+  },
+  "size": [
+    0.157,
+    0.037,
+    0.052
+  ],
+  "group": "tech",
+  "tags": [
+    "viewport",
+    "protect viewport",
+    "hdmi decoder",
+    "up-viewport",
+    "unifi",
+    "ubiquiti"
+  ],
+  "family": "unifi_viewport",
+  "variant": {
+    "en": "Protect Viewport (UP-Viewport)"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.0,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "round": 0.2
+    },
+    {
+      "shape": "box",
+      "x": -0.4,
+      "z": 0.3,
+      "w": 0.1,
+      "d": 0.4,
+      "y": 0.2,
+      "h": 0.6,
+      "color": "#0b0f17"
+    }
+  ]
+}

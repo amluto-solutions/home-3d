@@ -1,0 +1,46 @@
+{
+  "id": "borrby_lantern_tealight",
+  "name": {
+    "en": "Lantern for tealight 20 cm"
+  },
+  "size": [
+    0.11,
+    0.11,
+    0.2
+  ],
+  "group": "candle",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "garden",
+    "conservatory"
+  ],
+  "tags": [
+    "lantern",
+    "candle holder",
+    "hurricane",
+    "black",
+    "white",
+    "in/outdoor"
+  ],
+  "family": "borrby_lantern",
+  "variant": {
+    "en": "Tealight 20"
+  },
+  "ikea": "BORRBY",
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.075, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.64, "h": 0.06, "color": "dark", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.7, "h": 0.15, "color": "dark", "tw": 0.2727, "td": 0.2727},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4545, "d": 0.0727, "y": 0.85, "h": 0.15, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": -0.4636, "z": -0.4636, "w": 0.0727, "d": 0.0727, "y": 0.075, "h": 0.565, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": -0.4636, "z": 0.4636, "w": 0.0727, "d": 0.0727, "y": 0.075, "h": 0.565, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.4636, "z": -0.4636, "w": 0.0727, "d": 0.0727, "y": 0.075, "h": 0.565, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.4636, "z": 0.4636, "w": 0.0727, "d": 0.0727, "y": 0.075, "h": 0.565, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8909, "d": 0.8909, "y": 0.075, "h": 0.565, "color": "glass"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.3636, "d": 0.3636, "y": 0.075, "h": 0.1, "color": "#f3ead8"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.1091, "d": 0.1091, "y": 0.175, "h": 0.125, "color": "#ffb648", "fix": "wdh"}
+  ]
+}

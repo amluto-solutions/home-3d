@@ -1,0 +1,94 @@
+{
+  "id": "anycubic_wash_and_cure",
+  "name": {
+    "en": "Anycubic Wash & Cure Plus"
+  },
+  "size": [
+    0.29,
+    0.27,
+    0.479
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage",
+    "loft",
+    "utility"
+  ],
+  "tags": [
+    "wash and cure",
+    "resin",
+    "uv",
+    "maker",
+    "post processing",
+    "anycubic"
+  ],
+  "family": "wash_cure",
+  "variant": {
+    "en": "Anycubic"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 0.7,
+      "color": "white",
+      "round": 0.1
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.8,
+      "d": 0.8,
+      "y": 0.7,
+      "h": 0.3,
+      "color": "#c9791f"
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.4929,
+      "w": 0.4,
+      "d": 0.0143,
+      "y": 0.1,
+      "h": 0.2,
+      "color": "dark",
+      "round": 0.2
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.4929,
+      "w": 0.5,
+      "d": 0.0143,
+      "y": 0.0088,
+      "h": 0.0147,
+      "color": "#7fe3ff",
+      "glow": true
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    },
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 0.8,
+      "d": 0.8
+    }
+  ]
+}

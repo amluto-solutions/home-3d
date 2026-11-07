@@ -1,0 +1,38 @@
+{
+  "id": "rosentorp_extendable_table_155x87",
+  "name": {
+    "en": "Extendable table 155/215x87 cm"
+  },
+  "size": [
+    1.55,
+    0.87,
+    0.75
+  ],
+  "group": "table",
+  "room": [
+    "dining",
+    "kitchen"
+  ],
+  "tags": [
+    "dining table",
+    "extending table",
+    "turned legs",
+    "country",
+    "white",
+    "black"
+  ],
+  "family": "rosentorp_extendable_table",
+  "variant": {
+    "en": "155/215x87"
+  },
+  "ikea": "ROSENTORP",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.96, "h": 0.04, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8968, "d": 0.8161, "y": 0.8533, "h": 0.1067, "color": "white", "fix": "h"},
+    {"shape": "lathe", "x": -0.4484, "z": -0.408, "w": 0.0452, "d": 0.0805, "y": 0, "h": 0.96, "color": "white", "fix": "wd", "profile": [[0, 0], [0.55, 0], [0.7, 0.4], [0.85, 0.75], [1, 0.8], [1, 1], [0, 1]]},
+    {"shape": "lathe", "x": -0.4484, "z": 0.408, "w": 0.0452, "d": 0.0805, "y": 0, "h": 0.96, "color": "white", "fix": "wd", "profile": [[0, 0], [0.55, 0], [0.7, 0.4], [0.85, 0.75], [1, 0.8], [1, 1], [0, 1]]},
+    {"shape": "lathe", "x": 0.4484, "z": -0.408, "w": 0.0452, "d": 0.0805, "y": 0, "h": 0.96, "color": "white", "fix": "wd", "profile": [[0, 0], [0.55, 0], [0.7, 0.4], [0.85, 0.75], [1, 0.8], [1, 1], [0, 1]]},
+    {"shape": "lathe", "x": 0.4484, "z": 0.408, "w": 0.0452, "d": 0.0805, "y": 0, "h": 0.96, "color": "white", "fix": "wd", "profile": [[0, 0], [0.55, 0], [0.7, 0.4], [0.85, 0.75], [1, 0.8], [1, 1], [0, 1]]}
+  ]
+}

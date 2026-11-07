@@ -1,0 +1,40 @@
+{
+  "id": "nysjon_laundry_cabinet_40x190",
+  "name": {
+    "en": "Laundry cabinet 40x190 cm"
+  },
+  "size": [
+    0.4,
+    0.32,
+    1.9
+  ],
+  "group": "bath",
+  "room": [
+    "bath",
+    "utility"
+  ],
+  "tags": [
+    "NYSJON",
+    "bathroom cabinet",
+    "tall cabinet",
+    "slim cabinet",
+    "storage tower",
+    "white"
+  ],
+  "family": "nysjon_high_cabinet",
+  "variant": {
+    "en": "Laundry 40x190"
+  },
+  "ikea": "NYSJÖN",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9531, "y": 0.0684, "h": 0.9316, "color": "white"},
+    {"shape": "cyl", "x": -0.425, "z": -0.3828, "w": 0.075, "d": 0.0938, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.425, "z": 0.3828, "w": 0.075, "d": 0.0938, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.425, "z": -0.3828, "w": 0.075, "d": 0.0938, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.425, "z": 0.3828, "w": 0.075, "d": 0.0938, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4813, "w": 0.99, "d": 0.0562, "y": 0.5421, "h": 0.4558, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.4125, "z": 0.5, "w": 0.03, "d": 0.0687, "y": 0.7342, "h": 0.0737, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4813, "w": 0.99, "d": 0.0562, "y": 0.0737, "h": 0.4611, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.4125, "z": 0.5, "w": 0.03, "d": 0.0687, "y": 0.2684, "h": 0.0737, "color": "metal", "fix": "wdh"}
+  ]
+}

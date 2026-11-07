@@ -1,0 +1,43 @@
+{
+  "id": "fire_pit_bowl_tripod",
+  "name": {
+    "en": "Fire bowl on tripod"
+  },
+  "size": [
+    0.6,
+    0.6,
+    0.8
+  ],
+  "group": "heating",
+  "room": [
+    "garden",
+    "conservatory"
+  ],
+  "tags": [
+    "fire bowl",
+    "fire pit",
+    "tripod",
+    "brazier",
+    "garden fire",
+    "bowl on legs",
+    "outdoor heater",
+    "steel"
+  ],
+  "family": "fire_pit_tripod",
+  "variant": {
+    "en": "60 cm"
+  },
+  "light": "garden",
+  "parts": [
+    {"shape": "loft", "x": 0.3, "z": 0.0, "w": 0.05, "d": 0.05, "y": 0, "h": 0.6875, "color": "#2a2b2e", "tx": 0.0667, "tz": 0.0, "tw": 0.05, "td": 0.05},
+    {"shape": "loft", "x": -0.15, "z": 0.26, "w": 0.05, "d": 0.05, "y": 0, "h": 0.6875, "color": "#2a2b2e", "tx": -0.0333, "tz": 0.06, "tw": 0.05, "td": 0.05},
+    {"shape": "loft", "x": -0.15, "z": -0.26, "w": 0.05, "d": 0.05, "y": 0, "h": 0.6875, "color": "#2a2b2e", "tx": -0.0333, "tz": -0.06, "tw": 0.05, "td": 0.05},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.625, "h": 0.175, "color": "#3b3d41", "profile": [[0.0, 0.0], [0.4, 0.0], [0.9333, 0.7143], [1.0, 1.0], [0.9333, 1.0], [0.4, 0.2857], [0.0, 0.2857]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.3333, "d": 0.3333, "y": 0.6625, "h": 0.0625, "color": "#3b2b22"},
+    {"shape": "loft", "x": -0.1667, "z": 0.0, "w": 0.1167, "d": 0.07, "y": 0.725, "h": 0.1925, "color": "#ff8a2a", "tx": -0.1667, "tz": 0.0, "tw": 0.0175, "td": 0.0117, "glow": true},
+    {"shape": "loft", "x": -0.0833, "z": 0.0, "w": 0.1167, "d": 0.07, "y": 0.725, "h": 0.2508, "color": "#ffc24a", "tx": -0.0833, "tz": 0.0, "tw": 0.0175, "td": 0.0117, "glow": true},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.1167, "d": 0.07, "y": 0.725, "h": 0.275, "color": "#ff8a2a", "tx": 0.0, "tz": 0.0, "tw": 0.0175, "td": 0.0117, "glow": true},
+    {"shape": "loft", "x": 0.0833, "z": 0.0, "w": 0.1167, "d": 0.07, "y": 0.725, "h": 0.2508, "color": "#ffc24a", "tx": 0.0833, "tz": 0.0, "tw": 0.0175, "td": 0.0117, "glow": true},
+    {"shape": "loft", "x": 0.1667, "z": 0.0, "w": 0.1167, "d": 0.07, "y": 0.725, "h": 0.1925, "color": "#ff8a2a", "tx": 0.1667, "tz": 0.0, "tw": 0.0175, "td": 0.0117, "glow": true}
+  ]
+}

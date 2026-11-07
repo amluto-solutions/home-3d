@@ -1,0 +1,19 @@
+{
+  "id": "smart_speaker_tall",
+  "name": {"en": "Smart speaker (tall)"},
+  "size": [0.124, 0.078, 0.175],
+  "group": "media",
+  "room": ["kitchen", "living", "bedroom", "kids", "office"],
+  "tags": ["nest audio", "google home", "echo", "alexa", "voice assistant", "speaker", "assistant"],
+  "family": "smart_speaker",
+  "variant": {"en": "Tall"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0, "h": 1, "color": "fabric", "round": 0.45},
+    {"shape": "box", "x": -0.121, "z": 0.4872, "w": 0.0403, "d": 0.0256, "y": 0.8571, "h": 0.0286, "color": "white", "glow": true},
+    {"shape": "box", "x": -0.0403, "z": 0.4872, "w": 0.0403, "d": 0.0256, "y": 0.8571, "h": 0.0286, "color": "white", "glow": true},
+    {"shape": "box", "x": 0.0403, "z": 0.4872, "w": 0.0403, "d": 0.0256, "y": 0.8571, "h": 0.0286, "color": "white", "glow": true},
+    {"shape": "box", "x": 0.121, "z": 0.4872, "w": 0.0403, "d": 0.0256, "y": 0.8571, "h": 0.0286, "color": "white", "glow": true}
+  ]
+}

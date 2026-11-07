@@ -1,0 +1,31 @@
+{
+  "id": "stream_deck_mk2",
+  "name": {"en": "Elgato Stream Deck MK.2"},
+  "size": [0.118, 0.084, 0.025],
+  "group": "tech",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["stream deck mk.2", "stream deck mk2", "stream deck", "elgato", "macro pad", "control surface", "streaming", "audio"],
+  "family": "stream_deck",
+  "variant": {"en": "MK.2"},
+  "electric": true,
+  "watts": 1,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "dark", "round": 0.15},
+    {"shape": "rbox", "x": -0.336, "z": -0.2667, "w": 0.1378, "d": 0.2187, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": -0.336, "z": 0.0, "w": 0.1378, "d": 0.2187, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": -0.336, "z": 0.2667, "w": 0.1378, "d": 0.2187, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": -0.168, "z": -0.2667, "w": 0.1378, "d": 0.2187, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": -0.168, "z": 0.0, "w": 0.1378, "d": 0.2187, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": -0.168, "z": 0.2667, "w": 0.1378, "d": 0.2187, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": -0.2667, "w": 0.1378, "d": 0.2187, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.1378, "d": 0.2187, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": 0.2667, "w": 0.1378, "d": 0.2187, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": 0.168, "z": -0.2667, "w": 0.1378, "d": 0.2187, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": 0.168, "z": 0.0, "w": 0.1378, "d": 0.2187, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": 0.168, "z": 0.2667, "w": 0.1378, "d": 0.2187, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": 0.336, "z": -0.2667, "w": 0.1378, "d": 0.2187, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": 0.336, "z": 0.0, "w": 0.1378, "d": 0.2187, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": 0.336, "z": 0.2667, "w": 0.1378, "d": 0.2187, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25}
+  ]
+}

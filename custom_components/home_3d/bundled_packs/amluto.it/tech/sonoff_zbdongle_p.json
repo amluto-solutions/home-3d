@@ -1,0 +1,17 @@
+{
+  "id": "sonoff_zbdongle_p",
+  "name": {"en": "SONOFF ZBDongle-P Zigbee stick"},
+  "size": [0.087,0.0255,0.0135],
+  "group": "tech",
+  "room": ["office", "utility", "hall", "living", "loft"],
+  "tags": ["sonoff", "zbdongle-p", "zbdongle", "zigbee 3.0", "cc2652p", "ti", "zigbee stick", "zigbee dongle", "coordinator", "zigbee coordinator", "usb stick", "home assistant"],
+  "family": "zigbee_stick",
+  "variant": {"en": "SONOFF ZBDongle-P"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": -0.431, "z": 0, "w": 0.1379, "d": 0.4706, "y": 0.3333, "h": 0.3333, "color": "metal"},
+    {"shape": "rbox", "x": 0.069, "z": 0, "w": 0.8621, "d": 1, "y": 0, "h": 1, "color": "dark", "round": 0.25},
+    {"shape": "box", "x": 0.408, "z": 0, "w": 0.0345, "d": 0.0784, "y": 0.9704, "h": 0.0296, "color": "#46d36a", "glow": true}
+  ]
+}

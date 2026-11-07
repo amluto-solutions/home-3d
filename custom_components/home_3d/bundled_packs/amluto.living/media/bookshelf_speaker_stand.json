@@ -1,0 +1,21 @@
+{
+  "id": "bookshelf_speaker_stand",
+  "name": {"en": "Bookshelf speaker on a stand"},
+  "size": [0.25, 0.3, 0.92],
+  "group": "media",
+  "room": ["living", "office"],
+  "tags": ["speaker", "hi-fi", "hifi", "stereo", "speaker stand", "loudspeaker", "audio"],
+  "family": "bookshelf_speaker",
+  "variant": {"en": "On stand"},
+  "electric": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0, "h": 0.0217, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.2, "d": 0.1667, "y": 0.0217, "h": 0.6087, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.8, "y": 0.6304, "h": 0.0163, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0167, "w": 0.76, "d": 0.84, "y": 0.6467, "h": 0.3478, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.42, "w": 0.744, "d": 0.0333, "y": 0.6489, "h": 0.3435, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4367, "w": 0.5472, "d": 0.02, "y": 0.6885, "h": 0.1487, "color": "metal", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4433, "w": 0.4104, "d": 0.0133, "y": 0.7071, "h": 0.1115, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4367, "w": 0.1368, "d": 0.02, "y": 0.9064, "h": 0.0372, "color": "metal", "axis": "z"}
+  ]
+}

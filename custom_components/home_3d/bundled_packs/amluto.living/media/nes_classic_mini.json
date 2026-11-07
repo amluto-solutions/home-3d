@@ -1,0 +1,21 @@
+{
+  "id": "nes_classic_mini",
+  "name": {"en": "NES Classic Mini"},
+  "size": [0.11, 0.1, 0.04],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["nes classic", "nes mini", "classic mini", "nintendo", "gaming", "console", "retro", "clv-001"],
+  "family": "nes",
+  "variant": {"en": "Mini"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 2,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#b9bbbf", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": 0.15, "w": 0.65, "d": 0.3, "y": 0.98, "h": 0.02, "color": "#2b2d31"},
+    {"shape": "box", "x": -0.28, "z": 0.4, "w": 0.16, "d": 0.04, "y": 0.4, "h": 0.12, "color": "#101114"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

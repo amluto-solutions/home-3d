@@ -1,0 +1,29 @@
+{
+  "id": "anker_solix_1kwh",
+  "name": {"en": "Anker SOLIX power station"},
+  "size": [0.34, 0.24, 0.27],
+  "group": "energy",
+  "room": ["office", "garage", "loft", "living", "garden"],
+  "tags": ["anker", "solix", "portable power station", "power station", "portable battery", "solar generator", "ecoflow", "power bank", "home backup"],
+  "family": "power_station",
+  "variant": {"en": "1 kWh compact"},
+  "electric": true,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0, "h": 0.8148, "color": "dark", "round": 0.12},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9412, "d": 0.9167, "y": 0.7037, "h": 0.1111, "color": "#5a5f66", "round": 0.3},
+    {"shape": "box", "x": 0.0, "z": 0.4875, "w": 0.7647, "d": 0.025, "y": 0.1467, "h": 0.4889, "color": "#2b2f35"},
+    {"shape": "box", "x": -0.25, "z": 0.4916, "w": 0.22, "d": 0.0167, "y": 0.4074, "h": 0.163, "color": "#7fd0ff"},
+    {"shape": "box", "x": 0.02, "z": 0.4916, "w": 0.1471, "d": 0.0167, "y": 0.2037, "h": 0.1852, "color": "white"},
+    {"shape": "box", "x": 0.2406, "z": 0.4916, "w": 0.1471, "d": 0.0167, "y": 0.2037, "h": 0.1852, "color": "white"},
+    {"shape": "box", "x": -0.32, "z": 0.4916, "w": 0.0441, "d": 0.0167, "y": 0.2444, "h": 0.0296, "color": "white"},
+    {"shape": "box", "x": -0.2318, "z": 0.4916, "w": 0.0441, "d": 0.0167, "y": 0.2444, "h": 0.0296, "color": "white"},
+    {"shape": "box", "x": -0.1435, "z": 0.4916, "w": 0.0441, "d": 0.0167, "y": 0.2444, "h": 0.0296, "color": "white"},
+    {"shape": "cyl", "x": 0.2647, "z": 0.4875, "w": 0.0882, "d": 0.025, "y": 0.4481, "h": 0.1111, "color": "#46d36a", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": -0.3, "z": 0.0, "w": 0.0882, "d": 0.3, "y": 0.8148, "h": 0.1852, "color": "#5a5f66"},
+    {"shape": "box", "x": 0.3, "z": 0.0, "w": 0.0882, "d": 0.3, "y": 0.8148, "h": 0.1852, "color": "#5a5f66"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.63, "d": 0.3, "y": 0.9259, "h": 0.0741, "color": "#5a5f66"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

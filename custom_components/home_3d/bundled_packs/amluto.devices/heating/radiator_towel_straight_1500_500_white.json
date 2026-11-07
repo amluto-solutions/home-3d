@@ -1,0 +1,50 @@
+{
+  "id": "radiator_towel_straight_1500_500_white",
+  "name": {
+    "en": "Straight towel rail"
+  },
+  "size": [
+    0.5,
+    0.045,
+    1.5
+  ],
+  "group": "heating",
+  "room": [
+    "bath",
+    "kitchen",
+    "utility",
+    "bedroom"
+  ],
+  "tags": [
+    "radiator",
+    "towel rail",
+    "heated towel rail",
+    "bathroom",
+    "towel radiator",
+    "straight"
+  ],
+  "family": "radiator_towel_straight",
+  "variant": {
+    "en": "1500 × 500 mm, white"
+  },
+  "mount": "wall",
+  "wall_y": 0.2,
+  "parts": [
+    {"shape": "cyl", "x": -0.44, "z": 0.0, "w": 0.05, "d": 0.5556, "y": 0.0, "h": 1.0, "color": "white"},
+    {"shape": "cyl", "x": 0.44, "z": 0.0, "w": 0.05, "d": 0.5556, "y": 0.0, "h": 1.0, "color": "white"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.0267, "h": 0.0147, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.1033, "h": 0.0147, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.18, "h": 0.0147, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.2567, "h": 0.0147, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.3333, "h": 0.0147, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.41, "h": 0.0147, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.4867, "h": 0.0147, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.5633, "h": 0.0147, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.64, "h": 0.0147, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.7167, "h": 0.0147, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.7933, "h": 0.0147, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.87, "h": 0.0147, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.9467, "h": 0.0147, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.44, "z": 0.0, "w": 0.08, "d": 0.8889, "y": 0.0, "h": 0.02, "color": "accent"}
+  ]
+}

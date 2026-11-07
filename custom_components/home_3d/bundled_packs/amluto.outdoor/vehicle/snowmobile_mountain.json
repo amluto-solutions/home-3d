@@ -1,0 +1,24 @@
+{
+  "id": "snowmobile_mountain",
+  "name": {"en": "Snowmobile, mountain"},
+  "size": [1.15, 3.1, 1.3],
+  "group": "vehicle",
+  "room": ["garage", "garden"],
+  "tags": ["snowmobile", "snow machine", "skidoo", "snow", "winter", "mountain", "deep snow", "powder"],
+  "vehicle": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.08, "w": 0.34, "d": 0.52, "y": 0.0, "h": 0.2308, "color": "dark"},
+    {"shape": "loft", "x": -0.38, "z": 0.36, "w": 0.1391, "d": 0.3, "y": 0.0, "h": 0.0769, "color": "dark", "tx": -0.38, "tz": 0.45, "tw": 0.1391, "td": 0.3},
+    {"shape": "loft", "x": -0.38, "z": 0.34, "w": 0.0348, "d": 0.0129, "y": 0.0769, "h": 0.2692, "color": "metal", "tx": -0.38, "tz": 0.28, "tw": 0.0348, "td": 0.0129},
+    {"shape": "loft", "x": 0.38, "z": 0.36, "w": 0.1391, "d": 0.3, "y": 0.0, "h": 0.0769, "color": "dark", "tx": 0.38, "tz": 0.45, "tw": 0.1391, "td": 0.3},
+    {"shape": "loft", "x": 0.38, "z": 0.34, "w": 0.0348, "d": 0.0129, "y": 0.0769, "h": 0.2692, "color": "metal", "tx": 0.38, "tz": 0.28, "tw": 0.0348, "td": 0.0129},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.62, "d": 0.58, "y": 0.2154, "h": 0.2462, "color": "dark", "round": 0.2},
+    {"shape": "loft", "x": 0.0, "z": 0.2, "w": 0.66, "d": 0.38, "y": 0.3077, "h": 0.2154, "color": "paint", "tx": 0.0, "tz": 0.27, "tw": 0.5, "td": 0.26},
+    {"shape": "loft", "x": 0.0, "z": 0.12, "w": 0.42, "d": 0.1, "y": 0.4769, "h": 0.32, "color": "glass", "tx": 0.0, "tz": 0.05, "tw": 0.42, "td": 0.03},
+    {"shape": "rbox", "x": 0.0, "z": -0.14, "w": 0.42, "d": 0.24, "y": 0.4462, "h": 0.1077, "color": "dark", "round": 0.3},
+    {"shape": "box", "x": 0.0, "z": 0.07, "w": 0.55, "d": 0.0129, "y": 0.6, "h": 0.0308, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.4, "w": 0.4, "d": 0.0129, "y": 0.3692, "h": 0.0769, "color": "#fff3cf"},
+    {"shape": "box", "x": 0.0, "z": -0.4903, "w": 0.34, "d": 0.0161, "y": 0.3077, "h": 0.0462, "color": "#b3141b"},
+    {"shape": "loft", "x": 0.0, "z": -0.36, "w": 0.35, "d": 0.2, "y": 0.3462, "h": 0.0923, "color": "paint", "tx": 0.0, "tz": -0.42, "tw": 0.35, "td": 0.06}
+  ]
+}

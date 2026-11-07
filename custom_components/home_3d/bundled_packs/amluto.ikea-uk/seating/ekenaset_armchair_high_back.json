@@ -1,0 +1,46 @@
+{
+  "id": "ekenaset_armchair_high_back",
+  "name": {
+    "en": "High-back armchair"
+  },
+  "size": [
+    0.65,
+    0.96,
+    1.07
+  ],
+  "group": "seating",
+  "room": [
+    "living",
+    "bedroom",
+    "conservatory"
+  ],
+  "tags": [
+    "EKENASET",
+    "armchair",
+    "accent chair",
+    "easy chair",
+    "wooden arms",
+    "light beige",
+    "golden-brown",
+    "black",
+    "off-white",
+    "oak effect"
+  ],
+  "family": "ekenaset_armchair",
+  "variant": {
+    "en": "High back"
+  },
+  "ikea": "EKENÄSET",
+  "parts": [
+    {"shape": "loft", "x": -0.4538, "z": 0.4167, "w": 0.0538, "d": 0.0365, "y": 0, "h": 0.5607, "color": "wood", "tx": -0.4538, "tz": 0.3958, "tw": 0.0462, "td": 0.0312, "fix": "w"},
+    {"shape": "loft", "x": -0.4538, "z": -0.3958, "w": 0.0538, "d": 0.0365, "y": 0, "h": 0.3832, "color": "wood", "tx": -0.4538, "tz": -0.375, "tw": 0.0462, "td": 0.0312, "fix": "w"},
+    {"shape": "rbox", "x": -0.4538, "z": 0.0, "w": 0.0923, "d": 0.8542, "y": 0.5607, "h": 0.028, "color": "wood", "fix": "w", "round": 0.4},
+    {"shape": "loft", "x": 0.4538, "z": 0.4167, "w": 0.0538, "d": 0.0365, "y": 0, "h": 0.5607, "color": "wood", "tx": 0.4538, "tz": 0.3958, "tw": 0.0462, "td": 0.0312, "fix": "w"},
+    {"shape": "loft", "x": 0.4538, "z": -0.3958, "w": 0.0538, "d": 0.0365, "y": 0, "h": 0.3832, "color": "wood", "tx": 0.4538, "tz": -0.375, "tw": 0.0462, "td": 0.0312, "fix": "w"},
+    {"shape": "rbox", "x": 0.4538, "z": 0.0, "w": 0.0923, "d": 0.8542, "y": 0.5607, "h": 0.028, "color": "wood", "fix": "w", "round": 0.4},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9077, "d": 0.7917, "y": 0.2991, "h": 0.0374, "color": "wood", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0417, "w": 0.8462, "d": 0.75, "y": 0.3364, "h": 0.0935, "color": "fabric", "round": 0.3},
+    {"shape": "loft", "x": 0.0, "z": -0.375, "w": 0.8462, "d": 0.1042, "y": 0.3832, "h": 0.6168, "color": "fabric", "tz": -0.4375, "tw": 0.8154, "td": 0.0833},
+    {"shape": "rbox", "x": 0.0, "z": -0.2917, "w": 0.6923, "d": 0.0833, "y": 0.7664, "h": 0.1495, "color": "cushion", "round": 0.45}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "chopping_board_bamboo_small",
+  "name": {"en": "Chopping board, bamboo, small"},
+  "size": [0.3, 0.2, 0.02],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "tags": ["chopping board", "cutting board", "kitchen", "worktop", "bamboo"],
+  "family": "chopping_board_bamboo",
+  "variant": {"en": "Small 30×20"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#d3b87a", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

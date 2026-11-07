@@ -1,0 +1,22 @@
+{
+  "id": "plant_cactus_prickly_pear",
+  "name": {"en": "Prickly pear"},
+  "size": [0.23, 0.16, 0.52],
+  "group": "plant",
+  "room": ["living", "dining", "bedroom", "office", "hall", "kitchen", "bath", "conservatory"],
+  "tags": ["plant", "cactus", "prickly pear", "opuntia", "succulent", "desert", "house plant", "paddle cactus", "pot plant"],
+  "family": "cactus",
+  "variant": {"en": "Prickly pear"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": -0.0109, "z": 0, "w": 0.6522, "d": 0.9375, "y": 0, "h": 0.1731, "color": "#c77a4d", "profile": [[0, 0], [0.62, 0], [0.7, 0.04], [1, 0.9], [1, 1], [0.92, 1], [0.88, 0.9], [0, 0.88]]},
+    {"shape": "cyl", "x": -0.0109, "z": 0, "w": 0.5609, "d": 0.8063, "y": 0.1488, "h": 0.0035, "color": "#4a3726"},
+    {"shape": "sphere", "x": -0.0109, "z": 0, "w": 0.6087, "d": 0.1875, "y": 0.1731, "h": 0.3846, "color": "#5e9a6c", "rot": 0},
+    {"shape": "sphere", "x": 0.163, "z": 0, "w": 0.4348, "d": 0.1875, "y": 0.5, "h": 0.3077, "color": "#5e9a6c", "rot": 0},
+    {"shape": "sphere", "x": -0.2065, "z": 0, "w": 0.4348, "d": 0.1875, "y": 0.4808, "h": 0.2692, "color": "#5e9a6c", "rot": 0},
+    {"shape": "sphere", "x": 0.3152, "z": 0, "w": 0.3478, "d": 0.1875, "y": 0.7308, "h": 0.2115, "color": "#5e9a6c", "rot": 0},
+    {"shape": "sphere", "x": -0.3152, "z": 0, "w": 0.3478, "d": 0.1875, "y": 0.6923, "h": 0.1923, "color": "#5e9a6c", "rot": 0},
+    {"shape": "sphere", "x": 0.3152, "z": 0, "w": 0.1304, "d": 0.1875, "y": 0.9423, "h": 0.0577, "color": "#c2427a"},
+    {"shape": "sphere", "x": -0.3152, "z": 0, "w": 0.1304, "d": 0.1875, "y": 0.8846, "h": 0.0577, "color": "#c2427a"}
+  ]
+}

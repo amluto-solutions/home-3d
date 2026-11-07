@@ -1,0 +1,83 @@
+{
+ "id": "unifi_ai_dslr_long_distance",
+ "name": {
+  "en": "UniFi AI DSLR camera (long distance)"
+ },
+ "size": [
+  0.08,
+  0.176,
+  0.153
+ ],
+ "group": "tech",
+ "tags": [
+  "security camera",
+  "camera",
+  "cctv",
+  "unifi",
+  "ubiquiti",
+  "ai dslr long distance",
+  "uvc ai dslr long distance"
+ ],
+ "family": "unifi_camera",
+ "variant": {
+  "en": "AI DSLR LD"
+ },
+ "electric": true,
+ "mount": "wall",
+ "wall_y": 1.95,
+ "parts": [
+  {
+   "shape": "box",
+   "x": 0.0,
+   "z": -0.4545,
+   "w": 0.625,
+   "d": 0.0795,
+   "y": 0.0,
+   "h": 1.0,
+   "color": "white"
+  },
+  {
+   "shape": "box",
+   "x": 0.0,
+   "z": -0.3409,
+   "w": 0.325,
+   "d": 0.2841,
+   "y": 0.4575,
+   "h": 0.2614,
+   "color": "white"
+  },
+  {
+   "shape": "cyl",
+   "x": 0.0,
+   "z": -0.2216,
+   "w": 1.0,
+   "d": 0.5057,
+   "y": 0.4771,
+   "h": 0.5229,
+   "color": "white",
+   "axis": "z"
+  },
+  {
+   "shape": "cyl",
+   "x": 0.0,
+   "z": 0.2557,
+   "w": 0.85,
+   "d": 0.4943,
+   "y": 0.4967,
+   "h": 0.4444,
+   "color": "#1c222c",
+   "axis": "z"
+  },
+  {
+   "shape": "cyl",
+   "x": 0.0,
+   "z": 0.4943,
+   "w": 0.5,
+   "d": 0.0114,
+   "y": 0.6275,
+   "h": 0.2614,
+   "color": "#0b0f17",
+   "axis": "z"
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "entity_switch_marker_2g",
+  "name": {"en": "Switch marker (2 gang)"},
+  "size": [0.146, 0.015, 0.086],
+  "group": "tech",
+  "tags": ["switch marker", "switch", "any switch", "generic switch", "light switch", "wall switch", "rocker", "toggle", "placeholder", "double switch"],
+  "family": "entity_marker",
+  "variant": {"en": "Switch, 2 gang"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": -0.2, "w": 1, "d": 0.6, "y": 0, "h": 1, "color": "white", "round": 0.07},
+    {"shape": "rbox", "x": -0.22, "z": 0.12, "w": 0.36, "d": 0.4, "y": 0.14, "h": 0.72, "color": "#f4f4ee", "round": 0.12},
+    {"shape": "cyl", "x": -0.22, "z": 0.43, "w": 0.07, "d": 0.1, "y": 0.8049999999999999, "h": 0.07, "color": "#3a8dde", "axis": "z", "glow": true},
+    {"shape": "rbox", "x": 0.22, "z": 0.12, "w": 0.36, "d": 0.4, "y": 0.14, "h": 0.72, "color": "#f4f4ee", "round": 0.12},
+    {"shape": "cyl", "x": 0.22, "z": 0.43, "w": 0.07, "d": 0.1, "y": 0.8049999999999999, "h": 0.07, "color": "#3a8dde", "axis": "z", "glow": true}
+  ]
+}

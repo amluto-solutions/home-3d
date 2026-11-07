@@ -1,0 +1,32 @@
+{
+  "id": "valevag_mattress_king",
+  "name": {
+    "en": "Pocket sprung mattress, King 150x200"
+  },
+  "size": [
+    1.5,
+    2.0,
+    0.24
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "mattress",
+    "king",
+    "pocket sprung",
+    "medium firm",
+    "firm",
+    "light blue"
+  ],
+  "family": "valevag_mattress",
+  "variant": {
+    "en": "King · 150x200"
+  },
+  "ikea": "VALEVÅG",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "round": 0.3}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "snowmobile_touring",
+  "name": {"en": "Snowmobile, touring (two-up)"},
+  "size": [1.25, 3.2, 1.35],
+  "group": "vehicle",
+  "room": ["garage", "garden"],
+  "tags": ["snowmobile", "snow machine", "skidoo", "snow", "winter", "touring", "two seater"],
+  "vehicle": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.08, "w": 0.34, "d": 0.52, "y": 0.0, "h": 0.2222, "color": "dark"},
+    {"shape": "loft", "x": -0.38, "z": 0.36, "w": 0.128, "d": 0.3, "y": 0.0, "h": 0.0741, "color": "dark", "tx": -0.38, "tz": 0.45, "tw": 0.128, "td": 0.3},
+    {"shape": "loft", "x": -0.38, "z": 0.34, "w": 0.032, "d": 0.0125, "y": 0.0741, "h": 0.2593, "color": "metal", "tx": -0.38, "tz": 0.28, "tw": 0.032, "td": 0.0125},
+    {"shape": "loft", "x": 0.38, "z": 0.36, "w": 0.128, "d": 0.3, "y": 0.0, "h": 0.0741, "color": "dark", "tx": 0.38, "tz": 0.45, "tw": 0.128, "td": 0.3},
+    {"shape": "loft", "x": 0.38, "z": 0.34, "w": 0.032, "d": 0.0125, "y": 0.0741, "h": 0.2593, "color": "metal", "tx": 0.38, "tz": 0.28, "tw": 0.032, "td": 0.0125},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.62, "d": 0.58, "y": 0.2074, "h": 0.237, "color": "dark", "round": 0.2},
+    {"shape": "loft", "x": 0.0, "z": 0.2, "w": 0.66, "d": 0.38, "y": 0.2963, "h": 0.2074, "color": "paint", "tx": 0.0, "tz": 0.27, "tw": 0.5, "td": 0.26},
+    {"shape": "loft", "x": 0.0, "z": 0.12, "w": 0.42, "d": 0.1, "y": 0.4593, "h": 0.38, "color": "glass", "tx": 0.0, "tz": 0.05, "tw": 0.42, "td": 0.03},
+    {"shape": "rbox", "x": 0.0, "z": -0.19, "w": 0.42, "d": 0.34, "y": 0.4296, "h": 0.1037, "color": "dark", "round": 0.3},
+    {"shape": "box", "x": 0.0, "z": 0.07, "w": 0.55, "d": 0.0125, "y": 0.5778, "h": 0.0296, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.4, "w": 0.4, "d": 0.0125, "y": 0.3556, "h": 0.0741, "color": "#fff3cf"},
+    {"shape": "box", "x": 0.0, "z": -0.4906, "w": 0.34, "d": 0.0156, "y": 0.2963, "h": 0.0444, "color": "#b3141b"}
+  ]
+}

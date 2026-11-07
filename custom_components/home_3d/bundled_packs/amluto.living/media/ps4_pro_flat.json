@@ -1,0 +1,26 @@
+{
+  "id": "ps4_pro_flat",
+  "name": {"en": "PlayStation 4 Pro"},
+  "size": [0.295, 0.327, 0.055],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["ps4 pro", "playstation 4 pro", "ps4", "sony", "gaming", "console", "games console", "playstation4"],
+  "family": "ps4",
+  "variant": {"en": " flat"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 150,
+  "parts": [
+    {"shape": "cyl", "x": -0.3983, "z": -0.4083, "w": 0.0678, "d": 0.0612, "y": 0.0, "h": 0.1091, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3983, "z": 0.4083, "w": 0.0678, "d": 0.0612, "y": 0.0, "h": 0.1091, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3983, "z": -0.4083, "w": 0.0678, "d": 0.0612, "y": 0.0, "h": 0.1091, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3983, "z": 0.4083, "w": 0.0678, "d": 0.0612, "y": 0.0, "h": 0.1091, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.1091, "h": 0.8909, "color": "#1c1d20", "round": 0.25},
+    {"shape": "box", "x": -0.12, "z": 0.4954, "w": 0.45, "d": 0.0092, "y": 0.5991, "h": 0.0624, "color": "#101114"},
+    {"shape": "box", "x": 0.34, "z": 0.4954, "w": 0.18, "d": 0.0092, "y": 0.2873, "h": 0.0545, "color": "#4aa3ff", "edges": "faint"},
+    {"shape": "cyl", "x": 0.43, "z": 0.4954, "w": 0.0365, "d": 0.0092, "y": 0.2873, "h": 0.196, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

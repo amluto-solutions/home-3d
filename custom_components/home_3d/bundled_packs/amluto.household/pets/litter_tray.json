@@ -1,0 +1,19 @@
+{
+  "id": "litter_tray",
+  "name": {"en": "Litter tray"},
+  "size": [0.5, 0.38, 0.15],
+  "group": "pets",
+  "room": ["utility", "bath", "hall", "garage", "kitchen"],
+  "tags": ["cat", "litter tray", "litter box", "cat toilet", "kitty litter", "open"],
+  "family": "litter_tray",
+  "variant": {"en": "Open"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.96, "d": 0.9474, "y": 0.0, "h": 0.08, "color": "#8f9aa3", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4842, "w": 1.0, "d": 0.0316, "y": 0.0, "h": 1.0, "color": "#8f9aa3", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.4842, "w": 1.0, "d": 0.0316, "y": 0.0, "h": 1.0, "color": "#8f9aa3", "fix": "d"},
+    {"shape": "box", "x": -0.488, "z": 0.0, "w": 0.024, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#8f9aa3", "fix": "w"},
+    {"shape": "box", "x": 0.488, "z": 0.0, "w": 0.024, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#8f9aa3", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.96, "d": 0.9474, "y": 0.08, "h": 0.5, "color": "#d9d2c3"},
+    {"shape": "box", "x": 0.0, "z": 0.4211, "w": 1.0, "d": 0.1579, "y": 0.9, "h": 0.1, "color": "#7a858e", "fix": "h"}
+  ]
+}

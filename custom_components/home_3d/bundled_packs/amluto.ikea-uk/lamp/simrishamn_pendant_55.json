@@ -1,0 +1,49 @@
+{
+  "id": "simrishamn_pendant_55",
+  "name": {
+    "en": "Pendant lamp, 3 opal glass globes 55 cm"
+  },
+  "size": [
+    0.55,
+    0.55,
+    0.55
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "pendant",
+    "ceiling light",
+    "3 arms",
+    "chandelier",
+    "opal glass",
+    "chrome-plated",
+    "white"
+  ],
+  "family": "simrishamn_lamp",
+  "variant": {
+    "en": "Pendant 3-armed 55"
+  },
+  "ikea": "SIMRISHAMN",
+  "light": "pendant",
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.2182, "d": 0.2182, "y": 0.9545, "h": 0.0455, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0364, "d": 0.0364, "y": 0.6182, "h": 0.3455, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1091, "d": 0.1091, "y": 0.5818, "h": 0.0545, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.1818, "w": 0.3636, "d": 0.0255, "y": 0.5909, "h": 0.0255, "color": "metal", "rot": -90.0, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.3636, "w": 0.0327, "d": 0.0327, "y": 0.2909, "h": 0.3091, "color": "metal", "fix": "wd"},
+    {"shape": "sphere", "x": 0.0, "z": 0.3636, "w": 0.2727, "d": 0.2727, "y": 0, "h": 0.3091, "color": "white", "glow": true},
+    {"shape": "box", "x": -0.1575, "z": -0.0909, "w": 0.3636, "d": 0.0255, "y": 0.5909, "h": 0.0255, "color": "metal", "rot": 150.0, "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3149, "z": -0.1818, "w": 0.0327, "d": 0.0327, "y": 0.2909, "h": 0.3091, "color": "metal", "fix": "wd"},
+    {"shape": "sphere", "x": -0.3149, "z": -0.1818, "w": 0.2727, "d": 0.2727, "y": 0, "h": 0.3091, "color": "white", "glow": true},
+    {"shape": "box", "x": 0.1575, "z": -0.0909, "w": 0.3636, "d": 0.0255, "y": 0.5909, "h": 0.0255, "color": "metal", "rot": 30.0, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3149, "z": -0.1818, "w": 0.0327, "d": 0.0327, "y": 0.2909, "h": 0.3091, "color": "metal", "fix": "wd"},
+    {"shape": "sphere", "x": 0.3149, "z": -0.1818, "w": 0.2727, "d": 0.2727, "y": 0, "h": 0.3091, "color": "white", "glow": true}
+  ]
+}

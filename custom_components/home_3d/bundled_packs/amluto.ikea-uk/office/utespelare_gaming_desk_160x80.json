@@ -1,0 +1,43 @@
+{
+  "id": "utespelare_gaming_desk_160x80",
+  "name": {
+    "en": "Gaming desk 160x80 cm"
+  },
+  "size": [
+    1.6,
+    0.8,
+    0.75
+  ],
+  "group": "office",
+  "room": [
+    "office",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "UTESPELARE",
+    "gaming desk",
+    "computer desk",
+    "gamer",
+    "pc desk",
+    "black",
+    "height adjustable 68-78 cm",
+    "cable management"
+  ],
+  "ikea": "UTESPELARE",
+  "surface": true,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.96, "h": 0.04, "color": "dark", "fix": "h", "round": 0.18},
+    {"shape": "box", "x": 0.0, "z": -0.475, "w": 0.9375, "d": 0.05, "y": 1, "h": 0.016, "color": "dark", "fix": "dh"},
+    {"shape": "loft", "x": -0.45, "z": -0.35, "w": 0.0281, "d": 0.0562, "y": 0, "h": 0.96, "color": "dark", "tx": -0.4594, "tz": -0.35, "tw": 0.0312, "td": 0.0625, "fix": "wd"},
+    {"shape": "loft", "x": -0.45, "z": 0.35, "w": 0.0281, "d": 0.0562, "y": 0, "h": 0.96, "color": "dark", "tx": -0.4594, "tz": 0.35, "tw": 0.0312, "td": 0.0625, "fix": "wd"},
+    {"shape": "box", "x": -0.45, "z": 0.0, "w": 0.0312, "d": 0.8, "y": 0, "h": 0.0467, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": -0.45, "z": 0.0, "w": 0.025, "d": 0.75, "y": 0.8667, "h": 0.0933, "color": "dark", "fix": "wh"},
+    {"shape": "loft", "x": 0.45, "z": -0.35, "w": 0.0281, "d": 0.0562, "y": 0, "h": 0.96, "color": "dark", "tx": 0.4594, "tz": -0.35, "tw": 0.0312, "td": 0.0625, "fix": "wd"},
+    {"shape": "loft", "x": 0.45, "z": 0.35, "w": 0.0281, "d": 0.0562, "y": 0, "h": 0.96, "color": "dark", "tx": 0.4594, "tz": 0.35, "tw": 0.0312, "td": 0.0625, "fix": "wd"},
+    {"shape": "box", "x": 0.45, "z": 0.0, "w": 0.0312, "d": 0.8, "y": 0, "h": 0.0467, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.45, "z": 0.0, "w": 0.025, "d": 0.75, "y": 0.8667, "h": 0.0933, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": -0.35, "w": 0.875, "d": 0.025, "y": 0.7867, "h": 0.16, "color": "dark", "fix": "dh"},
+    {"shape": "cyl", "x": 0.375, "z": 0.375, "w": 0.0438, "d": 0.0875, "y": 0.8267, "h": 0.1333, "color": "metal", "fix": "wdh"}
+  ]
+}

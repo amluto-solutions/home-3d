@@ -1,0 +1,35 @@
+{
+  "id": "unifi_g6_edge_turret",
+  "name": {
+    "en": "UniFi G6 Edge Turret camera"
+  },
+  "size": [
+    0.1172,
+    0.1172,
+    0.1165
+  ],
+  "group": "tech",
+  "tags": [
+    "security camera",
+    "camera",
+    "cctv",
+    "unifi",
+    "ubiquiti",
+    "g6 edge turret",
+    "uvc g6 edge turret"
+  ],
+  "family": "unifi_camera",
+  "variant": {
+    "en": "G6 Edge Turret"
+  },
+  "electric": true,
+  "watts": 25,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "lathe", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.78, "h": 0.22, "color": "white", "profile": [[0, 0], [0.9, 0], [1, 0.5], [1, 1], [0, 1]]},
+    {"shape": "lathe", "x": 0, "z": 0, "w": 0.85, "d": 0.85, "y": 0.5, "h": 0.3, "color": "white", "profile": [[0, 0], [0.86, 0], [1, 1], [0, 1]]},
+    {"shape": "sphere", "x": 0, "z": 0, "w": 0.66, "d": 0.66, "y": 0.06, "h": 0.72, "color": "white"},
+    {"shape": "cyl", "x": 0, "z": 0.27, "w": 0.4, "d": 0.13, "y": 0.22, "h": 0.42, "color": "#1c222c", "axis": "z"},
+    {"shape": "cyl", "x": 0, "z": 0.335, "w": 0.2, "d": 0.07, "y": 0.32, "h": 0.22, "color": "#0b0f17", "axis": "z"}
+  ]
+}

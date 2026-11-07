@@ -1,0 +1,60 @@
+{
+  "id": "skadis_pegboard_36x56",
+  "name": {
+    "en": "Pegboard 36x56 cm"
+  },
+  "size": [
+    0.36,
+    0.04,
+    0.56
+  ],
+  "group": "storage",
+  "room": [
+    "office",
+    "garage",
+    "hobby",
+    "kitchen",
+    "utility"
+  ],
+  "tags": [
+    "peg board",
+    "wall organiser",
+    "tool wall",
+    "SKADIS",
+    "white",
+    "black",
+    "dark grey-blue"
+  ],
+  "family": "skadis_pegboard",
+  "variant": {
+    "en": "36x56"
+  },
+  "ikea": "SKÅDIS",
+  "mount": "wall",
+  "wall_y": 1.0,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.325, "w": 1, "d": 0.3, "y": 0, "h": 1, "color": "white"},
+    {"shape": "box", "x": -0.3889, "z": -0.15, "w": 0.0833, "d": 0.7, "y": 0.0893, "h": 0.8214, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.3889, "z": -0.15, "w": 0.0833, "d": 0.7, "y": 0.0893, "h": 0.8214, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.3889, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.1071, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.1667, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.1071, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0556, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.1071, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.2778, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.1071, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.2778, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.2857, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.0556, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.2857, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.1667, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.2857, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.3889, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.2857, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.3889, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.4643, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.1667, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.4643, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0556, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.4643, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.2778, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.4643, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.2778, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.6429, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.0556, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.6429, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.1667, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.6429, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.3889, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.6429, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.3889, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.8214, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.1667, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.8214, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0556, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.8214, "h": 0.0625, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.2778, "z": 0.4875, "w": 0.0222, "d": 0.05, "y": 0.8214, "h": 0.0625, "color": "dark", "fix": "wdh"}
+  ]
+}

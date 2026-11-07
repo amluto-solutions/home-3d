@@ -1,0 +1,56 @@
+{
+  "id": "panelled_bed_small_double",
+  "name": {
+    "en": "Small double bed with panelled headboard"
+  },
+  "size": [
+    1.3,
+    2.02,
+    1.35
+  ],
+  "group": "bed",
+  "family": "panelled_bed",
+  "variant": {
+    "en": "Small double · 120 × 190"
+  },
+  "room": [
+    "bedroom"
+  ],
+  "tags": [
+    "upholstered bed",
+    "headboard",
+    "panelled headboard",
+    "bed frame",
+    "small double",
+    "4ft"
+  ],
+  "parts": [
+    {"shape": "box", "x": -0.4538, "z": -0.4257, "w": 0.0308, "d": 0.0198, "y": 0, "h": 0.0593, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4538, "z": 0.4703, "w": 0.0308, "d": 0.0198, "y": 0, "h": 0.0593, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4538, "z": -0.4257, "w": 0.0308, "d": 0.0198, "y": 0, "h": 0.0593, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4538, "z": 0.4703, "w": 0.0308, "d": 0.0198, "y": 0, "h": 0.0593, "color": "wood", "fix": "wdh"},
+    {"shape": "rbox", "x": 0, "z": 0.0223, "w": 1.0, "d": 0.9554, "y": 0.0593, "h": 0.2074, "color": "fabric", "round": 0.12, "fix": "h"},
+    {"shape": "rbox", "x": 0, "z": 0.0198, "w": 0.9231, "d": 0.9307, "y": 0.2667, "h": 0.163, "color": "white", "round": 0.2, "fix": "h"},
+    {"shape": "rbox", "x": 0, "z": 0.1559, "w": 0.9538, "d": 0.6782, "y": 0.3704, "h": 0.0889, "color": "cushion", "round": 0.3, "fix": "h"},
+    {"shape": "rbox", "x": 0, "z": 0.3886, "w": 0.9538, "d": 0.2228, "y": 0.3704, "h": 0.1, "color": "fabric", "round": 0.3, "fix": "dh"},
+    {"shape": "rbox", "x": -0.2231, "z": -0.3267, "w": 0.4, "d": 0.198, "y": 0.4296, "h": 0.1037, "color": "white", "round": 0.45, "fix": "dh"},
+    {"shape": "rbox", "x": 0.2231, "z": -0.3267, "w": 0.4, "d": 0.198, "y": 0.4296, "h": 0.1037, "color": "white", "round": 0.45, "fix": "dh"},
+    {"shape": "box", "x": 0, "z": -0.4876, "w": 1.0, "d": 0.0248, "y": 0.0593, "h": 0.9259, "color": "fabric", "fix": "d"},
+    {"shape": "rbox", "x": 0, "z": -0.4851, "w": 1.0, "d": 0.0297, "y": 0.963, "h": 0.037, "color": "fabric", "round": 0.5, "fix": "dh"},
+    {"shape": "rbox", "x": -0.4375, "z": -0.4678, "w": 0.1204, "d": 0.0248, "y": 0.2222, "h": 0.7481, "color": "fabric", "round": 0.45, "fix": "d"},
+    {"shape": "rbox", "x": -0.3125, "z": -0.4678, "w": 0.1204, "d": 0.0248, "y": 0.2222, "h": 0.7481, "color": "fabric", "round": 0.45, "fix": "d"},
+    {"shape": "rbox", "x": -0.1875, "z": -0.4678, "w": 0.1204, "d": 0.0248, "y": 0.2222, "h": 0.7481, "color": "fabric", "round": 0.45, "fix": "d"},
+    {"shape": "rbox", "x": -0.0625, "z": -0.4678, "w": 0.1204, "d": 0.0248, "y": 0.2222, "h": 0.7481, "color": "fabric", "round": 0.45, "fix": "d"},
+    {"shape": "rbox", "x": 0.0625, "z": -0.4678, "w": 0.1204, "d": 0.0248, "y": 0.2222, "h": 0.7481, "color": "fabric", "round": 0.45, "fix": "d"},
+    {"shape": "rbox", "x": 0.1875, "z": -0.4678, "w": 0.1204, "d": 0.0248, "y": 0.2222, "h": 0.7481, "color": "fabric", "round": 0.45, "fix": "d"},
+    {"shape": "rbox", "x": 0.3125, "z": -0.4678, "w": 0.1204, "d": 0.0248, "y": 0.2222, "h": 0.7481, "color": "fabric", "round": 0.45, "fix": "d"},
+    {"shape": "rbox", "x": 0.4375, "z": -0.4678, "w": 0.1204, "d": 0.0248, "y": 0.2222, "h": 0.7481, "color": "fabric", "round": 0.45, "fix": "d"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "rect", "x": -0.235, "z": -0.32, "w": 0.43, "d": 0.18, "fill": true},
+    {"shape": "rect", "x": 0.235, "z": -0.32, "w": 0.43, "d": 0.18, "fill": true},
+    {"shape": "rect", "x": 0, "z": -0.4785714285714286, "w": 1, "d": 0.04, "fill": true},
+    {"shape": "line", "x1": -0.5, "z1": -0.05, "x2": 0.5, "z2": -0.05}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "format": "home3d-pack",
+  "version": 2,
+  "id": "amluto.outdoor",
+  "name": "Garden & outdoor",
+  "publisher": "Amluto Solutions",
+  "licence": "MIT",
+  "release": 8,
+  "description": "Garden furniture, outdoor items, sport kit and vehicles, modelled for Home 3D from simple shapes. Ships with the app and works offline.",
+  "release_note": "Release 8: the pack's id is now amluto.outdoor (it was theovencook.outdoor); plans that name the old id still load (#424)."
+}

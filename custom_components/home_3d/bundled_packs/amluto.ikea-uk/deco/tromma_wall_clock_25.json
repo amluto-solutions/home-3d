@@ -1,0 +1,42 @@
+{
+  "id": "tromma_wall_clock_25",
+  "name": {
+    "en": "Wall clock, white 25 cm"
+  },
+  "size": [
+    0.25,
+    0.035,
+    0.25
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "kitchen",
+    "hall",
+    "bedroom",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "TROMMA",
+    "wall clock",
+    "clock",
+    "round clock",
+    "white",
+    "kitchen clock"
+  ],
+  "ikea": "TROMMA",
+  "mount": "wall",
+  "wall_y": 1.575,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.0571, "w": 1, "d": 0.8857, "y": 0, "h": 1, "color": "white", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.92, "d": 1, "y": 0.04, "h": 0.92, "color": "white", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": 0.4571, "w": 0.03, "d": 0.0857, "y": 0.856, "h": 0.048, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.38, "z": 0.4571, "w": 0.048, "d": 0.0857, "y": 0.485, "h": 0.03, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4571, "w": 0.03, "d": 0.0857, "y": 0.096, "h": 0.048, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.38, "z": 0.4571, "w": 0.048, "d": 0.0857, "y": 0.485, "h": 0.03, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.11, "z": 0.4714, "w": 0.22, "d": 0.0857, "y": 0.485, "h": 0.03, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4714, "w": 0.025, "d": 0.0857, "y": 0.5, "h": 0.32, "color": "dark", "fix": "dh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4857, "w": 0.05, "d": 0.1143, "y": 0.48, "h": 0.05, "color": "dark", "axis": "z", "fix": "wdh"}
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "square_shower_enclosure_900",
+  "name": {"en": "Square shower enclosure 900"},
+  "size": [0.9, 0.9, 2.0],
+  "group": "bath",
+  "room": ["bath"],
+  "tags": ["shower", "shower cubicle", "shower tray", "glass", "enclosure", "cubicle"],
+  "family": "shower_enclosure",
+  "variant": {"en": "Square 900"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.0225, "color": "white"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1, "d": 0.1, "y": 0.0225, "h": 0.001, "color": "metal"},
+    {"shape": "box", "x": 0.4956, "z": 0.0, "w": 0.0089, "d": 1.0, "y": 0.0225, "h": 0.95, "color": "glass"},
+    {"shape": "box", "x": 0.0, "z": 0.4956, "w": 1.0, "d": 0.0089, "y": 0.0225, "h": 0.95, "color": "glass"},
+    {"shape": "box", "x": 0.4889, "z": 0.0, "w": 0.0222, "d": 1.0, "y": 0.0225, "h": 0.01, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.4889, "w": 1.0, "d": 0.0222, "y": 0.0225, "h": 0.01, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.4889, "w": 1.0, "d": 0.0222, "y": 0.9625, "h": 0.01, "color": "metal"},
+    {"shape": "box", "x": 0.4889, "z": 0.0, "w": 0.0222, "d": 1.0, "y": 0.9625, "h": 0.01, "color": "metal"},
+    {"shape": "box", "x": 0.4861, "z": 0.4861, "w": 0.0278, "d": 0.0278, "y": 0.0225, "h": 0.95, "color": "metal"},
+    {"shape": "box", "x": -0.4889, "z": 0.4861, "w": 0.0222, "d": 0.0278, "y": 0.0225, "h": 0.95, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.4844, "w": 0.0089, "d": 0.0133, "y": 0.0225, "h": 0.95, "color": "metal"},
+    {"shape": "cyl", "x": -0.0667, "z": 0.4889, "w": 0.0222, "d": 0.0222, "y": 0.425, "h": 0.175, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": -0.4778, "w": 0.0278, "d": 0.0278, "y": 0.5, "h": 0.475, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.3611, "w": 0.0222, "d": 0.2778, "y": 0.975, "h": 0.01, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": -0.2222, "w": 0.1667, "d": 0.1667, "y": 0.96, "h": 0.0125, "color": "metal"},
+    {"shape": "rbox", "x": 0.0, "z": -0.4778, "w": 0.2222, "d": 0.0444, "y": 0.5, "h": 0.04, "color": "metal", "round": 0.4}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.5, "z1": -0.5, "x2": 0.5, "z2": 0.5},
+    {"shape": "line", "x1": -0.5, "z1": 0.5, "x2": 0.5, "z2": -0.5}
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "Voegt een pagina in de zijbalk toe waar je je woning tekent en in 3D ziet."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Home 3D is al ingesteld."
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "Vraag het huis",
+      "description": "Geeft een zin door aan de geopende Home 3D-weergaven: „Toon de woonkamer” toont die, en vragen worden beantwoord door de geïnstalleerde modules („Wat staat open?”). De eerste weergave die de zin begrijpt, antwoordt.",
+      "fields": {
+        "text": {
+          "name": "Zin",
+          "description": "Wat je wilt tonen of vragen, zoals je het zou zeggen."
+        },
+        "screen": {
+          "name": "Scherm",
+          "description": "Alleen de weergave met deze schermnaam reageert (in de instellingen van de weergave of de schermoptie van de kaart). Leeg: elke open weergave."
+        },
+        "speak": {
+          "name": "Spreken",
+          "description": "De weergave spreekt het antwoord uit met de tekst-naar-spraak van Assist (uit: het toont het alleen)."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Waar Home 3D verschijnt. De panelkoppeling en de dashboardkaart werken beide, en je kunt het item voor jezelf nog verbergen in de eigen zijbalkinstellingen van Home Assistant.",
+        "data": {
+          "show_in_sidebar": "Tonen in zijbalk",
+          "restore_picture_days": "Afbeeldingen van herstelpunten bewaren (dagen)"
+        },
+        "data_description": {
+          "restore_picture_days": "Een achtergrond- of schermafbeelding die alleen een ouder herstelpunt nog gebruikt, wordt zoveel dagen na het maken van dat herstelpunt bewaard en bij de volgende start verwijderd. Een herstelpunt waarvan de afbeelding weg is, wordt zonder afbeelding hersteld. 0 verwijdert zulke afbeeldingen meteen."
+        }
+      }
+    }
+  }
+}

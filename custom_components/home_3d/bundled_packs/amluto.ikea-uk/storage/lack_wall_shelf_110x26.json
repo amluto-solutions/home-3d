@@ -1,0 +1,40 @@
+{
+  "id": "lack_wall_shelf_110x26",
+  "name": {
+    "en": "Wall shelf 110x26 cm"
+  },
+  "size": [
+    1.1,
+    0.26,
+    0.05
+  ],
+  "group": "storage",
+  "room": [
+    "living",
+    "bedroom",
+    "hall",
+    "kitchen",
+    "office",
+    "bath",
+    "kids"
+  ],
+  "tags": [
+    "LACK",
+    "wall shelf",
+    "floating shelf",
+    "walnut effect",
+    "white",
+    "black-brown"
+  ],
+  "family": "lack_wall_shelf",
+  "variant": {
+    "en": "110x26"
+  },
+  "ikea": "LACK",
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4923, "w": 0.97, "d": 0.0154, "y": 0.08, "h": 0.84, "color": "dark", "fix": "dh"}
+  ]
+}

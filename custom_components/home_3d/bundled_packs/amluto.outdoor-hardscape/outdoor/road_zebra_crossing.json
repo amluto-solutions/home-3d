@@ -1,0 +1,27 @@
+{
+  "id": "road_zebra_crossing",
+  "name": {"en": "Zebra crossing"},
+  "size": [4.0, 6.0, 0.03],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["road", "zebra crossing", "pedestrian crossing", "crossing", "road marking", "street"],
+  "family": "road_zebra_crossing",
+  "variant": {"en": "4 × 6 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#3a3c3f", "top": "#43464a"},
+    {"shape": "box", "x": -0.45, "z": 0.0, "w": 0.0625, "d": 0.6667, "y": 0.8667, "h": 0.1333, "color": "#eeeeea"},
+    {"shape": "box", "x": -0.3375, "z": 0.0, "w": 0.0625, "d": 0.6667, "y": 0.8667, "h": 0.1333, "color": "#eeeeea"},
+    {"shape": "box", "x": -0.225, "z": 0.0, "w": 0.0625, "d": 0.6667, "y": 0.8667, "h": 0.1333, "color": "#eeeeea"},
+    {"shape": "box", "x": -0.1125, "z": 0.0, "w": 0.0625, "d": 0.6667, "y": 0.8667, "h": 0.1333, "color": "#eeeeea"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.0625, "d": 0.6667, "y": 0.8667, "h": 0.1333, "color": "#eeeeea"},
+    {"shape": "box", "x": 0.1125, "z": 0.0, "w": 0.0625, "d": 0.6667, "y": 0.8667, "h": 0.1333, "color": "#eeeeea"},
+    {"shape": "box", "x": 0.225, "z": 0.0, "w": 0.0625, "d": 0.6667, "y": 0.8667, "h": 0.1333, "color": "#eeeeea"},
+    {"shape": "box", "x": 0.3375, "z": 0.0, "w": 0.0625, "d": 0.6667, "y": 0.8667, "h": 0.1333, "color": "#eeeeea"},
+    {"shape": "box", "x": 0.45, "z": 0.0, "w": 0.0625, "d": 0.6667, "y": 0.8667, "h": 0.1333, "color": "#eeeeea"},
+    {"shape": "box", "x": 0.0, "z": -0.4833, "w": 1, "d": 0.0167, "y": 0.8667, "h": 0.1333, "color": "#e8e8e0"},
+    {"shape": "box", "x": 0.0, "z": 0.4833, "w": 1, "d": 0.0167, "y": 0.8667, "h": 0.1333, "color": "#e8e8e0"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

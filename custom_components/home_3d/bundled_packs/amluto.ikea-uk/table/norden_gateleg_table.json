@@ -1,0 +1,46 @@
+{
+  "id": "norden_gateleg_table",
+  "name": {
+    "en": "Gateleg table 26/89/152x80 cm"
+  },
+  "size": [
+    1.52,
+    0.8,
+    0.74
+  ],
+  "group": "table",
+  "room": [
+    "dining",
+    "kitchen",
+    "living"
+  ],
+  "tags": [
+    "drop-leaf table",
+    "folding table",
+    "dining table",
+    "drawers",
+    "small space",
+    "birch",
+    "white"
+  ],
+  "ikea": "NORDEN",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9662, "h": 0.0338, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.1711, "d": 0.95, "y": 0.0405, "h": 0.9257, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": -0.475, "w": 0.1579, "d": 0.0075, "y": 0.0811, "h": 0.2703, "color": "wood", "edges": "faint", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.475, "w": 0.1579, "d": 0.0075, "y": 0.3649, "h": 0.2703, "color": "wood", "edges": "faint", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.475, "w": 0.1579, "d": 0.0075, "y": 0.6486, "h": 0.2703, "color": "wood", "edges": "faint", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 0.1579, "d": 0.0075, "y": 0.0811, "h": 0.2703, "color": "wood", "edges": "faint", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 0.1579, "d": 0.0075, "y": 0.3649, "h": 0.2703, "color": "wood", "edges": "faint", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 0.1579, "d": 0.0075, "y": 0.6486, "h": 0.2703, "color": "wood", "edges": "faint", "fix": "d"},
+    {"shape": "box", "x": -0.4211, "z": -0.375, "w": 0.0263, "d": 0.05, "y": 0, "h": 0.9662, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4211, "z": 0.375, "w": 0.0263, "d": 0.05, "y": 0, "h": 0.9662, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.2566, "z": 0.375, "w": 0.3289, "d": 0.0375, "y": 0.027, "h": 0.0541, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.2566, "z": 0.375, "w": 0.3289, "d": 0.0375, "y": 0.8784, "h": 0.0676, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.4211, "z": -0.375, "w": 0.0263, "d": 0.05, "y": 0, "h": 0.9662, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4211, "z": 0.375, "w": 0.0263, "d": 0.05, "y": 0, "h": 0.9662, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.2566, "z": 0.375, "w": 0.3289, "d": 0.0375, "y": 0.027, "h": 0.0541, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.2566, "z": 0.375, "w": 0.3289, "d": 0.0375, "y": 0.8784, "h": 0.0676, "color": "wood", "fix": "h"}
+  ]
+}

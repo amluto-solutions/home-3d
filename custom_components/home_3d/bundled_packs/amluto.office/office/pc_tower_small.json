@@ -1,0 +1,24 @@
+{
+  "id": "pc_tower_small",
+  "name": {"en": "PC tower (small form factor)"},
+  "size": [0.18, 0.36, 0.33],
+  "group": "office",
+  "room": ["office", "bedroom", "hobby", "kids"],
+  "tags": ["computer", "desktop pc", "gaming pc", "pc", "tower", "case", "workstation"],
+  "family": "pc_tower",
+  "variant": {"en": "Small form factor"},
+  "electric": true,
+  "parts": [
+    {"shape": "box", "x": -0.3333, "z": -0.3889, "w": 0.2222, "d": 0.1111, "y": 0.0, "h": 0.0455, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.3333, "z": 0.3889, "w": 0.2222, "d": 0.1111, "y": 0.0, "h": 0.0455, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.3333, "z": -0.3889, "w": 0.2222, "d": 0.1111, "y": 0.0, "h": 0.0455, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.3333, "z": 0.3889, "w": 0.2222, "d": 0.1111, "y": 0.0, "h": 0.0455, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9778, "d": 0.9667, "y": 0.0455, "h": 0.9485, "color": "dark"},
+    {"shape": "box", "x": -0.4944, "z": 0.0, "w": 0.0111, "d": 0.8333, "y": 0.1515, "h": 0.7273, "color": "glass"},
+    {"shape": "box", "x": 0.0, "z": 0.4806, "w": 0.9667, "d": 0.0333, "y": 0.0455, "h": 0.9485, "color": "dark", "edges": "faint"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4972, "w": 0.5556, "d": 0.0056, "y": 0.4788, "h": 0.303, "color": "dark", "axis": "z", "edges": "glow"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4972, "w": 0.5556, "d": 0.0056, "y": 0.1394, "h": 0.303, "color": "dark", "axis": "z", "edges": "glow"},
+    {"shape": "cyl", "x": 0.25, "z": 0.4972, "w": 0.0667, "d": 0.0056, "y": 0.8939, "h": 0.0364, "color": "accent", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": -0.0556, "w": 0.7, "d": 0.6, "y": 0.9939, "h": 0.0061, "color": "metal"}
+  ]
+}

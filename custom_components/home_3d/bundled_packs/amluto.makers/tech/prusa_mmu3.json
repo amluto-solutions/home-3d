@@ -1,0 +1,128 @@
+{
+  "id": "prusa_mmu3",
+  "name": {
+    "en": "Prusa MMU3 (multi-material upgrade)"
+  },
+  "size": [
+    0.33,
+    0.22,
+    0.15
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage"
+  ],
+  "tags": [
+    "mmu3",
+    "prusa",
+    "multi colour",
+    "filament",
+    "maker"
+  ],
+  "family": "prusa_mmu3",
+  "variant": {
+    "en": "MMU3"
+  },
+  "electric": false,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.1591,
+      "w": 1.0,
+      "d": 0.6818,
+      "y": 0.0,
+      "h": 0.4,
+      "color": "dark"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.1591,
+      "w": 1.0,
+      "d": 0.6818,
+      "y": 0.4,
+      "h": 0.04,
+      "color": "#f37021"
+    },
+    {
+      "shape": "cyl",
+      "x": -0.4,
+      "z": 0.1591,
+      "w": 0.0545,
+      "d": 0.4091,
+      "y": 0.44,
+      "h": 0.56,
+      "color": "body"
+    },
+    {
+      "shape": "cyl",
+      "x": -0.2,
+      "z": 0.1591,
+      "w": 0.0545,
+      "d": 0.4091,
+      "y": 0.44,
+      "h": 0.56,
+      "color": "body"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.1591,
+      "w": 0.0545,
+      "d": 0.4091,
+      "y": 0.44,
+      "h": 0.56,
+      "color": "body"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.2,
+      "z": 0.1591,
+      "w": 0.0545,
+      "d": 0.4091,
+      "y": 0.44,
+      "h": 0.56,
+      "color": "body"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.4,
+      "z": 0.1591,
+      "w": 0.0545,
+      "d": 0.4091,
+      "y": 0.44,
+      "h": 0.56,
+      "color": "body"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": -0.3409,
+      "w": 1.0,
+      "d": 0.3182,
+      "y": 0.0,
+      "h": 0.1467,
+      "color": "metal"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    },
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 0.8,
+      "d": 0.8
+    }
+  ]
+}

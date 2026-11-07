@@ -1,0 +1,18 @@
+{
+  "id": "video_doorbell",
+  "name": {"en": "Video doorbell"},
+  "size": [0.05, 0.028, 0.15],
+  "group": "tech",
+  "tags": ["video doorbell", "doorbell", "doorbell camera", "camera", "smart doorbell", "ring", "nest hello", "eufy", "front door"],
+  "family": "video_doorbell",
+  "variant": {"en": "Slim"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#2a2f38", "round": 0.2},
+    {"shape": "rbox", "x": 0, "z": 0.0, "w": 0.84, "d": 0.8, "y": 0.04, "h": 0.92, "color": "#d8dce2", "round": 0.2},
+    {"shape": "cyl", "x": 0, "z": 0.44, "w": 0.45, "d": 0.1, "y": 0.7050000000000001, "h": 0.15, "color": "#0b0f17", "axis": "z"},
+    {"shape": "cyl", "x": 0, "z": 0.44, "w": 0.5, "d": 0.1, "y": 0.115, "h": 0.17, "color": "#3a8dde", "axis": "z", "glow": true}
+  ]
+}

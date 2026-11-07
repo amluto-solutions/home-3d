@@ -1,0 +1,43 @@
+{
+  "id": "besta_tv_bench_120x40x48",
+  "name": {
+    "en": "TV bench open, 120x40x48 cm"
+  },
+  "size": [
+    1.2,
+    0.4,
+    0.48
+  ],
+  "group": "media",
+  "room": [
+    "living",
+    "bedroom"
+  ],
+  "tags": [
+    "BESTA",
+    "TV unit",
+    "media unit",
+    "TV stand",
+    "low cabinet",
+    "white",
+    "black-brown",
+    "white stained oak effect",
+    "dark grey"
+  ],
+  "family": "besta_tv_bench",
+  "variant": {
+    "en": "120x48 open"
+  },
+  "ikea": "BESTÅ",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": -0.4933, "z": -0.0, "w": 0.0133, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4933, "z": -0.0, "w": 0.0133, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0, "w": 1, "d": 1, "y": 0.9667, "h": 0.0333, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0, "w": 0.9733, "d": 1, "y": 0, "h": 0.0333, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.49, "w": 0.9733, "d": 0.02, "y": 0.0333, "h": 0.9333, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.0, "w": 0.0133, "d": 0.975, "y": 0.0333, "h": 0.9333, "color": "white"},
+    {"shape": "box", "x": -0.25, "z": 0.0, "w": 0.4867, "d": 0.95, "y": 0.4833, "h": 0.0333, "color": "white"},
+    {"shape": "box", "x": 0.25, "z": 0.0, "w": 0.4867, "d": 0.95, "y": 0.4833, "h": 0.0333, "color": "white"}
+  ]
+}

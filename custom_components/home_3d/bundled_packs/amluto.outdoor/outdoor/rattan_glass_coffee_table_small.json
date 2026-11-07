@@ -1,0 +1,123 @@
+{
+  "id": "rattan_glass_coffee_table_small",
+  "name": {
+    "en": "Small rattan coffee table, glass top, black legs"
+  },
+  "size": [
+    0.6,
+    0.4,
+    0.4
+  ],
+  "group": "outdoor",
+  "room": [
+    "garden",
+    "conservatory",
+    "living"
+  ],
+  "tags": [
+    "rattan",
+    "wicker",
+    "coffee table",
+    "glass top",
+    "small table",
+    "patio",
+    "black legs",
+    "garden set"
+  ],
+  "family": "rattan_set_black_legs",
+  "variant": {
+    "en": "Coffee table"
+  },
+  "surface": true,
+  "parts": [
+    {
+      "shape": "box",
+      "x": -0.45,
+      "z": -0.425,
+      "w": 0.0417,
+      "d": 0.0625,
+      "y": 0.0,
+      "h": 0.95,
+      "color": "dark",
+      "fix": "wd"
+    },
+    {
+      "shape": "box",
+      "x": -0.45,
+      "z": 0.425,
+      "w": 0.0417,
+      "d": 0.0625,
+      "y": 0.0,
+      "h": 0.95,
+      "color": "dark",
+      "fix": "wd"
+    },
+    {
+      "shape": "box",
+      "x": 0.45,
+      "z": -0.425,
+      "w": 0.0417,
+      "d": 0.0625,
+      "y": 0.0,
+      "h": 0.95,
+      "color": "dark",
+      "fix": "wd"
+    },
+    {
+      "shape": "box",
+      "x": 0.45,
+      "z": 0.425,
+      "w": 0.0417,
+      "d": 0.0625,
+      "y": 0.0,
+      "h": 0.95,
+      "color": "dark",
+      "fix": "wd"
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.9667,
+      "d": 0.95,
+      "y": 0.675,
+      "h": 0.275,
+      "color": "wood",
+      "round": 0.2,
+      "fix": "h"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.95,
+      "h": 0.0375,
+      "color": "dark",
+      "fix": "h"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.9667,
+      "d": 0.95,
+      "y": 0.9825,
+      "h": 0.0175,
+      "color": "glass",
+      "fix": "h"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.9,
+      "d": 0.85,
+      "y": 0.15,
+      "h": 0.03,
+      "color": "dark",
+      "fix": "h"
+    }
+  ]
+}

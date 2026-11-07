@@ -1,0 +1,17 @@
+{
+  "id": "litter_tray_hooded",
+  "name": {"en": "Hooded litter tray"},
+  "size": [0.55, 0.43, 0.45],
+  "group": "pets",
+  "room": ["utility", "bath", "hall", "garage", "kitchen"],
+  "tags": ["cat", "litter tray", "litter box", "cat toilet", "hooded", "covered", "flap"],
+  "family": "litter_tray",
+  "variant": {"en": "Hooded"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.2889, "color": "#8f9aa3"},
+    {"shape": "rbox", "x": 0.0, "z": -0.0581, "w": 0.9818, "d": 0.8837, "y": 0.2667, "h": 0.6889, "color": "#d8dde0", "round": 0.35},
+    {"shape": "box", "x": 0.0, "z": 0.3837, "w": 0.4727, "d": 0.093, "y": 0.3778, "h": 0.4444, "color": "#5d666c"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.2545, "d": 0.1163, "y": 0.9556, "h": 0.0444, "color": "#5d666c", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.2791, "w": 0.2182, "d": 0.186, "y": 0.9444, "h": 0.0222, "color": "dark", "fix": "h"}
+  ]
+}

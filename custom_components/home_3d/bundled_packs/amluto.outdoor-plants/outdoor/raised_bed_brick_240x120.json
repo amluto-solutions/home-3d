@@ -1,0 +1,20 @@
+{
+  "id": "raised_bed_brick_240x120",
+  "name": {"en": "Raised bed, brick, 2.4 × 1.2 m"},
+  "size": [2.4, 1.2, 0.45],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["raised bed", "vegetable bed", "planter", "grow bed", "brick"],
+  "family": "raised_bed_brick",
+  "variant": {"en": "2.4 × 1.2 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9083, "d": 0.8167, "y": 0, "h": 0.88, "color": "#4a3626", "top": "#52392a"},
+    {"shape": "box", "x": 0.0, "z": -0.4542, "w": 1, "d": 0.0917, "y": 0, "h": 1, "color": "#a8553a", "top": "#bb694c"},
+    {"shape": "box", "x": 0.0, "z": 0.4542, "w": 1, "d": 0.0917, "y": 0, "h": 1, "color": "#a8553a", "top": "#bb694c"},
+    {"shape": "box", "x": -0.4771, "z": 0.0, "w": 0.0458, "d": 0.8167, "y": 0, "h": 1, "color": "#a8553a", "top": "#bb694c"},
+    {"shape": "box", "x": 0.4771, "z": 0.0, "w": 0.0458, "d": 0.8167, "y": 0, "h": 1, "color": "#a8553a", "top": "#bb694c"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": false}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "unifi_dream_router_7",
+  "name": {"en": "Dream Router (tower)"},
+  "size": [0.11,0.11,0.1841],
+  "group": "network",
+  "room": ["office", "utility", "loft", "living", "hall"],
+  "tags": ["unifi", "dream router", "udr", "udr7", "dream machine", "udm", "gateway", "router", "wifi router", "wifi 7", "broadband", "internet"],
+  "family": "unifi_gateway",
+  "variant": {"en": "Dream Router 7"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "profile": [[0,0],[0.92,0],[1,0.03],[1,0.97],[0.92,1],[0,1]]},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.5455, "d": 0.5455, "y": 0.9973, "h": 0.0027, "color": "#4aa3ff", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

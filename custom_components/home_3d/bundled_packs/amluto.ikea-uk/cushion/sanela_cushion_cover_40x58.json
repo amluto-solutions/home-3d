@@ -1,0 +1,37 @@
+{
+  "id": "sanela_cushion_cover_40x58",
+  "name": {
+    "en": "Cushion cover 40x58 cm"
+  },
+  "size": [
+    0.58,
+    0.12,
+    0.4
+  ],
+  "group": "cushion",
+  "room": [
+    "living",
+    "bedroom",
+    "conservatory",
+    "kids"
+  ],
+  "tags": [
+    "SANELA",
+    "cushion",
+    "cushion cover",
+    "lumbar",
+    "velvet",
+    "yellow-brown",
+    "dark green",
+    "light beige"
+  ],
+  "family": "sanela_cushion",
+  "variant": {
+    "en": "40x58"
+  },
+  "ikea": "SANELA",
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "cushion", "round": 0.5}
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "rack_patch_panel_24_1u",
+  "name": {"en": "Rack patch panel 24-port 1U"},
+  "size": [0.4826, 0.05, 0.0437],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "surface",
+  "tags": ["patch panel", "cat6", "keystone", "cabling", "24 port", "1u", "rack mount", "19 inch", "rack"],
+  "family": "rack_patch_panel",
+  "variant": {"en": "24-port 1U"},
+  "rack": {"u": 1},
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9159, "d": 1, "y": 0, "h": 1, "color": "dark", "edges": "faint"},
+    {"shape": "box", "x": -0.479, "z": 0.46, "w": 0.042, "d": 0.08, "y": 0, "h": 1, "color": "dark"},
+    {"shape": "box", "x": 0.479, "z": 0.46, "w": 0.042, "d": 0.08, "y": 0, "h": 1, "color": "dark"},
+    {"shape": "box", "x": -0.3, "z": 0.4, "w": 0.16, "d": 0.2, "y": 0.3, "h": 0.42, "color": "#15171b"},
+    {"shape": "box", "x": -0.1, "z": 0.4, "w": 0.16, "d": 0.2, "y": 0.3, "h": 0.42, "color": "#15171b"},
+    {"shape": "box", "x": 0.1, "z": 0.4, "w": 0.16, "d": 0.2, "y": 0.3, "h": 0.42, "color": "#15171b"},
+    {"shape": "box", "x": 0.3, "z": 0.4, "w": 0.16, "d": 0.2, "y": 0.3, "h": 0.42, "color": "#15171b"},
+    {"shape": "box", "x": 0, "z": 0.45, "w": 0.8759, "d": 0.1, "y": 0.78, "h": 0.1, "color": "white"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

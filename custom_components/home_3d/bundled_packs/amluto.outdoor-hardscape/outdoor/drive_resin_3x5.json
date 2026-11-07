@@ -1,0 +1,16 @@
+{
+  "id": "drive_resin_3x5",
+  "name": {"en": "Resin-bound driveway, 3 × 5 m"},
+  "size": [3.0, 5.0, 0.04],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["resin", "driveway", "drive", "permeable", "hardstanding", "parking"],
+  "family": "drive_resin",
+  "variant": {"en": "3 × 5 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#cbbd9a"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

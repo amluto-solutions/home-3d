@@ -1,0 +1,22 @@
+{
+  "id": "rowing_machine_water",
+  "name": {"en": "Water rowing machine"},
+  "size": [0.58, 2.1, 0.62],
+  "group": "sport",
+  "room": ["living", "hobby", "bedroom", "loft", "office"],
+  "tags": ["rowing machine", "rower", "water rower", "wooden", "cardio", "gym", "home gym", "fitness", "indoor rowing", "workout", "ash"],
+  "family": "rowing_machine",
+  "variant": {"en": "Water rower, wood"},
+  "parts": [
+    {"shape": "box", "x": -0.1207, "z": -0.0476, "w": 0.0862, "d": 0.8571, "y": 0.2581, "h": 0.0968, "color": "wood"},
+    {"shape": "box", "x": 0.1207, "z": -0.0476, "w": 0.0862, "d": 0.8571, "y": 0.2581, "h": 0.0968, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0.4286, "w": 0.8621, "d": 0.0286, "y": 0, "h": 0.1613, "color": "wood"},
+    {"shape": "box", "x": 0, "z": -0.4524, "w": 0.8621, "d": 0.0286, "y": 0, "h": 0.1613, "color": "wood"},
+    {"shape": "loft", "x": -0.3448, "z": 0.381, "w": 0.1034, "d": 0.0476, "y": 0.0806, "h": 0.3226, "color": "wood", "tx": -0.3448, "tz": 0.4286, "tw": 0.1034, "td": 0.0476},
+    {"shape": "loft", "x": 0.3448, "z": 0.381, "w": 0.1034, "d": 0.0476, "y": 0.0806, "h": 0.3226, "color": "wood", "tx": 0.3448, "tz": 0.4286, "tw": 0.1034, "td": 0.0476},
+    {"shape": "cyl", "x": 0, "z": 0.3714, "w": 0.7931, "d": 0.2381, "y": 0.2742, "h": 0.7419, "color": "#9cc4df", "axis": "z"},
+    {"shape": "box", "x": 0, "z": -0.0952, "w": 0.4828, "d": 0.1143, "y": 0.3548, "h": 0.0806, "color": "wood"},
+    {"shape": "box", "x": -0.2414, "z": 0.2952, "w": 0.2414, "d": 0.1048, "y": 0.3871, "h": 0.0484, "color": "#25262a", "rot": 20},
+    {"shape": "box", "x": 0.2414, "z": 0.2952, "w": 0.2414, "d": 0.1048, "y": 0.3871, "h": 0.0484, "color": "#25262a", "rot": -20}
+  ]
+}

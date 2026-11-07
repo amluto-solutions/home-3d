@@ -1,0 +1,40 @@
+{
+  "id": "navlinge_led_clamp_spotlight",
+  "name": {
+    "en": "LED clamp spotlight"
+  },
+  "size": [
+    0.12,
+    0.22,
+    0.34
+  ],
+  "group": "lamp",
+  "room": [
+    "bedroom",
+    "office",
+    "kids",
+    "hobby"
+  ],
+  "tags": [
+    "clamp lamp",
+    "spotlight",
+    "reading lamp",
+    "bed lamp",
+    "desk lamp",
+    "white",
+    "black",
+    "dark red"
+  ],
+  "ikea": "NÄVLINGE",
+  "mount": "surface",
+  "light": "spot",
+  "electric": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.3636, "w": 0.4167, "d": 0.2727, "y": 0, "h": 0.1471, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.2273, "w": 0.4167, "d": 0.0227, "y": 0.0882, "h": 0.0882, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3636, "w": 0.125, "d": 0.0682, "y": 0.1471, "h": 0.5882, "color": "white", "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": -0.3636, "w": 0.1, "d": 0.0545, "y": 0.7353, "h": 0.0882, "color": "white", "tz": -0.1818, "tw": 0.1, "td": 0.0545},
+    {"shape": "loft", "x": 0.0, "z": 0.0909, "w": 0.75, "d": 0.4091, "y": 0.5882, "h": 0.2941, "color": "white", "tz": -0.0909, "tw": 0.4167, "td": 0.2273},
+    {"shape": "cyl", "x": 0.0, "z": 0.1364, "w": 0.5833, "d": 0.3182, "y": 0.5882, "h": 0.0176, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

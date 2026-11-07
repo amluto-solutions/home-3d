@@ -1,0 +1,27 @@
+{
+  "id": "chimney_cooker_hood_600",
+  "name": {"en": "Chimney cooker hood 600"},
+  "size": [0.6, 0.5, 1.0],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["cooker hood", "extractor", "chimney hood", "range hood", "canopy", "stainless steel"],
+  "family": "cooker_hood",
+  "variant": {"en": "Chimney 600"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.55,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.05, "color": "metal", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.05, "h": 0.17, "color": "metal", "tx": 0.0, "tz": -0.28, "tw": 0.5, "td": 0.52, "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.28, "w": 0.4333, "d": 0.44, "y": 0.22, "h": 0.78, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.88, "y": 0.0, "h": 0.002, "color": "dark"},
+    {"shape": "cyl", "x": -0.25, "z": 0.34, "w": 0.0833, "d": 0.1, "y": 0.0, "h": 0.003, "color": "#fff1d0", "glow": true},
+    {"shape": "cyl", "x": 0.25, "z": 0.34, "w": 0.0833, "d": 0.1, "y": 0.0, "h": 0.003, "color": "#fff1d0", "glow": true},
+    {"shape": "box", "x": 0.0, "z": 0.498, "w": 0.2667, "d": 0.004, "y": 0.015, "h": 0.02, "color": "#7fe3ff", "edges": "faint"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.5, "z1": -0.5, "x2": 0.5, "z2": 0.5},
+    {"shape": "line", "x1": -0.5, "z1": 0.5, "x2": 0.5, "z2": -0.5}
+  ]
+}

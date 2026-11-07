@@ -1,0 +1,137 @@
+{
+  "id": "portable_ac_9000",
+  "name": {
+    "en": "Portable air conditioner"
+  },
+  "size": [
+    0.34,
+    0.335,
+    0.7
+  ],
+  "group": "heating",
+  "room": [
+    "bedroom",
+    "office",
+    "living",
+    "kids"
+  ],
+  "tags": [
+    "air conditioning",
+    "air con",
+    "aircon",
+    "portable ac",
+    "cooling",
+    "climate",
+    "dehumidifier",
+    "9000 btu"
+  ],
+  "family": "air_conditioner",
+  "variant": {
+    "en": "Portable 9 000 BTU"
+  },
+  "electric": true,
+  "watts": 900,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0571,
+      "h": 0.9429,
+      "color": "white",
+      "round": 0.12
+    },
+    {
+      "shape": "cyl",
+      "x": -0.35,
+      "z": -0.35,
+      "w": 0.1471,
+      "d": 0.1493,
+      "y": 0.0,
+      "h": 0.0571,
+      "color": "dark"
+    },
+    {
+      "shape": "cyl",
+      "x": -0.35,
+      "z": 0.35,
+      "w": 0.1471,
+      "d": 0.1493,
+      "y": 0.0,
+      "h": 0.0571,
+      "color": "dark"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.35,
+      "z": -0.35,
+      "w": 0.1471,
+      "d": 0.1493,
+      "y": 0.0,
+      "h": 0.0571,
+      "color": "dark"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.35,
+      "z": 0.35,
+      "w": 0.1471,
+      "d": 0.1493,
+      "y": 0.0,
+      "h": 0.0571,
+      "color": "dark"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.5,
+      "w": 0.75,
+      "d": 0.0239,
+      "y": 0.9,
+      "h": 0.0571,
+      "color": "dark"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.5,
+      "w": 0.5,
+      "d": 0.0239,
+      "y": 0.8,
+      "h": 0.0429,
+      "color": "#7fd0ff"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.5,
+      "w": 0.7,
+      "d": 0.0239,
+      "y": 0.2,
+      "h": 0.4,
+      "color": "#dcdcdc"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": -0.42,
+      "w": 0.3,
+      "d": 0.4478,
+      "y": 0.55,
+      "h": 0.1457,
+      "color": "metal",
+      "axis": "z"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    }
+  ]
+}

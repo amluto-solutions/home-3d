@@ -1,0 +1,23 @@
+{
+  "id": "post_top_lantern_black",
+  "name": {"en": "Post-top park lantern, black, 3 m"},
+  "size": [0.4, 0.4, 3.0],
+  "group": "lamp",
+  "room": ["garden"],
+  "tags": ["street light", "lamp post", "park lamp", "globe lantern", "path light", "lighting", "garden"],
+  "family": "post_top_lantern_black",
+  "variant": {"en": "3 m"},
+  "electric": true,
+  "light": "garden",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.75, "d": 0.75, "y": 0, "h": 0.1667, "color": "#1f2124", "profile": [[1, 0], [1, 0.15], [0.55, 0.3], [0.45, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.3, "d": 0.3, "y": 0.1667, "h": 0.7, "color": "#1f2124"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.4, "d": 0.4, "y": 0.8, "h": 0.0267, "color": "#1f2124", "profile": [[0.5, 0], [1, 0.4], [1, 0.7], [0.4, 1], [0, 1]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.85, "d": 0.85, "y": 0.8333, "h": 0.1333, "color": "#fff1c9", "glow": true},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.95, "d": 0.95, "y": 0.96, "h": 0.0267, "color": "#1f2124", "tx": 0.0, "tz": 0.0, "tw": 0.125, "td": 0.125},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.125, "d": 0.125, "y": 0.9833, "h": 0.0167, "color": "#25282b"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

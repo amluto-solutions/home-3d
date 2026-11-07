@@ -1,0 +1,39 @@
+{
+  "id": "simrishamn_floor_lamp",
+  "name": {
+    "en": "Floor lamp, opal glass shade 158 cm"
+  },
+  "size": [
+    0.3,
+    0.3,
+    1.58
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "floor lamp",
+    "standard lamp",
+    "opal glass",
+    "chrome-plated",
+    "white",
+    "classic",
+    "retro"
+  ],
+  "family": "simrishamn_lamp",
+  "variant": {
+    "en": "Floor 158"
+  },
+  "ikea": "SIMRISHAMN",
+  "light": "floor",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0127, "color": "metal", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0833, "d": 0.0833, "y": 0.0127, "h": 0.7595, "color": "metal", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.7722, "h": 0.2278, "color": "white", "glow": true, "profile": [[0.35, 0], [0.8, 0.1], [1, 0.4], [0.95, 0.8], [0.75, 1], [0.0, 1]]}
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "ormanas_led_strip_4m",
+  "name": {
+    "en": "Smart LED lighting strip, 4 m"
+  },
+  "size": [
+    4.0,
+    0.012,
+    0.012
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "kitchen",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "led strip",
+    "strip light",
+    "smart",
+    "colour",
+    "white spectrum",
+    "tv backlight",
+    "shelf lighting"
+  ],
+  "ikea": "ORMANÄS",
+  "light": "strip",
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.0,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 0.995, "d": 0.5, "y": 0.25, "h": 0.5, "color": "white", "glow": true, "fix": "dh"}
+  ]
+}

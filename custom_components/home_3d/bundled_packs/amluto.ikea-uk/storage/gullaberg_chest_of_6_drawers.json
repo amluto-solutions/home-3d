@@ -1,0 +1,55 @@
+{
+  "id": "gullaberg_chest_of_6_drawers",
+  "name": {
+    "en": "Chest of 6 drawers, 89x122 cm"
+  },
+  "size": [
+    0.89,
+    0.48,
+    1.22
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "drawers",
+    "chest",
+    "dresser",
+    "white",
+    "grey",
+    "tallboy"
+  ],
+  "family": "gullaberg_chest_of_drawers",
+  "variant": {
+    "en": "6 drawers · 89x122"
+  },
+  "ikea": "GULLABERG",
+  "parts": [
+    {"shape": "box", "x": -0.4899, "z": -0.0187, "w": 0.0202, "d": 0.9625, "y": 0.1639, "h": 0.8197, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4899, "z": -0.0187, "w": 0.0202, "d": 0.9625, "y": 0.1639, "h": 0.8197, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0187, "w": 0.9596, "d": 0.9625, "y": 0.1639, "h": 0.0148, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4917, "w": 0.9596, "d": 0.0167, "y": 0.1787, "h": 0.7902, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0104, "w": 1, "d": 1, "y": 0.9836, "h": 0.0164, "color": "white", "fix": "h"},
+    {"shape": "loft", "x": -0.4466, "z": -0.3802, "w": 0.0236, "d": 0.0438, "y": 0, "h": 0.1639, "color": "white", "tw": 0.0393, "td": 0.0729, "fix": "wdh"},
+    {"shape": "loft", "x": -0.4466, "z": 0.3802, "w": 0.0236, "d": 0.0438, "y": 0, "h": 0.1639, "color": "white", "tw": 0.0393, "td": 0.0729, "fix": "wdh"},
+    {"shape": "loft", "x": 0.4466, "z": -0.3802, "w": 0.0236, "d": 0.0438, "y": 0, "h": 0.1639, "color": "white", "tw": 0.0393, "td": 0.0729, "fix": "wdh"},
+    {"shape": "loft", "x": 0.4466, "z": 0.3802, "w": 0.0236, "d": 0.0438, "y": 0, "h": 0.1639, "color": "white", "tw": 0.0393, "td": 0.0729, "fix": "wdh"},
+    {"shape": "box", "x": -0.2489, "z": 0.4812, "w": 0.4933, "d": 0.0375, "y": 0.8031, "h": 0.1789, "color": "white"},
+    {"shape": "cyl", "x": -0.2489, "z": 0.5, "w": 0.0337, "d": 0.05, "y": 0.9021, "h": 0.0246, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.2489, "z": 0.4812, "w": 0.4933, "d": 0.0375, "y": 0.8031, "h": 0.1789, "color": "white"},
+    {"shape": "cyl", "x": 0.2489, "z": 0.5, "w": 0.0337, "d": 0.05, "y": 0.9021, "h": 0.0246, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": -0.2489, "z": 0.4812, "w": 0.4933, "d": 0.0375, "y": 0.6209, "h": 0.1789, "color": "white"},
+    {"shape": "cyl", "x": -0.2489, "z": 0.5, "w": 0.0337, "d": 0.05, "y": 0.7199, "h": 0.0246, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.2489, "z": 0.4812, "w": 0.4933, "d": 0.0375, "y": 0.6209, "h": 0.1789, "color": "white"},
+    {"shape": "cyl", "x": 0.2489, "z": 0.5, "w": 0.0337, "d": 0.05, "y": 0.7199, "h": 0.0246, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.991, "d": 0.0375, "y": 0.3933, "h": 0.2244, "color": "white"},
+    {"shape": "cyl", "x": -0.2478, "z": 0.5, "w": 0.0337, "d": 0.05, "y": 0.5205, "h": 0.0246, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2478, "z": 0.5, "w": 0.0337, "d": 0.05, "y": 0.5205, "h": 0.0246, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.991, "d": 0.0375, "y": 0.1656, "h": 0.2244, "color": "white"},
+    {"shape": "cyl", "x": -0.2478, "z": 0.5, "w": 0.0337, "d": 0.05, "y": 0.2928, "h": 0.0246, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2478, "z": 0.5, "w": 0.0337, "d": 0.05, "y": 0.2928, "h": 0.0246, "color": "metal", "axis": "z", "fix": "wdh"}
+  ]
+}

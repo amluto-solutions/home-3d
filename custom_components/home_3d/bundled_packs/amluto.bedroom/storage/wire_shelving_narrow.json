@@ -1,0 +1,68 @@
+{
+  "id": "wire_shelving_narrow",
+  "name": {
+    "en": "Wire shelving unit, narrow"
+  },
+  "size": [
+    0.6,
+    0.35,
+    1.5
+  ],
+  "group": "storage",
+  "family": "wire_shelving",
+  "variant": {
+    "en": "4 tiers · 60 × 35 × 150"
+  },
+  "room": [
+    "garage",
+    "utility",
+    "office",
+    "kitchen",
+    "loft"
+  ],
+  "tags": [
+    "metal shelving",
+    "chrome shelving",
+    "wire rack",
+    "racking",
+    "garage shelving",
+    "shelves",
+    "shelving",
+    "industrial"
+  ],
+  "parts": [
+    {"shape": "cyl", "x": -0.4792, "z": -0.4643, "w": 0.0417, "d": 0.0714, "y": 0.01, "h": 0.99, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": -0.4792, "z": -0.4643, "w": 0.0483, "d": 0.0829, "y": 0, "h": 0.01, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4792, "z": 0.4643, "w": 0.0417, "d": 0.0714, "y": 0.01, "h": 0.99, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": -0.4792, "z": 0.4643, "w": 0.0483, "d": 0.0829, "y": 0, "h": 0.01, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4792, "z": -0.4643, "w": 0.0417, "d": 0.0714, "y": 0.01, "h": 0.99, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.4792, "z": -0.4643, "w": 0.0483, "d": 0.0829, "y": 0, "h": 0.01, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4792, "z": 0.4643, "w": 0.0417, "d": 0.0714, "y": 0.01, "h": 0.99, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.4792, "z": 0.4643, "w": 0.0483, "d": 0.0829, "y": 0, "h": 0.01, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.98, "d": 0.9657, "y": 0.08, "h": 0.004, "color": "metal", "fix": "h", "top": "dark"},
+    {"shape": "cyl", "x": 0, "z": 0.4714, "w": 1.0, "d": 0.0343, "y": 0.08, "h": 0.02, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0, "z": -0.4714, "w": 1.0, "d": 0.0343, "y": 0.08, "h": 0.02, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "box", "x": -0.17, "z": 0, "w": 0.0133, "d": 0.9429, "y": 0.08, "h": 0.008, "color": "metal", "fix": "wh"},
+    {"shape": "box", "x": 0.17, "z": 0, "w": 0.0133, "d": 0.9429, "y": 0.08, "h": 0.008, "color": "metal", "fix": "wh"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.98, "d": 0.9657, "y": 0.3822, "h": 0.004, "color": "metal", "fix": "h", "top": "dark"},
+    {"shape": "cyl", "x": 0, "z": 0.4714, "w": 1.0, "d": 0.0343, "y": 0.3822, "h": 0.02, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0, "z": -0.4714, "w": 1.0, "d": 0.0343, "y": 0.3822, "h": 0.02, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "box", "x": -0.17, "z": 0, "w": 0.0133, "d": 0.9429, "y": 0.3822, "h": 0.008, "color": "metal", "fix": "wh"},
+    {"shape": "box", "x": 0.17, "z": 0, "w": 0.0133, "d": 0.9429, "y": 0.3822, "h": 0.008, "color": "metal", "fix": "wh"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.98, "d": 0.9657, "y": 0.6844, "h": 0.004, "color": "metal", "fix": "h", "top": "dark"},
+    {"shape": "cyl", "x": 0, "z": 0.4714, "w": 1.0, "d": 0.0343, "y": 0.6844, "h": 0.02, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0, "z": -0.4714, "w": 1.0, "d": 0.0343, "y": 0.6844, "h": 0.02, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "box", "x": -0.17, "z": 0, "w": 0.0133, "d": 0.9429, "y": 0.6844, "h": 0.008, "color": "metal", "fix": "wh"},
+    {"shape": "box", "x": 0.17, "z": 0, "w": 0.0133, "d": 0.9429, "y": 0.6844, "h": 0.008, "color": "metal", "fix": "wh"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.98, "d": 0.9657, "y": 0.98, "h": 0.004, "color": "metal", "fix": "h", "top": "dark"},
+    {"shape": "cyl", "x": 0, "z": 0.4714, "w": 1.0, "d": 0.0343, "y": 0.98, "h": 0.02, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0, "z": -0.4714, "w": 1.0, "d": 0.0343, "y": 0.98, "h": 0.02, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "box", "x": -0.17, "z": 0, "w": 0.0133, "d": 0.9429, "y": 0.98, "h": 0.008, "color": "metal", "fix": "wh"},
+    {"shape": "box", "x": 0.17, "z": 0, "w": 0.0133, "d": 0.9429, "y": 0.98, "h": 0.008, "color": "metal", "fix": "wh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": -0.5, "x2": 0.5, "z2": 0.5},
+    {"shape": "line", "x1": -0.5, "z1": 0.5, "x2": 0.5, "z2": -0.5}
+  ]
+}

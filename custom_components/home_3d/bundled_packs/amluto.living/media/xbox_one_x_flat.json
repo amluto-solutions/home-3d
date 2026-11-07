@@ -1,0 +1,26 @@
+{
+  "id": "xbox_one_x_flat",
+  "name": {"en": "Xbox One X"},
+  "size": [0.3, 0.24, 0.06],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["xbox one x", "xbox one", "xbox", "microsoft", "gaming", "console", "games console", "one x"],
+  "family": "xbox_one_x",
+  "variant": {"en": " flat"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 120,
+  "parts": [
+    {"shape": "cyl", "x": -0.4, "z": -0.375, "w": 0.0667, "d": 0.0833, "y": 0.0, "h": 0.1, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4, "z": 0.375, "w": 0.0667, "d": 0.0833, "y": 0.0, "h": 0.1, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4, "z": -0.375, "w": 0.0667, "d": 0.0833, "y": 0.0, "h": 0.1, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4, "z": 0.375, "w": 0.0667, "d": 0.0833, "y": 0.0, "h": 0.1, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.1, "h": 0.9, "color": "#1c1d20", "round": 0.12},
+    {"shape": "box", "x": -0.12, "z": 0.4937, "w": 0.45, "d": 0.0125, "y": 0.595, "h": 0.063, "color": "#101114"},
+    {"shape": "box", "x": 0.34, "z": 0.4937, "w": 0.18, "d": 0.0125, "y": 0.28, "h": 0.05, "color": "white", "edges": "faint"},
+    {"shape": "cyl", "x": 0.43, "z": 0.4937, "w": 0.0396, "d": 0.0125, "y": 0.28, "h": 0.198, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

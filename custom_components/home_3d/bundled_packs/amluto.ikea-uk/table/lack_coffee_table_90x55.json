@@ -1,0 +1,39 @@
+{
+  "id": "lack_coffee_table_90x55",
+  "name": {
+    "en": "Coffee table 90x55 cm"
+  },
+  "size": [
+    0.9,
+    0.55,
+    0.45
+  ],
+  "group": "table",
+  "room": [
+    "living"
+  ],
+  "tags": [
+    "coffee table",
+    "shelf",
+    "budget",
+    "white",
+    "black-brown",
+    "white stained oak effect",
+    "oak effect",
+    "blue"
+  ],
+  "family": "lack_coffee_table",
+  "variant": {
+    "en": "90x55"
+  },
+  "ikea": "LACK",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8889, "h": 0.1111, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4722, "z": -0.4545, "w": 0.0556, "d": 0.0909, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4722, "z": 0.4545, "w": 0.0556, "d": 0.0909, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4722, "z": -0.4545, "w": 0.0556, "d": 0.0909, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4722, "z": 0.4545, "w": 0.0556, "d": 0.0909, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8889, "d": 0.8182, "y": 0.2222, "h": 0.0667, "color": "white", "fix": "h"}
+  ]
+}

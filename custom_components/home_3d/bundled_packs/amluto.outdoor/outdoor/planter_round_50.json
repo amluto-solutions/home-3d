@@ -1,0 +1,21 @@
+{
+  "id": "planter_round_50",
+  "name": {"en": "Planter"},
+  "size": [0.5, 0.5, 0.85],
+  "group": "outdoor",
+  "room": ["garden", "conservatory"],
+  "tags": ["planter", "plant pot", "container", "pot", "patio planter", "garden", "flowers", "round"],
+  "family": "planter",
+  "variant": {"en": "Round, 50 cm"},
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0, "h": 0.5294, "color": "pot", "profile": [[0, 0], [0.72, 0], [0.92, 0.85], [1, 0.9], [1, 1], [0.9, 1], [0, 0.95]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.828, "d": 0.828, "y": 0.4588, "h": 0.5176, "color": "plant"},
+    {"shape": "sphere", "x": 0.1626, "z": 0.1626, "w": 0.414, "d": 0.414, "y": 0.4824, "h": 0.3624, "color": "plant"},
+    {"shape": "sphere", "x": -0.1626, "z": 0.1626, "w": 0.414, "d": 0.414, "y": 0.4824, "h": 0.3624, "color": "plant"},
+    {"shape": "sphere", "x": -0.1626, "z": -0.1626, "w": 0.414, "d": 0.414, "y": 0.4824, "h": 0.3624, "color": "plant"},
+    {"shape": "sphere", "x": 0.1626, "z": -0.1626, "w": 0.414, "d": 0.414, "y": 0.4824, "h": 0.3624, "color": "plant"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0.0, "z": 0.0, "r": 0.5}
+  ]
+}

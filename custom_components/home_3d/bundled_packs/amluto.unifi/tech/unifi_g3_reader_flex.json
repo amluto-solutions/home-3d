@@ -1,0 +1,66 @@
+{
+  "id": "unifi_g3_reader_flex",
+  "name": {
+    "en": "UniFi Access Reader Flex"
+  },
+  "size": [
+    0.088,
+    0.0365,
+    0.088
+  ],
+  "group": "tech",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "access",
+    "door access",
+    "reader flex",
+    "g3 flex",
+    "ua-g3-flex",
+    "reader",
+    "card reader",
+    "nfc",
+    "pin"
+  ],
+  "family": "unifi_access_reader",
+  "variant": {
+    "en": "Reader Flex"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "round": 0.25
+    },
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0.3,
+      "w": 0.78,
+      "d": 0.42,
+      "y": 0.06,
+      "h": 0.88,
+      "color": "#14181f",
+      "round": 0.2
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.49,
+      "w": 0.5,
+      "d": 0.03,
+      "y": 0.1,
+      "h": 0.02,
+      "color": "#3a8dde"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "scooter_kids_3_wheel",
+  "name": {"en": "Kids' scooter"},
+  "size": [0.37, 0.56, 0.66],
+  "group": "vehicle",
+  "room": ["hall", "garage", "kids", "garden", "utility"],
+  "tags": ["scooter", "kids scooter", "children's scooter", "three wheel", "micro scooter", "toddler", "lean to steer", "play", "toy"],
+  "family": "scooter",
+  "variant": {"en": "Kids' three-wheeler"},
+  "vehicle": true,
+  "colors": {"paint": "#2f8fd0"},
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.0625, "w": 0.3243, "d": 0.6786, "y": 0.1061, "h": 0.0455, "color": "paint"},
+    {"shape": "box", "x": 0, "z": -0.0625, "w": 0.2703, "d": 0.6429, "y": 0.1515, "h": 0.0061, "color": "#3a3d42"},
+    {"shape": "cyl", "x": 0, "z": -0.4018, "w": 0.0676, "d": 0.1786, "y": 0, "h": 0.1515, "color": "#25262a", "axis": "x"},
+    {"shape": "cyl", "x": 0, "z": -0.4018, "w": 0.0784, "d": 0.0893, "y": 0.0379, "h": 0.0758, "color": "#b9bdc2", "axis": "x"},
+    {"shape": "cyl", "x": -0.2973, "z": 0.3839, "w": 0.0676, "d": 0.2143, "y": 0, "h": 0.1818, "color": "#25262a", "axis": "x"},
+    {"shape": "cyl", "x": -0.2973, "z": 0.3839, "w": 0.0784, "d": 0.1071, "y": 0.0455, "h": 0.0909, "color": "#b9bdc2", "axis": "x"},
+    {"shape": "cyl", "x": 0.2973, "z": 0.3839, "w": 0.0676, "d": 0.2143, "y": 0, "h": 0.1818, "color": "#25262a", "axis": "x"},
+    {"shape": "cyl", "x": 0.2973, "z": 0.3839, "w": 0.0784, "d": 0.1071, "y": 0.0455, "h": 0.0909, "color": "#b9bdc2", "axis": "x"},
+    {"shape": "box", "x": 0, "z": 0.3482, "w": 0.5405, "d": 0.0893, "y": 0.1515, "h": 0.0606, "color": "paint"},
+    {"shape": "loft", "x": 0, "z": 0.3839, "w": 0.0757, "d": 0.05, "y": 0.1515, "h": 0.7879, "color": "#b9bdc2", "tx": 0, "tz": 0.3482, "tw": 0.0757, "td": 0.05},
+    {"shape": "cyl", "x": 0, "z": 0.3482, "w": 0.7568, "d": 0.0393, "y": 0.953, "h": 0.0333, "color": "#25262a", "axis": "x"},
+    {"shape": "cyl", "x": -0.4054, "z": 0.3482, "w": 0.1622, "d": 0.0536, "y": 0.947, "h": 0.0455, "color": "#f08a2c", "axis": "x"},
+    {"shape": "cyl", "x": 0.4054, "z": 0.3482, "w": 0.1622, "d": 0.0536, "y": 0.947, "h": 0.0455, "color": "#f08a2c", "axis": "x"}
+  ]
+}

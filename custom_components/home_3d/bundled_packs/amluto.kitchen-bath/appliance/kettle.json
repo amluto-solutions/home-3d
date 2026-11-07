@@ -1,0 +1,25 @@
+{
+  "id": "kettle",
+  "name": {"en": "Kettle"},
+  "size": [0.23, 0.16, 0.25],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["kettle", "electric kettle", "tea", "hot water", "cordless kettle"],
+  "family": "kettle",
+  "variant": {"en": "Jug"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": -0.087, "z": 0.0, "w": 0.6522, "d": 0.9375, "y": 0.0, "h": 0.088, "color": "dark"},
+    {"shape": "lathe", "x": -0.087, "z": 0.0, "w": 0.6522, "d": 0.9375, "y": 0.088, "h": 0.8, "color": "body", "profile": [[0, 0], [0.95, 0], [1, 0.4], [0.88, 1], [0, 1]]},
+    {"shape": "cyl", "x": -0.087, "z": 0.0, "w": 0.5217, "d": 0.75, "y": 0.888, "h": 0.048, "color": "dark"},
+    {"shape": "box", "x": -0.3804, "z": 0.0, "w": 0.0652, "d": 0.1875, "y": 0.2, "h": 0.68, "color": "dark"},
+    {"shape": "box", "x": -0.3804, "z": 0.0, "w": 0.0652, "d": 0.1875, "y": 0.82, "h": 0.08, "color": "dark"},
+    {"shape": "box", "x": -0.3804, "z": 0.0, "w": 0.0652, "d": 0.1875, "y": 0.2, "h": 0.08, "color": "dark"},
+    {"shape": "loft", "x": 0.337, "z": 0.0, "w": 0.3261, "d": 0.1875, "y": 0.68, "h": 0.18, "color": "body", "tx": 0.2391, "tw": 0.087, "td": 0.1875},
+    {"shape": "box", "x": 0.237, "z": 0.0, "w": 0.0217, "d": 0.25, "y": 0.24, "h": 0.4, "color": "glass"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": -0.087, "z": 0.0, "r": 0.4688}
+  ]
+}

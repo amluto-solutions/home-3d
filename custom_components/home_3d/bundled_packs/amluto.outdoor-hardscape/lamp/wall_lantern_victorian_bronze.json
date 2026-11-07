@@ -1,0 +1,24 @@
+{
+  "id": "wall_lantern_victorian_bronze",
+  "name": {"en": "Victorian wall lantern, bronze"},
+  "size": [0.3, 0.35, 0.5],
+  "group": "lamp",
+  "room": ["garden"],
+  "tags": ["wall light", "lantern", "victorian", "outdoor light", "wall lantern", "porch light", "lighting"],
+  "family": "wall_lantern_victorian_bronze",
+  "variant": {"en": "wall mounted"},
+  "electric": true,
+  "light": "wall",
+  "mount": "wall",
+  "wall_y": 2.0,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4286, "w": 0.3333, "d": 0.1143, "y": 0.4, "h": 0.56, "color": "#5a4630"},
+    {"shape": "box", "x": 0.0, "z": -0.0857, "w": 0.1333, "d": 0.6286, "y": 0.76, "h": 0.08, "color": "#5a4630"},
+    {"shape": "box", "x": 0.0, "z": 0.1143, "w": 0.6667, "d": 0.5714, "y": 0, "h": 0.06, "color": "#5a4630"},
+    {"shape": "box", "x": 0.0, "z": 0.1143, "w": 0.5667, "d": 0.4857, "y": 0.06, "h": 0.6, "color": "#fff1c9", "glow": true},
+    {"shape": "loft", "x": 0.0, "z": 0.1143, "w": 0.7333, "d": 0.6286, "y": 0.66, "h": 0.2, "color": "#5a4630", "tx": 0.0, "tz": 0.1143, "tw": 0.1667, "td": 0.1429}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": false}
+  ]
+}

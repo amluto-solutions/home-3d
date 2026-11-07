@@ -1,0 +1,25 @@
+{
+  "id": "toaster_2_slice",
+  "name": {"en": "Toaster, 2 slice"},
+  "size": [0.28, 0.17, 0.19],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["toaster", "toast", "bread", "breakfast"],
+  "family": "toaster",
+  "variant": {"en": "2 slice"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8571, "d": 0.7647, "y": 0.0, "h": 0.0632, "color": "dark", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0526, "h": 0.9474, "color": "metal", "round": 0.18},
+    {"shape": "box", "x": 0.0, "z": -0.1471, "w": 0.4643, "d": 0.1176, "y": 0.9789, "h": 0.0211, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.1471, "w": 0.4643, "d": 0.1176, "y": 0.9789, "h": 0.0211, "color": "dark"},
+    {"shape": "box", "x": 0.4982, "z": 0.0, "w": 0.0036, "d": 0.1765, "y": 0.5789, "h": 0.0526, "color": "dark"},
+    {"shape": "box", "x": 0.4982, "z": 0.0, "w": 0.0036, "d": 0.1765, "y": 0.5789, "h": 0.0789, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4853, "w": 0.125, "d": 0.0294, "y": 0.2632, "h": 0.1842, "color": "dark", "axis": "z"},
+    {"shape": "box", "x": -0.4768, "z": 0.0, "w": 0.0036, "d": 0.1412, "y": 0.4, "h": 0.35, "color": "dark"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

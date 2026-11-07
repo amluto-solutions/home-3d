@@ -1,0 +1,17 @@
+{
+  "id": "raspberry_pi_case_5",
+  "name": {"en": "Raspberry Pi 5 in official case"},
+  "size": [0.0985,0.0703,0.033],
+  "group": "tech",
+  "room": ["office", "hobby", "utility", "loft"],
+  "tags": ["raspberry pi", "pi", "pi 5", "rpi", "pi case", "single board computer", "sbc", "official case", "pihole", "homelab"],
+  "family": "raspberry_pi",
+  "variant": {"en": "Pi 5 official case"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 0.5455, "color": "white", "round": 0.08},
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.5455, "h": 0.4545, "color": "#c1272d", "round": 0.08},
+    {"shape": "box", "x": 0.3046, "z": 0, "w": 0.264, "d": 0.569, "y": 0.9879, "h": 0.0121, "color": "dark"}
+  ]
+}

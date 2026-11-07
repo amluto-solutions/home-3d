@@ -1,0 +1,48 @@
+{
+  "id": "kivik_sofa_2",
+  "name": {
+    "en": "2-seat sofa"
+  },
+  "size": [
+    1.9,
+    0.95,
+    0.83
+  ],
+  "group": "sofa",
+  "room": [
+    "living",
+    "conservatory"
+  ],
+  "tags": [
+    "KIVIK",
+    "sofa",
+    "settee",
+    "couch",
+    "deep seat",
+    "memory foam",
+    "beige-grey",
+    "black",
+    "light beige",
+    "anthracite",
+    "dark grey"
+  ],
+  "family": "kivik_sofa",
+  "variant": {
+    "en": "2-seat"
+  },
+  "ikea": "KIVIK",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0361, "h": 0.3494, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": 0.0, "z": -0.3684, "w": 0.7474, "d": 0.2632, "y": 0.3855, "h": 0.494, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.1868, "z": 0.1316, "w": 0.3684, "d": 0.7263, "y": 0.3855, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.1868, "z": -0.1421, "w": 0.3632, "d": 0.1895, "y": 0.5422, "h": 0.4578, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.1868, "z": 0.1316, "w": 0.3684, "d": 0.7263, "y": 0.3855, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.1868, "z": -0.1421, "w": 0.3632, "d": 0.1895, "y": 0.5422, "h": 0.4578, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.4368, "z": 0.0, "w": 0.1263, "d": 1, "y": 0.0361, "h": 0.7229, "color": "fabric", "fix": "w", "round": 0.35},
+    {"shape": "rbox", "x": 0.4368, "z": 0.0, "w": 0.1263, "d": 1, "y": 0.0361, "h": 0.7229, "color": "fabric", "fix": "w", "round": 0.35},
+    {"shape": "box", "x": -0.4684, "z": -0.4368, "w": 0.0211, "d": 0.0421, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.4684, "z": 0.4368, "w": 0.0211, "d": 0.0421, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4684, "z": -0.4368, "w": 0.0211, "d": 0.0421, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4684, "z": 0.4368, "w": 0.0211, "d": 0.0421, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "shaker_base_unit_600",
+  "name": {"en": "Shaker base unit 600"},
+  "size": [0.6, 0.6, 0.91],
+  "group": "kitchen",
+  "room": ["kitchen", "utility"],
+  "tags": ["shaker", "kitchen cupboard", "fitted kitchen", "cabinet", "drawer", "door"],
+  "family": "shaker_base_unit",
+  "variant": {"en": "600"},
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0617, "w": 0.9933, "d": 0.7767, "y": 0.0, "h": 0.1648, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0367, "w": 1.0, "d": 0.9267, "y": 0.1648, "h": 0.7912, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.956, "h": 0.044, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4417, "w": 0.99, "d": 0.03, "y": 0.8055, "h": 0.1473, "color": "body"},
+    {"shape": "box", "x": -0.445, "z": 0.4617, "w": 0.1, "d": 0.01, "y": 0.8055, "h": 0.1473, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.445, "z": 0.4617, "w": 0.1, "d": 0.01, "y": 0.8055, "h": 0.1473, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.4617, "w": 0.79, "d": 0.01, "y": 0.8055, "h": 0.0368, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4617, "w": 0.79, "d": 0.01, "y": 0.9159, "h": 0.0368, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4817, "w": 0.2133, "d": 0.03, "y": 0.9277, "h": 0.0132, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4417, "w": 0.99, "d": 0.03, "y": 0.1681, "h": 0.6308, "color": "body"},
+    {"shape": "box", "x": -0.445, "z": 0.4617, "w": 0.1, "d": 0.01, "y": 0.1681, "h": 0.6308, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.445, "z": 0.4617, "w": 0.1, "d": 0.01, "y": 0.1681, "h": 0.6308, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.4617, "w": 0.79, "d": 0.01, "y": 0.1681, "h": 0.0659, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4617, "w": 0.79, "d": 0.01, "y": 0.733, "h": 0.0659, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.445, "z": 0.4817, "w": 0.02, "d": 0.03, "y": 0.5791, "h": 0.1429, "color": "metal", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.4667, "z1": 0.4333, "x2": 0.4667, "z2": 0.4333}
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "ginger_jar_lamp",
+  "name": {
+    "en": "Ginger jar lamp"
+  },
+  "size": [
+    0.3,
+    0.3,
+    0.65
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "hall",
+    "dining",
+    "kids"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "ginger jar",
+    "chinoiserie",
+    "blue and white",
+    "porcelain lamp",
+    "drum shade",
+    "traditional"
+  ],
+  "family": "ginger_jar_lamp",
+  "variant": {
+    "en": "Blue"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.8667, "d": 0.8667, "y": 0, "h": 0.5538, "color": "#2a4f8f", "profile": [[0.0, 0.0], [0.5385, 0.0], [0.7692, 0.1389], [1.0, 0.4722], [0.9231, 0.8333], [0.6154, 0.9444], [0.4615, 1.0], [0.0, 1.0]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4, "d": 0.4, "y": 0.5538, "h": 0.0185, "color": "#1d3a6b"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1, "d": 0.1, "y": 0.5723, "h": 0.0923, "color": "#b08d57"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.6615, "h": 0.3385, "color": "white", "glow": true}
+  ]
+}

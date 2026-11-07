@@ -1,0 +1,22 @@
+{
+  "id": "food_processor_3l",
+  "name": {"en": "Food processor, 3 L"},
+  "size": [0.24, 0.3, 0.38],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["food processor", "chopper", "countertop"],
+  "family": "food_processor",
+  "variant": {"en": "3 L"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.34, "color": "#25272b", "round": 0.12},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.8, "y": 0.34, "h": 0.46, "color": "glass", "profile": [[0, 0], [1, 0], [1, 1], [0, 1]]},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.5, "d": 0.5, "y": 0.8, "h": 0.1, "color": "#25272b", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.12, "w": 0.2083, "d": 0.1667, "y": 0.9, "h": 0.1, "color": "#25272b", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4867, "w": 0.5, "d": 0.0333, "y": 0.1, "h": 0.1, "color": "#3a3d42", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

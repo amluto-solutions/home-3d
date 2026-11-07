@@ -1,0 +1,50 @@
+{
+  "id": "electric_stove",
+  "name": {
+    "en": "Electric stove"
+  },
+  "size": [
+    0.5,
+    0.4,
+    0.9
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "conservatory",
+    "office"
+  ],
+  "tags": [
+    "electric stove",
+    "stove heater",
+    "log burner style",
+    "wood burner effect",
+    "flame effect",
+    "electric fire",
+    "heater"
+  ],
+  "family": "electric_stove",
+  "variant": {
+    "en": "Compact"
+  },
+  "light": "table",
+  "electric": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0222, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": -0.45, "w": 1, "d": 0.1, "y": 0.0222, "h": 0.5556, "color": "#2a2b2e"},
+    {"shape": "box", "x": -0.47, "z": 0.0, "w": 0.06, "d": 1, "y": 0.0222, "h": 0.5556, "color": "#2a2b2e"},
+    {"shape": "box", "x": 0.47, "z": 0.0, "w": 0.06, "d": 1, "y": 0.0222, "h": 0.5556, "color": "#2a2b2e"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.5778, "h": 0.0333, "color": "#3a3b3e"},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 1, "d": 0.05, "y": 0.0222, "h": 0.1111, "color": "#2a2b2e"},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 1, "d": 0.05, "y": 0.4667, "h": 0.1111, "color": "#2a2b2e"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.75, "y": 0.0222, "h": 0.0556, "color": "#2b1a12"},
+    {"shape": "box", "x": 0.0, "z": 0.125, "w": 0.68, "d": 0.35, "y": 0.0778, "h": 0.1111, "color": "#ff8a2a", "glow": true},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.6, "d": 0.25, "y": 0.1667, "h": 0.1333, "color": "#ffc24a", "glow": true},
+    {"shape": "cyl", "x": 0.0, "z": -0.25, "w": 0.24, "d": 0.3, "y": 0.6111, "h": 0.3889, "color": "#2a2b2e"},
+    {"shape": "cyl", "x": -0.4, "z": 0.375, "w": 0.06, "d": 0.075, "y": 0, "h": 0.0222, "color": "dark"},
+    {"shape": "cyl", "x": 0.4, "z": 0.375, "w": 0.06, "d": 0.075, "y": 0, "h": 0.0222, "color": "dark"}
+  ]
+}

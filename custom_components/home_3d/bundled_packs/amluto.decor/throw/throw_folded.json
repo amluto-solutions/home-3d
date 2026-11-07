@@ -1,0 +1,20 @@
+{
+  "id": "throw_folded",
+  "name": {"en": "Throw, folded"},
+  "size": [0.5, 0.35, 0.07],
+  "group": "throw",
+  "room": ["living", "bedroom", "conservatory"],
+  "tags": ["throw", "blanket", "folded", "sofa throw", "stripe", "wool"],
+  "family": "throw",
+  "variant": {"en": "Folded"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.0114, "w": 0.98, "d": 0.9714, "y": 0.0, "h": 0.3571, "color": "#cbbba0", "round": 0.5},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.972, "d": 0.9543, "y": 0.3, "h": 0.3571, "color": "#cbbba0", "round": 0.5},
+    {"shape": "rbox", "x": 0.0, "z": 0.0114, "w": 0.964, "d": 0.9371, "y": 0.6, "h": 0.3571, "color": "#cbbba0", "round": 0.5},
+    {"shape": "box", "x": -0.36, "z": 0.0, "w": 0.024, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#8a6e55", "fix": "w"},
+    {"shape": "box", "x": -0.3, "z": 0.0, "w": 0.024, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#8a6e55", "fix": "w"},
+    {"shape": "box", "x": 0.3, "z": 0.0, "w": 0.024, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#8a6e55", "fix": "w"},
+    {"shape": "box", "x": 0.36, "z": 0.0, "w": 0.024, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#8a6e55", "fix": "w"}
+  ]
+}

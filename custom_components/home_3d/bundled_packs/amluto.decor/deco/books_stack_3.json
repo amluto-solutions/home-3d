@@ -1,0 +1,19 @@
+{
+  "id": "books_stack_3",
+  "name": {"en": "Books"},
+  "size": [0.26, 0.2, 0.09],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "hall", "office", "kids"],
+  "tags": ["books", "reading", "bookshelf", "stack of books", "library", "stack"],
+  "family": "books",
+  "variant": {"en": "Stack of 3"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 0.8954, "d": 0.799, "y": 0.0333, "h": 0.2667, "color": "#efe7d3"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9231, "d": 0.85, "y": 0, "h": 0.3333, "color": "#8c2f2f"},
+    {"shape": "box", "x": 0.0192, "z": 0.025, "w": 0.8208, "d": 0.752, "y": 0.3644, "h": 0.2489, "color": "#efe7d3", "rot": 6},
+    {"shape": "box", "x": 0.0192, "z": 0.025, "w": 0.8462, "d": 0.8, "y": 0.3333, "h": 0.3111, "color": "#2f4a6e", "rot": 6},
+    {"shape": "box", "x": -0.0115, "z": 0, "w": 0.7462, "d": 0.705, "y": 0.6722, "h": 0.2222, "color": "#efe7d3", "rot": -8},
+    {"shape": "box", "x": -0.0115, "z": 0, "w": 0.7692, "d": 0.75, "y": 0.6444, "h": 0.2778, "color": "#d4c08e", "rot": -8}
+  ]
+}

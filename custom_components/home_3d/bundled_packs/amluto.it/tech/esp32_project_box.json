@@ -1,0 +1,18 @@
+{
+  "id": "esp32_project_box",
+  "name": {"en": "ESP32 in project box"},
+  "size": [0.1,0.06,0.025],
+  "group": "tech",
+  "room": ["office", "hobby", "utility", "loft"],
+  "tags": ["esp32", "esphome", "enclosure", "project box", "case", "diy sensor", "dev board", "microcontroller", "esp", "abs box"],
+  "family": "dev_board",
+  "variant": {"en": "In project box"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 0.76, "color": "white", "round": 0.1},
+    {"shape": "rbox", "x": 0, "z": 0, "w": 0.96, "d": 0.9333, "y": 0.76, "h": 0.24, "color": "#d6dadf", "round": 0.1},
+    {"shape": "box", "x": -0.3, "z": 0, "w": 0.12, "d": 0.2, "y": 0.996, "h": 0.004, "color": "dark"},
+    {"shape": "box", "x": 0.34, "z": 0.4967, "w": 0.06, "d": 0.0067, "y": 0.44, "h": 0.12, "color": "#46d36a", "glow": true}
+  ]
+}

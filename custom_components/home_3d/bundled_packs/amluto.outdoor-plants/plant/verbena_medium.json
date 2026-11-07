@@ -1,0 +1,28 @@
+{
+  "id": "verbena_medium",
+  "name": {"en": "Verbena bonariensis, medium"},
+  "size": [0.5, 0.5, 1.3],
+  "group": "plant",
+  "room": ["garden"],
+  "tags": ["verbena bonariensis", "flower", "perennial", "tall", "butterflies", "purple"],
+  "family": "verbena",
+  "variant": {"en": "Medium (0.5 × 1.3 m)"},
+  "parts": [
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.9, "y": 0, "h": 0.3, "color": "#3f7d3a"},
+    {"shape": "cyl", "x": 0.2156, "z": 0.0437, "w": 0.03, "d": 0.03, "y": 0.2, "h": 0.6929, "color": "#5f8a3c"},
+    {"shape": "sphere", "x": 0.2156, "z": 0.0437, "w": 0.1, "d": 0.1, "y": 0.8813, "h": 0.0308, "color": "#8a4fc8"},
+    {"shape": "cyl", "x": 0.07, "z": 0.2086, "w": 0.03, "d": 0.03, "y": 0.2, "h": 0.4357, "color": "#5f8a3c"},
+    {"shape": "sphere", "x": 0.07, "z": 0.2086, "w": 0.1, "d": 0.1, "y": 0.6242, "h": 0.0308, "color": "#8a4fc8"},
+    {"shape": "cyl", "x": -0.1457, "z": 0.1649, "w": 0.03, "d": 0.03, "y": 0.2, "h": 0.5038, "color": "#5f8a3c"},
+    {"shape": "sphere", "x": -0.1457, "z": 0.1649, "w": 0.1, "d": 0.1, "y": 0.6923, "h": 0.0308, "color": "#8a4fc8"},
+    {"shape": "cyl", "x": -0.2156, "z": -0.0437, "w": 0.03, "d": 0.03, "y": 0.2, "h": 0.468, "color": "#5f8a3c"},
+    {"shape": "sphere", "x": -0.2156, "z": -0.0437, "w": 0.1, "d": 0.1, "y": 0.6565, "h": 0.0308, "color": "#8a4fc8"},
+    {"shape": "cyl", "x": -0.07, "z": -0.2086, "w": 0.03, "d": 0.03, "y": 0.2, "h": 0.4822, "color": "#5f8a3c"},
+    {"shape": "sphere", "x": -0.07, "z": -0.2086, "w": 0.1, "d": 0.1, "y": 0.6706, "h": 0.0308, "color": "#8a4fc8"},
+    {"shape": "cyl", "x": 0.1457, "z": -0.1649, "w": 0.03, "d": 0.03, "y": 0.2, "h": 0.7134, "color": "#5f8a3c"},
+    {"shape": "sphere", "x": 0.1457, "z": -0.1649, "w": 0.1, "d": 0.1, "y": 0.9019, "h": 0.0308, "color": "#8a4fc8"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

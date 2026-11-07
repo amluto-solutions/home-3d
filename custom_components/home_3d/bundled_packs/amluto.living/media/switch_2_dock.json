@@ -1,0 +1,24 @@
+{
+  "id": "switch_2_dock",
+  "name": {"en": "Nintendo Switch 2 in dock"},
+  "size": [0.272, 0.0512, 0.116],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["switch 2", "switch2", "nintendo switch 2", "nintendo", "gaming", "console", "games console", "ng2"],
+  "family": "nintendo_switch",
+  "variant": {"en": "Switch 2 in dock"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 25,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.739, "d": 1.0, "y": 0.0, "h": 0.9, "color": "#1c1d20", "round": 0.15},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7094, "d": 0.5, "y": 0.9, "h": 0.1, "color": "#1c1d20"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.7794, "d": 0.2715, "y": 0.1, "h": 0.9, "color": "#101114"},
+    {"shape": "box", "x": 0.0, "z": 0.3367, "w": 0.7326, "d": 0.0195, "y": 0.12, "h": 0.8, "color": "glass", "edges": "faint"},
+    {"shape": "box", "x": -0.4449, "z": 0.2, "w": 0.1103, "d": 0.2715, "y": 0.1, "h": 0.9, "color": "#3fb6e8"},
+    {"shape": "box", "x": 0.4449, "z": 0.2, "w": 0.1103, "d": 0.2715, "y": 0.1, "h": 0.9, "color": "#e8504a"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "star_lamp",
+  "name": {"en": "Star lamp"},
+  "size": [0.3, 0.1, 0.34],
+  "group": "lamp",
+  "room": ["kids", "bedroom", "living"],
+  "tags": ["star light", "night light", "kids lamp", "nursery lamp", "christmas star", "mood light"],
+  "family": "star_lamp",
+  "variant": {"en": "Table"},
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.3333, "d": 1, "y": 0.0, "h": 0.0588, "color": "wood"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.04, "d": 0.12, "y": 0.0588, "h": 0.2059, "color": "metal"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.2245, "d": 0.4, "y": 0.6697, "h": 0.3049, "color": "white", "tx": 0.0, "tw": 0.0067, "glow": true},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.0067, "d": 0.4, "y": 0.3649, "h": 0.3049, "color": "white", "tx": 0.0, "tw": 0.951, "glow": true},
+    {"shape": "loft", "x": -0.294, "z": 0.0, "w": 0.0067, "d": 0.4, "y": 0.1765, "h": 0.3049, "color": "white", "tx": 0.0, "tw": 0.363, "glow": true},
+    {"shape": "loft", "x": 0.294, "z": 0.0, "w": 0.0067, "d": 0.4, "y": 0.1765, "h": 0.3049, "color": "white", "tx": 0.0, "tw": 0.363, "glow": true}
+  ]
+}

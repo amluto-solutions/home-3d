@@ -1,0 +1,17 @@
+{
+  "id": "toy_box",
+  "name": {"en": "Toy box"},
+  "size": [0.8, 0.45, 0.5],
+  "group": "kids",
+  "family": "toy_box",
+  "variant": {"en": "Chest"},
+  "room": ["kids", "living", "bedroom"],
+  "tags": ["toy box", "toy chest", "toy storage", "blanket box", "chest", "storage box", "lid"],
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.975, "d": 0.9556, "y": 0.0, "h": 0.92, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.92, "h": 0.08, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.975, "d": 0.9644, "y": 0.0, "h": 0.12, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.48, "z": 0.0, "w": 0.015, "d": 0.2667, "y": 0.6, "h": 0.12, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.48, "z": 0.0, "w": 0.015, "d": 0.2667, "y": 0.6, "h": 0.12, "color": "dark", "fix": "wdh"}
+  ]
+}

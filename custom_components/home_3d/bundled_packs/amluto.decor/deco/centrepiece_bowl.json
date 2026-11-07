@@ -1,0 +1,20 @@
+{
+  "id": "centrepiece_bowl",
+  "name": {"en": "Decorative bowl with orbs"},
+  "size": [0.45, 0.45, 0.17],
+  "group": "deco",
+  "room": ["dining", "living"],
+  "tags": ["centrepiece", "bowl", "decorative bowl", "orbs", "pine cones", "wooden bowl"],
+  "family": "centrepiece",
+  "variant": {"en": "Bowl with orbs"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.6471, "color": "wood", "profile": [[0.0, 0.0], [0.45, 0.0], [0.9, 0.5], [1, 1], [0.92, 1], [0.82, 0.55], [0.4, 0.15], [0.0, 0.15]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.2222, "d": 0.2222, "y": 0.2353, "h": 0.5882, "color": "#d9cbb0"},
+    {"shape": "sphere", "x": 0.2, "z": 0.0667, "w": 0.1778, "d": 0.1778, "y": 0.2353, "h": 0.4706, "color": "#6f5a46"},
+    {"shape": "sphere", "x": -0.1778, "z": 0.1111, "w": 0.1889, "d": 0.1889, "y": 0.2353, "h": 0.5, "color": "#c9b89a"},
+    {"shape": "sphere", "x": 0.0444, "z": -0.2, "w": 0.1778, "d": 0.1778, "y": 0.2353, "h": 0.4706, "color": "#8a6d50"},
+    {"shape": "sphere", "x": -0.1111, "z": -0.1333, "w": 0.1556, "d": 0.1556, "y": 0.2353, "h": 0.4118, "color": "#efe8da"},
+    {"shape": "sphere", "x": 0.1556, "z": -0.1556, "w": 0.1333, "d": 0.1333, "y": 0.2353, "h": 0.3529, "color": "#6f5a46"}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "label_printer",
+  "name": {"en": "Label printer"},
+  "size": [0.08, 0.17, 0.15],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby", "utility", "garage"],
+  "tags": ["label printer", "label maker", "dymo", "brother", "thermal printer", "labels", "printer"],
+  "family": "label_printer",
+  "variant": {"en": "Desktop"},
+  "electric": true,
+  "mount": "surface",
+  "role_names": {"white": "case", "dark": "details", "accent": "buttons"},
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.55, "color": "white", "round": 0.3},
+    {"shape": "cyl", "x": 0.0, "z": -0.1471, "w": 0.95, "d": 0.6471, "y": 0.4, "h": 0.6, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": -0.4625, "z": -0.1471, "w": 0.025, "d": 0.4706, "y": 0.45, "h": 0.4833, "color": "glass", "axis": "x"},
+    {"shape": "box", "x": 0.0, "z": 0.4706, "w": 0.625, "d": 0.0588, "y": 0.3, "h": 0.03, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.4882, "w": 0.55, "d": 0.0235, "y": 0.12, "h": 0.18, "color": "white"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2647, "w": 0.25, "d": 0.1176, "y": 0.55, "h": 0.0267, "color": "accent"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "Adiciona uma página na barra lateral para desenhar a casa e vê-la em 3D."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "O Home 3D já está configurado."
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "Pergunta à casa",
+      "description": "Envia uma frase às vistas abertas do Home 3D: «Mostra a sala de estar» mostra-a, e as perguntas são respondidas pelos módulos instalados («O que está aberto?»). A primeira vista que perceber a frase responde.",
+      "fields": {
+        "text": {
+          "name": "Frase",
+          "description": "O que mostrar ou perguntar, tal como o diria."
+        },
+        "screen": {
+          "name": "Ecrã",
+          "description": "Só reage a vista com este nome de ecrã (definido nas definições da vista ou na opção de ecrã do cartão). Vazio: todas as vistas abertas."
+        },
+        "speak": {
+          "name": "Falar",
+          "description": "A vista diz a resposta com o texto-para-voz do Assist (desligado: só a mostra)."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Onde aparece o Home 3D. A ligação no painel e o cartão do painel funcionam de ambas as formas, e pode continuar a ocultar a entrada para si nas definições da barra lateral do próprio Home Assistant.",
+        "data": {
+          "show_in_sidebar": "Mostrar na barra lateral",
+          "restore_picture_days": "Guardar imagens dos pontos de restauro (dias)"
+        },
+        "data_description": {
+          "restore_picture_days": "Uma imagem de fundo ou de ecrã que só um ponto de restauro mais antigo usa é guardada durante este número de dias após a criação desse ponto e depois removida no próximo arranque. Um ponto de restauro cuja imagem desapareceu é restaurado sem ela. 0 remove logo essas imagens."
+        }
+      }
+    }
+  }
+}

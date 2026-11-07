@@ -1,0 +1,59 @@
+{
+  "id": "svarta_bunk_bed_frame",
+  "name": {
+    "en": "Bunk bed frame 90x200"
+  },
+  "size": [
+    2.08,
+    1.02,
+    1.59
+  ],
+  "group": "kids",
+  "room": [
+    "kids",
+    "bedroom"
+  ],
+  "tags": [
+    "SVARTA",
+    "bunk bed",
+    "bunk beds",
+    "two beds",
+    "metal bed",
+    "single",
+    "silver",
+    "black",
+    "mattress 90x200"
+  ],
+  "family": "svarta_bed_frame",
+  "variant": {
+    "en": "Bunk"
+  },
+  "ikea": "SVÄRTA",
+  "parts": [
+    {"shape": "cyl", "x": -0.488, "z": -0.451, "w": 0.0216, "d": 0.0441, "y": 0, "h": 1, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": -0.488, "z": 0.451, "w": 0.0216, "d": 0.0441, "y": 0, "h": 1, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": -0.488, "z": 0.0, "w": 0.0144, "d": 0.902, "y": 0.9811, "h": 0.0189, "color": "metal", "axis": "z", "fix": "wh"},
+    {"shape": "cyl", "x": 0.488, "z": -0.451, "w": 0.0216, "d": 0.0441, "y": 0, "h": 1, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.488, "z": 0.451, "w": 0.0216, "d": 0.0441, "y": 0, "h": 1, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.488, "z": 0.0, "w": 0.0144, "d": 0.902, "y": 0.9811, "h": 0.0189, "color": "metal", "axis": "z", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": -0.451, "w": 0.976, "d": 0.0294, "y": 0.1509, "h": 0.0377, "color": "metal", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.451, "w": 0.976, "d": 0.0294, "y": 0.1509, "h": 0.0377, "color": "metal", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9712, "d": 0.8922, "y": 0.1761, "h": 0.0126, "color": "wood"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9615, "d": 0.8824, "y": 0.1887, "h": 0.0943, "color": "white", "round": 0.25},
+    {"shape": "cyl", "x": 0.0, "z": -0.451, "w": 0.976, "d": 0.0294, "y": 0.3145, "h": 0.0189, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": -0.1202, "z": 0.451, "w": 0.7356, "d": 0.0294, "y": 0.3145, "h": 0.0189, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.451, "w": 0.976, "d": 0.0294, "y": 0.6667, "h": 0.0377, "color": "metal", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.451, "w": 0.976, "d": 0.0294, "y": 0.6667, "h": 0.0377, "color": "metal", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9712, "d": 0.8922, "y": 0.6918, "h": 0.0126, "color": "wood"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9615, "d": 0.8824, "y": 0.7044, "h": 0.0943, "color": "white", "round": 0.25},
+    {"shape": "cyl", "x": 0.0, "z": -0.451, "w": 0.976, "d": 0.0294, "y": 0.8302, "h": 0.0189, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": -0.1202, "z": 0.451, "w": 0.7356, "d": 0.0294, "y": 0.8302, "h": 0.0189, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "box", "x": 0.2837, "z": 0.4951, "w": 0.0144, "d": 0.0392, "y": 0, "h": 0.8616, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": 0.4279, "z": 0.4951, "w": 0.0144, "d": 0.0392, "y": 0, "h": 0.8616, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.3558, "z": 0.4951, "w": 0.1442, "d": 0.0245, "y": 0.1384, "h": 0.0157, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0.3558, "z": 0.4951, "w": 0.1442, "d": 0.0245, "y": 0.2767, "h": 0.0157, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0.3558, "z": 0.4951, "w": 0.1442, "d": 0.0245, "y": 0.4151, "h": 0.0157, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0.3558, "z": 0.4951, "w": 0.1442, "d": 0.0245, "y": 0.5535, "h": 0.0157, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0.3558, "z": 0.4951, "w": 0.1442, "d": 0.0245, "y": 0.6918, "h": 0.0157, "color": "metal", "axis": "x", "fix": "dh"}
+  ]
+}

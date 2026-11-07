@@ -1,0 +1,52 @@
+{
+  "id": "radiator_vertical_1800_340",
+  "name": {
+    "en": "Vertical designer radiator"
+  },
+  "size": [
+    0.51,
+    0.07,
+    1.8
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "kitchen",
+    "hall",
+    "office",
+    "kids",
+    "bath",
+    "utility",
+    "conservatory"
+  ],
+  "tags": [
+    "radiator",
+    "vertical radiator",
+    "tall radiator",
+    "designer radiator",
+    "trv",
+    "flat tube",
+    "central heating",
+    "hallway"
+  ],
+  "family": "radiator_vertical",
+  "variant": {
+    "en": "1800 × 340 mm"
+  },
+  "mount": "wall",
+  "wall_y": 0.1,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.7059, "d": 1, "y": 0.9667, "h": 0.0333, "color": "white", "round": 0.3},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.7059, "d": 1, "y": 0.0556, "h": 0.0278, "color": "white", "round": 0.3},
+    {"shape": "rbox", "x": -0.2778, "z": 0.0, "w": 0.0689, "d": 0.8571, "y": 0.0778, "h": 0.8889, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": -0.1667, "z": 0.0, "w": 0.0689, "d": 0.8571, "y": 0.0778, "h": 0.8889, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": -0.0556, "z": 0.0, "w": 0.0689, "d": 0.8571, "y": 0.0778, "h": 0.8889, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": 0.0556, "z": 0.0, "w": 0.0689, "d": 0.8571, "y": 0.0778, "h": 0.8889, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": 0.1667, "z": 0.0, "w": 0.0689, "d": 0.8571, "y": 0.0778, "h": 0.8889, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": 0.2778, "z": 0.0, "w": 0.0689, "d": 0.8571, "y": 0.0778, "h": 0.8889, "color": "white", "round": 0.4},
+    {"shape": "cyl", "x": 0.3529, "z": 0.0, "w": 0.098, "d": 0.3714, "y": 0.0639, "h": 0.0144, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.4412, "z": 0.0, "w": 0.098, "d": 0.5714, "y": 0.0628, "h": 0.0222, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.4941, "z": 0.0, "w": 0.0118, "d": 0.6, "y": 0.0628, "h": 0.0233, "color": "accent", "axis": "x"}
+  ]
+}

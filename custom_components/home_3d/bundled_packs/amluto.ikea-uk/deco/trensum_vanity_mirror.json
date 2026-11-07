@@ -1,0 +1,32 @@
+{
+  "id": "trensum_vanity_mirror",
+  "name": {
+    "en": "Double-sided vanity mirror, stainless steel"
+  },
+  "size": [
+    0.17,
+    0.17,
+    0.33
+  ],
+  "group": "deco",
+  "room": [
+    "bath",
+    "bedroom"
+  ],
+  "tags": [
+    "vanity mirror",
+    "table mirror",
+    "shaving mirror",
+    "double-sided",
+    "stainless steel"
+  ],
+  "ikea": "TRENSUM",
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.7059, "d": 0.7059, "y": 0, "h": 0.0303, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0882, "d": 0.0882, "y": 0.0303, "h": 0.4545, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 0.1176, "y": 0.4848, "h": 0.5152, "color": "metal", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0618, "w": 0.9118, "d": 0.0118, "y": 0.5, "h": 0.4848, "color": "glass", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": -0.0618, "w": 0.9118, "d": 0.0118, "y": 0.5, "h": 0.4848, "color": "glass", "axis": "z"}
+  ]
+}

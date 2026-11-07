@@ -1,0 +1,163 @@
+{
+  "id": "fabric_sofa_2_seater",
+  "name": {
+    "en": "Fabric sofa, 2-seater"
+  },
+  "size": [
+    1.7,
+    0.92,
+    0.86
+  ],
+  "group": "sofa",
+  "room": [
+    "living"
+  ],
+  "tags": [
+    "settee",
+    "couch",
+    "fabric sofa",
+    "upholstered",
+    "2-seater",
+    "2 seater"
+  ],
+  "family": "fabric_sofa",
+  "variant": {
+    "en": "2-seater"
+  },
+  "role_names": {"wood": "legs"},
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": -0.4647,
+      "z": -0.4348,
+      "w": 0.0294,
+      "d": 0.0543,
+      "y": 0.0,
+      "h": 0.093,
+      "color": "wood",
+      "fix": "wdh"
+    },
+    {
+      "shape": "cyl",
+      "x": -0.4647,
+      "z": 0.4348,
+      "w": 0.0294,
+      "d": 0.0543,
+      "y": 0.0,
+      "h": 0.093,
+      "color": "wood",
+      "fix": "wdh"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.4647,
+      "z": -0.4348,
+      "w": 0.0294,
+      "d": 0.0543,
+      "y": 0.0,
+      "h": 0.093,
+      "color": "wood",
+      "fix": "wdh"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.4647,
+      "z": 0.4348,
+      "w": 0.0294,
+      "d": 0.0543,
+      "y": 0.0,
+      "h": 0.093,
+      "color": "wood",
+      "fix": "wdh"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0109,
+      "w": 0.7765,
+      "d": 0.913,
+      "y": 0.093,
+      "h": 0.3721,
+      "color": "fabric"
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": -0.3804,
+      "w": 0.7765,
+      "d": 0.2391,
+      "y": 0.093,
+      "h": 0.907,
+      "color": "fabric",
+      "round": 0.25
+    },
+    {
+      "shape": "rbox",
+      "x": -0.4412,
+      "z": 0.0,
+      "w": 0.1176,
+      "d": 1,
+      "y": 0.093,
+      "h": 0.6512,
+      "color": "fabric",
+      "round": 0.35,
+      "fix": "w"
+    },
+    {
+      "shape": "rbox",
+      "x": 0.4412,
+      "z": 0.0,
+      "w": 0.1176,
+      "d": 1,
+      "y": 0.093,
+      "h": 0.6512,
+      "color": "fabric",
+      "round": 0.35,
+      "fix": "w"
+    },
+    {
+      "shape": "rbox",
+      "x": -0.1912,
+      "z": 0.1033,
+      "w": 0.3765,
+      "d": 0.7717,
+      "y": 0.4651,
+      "h": 0.1512,
+      "color": "cushion",
+      "round": 0.35
+    },
+    {
+      "shape": "rbox",
+      "x": -0.1912,
+      "z": -0.2174,
+      "w": 0.3706,
+      "d": 0.2174,
+      "y": 0.6047,
+      "h": 0.3721,
+      "color": "cushion",
+      "round": 0.4
+    },
+    {
+      "shape": "rbox",
+      "x": 0.1912,
+      "z": 0.1033,
+      "w": 0.3765,
+      "d": 0.7717,
+      "y": 0.4651,
+      "h": 0.1512,
+      "color": "cushion",
+      "round": 0.35
+    },
+    {
+      "shape": "rbox",
+      "x": 0.1912,
+      "z": -0.2174,
+      "w": 0.3706,
+      "d": 0.2174,
+      "y": 0.6047,
+      "h": 0.3721,
+      "color": "cushion",
+      "round": 0.4
+    }
+  ]
+}

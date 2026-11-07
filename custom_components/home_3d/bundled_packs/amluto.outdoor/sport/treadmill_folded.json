@@ -1,0 +1,21 @@
+{
+  "id": "treadmill_folded",
+  "name": {"en": "Treadmill (folded)"},
+  "size": [0.7, 0.6, 1.4],
+  "group": "sport",
+  "room": ["hobby", "garage", "bedroom", "living", "utility", "loft", "office"],
+  "tags": ["treadmill", "running machine", "folded", "stored", "folding treadmill", "cardio", "home gym"],
+  "family": "treadmill",
+  "variant": {"en": "Folded up"},
+  "electric": true,
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0.1667, "w": 0.8571, "d": 0.2, "y": 0.0357, "h": 0.4429, "color": "#2c2f33", "round": 0.2},
+    {"shape": "box", "x": 0, "z": 0.2833, "w": 0.7143, "d": 0.0167, "y": 0.0714, "h": 0.3714, "color": "#17171a"},
+    {"shape": "rbox", "x": 0, "z": -0.25, "w": 0.8857, "d": 0.5, "y": 0, "h": 0.3571, "color": "#2c2f33", "round": 0.15},
+    {"shape": "loft", "x": -0.3714, "z": -0.25, "w": 0.0571, "d": 0.0667, "y": 0.2857, "h": 0.5, "color": "#2c2f33", "tx": -0.3714, "tz": -0.3667, "tw": 0.0571, "td": 0.0667},
+    {"shape": "loft", "x": 0.3714, "z": -0.25, "w": 0.0571, "d": 0.0667, "y": 0.2857, "h": 0.5, "color": "#2c2f33", "tx": 0.3714, "tz": -0.3667, "tw": 0.0571, "td": 0.0667},
+    {"shape": "rbox", "x": 0, "z": -0.3833, "w": 0.7143, "d": 0.2333, "y": 0.7857, "h": 0.1786, "color": "#25262a", "round": 0.2},
+    {"shape": "box", "x": 0, "z": -0.2617, "w": 0.5714, "d": 0.0167, "y": 0.8357, "h": 0.0714, "color": "#8fd0ff"},
+    {"shape": "cyl", "x": 0, "z": 0.45, "w": 0.8571, "d": 0.1, "y": 0.0071, "h": 0.0429, "color": "#25262a", "axis": "x"}
+  ]
+}

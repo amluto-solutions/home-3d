@@ -1,0 +1,46 @@
+{
+  "id": "lohals_rug_160x230",
+  "name": {
+    "en": "Rug, flatwoven 160x230 cm"
+  },
+  "size": [
+    1.6,
+    2.3,
+    0.013
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "bedroom",
+    "dining",
+    "kids",
+    "office",
+    "hall"
+  ],
+  "tags": [
+    "LOHALS",
+    "rug",
+    "carpet",
+    "flatwoven",
+    "jute look",
+    "natural",
+    "area rug"
+  ],
+  "family": "lohals_rug",
+  "variant": {
+    "en": "160x230"
+  },
+  "ikea": "LOHALS",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.85, "color": "fabric"},
+    {"shape": "box", "x": -0.42, "z": 0.0, "w": 0.0075, "d": 0.97, "y": 0, "h": 1, "color": "#8c7650", "fix": "wh"},
+    {"shape": "box", "x": -0.28, "z": 0.0, "w": 0.0075, "d": 0.97, "y": 0, "h": 1, "color": "#8c7650", "fix": "wh"},
+    {"shape": "box", "x": -0.14, "z": 0.0, "w": 0.0075, "d": 0.97, "y": 0, "h": 1, "color": "#8c7650", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.0075, "d": 0.97, "y": 0, "h": 1, "color": "#8c7650", "fix": "wh"},
+    {"shape": "box", "x": 0.14, "z": 0.0, "w": 0.0075, "d": 0.97, "y": 0, "h": 1, "color": "#8c7650", "fix": "wh"},
+    {"shape": "box", "x": 0.28, "z": 0.0, "w": 0.0075, "d": 0.97, "y": 0, "h": 1, "color": "#8c7650", "fix": "wh"},
+    {"shape": "box", "x": 0.42, "z": 0.0, "w": 0.0075, "d": 0.97, "y": 0, "h": 1, "color": "#8c7650", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": -0.487, "w": 0.97, "d": 0.0052, "y": 0, "h": 1, "color": "#8c7650", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.487, "w": 0.97, "d": 0.0052, "y": 0, "h": 1, "color": "#8c7650", "fix": "dh"}
+  ]
+}

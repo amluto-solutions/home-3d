@@ -1,0 +1,42 @@
+{
+  "id": "pharmacy_table_lamp",
+  "name": {
+    "en": "Pharmacy table lamp"
+  },
+  "size": [
+    0.2,
+    0.6,
+    0.46
+  ],
+  "group": "lamp",
+  "room": [
+    "office",
+    "living",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "pharmacy lamp",
+    "adjustable lamp",
+    "brass lamp",
+    "library",
+    "reading lamp",
+    "classic",
+    "swing arm"
+  ],
+  "family": "pharmacy_table_lamp",
+  "variant": {
+    "en": "Brass"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.85, "d": 0.2833, "y": 0, "h": 0.0478, "color": "#b08d57"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.15, "d": 0.05, "y": 0.0478, "h": 0.8696, "color": "#b08d57"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.25, "d": 0.0833, "y": 0.4348, "h": 0.0435, "color": "#b08d57"},
+    {"shape": "box", "x": 0.0, "z": -0.1667, "w": 0.08, "d": 0.3667, "y": 0.8696, "h": 0.0348, "color": "#b08d57"},
+    {"shape": "lathe", "x": 0.0, "z": -0.3333, "w": 1, "d": 0.3333, "y": 0.7826, "h": 0.2174, "color": "white", "glow": true, "profile": [[0.0, 0.0], [0.2, 0.0], [0.8, 0.4], [1.0, 0.8], [1.0, 1.0], [0.4, 1.0], [0.0, 0.9]]}
+  ]
+}

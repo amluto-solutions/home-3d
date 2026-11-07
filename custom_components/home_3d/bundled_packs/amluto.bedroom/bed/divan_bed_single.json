@@ -1,0 +1,21 @@
+{
+  "id": "divan_bed_single",
+  "name": {"en": "Single divan bed"},
+  "size": [0.9, 1.9, 0.62],
+  "group": "bed",
+  "family": "divan_bed",
+  "variant": {"en": "Single · 90 × 190"},
+  "room": ["bedroom", "kids"],
+  "tags": ["divan", "divan base", "bed base", "mattress", "no headboard", "single", "3ft", "bed"],
+  "parts": [
+    {"shape": "cyl", "x": -0.4278, "z": -0.4553, "w": 0.0556, "d": 0.0263, "y": 0.0, "h": 0.0806, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4278, "z": 0.4553, "w": 0.0556, "d": 0.0263, "y": 0.0, "h": 0.0806, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4278, "z": -0.4553, "w": 0.0556, "d": 0.0263, "y": 0.0, "h": 0.0806, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4278, "z": 0.4553, "w": 0.0556, "d": 0.0263, "y": 0.0, "h": 0.0806, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0806, "h": 0.5, "color": "fabric", "round": 0.08, "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9889, "d": 0.9947, "y": 0.3226, "h": 0.0081, "color": "dark", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.5806, "h": 0.3871, "color": "white", "round": 0.2, "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.1053, "w": 1.0, "d": 0.7895, "y": 0.8387, "h": 0.1613, "color": "cushion", "round": 0.3, "fix": "dh"},
+    {"shape": "rbox", "x": 0.0, "z": -0.4053, "w": 0.9333, "d": 0.1474, "y": 0.9194, "h": 0.0806, "color": "white", "round": 0.45, "fix": "dh"}
+  ]
+}

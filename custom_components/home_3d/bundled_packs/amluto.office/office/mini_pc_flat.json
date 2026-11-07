@@ -1,0 +1,20 @@
+{
+  "id": "mini_pc_flat",
+  "name": {"en": "Mini PC, flat"},
+  "size": [0.197, 0.197, 0.036],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby", "living", "loft"],
+  "tags": ["mac mini", "small form factor", "mini pc", "computer", "pc", "home server", "homelab"],
+  "family": "mini_pc",
+  "variant": {"en": "Flat"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0556, "h": 0.9444, "color": "metal", "round": 0.4},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8985, "d": 0.8985, "y": 0.0, "h": 0.1111, "color": "#1a1b1e", "fix": "h"},
+    {"shape": "box", "x": -0.4239, "z": 0.4949, "w": 0.0152, "d": 0.0102, "y": 0.3333, "h": 0.0833, "color": "#46d36a", "edges": "faint", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

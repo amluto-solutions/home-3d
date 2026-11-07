@@ -1,0 +1,20 @@
+{
+  "id": "fire_pit_corten_80",
+  "name": {"en": "Fire pit"},
+  "size": [0.8, 0.8, 0.45],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["fire pit", "firepit", "corten", "rusted steel", "square", "garden fire", "logs", "patio", "modern"],
+  "family": "fire_pit",
+  "variant": {"en": "Square Corten steel, 80 cm"},
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0.4875, "w": 1, "d": 0.025, "y": 0, "h": 1, "color": "#8a4a2a"},
+    {"shape": "box", "x": 0, "z": -0.4875, "w": 1, "d": 0.025, "y": 0, "h": 1, "color": "#8a4a2a"},
+    {"shape": "box", "x": -0.4875, "z": 0, "w": 0.025, "d": 0.95, "y": 0, "h": 1, "color": "#8a4a2a"},
+    {"shape": "box", "x": 0.4875, "z": 0, "w": 0.025, "d": 0.95, "y": 0, "h": 1, "color": "#8a4a2a"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.95, "d": 0.95, "y": 0, "h": 0.2222, "color": "#3b2b22"},
+    {"shape": "cyl", "x": 0, "z": 0.125, "w": 0.6875, "d": 0.125, "y": 0.2444, "h": 0.2222, "color": "#5b4030", "axis": "x"},
+    {"shape": "cyl", "x": 0, "z": -0.15, "w": 0.6875, "d": 0.125, "y": 0.2444, "h": 0.2222, "color": "#6a4a36", "axis": "x"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.1125, "d": 0.6875, "y": 0.4778, "h": 0.2, "color": "#5b4030", "axis": "z"}
+  ]
+}

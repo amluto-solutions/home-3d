@@ -1,0 +1,29 @@
+{
+  "id": "record_player",
+  "name": {"en": "Record player"},
+  "size": [0.42, 0.35, 0.11],
+  "group": "media",
+  "room": ["living", "bedroom", "office", "dining"],
+  "tags": ["record player", "turntable", "vinyl", "records", "deck", "hi-fi", "lp"],
+  "family": "record_player",
+  "variant": {"en": "Turntable"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": -0.4048, "z": -0.3857, "w": 0.0952, "d": 0.1143, "y": 0.0, "h": 0.1364, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4048, "z": 0.3857, "w": 0.0952, "d": 0.1143, "y": 0.0, "h": 0.1364, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4048, "z": -0.3857, "w": 0.0952, "d": 0.1143, "y": 0.0, "h": 0.1364, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4048, "z": 0.3857, "w": 0.0952, "d": 0.1143, "y": 0.0, "h": 0.1364, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.1364, "h": 0.5455, "color": "wood"},
+    {"shape": "cyl", "x": -0.0952, "z": 0.0286, "w": 0.7143, "d": 0.8571, "y": 0.6818, "h": 0.1091, "color": "metal"},
+    {"shape": "cyl", "x": -0.0952, "z": 0.0286, "w": 0.6905, "d": 0.8286, "y": 0.7909, "h": 0.0273, "color": "#141418"},
+    {"shape": "cyl", "x": -0.0952, "z": 0.0286, "w": 0.2381, "d": 0.2857, "y": 0.8136, "h": 0.0091, "color": "accent"},
+    {"shape": "cyl", "x": 0.3571, "z": -0.3, "w": 0.0833, "d": 0.1, "y": 0.6818, "h": 0.2727, "color": "metal"},
+    {"shape": "box", "x": 0.3571, "z": -0.0286, "w": 0.0238, "d": 0.5429, "y": 0.9091, "h": 0.0636, "color": "metal", "rot": -15},
+    {"shape": "cyl", "x": 0.381, "z": 0.3857, "w": 0.0595, "d": 0.0714, "y": 0.6818, "h": 0.1091, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "circle", "x": -0.0952, "z": 0.0286, "r": 0.4286}
+  ]
+}

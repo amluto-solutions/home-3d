@@ -1,0 +1,52 @@
+{
+ "id": "unifi_ai_theta_lens_360",
+ "name": {
+  "en": "UniFi AI Theta Pro 360 lens"
+ },
+ "size": [
+  0.0366,
+  0.0589,
+  0.0366
+ ],
+ "group": "tech",
+ "tags": [
+  "security camera",
+  "camera",
+  "cctv",
+  "unifi",
+  "ubiquiti",
+  "ai theta prolens360",
+  "uvc ai theta prolens360"
+ ],
+ "family": "unifi_camera",
+ "variant": {
+  "en": "Theta 360"
+ },
+ "electric": true,
+ "mount": "wall",
+ "wall_y": 1.95,
+ "parts": [
+  {
+   "shape": "cyl",
+   "x": 0.0,
+   "z": 0.0,
+   "w": 1.0,
+   "d": 1.0,
+   "y": 0.0,
+   "h": 1.0,
+   "color": "white",
+   "axis": "z"
+  },
+  {
+   "shape": "cyl",
+   "x": 0.0,
+   "z": 0.4924,
+   "w": 0.7104,
+   "d": 0.034,
+   "y": 0.1448,
+   "h": 0.7104,
+   "color": "#0b0f17",
+   "axis": "z"
+  }
+ ]
+}

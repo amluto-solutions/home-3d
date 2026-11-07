@@ -1,0 +1,50 @@
+{
+  "id": "strala_star_lamp_56",
+  "name": {
+    "en": "Paper star lamp shade 56 cm"
+  },
+  "size": [
+    0.56,
+    0.196,
+    0.81
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "kids",
+    "bedroom",
+    "hall",
+    "conservatory"
+  ],
+  "tags": [
+    "STRALA",
+    "paper star",
+    "window star",
+    "christmas star",
+    "star lamp",
+    "pendant",
+    "white",
+    "red",
+    "green",
+    "gold"
+  ],
+  "family": "strala_star",
+  "variant": {
+    "en": "56 cm"
+  },
+  "ikea": "STRÅLA",
+  "mount": "ceiling",
+  "light": "pendant",
+  "electric": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1071, "d": 0.3061, "y": 0.9815, "h": 0.0185, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0143, "d": 0.0408, "y": 0.6222, "h": 0.3593, "color": "dark", "fix": "wd"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.32, "d": 0.9429, "y": 0.2351, "h": 0.2212, "color": "white", "glow": true},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.22, "d": 0.9429, "y": 0.3457, "h": 0.3457, "color": "white", "tw": 0.0179, "td": 0.051, "glow": true},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.0179, "d": 0.051, "y": 0, "h": 0.3457, "color": "white", "tw": 0.22, "td": 0.9429, "glow": true},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.22, "d": 0.9429, "y": 0.3457, "h": 0.1728, "color": "white", "tx": -0.433, "tw": 0.0179, "td": 0.051, "glow": true},
+    {"shape": "loft", "x": -0.433, "z": 0.0, "w": 0.0179, "d": 0.051, "y": 0.1728, "h": 0.1728, "color": "white", "tx": 0.0, "tw": 0.22, "td": 0.9429, "glow": true},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.22, "d": 0.9429, "y": 0.3457, "h": 0.1728, "color": "white", "tx": 0.433, "tw": 0.0179, "td": 0.051, "glow": true},
+    {"shape": "loft", "x": 0.433, "z": 0.0, "w": 0.0179, "d": 0.051, "y": 0.1728, "h": 0.1728, "color": "white", "tx": 0.0, "tw": 0.22, "td": 0.9429, "glow": true}
+  ]
+}

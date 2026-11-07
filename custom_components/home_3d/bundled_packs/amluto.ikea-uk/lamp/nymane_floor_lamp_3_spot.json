@@ -1,0 +1,45 @@
+{
+  "id": "nymane_floor_lamp_3_spot",
+  "name": {
+    "en": "Floor lamp with 3 spots, 160 cm"
+  },
+  "size": [
+    0.35,
+    0.25,
+    1.6
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "floor lamp",
+    "spotlight",
+    "3 spots",
+    "white",
+    "anthracite",
+    "adjustable",
+    "reading"
+  ],
+  "family": "nymane_lamp",
+  "variant": {
+    "en": "Floor 3-spot"
+  },
+  "ikea": "NYMÅNE",
+  "light": "floor",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.7143, "d": 1, "y": 0, "h": 0.0156, "color": "white", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0743, "d": 0.104, "y": 0.0156, "h": 0.9406, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9714, "d": 0.1, "y": 0.9375, "h": 0.0156, "color": "white", "fix": "dh"},
+    {"shape": "cyl", "x": -0.4, "z": 0.0, "w": 0.2, "d": 0.28, "y": 0.875, "h": 0.0625, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4, "z": 0.0, "w": 0.1571, "d": 0.22, "y": 0.875, "h": 0.0037, "color": "white", "glow": true, "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.2, "d": 0.28, "y": 0.875, "h": 0.0625, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1571, "d": 0.22, "y": 0.875, "h": 0.0037, "color": "white", "glow": true, "fix": "h"},
+    {"shape": "cyl", "x": 0.4, "z": 0.0, "w": 0.2, "d": 0.28, "y": 0.875, "h": 0.0625, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4, "z": 0.0, "w": 0.1571, "d": 0.22, "y": 0.875, "h": 0.0037, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

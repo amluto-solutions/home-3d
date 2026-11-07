@@ -1,0 +1,60 @@
+{
+  "id": "radiator_electric_1000",
+  "name": {
+    "en": "Smart electric radiator"
+  },
+  "size": [
+    0.8,
+    0.1,
+    0.45
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "hall",
+    "kids",
+    "bath",
+    "conservatory"
+  ],
+  "tags": [
+    "radiator",
+    "electric radiator",
+    "panel heater",
+    "wifi heater",
+    "smart thermostat",
+    "thermostat",
+    "wall heater",
+    "convector"
+  ],
+  "family": "radiator_electric",
+  "variant": {
+    "en": "1000 W"
+  },
+  "mount": "wall",
+  "wall_y": 0.25,
+  "electric": true,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 0.7, "y": 0, "h": 1, "color": "white", "round": 0.15},
+    {"shape": "box", "x": 0.0, "z": 0.36, "w": 0.95, "d": 0.04, "y": 0.45, "h": 0.45, "color": "#ececE7"},
+    {"shape": "box", "x": 0.0, "z": 0.36, "w": 0.3, "d": 0.05, "y": 0.0889, "h": 0.0489, "color": "dark"},
+    {"shape": "box", "x": -0.1, "z": 0.385, "w": 0.0625, "d": 0.03, "y": 0.0978, "h": 0.0311, "color": "#74e0ff", "glow": true},
+    {"shape": "box", "x": 0.3, "z": 0.36, "w": 0.025, "d": 0.05, "y": 0.1067, "h": 0.0311, "color": "metal"},
+    {"shape": "box", "x": -0.4, "z": -0.4, "w": 0.0375, "d": 0.2, "y": 0, "h": 0.0667, "color": "metal"},
+    {"shape": "box", "x": -0.4375, "z": 0.37, "w": 0.005, "d": 0.03, "y": 0.5, "h": 0.4, "color": "#d4d4cf"},
+    {"shape": "box", "x": -0.3702, "z": 0.37, "w": 0.005, "d": 0.03, "y": 0.5, "h": 0.4, "color": "#d4d4cf"},
+    {"shape": "box", "x": -0.3029, "z": 0.37, "w": 0.005, "d": 0.03, "y": 0.5, "h": 0.4, "color": "#d4d4cf"},
+    {"shape": "box", "x": -0.2356, "z": 0.37, "w": 0.005, "d": 0.03, "y": 0.5, "h": 0.4, "color": "#d4d4cf"},
+    {"shape": "box", "x": -0.1683, "z": 0.37, "w": 0.005, "d": 0.03, "y": 0.5, "h": 0.4, "color": "#d4d4cf"},
+    {"shape": "box", "x": -0.101, "z": 0.37, "w": 0.005, "d": 0.03, "y": 0.5, "h": 0.4, "color": "#d4d4cf"},
+    {"shape": "box", "x": -0.0337, "z": 0.37, "w": 0.005, "d": 0.03, "y": 0.5, "h": 0.4, "color": "#d4d4cf"},
+    {"shape": "box", "x": 0.0337, "z": 0.37, "w": 0.005, "d": 0.03, "y": 0.5, "h": 0.4, "color": "#d4d4cf"},
+    {"shape": "box", "x": 0.101, "z": 0.37, "w": 0.005, "d": 0.03, "y": 0.5, "h": 0.4, "color": "#d4d4cf"},
+    {"shape": "box", "x": 0.1683, "z": 0.37, "w": 0.005, "d": 0.03, "y": 0.5, "h": 0.4, "color": "#d4d4cf"},
+    {"shape": "box", "x": 0.2356, "z": 0.37, "w": 0.005, "d": 0.03, "y": 0.5, "h": 0.4, "color": "#d4d4cf"},
+    {"shape": "box", "x": 0.3029, "z": 0.37, "w": 0.005, "d": 0.03, "y": 0.5, "h": 0.4, "color": "#d4d4cf"},
+    {"shape": "box", "x": 0.3702, "z": 0.37, "w": 0.005, "d": 0.03, "y": 0.5, "h": 0.4, "color": "#d4d4cf"},
+    {"shape": "box", "x": 0.4375, "z": 0.37, "w": 0.005, "d": 0.03, "y": 0.5, "h": 0.4, "color": "#d4d4cf"}
+  ]
+}

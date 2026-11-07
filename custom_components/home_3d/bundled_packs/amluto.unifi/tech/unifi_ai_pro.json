@@ -1,0 +1,83 @@
+{
+ "id": "unifi_ai_pro",
+ "name": {
+  "en": "UniFi AI Pro camera"
+ },
+ "size": [
+  0.086,
+  0.113,
+  0.175
+ ],
+ "group": "tech",
+ "tags": [
+  "security camera",
+  "camera",
+  "cctv",
+  "unifi",
+  "ubiquiti",
+  "ai pro",
+  "uvc ai pro"
+ ],
+ "family": "unifi_camera",
+ "variant": {
+  "en": "AI Pro"
+ },
+ "electric": true,
+ "mount": "wall",
+ "wall_y": 1.95,
+ "parts": [
+  {
+   "shape": "box",
+   "x": 0.0,
+   "z": -0.4381,
+   "w": 0.55,
+   "d": 0.1239,
+   "y": 0.0,
+   "h": 1.0,
+   "color": "white"
+  },
+  {
+   "shape": "box",
+   "x": 0.0,
+   "z": -0.2345,
+   "w": 0.3256,
+   "d": 0.4425,
+   "y": 0.4514,
+   "h": 0.2286,
+   "color": "white"
+  },
+  {
+   "shape": "cyl",
+   "x": 0.0,
+   "z": 0.0442,
+   "w": 1.0,
+   "d": 0.8761,
+   "y": 0.5086,
+   "h": 0.4914,
+   "color": "white",
+   "axis": "z"
+  },
+  {
+   "shape": "cyl",
+   "x": 0.0,
+   "z": 0.4735,
+   "w": 0.6977,
+   "d": 0.0531,
+   "y": 0.5829,
+   "h": 0.3429,
+   "color": "#1c222c",
+   "axis": "z"
+  },
+  {
+   "shape": "cyl",
+   "x": 0.0,
+   "z": 0.4912,
+   "w": 0.3488,
+   "d": 0.0265,
+   "y": 0.6686,
+   "h": 0.1714,
+   "color": "#0b0f17",
+   "axis": "z"
+  }
+ ]
+}

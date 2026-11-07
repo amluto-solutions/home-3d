@@ -1,0 +1,46 @@
+{
+  "id": "echo_studio",
+  "name": {
+    "en": "Amazon Echo Studio"
+  },
+  "size": [
+    0.177,
+    0.177,
+    0.208
+  ],
+  "group": "media",
+  "room": [
+    "living",
+    "kitchen",
+    "bedroom",
+    "kids",
+    "office",
+    "bath",
+    "hall",
+    "dining"
+  ],
+  "tags": [
+    "echo studio",
+    "alexa",
+    "amazon echo",
+    "smart speaker",
+    "hi-fi speaker",
+    "dolby atmos",
+    "speaker",
+    "media player"
+  ],
+  "family": "amazon_echo",
+  "variant": {
+    "en": "Studio"
+  },
+  "mount": "surface",
+  "electric": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9887, "d": 0.9887, "y": 0, "h": 0.9904, "color": "fabric"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9605, "d": 0.9605, "y": 0, "h": 0.0577, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9944, "d": 0.9944, "y": 0.0577, "h": 0.0288, "color": "#1f2a38", "glow": true},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9519, "h": 0.0385, "color": "dark"},
+    {"shape": "cyl", "x": -0.226, "z": 0.0, "w": 0.0791, "d": 0.0791, "y": 0.9904, "h": 0.0096, "color": "metal"},
+    {"shape": "cyl", "x": 0.226, "z": 0.0, "w": 0.0791, "d": 0.0791, "y": 0.9904, "h": 0.0096, "color": "metal"}
+  ]
+}

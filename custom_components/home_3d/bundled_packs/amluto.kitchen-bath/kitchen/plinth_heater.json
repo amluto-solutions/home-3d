@@ -1,0 +1,26 @@
+{
+  "id": "plinth_heater",
+  "name": {"en": "Plinth heater"},
+  "size": [0.45, 0.48, 0.1],
+  "group": "kitchen",
+  "room": ["kitchen", "utility", "bath"],
+  "tags": ["plinth heater", "kickspace heater", "fan heater", "heater", "plinth", "under unit", "electric heater"],
+  "family": "plinth_heater",
+  "variant": {"en": "Electric"},
+  "electric": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0125, "w": 1.0, "d": 0.975, "y": 0.0, "h": 0.9, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.4875, "w": 1.0, "d": 0.025, "y": 0.0, "h": 1.0, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": -0.0444, "z": 0.4984, "w": 0.6889, "d": 0.0031, "y": 0.18, "h": 0.06, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.0444, "z": 0.4984, "w": 0.6889, "d": 0.0031, "y": 0.3, "h": 0.06, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.0444, "z": 0.4984, "w": 0.6889, "d": 0.0031, "y": 0.42, "h": 0.06, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.0444, "z": 0.4984, "w": 0.6889, "d": 0.0031, "y": 0.54, "h": 0.06, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.0444, "z": 0.4984, "w": 0.6889, "d": 0.0031, "y": 0.66, "h": 0.06, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.0444, "z": 0.4984, "w": 0.6889, "d": 0.0031, "y": 0.78, "h": 0.06, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.3889, "z": 0.499, "w": 0.0444, "d": 0.0021, "y": 0.45, "h": 0.12, "color": "#ffb547", "edges": "faint", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.3889, "z1": 0.4583, "x2": 0.3889, "z2": 0.4583}
+  ]
+}

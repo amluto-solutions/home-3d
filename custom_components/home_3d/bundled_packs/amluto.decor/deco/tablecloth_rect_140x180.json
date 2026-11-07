@@ -1,0 +1,14 @@
+{
+  "id": "tablecloth_rect_140x180",
+  "name": {"en": "Tablecloth"},
+  "size": [1.4, 1.8, 0.012],
+  "group": "deco",
+  "room": ["dining", "kitchen", "living", "garden"],
+  "tags": ["table linen", "cloth", "table cover", "dining table", "linen", "tablecloth"],
+  "family": "tablecloth",
+  "variant": {"en": "Rectangular 140 × 180"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#f4f1ea"}
+  ]
+}

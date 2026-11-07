@@ -1,0 +1,95 @@
+{
+  "id": "fume_extractor_desktop",
+  "name": {
+    "en": "Fume extractor (desktop)"
+  },
+  "size": [
+    0.28,
+    0.2,
+    0.26
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage",
+    "loft",
+    "utility"
+  ],
+  "tags": [
+    "fume extractor",
+    "extractor",
+    "voc",
+    "filter",
+    "3d printing",
+    "resin",
+    "maker"
+  ],
+  "family": "fume_extractor",
+  "variant": {
+    "en": "Desktop"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 0.8462,
+      "color": "dark",
+      "round": 0.15
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.49,
+      "w": 0.8571,
+      "d": 0.02,
+      "y": 0.0769,
+      "h": 0.6538,
+      "color": "metal",
+      "round": 0.1
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.4286,
+      "d": 0.6,
+      "y": 0.8462,
+      "h": 0.1538,
+      "color": "metal"
+    },
+    {
+      "shape": "box",
+      "x": 0.3214,
+      "z": 0.49,
+      "w": 0.1429,
+      "d": 0.02,
+      "y": 0.7308,
+      "h": 0.0385,
+      "color": "#7fe3ff",
+      "glow": true
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    },
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 0.8,
+      "d": 0.8
+    }
+  ]
+}

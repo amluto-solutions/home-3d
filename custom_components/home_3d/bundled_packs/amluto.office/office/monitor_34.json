@@ -1,0 +1,19 @@
+{
+  "id": "monitor_34",
+  "name": {"en": "Monitor 34″ ultrawide"},
+  "size": [0.816, 0.25, 0.451],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby"],
+  "tags": ["computer monitor", "screen", "display", "pc screen", "monitor", "ultrawide"],
+  "family": "monitor",
+  "variant": {"en": "34″ ultrawide"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.05, "w": 0.3309, "d": 0.85, "y": 0.0, "h": 0.0399, "color": "dark", "round": 0.4, "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.3, "w": 0.0613, "d": 0.12, "y": 0.0399, "h": 0.75, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.16, "w": 0.4, "d": 0.16, "y": 0.4163, "h": 0.3891, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": -0.04, "w": 1, "d": 0.08, "y": 0.2217, "h": 0.7783, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.004, "w": 0.9804, "d": 0.008, "y": 0.2395, "h": 0.7428, "color": "glass", "screen": true}
+  ]
+}

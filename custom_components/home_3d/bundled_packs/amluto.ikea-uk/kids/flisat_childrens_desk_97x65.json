@@ -1,0 +1,39 @@
+{
+  "id": "flisat_childrens_desk_97x65",
+  "name": {
+    "en": "Children's desk 97x65 cm"
+  },
+  "size": [
+    0.97,
+    0.65,
+    0.59
+  ],
+  "group": "kids",
+  "room": [
+    "kids"
+  ],
+  "tags": [
+    "FLISAT",
+    "children's desk",
+    "kids desk",
+    "height adjustable",
+    "homework desk",
+    "green",
+    "pine"
+  ],
+  "family": "flisat_childrens_table",
+  "variant": {
+    "en": "Desk 97x65, height adjustable 59-77 cm"
+  },
+  "ikea": "FLISAT",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9576, "h": 0.0424, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4588, "z": 0.0, "w": 0.0412, "d": 0.8154, "y": 0, "h": 0.9576, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": -0.4588, "z": 0.0, "w": 0.1031, "d": 1, "y": 0, "h": 0.0508, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": 0.4588, "z": 0.0, "w": 0.0412, "d": 0.8154, "y": 0, "h": 0.9576, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": 0.4588, "z": 0.0, "w": 0.1031, "d": 1, "y": 0, "h": 0.0508, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": -0.4385, "w": 0.8763, "d": 0.0308, "y": 0.3729, "h": 0.5763, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.3462, "w": 0.8763, "d": 0.3077, "y": 0.5085, "h": 0.0339, "color": "white", "fix": "h"}
+  ]
+}

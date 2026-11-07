@@ -1,0 +1,36 @@
+{
+  "id": "teodores_chair",
+  "name": {
+    "en": "Chair"
+  },
+  "size": [
+    0.46,
+    0.54,
+    0.8
+  ],
+  "group": "seating",
+  "room": [
+    "dining",
+    "kitchen",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "dining chair",
+    "stackable",
+    "plastic chair",
+    "white",
+    "blue",
+    "black"
+  ],
+  "ikea": "TEODORES",
+  "parts": [
+    {"shape": "box", "x": -0.4022, "z": -0.4167, "w": 0.0652, "d": 0.0556, "y": 0, "h": 0.5375, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": -0.4022, "z": 0.4167, "w": 0.0652, "d": 0.0556, "y": 0, "h": 0.5375, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.4022, "z": -0.4167, "w": 0.0652, "d": 0.0556, "y": 0, "h": 0.5375, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.4022, "z": 0.4167, "w": 0.0652, "d": 0.0556, "y": 0, "h": 0.5375, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.037, "w": 0.913, "d": 0.7778, "y": 0.5375, "h": 0.025, "color": "white", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": -0.4074, "w": 0.913, "d": 0.0556, "y": 0.5625, "h": 0.4375, "color": "white", "tz": -0.463, "tw": 0.913, "td": 0.0556},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7826, "d": 0.037, "y": 0.15, "h": 0.025, "color": "white", "fix": "h"}
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "open_end_shelf_base_300",
+  "name": {"en": "Open end shelf, base 300"},
+  "size": [0.3, 0.6, 0.91],
+  "group": "kitchen",
+  "room": ["kitchen", "utility"],
+  "tags": ["shaker", "kitchen cupboard", "fitted kitchen", "cabinet", "end shelf", "open shelves", "end of run", "display shelf"],
+  "family": "open_end_shelf",
+  "variant": {"en": "Base 300 right"},
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0417, "w": 0.9867, "d": 0.8167, "y": 0.0, "h": 0.1648, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.956, "h": 0.044, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.47, "z": -0.0167, "w": 0.06, "d": 0.9667, "y": 0.1648, "h": 0.7912, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.485, "w": 1.0, "d": 0.03, "y": 0.1648, "h": 0.7912, "color": "white"},
+    {"shape": "box", "x": 0.47, "z": 0.4333, "w": 0.06, "d": 0.0667, "y": 0.1648, "h": 0.7912, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0167, "w": 1.0, "d": 0.9667, "y": 0.1648, "h": 0.0198, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0167, "w": 1.0, "d": 0.9667, "y": 0.4286, "h": 0.0198, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0167, "w": 1.0, "d": 0.9667, "y": 0.6923, "h": 0.0198, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0167, "w": 1.0, "d": 0.9667, "y": 0.9363, "h": 0.0198, "color": "body", "fix": "h"},
+    {"shape": "cyl", "x": -0.0667, "z": 0.0, "w": 0.3, "d": 0.15, "y": 0.1846, "h": 0.1758, "color": "glass"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.5333, "d": 0.2667, "y": 0.4484, "h": 0.0659, "color": "pot", "profile": [[0, 0], [0.6, 0], [1, 1], [0.9, 1], [0.5, 0.2], [0, 0.2]]}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.44, "z1": -0.5, "x2": -0.44, "z2": 0.5}
+  ]
+}

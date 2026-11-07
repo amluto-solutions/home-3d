@@ -1,0 +1,69 @@
+{
+  "id": "unifi_usl_gateway",
+  "name": {
+    "en": "UniFi SuperLink Gateway"
+  },
+  "size": [
+    0.1593,
+    0.026,
+    0.0819
+  ],
+  "group": "network",
+  "tags": [
+    "superlink gateway",
+    "superlink",
+    "sensor gateway",
+    "usl-gateway",
+    "unifi",
+    "ubiquiti"
+  ],
+  "family": "unifi_hub",
+  "variant": {
+    "en": "SuperLink Gateway (USL-Gateway)"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.5,
+  "room": [
+    "office",
+    "utility",
+    "loft",
+    "hall",
+    "garage",
+    "living"
+  ],
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "round": 0.08
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.49,
+      "w": 0.8,
+      "d": 0.02,
+      "y": 0.1,
+      "h": 0.8,
+      "color": "#2a2d33"
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.495,
+      "w": 0.3,
+      "d": 0.01,
+      "y": 0.05,
+      "h": 0.04,
+      "color": "#3a8dde",
+      "glow": true
+    }
+  ]
+}

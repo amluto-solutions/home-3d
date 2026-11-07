@@ -1,0 +1,21 @@
+{
+  "id": "soundbar",
+  "name": {"en": "Soundbar"},
+  "size": [0.9, 0.1, 0.07],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "office", "loft"],
+  "tags": ["soundbar", "sound bar", "speaker", "tv speaker", "home cinema", "subwoofer", "sonos"],
+  "family": "soundbar",
+  "variant": {"en": "Standard"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8889, "d": 0.6, "y": 0.0, "h": 0.0714, "color": "dark", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0714, "h": 0.9286, "color": "dark", "round": 0.4},
+    {"shape": "rbox", "x": 0.0, "z": 0.425, "w": 0.9778, "d": 0.15, "y": 0.1714, "h": 0.7143, "color": "fabric", "round": 0.4},
+    {"shape": "box", "x": 0.0, "z": 0.3, "w": 0.0556, "d": 0.04, "y": 0.9857, "h": 0.0143, "color": "white", "glow": true, "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

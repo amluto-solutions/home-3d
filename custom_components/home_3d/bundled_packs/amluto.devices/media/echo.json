@@ -1,0 +1,44 @@
+{
+  "id": "echo",
+  "name": {
+    "en": "Amazon Echo"
+  },
+  "size": [
+    0.144,
+    0.144,
+    0.133
+  ],
+  "group": "media",
+  "room": [
+    "living",
+    "kitchen",
+    "bedroom",
+    "kids",
+    "office",
+    "bath",
+    "hall",
+    "dining"
+  ],
+  "tags": [
+    "echo",
+    "alexa",
+    "amazon echo",
+    "smart speaker",
+    "voice assistant",
+    "speaker",
+    "amazon",
+    "media player"
+  ],
+  "family": "amazon_echo",
+  "variant": {
+    "en": "Echo"
+  },
+  "mount": "surface",
+  "electric": true,
+  "parts": [
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "fabric"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9444, "d": 0.9444, "y": 0.015, "h": 0.0526, "color": "#1f2a38", "glow": true},
+    {"shape": "cyl", "x": -0.2222, "z": 0.0, "w": 0.0972, "d": 0.0972, "y": 0.9474, "h": 0.0301, "color": "dark"},
+    {"shape": "cyl", "x": 0.2222, "z": 0.0, "w": 0.0972, "d": 0.0972, "y": 0.9474, "h": 0.0301, "color": "dark"}
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "tolkning_headboard",
+  "name": {
+    "en": "Rattan headboard, Single"
+  },
+  "size": [
+    1.0,
+    0.03,
+    0.96
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "headboard",
+    "rattan",
+    "woven",
+    "handmade",
+    "single",
+    "boho"
+  ],
+  "ikea": "TOLKNING",
+  "parts": [
+    {"shape": "box", "x": -0.48, "z": 0.0, "w": 0.04, "d": 1, "y": 0, "h": 1, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.48, "z": 0.0, "w": 0.04, "d": 1, "y": 0, "h": 1, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.92, "d": 1, "y": 0.9583, "h": 0.0417, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.92, "d": 1, "y": 0.4583, "h": 0.0417, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.92, "d": 0.6, "y": 0.5, "h": 0.4583, "color": "wood", "edges": "faint"},
+    {"shape": "box", "x": -0.3067, "z": 0.0667, "w": 0.006, "d": 0.7, "y": 0.5, "h": 0.4583, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": -0.1533, "z": 0.0667, "w": 0.006, "d": 0.7, "y": 0.5, "h": 0.4583, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0667, "w": 0.006, "d": 0.7, "y": 0.5, "h": 0.4583, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.1533, "z": 0.0667, "w": 0.006, "d": 0.7, "y": 0.5, "h": 0.4583, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.3067, "z": 0.0667, "w": 0.006, "d": 0.7, "y": 0.5, "h": 0.4583, "color": "dark", "fix": "w"}
+  ]
+}

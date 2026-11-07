@@ -1,0 +1,39 @@
+{
+  "id": "arende_rug_160x230",
+  "name": {
+    "en": "Rug, high pile 160x230 cm"
+  },
+  "size": [
+    1.6,
+    2.3,
+    0.04
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "bedroom",
+    "dining",
+    "kids",
+    "office",
+    "hall"
+  ],
+  "tags": [
+    "ARENDE",
+    "rug",
+    "carpet",
+    "shaggy",
+    "high pile",
+    "off-white",
+    "grey",
+    "area rug"
+  ],
+  "family": "arende_rug",
+  "variant": {
+    "en": "160x230"
+  },
+  "ikea": "ÄRENDE",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.6, "color": "fabric", "round": 0.2},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.97, "d": 0.98, "y": 0.4, "h": 0.6, "color": "fabric", "round": 0.3}
+  ]
+}

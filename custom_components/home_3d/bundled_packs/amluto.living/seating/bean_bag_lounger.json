@@ -1,0 +1,15 @@
+{
+  "id": "bean_bag_lounger",
+  "name": {"en": "Bean bag lounger"},
+  "size": [1.05, 1.4, 0.78],
+  "group": "seating",
+  "family": "bean_bag",
+  "variant": {"en": "Lounger"},
+  "room": ["living", "kids", "loft"],
+  "tags": ["bean bag", "beanbag", "lounger", "giant bean bag", "floor seat", "recliner"],
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.1786, "w": 1.0, "d": 0.6429, "y": 0.0, "h": 0.3846, "color": "fabric", "round": 0.45},
+    {"shape": "loft", "x": 0.0, "z": -0.2321, "w": 1.0, "d": 0.5357, "y": 0.0, "h": 1.0, "color": "fabric", "tx": 0.0, "tz": -0.3857, "tw": 0.8857, "td": 0.2286},
+    {"shape": "sphere", "x": 0.0, "z": 0.1607, "w": 0.9619, "d": 0.5357, "y": 0.2308, "h": 0.2308, "color": "fabric"}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "raised_bed_corten_240x120",
+  "name": {"en": "Raised bed, corten steel, 2.4 × 1.2 m"},
+  "size": [2.4, 1.2, 0.45],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["raised bed", "vegetable bed", "planter", "grow bed", "corten steel"],
+  "family": "raised_bed_corten",
+  "variant": {"en": "2.4 × 1.2 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9833, "d": 0.9667, "y": 0, "h": 0.88, "color": "#4a3626", "top": "#52392a"},
+    {"shape": "box", "x": 0.0, "z": -0.4917, "w": 1, "d": 0.0167, "y": 0, "h": 1, "color": "#8a4a28", "top": "#9e5a34"},
+    {"shape": "box", "x": 0.0, "z": 0.4917, "w": 1, "d": 0.0167, "y": 0, "h": 1, "color": "#8a4a28", "top": "#9e5a34"},
+    {"shape": "box", "x": -0.4958, "z": 0.0, "w": 0.0083, "d": 0.9667, "y": 0, "h": 1, "color": "#8a4a28", "top": "#9e5a34"},
+    {"shape": "box", "x": 0.4958, "z": 0.0, "w": 0.0083, "d": 0.9667, "y": 0, "h": 1, "color": "#8a4a28", "top": "#9e5a34"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": false}
+  ]
+}

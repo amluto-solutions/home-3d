@@ -1,0 +1,40 @@
+{
+  "id": "ragrund_shelving_37x37x104",
+  "name": {
+    "en": "Shelving unit 37x37x104 cm"
+  },
+  "size": [
+    0.37,
+    0.37,
+    1.04
+  ],
+  "group": "bath",
+  "room": [
+    "bath",
+    "utility",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "RAGRUND",
+    "bathroom shelves",
+    "bamboo",
+    "square shelving",
+    "wood"
+  ],
+  "family": "ragrund_shelving",
+  "variant": {
+    "en": "37x37x104"
+  },
+  "ikea": "RÅGRUND",
+  "parts": [
+    {"shape": "box", "x": -0.4392, "z": -0.4392, "w": 0.0676, "d": 0.0676, "y": 0, "h": 1, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4392, "z": 0.4392, "w": 0.0676, "d": 0.0676, "y": 0, "h": 1, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4392, "z": -0.4392, "w": 0.0676, "d": 0.0676, "y": 0, "h": 1, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4392, "z": 0.4392, "w": 0.0676, "d": 0.0676, "y": 0, "h": 1, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.973, "d": 0.973, "y": 0.0962, "h": 0.0192, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.973, "d": 0.973, "y": 0.3846, "h": 0.0192, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.973, "d": 0.973, "y": 0.6731, "h": 0.0192, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.973, "d": 0.973, "y": 0.9615, "h": 0.0192, "color": "wood", "fix": "h"}
+  ]
+}

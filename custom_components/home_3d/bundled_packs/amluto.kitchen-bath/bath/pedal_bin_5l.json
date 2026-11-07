@@ -1,0 +1,83 @@
+{
+  "id": "pedal_bin_5l",
+  "name": {
+    "en": "Pedal bin, 5 L"
+  },
+  "size": [
+    0.21,
+    0.24,
+    0.28
+  ],
+  "group": "bath",
+  "room": [
+    "bath",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "pedal bin",
+    "bin",
+    "bathroom bin",
+    "waste bin",
+    "rubbish",
+    "5 litre",
+    "steel",
+    "round"
+  ],
+  "family": "pedal_bin",
+  "variant": {
+    "en": "5 L round"
+  },
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": -0.0625,
+      "w": 1.0,
+      "d": 0.875,
+      "y": 0.0,
+      "h": 0.8929,
+      "color": "metal"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": -0.0625,
+      "w": 1.0,
+      "d": 0.8958,
+      "y": 0.8929,
+      "h": 0.0714,
+      "color": "metal"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": -0.0625,
+      "w": 0.9048,
+      "d": 0.7917,
+      "y": 0.9643,
+      "h": 0.0357,
+      "color": "metal"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.4167,
+      "w": 0.3333,
+      "d": 0.1667,
+      "y": 0.0,
+      "h": 0.0714,
+      "color": "dark"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": -0.0625,
+      "w": 1.0,
+      "d": 0.8958,
+      "y": 0.0,
+      "h": 0.0536,
+      "color": "dark"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "vallkrassing_throw_folded",
+  "name": {
+    "en": "Throw 150x200 cm, folded"
+  },
+  "size": [
+    0.5,
+    0.38,
+    0.08
+  ],
+  "group": "throw",
+  "room": [
+    "living",
+    "bedroom"
+  ],
+  "tags": [
+    "VALLKRASSING",
+    "throw",
+    "blanket",
+    "sofa throw",
+    "folded",
+    "off-white",
+    "grey-green",
+    "150x200"
+  ],
+  "family": "vallkrassing_throw",
+  "variant": {
+    "en": "150x200"
+  },
+  "ikea": "VALLKRASSING",
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "fabric", "round": 0.4},
+    {"shape": "box", "x": 0.0, "z": 0.4921, "w": 0.93, "d": 0.0158, "y": 0.1179, "h": 0.05, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4921, "w": 0.93, "d": 0.0158, "y": 0.2607, "h": 0.05, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4921, "w": 0.93, "d": 0.0158, "y": 0.4036, "h": 0.05, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4921, "w": 0.93, "d": 0.0158, "y": 0.5464, "h": 0.05, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4921, "w": 0.93, "d": 0.0158, "y": 0.6893, "h": 0.05, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4921, "w": 0.93, "d": 0.0158, "y": 0.8321, "h": 0.05, "color": "dark", "fix": "dh"}
+  ]
+}

@@ -1,0 +1,46 @@
+{
+ "id": "unifi_ai_theta_hub",
+ "name": {
+  "en": "UniFi AI Theta Pro hub"
+ },
+ "size": [
+  0.14,
+  0.07,
+  0.038
+ ],
+ "group": "tech",
+ "tags": [
+  "unifi",
+  "ubiquiti",
+  "ai theta",
+  "theta hub",
+  "uvc ai theta hub",
+  "hub",
+  "protect"
+ ],
+ "electric": true,
+ "mount": "surface",
+ "parts": [
+  {
+   "shape": "rbox",
+   "x": 0.0,
+   "z": 0.0,
+   "w": 1.0,
+   "d": 1.0,
+   "y": 0.0,
+   "h": 1.0,
+   "color": "white",
+   "round": 0.2
+  },
+  {
+   "shape": "box",
+   "x": -0.3571,
+   "z": 0.5,
+   "w": 0.0429,
+   "d": 0.0214,
+   "y": 0.6842,
+   "h": 0.0789,
+   "color": "accent"
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "under_counter_fridge_integrated",
+  "name": {"en": "Under-counter fridge, integrated"},
+  "size": [0.6, 0.55, 0.82],
+  "group": "appliance",
+  "room": ["kitchen", "utility", "garage"],
+  "tags": ["integrated fridge", "built-under", "fridge", "fridge freezer", "cold"],
+  "family": "under_counter_fridge",
+  "variant": {"en": "Integrated"},
+  "electric": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0273, "w": 1.0, "d": 0.9455, "y": 0.1829, "h": 0.8171, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": -0.0545, "w": 0.9933, "d": 0.7818, "y": 0.0, "h": 0.1829, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4618, "w": 0.99, "d": 0.0327, "y": 0.1866, "h": 0.8098, "color": "body"},
+    {"shape": "box", "x": -0.445, "z": 0.4836, "w": 0.1, "d": 0.0109, "y": 0.1866, "h": 0.8098, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.445, "z": 0.4836, "w": 0.1, "d": 0.0109, "y": 0.1866, "h": 0.8098, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.4836, "w": 0.79, "d": 0.0109, "y": 0.1866, "h": 0.0732, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4836, "w": 0.79, "d": 0.0109, "y": 0.9232, "h": 0.0732, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.445, "z": 0.4945, "w": 0.02, "d": 0.0109, "y": 0.7524, "h": 0.1585, "color": "metal", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.5, "z1": 0.4636, "x2": 0.5, "z2": 0.4636}
+  ]
+}

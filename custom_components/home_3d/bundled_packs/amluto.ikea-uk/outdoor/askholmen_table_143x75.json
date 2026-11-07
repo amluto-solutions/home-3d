@@ -1,0 +1,48 @@
+{
+  "id": "askholmen_table_143x75",
+  "name": {
+    "en": "Outdoor table 143x75 cm"
+  },
+  "size": [
+    1.43,
+    0.75,
+    0.73
+  ],
+  "group": "outdoor",
+  "room": [
+    "garden",
+    "conservatory"
+  ],
+  "tags": [
+    "garden table",
+    "patio table",
+    "balcony table",
+    "slatted",
+    "acacia",
+    "dark brown"
+  ],
+  "family": "askholmen_table",
+  "variant": {
+    "en": "143x75"
+  },
+  "ikea": "ASKHOLMEN",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4504, "w": 1, "d": 0.0993, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.3378, "w": 1, "d": 0.0993, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.2252, "w": 1, "d": 0.0993, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.1126, "w": 1, "d": 0.0993, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.0993, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.1126, "w": 1, "d": 0.0993, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2252, "w": 1, "d": 0.0993, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.3378, "w": 1, "d": 0.0993, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4504, "w": 1, "d": 0.0993, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4441, "z": -0.42, "w": 0.0315, "d": 0.06, "y": 0, "h": 0.9658, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4441, "z": 0.42, "w": 0.0315, "d": 0.06, "y": 0, "h": 0.9658, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4441, "z": 0.0, "w": 0.021, "d": 0.8667, "y": 0.863, "h": 0.1027, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": 0.4441, "z": -0.42, "w": 0.0315, "d": 0.06, "y": 0, "h": 0.9658, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4441, "z": 0.42, "w": 0.0315, "d": 0.06, "y": 0, "h": 0.9658, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4441, "z": 0.0, "w": 0.021, "d": 0.8667, "y": 0.863, "h": 0.1027, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8601, "d": 0.04, "y": 0.863, "h": 0.1027, "color": "wood", "fix": "h"}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "ha_yellow",
+  "name": {"en": "Home Assistant Yellow"},
+  "size": [0.123,0.123,0.036],
+  "group": "tech",
+  "room": ["office", "utility", "hall", "living", "loft"],
+  "tags": ["home assistant", "ha yellow", "yellow", "smart home", "hub", "controller", "server", "nabu casa", "zigbee"],
+  "family": "smart_hub",
+  "variant": {"en": "Home Assistant Yellow"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "dark", "round": 0.15},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.8049, "d": 0.8049, "y": 0.9778, "h": 0.0222, "color": "metal"},
+    {"shape": "box", "x": 0, "z": 0.4984, "w": 0.6, "d": 0.0033, "y": 0.6667, "h": 0.1389, "color": "#f2c200"}
+  ]
+}

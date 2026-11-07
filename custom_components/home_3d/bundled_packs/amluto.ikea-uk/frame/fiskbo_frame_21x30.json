@@ -1,0 +1,43 @@
+{
+  "id": "fiskbo_frame_21x30",
+  "name": {
+    "en": "Picture frame, slim 21x30 cm"
+  },
+  "size": [
+    0.24,
+    0.01,
+    0.33
+  ],
+  "group": "frame",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "office"
+  ],
+  "tags": [
+    "picture frame",
+    "photo frame",
+    "black",
+    "white",
+    "light grey-green",
+    "dark grey-blue",
+    "gallery wall"
+  ],
+  "family": "fiskbo_frame",
+  "variant": {
+    "en": "21x30"
+  },
+  "ikea": "FISKBO",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.3, "w": 1, "d": 0.4, "y": 0, "h": 1, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9545, "h": 0.0455, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0455, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.4687, "z": 0.0, "w": 0.0625, "d": 1, "y": 0.0455, "h": 0.9091, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.4687, "z": 0.0, "w": 0.0625, "d": 1, "y": 0.0455, "h": 0.9091, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.1, "w": 0.875, "d": 0.3, "y": 0.0455, "h": 0.9091, "color": "#a9b8b4", "fix": "d"}
+  ]
+}

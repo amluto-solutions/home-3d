@@ -1,0 +1,40 @@
+{
+  "id": "ranarp_pendant_38",
+  "name": {
+    "en": "Pendant lamp, domed metal shade 38 cm"
+  },
+  "size": [
+    0.38,
+    0.38,
+    0.75
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "pendant",
+    "ceiling light",
+    "black",
+    "off-white",
+    "dome",
+    "retro"
+  ],
+  "family": "ranarp_lamp",
+  "variant": {
+    "en": "Pendant 38"
+  },
+  "ikea": "RANARP",
+  "light": "pendant",
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.2632, "d": 0.2632, "y": 0.9667, "h": 0.0333, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0316, "d": 0.0316, "y": 0.2933, "h": 0.68, "color": "dark", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.2933, "color": "dark", "profile": [[1.0, 0], [0.97, 0.3], [0.82, 0.62], [0.52, 0.88], [0.22, 1.0], [0.0, 1.0], [0.0, 0.955], [0.167, 0.955], [0.467, 0.835], [0.767, 0.575], [0.917, 0.255], [0.947, 0.0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.1842, "d": 0.1842, "y": 0.1027, "h": 0.0933, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "gaming_pc_full",
+  "name": {"en": "Gaming PC (full tower, RGB)"},
+  "size": [0.25, 0.55, 0.56],
+  "group": "tech",
+  "room": ["office", "bedroom", "kids", "hobby"],
+  "tags": ["gaming pc", "gaming computer", "pc tower", "rgb", "tempered glass", "desktop pc", "gaming", "full tower"],
+  "family": "gaming_pc",
+  "variant": {"en": "Full tower RGB"},
+  "electric": true,
+  "watts": 400,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.9, "y": 0.0, "h": 0.0357, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0357, "h": 0.9643, "color": "#16171a"},
+    {"shape": "box", "x": -0.492, "z": 0.0, "w": 0.016, "d": 0.88, "y": 0.1, "h": 0.82, "color": "glass"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4964, "w": 0.72, "d": 0.0073, "y": 0.08, "h": 0.2755, "color": "#101114", "axis": "z", "edges": "glow"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4964, "w": 0.72, "d": 0.0073, "y": 0.3733, "h": 0.2755, "color": "#101114", "axis": "z", "edges": "glow"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4964, "w": 0.72, "d": 0.0073, "y": 0.6667, "h": 0.2755, "color": "#101114", "axis": "z", "edges": "glow"},
+    {"shape": "cyl", "x": 0.28, "z": 0.4973, "w": 0.088, "d": 0.0055, "y": 0.94, "h": 0.0393, "color": "accent", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7, "d": 0.6, "y": 0.9964, "h": 0.0036, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

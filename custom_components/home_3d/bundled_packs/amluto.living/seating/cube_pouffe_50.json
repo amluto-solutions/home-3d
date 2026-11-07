@@ -1,0 +1,53 @@
+{
+  "id": "cube_pouffe_50",
+  "name": {
+    "en": "Cube pouffe 50"
+  },
+  "size": [
+    0.5,
+    0.5,
+    0.45
+  ],
+  "group": "seating",
+  "room": [
+    "living",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "pouffe",
+    "pouf",
+    "cube",
+    "square pouffe",
+    "footstool",
+    "soft seat"
+  ],
+  "family": "cube_pouffe",
+  "variant": {
+    "en": "50"
+  },
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1,
+      "d": 1,
+      "y": 0.0,
+      "h": 1,
+      "color": "fabric",
+      "round": 0.22
+    },
+    {
+      "shape": "sphere",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.07,
+      "d": 0.07,
+      "y": 0.9733,
+      "h": 0.0444,
+      "color": "cushion",
+      "fix": "wdh"
+    }
+  ]
+}

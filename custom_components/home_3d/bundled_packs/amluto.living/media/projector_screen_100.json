@@ -1,0 +1,22 @@
+{
+  "id": "projector_screen_100",
+  "name": {"en": "Projector screen 100″, pull-down"},
+  "size": [2.37, 0.09, 1.6],
+  "group": "media",
+  "room": ["living", "loft", "bedroom", "office", "kids"],
+  "tags": ["projector screen", "screen", "home cinema", "pull-down screen", "movie", "16:9"],
+  "family": "projector_screen",
+  "variant": {"en": "100″ pull-down"},
+  "mount": "wall",
+  "wall_y": 0.6499999999999999,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.9437, "h": 0.0563, "color": "white", "axis": "x"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9494, "d": 0.2222, "y": 0.0, "h": 0.0187, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.1944, "w": 0.0169, "d": 0.1667, "y": 0.0, "h": 0.0125, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9747, "d": 0.0889, "y": 0.0187, "h": 0.925, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.0556, "w": 0.9325, "d": 0.0222, "y": 0.0375, "h": 0.7812, "color": "white", "screen": true}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

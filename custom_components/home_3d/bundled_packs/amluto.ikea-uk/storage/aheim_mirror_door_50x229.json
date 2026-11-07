@@ -1,0 +1,32 @@
+{
+  "id": "aheim_mirror_door_50x229",
+  "name": {
+    "en": "Mirror door for a fitted wardrobe, 50x229 cm"
+  },
+  "size": [
+    0.495,
+    0.02,
+    2.29
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "wardrobe door",
+    "mirror door",
+    "mirror glass",
+    "pax",
+    "door"
+  ],
+  "family": "aheim_mirror_door",
+  "variant": {
+    "en": "50x229"
+  },
+  "ikea": "ÅHEIM",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.2, "w": 1, "d": 0.6, "y": 0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.9919, "d": 0.3, "y": 0.0009, "h": 0.9983, "color": "glass"}
+  ]
+}

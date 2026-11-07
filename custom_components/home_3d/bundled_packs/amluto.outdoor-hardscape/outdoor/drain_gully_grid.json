@@ -1,0 +1,21 @@
+{
+  "id": "drain_gully_grid",
+  "name": {"en": "Drain gully grid"},
+  "size": [0.45, 0.3, 0.03],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["drain", "gully", "grating", "road gully", "drainage"],
+  "family": "drain_gully",
+  "variant": {"en": "45 × 30 cm"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#2c2e30"},
+    {"shape": "box", "x": -0.3333, "z": 0.0, "w": 0.0267, "d": 0.8667, "y": 0.8667, "h": 0.1333, "color": "#5a5d60"},
+    {"shape": "box", "x": -0.1667, "z": 0.0, "w": 0.0267, "d": 0.8667, "y": 0.8667, "h": 0.1333, "color": "#5a5d60"},
+    {"shape": "box", "x": -0.0, "z": 0.0, "w": 0.0267, "d": 0.8667, "y": 0.8667, "h": 0.1333, "color": "#5a5d60"},
+    {"shape": "box", "x": 0.1667, "z": 0.0, "w": 0.0267, "d": 0.8667, "y": 0.8667, "h": 0.1333, "color": "#5a5d60"},
+    {"shape": "box", "x": 0.3333, "z": 0.0, "w": 0.0267, "d": 0.8667, "y": 0.8667, "h": 0.1333, "color": "#5a5d60"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

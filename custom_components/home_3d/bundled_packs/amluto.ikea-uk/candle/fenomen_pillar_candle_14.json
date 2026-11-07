@@ -1,0 +1,37 @@
+{
+  "id": "fenomen_pillar_candle_14",
+  "name": {
+    "en": "Unscented pillar candle, natural 14 cm"
+  },
+  "size": [
+    0.068,
+    0.068,
+    0.14
+  ],
+  "group": "candle",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "bedroom"
+  ],
+  "tags": [
+    "FENOMEN",
+    "pillar candle",
+    "candle",
+    "unscented",
+    "natural",
+    "cream",
+    "45 hr burning time"
+  ],
+  "family": "fenomen_candle",
+  "variant": {
+    "en": "14 cm 45 hr"
+  },
+  "ikea": "FENOMEN",
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.9286, "color": "#efe6cf"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0588, "d": 0.0588, "y": 0.9143, "h": 0.0857, "color": "dark", "fix": "wdh"}
+  ]
+}

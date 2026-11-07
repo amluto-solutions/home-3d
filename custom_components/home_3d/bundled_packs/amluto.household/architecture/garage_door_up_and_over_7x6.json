@@ -1,0 +1,34 @@
+{
+  "id": "garage_door_up_and_over_7x6",
+  "name": {"en": "Up-and-over garage door"},
+  "size": [2.134, 0.1, 1.981],
+  "group": "architecture",
+  "room": ["garage"],
+  "tags": ["garage door", "up and over", "up-and-over", "canopy door", "retractable door", "garage", "door", "steel door", "single"],
+  "family": "garage_door",
+  "variant": {"en": "Single, 7 ft × 6 ft 6 in"},
+  "parts": [
+    {"shape": "box", "x": -0.4859, "z": 0.0, "w": 0.0281, "d": 1, "y": 0.0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.4859, "z": 0.0, "w": 0.0281, "d": 1, "y": 0.0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9438, "d": 1, "y": 0.9697, "h": 0.0303, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.1, "w": 0.9391, "d": 0.4, "y": 0.0, "h": 0.9697, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.35, "w": 0.9063, "d": 0.12, "y": 0.0748, "h": 0.0121, "color": "#d5dade"},
+    {"shape": "box", "x": 0.0, "z": 0.35, "w": 0.9063, "d": 0.12, "y": 0.1556, "h": 0.0121, "color": "#d5dade"},
+    {"shape": "box", "x": 0.0, "z": 0.35, "w": 0.9063, "d": 0.12, "y": 0.2364, "h": 0.0121, "color": "#d5dade"},
+    {"shape": "box", "x": 0.0, "z": 0.35, "w": 0.9063, "d": 0.12, "y": 0.3172, "h": 0.0121, "color": "#d5dade"},
+    {"shape": "box", "x": 0.0, "z": 0.35, "w": 0.9063, "d": 0.12, "y": 0.398, "h": 0.0121, "color": "#d5dade"},
+    {"shape": "box", "x": 0.0, "z": 0.35, "w": 0.9063, "d": 0.12, "y": 0.4788, "h": 0.0121, "color": "#d5dade"},
+    {"shape": "box", "x": 0.0, "z": 0.35, "w": 0.9063, "d": 0.12, "y": 0.5596, "h": 0.0121, "color": "#d5dade"},
+    {"shape": "box", "x": 0.0, "z": 0.35, "w": 0.9063, "d": 0.12, "y": 0.6404, "h": 0.0121, "color": "#d5dade"},
+    {"shape": "box", "x": 0.0, "z": 0.35, "w": 0.9063, "d": 0.12, "y": 0.7212, "h": 0.0121, "color": "#d5dade"},
+    {"shape": "box", "x": 0.0, "z": 0.35, "w": 0.9063, "d": 0.12, "y": 0.802, "h": 0.0121, "color": "#d5dade"},
+    {"shape": "box", "x": 0.0, "z": 0.35, "w": 0.9063, "d": 0.12, "y": 0.8828, "h": 0.0121, "color": "#d5dade"},
+    {"shape": "box", "x": 0.0, "z": 0.3, "w": 0.9438, "d": 0.1, "y": 0.0, "h": 0.0151, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.45, "w": 0.075, "d": 0.1, "y": 0.42, "h": 0.0252, "color": "metal"},
+    {"shape": "cyl", "x": 0.0562, "z": 0.45, "w": 0.0164, "d": 0.1, "y": 0.4225, "h": 0.0177, "color": "dark", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.5, "z1": 0.5, "x2": 0.5, "z2": 0.5}
+  ]
+}

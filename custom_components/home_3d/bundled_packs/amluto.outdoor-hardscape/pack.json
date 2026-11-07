@@ -1,0 +1,11 @@
+{
+  "format": "home3d-pack",
+  "version": 2,
+  "id": "amluto.outdoor-hardscape",
+  "name": "Garden hardscape & street",
+  "publisher": "Amluto Solutions",
+  "licence": "MIT",
+  "release": 2,
+  "description": "Garden fences, walls and gates, kerbs, roads and pavements, driveways and street lights in sizes and colours, modelled for Home 3D from simple shapes. Ships with the app and works offline.",
+  "release_note": "Release 2: the pack's id is now amluto.outdoor-hardscape (it was theovencook.outdoor-hardscape); plans that name the old id still load (#424)."
+}

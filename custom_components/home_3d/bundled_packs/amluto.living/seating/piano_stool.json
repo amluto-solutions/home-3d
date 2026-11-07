@@ -1,0 +1,21 @@
+{
+  "id": "piano_stool",
+  "name": {"en": "Piano stool"},
+  "size": [0.56, 0.36, 0.5],
+  "group": "seating",
+  "family": "piano_stool",
+  "variant": {"en": "Single"},
+  "room": ["living", "hobby"],
+  "tags": ["piano stool", "piano bench", "music stool", "keyboard stool", "padded", "adjustable"],
+  "parts": [
+    {"shape": "box", "x": -0.4062, "z": -0.3542, "w": 0.0804, "d": 0.125, "y": 0.0, "h": 0.8, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": -0.4062, "z": 0.3542, "w": 0.0804, "d": 0.125, "y": 0.0, "h": 0.8, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.4062, "z": -0.3542, "w": 0.0804, "d": 0.125, "y": 0.0, "h": 0.8, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.4062, "z": 0.3542, "w": 0.0804, "d": 0.125, "y": 0.0, "h": 0.8, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9286, "d": 0.8889, "y": 0.64, "h": 0.2, "color": "dark", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.84, "h": 0.16, "color": "#1d1b1a", "round": 0.3, "fix": "h"},
+    {"shape": "cyl", "x": -0.4107, "z": 0.4722, "w": 0.0536, "d": 0.0556, "y": 0.71, "h": 0.06, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4107, "z": 0.4722, "w": 0.0536, "d": 0.0556, "y": 0.71, "h": 0.06, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8214, "d": 0.0556, "y": 0.2, "h": 0.06, "color": "dark", "fix": "h"}
+  ]
+}

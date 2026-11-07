@@ -1,0 +1,23 @@
+{
+  "id": "robe_hook_double",
+  "name": {"en": "Robe hook, double"},
+  "size": [0.05, 0.08, 0.09],
+  "group": "bath",
+  "room": ["bath", "kitchen", "utility"],
+  "tags": ["towel ring", "towel bar", "towel rail", "towel holder", "chrome", "towel hook", "robe hook"],
+  "family": "towel_holder",
+  "variant": {"en": "Robe hook"},
+  "mount": "wall",
+  "wall_y": 1.6,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.4375, "w": 0.8, "d": 0.125, "y": 0.4444, "h": 0.4444, "color": "metal", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.24, "d": 0.75, "y": 0.6111, "h": 0.1333, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.4125, "w": 0.24, "d": 0.175, "y": 0.6111, "h": 0.3333, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.1875, "w": 0.24, "d": 0.375, "y": 0.2222, "h": 0.1333, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.075, "w": 0.24, "d": 0.15, "y": 0.2222, "h": 0.2778, "color": "metal"},
+    {"shape": "sphere", "x": 0.0, "z": 0.4125, "w": 0.28, "d": 0.175, "y": 0.8667, "h": 0.1333, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "qidi_q1_pro_3d_printer",
+  "name": {
+    "en": "Qidi Q1 Pro"
+  },
+  "size": [
+    0.477,
+    0.467,
+    0.489
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage"
+  ],
+  "tags": [
+    "3d printer",
+    "printer",
+    "qidi",
+    "maker",
+    "filament",
+    "fdm",
+    "q1 pro",
+    "corexy",
+    "heated chamber"
+  ],
+  "family": "qidi_q1_pro",
+  "variant": {
+    "en": "Printer only"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0667, "w": 1, "d": 0.8667, "y": 0, "h": 0.075, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": -0.3444, "w": 1, "d": 0.0444, "y": 0.075, "h": 0.85, "color": "body"},
+    {"shape": "box", "x": -0.4773, "z": 0.0889, "w": 0.0455, "d": 0.8222, "y": 0.075, "h": 0.85, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.4773, "z": 0.0889, "w": 0.0455, "d": 0.8222, "y": 0.075, "h": 0.85, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0667, "w": 1, "d": 0.8667, "y": 0.925, "h": 0.075, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.4867, "w": 0.9091, "d": 0.0178, "y": 0.095, "h": 0.83, "color": "glass"},
+    {"shape": "box", "x": 0.0, "z": 0.0667, "w": 0.9091, "d": 0.026, "y": 0.78, "h": 0.03, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.1533, "w": 0.62, "d": 0.5373, "y": 0.26, "h": 0.02, "color": "metal"},
+    {"shape": "rbox", "x": 0.0, "z": 0.1533, "w": 0.12, "d": 0.104, "y": 0.75, "h": 0.08, "color": "dark", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": 0.4133, "w": 0.8, "d": 0.0303, "y": 0.88, "h": 0.02, "color": "#fff1d0", "glow": true},
+    {"shape": "rbox", "x": 0.3, "z": 0.4911, "w": 0.22, "d": 0.0133, "y": 0.015, "h": 0.045, "color": "accent", "edges": "glow", "round": 0.2},
+    {"shape": "cyl", "x": 0.0, "z": -0.4333, "w": 0.45, "d": 0.12, "y": 0.45, "h": 0.396, "color": "accent", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": -0.4333, "w": 0.0682, "d": 0.1333, "y": 0.628, "h": 0.04, "color": "metal"},
+    {"shape": "cyl", "x": 0.3, "z": 0.4644, "w": 0.0795, "d": 0.0667, "y": 0.875, "h": 0.08, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.3, "z": 0.4911, "w": 0.05, "d": 0.0133, "y": 0.882, "h": 0.048, "color": "glass", "axis": "z"}
+  ],
+  "symbol": [{"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}, {"shape": "rect", "x": 0, "z": 0, "w": 0.8, "d": 0.8}]
+}

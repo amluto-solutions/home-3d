@@ -1,0 +1,22 @@
+{
+  "id": "dualsense_controller",
+  "name": {"en": "DualSense controller"},
+  "size": [0.16, 0.106, 0.066],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["dualsense", "ps5 controller", "playstation controller", "playstation", "sony", "gamepad", "gaming", "controller"],
+  "family": "game_controller",
+  "variant": {"en": "White"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.85, "d": 0.55, "y": 0.3, "h": 0.7, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": -0.4, "z": 0.12, "w": 0.2, "d": 0.75, "y": 0.0, "h": 0.7, "color": "#16171a", "round": 0.45},
+    {"shape": "rbox", "x": 0.4, "z": 0.12, "w": 0.2, "d": 0.75, "y": 0.0, "h": 0.7, "color": "#16171a", "round": 0.45},
+    {"shape": "box", "x": 0.0, "z": -0.05, "w": 0.3, "d": 0.2, "y": 0.97, "h": 0.03, "color": "#1a1b1e"},
+    {"shape": "cyl", "x": -0.14, "z": 0.12, "w": 0.15, "d": 0.2264, "y": 0.95, "h": 0.05, "color": "#101114"},
+    {"shape": "cyl", "x": 0.14, "z": 0.12, "w": 0.15, "d": 0.2264, "y": 0.95, "h": 0.05, "color": "#101114"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

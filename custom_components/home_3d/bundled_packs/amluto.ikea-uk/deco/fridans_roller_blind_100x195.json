@@ -1,0 +1,45 @@
+{
+  "id": "fridans_roller_blind_100x195",
+  "name": {
+    "en": "Block-out roller blind 100x195 cm"
+  },
+  "size": [
+    1.1,
+    0.05,
+    1.95
+  ],
+  "group": "deco",
+  "room": [
+    "bedroom",
+    "kids",
+    "living",
+    "office",
+    "kitchen",
+    "bath"
+  ],
+  "tags": [
+    "FRIDANS",
+    "roller blind",
+    "block-out",
+    "blackout blind",
+    "window",
+    "grey",
+    "white",
+    "chain"
+  ],
+  "family": "fridans_blind",
+  "variant": {
+    "en": "100x195"
+  },
+  "ikea": "FRIDANS",
+  "mount": "wall",
+  "wall_y": 0.3,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.12, "w": 1, "d": 0.9, "y": 0.9769, "h": 0.0231, "color": "white", "axis": "x"},
+    {"shape": "box", "x": -0.4909, "z": 0.12, "w": 0.0182, "d": 0.8, "y": 0.9744, "h": 0.0256, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4909, "z": 0.12, "w": 0.0182, "d": 0.8, "y": 0.9744, "h": 0.0256, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.24, "w": 0.9091, "d": 0.08, "y": 0.0128, "h": 0.9641, "color": "#7b7f84", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.24, "w": 0.9091, "d": 0.32, "y": 0, "h": 0.0128, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.4818, "z": 0.4, "w": 0.0036, "d": 0.08, "y": 0.45, "h": 0.5, "color": "metal", "fix": "wdh"}
+  ]
+}

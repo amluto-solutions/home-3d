@@ -1,0 +1,61 @@
+{
+  "id": "unifi_u7_pro_xg_wall",
+  "name": {
+    "en": "UniFi U7 Pro XG Wall"
+  },
+  "size": [
+    0.108,
+    0.0335,
+    0.155
+  ],
+  "group": "network",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "access point",
+    "wifi",
+    "wireless",
+    "u7 pro xg wall",
+    "u7-pro-xg-wall"
+  ],
+  "family": "unifi_ap_wall",
+  "variant": {
+    "en": "U7 Pro XG Wall"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 0.3,
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0,
+      "z": -0.3333,
+      "w": 1,
+      "d": 0.3333,
+      "y": 0,
+      "h": 1,
+      "color": "white"
+    },
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0.1333,
+      "w": 0.814,
+      "d": 0.6,
+      "y": 0.0667,
+      "h": 0.8667,
+      "color": "white",
+      "round": 0.3
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.4833,
+      "w": 0.35,
+      "d": 0.0333,
+      "y": 0.8,
+      "h": 0.02,
+      "color": "#4aa3ff"
+    }
+  ]
+}

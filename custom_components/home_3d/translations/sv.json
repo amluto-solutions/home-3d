@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "Lägger till en sida i sidofältet där du ritar ditt hem och ser det i 3D."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Home 3D är redan konfigurerat."
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "Fråga huset",
+      "description": "Skickar en mening till de öppna Home 3D-vyerna: ”Visa vardagsrummet” visar det, och frågor besvaras av de installerade modulerna (”Vad är öppet?”). Den första vyn som förstår meningen svarar.",
+      "fields": {
+        "text": {
+          "name": "Mening",
+          "description": "Vad som ska visas eller frågas, så som du skulle säga det."
+        },
+        "screen": {
+          "name": "Skärm",
+          "description": "Bara vyn med detta skärmnamn reagerar (anges i vyns inställningar eller i kortets skärmalternativ). Tomt: alla öppna vyer."
+        },
+        "speak": {
+          "name": "Tala",
+          "description": "Vyn säger sitt svar med Assists text-till-tal (av: den visar det bara)."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Var Home 3D visas. Panellänken och dashboardkortet fungerar oavsett, och du kan fortfarande dölja posten för dig själv i Home Assistants egna sidopanelsinställningar.",
+        "data": {
+          "show_in_sidebar": "Visa i sidopanelen",
+          "restore_picture_days": "Behåll bilder för återställningspunkter (dagar)"
+        },
+        "data_description": {
+          "restore_picture_days": "En bakgrunds- eller skärmbild som bara en äldre återställningspunkt använder behålls så många dagar efter att återställningspunkten skapades och tas sedan bort vid nästa start. En återställningspunkt vars bild har försvunnit återställs utan den. 0 tar bort sådana bilder direkt."
+        }
+      }
+    }
+  }
+}

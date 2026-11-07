@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "Aggiunge una pagina nella barra laterale dove disegni la tua casa e la vedi in 3D."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Home 3D è già configurato."
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "Chiedi alla casa",
+      "description": "Passa una frase alle viste Home 3D aperte: «Mostra il soggiorno» la mostra, e le domande ricevono risposta dai moduli installati («Cosa è aperto?»). Risponde la prima vista che capisce la frase.",
+      "fields": {
+        "text": {
+          "name": "Frase",
+          "description": "Cosa mostrare o chiedere, come lo diresti tu."
+        },
+        "screen": {
+          "name": "Schermo",
+          "description": "Reagisce solo la vista con questo nome di schermo (impostato nelle impostazioni della vista o nell'opzione schermo della scheda). Vuoto: tutte le viste aperte."
+        },
+        "speak": {
+          "name": "Parla",
+          "description": "La vista pronuncia la risposta con la sintesi vocale di Assist (disattivato: la mostra soltanto)."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Dove appare Home 3D. Il collegamento nel pannello e la scheda della dashboard funzionano in entrambi i casi, e puoi comunque nascondere la voce per te nelle impostazioni della barra laterale di Home Assistant.",
+        "data": {
+          "show_in_sidebar": "Mostra nella barra laterale",
+          "restore_picture_days": "Conserva le immagini dei punti di ripristino (giorni)"
+        },
+        "data_description": {
+          "restore_picture_days": "Un'immagine di sfondo o di schermo usata solo da un punto di ripristino più vecchio viene conservata per questo numero di giorni dopo la creazione di quel punto, poi rimossa al successivo avvio. Un punto di ripristino la cui immagine è sparita viene ripristinato senza. 0 rimuove subito tali immagini."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "ring_desk_lamp",
+  "name": {
+    "en": "Ring-light desk lamp"
+  },
+  "size": [
+    0.3,
+    0.37,
+    0.6
+  ],
+  "group": "lamp",
+  "room": [
+    "office",
+    "bedroom",
+    "living"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "ring light",
+    "led ring",
+    "streaming lamp",
+    "video call",
+    "dimmable",
+    "round",
+    "vanity"
+  ],
+  "family": "ring_desk_lamp",
+  "variant": {
+    "en": "30 cm ring"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.2703, "w": 0.5667, "d": 0.4595, "y": 0, "h": 0.0417, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.2703, "w": 0.0833, "d": 0.0676, "y": 0.0417, "h": 0.6, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.1081, "w": 1, "d": 0.0676, "y": 0.5, "h": 0.5, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.1622, "w": 0.8667, "d": 0.0108, "y": 0.5, "h": 0.4333, "color": "white", "glow": true, "axis": "z"}
+  ]
+}

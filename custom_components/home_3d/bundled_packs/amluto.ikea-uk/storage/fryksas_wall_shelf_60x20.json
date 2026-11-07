@@ -1,0 +1,40 @@
+{
+  "id": "fryksas_wall_shelf_60x20",
+  "name": {
+    "en": "Wall shelf, rattan 60x20x30 cm"
+  },
+  "size": [
+    0.6,
+    0.2,
+    0.3
+  ],
+  "group": "storage",
+  "room": [
+    "living",
+    "bedroom",
+    "hall",
+    "kitchen",
+    "office",
+    "bath",
+    "kids"
+  ],
+  "tags": [
+    "FRYKSAS",
+    "wall shelf",
+    "rattan shelf",
+    "wicker",
+    "natural",
+    "2 shelves"
+  ],
+  "ikea": "FRYKSÅS",
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.46, "w": 1, "d": 0.08, "y": 0, "h": 1, "color": "#b48a55", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0533, "color": "#b48a55", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.4667, "h": 0.0533, "color": "#b48a55", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9467, "h": 0.0533, "color": "#b48a55", "fix": "h"},
+    {"shape": "box", "x": -0.4867, "z": 0.0, "w": 0.0267, "d": 1, "y": 0, "h": 1, "color": "#b48a55", "fix": "w"},
+    {"shape": "box", "x": 0.4867, "z": 0.0, "w": 0.0267, "d": 1, "y": 0, "h": 1, "color": "#b48a55", "fix": "w"}
+  ]
+}

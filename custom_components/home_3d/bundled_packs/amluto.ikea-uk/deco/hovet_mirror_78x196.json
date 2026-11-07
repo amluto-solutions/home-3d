@@ -1,0 +1,35 @@
+{
+  "id": "hovet_mirror_78x196",
+  "name": {
+    "en": "Full-length mirror, 78x196 cm"
+  },
+  "size": [
+    0.78,
+    0.06,
+    1.96
+  ],
+  "group": "deco",
+  "room": [
+    "bedroom",
+    "hall",
+    "living"
+  ],
+  "tags": [
+    "full-length mirror",
+    "floor mirror",
+    "leaning mirror",
+    "large mirror",
+    "aluminium",
+    "black",
+    "gold-colour",
+    "oak effect"
+  ],
+  "ikea": "HOVET",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0153, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9847, "h": 0.0153, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": -0.4808, "z": 0.0, "w": 0.0385, "d": 1, "y": 0, "h": 1, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": 0.4808, "z": 0.0, "w": 0.0385, "d": 1, "y": 0, "h": 1, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.1667, "w": 0.9231, "d": 0.1667, "y": 0.0153, "h": 0.9694, "color": "glass"}
+  ]
+}

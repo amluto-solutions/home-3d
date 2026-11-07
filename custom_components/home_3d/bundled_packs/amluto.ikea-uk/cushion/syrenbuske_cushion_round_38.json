@@ -1,0 +1,33 @@
+{
+  "id": "syrenbuske_cushion_round_38",
+  "name": {
+    "en": "Round cushion 38 cm"
+  },
+  "size": [
+    0.38,
+    0.12,
+    0.38
+  ],
+  "group": "cushion",
+  "room": [
+    "living",
+    "bedroom",
+    "conservatory",
+    "kids"
+  ],
+  "tags": [
+    "SYRENBUSKE",
+    "cushion",
+    "round cushion",
+    "circular",
+    "scatter cushion",
+    "off-white",
+    "brown-red"
+  ],
+  "ikea": "SYRENBUSKE",
+  "mount": "surface",
+  "parts": [
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "cushion"},
+    {"shape": "sphere", "x": 0.0, "z": 0.4667, "w": 0.0658, "d": 0.1, "y": 0.4737, "h": 0.0658, "color": "dark", "fix": "wdh"}
+  ]
+}

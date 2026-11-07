@@ -1,0 +1,54 @@
+{
+  "id": "bror_shelving_85x55x110",
+  "name": {
+    "en": "Shelving unit 85x55x110 cm"
+  },
+  "size": [
+    0.85,
+    0.55,
+    1.1
+  ],
+  "group": "storage",
+  "room": [
+    "utility",
+    "garage",
+    "hobby",
+    "kitchen",
+    "hall"
+  ],
+  "tags": [
+    "BROR",
+    "black steel shelving",
+    "heavy duty shelving",
+    "pine plywood",
+    "workshop",
+    "garage shelving",
+    "black"
+  ],
+  "family": "bror_shelving",
+  "variant": {
+    "en": "85x55x110"
+  },
+  "ikea": "BROR",
+  "parts": [
+    {"shape": "box", "x": -0.4824, "z": -0.4727, "w": 0.0353, "d": 0.0545, "y": 0, "h": 1, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": -0.4824, "z": 0.4727, "w": 0.0353, "d": 0.0545, "y": 0, "h": 1, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.4824, "z": -0.4727, "w": 0.0353, "d": 0.0545, "y": 0, "h": 1, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.4824, "z": 0.4727, "w": 0.0353, "d": 0.0545, "y": 0, "h": 1, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9765, "d": 0.9636, "y": 0.0545, "h": 0.0164, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4727, "w": 0.9647, "d": 0.0364, "y": 0.0364, "h": 0.0273, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4727, "w": 0.9647, "d": 0.0364, "y": 0.0364, "h": 0.0273, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": -0.4824, "z": 0.0, "w": 0.0235, "d": 0.9273, "y": 0.0364, "h": 0.0273, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.4824, "z": 0.0, "w": 0.0235, "d": 0.9273, "y": 0.0364, "h": 0.0273, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9765, "d": 0.9636, "y": 0.5136, "h": 0.0164, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4727, "w": 0.9647, "d": 0.0364, "y": 0.4955, "h": 0.0273, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4727, "w": 0.9647, "d": 0.0364, "y": 0.4955, "h": 0.0273, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": -0.4824, "z": 0.0, "w": 0.0235, "d": 0.9273, "y": 0.4955, "h": 0.0273, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.4824, "z": 0.0, "w": 0.0235, "d": 0.9273, "y": 0.4955, "h": 0.0273, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9765, "d": 0.9636, "y": 0.9727, "h": 0.0164, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4727, "w": 0.9647, "d": 0.0364, "y": 0.9545, "h": 0.0273, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4727, "w": 0.9647, "d": 0.0364, "y": 0.9545, "h": 0.0273, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": -0.4824, "z": 0.0, "w": 0.0235, "d": 0.9273, "y": 0.9545, "h": 0.0273, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.4824, "z": 0.0, "w": 0.0235, "d": 0.9273, "y": 0.9545, "h": 0.0273, "color": "dark", "fix": "wh"}
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "saljan_worktop_246",
+  "name": {
+    "en": "Worktop 246x63.5 cm"
+  },
+  "size": [
+    2.46,
+    0.635,
+    0.038
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen",
+    "utility"
+  ],
+  "tags": [
+    "countertop",
+    "worktop",
+    "kitchen top",
+    "laminate",
+    "oak effect",
+    "white stone effect",
+    "dark grey stone effect",
+    "made to measure"
+  ],
+  "family": "saljan_worktop",
+  "variant": {
+    "en": "246 cm"
+  },
+  "ikea": "SÄLJAN",
+  "mount": "surface",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "wood"}
+  ]
+}

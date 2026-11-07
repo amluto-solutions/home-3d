@@ -1,0 +1,24 @@
+{
+  "id": "switch_oled_dock",
+  "name": {"en": "Nintendo Switch OLED in dock"},
+  "size": [0.242, 0.0507, 0.104],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["switch oled", "nintendo switch", "switch", "nintendo", "gaming", "console", "games console", "hegs-001"],
+  "family": "nintendo_switch",
+  "variant": {"en": "OLED in dock"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 18,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.7231, "d": 1.0, "y": 0.0, "h": 0.9, "color": "white", "round": 0.15},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.6942, "d": 0.5, "y": 0.9, "h": 0.1, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.2, "w": 0.7521, "d": 0.2742, "y": 0.1, "h": 0.9, "color": "#101114"},
+    {"shape": "box", "x": 0.0, "z": 0.3381, "w": 0.7069, "d": 0.0197, "y": 0.12, "h": 0.8, "color": "glass", "edges": "faint"},
+    {"shape": "box", "x": -0.438, "z": 0.2, "w": 0.124, "d": 0.2742, "y": 0.1, "h": 0.9, "color": "#3fb6e8"},
+    {"shape": "box", "x": 0.438, "z": 0.2, "w": 0.124, "d": 0.2742, "y": 0.1, "h": 0.9, "color": "#e8504a"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

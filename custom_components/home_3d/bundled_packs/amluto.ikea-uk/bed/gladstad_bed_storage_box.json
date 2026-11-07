@@ -1,0 +1,33 @@
+{
+  "id": "gladstad_bed_storage_box",
+  "name": {
+    "en": "Upholstered under-bed storage box"
+  },
+  "size": [
+    0.95,
+    0.6,
+    0.19
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "under-bed storage",
+    "storage box",
+    "castors",
+    "upholstered",
+    "light grey",
+    "fabric"
+  ],
+  "ikea": "GLADSTAD",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.1053, "h": 0.8947, "color": "fabric", "round": 0.15},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.1684, "d": 0.0133, "y": 0.5789, "h": 0.1053, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4368, "z": -0.4, "w": 0.0316, "d": 0.05, "y": 0, "h": 0.1053, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4368, "z": 0.4, "w": 0.0316, "d": 0.05, "y": 0, "h": 0.1053, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4368, "z": -0.4, "w": 0.0316, "d": 0.05, "y": 0, "h": 0.1053, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4368, "z": 0.4, "w": 0.0316, "d": 0.05, "y": 0, "h": 0.1053, "color": "dark", "fix": "wdh"}
+  ]
+}

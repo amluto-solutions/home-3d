@@ -1,0 +1,23 @@
+{
+  "id": "chaise_longue_right",
+  "name": {"en": "Chaise longue"},
+  "size": [1.65, 0.68, 0.84],
+  "group": "sofa",
+  "family": "chaise_longue",
+  "variant": {"en": "Back on the right"},
+  "room": ["living", "bedroom", "conservatory"],
+  "tags": ["chaise", "chaise lounge", "fainting couch", "recliner", "daybed", "upholstered"],
+  "role_names": {"wood": "legs"},
+  "parts": [
+    {"shape": "cyl", "x": 0.45, "z": -0.3787, "w": 0.0273, "d": 0.0662, "y": 0.0, "h": 0.1905, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.45, "z": 0.3787, "w": 0.0273, "d": 0.0662, "y": 0.0, "h": 0.1905, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.45, "z": -0.3787, "w": 0.0273, "d": 0.0662, "y": 0.0, "h": 0.1905, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.45, "z": 0.3787, "w": 0.0273, "d": 0.0662, "y": 0.0, "h": 0.1905, "color": "wood", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.1905, "h": 0.2619, "color": "fabric", "round": 0.12, "fix": "h"},
+    {"shape": "rbox", "x": -0.0697, "z": 0.0809, "w": 0.8485, "d": 0.8088, "y": 0.4524, "h": 0.1071, "color": "cushion", "round": 0.35, "fix": "h"},
+    {"shape": "loft", "x": 0.4212, "z": 0.0, "w": 0.1576, "d": 1.0, "y": 0.4524, "h": 0.4524, "color": "fabric", "tx": 0.4636, "tz": 0.0, "tw": 0.0727, "td": 1.0},
+    {"shape": "cyl", "x": 0.4515, "z": 0.0, "w": 0.097, "d": 1.0, "y": 0.8095, "h": 0.1905, "color": "fabric", "axis": "z"},
+    {"shape": "rbox", "x": 0.1439, "z": -0.4118, "w": 0.5909, "d": 0.1765, "y": 0.4524, "h": 0.3333, "color": "fabric", "round": 0.4},
+    {"shape": "cyl", "x": 0.3, "z": 0.0588, "w": 0.0788, "d": 0.7647, "y": 0.5536, "h": 0.1548, "color": "cushion", "axis": "z"}
+  ]
+}

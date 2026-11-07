@@ -1,0 +1,47 @@
+{
+  "id": "bedside_table_3_drawer",
+  "name": {
+    "en": "Bedside table with 3 drawers"
+  },
+  "size": [
+    0.45,
+    0.4,
+    0.62
+  ],
+  "group": "bed",
+  "family": "bedside_table",
+  "variant": {
+    "en": "3 drawers"
+  },
+  "room": [
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "bedside",
+    "bedside cabinet",
+    "bedside drawers",
+    "night table",
+    "side table",
+    "drawer"
+  ],
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.0125, "w": 0.9111, "d": 0.875, "y": 0, "h": 0.0806, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.48, "z": 0, "w": 0.04, "d": 1.0, "y": 0.0806, "h": 0.8839, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.48, "z": 0, "w": 0.04, "d": 1.0, "y": 0.0806, "h": 0.8839, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0, "z": -0.485, "w": 0.92, "d": 0.03, "y": 0.0806, "h": 0.8839, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.92, "d": 1.0, "y": 0.0806, "h": 0.029, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.9645, "h": 0.0355, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.475, "w": 0.9111, "d": 0.05, "y": 0.7194, "h": 0.2355, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4988, "w": 0.1778, "d": 0.0025, "y": 0.8823, "h": 0.021, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0.475, "w": 0.9111, "d": 0.05, "y": 0.4774, "h": 0.2355, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4988, "w": 0.1778, "d": 0.0025, "y": 0.6403, "h": 0.021, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0.475, "w": 0.9111, "d": 0.05, "y": 0.2355, "h": 0.2355, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4988, "w": 0.1778, "d": 0.0025, "y": 0.3984, "h": 0.021, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0.475, "w": 0.9111, "d": 0.05, "y": 0.1129, "h": 0.1161, "color": "white"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.45, "x2": 0.5, "z2": 0.45}
+  ]
+}

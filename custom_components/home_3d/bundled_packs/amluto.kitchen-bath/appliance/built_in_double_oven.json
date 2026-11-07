@@ -1,0 +1,30 @@
+{
+  "id": "built_in_double_oven",
+  "name": {"en": "Built-in double oven"},
+  "size": [0.595, 0.55, 0.888],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["oven", "built-in", "integrated", "fan oven", "grill", "cooking"],
+  "family": "built_in_oven",
+  "variant": {"en": "Double"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 0.8,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0455, "w": 0.9664, "d": 0.9091, "y": 0.0056, "h": 0.9887, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.4273, "w": 1.0, "d": 0.0364, "y": 0.8986, "h": 0.1014, "color": "metal"},
+    {"shape": "cyl", "x": -0.3655, "z": 0.4545, "w": 0.0504, "d": 0.0182, "y": 0.9324, "h": 0.0338, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.3655, "z": 0.4545, "w": 0.0504, "d": 0.0182, "y": 0.9324, "h": 0.0338, "color": "dark", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": 0.4473, "w": 0.2017, "d": 0.0036, "y": 0.9268, "h": 0.0394, "color": "#7fe3ff", "edges": "faint"},
+    {"shape": "box", "x": 0.0, "z": 0.4318, "w": 1.0, "d": 0.0455, "y": 0.5608, "h": 0.3322, "color": "dark", "top": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.4564, "w": 0.8319, "d": 0.0036, "y": 0.5946, "h": 0.2477, "color": "glass"},
+    {"shape": "box", "x": 0.0, "z": 0.4709, "w": 0.7311, "d": 0.0218, "y": 0.8592, "h": 0.0169, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4318, "w": 1.0, "d": 0.0455, "y": 0.0, "h": 0.5552, "color": "dark", "top": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.4564, "w": 0.8319, "d": 0.0036, "y": 0.0563, "h": 0.4369, "color": "glass"},
+    {"shape": "box", "x": 0.0, "z": 0.4709, "w": 0.7311, "d": 0.0218, "y": 0.5101, "h": 0.0169, "color": "metal", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.4496, "z1": 0.4636, "x2": 0.4496, "z2": 0.4636}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "fence_post_75x75_180",
+  "name": {"en": "Fence post"},
+  "size": [0.095, 0.095, 1.8],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["fence post", "post", "timber", "gate post", "garden fencing", "boundary", "wooden post"],
+  "family": "fence_post",
+  "variant": {"en": "Post 75 × 75 mm, 1.8 m"},
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 0.7895, "d": 0.7895, "y": 0, "h": 0.9778, "color": "#8f7a4b"},
+    {"shape": "loft", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.9778, "h": 0.0222, "color": "#8f7a4b", "tx": 0, "tz": 0, "tw": 0.3947, "td": 0.3947}
+  ]
+}

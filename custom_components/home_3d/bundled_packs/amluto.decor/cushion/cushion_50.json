@@ -1,0 +1,14 @@
+{
+  "id": "cushion_50",
+  "name": {"en": "Cushion 50 × 50 cm"},
+  "size": [0.5, 0.16, 0.5],
+  "group": "cushion",
+  "room": ["living", "bedroom", "conservatory", "kids"],
+  "tags": ["cushion", "scatter cushion", "sofa cushion", "throw pillow", "pillow", "square", "teal"],
+  "family": "cushion",
+  "variant": {"en": "50 × 50"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#4f6d7a", "round": 0.5}
+  ]
+}

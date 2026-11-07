@@ -1,0 +1,29 @@
+{
+  "id": "hot_water_cylinder_unit_200",
+  "name": {"en": "Hot-water cylinder"},
+  "size": [0.6, 0.68, 1.6],
+  "group": "heating",
+  "room": ["utility", "loft", "garage", "hall"],
+  "tags": ["hot water tank", "airing cupboard", "immersion", "unvented", "megaflo", "water heater", "boiler", "ecodan", "heat pump cylinder", "ftc", "pre-plumbed"],
+  "family": "hot_water_cylinder",
+  "variant": {"en": "Heat pump cylinder unit 200 L"},
+  "electric": true,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.0147, "w": 1, "d": 0.9706, "y": 0.0125, "h": 0.9875, "color": "white", "round": 0.04},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9333, "d": 0.8824, "y": 0.0, "h": 0.0125, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4735, "w": 0.5, "d": 0.0147, "y": 0.75, "h": 0.125, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.0833, "z": 0.4824, "w": 0.1667, "d": 0.0074, "y": 0.8063, "h": 0.0375, "color": "#7fd0ff", "fix": "wdh"},
+    {"shape": "box", "x": 0.05, "z": 0.4824, "w": 0.03, "d": 0.0088, "y": 0.775, "h": 0.0112, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.1, "z": 0.4824, "w": 0.03, "d": 0.0088, "y": 0.775, "h": 0.0112, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.15, "z": 0.4824, "w": 0.03, "d": 0.0088, "y": 0.775, "h": 0.0112, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.2, "z": 0.4824, "w": 0.03, "d": 0.0088, "y": 0.775, "h": 0.0112, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4735, "w": 0.9, "d": 0.0118, "y": 0.3875, "h": 0.0019, "color": "metal"},
+    {"shape": "cyl", "x": -0.3333, "z": -0.3676, "w": 0.0467, "d": 0.0412, "y": 0.9375, "h": 0.0625, "color": "#b87333", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.1167, "z": -0.3676, "w": 0.0467, "d": 0.0412, "y": 0.9375, "h": 0.0625, "color": "#b87333", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.1167, "z": -0.3676, "w": 0.0467, "d": 0.0412, "y": 0.9375, "h": 0.0625, "color": "#b87333", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3333, "z": -0.3676, "w": 0.0467, "d": 0.0412, "y": 0.9375, "h": 0.0625, "color": "#b87333", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

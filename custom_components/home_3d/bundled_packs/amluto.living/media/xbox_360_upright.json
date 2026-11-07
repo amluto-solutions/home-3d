@@ -1,0 +1,23 @@
+{
+  "id": "xbox_360_upright",
+  "name": {"en": "Xbox 360"},
+  "size": [0.075, 0.264, 0.27],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["xbox 360", "xbox360", "xbox", "microsoft", "gaming", "console", "games console", "360 s"],
+  "family": "xbox_360",
+  "variant": {"en": " upright"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 90,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.8, "y": 0.0, "h": 0.0444, "color": "dark", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0444, "h": 0.9556, "color": "#1c1d20", "round": 0.12},
+    {"shape": "box", "x": 0.085, "z": 0.4943, "w": 0.07, "d": 0.0114, "y": 0.1926, "h": 0.43, "color": "#101114"},
+    {"shape": "box", "x": -0.275, "z": 0.4943, "w": 0.05, "d": 0.0114, "y": 0.7611, "h": 0.172, "color": "#7be07b", "edges": "faint"},
+    {"shape": "cyl", "x": -0.1933, "z": 0.4943, "w": 0.2133, "d": 0.0114, "y": 0.9035, "h": 0.0593, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

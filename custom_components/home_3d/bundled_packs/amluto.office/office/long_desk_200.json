@@ -1,0 +1,21 @@
+{
+  "id": "long_desk_200",
+  "name": {"en": "Long desk 200 cm"},
+  "size": [2.0, 0.8, 0.74],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby"],
+  "tags": ["desk", "workstation", "study desk", "computer desk", "double desk", "work table"],
+  "family": "long_desk",
+  "variant": {"en": "200 cm"},
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9662, "h": 0.0338, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.47, "z": 0.0, "w": 0.025, "d": 0.875, "y": 0.9122, "h": 0.0541, "color": "metal", "fix": "wh"},
+    {"shape": "box", "x": -0.47, "z": -0.4, "w": 0.025, "d": 0.0625, "y": 0.0, "h": 0.9122, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": -0.47, "z": 0.4, "w": 0.025, "d": 0.0625, "y": 0.0, "h": 0.9122, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": 0.47, "z": 0.0, "w": 0.025, "d": 0.875, "y": 0.9122, "h": 0.0541, "color": "metal", "fix": "wh"},
+    {"shape": "box", "x": 0.47, "z": -0.4, "w": 0.025, "d": 0.0625, "y": 0.0, "h": 0.9122, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": 0.47, "z": 0.4, "w": 0.025, "d": 0.0625, "y": 0.0, "h": 0.9122, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": -0.4, "w": 0.9, "d": 0.025, "y": 0.7297, "h": 0.1622, "color": "metal"}
+  ]
+}

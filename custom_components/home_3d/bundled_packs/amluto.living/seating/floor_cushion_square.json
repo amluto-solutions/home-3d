@@ -1,0 +1,53 @@
+{
+  "id": "floor_cushion_square",
+  "name": {
+    "en": "Floor cushion, square"
+  },
+  "size": [
+    0.65,
+    0.65,
+    0.16
+  ],
+  "group": "seating",
+  "room": [
+    "living",
+    "kids",
+    "bedroom"
+  ],
+  "tags": [
+    "floor cushion",
+    "floor pillow",
+    "pouf",
+    "seat pad",
+    "meditation",
+    "square"
+  ],
+  "family": "floor_cushion",
+  "variant": {
+    "en": "Square"
+  },
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1,
+      "d": 1,
+      "y": 0.0,
+      "h": 1,
+      "color": "cushion",
+      "round": 0.45
+    },
+    {
+      "shape": "sphere",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.0769,
+      "d": 0.0769,
+      "y": 0.8438,
+      "h": 0.1875,
+      "color": "fabric",
+      "fix": "wdh"
+    }
+  ]
+}

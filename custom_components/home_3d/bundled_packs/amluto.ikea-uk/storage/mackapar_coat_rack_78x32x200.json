@@ -1,0 +1,51 @@
+{
+  "id": "mackapar_coat_rack_78x32x200",
+  "name": {
+    "en": "Coat rack with shoe storage unit 78x32x200 cm"
+  },
+  "size": [
+    0.78,
+    0.32,
+    2.0
+  ],
+  "group": "storage",
+  "room": [
+    "hall"
+  ],
+  "tags": [
+    "MACKAPAR",
+    "coat rack",
+    "hallway unit",
+    "shoe storage",
+    "hat shelf",
+    "white"
+  ],
+  "family": "mackapar_shoe_storage",
+  "variant": {
+    "en": "Coat rack with shoe storage 78x32x200"
+  },
+  "ikea": "MACKAPÄR",
+  "parts": [
+    {"shape": "box", "x": -0.4872, "z": 0.0, "w": 0.0256, "d": 1, "y": 0, "h": 0.2, "color": "white", "fix": "w"},
+    {"shape": "box", "x": -0.4872, "z": -0.4688, "w": 0.0256, "d": 0.0625, "y": 0.2, "h": 0.8, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.4872, "z": 0.0, "w": 0.0256, "d": 1, "y": 0, "h": 0.2, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4872, "z": -0.4688, "w": 0.0256, "d": 0.0625, "y": 0.2, "h": 0.8, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": -0.4844, "w": 0.9487, "d": 0.0312, "y": 0.025, "h": 0.175, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9487, "d": 0.9375, "y": 0.01, "h": 0.006, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4625, "w": 0.9487, "d": 0.025, "y": 0.016, "h": 0.015, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9487, "d": 0.9375, "y": 0.08, "h": 0.006, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4625, "w": 0.9487, "d": 0.025, "y": 0.086, "h": 0.015, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9487, "d": 0.9375, "y": 0.15, "h": 0.006, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4625, "w": 0.9487, "d": 0.025, "y": 0.156, "h": 0.015, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.4688, "w": 0.9487, "d": 0.0625, "y": 0.22, "h": 0.78, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.2812, "w": 0.9487, "d": 0.0375, "y": 0.5, "h": 0.006, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0313, "w": 0.9487, "d": 0.0625, "y": 0.81, "h": 0.01, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.1875, "w": 0.0154, "d": 0.4688, "y": 0.81, "h": 0.006, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3718, "z": -0.2812, "w": 0.0256, "d": 0.3125, "y": 0.69, "h": 0.01, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.1859, "z": -0.2812, "w": 0.0256, "d": 0.3125, "y": 0.69, "h": 0.01, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.2812, "w": 0.0256, "d": 0.3125, "y": 0.69, "h": 0.01, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.1859, "z": -0.2812, "w": 0.0256, "d": 0.3125, "y": 0.69, "h": 0.01, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3718, "z": -0.2812, "w": 0.0256, "d": 0.3125, "y": 0.69, "h": 0.01, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.1875, "w": 1, "d": 0.625, "y": 0.985, "h": 0.015, "color": "white", "fix": "h"}
+  ]
+}

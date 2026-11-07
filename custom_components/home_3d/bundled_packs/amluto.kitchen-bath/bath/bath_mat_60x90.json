@@ -1,0 +1,16 @@
+{
+  "id": "bath_mat_60x90",
+  "name": {"en": "Bath mat 60 × 90"},
+  "size": [0.9, 0.6, 0.015],
+  "group": "bath",
+  "room": ["bath"],
+  "tags": ["bath mat", "bathmat", "shower mat", "mat", "rug", "toilet mat", "pedestal mat"],
+  "family": "bath_mat",
+  "variant": {"en": "60 × 90"},
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "fabric", "round": 0.5}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

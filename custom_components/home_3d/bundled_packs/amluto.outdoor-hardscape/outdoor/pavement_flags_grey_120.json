@@ -1,0 +1,24 @@
+{
+  "id": "pavement_flags_grey_120",
+  "name": {"en": "Paving slabs, grey, 1.2 m wide"},
+  "size": [1.2, 5.0, 0.05],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["pavement", "paving", "slabs", "flags", "patio", "footpath", "paving slabs"],
+  "family": "pavement_flags_grey",
+  "variant": {"en": "1.2 × 5 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#b5b3ad"},
+    {"shape": "box", "x": 0.0, "z": -0.375, "w": 1, "d": 0.003, "y": 0.96, "h": 0.08, "color": "#8e8c86"},
+    {"shape": "box", "x": 0.0, "z": -0.25, "w": 1, "d": 0.003, "y": 0.96, "h": 0.08, "color": "#8e8c86"},
+    {"shape": "box", "x": 0.0, "z": -0.125, "w": 1, "d": 0.003, "y": 0.96, "h": 0.08, "color": "#8e8c86"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.003, "y": 0.96, "h": 0.08, "color": "#8e8c86"},
+    {"shape": "box", "x": 0.0, "z": 0.125, "w": 1, "d": 0.003, "y": 0.96, "h": 0.08, "color": "#8e8c86"},
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 1, "d": 0.003, "y": 0.96, "h": 0.08, "color": "#8e8c86"},
+    {"shape": "box", "x": 0.0, "z": 0.375, "w": 1, "d": 0.003, "y": 0.96, "h": 0.08, "color": "#8e8c86"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.0125, "d": 1, "y": 0.96, "h": 0.08, "color": "#8e8c86"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "controller_charging_dock",
+  "name": {"en": "Controller charging dock"},
+  "size": [0.22, 0.1, 0.08],
+  "group": "tech",
+  "room": ["living", "office", "bedroom", "hobby"],
+  "tags": ["controller charger", "charging dock", "charging station", "gamepad", "gaming", "dualsense", "xbox", "joy-con"],
+  "family": "controller_dock",
+  "variant": {"en": "Dual"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 10,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.3, "color": "#1c1d20", "round": 0.3},
+    {"shape": "box", "x": -0.22, "z": 0.0, "w": 0.3182, "d": 0.5, "y": 0.3, "h": 0.6, "color": "#2b2d31"},
+    {"shape": "box", "x": 0.22, "z": 0.0, "w": 0.3182, "d": 0.5, "y": 0.3, "h": 0.6, "color": "#2b2d31"},
+    {"shape": "box", "x": -0.22, "z": 0.35, "w": 0.2273, "d": 0.03, "y": 0.5, "h": 0.04, "color": "#4aa3ff", "edges": "faint"},
+    {"shape": "box", "x": 0.22, "z": 0.35, "w": 0.2273, "d": 0.03, "y": 0.5, "h": 0.04, "color": "#4aa3ff", "edges": "faint"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

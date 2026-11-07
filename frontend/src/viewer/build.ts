@@ -1,0 +1,938 @@
+// Builds merged, vertex-coloured geometry for one floor: room floors with material patterns, walls
+// with door and window openings, edge lines and baked wall shadows.
+//
+// Walls are grouped into buckets by the direction they face. Every vertex carries a "fold" value and a
+// shader patch (see fold.ts) decides per bucket: in the cut view the upper parts disappear; in the tall
+// view the walls turned towards the camera are drawn as tinted glass instead.
+//   fold = -1        always visible, never glass (furniture, lines of the lower part)
+//   fold = b         upper wall part: visible while bucket b stands
+//   fold = 16 + b    cut edge: visible while bucket b is cut
+//   fold = 32 + b    lower wall part: always visible, glass when the bucket is
+//   fold = 48 + b    top face of the lower part at the cut height: visible while bucket b is cut
+
+import { Color, type BufferGeometry } from "three";
+import type { Floor, Furniture, Opening, Room, SolarField, Vec2 } from "../model.ts";
+import { furnitureFootprint, GANG_TYPES, isLamp, pointInPolygon, polygonArea, STAIR_TYPES } from "../model.ts";
+import { freeWallRoomLeft, generateWalls, locateOpening, openingHost, placeWallPlate, slopeTop, wallContinuation, type Wall } from "../geometry/walls.ts";
+import { clipConvex, isConvex } from "../geometry/area.ts";
+import { holeInRoom, insetHole, mergeHoles } from "../geometry/holes.ts";
+import { currentShellDetail, furnitureLook, hasOwnColours, pushFurniture, pushRackGear } from "./furniture.ts";
+import { mountBase, packItem, packsVersion } from "../packs.ts";
+import { pushOutdoor } from "./outdoor.ts";
+import { pushModules } from "./roof.ts";
+import type { RoofFace } from "../solar.ts";
+import { cutAbove, cutLinesAbove, FURN_OFFSET, ALWAYS, CAP_OFFSET, CUT_OFFSET, EDGE_BASE, EDGE_CUT, EDGE_SOFT, EDGE_TOP, GeoBuffer, LineBuffer, type GeoSlice, type LineSlice, LOWER_OFFSET, pushPrism, triangulate } from "./geo.ts";
+import { runAll } from "./slices.ts";
+import type { StoredFloor } from "./piece-store.ts";
+
+export { ALWAYS, CUT_OFFSET, FURN_OFFSET, GeoBuffer, LineBuffer, pushPrism, shade } from "./geo.ts";
+
+export const NEON = {
+  floor: 0x0e1629,
+  slab: 0x0a1120,
+  wall: 0x131d31,
+  wallTop: 0x14303f,
+  edge: 0x37e0ff,
+  edgeSoft: 0x5b7cff,
+};
+
+/** Floor tint and pattern tile (column, row in the pattern atlas) per floor material. */
+export const FLOOR_LOOK: Record<string, { color: number; tile: [number, number] }> = {
+  wood: { color: 0x111a2e, tile: [0, 0] },
+  oak: { color: 0x131b2d, tile: [1, 0] },
+  tiles: { color: 0x0e182f, tile: [2, 0] },
+  carpet: { color: 0x10152b, tile: [0, 1] },
+  stone: { color: 0x0f172b, tile: [1, 1] },
+  concrete: { color: 0x111827, tile: [2, 1] },
+};
+
+/** The floor materials in the realistic look (#39): dark wood, light oak, pale tiles, a beige carpet, stone and concrete. */
+export const FLOOR_REAL: Record<string, number> = {
+  wood: 0x8a5a36,
+  oak: 0xc4a274,
+  tiles: 0xcfcfca,
+  carpet: 0xaea593,
+  stone: 0xa9a49c,
+  concrete: 0x9d9d9a,
+};
+
+/** Opening resolved onto its wall, as needed for frames, sashes and blinds. */
+export interface OpeningInfo {
+  opening: Opening;
+  /** Fold bucket of the wall it sits in. */
+  bucket: number;
+  /** Start of the opening on the wall axis and the axis direction (x, z). */
+  start: Vec2;
+  axis: Vec2;
+  width: number;
+  /** Unit normal pointing into the opening's room. */
+  toRoom: Vec2;
+  /** Distance from the wall axis to the room-side face and to the other face. */
+  faceRoom: number;
+  faceOut: number;
+  sill: number;
+  top: number;
+  /** True when the sash hinge is at the start of the opening (as seen along the axis). */
+  hingeAtStart: boolean;
+  exterior: boolean;
+}
+
+export interface FloorGeometry {
+  floor: BufferGeometry;
+  /** Triangle ranges of room tops (for picking and highlighting) with their base colour. */
+  roomTris: { roomId: string; start: number; end: number; color: number }[];
+  /** Openings cut into the floor (stairwells, galleries): the light surface leaves them out. */
+  holes: Vec2[][];
+  /** Walls (with folding upper parts) and furniture. */
+  walls: BufferGeometry;
+  /** Water surfaces of pools (see-through: the basin shows below). */
+  water: BufferGeometry;
+  lines: BufferGeometry;
+  /** Multiply layer darkening the floor along walls and under furniture (baked occlusion). */
+  shadow: BufferGeometry;
+  /** Outward direction (x, z) of each fold bucket; null for interior walls. Index = bucket id. */
+  buckets: (Vec2 | null)[];
+  openings: OpeningInfo[];
+  walls2d: Wall[];
+  /** Room pairs joined by "no wall": one space, also for the light. */
+  openRooms: [string, string][];
+  /** Fold bucket of each wall in walls2d. */
+  wallBuckets: number[];
+  /**
+   * Triangle ranges of furniture in `walls`, for tapping furniture in 3D. `line` and `shadow` are the vertex ranges of
+   * its edges in `lines` and its contact shadow in `shadow` (#268: hiding an item collapses all three in place).
+   */
+  furnitureTris: { id: string; start: number; end: number; line?: [number, number]; shadow?: [number, number] }[];
+  /**
+   * Racks with gear (#121): their gear is not in `walls`; the viewer draws it on its own (buildRackGear), in detail
+   * near the camera and as slabs further away.
+   */
+  racks: RackGearAt[];
+  /** Under roof slopes: the roof's underside above a plan point, in floor coordinates (null = no roof there). */
+  roofUnder?: (x: number, z: number) => number | null;
+}
+
+export const SLAB = 0.2;
+/**
+ * A wall ends under a roof at its underside, but never lower than 5 cm: where the underside lies this far below
+ * the floor, even that stub would show above the roof's top face (0.14 m slab), so the wall is left out there.
+ */
+const BURIED = -0.06;
+/** How far the slab under a doorway stays below the floor. */
+const DOORWAY_DROP = 0.01;
+const BUCKETS = 8;
+const SHADOW_WIDTH = 0.42;
+const SHADOW_DARK = 0.42;
+
+/** Openings placed on a wall, as spans along its axis (metres from wall.a). */
+interface Span {
+  s0: number;
+  s1: number;
+  sill: number;
+  top: number;
+  info: OpeningInfo;
+  /** The part of an opening reaching into the next wall across a transition (#624): cuts it, draws no frame lines. */
+  cont?: boolean;
+}
+
+export function buildFloorGeometry(...args: Parameters<typeof floorGeometrySteps>): FloorGeometry {
+  return runAll(floorGeometrySteps(...args));
+}
+
+/**
+ * buildFloorGeometry in steps (run 6 speed): it stops for now (`yield`) after each part and each item, so a new home's
+ * floors can be modelled in short slices (slices.ts) with the page free in between. Run to the end, the same result.
+ */
+export function* floorGeometrySteps(
+  floor: Floor,
+  wallExterior: number,
+  wallInterior: number,
+  holes: Vec2[][] = [],
+  /** Solar fields standing in this floor's garden, with their ground. */
+  solar: { face: RoofFace; field: SolarField }[] = [],
+  /**
+   * The roof's underside above a plan point, relative to this floor (null = no roof there). Walls end
+   * there: knee walls at the eaves, gables up to the ridge, inner walls cut by the slope.
+   */
+  roofUnder?: (x: number, z: number) => number | null,
+): Generator<void, FloorGeometry, void> {
+  const { walls, open: openRooms } = generateWalls(floor.rooms, { exterior: wallExterior, interior: wallInterior }, floor.walls ?? []);
+  // the top of a wall at a point: its own height (a sloping wall's at that point), or the roof above when lower
+  const topAt = (x: number, z: number, H: number, wall?: Wall): number => {
+    const own = wall?.slope ? Math.min(H, slopeTop(wall.slope, x, z)) : H;
+    const r = roofUnder ? roofUnder(x, z) : null;
+    return r === null ? own : Math.max(0.05, Math.min(own, r));
+  };
+  // a wall under a roof that lies below this floor's own level there (the corner of a room beside a hip, #638):
+  // even the shortest stub would stand out above the roof's top face, so nothing is built there
+  const buried = (x: number, z: number): boolean => {
+    const r = roofUnder ? roofUnder(x, z) : null;
+    return r !== null && r < BURIED;
+  };
+  // the lowest wall top along a stretch of a wall (sampled), for openings and the top edge line
+  const lowestTop = (a: Vec2, ax: Vec2, s0: number, s1: number, H: number, wall?: Wall): number => {
+    if (!roofUnder && !wall?.slope) return H;
+    let lo = H;
+    const n = Math.max(2, Math.ceil((s1 - s0) / 0.25) + 1);
+    for (let i = 0; i < n; i++) {
+      const s = s0 + ((s1 - s0) * i) / (n - 1);
+      lo = Math.min(lo, topAt(a[0] + ax[0] * s, a[1] + ax[1] * s, H, wall));
+    }
+    return lo;
+  };
+
+  // ---------------------------------------------------------------- floors (with stair holes)
+  const floorBuf = new GeoBuffer(true, true);
+  const roomTris: FloorGeometry["roomTris"] = [];
+  const holeLines = new LineBuffer();
+  const cutHoles: Vec2[][] = [];
+  for (const room of floor.rooms) {
+    if (room.points.length < 3) continue;
+    const poly = ccw(room.points);
+    const look = FLOOR_LOOK[room.floor_material] ?? FLOOR_LOOK.wood;
+    const top = new Color(look.color);
+    // an opening snapped to the room's edge is still cut, a few millimetres in from it
+    // an opening across a room line is cut in every room it covers: here, the part inside this room (#353)
+    // the openings are clipped one by one and only then merged: an opening joined with the stairs' own hole before
+    // (overlapping, no longer convex) and reaching past the room was not cut at all (#375)
+    const parts = holes.flatMap((h) => {
+      if (holeInRoom(h, poly)) return [h];
+      if (!isConvex(h)) return [];
+      const part = clipConvex(poly, h);
+      return part.length >= 3 && Math.abs(polygonArea(part)) > 0.01 ? [ccw(part)] : [];
+    });
+    const inside = mergeHoles(parts).map((h) => insetHole(ccw(h), 0.003));
+    cutHoles.push(...inside);
+    const all = [...poly, ...inside.flat()];
+    const start = floorBuf.count;
+    for (const [i, j, l] of triangulate(poly, inside)) {
+      const a = all[i];
+      const b = all[j];
+      const c = all[l];
+      floorBuf.tri([a[0], 0, a[1]], [c[0], 0, c[1]], [b[0], 0, b[1]], top, top, top, [a[0], a[1], c[0], c[1], b[0], b[1]], ALWAYS, look.tile);
+    }
+    roomTris.push({ roomId: room.id, start, end: floorBuf.count, color: look.color });
+    const slab = new Color(NEON.slab);
+    const sides = (ring: Vec2[]) => {
+      for (let i = 0; i < ring.length; i++) {
+        const a = ring[i];
+        const b = ring[(i + 1) % ring.length];
+        floorBuf.tri([a[0], -SLAB, a[1]], [a[0], 0, a[1]], [b[0], 0, b[1]], slab);
+        floorBuf.tri([a[0], -SLAB, a[1]], [b[0], 0, b[1]], [b[0], -SLAB, b[1]], slab);
+      }
+    };
+    sides(poly);
+    for (const h of inside) {
+      // the hole's inner faces look into the hole
+      sides([...ccw(h)].reverse());
+      for (let i = 0; i < h.length; i++) {
+        const a = h[i];
+        const b = h[(i + 1) % h.length];
+        // a bright rim like the walls' tops, so the opening reads from above
+        holeLines.seg([a[0], 0.006, a[1]], [b[0], 0.006, b[1]], EDGE_TOP);
+        holeLines.seg([a[0], -SLAB, a[1]], [b[0], -SLAB, b[1]], EDGE_SOFT);
+      }
+    }
+  }
+
+  yield;
+  // ---------------------------------------------------------------- buckets and openings
+  const bucketIndex = new Map<string, number>();
+  const buckets: (Vec2 | null)[] = [];
+  const wallBucket = new Map<Wall, number>();
+  // free walls drawn as outer walls (rooms on one side only): their room side, so they turn to glass and carry
+  // blinds outside like the room's own outer walls (#542)
+  const freeOuter = new Map<Wall, boolean>();
+  for (const wall of walls) {
+    if (!wall.free) continue;
+    const left = freeWallRoomLeft(wall, floor.rooms);
+    if (left !== null) freeOuter.set(wall, left);
+  }
+  for (const wall of walls) {
+    let key = "interior";
+    let normal: Vec2 | null = null;
+    const freeLeft = freeOuter.get(wall);
+    if (wall.exterior || freeLeft !== undefined) {
+      const dx = wall.b[0] - wall.a[0];
+      const dz = wall.b[1] - wall.a[1];
+      const l = Math.hypot(dx, dz) || 1;
+      const k = freeLeft === false ? -1 : 1;
+      const out: Vec2 = [(k * dz) / l, (-k * dx) / l]; // right normal: away from the room
+      const sector = ((Math.round((Math.atan2(out[1], out[0]) / (2 * Math.PI)) * BUCKETS) % BUCKETS) + BUCKETS) % BUCKETS;
+      key = `s${sector}`;
+      const ang = (sector / BUCKETS) * 2 * Math.PI;
+      normal = [Math.cos(ang), Math.sin(ang)];
+    }
+    let b = bucketIndex.get(key);
+    if (b === undefined) {
+      b = buckets.length;
+      bucketIndex.set(key, b);
+      buckets.push(normal);
+    }
+    wallBucket.set(wall, b);
+  }
+
+  const spans = new Map<Wall, Span[]>();
+  const openings: OpeningInfo[] = [];
+  for (const o of floor.openings) {
+    const host = openingHost(o, floor.rooms, floor.walls ?? []);
+    if (!host) continue;
+    const hit = locateOpening(walls, o, host);
+    if (!hit) continue;
+    const { wall, s } = hit;
+    const ax: Vec2 = unit([wall.b[0] - wall.a[0], wall.b[1] - wall.a[1]]);
+    const len = Math.hypot(wall.b[0] - wall.a[0], wall.b[1] - wall.a[1]);
+    // across a transition without a wall the opening may reach into the wall carrying on in line (#624)
+    const prev = s - o.width / 2 < -1e-6 ? wallContinuation(walls, wall, false) : null;
+    const next = s + o.width / 2 > len + 1e-6 ? wallContinuation(walls, wall, true) : null;
+    const lenOf = (w: Wall | null) => (w ? Math.hypot(w.b[0] - w.a[0], w.b[1] - w.a[1]) : 0);
+    const lo = -lenOf(prev);
+    const hi = len + lenOf(next);
+    const width = Math.min(o.width, hi - lo);
+    const s0 = Math.max(lo, Math.min(hi - width, s - width / 2));
+    // in a free wall the "room" side is the side with the rooms, else the left of the wall as drawn; an outer wall has its room on the left, whatever
+    // room the opening was given (a window filed under the neighbouring room had its blind inside, #542)
+    const hp = host.room.points;
+    const freeLeft = freeOuter.get(wall);
+    const roomLeft = wall.free
+      ? (freeLeft ?? ax[0] * (hp[1][0] - hp[0][0]) + ax[1] * (hp[1][1] - hp[0][1]) > 0)
+      : wall.exterior || wall.roomLeft === o.room_id;
+    const nLeft: Vec2 = [-ax[1], ax[0]];
+    const toRoom: Vec2 = roomLeft ? nLeft : [-nLeft[0], -nLeft[1]];
+    const top = Math.min(lowestTop(wall.a, ax, s0, s0 + width, wallHeight(wall, floor.height), wall) - 0.02, o.sill + o.height);
+    const sill = Math.max(0, Math.min(o.sill, top - 0.1));
+    // looking at the wall from the room, "right" is (toRoom.z, -toRoom.x)
+    const right: Vec2 = [toRoom[1], -toRoom[0]];
+    const startIsLeft = ax[0] * right[0] + ax[1] * right[1] > 0;
+    const info: OpeningInfo = {
+      opening: o,
+      bucket: wallBucket.get(wall)!,
+      start: [wall.a[0] + ax[0] * s0, wall.a[1] + ax[1] * s0],
+      axis: ax,
+      width,
+      toRoom,
+      faceRoom: roomLeft ? wall.left : wall.right,
+      faceOut: roomLeft ? wall.right : wall.left,
+      sill,
+      top,
+      hingeAtStart: (o.hinge === "left") === startIsLeft,
+      exterior: wall.exterior || freeLeft !== undefined,
+    };
+    openings.push(info);
+    let list = spans.get(wall);
+    if (!list) spans.set(wall, (list = []));
+    list.push({ s0, s1: s0 + width, sill, top, info });
+    for (const w of [prev, next]) {
+      if (!w) continue;
+      // the same stretch in the next wall's own measure
+      const t = (k: number) => (wall.a[0] + ax[0] * k - w.a[0]) * ax[0] + (wall.a[1] + ax[1] * k - w.a[1]) * ax[1];
+      const c0 = Math.max(0, t(s0));
+      const c1 = Math.min(lenOf(w), t(s0 + width));
+      if (c1 - c0 < 1e-4) continue;
+      let more = spans.get(w);
+      if (!more) spans.set(w, (more = []));
+      more.push({ s0: c0, s1: c1, sill, top, info, cont: true });
+    }
+  }
+
+  yield;
+  // ---------------------------------------------------------------- wall solids
+  const cut = Math.min(floor.cut_height, floor.height);
+  const wallBuf = new GeoBuffer();
+  for (const wall of walls) {
+    const b = wallBucket.get(wall)!;
+    const ax = unit([wall.b[0] - wall.a[0], wall.b[1] - wall.a[1]]);
+    const list = (spans.get(wall) ?? []).sort((p, q) => p.s0 - q.s0);
+    const H = wallHeight(wall, floor.height);
+    // pieces along the axis, cut at every opening edge: each piece leaves out all the openings above it
+    // (two windows one above the other, a window over a door), the wall fills what remains
+    const pieces: { t0: number; t1: number; ranges: [number, number][] }[] = [];
+    const stops = [-Infinity, ...new Set(list.flatMap((sp) => [sp.s0, sp.s1])).values(), Infinity].sort((a, b) => a - b);
+    for (let i = 0; i + 1 < stops.length; i++) {
+      const t0 = stops[i];
+      const t1 = stops[i + 1];
+      if (t1 - t0 < 1e-6) continue;
+      const mid = Number.isFinite(t0) && Number.isFinite(t1) ? (t0 + t1) / 2 : Number.isFinite(t0) ? t0 + 1 : t1 - 1;
+      const covering = list.filter((sp) => sp.s0 < mid && sp.s1 > mid).map((sp) => [sp.sill, sp.top] as [number, number]).sort((a, b) => a[0] - b[0]);
+      const ranges: [number, number][] = [];
+      let y = -SLAB;
+      for (const [a, b] of covering) {
+        // the slab under a doorway ends just below the floor: a top at floor level fights with the room
+        // floors over the gap and flickers as a strip in every passage (#290)
+        if (a > y + 1e-4) ranges.push([y, a < 1e-4 ? -DOORWAY_DROP : a]);
+        y = Math.max(y, b);
+      }
+      if (H > y + 1e-4) ranges.push([y, H]);
+      pieces.push({ t0, t1, ranges });
+    }
+    // under a roof the pieces are cut into short steps, so each step's top lies in one roof plane
+    const len = Math.hypot(wall.b[0] - wall.a[0], wall.b[1] - wall.a[1]);
+    // under a roof or with a sloping top of its own (D569)
+    const underRoof = (roofUnder || wall.slope) && lowestTop(wall.a, ax, 0, len, H, wall) < H - 1e-3;
+    const steps = underRoof
+      ? pieces.flatMap((piece) => {
+          const t0 = Math.max(piece.t0, -0.5);
+          const t1 = Math.min(piece.t1, len + 0.5);
+          const n = Math.max(1, Math.ceil((t1 - t0) / 0.3));
+          return Array.from({ length: n }, (_, i) => ({ t0: i === 0 ? piece.t0 : t0 + ((t1 - t0) * i) / n, t1: i === n - 1 ? piece.t1 : t0 + ((t1 - t0) * (i + 1)) / n, ranges: piece.ranges, inner0: i > 0, inner1: i < n - 1 }));
+        })
+      : pieces.map((piece) => ({ ...piece, inner0: false, inner1: false }));
+    const tOf = (p: Vec2) => (p[0] - wall.a[0]) * ax[0] + (p[1] - wall.a[1]) * ax[1];
+    // a step partly over a roof below the floor is cut finer, and the buried bits are left out (#638)
+    const fine = (piece: (typeof steps)[number]): (typeof steps)[number][] => {
+      if (!roofUnder) return [piece];
+      const poly = clipAlong(wall.footprint, wall.a, ax, piece.t0, piece.t1);
+      const hits = poly.filter(([x, z]) => buried(x, z)).length;
+      if (hits === 0) return [piece];
+      if (hits === poly.length) return [];
+      const t0 = Math.max(piece.t0, -0.5);
+      const t1 = Math.min(piece.t1, len + 0.5);
+      const n = Math.max(1, Math.ceil((t1 - t0) / 0.05));
+      return Array.from({ length: n }, (_, i) => ({
+        t0: i === 0 ? piece.t0 : t0 + ((t1 - t0) * i) / n,
+        t1: i === n - 1 ? piece.t1 : t0 + ((t1 - t0) * (i + 1)) / n,
+        ranges: piece.ranges,
+        inner0: i > 0 || piece.inner0,
+        inner1: i < n - 1 || piece.inner1,
+      })).filter((st) => !clipAlong(wall.footprint, wall.a, ax, st.t0, st.t1).every(([x, z]) => buried(x, z)));
+    };
+    for (const piece of underRoof ? steps.flatMap(fine) : steps) {
+      const poly = clipAlong(wall.footprint, wall.a, ax, piece.t0, piece.t1);
+      if (poly.length < 3) continue;
+      // the faces between two steps of one piece are inside the wall: left out, or they show as stripes
+      // through the see-through walls (D180)
+      const on = (p: Vec2, t: number) => Math.abs(tOf(p) - t) < 1e-4;
+      const skipSide = (p: Vec2, q: Vec2) => (piece.inner0 && on(p, piece.t0) && on(q, piece.t0)) || (piece.inner1 && on(p, piece.t1) && on(q, piece.t1));
+      // the roof over this step: the lowest point of its footprint decides what is left of each range
+      const roofTop = underRoof ? Math.min(...poly.map(([x, z]) => topAt(x, z, H, wall))) : H;
+      for (const [y0, y1raw] of piece.ranges) {
+        const y1 = Math.min(y1raw, underRoof ? Math.max(...poly.map(([x, z]) => topAt(x, z, H, wall))) : y1raw);
+        if (y1 - y0 < 1e-4 || roofTop - y0 < 0.01) continue;
+        const lintel = y0 > 0.01;
+        const sloped = underRoof && y1raw > roofTop;
+        const topOf = (x: number, z: number) => Math.min(y1raw, topAt(x, z, H, wall));
+        if (y0 < cut - 1e-6) {
+          // the top face at the cut height is only seen while the wall is cut
+          const topFold = y1 > cut + 1e-6 ? CAP_OFFSET + b : LOWER_OFFSET + b;
+          const capped = sloped && roofTop < cut ? (x: number, z: number) => Math.min(cut, topOf(x, z)) : Math.min(y1, cut);
+          pushPrism(wallBuf, poly, y0, capped, NEON.wall, NEON.wallTop, { aoFrom: 0, bottom: lintel, fold: LOWER_OFFSET + b, topFold, skipSide });
+        }
+        if (y1 > cut + 1e-6 && roofTop > cut + 1e-6) pushPrism(wallBuf, poly, Math.max(y0, cut), sloped ? topOf : y1, NEON.wall, NEON.wallTop, { aoFrom: 0, fold: b, bottom: lintel && y0 >= cut, skipSide });
+      }
+    }
+    yield;
+  }
+
+  yield;
+  // ---------------------------------------------------------------- edges
+  const points = walls.flatMap((w) => w.footprint);
+  const outline = outlineOf(walls, points);
+  const lines = new LineBuffer();
+  lines.p.push(...holeLines.p);
+  lines.c.push(...holeLines.c);
+  lines.f.push(...holeLines.f);
+  const spansOf = (w: Wall, keep: (sp: Span) => boolean) => (spans.get(w) ?? []).filter(keep);
+  for (const e of outline.edges) {
+    const b = wallBucket.get(e.wall)!;
+    // base line along the floor: not across doorways
+    for (const [p, q] of subtractSpans(e, spansOf(e.wall, (sp) => sp.sill <= 0.005))) lines.seg([p[0], 0.004, p[1]], [q[0], 0.004, q[1]], EDGE_BASE);
+    // cut line: not where an opening crosses the cut height
+    for (const [p, q] of subtractSpans(e, spansOf(e.wall, (sp) => sp.sill < cut && sp.top > cut))) lines.seg([p[0], cut, p[1]], [q[0], cut, q[1]], EDGE_CUT, CUT_OFFSET + b);
+    // top line: not where an opening reaches the top; a wall below the cut height keeps its top line;
+    // under a roof it follows the slope in short steps
+    const H = wallHeight(e.wall, floor.height);
+    for (const [p, q] of subtractSpans(e, spansOf(e.wall, (sp) => sp.top >= H - 0.021))) {
+      if (!roofUnder && !e.wall.slope) {
+        lines.seg([p[0], H, p[1]], [q[0], H, q[1]], EDGE_TOP, H <= cut + 1e-6 ? LOWER_OFFSET + b : b);
+        continue;
+      }
+      const n = Math.max(1, Math.ceil(Math.hypot(q[0] - p[0], q[1] - p[1]) / 0.3));
+      for (let i = 0; i < n; i++) {
+        const a: Vec2 = [p[0] + ((q[0] - p[0]) * i) / n, p[1] + ((q[1] - p[1]) * i) / n];
+        const c: Vec2 = [p[0] + ((q[0] - p[0]) * (i + 1)) / n, p[1] + ((q[1] - p[1]) * (i + 1)) / n];
+        if (buried(a[0], a[1]) && buried(c[0], c[1])) continue;
+        const ya = topAt(a[0], a[1], H, e.wall);
+        const yc = topAt(c[0], c[1], H, e.wall);
+        lines.seg([a[0], ya, a[1]], [c[0], yc, c[1]], EDGE_TOP, Math.max(ya, yc) <= cut + 1e-6 ? LOWER_OFFSET + b : b);
+      }
+    }
+  }
+  const topOfWall = (w: Wall, p: Vec2) => topAt(p[0], p[1], wallHeight(w, floor.height), w);
+  for (const c of outline.corners) {
+    if (buried(c.p[0], c.p[1])) continue;
+    // the corner line reaches up to the tallest wall meeting there, not to whichever came first (#417)
+    const tall = c.walls.reduce((m, w) => (topOfWall(w, c.p) > topOfWall(m, c.p) + 1e-6 ? w : m), c.wall);
+    const H = topAt(c.p[0], c.p[1], wallHeight(tall, floor.height), tall);
+    lines.segSplit([c.p[0], 0.004, c.p[1]], [c.p[0], H, c.p[1]], EDGE_SOFT, Math.min(cut, H), wallBucket.get(tall)!);
+  }
+  // a joint between walls of different heights: the taller wall's end stands free above the lower one, so
+  // its top edge runs across the joint and its edges come down to the lower wall's top (#417)
+  for (const j of outline.joints) {
+    const [lo, hi] = j.walls;
+    const ya = [topOfWall(lo, j.a), topOfWall(hi, j.a)];
+    const yb = [topOfWall(lo, j.b), topOfWall(hi, j.b)];
+    if (Math.abs(ya[0] - ya[1]) < 0.01 && Math.abs(yb[0] - yb[1]) < 0.01) continue;
+    const tall = ya[1] + yb[1] >= ya[0] + yb[0] ? hi : lo;
+    const b = wallBucket.get(tall)!;
+    const ha = Math.max(...ya);
+    const hb = Math.max(...yb);
+    lines.seg([j.a[0], ha, j.a[1]], [j.b[0], hb, j.b[1]], EDGE_TOP, Math.max(ha, hb) <= cut + 1e-6 ? LOWER_OFFSET + b : b);
+    for (const [p, y] of [[j.a, ya], [j.b, yb]] as const) {
+      const low = Math.min(...y);
+      const high = Math.max(...y);
+      if (high - low > 0.01) lines.segSplit([p[0], low, p[1]], [p[0], high, p[1]], EDGE_SOFT, cut, b);
+    }
+  }
+  for (const list of spans.values()) for (const sp of list) if (!sp.cont) pushOpeningLines(lines, sp, cut);
+
+  yield;
+  // ---------------------------------------------------------------- furniture and shadows
+  const shadow = buildShadow(outline.edges, floor.rooms, spans);
+  const waterBuf = new GeoBuffer();
+  pushOutdoor(wallBuf, lines, floor, waterBuf);
+  for (const s of solar) pushModules(wallBuf, lines, s.face, s.field, floor.elevation);
+
+  // lamps are drawn live by the viewer (they glow with their light)
+  const furnitureTris: FloorGeometry["furnitureTris"] = [];
+  const racks: RackGearAt[] = [];
+  // an item drawn exactly as in this floor's last build is copied from it instead of modelled again (#131): an edit
+  // in the editor's 3D beside moves one item, the other hundreds stay as they were
+  const look = `${packsVersion()}|${cut}|${currentShellDetail()}`;
+  const last = furnitureCache.get(floor.id);
+  const had = last?.look === look ? last.pieces : null;
+  const pieces = new Map<string, FurniturePiece>();
+  furnitureCache.set(floor.id, { look, pieces });
+  // only items in colours of their own draw differently in the neon and the light looks
+  const lookOf = furnitureLook();
+  const otherLook = furnitureLook(true);
+  // a floor modelled for the first picture of a home (run 6 speed): its pieces may come from an earlier load (stored)
+  // and what it draws is collected to be kept for the next one
+  const stored = storedPieces.get(floor.id);
+  const collect = collecting.get(floor.id);
+  const keptLook = `${cut}|${currentShellDetail()}`;
+  for (const item of floor.furniture) {
+    if (isLamp(item.type)) continue;
+    const start = wallBuf.count;
+    const lineStart = lines.count;
+    const shadowStart = shadow.count * 3;
+    // indices into the arrays count from the last copied item (GeoBuffer.append)
+    const t0 = wallBuf.p.length / 9;
+    const l0 = lines.p.length / 6;
+    let f = item;
+    let base = mountBase(floor, f);
+    if (GANG_TYPES.has(f.type)) {
+      // a switch or socket dropped into a wall stands on its face, on a low wall below its top (#593)
+      const at = placeWallPlate(walls, f, floor.height, base);
+      f = { ...f, x: at.x, z: at.z };
+      base = at.y;
+    }
+    // a rack's gear is drawn on its own by the viewer (#121)
+    const gear = !!f.rack?.slots?.length && !!packItem(f.type)?.rack_frame;
+    const own = hasOwnColours(f);
+    const drawn = `|${base}|${JSON.stringify(f)}`;
+    const key = `${own ? lookOf : ""}${drawn}`;
+    const sk = collect ? `${keptLook}|${key}|${packSignature(f.type)}` : "";
+    const piece = had?.get(key) ?? stored?.pieces.get(sk);
+    if (piece) {
+      wallBuf.append(piece.solid);
+      lines.append(piece.lines);
+      shadow.append(piece.shadow);
+      cacheStats.hits++;
+    } else {
+      const s0 = shadow.p.length / 9;
+      pushFurniture(wallBuf, lines, shadow, f, base, false, !gear);
+      // a wardrobe or a stair reaching above the cut height is cut with the walls, so it hides nothing behind it; a
+      // vehicle stays whole: cut, it is an open shell with its pillars standing up out of it (#242)
+      if (base + f.h > cut + 0.05 && !packItem(f.type)?.vehicle) {
+        cutAbove(wallBuf, t0, cut, FURN_OFFSET);
+        cutLinesAbove(lines, l0, cut, FURN_OFFSET);
+      }
+      cacheStats.misses++;
+      pieces.set(key, { solid: wallBuf.slice(t0), lines: lines.slice(l0 * 2), shadow: shadow.slice(s0) });
+      if (collect) collect.fresh = true;
+    }
+    if (piece) pieces.set(key, piece);
+    if (collect) collect.pieces.set(sk, pieces.get(key)!);
+    // the other look's copy stays too: a look switch back and forth models it only once
+    const other = own ? had?.get(`${otherLook}${drawn}`) : undefined;
+    if (other) pieces.set(`${otherLook}${drawn}`, other);
+    if (gear) racks.push({ f, base });
+    furnitureTris.push({ id: f.id, start, end: wallBuf.count, line: [lineStart, lines.count], shadow: [shadowStart, shadow.count * 3] });
+    yield;
+  }
+
+  // the buffers for the GPU, one a step (the walls with every item are the biggest)
+  const floorGeo = floorBuf.geometry();
+  yield;
+  const wallsGeo = wallBuf.geometry();
+  yield;
+  const linesGeo = lines.geometry();
+  yield;
+  return {
+    floor: floorGeo,
+    roomTris,
+    holes: cutHoles,
+    walls: wallsGeo,
+    water: waterBuf.geometry(),
+    lines: linesGeo,
+    shadow: shadow.geometry(),
+    buckets,
+    openings,
+    walls2d: walls,
+    openRooms,
+    wallBuckets: walls.map((w) => wallBucket.get(w)!),
+    furnitureTris,
+    racks,
+    roofUnder,
+  };
+}
+
+/** An item's triangles, edges and contact shadow as one floor build drew them (#131). */
+interface FurniturePiece {
+  solid: GeoSlice;
+  lines: LineSlice;
+  shadow: GeoSlice;
+}
+
+/**
+ * Per floor: the items of its last build, by what they were drawn from (the look for items in colours of their own,
+ * base height and the item), valid while the packs and the cut height stay (`look`). Only the items of the last build
+ * are kept, those in colours of their own also as the other look drew them: never more than two copies.
+ */
+const furnitureCache = new Map<string, { look: string; pieces: Map<string, FurniturePiece> }>();
+const cacheStats = { hits: 0, misses: 0 };
+
+/** Pieces of an earlier load, by floor (primeStoredPieces), and what this load's build drew, to keep for the next. */
+const storedPieces = new Map<string, StoredFloor>();
+const collecting = new Map<string, { pieces: Map<string, FurniturePiece>; fresh: boolean }>();
+
+/**
+ * The next build of this floor takes its pieces from `stored` (an earlier load's record, piece-store.ts) where they
+ * were drawn from the same item, pack item and look, and collects what it draws (takeCollected).
+ */
+export function primeStoredPieces(floorId: string, stored: StoredFloor | null): void {
+  storedPieces.set(floorId, stored ?? { pieces: new Map(), light: null });
+  collecting.set(floorId, { pieces: new Map(), fresh: false });
+}
+
+/** What the floor's last primed build drew, and whether it modelled any of it anew (then it is worth keeping). */
+export function takeCollected(floorId: string): { pieces: Map<string, FurniturePiece>; fresh: boolean } | null {
+  const c = collecting.get(floorId) ?? null;
+  collecting.delete(floorId);
+  storedPieces.delete(floorId);
+  return c;
+}
+
+/** A pack item as its pieces were modelled from (the plan's own recipe copy wins, #2), per type while the packs stay. */
+const signatures = new Map<string, string>();
+let signaturesOf = -1;
+function packSignature(type: string): string {
+  if (signaturesOf !== packsVersion()) {
+    signatures.clear();
+    signaturesOf = packsVersion();
+  }
+  let sig = signatures.get(type);
+  if (sig === undefined) {
+    sig = hashText(JSON.stringify(packItem(type) ?? null));
+    signatures.set(type, sig);
+  }
+  return sig;
+}
+
+/** A short hash of a text (cyrb53): a key part, not a security measure. */
+export function hashText(text: string): string {
+  let h1 = 0xdeadbeef;
+  let h2 = 0x41c6ce57;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text.charCodeAt(i);
+    h1 = Math.imul(h1 ^ ch, 2654435761);
+    h2 = Math.imul(h2 ^ ch, 1597334677);
+  }
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+  return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(36);
+}
+
+/** Forget every floor's items (the next build models them all). */
+export function clearFurnitureCache(): void {
+  furnitureCache.clear();
+}
+
+/** Forget the items of every floor but these (#131: the floors of another home). */
+export function keepFurnitureOf(floorIds: Iterable<string>): void {
+  const keep = new Set(floorIds);
+  for (const id of furnitureCache.keys()) if (!keep.has(id)) furnitureCache.delete(id);
+}
+
+/** Items copied from the last build (hits) and modelled (misses) so far. */
+export function furnitureCacheStats(): { hits: number; misses: number } {
+  return { ...cacheStats };
+}
+
+/** A rack whose gear the viewer draws on its own (#121): the item as drawn and its mount height. */
+export interface RackGearAt {
+  f: Furniture;
+  base: number;
+}
+
+/**
+ * The gear of a rack listed in FloorGeometry.racks (#121): `detail` every part, else one slab per piece. Like the
+ * rack around it, what reaches above the floor's cut height folds away with the walls.
+ */
+export function buildRackGear(floor: Floor, at: RackGearAt, detail: boolean): { mesh: BufferGeometry; lines: BufferGeometry } {
+  const buf = new GeoBuffer();
+  const lines = new LineBuffer();
+  pushRackGear(buf, lines, at.f, at.base, detail);
+  const cut = Math.min(floor.cut_height, floor.height);
+  if (at.base + at.f.h > cut + 0.05) {
+    cutAbove(buf, 0, cut, FURN_OFFSET);
+    cutLinesAbove(lines, 0, cut, FURN_OFFSET);
+  }
+  return { mesh: buf.geometry(), lines: lines.geometry() };
+}
+
+/** Jambs, sill and lintel edges of an opening on both wall faces, split at the cut height. */
+function pushOpeningLines(lines: LineBuffer, sp: Span, cut: number): void {
+  const { info } = sp;
+  const b = info.bucket;
+  const at = (s: number, n: number, y: number) => [
+    info.start[0] + info.axis[0] * (s - sp.s0) + info.toRoom[0] * n,
+    y,
+    info.start[1] + info.axis[1] * (s - sp.s0) + info.toRoom[1] * n,
+  ];
+  const foldAt = (y: number) => (y > cut + 1e-6 ? b : ALWAYS);
+  const bottom = Math.max(sp.sill, 0.004);
+  for (const n of [info.faceRoom, -info.faceOut]) {
+    for (const s of [sp.s0, sp.s1]) lines.segSplit(at(s, n, bottom), at(s, n, sp.top), EDGE_SOFT, cut, b);
+    lines.seg(at(sp.s0, n, sp.top), at(sp.s1, n, sp.top), EDGE_SOFT, foldAt(sp.top));
+    if (sp.sill > 0.01) lines.seg(at(sp.s0, n, sp.sill), at(sp.s1, n, sp.sill), EDGE_SOFT, foldAt(sp.sill));
+  }
+  // edges across the wall thickness (reveals), and the cut section of the jambs
+  for (const s of [sp.s0, sp.s1]) {
+    lines.seg(at(s, info.faceRoom, sp.top), at(s, -info.faceOut, sp.top), EDGE_SOFT, foldAt(sp.top));
+    if (sp.sill > 0.01) lines.seg(at(s, info.faceRoom, sp.sill), at(s, -info.faceOut, sp.sill), EDGE_SOFT, foldAt(sp.sill));
+    if (sp.sill < cut && sp.top > cut) lines.seg(at(s, info.faceRoom, cut), at(s, -info.faceOut, cut), EDGE_CUT, CUT_OFFSET + b);
+  }
+}
+
+/** Part of a polygon between two lines perpendicular to `axis` (t measured from `origin`). */
+export function clipAlong(poly: Vec2[], origin: Vec2, axis: Vec2, t0: number, t1: number): Vec2[] {
+  const t = (p: Vec2) => (p[0] - origin[0]) * axis[0] + (p[1] - origin[1]) * axis[1];
+  let out = poly;
+  if (Number.isFinite(t0)) out = clipHalf(out, (p) => t(p) - t0);
+  if (Number.isFinite(t1)) out = clipHalf(out, (p) => t1 - t(p));
+  return out;
+}
+
+/** Sutherland–Hodgman against one half-plane (keeps d(p) >= 0). */
+function clipHalf(poly: Vec2[], d: (p: Vec2) => number): Vec2[] {
+  const out: Vec2[] = [];
+  for (let i = 0; i < poly.length; i++) {
+    const a = poly[i];
+    const b = poly[(i + 1) % poly.length];
+    const da = d(a);
+    const db = d(b);
+    if (da >= 0) out.push(a);
+    if (da >= 0 !== db >= 0) {
+      const k = da / (da - db);
+      out.push([a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k]);
+    }
+  }
+  return out;
+}
+
+interface OutlineEdge {
+  a: Vec2;
+  b: Vec2;
+  wall: Wall;
+}
+
+interface Outline {
+  /** Edges of the merged wall footprints (joints between walls left out), counter-clockwise per wall. */
+  edges: OutlineEdge[];
+  /** Vertices where the outline turns a corner, with a wall they belong to (and every wall meeting there). */
+  corners: { p: Vec2; wall: Wall; walls: Wall[] }[];
+  /** Edges two walls share (where they are joined), with both walls. */
+  joints: { a: Vec2; b: Vec2; walls: [Wall, Wall] }[];
+}
+
+const r3 = (v: number) => Math.round(v * 1000);
+const vkey = (p: Vec2) => `${r3(p[0])},${r3(p[1])}`;
+const ekey = (a: Vec2, b: Vec2) => {
+  const s = vkey(a);
+  const t = vkey(b);
+  return s < t ? `${s}|${t}` : `${t}|${s}`;
+};
+
+/** Edges of a polygon, split wherever one of `points` lies on them (so T-joints line up). */
+function splitEdges(poly: Vec2[], points: Vec2[]): [Vec2, Vec2][] {
+  const out: [Vec2, Vec2][] = [];
+  for (let i = 0; i < poly.length; i++) {
+    const a = poly[i];
+    const b = poly[(i + 1) % poly.length];
+    const dx = b[0] - a[0];
+    const dz = b[1] - a[1];
+    const l2 = dx * dx + dz * dz;
+    if (l2 < 1e-8) continue;
+    const cuts: number[] = [];
+    for (const p of points) {
+      const t = ((p[0] - a[0]) * dx + (p[1] - a[1]) * dz) / l2;
+      if (t <= 1e-6 || t >= 1 - 1e-6) continue;
+      const off = Math.abs((p[0] - a[0]) * dz - (p[1] - a[1]) * dx) / Math.sqrt(l2);
+      if (off < 1e-4) cuts.push(t);
+    }
+    cuts.sort((p, q) => p - q);
+    let prev = a;
+    for (const t of cuts) {
+      const q: Vec2 = [a[0] + dx * t, a[1] + dz * t];
+      if (vkey(q) !== vkey(prev)) out.push([prev, q]);
+      prev = q;
+    }
+    out.push([prev, b]);
+  }
+  return out;
+}
+
+/**
+ * Outline of the walls' footprints: edges no other footprint shares, and the vertices where those
+ * edges change direction. Edges are split at `points` first, so an edge partly covered by another
+ * wall (T-joint) keeps only its free part.
+ */
+export function outlineOf(walls: Wall[], points: Vec2[]): Outline {
+  const pieces = walls.map((w) => ({ wall: w, edges: splitEdges(w.footprint, points) }));
+  const count = new Map<string, number>();
+  const owners = new Map<string, { a: Vec2; b: Vec2; walls: Wall[] }>();
+  for (const { wall, edges } of pieces) {
+    for (const [a, b] of edges) {
+      const k = ekey(a, b);
+      count.set(k, (count.get(k) ?? 0) + 1);
+      const o = owners.get(k);
+      if (o) o.walls.push(wall);
+      else owners.set(k, { a, b, walls: [wall] });
+    }
+  }
+  const joints: Outline["joints"] = [];
+  for (const o of owners.values()) if (o.walls.length === 2 && o.walls[0] !== o.walls[1]) joints.push({ a: o.a, b: o.b, walls: [o.walls[0], o.walls[1]] });
+  const edges: OutlineEdge[] = [];
+  const dirs = new Map<string, { p: Vec2; wall: Wall; walls: Wall[]; d: Vec2[] }>();
+  const addDir = (p: Vec2, wall: Wall, d: Vec2) => {
+    const k = vkey(p);
+    let e = dirs.get(k);
+    if (!e) dirs.set(k, (e = { p, wall, walls: [], d: [] }));
+    e.d.push(d);
+    if (!e.walls.includes(wall)) e.walls.push(wall);
+  };
+  for (const { wall, edges: list } of pieces) {
+    for (const [a, b] of list) {
+      if (count.get(ekey(a, b)) !== 1) continue;
+      const l = Math.hypot(b[0] - a[0], b[1] - a[1]);
+      if (l < 1e-4) continue;
+      edges.push({ a, b, wall });
+      const d: Vec2 = [(b[0] - a[0]) / l, (b[1] - a[1]) / l];
+      addDir(a, wall, d);
+      addDir(b, wall, d);
+    }
+  }
+  const corners: Outline["corners"] = [];
+  for (const { p, wall, walls: at, d } of dirs.values()) {
+    // a vertex where the outline just continues straight (e.g. a T-joint seen from outside) is no corner
+    if (d.some((u) => d.some((v) => Math.abs(u[0] * v[1] - u[1] * v[0]) > 0.05))) corners.push({ p, wall, walls: at });
+  }
+  return { edges, corners, joints };
+}
+
+/** Parts of an outline edge outside the given opening spans (only for edges along the wall axis). */
+function subtractSpans(e: OutlineEdge, list: Span[]): [Vec2, Vec2][] {
+  if (!list.length) return [[e.a, e.b]];
+  const ax = unit([e.wall.b[0] - e.wall.a[0], e.wall.b[1] - e.wall.a[1]]);
+  const ex = unit([e.b[0] - e.a[0], e.b[1] - e.a[1]]);
+  if (Math.abs(ax[0] * ex[0] + ax[1] * ex[1]) < 0.99) return [[e.a, e.b]];
+  const t = (p: Vec2) => (p[0] - e.wall.a[0]) * ax[0] + (p[1] - e.wall.a[1]) * ax[1];
+  const ta = t(e.a);
+  const tb = t(e.b);
+  const lo = Math.min(ta, tb);
+  const hi = Math.max(ta, tb);
+  let parts: [number, number][] = [[lo, hi]];
+  for (const sp of list) {
+    parts = parts.flatMap(([p, q]): [number, number][] => {
+      if (sp.s1 <= p || sp.s0 >= q) return [[p, q]];
+      const out: [number, number][] = [];
+      if (sp.s0 > p) out.push([p, sp.s0]);
+      if (sp.s1 < q) out.push([sp.s1, q]);
+      return out;
+    });
+  }
+  const at = (tt: number): Vec2 => {
+    const k = (tt - ta) / (tb - ta || 1);
+    return [e.a[0] + (e.b[0] - e.a[0]) * k, e.a[1] + (e.b[1] - e.a[1]) * k];
+  };
+  // keep the edge's direction: its normal tells which side the room is on
+  return parts.filter(([p, q]) => q - p > 1e-4).map(([p, q]) => (ta <= tb ? [at(p), at(q)] : [at(q), at(p)]));
+}
+
+/** Strips on the floor along every wall face that borders a room (not across doorways). */
+function buildShadow(edges: OutlineEdge[], rooms: readonly Room[], spans: Map<Wall, Span[]>): GeoBuffer {
+  const buf = new GeoBuffer();
+  const dark = new Color(SHADOW_DARK, SHADOW_DARK, SHADOW_DARK);
+  const clear = new Color(1, 1, 1);
+  const y = 0.002;
+  for (const e of edges) {
+    for (const [a, b] of subtractSpans(e, (spans.get(e.wall) ?? []).filter((sp) => sp.sill <= 0.005))) {
+      const dx = b[0] - a[0];
+      const dz = b[1] - a[1];
+      const l = Math.hypot(dx, dz);
+      if (l < 0.05) continue;
+      // footprints are counter-clockwise, so the right normal points away from the wall
+      const n: Vec2 = [dz / l, -dx / l];
+      const probe: Vec2 = [(a[0] + b[0]) / 2 + n[0] * 0.05, (a[1] + b[1]) / 2 + n[1] * 0.05];
+      if (!rooms.some((r) => r.points.length >= 3 && pointInPolygon(probe, r.points))) continue;
+      const a2: Vec2 = [a[0] + n[0] * SHADOW_WIDTH, a[1] + n[1] * SHADOW_WIDTH];
+      const b2: Vec2 = [b[0] + n[0] * SHADOW_WIDTH, b[1] + n[1] * SHADOW_WIDTH];
+      // the layer is drawn double-sided, so the winding does not matter
+      buf.tri([a[0], y, a[1]], [a2[0], y, a2[1]], [b2[0], y, b2[1]], dark, clear, clear);
+      buf.tri([a[0], y, a[1]], [b2[0], y, b2[1]], [b[0], y, b[1]], dark, clear, dark);
+    }
+  }
+  return buf;
+}
+
+/** Ceiling openings of a floor: stairs on the floor directly below that reach up to it. */
+export function stairHoles(floors: readonly Floor[], floor: Floor): Vec2[][] {
+  return mergeHoles(stairHoleParts(floors, floor));
+}
+
+/** The openings of a floor one by one (each convex), for cutting them room by room before merging them. */
+export function stairHoleParts(floors: readonly Floor[], floor: Floor): Vec2[][] {
+  // a stairwell opening placed on this floor cuts its floor; stairs below that reach up here do too
+  const own = floor.furniture.filter((f) => f.type === "stairwell").map(furnitureFootprint);
+  const below = floors.filter((f) => f.elevation < floor.elevation).sort((p, q) => q.elevation - p.elevation)[0];
+  if (!below) return own;
+  const stairs = below.furniture
+    // a flight starting from a raised landing (its mount height) reaches up that much higher
+    .filter((f) => (STAIR_TYPES.has(f.type) || f.type === "loft_ladder" || packItem(f.type)?.hole) && below.elevation + (f.mount_y ?? 0) + f.h >= floor.elevation - 0.3)
+    .map(furnitureFootprint);
+  // overlapping openings become one outline (an L-shaped stairwell made of two) – after cutting, room by room
+  return [...own, ...stairs];
+}
+
+/** How tall a wall stands: its own height (a low wall, a counter), never above the floor height. */
+export function wallHeight(wall: Wall, floorHeight: number): number {
+  // a sloping wall may rise above the floor height at its high end (a lean-to's tall side, D569)
+  if (wall.slope) return Math.max(wall.slope.h0, wall.slope.h1);
+  return Math.min(floorHeight, wall.height ?? floorHeight);
+}
+
+function unit(v: Vec2): Vec2 {
+  const l = Math.hypot(v[0], v[1]) || 1;
+  return [v[0] / l, v[1] / l];
+}
+
+function ccw(points: Vec2[]): Vec2[] {
+  let a = 0;
+  for (let i = 0; i < points.length; i++) {
+    const p = points[i];
+    const q = points[(i + 1) % points.length];
+    a += p[0] * q[1] - q[0] * p[1];
+  }
+  return a >= 0 ? points : [...points].reverse();
+}

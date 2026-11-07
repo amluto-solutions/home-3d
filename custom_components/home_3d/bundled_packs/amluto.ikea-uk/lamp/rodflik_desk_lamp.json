@@ -1,0 +1,36 @@
+{
+  "id": "rodflik_desk_lamp",
+  "name": {
+    "en": "Desk lamp, angled arm 43 cm"
+  },
+  "size": [
+    0.16,
+    0.34,
+    0.43
+  ],
+  "group": "lamp",
+  "room": [
+    "office",
+    "bedroom",
+    "kids",
+    "hobby"
+  ],
+  "tags": [
+    "desk lamp",
+    "grey-green",
+    "green",
+    "angled arm",
+    "metal"
+  ],
+  "ikea": "RÖDFLIK",
+  "light": "table",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.2647, "w": 1, "d": 0.4706, "y": 0, "h": 0.0581, "color": "dark", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": -0.2647, "w": 0.1125, "d": 0.0529, "y": 0.0581, "h": 0.3256, "color": "dark", "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": -0.2647, "w": 0.1, "d": 0.0471, "y": 0.3721, "h": 0.4186, "color": "dark", "tz": 0.1765, "tw": 0.1, "td": 0.0471, "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.2059, "w": 0.875, "d": 0.4118, "y": 0.6744, "h": 0.3256, "color": "dark", "profile": [[1.0, 0], [0.97, 0.3], [0.82, 0.62], [0.52, 0.88], [0.22, 1.0], [0.0, 1.0], [0.0, 0.929], [0.077, 0.929], [0.377, 0.809], [0.677, 0.549], [0.827, 0.229], [0.857, 0.0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.2059, "w": 0.3125, "d": 0.1471, "y": 0.7442, "h": 0.1163, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

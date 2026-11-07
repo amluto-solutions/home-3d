@@ -1,0 +1,19 @@
+{
+  "id": "folding_chair_metal",
+  "name": {"en": "Folding chair"},
+  "size": [0.44, 0.5, 0.8],
+  "group": "seating",
+  "family": "folding_chair",
+  "variant": {"en": "Metal"},
+  "room": ["dining", "kitchen", "garden", "office"],
+  "tags": ["folding chair", "fold-up chair", "foldable", "spare chair", "event chair", "metal", "steel"],
+  "parts": [
+    {"shape": "loft", "x": -0.4318, "z": 0.44, "w": 0.0568, "d": 0.05, "y": 0.0, "h": 1.0, "color": "metal", "tx": -0.4318, "tz": -0.4, "tw": 0.0568, "td": 0.05},
+    {"shape": "loft", "x": -0.4318, "z": -0.44, "w": 0.0568, "d": 0.05, "y": 0.0, "h": 0.5625, "color": "metal", "tx": -0.4318, "tz": 0.08, "tw": 0.0568, "td": 0.05},
+    {"shape": "loft", "x": 0.4318, "z": 0.44, "w": 0.0568, "d": 0.05, "y": 0.0, "h": 1.0, "color": "metal", "tx": 0.4318, "tz": -0.4, "tw": 0.0568, "td": 0.05},
+    {"shape": "loft", "x": 0.4318, "z": -0.44, "w": 0.0568, "d": 0.05, "y": 0.0, "h": 0.5625, "color": "metal", "tx": 0.4318, "tz": 0.08, "tw": 0.0568, "td": 0.05},
+    {"shape": "box", "x": 0.0, "z": 0.23, "w": 0.8636, "d": 0.06, "y": 0.05, "h": 0.025, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.03, "w": 0.7955, "d": 0.74, "y": 0.55, "h": 0.0375, "color": "dark"},
+    {"shape": "loft", "x": 0.0, "z": -0.31, "w": 0.7955, "d": 0.04, "y": 0.775, "h": 0.1875, "color": "dark", "tx": 0.0, "tz": -0.38, "tw": 0.7955, "td": 0.04}
+  ]
+}

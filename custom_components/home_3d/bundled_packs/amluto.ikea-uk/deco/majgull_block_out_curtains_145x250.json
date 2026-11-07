@@ -1,0 +1,47 @@
+{
+  "id": "majgull_block_out_curtains_145x250",
+  "name": {
+    "en": "Block-out curtains, 1 pair 145x250 cm"
+  },
+  "size": [
+    1.45,
+    0.08,
+    2.5
+  ],
+  "group": "deco",
+  "room": [
+    "bedroom",
+    "kids",
+    "living",
+    "dining",
+    "office"
+  ],
+  "tags": [
+    "MAJGULL",
+    "curtains",
+    "block-out",
+    "blackout",
+    "heading tape",
+    "dark green",
+    "light grey",
+    "pair"
+  ],
+  "ikea": "MAJGULL",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.25, "w": 1, "d": 0.25, "y": 0.9912, "h": 0.008, "color": "metal", "axis": "x", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.25, "w": 1, "d": 0.375, "y": 0.98, "h": 0.012, "color": "fabric", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.98, "d": 0.4, "y": 0.0016, "h": 0.9784, "color": "fabric", "fix": "d"},
+    {"shape": "cyl", "x": -0.4583, "z": -0.0875, "w": 0.0958, "d": 0.75, "y": 0.0016, "h": 0.9784, "color": "fabric"},
+    {"shape": "cyl", "x": -0.375, "z": 0.0875, "w": 0.0958, "d": 0.75, "y": 0.0016, "h": 0.9784, "color": "fabric"},
+    {"shape": "cyl", "x": -0.2917, "z": -0.0875, "w": 0.0958, "d": 0.75, "y": 0.0016, "h": 0.9784, "color": "fabric"},
+    {"shape": "cyl", "x": -0.2083, "z": 0.0875, "w": 0.0958, "d": 0.75, "y": 0.0016, "h": 0.9784, "color": "fabric"},
+    {"shape": "cyl", "x": -0.125, "z": -0.0875, "w": 0.0958, "d": 0.75, "y": 0.0016, "h": 0.9784, "color": "fabric"},
+    {"shape": "cyl", "x": -0.0417, "z": 0.0875, "w": 0.0958, "d": 0.75, "y": 0.0016, "h": 0.9784, "color": "fabric"},
+    {"shape": "cyl", "x": 0.0417, "z": -0.0875, "w": 0.0958, "d": 0.75, "y": 0.0016, "h": 0.9784, "color": "fabric"},
+    {"shape": "cyl", "x": 0.125, "z": 0.0875, "w": 0.0958, "d": 0.75, "y": 0.0016, "h": 0.9784, "color": "fabric"},
+    {"shape": "cyl", "x": 0.2083, "z": -0.0875, "w": 0.0958, "d": 0.75, "y": 0.0016, "h": 0.9784, "color": "fabric"},
+    {"shape": "cyl", "x": 0.2917, "z": 0.0875, "w": 0.0958, "d": 0.75, "y": 0.0016, "h": 0.9784, "color": "fabric"},
+    {"shape": "cyl", "x": 0.375, "z": -0.0875, "w": 0.0958, "d": 0.75, "y": 0.0016, "h": 0.9784, "color": "fabric"},
+    {"shape": "cyl", "x": 0.4583, "z": 0.0875, "w": 0.0958, "d": 0.75, "y": 0.0016, "h": 0.9784, "color": "fabric"}
+  ]
+}

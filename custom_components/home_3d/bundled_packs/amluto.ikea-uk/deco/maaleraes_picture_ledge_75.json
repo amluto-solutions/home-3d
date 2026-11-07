@@ -1,0 +1,34 @@
+{
+  "id": "maaleraes_picture_ledge_75",
+  "name": {
+    "en": "Bamboo picture ledge 75 cm"
+  },
+  "size": [
+    0.75,
+    0.1,
+    0.06
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "bedroom",
+    "hall",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "picture ledge",
+    "picture shelf",
+    "bamboo",
+    "frames"
+  ],
+  "ikea": "MÅLERÅS",
+  "mount": "wall",
+  "wall_y": 1.2,
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.25, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.425, "w": 1, "d": 0.15, "y": 0, "h": 0.55, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.425, "w": 1, "d": 0.15, "y": 0, "h": 1, "color": "wood", "fix": "d"}
+  ]
+}

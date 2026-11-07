@@ -1,0 +1,47 @@
+{
+  "id": "latt_childrens_table_2_chairs",
+  "name": {
+    "en": "Children's table with 2 chairs"
+  },
+  "size": [
+    0.63,
+    0.88,
+    0.45
+  ],
+  "group": "kids",
+  "room": [
+    "kids"
+  ],
+  "tags": [
+    "LATT",
+    "children's table",
+    "kids table and chairs",
+    "play table",
+    "toddler",
+    "white",
+    "pine",
+    "blue",
+    "pink",
+    "green"
+  ],
+  "ikea": "LÄTT",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 0.5455, "y": 0.9333, "h": 0.0667, "color": "white", "fix": "h", "round": 0.15},
+    {"shape": "box", "x": -0.4325, "z": -0.2244, "w": 0.0556, "d": 0.0398, "y": 0, "h": 0.9333, "color": "body", "fix": "wdh"},
+    {"shape": "box", "x": -0.4325, "z": 0.2244, "w": 0.0556, "d": 0.0398, "y": 0, "h": 0.9333, "color": "body", "fix": "wdh"},
+    {"shape": "box", "x": 0.4325, "z": -0.2244, "w": 0.0556, "d": 0.0398, "y": 0, "h": 0.9333, "color": "body", "fix": "wdh"},
+    {"shape": "box", "x": 0.4325, "z": 0.2244, "w": 0.0556, "d": 0.0398, "y": 0, "h": 0.9333, "color": "body", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.3409, "w": 0.4444, "d": 0.3182, "y": 0.5778, "h": 0.0556, "color": "body", "fix": "h"},
+    {"shape": "box", "x": -0.1825, "z": -0.4716, "w": 0.0476, "d": 0.0341, "y": 0, "h": 0.5778, "color": "body", "fix": "wdh"},
+    {"shape": "box", "x": -0.1825, "z": -0.2102, "w": 0.0476, "d": 0.0341, "y": 0, "h": 0.5778, "color": "body", "fix": "wdh"},
+    {"shape": "box", "x": 0.1825, "z": -0.4716, "w": 0.0476, "d": 0.0341, "y": 0, "h": 0.5778, "color": "body", "fix": "wdh"},
+    {"shape": "box", "x": 0.1825, "z": -0.2102, "w": 0.0476, "d": 0.0341, "y": 0, "h": 0.5778, "color": "body", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.4886, "w": 0.4444, "d": 0.0284, "y": 0.6333, "h": 0.2222, "color": "body", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.3409, "w": 0.4444, "d": 0.3182, "y": 0.5778, "h": 0.0556, "color": "body", "fix": "h"},
+    {"shape": "box", "x": -0.1825, "z": 0.2102, "w": 0.0476, "d": 0.0341, "y": 0, "h": 0.5778, "color": "body", "fix": "wdh"},
+    {"shape": "box", "x": -0.1825, "z": 0.4716, "w": 0.0476, "d": 0.0341, "y": 0, "h": 0.5778, "color": "body", "fix": "wdh"},
+    {"shape": "box", "x": 0.1825, "z": 0.2102, "w": 0.0476, "d": 0.0341, "y": 0, "h": 0.5778, "color": "body", "fix": "wdh"},
+    {"shape": "box", "x": 0.1825, "z": 0.4716, "w": 0.0476, "d": 0.0341, "y": 0, "h": 0.5778, "color": "body", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4886, "w": 0.4444, "d": 0.0284, "y": 0.6333, "h": 0.2222, "color": "body", "fix": "d"}
+  ]
+}

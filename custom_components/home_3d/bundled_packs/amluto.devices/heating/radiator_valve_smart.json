@@ -1,0 +1,20 @@
+{
+  "id": "radiator_valve_smart",
+  "name": {"en": "Smart radiator valve"},
+  "size": [0.12, 0.06, 0.11],
+  "group": "heating",
+  "room": ["living", "bedroom", "kitchen", "bath", "hall", "office", "kids", "utility"],
+  "tags": ["trv", "thermostatic radiator valve", "radiator", "valve", "heating control", "thermostat", "radiator head", "smart trv", "zigbee", "wifi"],
+  "family": "radiator_valve",
+  "variant": {"en": "Smart"},
+  "mount": "wall",
+  "wall_y": 0.12,
+  "parts": [
+    {"shape": "cyl", "x": 0.375, "z": 0, "w": 0.1333, "d": 0.2667, "y": 0, "h": 0.5909, "color": "metal"},
+    {"shape": "cyl", "x": 0.2917, "z": 0, "w": 0.4167, "d": 0.5667, "y": 0.5273, "h": 0.3091, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": -0.1042, "z": 0, "w": 0.625, "d": 0.8333, "y": 0.4545, "h": 0.4545, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.1542, "z": 0, "w": 0.0667, "d": 0.8667, "y": 0.4455, "h": 0.4727, "color": "accent", "axis": "x"},
+    {"shape": "box", "x": -0.1, "z": 0, "w": 0.25, "d": 0.2333, "y": 0.8455, "h": 0.0364, "color": "dark"},
+    {"shape": "sphere", "x": -0.375, "z": 0, "w": 0.1, "d": 0.2, "y": 0.6273, "h": 0.1091, "color": "accent"}
+  ]
+}

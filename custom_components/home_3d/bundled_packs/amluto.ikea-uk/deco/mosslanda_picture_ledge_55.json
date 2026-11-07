@@ -1,0 +1,43 @@
+{
+  "id": "mosslanda_picture_ledge_55",
+  "name": {
+    "en": "Picture ledge 55 cm"
+  },
+  "size": [
+    0.55,
+    0.12,
+    0.06
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "bedroom",
+    "hall",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "picture ledge",
+    "picture shelf",
+    "art shelf",
+    "frames",
+    "white",
+    "black",
+    "oak effect",
+    "walnut effect",
+    "grey-beige"
+  ],
+  "family": "mosslanda_ledge",
+  "variant": {
+    "en": "55 cm"
+  },
+  "ikea": "MOSSLANDA",
+  "mount": "wall",
+  "wall_y": 1.2,
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.3, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.45, "w": 1, "d": 0.1, "y": 0, "h": 0.75, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.45, "w": 1, "d": 0.1, "y": 0, "h": 1, "color": "white", "fix": "d"}
+  ]
+}

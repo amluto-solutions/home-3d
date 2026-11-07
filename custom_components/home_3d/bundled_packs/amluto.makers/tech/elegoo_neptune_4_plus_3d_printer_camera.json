@@ -1,0 +1,49 @@
+{
+  "id": "elegoo_neptune_4_plus_3d_printer_camera",
+  "name": {
+    "en": "Elegoo Neptune 4 Plus with camera"
+  },
+  "size": [
+    0.578,
+    0.533,
+    0.64
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage"
+  ],
+  "tags": [
+    "3d printer",
+    "printer",
+    "elegoo",
+    "maker",
+    "filament",
+    "fdm",
+    "neptune 4 plus",
+    "bedslinger"
+  ],
+  "family": "elegoo_neptune_4_plus",
+  "variant": {
+    "en": "With camera"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.08, "w": 0.92, "d": 0.78, "y": 0, "h": 0.09, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.12, "w": 0.6, "d": 0.52, "y": 0.09, "h": 0.02, "color": "metal"},
+    {"shape": "box", "x": 0.17, "z": 0.46, "w": 0.3, "d": 0.1, "y": 0.02, "h": 0.06, "color": "accent"},
+    {"shape": "box", "x": -0.42, "z": -0.2, "w": 0.07, "d": 0.09, "y": 0.09, "h": 0.6306, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.42, "z": -0.2, "w": 0.07, "d": 0.09, "y": 0.09, "h": 0.6306, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.2, "w": 0.92, "d": 0.09, "y": 0.6471, "h": 0.0735, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.2, "w": 0.84, "d": 0.05, "y": 0.42, "h": 0.035, "color": "metal"},
+    {"shape": "rbox", "x": 0.05, "z": -0.14, "w": 0.12, "d": 0.12, "y": 0.35, "h": 0.12, "color": "dark", "round": 0.2},
+    {"shape": "box", "x": 0.05, "z": -0.12, "w": 0.02, "d": 0.02, "y": 0.33, "h": 0.03, "color": "accent", "glow": true},
+    {"shape": "cyl", "x": 0.0, "z": -0.2, "w": 0.14, "d": 0.4, "y": 0.7206, "h": 0.2941, "color": "accent", "axis": "x"},
+    {"shape": "box", "x": 0.0, "z": -0.2, "w": 0.2, "d": 0.04, "y": 0.8529, "h": 0.0294, "color": "metal"},
+    {"shape": "cyl", "x": 0.32, "z": -0.14, "w": 0.07, "d": 0.08, "y": 0.75, "h": 0.0441, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.32, "z": -0.09, "w": 0.04, "d": 0.012, "y": 0.7618, "h": 0.0206, "color": "glass", "axis": "z"}
+  ],
+  "symbol": [{"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}, {"shape": "rect", "x": 0, "z": 0, "w": 0.8, "d": 0.8}]
+}

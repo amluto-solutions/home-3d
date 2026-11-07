@@ -1,0 +1,23 @@
+{
+  "id": "fence_post_rail_2_white",
+  "name": {"en": "Post and rail fence, 2 rail, white"},
+  "size": [3.0, 0.1, 1.0],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["fence", "post and rail", "paddock fence", "rail fence", "boundary", "rural", "timber"],
+  "family": "fence_post_rail_2_white",
+  "variant": {"en": "2 rails, 1 m high, 3 m span"},
+  "parts": [
+    {"shape": "box", "x": -0.4833, "z": 0.0, "w": 0.0333, "d": 1, "y": 0, "h": 1, "color": "#cdcbc4", "fix": "wd"},
+    {"shape": "box", "x": -0.4833, "z": 0.0, "w": 0.0333, "d": 1, "y": 0.97, "h": 0.03, "color": "#ece9e1", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.0333, "d": 1, "y": 0, "h": 1, "color": "#cdcbc4", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.0333, "d": 1, "y": 0.97, "h": 0.03, "color": "#ece9e1", "fix": "wdh"},
+    {"shape": "box", "x": 0.4833, "z": 0.0, "w": 0.0333, "d": 1, "y": 0, "h": 1, "color": "#cdcbc4", "fix": "wd"},
+    {"shape": "box", "x": 0.4833, "z": 0.0, "w": 0.0333, "d": 1, "y": 0.97, "h": 0.03, "color": "#ece9e1", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 0.45, "y": 0.28, "h": 0.09, "color": "#f1efe6", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 0.45, "y": 0.9, "h": 0.09, "color": "#f1efe6", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

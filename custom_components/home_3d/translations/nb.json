@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "Legger til en side i sidepanelet der du tegner hjemmet ditt og ser det i 3D."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Home 3D er allerede satt opp."
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "Spør huset",
+      "description": "Gir en setning videre til de åpne Home 3D-visningene: «Vis stua» viser den, og spørsmål besvares av de installerte modulene («Hva er åpent?»). Den første visningen som forstår setningen, svarer.",
+      "fields": {
+        "text": {
+          "name": "Setning",
+          "description": "Hva som skal vises eller spørres om, slik du ville sagt det."
+        },
+        "screen": {
+          "name": "Skjerm",
+          "description": "Bare visningen med dette skjermnavnet reagerer (settes i innstillingene for visningen eller i kortets alternativ for skjerm). Tomt: alle åpne visninger."
+        },
+        "speak": {
+          "name": "Snakk",
+          "description": "Visningen sier svaret sitt med Assists tekst-til-tale (av: den viser det bare)."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Hvor Home 3D vises. Panellenken og dashbordkortet fungerer uansett, og du kan fortsatt skjule oppføringen for deg selv i Home Assistants egne sidepanelinnstillinger.",
+        "data": {
+          "show_in_sidebar": "Vis i sidepanelet",
+          "restore_picture_days": "Behold bilder av gjenopprettingspunkter (dager)"
+        },
+        "data_description": {
+          "restore_picture_days": "Et bakgrunns- eller skjermbilde som bare et eldre gjenopprettingspunkt bruker, beholdes så mange dager etter at gjenopprettingspunktet ble laget, og fjernes så ved neste start. Et gjenopprettingspunkt der bildet er borte, gjenopprettes uten det. 0 fjerner slike bilder med en gang."
+        }
+      }
+    }
+  }
+}

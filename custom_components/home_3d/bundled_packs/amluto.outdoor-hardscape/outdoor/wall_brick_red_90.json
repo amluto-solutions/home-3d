@@ -1,0 +1,22 @@
+{
+  "id": "wall_brick_red_90",
+  "name": {"en": "Brick garden wall, red brick, half height"},
+  "size": [2.0, 0.215, 0.9],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["wall", "garden wall", "brick wall", "boundary", "brickwork", "masonry"],
+  "family": "wall_brick_red",
+  "variant": {"en": "Half height (0.9 m)"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.995, "d": 0.9535, "y": 0, "h": 0.9444, "color": "#a8553a"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.1533, "h": 0.0133, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.32, "h": 0.0133, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.4867, "h": 0.0133, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.6533, "h": 0.0133, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.82, "h": 0.0133, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9444, "h": 0.0556, "color": "#83422d"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "stockholm_2025_sofa_3",
+  "name": {
+    "en": "3-seat sofa on wooden legs"
+  },
+  "size": [
+    2.33,
+    1.03,
+    0.84
+  ],
+  "group": "sofa",
+  "room": [
+    "living",
+    "conservatory"
+  ],
+  "tags": [
+    "STOCKHOLM",
+    "sofa",
+    "settee",
+    "wooden legs",
+    "beige",
+    "dark turquoise",
+    "grey-white",
+    "oak"
+  ],
+  "ikea": "STOCKHOLM 2025",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.1905, "h": 0.1429, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": 0.0, "z": -0.3786, "w": 0.9227, "d": 0.2427, "y": 0.3333, "h": 0.5476, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.3076, "z": 0.1214, "w": 0.3033, "d": 0.7476, "y": 0.3333, "h": 0.1667, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.3076, "z": -0.1699, "w": 0.299, "d": 0.1748, "y": 0.5, "h": 0.5, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.0, "z": 0.1214, "w": 0.3033, "d": 0.7476, "y": 0.3333, "h": 0.1667, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": -0.1699, "w": 0.299, "d": 0.1748, "y": 0.5, "h": 0.5, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.3076, "z": 0.1214, "w": 0.3033, "d": 0.7476, "y": 0.3333, "h": 0.1667, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.3076, "z": -0.1699, "w": 0.299, "d": 0.1748, "y": 0.5, "h": 0.5, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.4807, "z": 0.0, "w": 0.0386, "d": 1, "y": 0.1905, "h": 0.619, "color": "fabric", "fix": "w", "round": 0.4},
+    {"shape": "rbox", "x": 0.4807, "z": 0.0, "w": 0.0386, "d": 1, "y": 0.1905, "h": 0.619, "color": "fabric", "fix": "w", "round": 0.4},
+    {"shape": "box", "x": -0.4742, "z": -0.4417, "w": 0.0193, "d": 0.0437, "y": 0, "h": 0.1905, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4742, "z": 0.4417, "w": 0.0193, "d": 0.0437, "y": 0, "h": 0.1905, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4742, "z": -0.4417, "w": 0.0193, "d": 0.0437, "y": 0, "h": 0.1905, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4742, "z": 0.4417, "w": 0.0193, "d": 0.0437, "y": 0, "h": 0.1905, "color": "wood", "fix": "wdh"}
+  ]
+}

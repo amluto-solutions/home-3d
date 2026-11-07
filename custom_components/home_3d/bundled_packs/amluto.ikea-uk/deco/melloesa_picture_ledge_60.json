@@ -1,0 +1,35 @@
+{
+  "id": "melloesa_picture_ledge_60",
+  "name": {
+    "en": "Clear acrylic picture ledge 60 cm"
+  },
+  "size": [
+    0.6,
+    0.1,
+    0.05
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "bedroom",
+    "hall",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "picture ledge",
+    "picture shelf",
+    "transparent",
+    "acrylic",
+    "frames"
+  ],
+  "ikea": "MELLÖSA",
+  "mount": "wall",
+  "wall_y": 1.2,
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.3, "color": "glass", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.425, "w": 1, "d": 0.15, "y": 0, "h": 0.55, "color": "glass", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.425, "w": 1, "d": 0.15, "y": 0, "h": 1, "color": "glass", "fix": "d"}
+  ]
+}

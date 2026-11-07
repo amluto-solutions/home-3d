@@ -1,0 +1,37 @@
+{
+  "id": "havsen_inset_sink_1_bowl",
+  "name": {
+    "en": "Inset sink, 1 bowl 53x47 cm"
+  },
+  "size": [
+    0.53,
+    0.47,
+    0.02
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen",
+    "utility"
+  ],
+  "tags": [
+    "sink",
+    "ceramic",
+    "single bowl",
+    "white"
+  ],
+  "family": "havsen_sink",
+  "variant": {
+    "en": "Inset, 1 bowl"
+  },
+  "ikea": "HAVSEN",
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8679, "d": 0.8511, "y": 0, "h": 0.15, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.466, "z": 0.0, "w": 0.0679, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.466, "z": 0.0, "w": 0.0679, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.4617, "w": 0.8679, "d": 0.0766, "y": 0, "h": 1, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4617, "w": 0.8679, "d": 0.0766, "y": 0, "h": 1, "color": "white", "fix": "d"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0426, "w": 0.1321, "d": 0.1489, "y": 0.15, "h": 0.1, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0426, "w": 0.0566, "d": 0.0638, "y": 0.2, "h": 0.1, "color": "dark", "fix": "wdh"}
+  ]
+}

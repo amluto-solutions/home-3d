@@ -1,0 +1,41 @@
+{
+  "id": "nymane_wall_up_downlighter",
+  "name": {
+    "en": "Wall up/downlighter, round"
+  },
+  "size": [
+    0.07,
+    0.11,
+    0.15
+  ],
+  "group": "lamp",
+  "room": [
+    "hall",
+    "living",
+    "bedroom",
+    "garden"
+  ],
+  "tags": [
+    "wall light",
+    "wall lamp",
+    "up down light",
+    "anthracite",
+    "outdoor",
+    "hallway"
+  ],
+  "family": "nymane_lamp",
+  "variant": {
+    "en": "Wall up/down"
+  },
+  "ikea": "NYMÅNE",
+  "light": "wall",
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.6,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4091, "w": 0.8571, "d": 0.1818, "y": 0, "h": 1, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 0.6364, "y": 0, "h": 1, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.7143, "d": 0.4545, "y": 0.9467, "h": 0.0533, "color": "white", "glow": true, "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.7143, "d": 0.4545, "y": 0, "h": 0.0533, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "smastad_storage_combination_240x57x181",
+  "name": {
+    "en": "Storage combination 240x57x181 cm"
+  },
+  "size": [
+    2.4,
+    0.57,
+    1.81
+  ],
+  "group": "kids",
+  "room": [
+    "kids",
+    "bedroom"
+  ],
+  "tags": [
+    "SMASTAD",
+    "PLATSA",
+    "kids wardrobe",
+    "storage combination",
+    "children's storage",
+    "white",
+    "pale pink",
+    "light green",
+    "grey-turquoise",
+    "bright blue"
+  ],
+  "family": "smastad_storage",
+  "variant": {
+    "en": "240x57x181"
+  },
+  "ikea": "SMÅSTAD / PLATSA",
+  "parts": [
+    {"shape": "box", "x": -0.4963, "z": 0.0, "w": 0.0075, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4963, "z": 0.0, "w": 0.0075, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9901, "h": 0.0099, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.985, "d": 1, "y": 0, "h": 0.0276, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.493, "w": 0.985, "d": 0.014, "y": 0.0276, "h": 0.9624, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.3675, "z": 0.5, "w": 0.2483, "d": 0.0316, "y": 0.0276, "h": 0.9602, "color": "body", "fix": "d"},
+    {"shape": "box", "x": -0.2571, "z": 0.5, "w": 0.005, "d": 0.0386, "y": 0.4702, "h": 0.0773, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.2425, "z": 0.0, "w": 0.0075, "d": 1, "y": 0.0276, "h": 0.9624, "color": "white", "fix": "w"},
+    {"shape": "box", "x": -0.1175, "z": 0.5, "w": 0.2483, "d": 0.0316, "y": 0.0276, "h": 0.1903, "color": "body", "fix": "dh"},
+    {"shape": "box", "x": -0.1175, "z": 0.5, "w": 0.05, "d": 0.0386, "y": 0.1975, "h": 0.0066, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.1175, "z": 0.5, "w": 0.2483, "d": 0.0316, "y": 0.2201, "h": 0.1903, "color": "body", "fix": "dh"},
+    {"shape": "box", "x": -0.1175, "z": 0.5, "w": 0.05, "d": 0.0386, "y": 0.3899, "h": 0.0066, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.1175, "z": 0.5, "w": 0.2483, "d": 0.0316, "y": 0.4126, "h": 0.1903, "color": "body", "fix": "dh"},
+    {"shape": "box", "x": -0.1175, "z": 0.5, "w": 0.05, "d": 0.0386, "y": 0.5824, "h": 0.0066, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.1175, "z": 0.5, "w": 0.2483, "d": 0.0316, "y": 0.6051, "h": 0.1903, "color": "body", "fix": "dh"},
+    {"shape": "box", "x": -0.1175, "z": 0.5, "w": 0.05, "d": 0.0386, "y": 0.7749, "h": 0.0066, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.1175, "z": 0.5, "w": 0.2483, "d": 0.0316, "y": 0.7976, "h": 0.1903, "color": "body", "fix": "dh"},
+    {"shape": "box", "x": -0.1175, "z": 0.5, "w": 0.05, "d": 0.0386, "y": 0.9674, "h": 0.0066, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0075, "z": 0.0, "w": 0.0075, "d": 1, "y": 0.0276, "h": 0.9624, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.1325, "z": 0.0, "w": 0.25, "d": 0.9649, "y": 0.2201, "h": 0.0099, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.1325, "z": 0.0, "w": 0.25, "d": 0.9649, "y": 0.4126, "h": 0.0099, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.1325, "z": 0.0, "w": 0.25, "d": 0.9649, "y": 0.6051, "h": 0.0099, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.1325, "z": 0.0, "w": 0.25, "d": 0.9649, "y": 0.7976, "h": 0.0099, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.2575, "z": 0.0, "w": 0.0075, "d": 1, "y": 0.0276, "h": 0.9624, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.3825, "z": 0.5, "w": 0.2483, "d": 0.0316, "y": 0.0276, "h": 0.9602, "color": "body", "fix": "d"},
+    {"shape": "box", "x": 0.2721, "z": 0.5, "w": 0.005, "d": 0.0386, "y": 0.4702, "h": 0.0773, "color": "metal", "fix": "wdh"}
+  ]
+}

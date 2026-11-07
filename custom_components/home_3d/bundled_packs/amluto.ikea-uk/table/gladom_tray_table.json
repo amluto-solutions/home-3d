@@ -1,0 +1,39 @@
+{
+  "id": "gladom_tray_table",
+  "name": {
+    "en": "Tray table"
+  },
+  "size": [
+    0.45,
+    0.45,
+    0.53
+  ],
+  "group": "table",
+  "room": [
+    "living",
+    "bedroom",
+    "conservatory",
+    "garden"
+  ],
+  "tags": [
+    "side table",
+    "tray",
+    "round",
+    "metal",
+    "black",
+    "white",
+    "pink",
+    "green",
+    "beige"
+  ],
+  "ikea": "GLADOM",
+  "surface": true,
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8868, "h": 0.1132, "color": "dark", "profile": [[0, 0], [0.95, 0], [1, 1], [0.94, 1], [0.9, 0.15], [0, 0.15]]},
+    {"shape": "loft", "x": 0.2671, "z": 0.2671, "w": 0.04, "d": 0.04, "y": 0, "h": 0.8868, "color": "dark", "tx": 0.1886, "tz": 0.1886, "tw": 0.04, "td": 0.04},
+    {"shape": "loft", "x": -0.2671, "z": 0.2671, "w": 0.04, "d": 0.04, "y": 0, "h": 0.8868, "color": "dark", "tx": -0.1886, "tz": 0.1886, "tw": 0.04, "td": 0.04},
+    {"shape": "loft", "x": -0.2671, "z": -0.2671, "w": 0.04, "d": 0.04, "y": 0, "h": 0.8868, "color": "dark", "tx": -0.1886, "tz": -0.1886, "tw": 0.04, "td": 0.04},
+    {"shape": "loft", "x": 0.2671, "z": -0.2671, "w": 0.04, "d": 0.04, "y": 0, "h": 0.8868, "color": "dark", "tx": 0.1886, "tz": -0.1886, "tw": 0.04, "td": 0.04},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.6667, "d": 0.6667, "y": 0.3774, "h": 0.0226, "color": "dark", "profile": [[0.9, 0], [1, 0], [1, 1], [0.9, 1]]}
+  ]
+}

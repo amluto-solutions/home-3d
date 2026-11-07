@@ -1,0 +1,31 @@
+{
+  "id": "tannforsen_high_cabinet_40x195",
+  "name": {
+    "en": "High cabinet with door 40x195 cm"
+  },
+  "size": [
+    0.4,
+    0.35,
+    1.95
+  ],
+  "group": "bath",
+  "room": [
+    "bath",
+    "utility"
+  ],
+  "tags": [
+    "TANNFORSEN",
+    "tall cabinet",
+    "bathroom cabinet",
+    "storage tower",
+    "slim cabinet",
+    "white"
+  ],
+  "ikea": "TÄNNFORSEN",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0286, "w": 1, "d": 0.9429, "y": 0.0359, "h": 0.9641, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": -0.0571, "w": 0.85, "d": 0.7143, "y": 0, "h": 0.0359, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4971, "w": 0.99, "d": 0.0514, "y": 0.041, "h": 0.9518, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.4125, "z": 0.5, "w": 0.03, "d": 0.0629, "y": 0.4821, "h": 0.0718, "color": "metal", "fix": "wdh"}
+  ]
+}

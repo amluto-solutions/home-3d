@@ -1,0 +1,36 @@
+{
+  "id": "bekvam_spice_rack",
+  "name": {
+    "en": "Spice rack 40 cm"
+  },
+  "size": [
+    0.4,
+    0.1,
+    0.09
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen"
+  ],
+  "tags": [
+    "spice shelf",
+    "wall shelf",
+    "jars",
+    "aspen"
+  ],
+  "ikea": "BEKVÄM",
+  "mount": "wall",
+  "wall_y": 1.4,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.1667, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.48, "z": 0.0, "w": 0.04, "d": 1, "y": 0, "h": 1, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.48, "z": 0.0, "w": 0.04, "d": 1, "y": 0, "h": 1, "color": "wood", "fix": "w"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4, "w": 0.925, "d": 0.12, "y": 0.6111, "h": 0.1333, "color": "wood", "axis": "x"},
+    {"shape": "box", "x": 0.0, "z": -0.46, "w": 0.925, "d": 0.08, "y": 0.1667, "h": 0.3333, "color": "wood", "fix": "dh"},
+    {"shape": "cyl", "x": -0.35, "z": -0.05, "w": 0.125, "d": 0.5, "y": 0.1667, "h": 0.7778, "color": "glass", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.175, "z": -0.05, "w": 0.125, "d": 0.5, "y": 0.1667, "h": 0.7778, "color": "glass", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.05, "w": 0.125, "d": 0.5, "y": 0.1667, "h": 0.7778, "color": "glass", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.175, "z": -0.05, "w": 0.125, "d": 0.5, "y": 0.1667, "h": 0.7778, "color": "glass", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.35, "z": -0.05, "w": 0.125, "d": 0.5, "y": 0.1667, "h": 0.7778, "color": "glass", "fix": "wdh"}
+  ]
+}

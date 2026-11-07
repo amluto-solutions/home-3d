@@ -1,0 +1,21 @@
+{
+  "id": "trophy_ball_silver_small",
+  "name": {"en": "Trophy ball on stand, silver, small"},
+  "size": [0.1, 0.1, 0.17],
+  "group": "deco",
+  "room": ["living", "office", "hall", "study", "games", "dining"],
+  "tags": ["trophy", "award", "prize", "silver", "ball", "football", "sports", "globe"],
+  "family": "trophy_ball_silver",
+  "variant": {"en": "Small"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.165, "color": "#2a2420", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.8, "y": 0.165, "h": 0.135, "color": "#3a312b", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.4, "d": 0.04, "y": 0.06, "h": 0.09, "color": "#d4af37", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.5, "d": 0.5, "y": 0.3, "h": 0.06, "color": "#c7cbd1", "fix": "wd"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.8, "y": 0.35, "h": 0.65, "color": "#c7cbd1", "fix": "wd"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": "cassette_840",
+  "name": {
+    "en": "Ceiling cassette air conditioner"
+  },
+  "size": [
+    0.95,
+    0.95,
+    0.27
+  ],
+  "group": "heating",
+  "room": [
+    "office",
+    "living",
+    "dining",
+    "hall",
+    "bedroom"
+  ],
+  "tags": [
+    "air conditioning",
+    "air con",
+    "aircon",
+    "cassette",
+    "ceiling cassette",
+    "cooling",
+    "climate",
+    "7.1 kw"
+  ],
+  "family": "air_conditioner",
+  "variant": {
+    "en": "Cassette 840 (7 kW)"
+  },
+  "electric": true,
+  "watts": 1900,
+  "mount": "ceiling",
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.8842,
+      "d": 0.8842,
+      "y": 0.2407,
+      "h": 0.7593,
+      "color": "metal"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 0.2407,
+      "color": "white"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.55,
+      "d": 0.55,
+      "y": 0.0,
+      "h": 0.2481,
+      "color": "dark"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.46,
+      "w": 0.7,
+      "d": 0.0105,
+      "y": 0.037,
+      "h": 0.1111,
+      "color": "#dcdcdc"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": -0.46,
+      "w": 0.7,
+      "d": 0.0105,
+      "y": 0.037,
+      "h": 0.1111,
+      "color": "#dcdcdc"
+    },
+    {
+      "shape": "box",
+      "x": 0.46,
+      "z": 0.0,
+      "w": 0.0105,
+      "d": 0.7,
+      "y": 0.037,
+      "h": 0.1111,
+      "color": "#dcdcdc"
+    },
+    {
+      "shape": "box",
+      "x": -0.46,
+      "z": 0.0,
+      "w": 0.0105,
+      "d": 0.7,
+      "y": 0.037,
+      "h": 0.1111,
+      "color": "#dcdcdc"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    },
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 0.55,
+      "d": 0.55
+    }
+  ]
+}

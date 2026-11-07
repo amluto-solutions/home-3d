@@ -1,0 +1,46 @@
+{
+  "id": "brimnes_bed_storage_double",
+  "name": {
+    "en": "Bed frame with storage, Double 135x190"
+  },
+  "size": [
+    1.41,
+    1.96,
+    0.47
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom"
+  ],
+  "tags": [
+    "bed",
+    "bed frame",
+    "double",
+    "drawers",
+    "storage bed",
+    "white",
+    "black"
+  ],
+  "family": "brimnes_bed_frame",
+  "variant": {
+    "en": "Without headboard"
+  },
+  "ikea": "BRIMNES",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4949, "w": 1, "d": 0.0102, "y": 0, "h": 1, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4949, "w": 1, "d": 0.0102, "y": 0, "h": 0.6809, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.4929, "z": 0.0, "w": 0.0142, "d": 1, "y": 0, "h": 0.6809, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4929, "z": 0.0, "w": 0.0142, "d": 1, "y": 0, "h": 0.6809, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9716, "d": 0.9796, "y": 0.5106, "h": 0.0426, "color": "wood"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9574, "d": 0.9694, "y": 0.5532, "h": 0.4255, "color": "white", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": -0.3776, "w": 0.8138, "d": 0.1633, "y": 0.9787, "h": 0.2553, "color": "cushion", "round": 0.45},
+    {"shape": "box", "x": -0.5, "z": -0.2, "w": 0.0142, "d": 0.449, "y": 0.0638, "h": 0.4681, "color": "white", "fix": "w"},
+    {"shape": "box", "x": -0.5, "z": -0.2, "w": 0.0085, "d": 0.0612, "y": 0.4255, "h": 0.0426, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.5, "z": 0.22, "w": 0.0142, "d": 0.449, "y": 0.0638, "h": 0.4681, "color": "white", "fix": "w"},
+    {"shape": "box", "x": -0.5, "z": 0.22, "w": 0.0085, "d": 0.0612, "y": 0.4255, "h": 0.0426, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.5, "z": -0.2, "w": 0.0142, "d": 0.449, "y": 0.0638, "h": 0.4681, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.5, "z": -0.2, "w": 0.0085, "d": 0.0612, "y": 0.4255, "h": 0.0426, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.5, "z": 0.22, "w": 0.0142, "d": 0.449, "y": 0.0638, "h": 0.4681, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.5, "z": 0.22, "w": 0.0085, "d": 0.0612, "y": 0.4255, "h": 0.0426, "color": "dark", "fix": "wdh"}
+  ]
+}

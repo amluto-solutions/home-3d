@@ -1,0 +1,31 @@
+{
+  "id": "rack_unifi_unas_pro_8",
+  "name": {"en": "UniFi UNAS Pro 8"},
+  "size": [0.4826, 0.48, 0.0881],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "surface",
+  "tags": ["nas", "storage", "unas pro 8", "8 bay", "2u", "unifi", "ubiquiti", "rack mount", "19 inch", "rack"],
+  "family": "rack_nas",
+  "variant": {"en": "UNAS Pro 8 2U"},
+  "electric": true,
+  "watts": 250,
+  "rack": {"u": 2},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.001, "w": 0.9163, "d": 0.9979, "y": 0.0, "h": 1.0, "color": "#cfd3d8", "edges": "faint"},
+    {"shape": "box", "x": -0.4793, "z": 0.4958, "w": 0.0414, "d": 0.0083, "y": 0.0, "h": 1.0, "color": "#cfd3d8"},
+    {"shape": "box", "x": 0.4793, "z": 0.4958, "w": 0.0414, "d": 0.0083, "y": 0.0, "h": 1.0, "color": "#cfd3d8"},
+    {"shape": "box", "x": -0.3464, "z": 0.4958, "w": 0.183, "d": 0.0083, "y": 0.0681, "h": 0.4149, "color": "#2a2d33"},
+    {"shape": "box", "x": -0.1572, "z": 0.4958, "w": 0.183, "d": 0.0083, "y": 0.0681, "h": 0.4149, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.032, "z": 0.4958, "w": 0.183, "d": 0.0083, "y": 0.0681, "h": 0.4149, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.2212, "z": 0.4958, "w": 0.183, "d": 0.0083, "y": 0.0681, "h": 0.4149, "color": "#2a2d33"},
+    {"shape": "box", "x": -0.3464, "z": 0.4958, "w": 0.183, "d": 0.0083, "y": 0.517, "h": 0.4149, "color": "#2a2d33"},
+    {"shape": "box", "x": -0.1572, "z": 0.4958, "w": 0.183, "d": 0.0083, "y": 0.517, "h": 0.4149, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.032, "z": 0.4958, "w": 0.183, "d": 0.0083, "y": 0.517, "h": 0.4149, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.2212, "z": 0.4958, "w": 0.183, "d": 0.0083, "y": 0.517, "h": 0.4149, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.4254, "z": 0.4958, "w": 0.0083, "d": 0.0083, "y": 0.9092, "h": 0.0454, "color": "accent"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

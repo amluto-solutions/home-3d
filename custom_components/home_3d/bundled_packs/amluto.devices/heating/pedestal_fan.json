@@ -1,0 +1,22 @@
+{
+  "id": "pedestal_fan",
+  "name": {"en": "Tower fan"},
+  "size": [0.45, 0.4, 1.25],
+  "group": "heating",
+  "room": ["living", "bedroom", "office", "kids"],
+  "tags": ["fan", "cooling", "air cooler", "oscillating fan", "summer", "pedestal fan", "stand fan", "desk fan"],
+  "family": "tower_fan",
+  "variant": {"en": "Pedestal"},
+  "electric": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8889, "d": 1, "y": 0.0, "h": 0.024, "color": "dark", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": -0.05, "w": 0.0667, "d": 0.075, "y": 0.024, "h": 0.64, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": -0.2, "w": 0.2222, "d": 0.4, "y": 0.688, "h": 0.096, "color": "white", "axis": "z", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.15, "w": 0.9778, "d": 0.3, "y": 0.56, "h": 0.352, "color": "glass", "axis": "z", "fix": "h", "edges": "faint"},
+    {"shape": "cyl", "x": 0.0, "z": 0.15, "w": 0.8444, "d": 0.075, "y": 0.584, "h": 0.304, "color": "white", "axis": "z", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2, "w": 0.1778, "d": 0.1, "y": 0.704, "h": 0.064, "color": "metal", "axis": "z", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0.0, "z": 0.0, "r": 0.5}
+  ]
+}

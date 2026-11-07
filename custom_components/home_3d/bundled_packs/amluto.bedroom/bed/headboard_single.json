@@ -1,0 +1,27 @@
+{
+  "id": "headboard_single",
+  "name": {"en": "Single headboard"},
+  "size": [0.98, 0.1, 1.25],
+  "group": "bed",
+  "family": "headboard",
+  "variant": {"en": "Single · 90 × 190"},
+  "room": ["bedroom", "kids"],
+  "tags": ["headboard", "buttoned headboard", "upholstered", "strutted headboard", "bed head", "single", "3ft"],
+  "parts": [
+    {"shape": "box", "x": -0.3724, "z": -0.35, "w": 0.051, "d": 0.3, "y": 0.0, "h": 0.496, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.3724, "z": -0.35, "w": 0.051, "d": 0.3, "y": 0.0, "h": 0.496, "color": "wood", "fix": "wd"},
+    {"shape": "rbox", "x": 0.0, "z": 0.05, "w": 1.0, "d": 0.9, "y": 0.44, "h": 0.56, "color": "fabric", "round": 0.35, "fix": "d"},
+    {"shape": "rbox", "x": 0.0, "z": 0.4, "w": 0.9388, "d": 0.2, "y": 0.464, "h": 0.512, "color": "fabric", "round": 0.4, "fix": "d"},
+    {"shape": "sphere", "x": -0.398, "z": 0.44, "w": 0.0245, "d": 0.12, "y": 0.5664, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.1327, "z": 0.44, "w": 0.0245, "d": 0.12, "y": 0.5664, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.1327, "z": 0.44, "w": 0.0245, "d": 0.12, "y": 0.5664, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.398, "z": 0.44, "w": 0.0245, "d": 0.12, "y": 0.5664, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.2653, "z": 0.44, "w": 0.0245, "d": 0.12, "y": 0.6944, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.0, "z": 0.44, "w": 0.0245, "d": 0.12, "y": 0.6944, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.2653, "z": 0.44, "w": 0.0245, "d": 0.12, "y": 0.6944, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.398, "z": 0.44, "w": 0.0245, "d": 0.12, "y": 0.8224, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.1327, "z": 0.44, "w": 0.0245, "d": 0.12, "y": 0.8224, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.1327, "z": 0.44, "w": 0.0245, "d": 0.12, "y": 0.8224, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.398, "z": 0.44, "w": 0.0245, "d": 0.12, "y": 0.8224, "h": 0.0192, "color": "dark", "fix": "wdh"}
+  ]
+}

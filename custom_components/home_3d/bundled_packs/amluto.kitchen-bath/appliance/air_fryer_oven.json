@@ -1,0 +1,27 @@
+{
+  "id": "air_fryer_oven",
+  "name": {"en": "Air fryer oven"},
+  "size": [0.33, 0.38, 0.38],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["air fryer", "airfryer", "fryer", "ninja", "cooking", "countertop"],
+  "family": "air_fryer",
+  "variant": {"en": "Oven style"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": -0.3788, "z": -0.3947, "w": 0.0758, "d": 0.0658, "y": 0.0, "h": 0.0316, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3788, "z": 0.3421, "w": 0.0758, "d": 0.0658, "y": 0.0, "h": 0.0316, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3788, "z": -0.3947, "w": 0.0758, "d": 0.0658, "y": 0.0, "h": 0.0316, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3788, "z": 0.3421, "w": 0.0758, "d": 0.0658, "y": 0.0, "h": 0.0316, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": -0.0395, "w": 1.0, "d": 0.9211, "y": 0.0316, "h": 0.9684, "color": "dark", "round": 0.15},
+    {"shape": "box", "x": 0.0, "z": 0.4276, "w": 0.7576, "d": 0.0395, "y": 0.9079, "h": 0.0605, "color": "#2a2c30", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4217, "w": 0.2424, "d": 0.0039, "y": 0.7368, "h": 0.1053, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.4342, "w": 0.8788, "d": 0.0526, "y": 0.0789, "h": 0.6053, "color": "dark", "round": 0.1},
+    {"shape": "box", "x": 0.0, "z": 0.4605, "w": 0.697, "d": 0.0053, "y": 0.1579, "h": 0.4211, "color": "glass"},
+    {"shape": "box", "x": 0.0, "z": 0.4816, "w": 0.6364, "d": 0.0368, "y": 0.6053, "h": 0.0395, "color": "metal", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

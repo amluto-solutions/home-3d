@@ -1,0 +1,21 @@
+{
+  "id": "trailer_utility",
+  "name": {"en": "Utility trailer"},
+  "size": [1.5, 2.6, 0.8],
+  "group": "vehicle",
+  "room": ["garage", "garden"],
+  "tags": ["trailer", "towing", "box trailer", "garden"],
+  "vehicle": true,
+  "parts": [
+    {"shape": "cyl", "x": -0.4333, "z": -0.12, "w": 0.12, "d": 0.1923, "y": 0.0, "h": 0.625, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.4333, "z": -0.12, "w": 0.12, "d": 0.1923, "y": 0.0, "h": 0.625, "color": "dark", "axis": "x"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.95, "d": 0.85, "y": 0.5, "h": 0.1, "color": "metal"},
+    {"shape": "box", "x": -0.47, "z": 0.0, "w": 0.0333, "d": 0.85, "y": 0.6, "h": 0.375, "color": "paint"},
+    {"shape": "box", "x": 0.47, "z": 0.0, "w": 0.0333, "d": 0.85, "y": 0.6, "h": 0.375, "color": "paint"},
+    {"shape": "box", "x": 0.0, "z": -0.42, "w": 0.95, "d": 0.0192, "y": 0.6, "h": 0.375, "color": "paint"},
+    {"shape": "box", "x": 0.0, "z": 0.4, "w": 0.95, "d": 0.0192, "y": 0.6, "h": 0.375, "color": "paint"},
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 0.0333, "d": 0.5192, "y": 0.5, "h": 0.0625, "color": "metal"},
+    {"shape": "box", "x": 0.2, "z": 0.25, "w": 0.0333, "d": 0.5192, "y": 0.5, "h": 0.0625, "color": "metal"},
+    {"shape": "box", "x": -0.2, "z": 0.25, "w": 0.0333, "d": 0.5192, "y": 0.5, "h": 0.0625, "color": "metal"}
+  ]
+}

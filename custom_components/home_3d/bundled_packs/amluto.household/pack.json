@@ -1,0 +1,11 @@
+{
+  "format": "home3d-pack",
+  "version": 2,
+  "id": "amluto.household",
+  "name": "Household & building",
+  "publisher": "Amluto Solutions",
+  "licence": "MIT",
+  "release": 4,
+  "description": "Household items, architecture (stairs, fireplaces and other building features) and pet gear, modelled for Home 3D from simple shapes. Ships with the app and works offline.",
+  "release_note": "Release 4: the pack's id is now amluto.household (it was theovencook.household); plans that name the old id still load (#424)."
+}

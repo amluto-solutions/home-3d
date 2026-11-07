@@ -1,0 +1,20 @@
+{
+  "id": "road_two_lane_yellow_10",
+  "name": {"en": "Road, two lanes, double yellow lines, 10 m"},
+  "size": [10.0, 6.0, 0.03],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["road", "street", "tarmac", "asphalt", "highway"],
+  "family": "road_two_lane_yellow",
+  "variant": {"en": "10 m long, restricted"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#3a3c3f", "top": "#43464a"},
+    {"shape": "box", "x": 0.0, "z": -0.4667, "w": 1, "d": 0.0117, "y": 0.8667, "h": 0.1333, "color": "#e9c928"},
+    {"shape": "box", "x": 0.0, "z": -0.45, "w": 1, "d": 0.0117, "y": 0.8667, "h": 0.1333, "color": "#e9c928"},
+    {"shape": "box", "x": 0.0, "z": 0.4667, "w": 1, "d": 0.0117, "y": 0.8667, "h": 0.1333, "color": "#e9c928"},
+    {"shape": "box", "x": 0.0, "z": 0.45, "w": 1, "d": 0.0117, "y": 0.8667, "h": 0.1333, "color": "#e9c928"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

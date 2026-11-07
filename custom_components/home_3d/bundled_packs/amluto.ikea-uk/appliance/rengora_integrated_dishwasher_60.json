@@ -1,0 +1,33 @@
+{
+  "id": "rengora_integrated_dishwasher_60",
+  "name": {
+    "en": "Integrated dishwasher 60 cm"
+  },
+  "size": [
+    0.6,
+    0.6,
+    0.88
+  ],
+  "group": "appliance",
+  "room": [
+    "kitchen",
+    "utility"
+  ],
+  "tags": [
+    "integrated",
+    "built-in",
+    "behind a front",
+    "fully integrated",
+    "dishwasher",
+    "IKEA 300",
+    "kitchen front"
+  ],
+  "ikea": "RENGÖRA",
+  "electric": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0333, "w": 0.9933, "d": 0.8333, "y": 0, "h": 0.0909, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0167, "w": 0.9833, "d": 0.9667, "y": 0.0909, "h": 0.9091, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.485, "w": 0.9933, "d": 0.03, "y": 0.0909, "h": 0.9045, "color": "body", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.5333, "d": 0.0367, "y": 0.9023, "h": 0.0136, "color": "metal", "fix": "wdh"}
+  ]
+}

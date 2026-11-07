@@ -1,0 +1,37 @@
+{
+  "id": "stockholm_coffee_table_oval",
+  "name": {
+    "en": "Oval coffee table 180x59 cm"
+  },
+  "size": [
+    1.8,
+    0.59,
+    0.4
+  ],
+  "group": "table",
+  "room": [
+    "living"
+  ],
+  "tags": [
+    "coffee table",
+    "oval",
+    "walnut",
+    "veneer",
+    "shelf",
+    "walnut veneer"
+  ],
+  "ikea": "STOCKHOLM",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.6722, "d": 1, "y": 0.925, "h": 0.075, "color": "wood", "fix": "h"},
+    {"shape": "cyl", "x": -0.3361, "z": 0.0, "w": 0.3278, "d": 1, "y": 0.925, "h": 0.075, "color": "wood", "fix": "h"},
+    {"shape": "cyl", "x": 0.3361, "z": 0.0, "w": 0.3278, "d": 1, "y": 0.925, "h": 0.075, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.6167, "d": 0.8305, "y": 0.3, "h": 0.05, "color": "wood", "fix": "h"},
+    {"shape": "cyl", "x": -0.3083, "z": 0.0, "w": 0.2722, "d": 0.8305, "y": 0.3, "h": 0.05, "color": "wood", "fix": "h"},
+    {"shape": "cyl", "x": 0.3083, "z": 0.0, "w": 0.2722, "d": 0.8305, "y": 0.3, "h": 0.05, "color": "wood", "fix": "h"},
+    {"shape": "loft", "x": -0.3444, "z": -0.2881, "w": 0.0194, "d": 0.0593, "y": 0, "h": 0.925, "color": "wood", "tx": -0.3333, "tz": -0.2542, "tw": 0.025, "td": 0.0763, "fix": "wd"},
+    {"shape": "loft", "x": -0.3444, "z": 0.2881, "w": 0.0194, "d": 0.0593, "y": 0, "h": 0.925, "color": "wood", "tx": -0.3333, "tz": 0.2542, "tw": 0.025, "td": 0.0763, "fix": "wd"},
+    {"shape": "loft", "x": 0.3444, "z": -0.2881, "w": 0.0194, "d": 0.0593, "y": 0, "h": 0.925, "color": "wood", "tx": 0.3333, "tz": -0.2542, "tw": 0.025, "td": 0.0763, "fix": "wd"},
+    {"shape": "loft", "x": 0.3444, "z": 0.2881, "w": 0.0194, "d": 0.0593, "y": 0, "h": 0.925, "color": "wood", "tx": 0.3333, "tz": 0.2542, "tw": 0.025, "td": 0.0763, "fix": "wd"}
+  ]
+}

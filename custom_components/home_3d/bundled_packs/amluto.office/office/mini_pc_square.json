@@ -1,0 +1,20 @@
+{
+  "id": "mini_pc_square",
+  "name": {"en": "Mini PC, square"},
+  "size": [0.127, 0.127, 0.05],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby", "living", "loft"],
+  "tags": ["mac mini", "small computer", "mini pc", "computer", "pc", "home server", "homelab"],
+  "family": "mini_pc",
+  "variant": {"en": "Square"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.04, "h": 0.96, "color": "metal", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8425, "d": 0.8425, "y": 0.0, "h": 0.08, "color": "#1a1b1e", "fix": "h"},
+    {"shape": "box", "x": -0.3819, "z": 0.4921, "w": 0.0236, "d": 0.0157, "y": 0.24, "h": 0.06, "color": "#46d36a", "edges": "faint", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

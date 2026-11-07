@@ -1,0 +1,24 @@
+{
+  "id": "3d_printer_mini",
+  "name": {"en": "3D printer (open frame)"},
+  "size": [0.38, 0.38, 0.38],
+  "group": "tech",
+  "room": ["office", "hobby", "garage"],
+  "tags": ["3d printer", "printer", "maker", "filament", "prusa mini", "bed slinger", "open frame"],
+  "family": "3d_printer",
+  "variant": {"en": "Open frame"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0526, "w": 0.9474, "d": 0.7895, "y": 0.0, "h": 0.1579, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.4526, "w": 0.3158, "d": 0.0105, "y": 0.0395, "h": 0.0921, "color": "glass"},
+    {"shape": "box", "x": 0.3158, "z": 0.4526, "w": 0.0526, "d": 0.0105, "y": 0.0526, "h": 0.0526, "color": "accent"},
+    {"shape": "box", "x": 0.0, "z": -0.0789, "w": 0.1053, "d": 0.7895, "y": 0.1579, "h": 0.0316, "color": "metal"},
+    {"shape": "box", "x": 0.0526, "z": 0.0, "w": 0.5263, "d": 0.5263, "y": 0.1895, "h": 0.0158, "color": "dark", "top": "#b8954a"},
+    {"shape": "box", "x": -0.3947, "z": -0.3947, "w": 0.1579, "d": 0.1579, "y": 0.1579, "h": 0.8421, "color": "accent"},
+    {"shape": "box", "x": -0.0526, "z": -0.3684, "w": 0.7368, "d": 0.0658, "y": 0.6316, "h": 0.0789, "color": "metal"},
+    {"shape": "box", "x": 0.0526, "z": -0.2895, "w": 0.1316, "d": 0.1316, "y": 0.5658, "h": 0.1842, "color": "accent"},
+    {"shape": "box", "x": 0.0526, "z": -0.2895, "w": 0.0211, "d": 0.0211, "y": 0.5263, "h": 0.0395, "color": "metal"},
+    {"shape": "cyl", "x": -0.3947, "z": -0.3947, "w": 0.0316, "d": 0.0316, "y": 0.9974, "h": 0.0026, "color": "metal"}
+  ]
+}

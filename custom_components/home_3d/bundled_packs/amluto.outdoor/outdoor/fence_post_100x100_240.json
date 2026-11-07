@@ -1,0 +1,14 @@
+{
+  "id": "fence_post_100x100_240",
+  "name": {"en": "Fence post"},
+  "size": [0.12, 0.12, 2.4],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["fence post", "post", "timber", "gate post", "garden fencing", "boundary", "wooden post"],
+  "family": "fence_post",
+  "variant": {"en": "Post 100 × 100 mm, 2.4 m"},
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 0.8333, "d": 0.8333, "y": 0, "h": 0.9833, "color": "#8f7a4b"},
+    {"shape": "loft", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.9833, "h": 0.0167, "color": "#8f7a4b", "tx": 0, "tz": 0, "tw": 0.4167, "td": 0.4167}
+  ]
+}

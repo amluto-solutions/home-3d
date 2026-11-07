@@ -1,0 +1,45 @@
+{
+  "id": "ekenaset_armchair",
+  "name": {
+    "en": "Armchair with wooden frame"
+  },
+  "size": [
+    0.65,
+    0.74,
+    0.75
+  ],
+  "group": "seating",
+  "room": [
+    "living",
+    "bedroom",
+    "conservatory"
+  ],
+  "tags": [
+    "EKENASET",
+    "armchair",
+    "accent chair",
+    "easy chair",
+    "wooden arms",
+    "light beige",
+    "golden-brown",
+    "black",
+    "off-white",
+    "oak effect"
+  ],
+  "family": "ekenaset_armchair",
+  "variant": {
+    "en": "Standard"
+  },
+  "ikea": "EKENÄSET",
+  "parts": [
+    {"shape": "loft", "x": -0.4538, "z": 0.3919, "w": 0.0538, "d": 0.0473, "y": 0, "h": 0.8, "color": "wood", "tx": -0.4538, "tz": 0.3649, "tw": 0.0462, "td": 0.0405, "fix": "w"},
+    {"shape": "loft", "x": -0.4538, "z": -0.3649, "w": 0.0538, "d": 0.0473, "y": 0, "h": 0.5467, "color": "wood", "tx": -0.4538, "tz": -0.3378, "tw": 0.0462, "td": 0.0405, "fix": "w"},
+    {"shape": "rbox", "x": -0.4538, "z": 0.0, "w": 0.0923, "d": 0.8108, "y": 0.8, "h": 0.04, "color": "wood", "fix": "w", "round": 0.4},
+    {"shape": "loft", "x": 0.4538, "z": 0.3919, "w": 0.0538, "d": 0.0473, "y": 0, "h": 0.8, "color": "wood", "tx": 0.4538, "tz": 0.3649, "tw": 0.0462, "td": 0.0405, "fix": "w"},
+    {"shape": "loft", "x": 0.4538, "z": -0.3649, "w": 0.0538, "d": 0.0473, "y": 0, "h": 0.5467, "color": "wood", "tx": 0.4538, "tz": -0.3378, "tw": 0.0462, "td": 0.0405, "fix": "w"},
+    {"shape": "rbox", "x": 0.4538, "z": 0.0, "w": 0.0923, "d": 0.8108, "y": 0.8, "h": 0.04, "color": "wood", "fix": "w", "round": 0.4},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9077, "d": 0.7297, "y": 0.4267, "h": 0.0533, "color": "wood", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0541, "w": 0.8462, "d": 0.6757, "y": 0.48, "h": 0.1333, "color": "fabric", "round": 0.3},
+    {"shape": "loft", "x": 0.0, "z": -0.3378, "w": 0.8462, "d": 0.1351, "y": 0.5467, "h": 0.4533, "color": "fabric", "tz": -0.4189, "tw": 0.8154, "td": 0.1081}
+  ]
+}

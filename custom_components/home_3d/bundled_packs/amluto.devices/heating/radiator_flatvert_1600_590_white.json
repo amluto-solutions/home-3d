@@ -1,0 +1,56 @@
+{
+  "id": "radiator_flatvert_1600_590_white",
+  "name": {
+    "en": "Vertical flat panel radiator"
+  },
+  "size": [
+    0.59,
+    0.07,
+    1.64
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "kitchen",
+    "hall",
+    "office",
+    "kids",
+    "bath",
+    "utility",
+    "conservatory"
+  ],
+  "tags": [
+    "radiator",
+    "vertical radiator",
+    "designer radiator",
+    "flat panel",
+    "tall radiator",
+    "white",
+    "central heating"
+  ],
+  "family": "radiator_flatvert",
+  "variant": {
+    "en": "1600 × 590 mm, white"
+  },
+  "mount": "wall",
+  "wall_y": 0.11,
+  "parts": [
+    {"shape": "rbox", "x": -0.4347, "z": 0.0, "w": 0.0869, "d": 0.9, "y": 0.0549, "h": 0.9146, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": -0.3381, "z": 0.0, "w": 0.0869, "d": 0.9, "y": 0.0549, "h": 0.9146, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": -0.2415, "z": 0.0, "w": 0.0869, "d": 0.9, "y": 0.0549, "h": 0.9146, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": -0.1449, "z": 0.0, "w": 0.0869, "d": 0.9, "y": 0.0549, "h": 0.9146, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": -0.0483, "z": 0.0, "w": 0.0869, "d": 0.9, "y": 0.0549, "h": 0.9146, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": 0.0483, "z": 0.0, "w": 0.0869, "d": 0.9, "y": 0.0549, "h": 0.9146, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": 0.1449, "z": 0.0, "w": 0.0869, "d": 0.9, "y": 0.0549, "h": 0.9146, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": 0.2415, "z": 0.0, "w": 0.0869, "d": 0.9, "y": 0.0549, "h": 0.9146, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": 0.3381, "z": 0.0, "w": 0.0869, "d": 0.9, "y": 0.0549, "h": 0.9146, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": 0.4347, "z": 0.0, "w": 0.0869, "d": 0.9, "y": 0.0549, "h": 0.9146, "color": "white", "round": 0.4},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.9695, "h": 0.0305, "color": "white", "round": 0.3},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0244, "h": 0.0305, "color": "white", "round": 0.3},
+    {"shape": "cyl", "x": -0.4153, "z": -0.2143, "w": 0.0373, "d": 0.3143, "y": 0.0, "h": 0.0305, "color": "metal"},
+    {"shape": "cyl", "x": 0.4153, "z": -0.2143, "w": 0.0373, "d": 0.3143, "y": 0.0, "h": 0.0305, "color": "metal"},
+    {"shape": "cyl", "x": 0.4153, "z": 0.0, "w": 0.0593, "d": 0.5, "y": 0.0073, "h": 0.0171, "color": "metal"},
+    {"shape": "cyl", "x": 0.4153, "z": 0.0, "w": 0.0508, "d": 0.5714, "y": 0.0085, "h": 0.0146, "color": "accent"}
+  ]
+}

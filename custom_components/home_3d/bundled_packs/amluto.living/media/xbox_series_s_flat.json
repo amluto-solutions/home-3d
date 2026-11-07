@@ -1,0 +1,25 @@
+{
+  "id": "xbox_series_s_flat",
+  "name": {"en": "Xbox Series S"},
+  "size": [0.275, 0.151, 0.0635],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["xbox series s", "xbox", "microsoft", "gaming", "console", "games console", "series s"],
+  "family": "xbox_series_s",
+  "variant": {"en": " flat"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 80,
+  "parts": [
+    {"shape": "cyl", "x": -0.3909, "z": -0.3013, "w": 0.0727, "d": 0.1325, "y": 0.0, "h": 0.0945, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3909, "z": 0.3013, "w": 0.0727, "d": 0.1325, "y": 0.0, "h": 0.0945, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3909, "z": -0.3013, "w": 0.0727, "d": 0.1325, "y": 0.0, "h": 0.0945, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3909, "z": 0.3013, "w": 0.0727, "d": 0.1325, "y": 0.0, "h": 0.0945, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0945, "h": 0.9055, "color": "white", "round": 0.12},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.96, "d": 0.96, "y": 0.9764, "h": 0.0236, "color": "#101114"},
+    {"shape": "cyl", "x": 0.43, "z": 0.4901, "w": 0.046, "d": 0.0199, "y": 0.2756, "h": 0.1992, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "helmer_drawer_unit_28x44x65",
+  "name": {
+    "en": "Drawer unit on castors 28x44x65 cm"
+  },
+  "size": [
+    0.28,
+    0.44,
+    0.65
+  ],
+  "group": "office",
+  "room": [
+    "office",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "HELMER",
+    "drawer unit",
+    "castors",
+    "rolling cabinet",
+    "metal drawers",
+    "white",
+    "black",
+    "red",
+    "blue",
+    "grey-turquoise"
+  ],
+  "ikea": "HELMER",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0615, "h": 0.9385, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9908, "h": 0.0092, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.95, "d": 0.0136, "y": 0.0769, "h": 0.1364, "color": "body", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.3214, "d": 0.0182, "y": 0.1795, "h": 0.0185, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.95, "d": 0.0136, "y": 0.2256, "h": 0.1364, "color": "body", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.3214, "d": 0.0182, "y": 0.3282, "h": 0.0185, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.95, "d": 0.0136, "y": 0.3744, "h": 0.1364, "color": "body", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.3214, "d": 0.0182, "y": 0.4769, "h": 0.0185, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.95, "d": 0.0136, "y": 0.5231, "h": 0.1364, "color": "body", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.3214, "d": 0.0182, "y": 0.6256, "h": 0.0185, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.95, "d": 0.0136, "y": 0.6718, "h": 0.1364, "color": "body", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.3214, "d": 0.0182, "y": 0.7744, "h": 0.0185, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.95, "d": 0.0136, "y": 0.8205, "h": 0.1364, "color": "body", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.3214, "d": 0.0182, "y": 0.9231, "h": 0.0185, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.375, "z": -0.3864, "w": 0.1429, "d": 0.0455, "y": 0, "h": 0.0615, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.375, "z": 0.3864, "w": 0.1429, "d": 0.0455, "y": 0, "h": 0.0615, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.375, "z": -0.3864, "w": 0.1429, "d": 0.0455, "y": 0, "h": 0.0615, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.375, "z": 0.3864, "w": 0.1429, "d": 0.0455, "y": 0, "h": 0.0615, "color": "dark", "axis": "z", "fix": "wdh"}
+  ]
+}

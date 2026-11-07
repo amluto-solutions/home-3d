@@ -1,0 +1,42 @@
+{
+  "id": "kungsfors_rail_with_hooks_56",
+  "name": {
+    "en": "Rail with 5 hooks and a container 56 cm"
+  },
+  "size": [
+    0.56,
+    0.08,
+    0.3
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen",
+    "utility"
+  ],
+  "tags": [
+    "wall storage",
+    "rail",
+    "open shelving",
+    "hooks",
+    "stainless steel",
+    "ash veneer"
+  ],
+  "family": "kungsfors_rail",
+  "variant": {
+    "en": "Rail 56"
+  },
+  "ikea": "KUNGSFORS",
+  "mount": "wall",
+  "wall_y": 1.45,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.125, "w": 1, "d": 0.1625, "y": 0.9333, "h": 0.0433, "color": "metal", "axis": "x"},
+    {"shape": "box", "x": -0.4464, "z": -0.375, "w": 0.0357, "d": 0.375, "y": 0.8833, "h": 0.1333, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.4464, "z": -0.375, "w": 0.0357, "d": 0.375, "y": 0.8833, "h": 0.1333, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.3929, "z": -0.125, "w": 0.0071, "d": 0.15, "y": 0.7, "h": 0.2667, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.2679, "z": -0.125, "w": 0.0071, "d": 0.15, "y": 0.7, "h": 0.2667, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.1429, "z": -0.125, "w": 0.0071, "d": 0.15, "y": 0.7, "h": 0.2667, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.0179, "z": -0.125, "w": 0.0071, "d": 0.15, "y": 0.7, "h": 0.2667, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.1071, "z": -0.125, "w": 0.0071, "d": 0.15, "y": 0.7, "h": 0.2667, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.3571, "z": 0.0, "w": 0.2143, "d": 1, "y": 0, "h": 0.8333, "color": "metal", "fix": "wd"}
+  ]
+}

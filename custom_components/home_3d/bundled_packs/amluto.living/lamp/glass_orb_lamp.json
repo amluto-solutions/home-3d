@@ -1,0 +1,41 @@
+{
+  "id": "glass_orb_lamp",
+  "name": {
+    "en": "Glass orb lamp"
+  },
+  "size": [
+    0.2,
+    0.2,
+    0.27
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "hall",
+    "office"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "glass lamp",
+    "orb lamp",
+    "globe",
+    "opal",
+    "chrome",
+    "modern",
+    "bubble"
+  ],
+  "family": "glass_orb_lamp",
+  "variant": {
+    "en": "Opal"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.5, "d": 0.5, "y": 0, "h": 0.0741, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.25, "d": 0.25, "y": 0.0741, "h": 0.1852, "color": "metal"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.2593, "h": 0.7407, "color": "white", "glow": true},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.15, "d": 0.15, "y": 0.4444, "h": 0.4444, "color": "#ffe3a8", "glow": true}
+  ]
+}

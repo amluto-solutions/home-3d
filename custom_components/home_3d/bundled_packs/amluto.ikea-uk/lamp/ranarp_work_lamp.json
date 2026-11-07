@@ -1,0 +1,41 @@
+{
+  "id": "ranarp_work_lamp",
+  "name": {
+    "en": "Work lamp, domed shade 42 cm"
+  },
+  "size": [
+    0.22,
+    0.3,
+    0.42
+  ],
+  "group": "lamp",
+  "room": [
+    "office",
+    "bedroom",
+    "kids",
+    "hobby"
+  ],
+  "tags": [
+    "work lamp",
+    "desk lamp",
+    "black",
+    "off-white",
+    "dome shade",
+    "retro"
+  ],
+  "family": "ranarp_lamp",
+  "variant": {
+    "en": "Work lamp 42"
+  },
+  "ikea": "RANARP",
+  "light": "table",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.2167, "w": 0.7727, "d": 0.5667, "y": 0, "h": 0.0476, "color": "dark", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": -0.2167, "w": 0.0727, "d": 0.0533, "y": 0.0476, "h": 0.4762, "color": "dark", "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": -0.2167, "w": 0.0636, "d": 0.0467, "y": 0.5, "h": 0.4524, "color": "dark", "tz": 0.1833, "tw": 0.0636, "td": 0.0467, "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.1833, "w": 0.8636, "d": 0.6333, "y": 0.6905, "h": 0.3095, "color": "dark", "profile": [[1.0, 0], [0.97, 0.3], [0.82, 0.62], [0.52, 0.88], [0.22, 1.0], [0.0, 1.0], [0.0, 0.923], [0.115, 0.923], [0.415, 0.803], [0.715, 0.543], [0.865, 0.223], [0.895, 0.0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.1833, "w": 0.2727, "d": 0.2, "y": 0.7381, "h": 0.1429, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "tumble_dryer_graphite",
+  "name": {"en": "Tumble dryer, graphite"},
+  "size": [0.6, 0.6, 0.85],
+  "group": "appliance",
+  "room": ["utility", "kitchen", "bath", "garage"],
+  "tags": ["tumble dryer", "dryer", "heat pump", "condenser", "laundry"],
+  "family": "tumble_dryer",
+  "variant": {"en": "Graphite"},
+  "electric": true,
+  "parts": [
+    {"shape": "cyl", "x": -0.4167, "z": -0.4167, "w": 0.0583, "d": 0.0583, "y": 0.0, "h": 0.0176, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4167, "z": 0.3833, "w": 0.0583, "d": 0.0583, "y": 0.0, "h": 0.0176, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4167, "z": -0.4167, "w": 0.0583, "d": 0.0583, "y": 0.0, "h": 0.0176, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4167, "z": 0.3833, "w": 0.0583, "d": 0.0583, "y": 0.0, "h": 0.0176, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": -0.0167, "w": 1.0, "d": 0.9667, "y": 0.0176, "h": 0.9824, "color": "dark", "round": 0.03},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 0.9833, "d": 0.0167, "y": 0.8588, "h": 0.1294, "color": "#2a2c30"},
+    {"shape": "cyl", "x": 0.3, "z": 0.4833, "w": 0.1, "d": 0.02, "y": 0.8824, "h": 0.0706, "color": "metal", "axis": "z"},
+    {"shape": "box", "x": 0.0167, "z": 0.4833, "w": 0.2333, "d": 0.0017, "y": 0.9, "h": 0.0471, "color": "#7fe3ff", "edges": "faint"},
+    {"shape": "box", "x": -0.3083, "z": 0.485, "w": 0.2833, "d": 0.01, "y": 0.8824, "h": 0.0824, "color": "white"},
+    {"shape": "cyl", "x": 0.0, "z": 0.465, "w": 0.7, "d": 0.03, "y": 0.2618, "h": 0.4941, "color": "#3a3d42", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4742, "w": 0.6, "d": 0.0317, "y": 0.2971, "h": 0.4235, "color": "#3a3d42", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4833, "w": 0.48, "d": 0.0333, "y": 0.3394, "h": 0.3388, "color": "glass", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": 0.4667, "w": 0.8667, "d": 0.0033, "y": 0.0529, "h": 0.0588, "color": "dark"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "circle", "x": 0.0, "z": 0.1667, "r": 0.3}
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "unifi_magnetic_lock_540",
+  "name": {
+    "en": "UniFi Access Magnetic Lock 540 kg"
+  },
+  "size": [
+    0.266,
+    0.04,
+    0.0675
+  ],
+  "group": "tech",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "access",
+    "door access",
+    "magnetic lock",
+    "mag lock",
+    "ua-lock-magnetic",
+    "540kg"
+  ],
+  "family": "unifi_access_lock",
+  "variant": {
+    "en": "Magnetic 540kg"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 2.0,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": -0.1,
+      "w": 1,
+      "d": 0.8,
+      "y": 0,
+      "h": 1,
+      "color": "#aab1bc",
+      "round": 0.15
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.4,
+      "w": 0.74,
+      "d": 0.2,
+      "y": 0.25,
+      "h": 0.5,
+      "color": "#8a93a3"
+    },
+    {
+      "shape": "box",
+      "x": 0.4,
+      "z": 0.5,
+      "w": 0.03,
+      "d": 0.05,
+      "y": 0.4,
+      "h": 0.2,
+      "color": "#3a8dde"
+    }
+  ]
+}

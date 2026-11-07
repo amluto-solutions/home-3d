@@ -1,0 +1,39 @@
+{
+  "id": "ingolf_junior_chair",
+  "name": {
+    "en": "Junior chair"
+  },
+  "size": [
+    0.41,
+    0.45,
+    0.77
+  ],
+  "group": "seating",
+  "room": [
+    "dining",
+    "kitchen",
+    "kids"
+  ],
+  "tags": [
+    "child's chair",
+    "high chair",
+    "dining chair",
+    "footrest",
+    "spindle back",
+    "antique stain",
+    "white"
+  ],
+  "ikea": "INGOLF",
+  "parts": [
+    {"shape": "box", "x": -0.4085, "z": 0.4167, "w": 0.0854, "d": 0.0778, "y": 0, "h": 0.6364, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": -0.4085, "z": -0.4167, "w": 0.0854, "d": 0.0778, "y": 0, "h": 1, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4085, "z": 0.4167, "w": 0.0854, "d": 0.0778, "y": 0, "h": 0.6364, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4085, "z": -0.4167, "w": 0.0854, "d": 0.0778, "y": 0, "h": 1, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0222, "w": 0.878, "d": 0.8, "y": 0.6364, "h": 0.039, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4167, "w": 0.8537, "d": 0.0667, "y": 0.9221, "h": 0.0779, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4111, "w": 0.9024, "d": 0.1778, "y": 0.2857, "h": 0.026, "color": "wood", "fix": "h"},
+    {"shape": "cyl", "x": -0.1951, "z": -0.4167, "w": 0.0439, "d": 0.04, "y": 0.6753, "h": 0.2468, "color": "wood", "fix": "wd"},
+    {"shape": "cyl", "x": 0.0, "z": -0.4167, "w": 0.0439, "d": 0.04, "y": 0.6753, "h": 0.2468, "color": "wood", "fix": "wd"},
+    {"shape": "cyl", "x": 0.1951, "z": -0.4167, "w": 0.0439, "d": 0.04, "y": 0.6753, "h": 0.2468, "color": "wood", "fix": "wd"}
+  ]
+}

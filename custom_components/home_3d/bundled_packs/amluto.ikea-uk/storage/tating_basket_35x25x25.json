@@ -1,0 +1,39 @@
+{
+  "id": "tating_basket_35x25x25",
+  "name": {
+    "en": "Basket, water hyacinth 35x25x25 cm"
+  },
+  "size": [
+    0.35,
+    0.25,
+    0.25
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "office",
+    "hall",
+    "living",
+    "utility"
+  ],
+  "tags": [
+    "TATING",
+    "basket",
+    "water hyacinth",
+    "natural",
+    "wicker",
+    "storage basket"
+  ],
+  "ikea": "TÄTING",
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#c7ab74", "round": 0.14},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.88, "d": 0.84, "y": 0.984, "h": 0.016, "color": "#5b4528", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.96, "d": 0.012, "y": 0.28, "h": 0.04, "color": "#a88a55", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.96, "d": 0.012, "y": 0.56, "h": 0.04, "color": "#a88a55", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.96, "d": 0.012, "y": 0.8, "h": 0.04, "color": "#a88a55", "fix": "dh"},
+    {"shape": "box", "x": -0.5, "z": 0.0, "w": 0.0171, "d": 0.36, "y": 0.68, "h": 0.112, "color": "#a88a55", "fix": "wdh"},
+    {"shape": "box", "x": 0.5, "z": 0.0, "w": 0.0171, "d": 0.36, "y": 0.68, "h": 0.112, "color": "#a88a55", "fix": "wdh"}
+  ]
+}

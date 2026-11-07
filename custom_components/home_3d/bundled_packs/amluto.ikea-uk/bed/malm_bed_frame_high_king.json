@@ -1,0 +1,39 @@
+{
+  "id": "malm_bed_frame_high_king",
+  "name": {
+    "en": "High bed frame, King 150x200"
+  },
+  "size": [
+    1.65,
+    2.09,
+    1.0
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "bed",
+    "bed frame",
+    "king",
+    "white",
+    "black-brown",
+    "white stained oak veneer",
+    "oak veneer"
+  ],
+  "family": "malm_bed_frame_high",
+  "variant": {
+    "en": "King · 150x200"
+  },
+  "ikea": "MALM",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4904, "w": 1, "d": 0.0191, "y": 0, "h": 1, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4952, "w": 1, "d": 0.0096, "y": 0, "h": 0.38, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.4939, "z": 0.0096, "w": 0.0121, "d": 0.9809, "y": 0, "h": 0.38, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4939, "z": 0.0096, "w": 0.0121, "d": 0.9809, "y": 0, "h": 0.38, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0096, "w": 0.9758, "d": 0.9713, "y": 0.2, "h": 0.03, "color": "wood"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0096, "w": 0.9091, "d": 0.9569, "y": 0.23, "h": 0.2, "color": "white", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": -0.4043, "w": 0.7727, "d": 0.1531, "y": 0.43, "h": 0.12, "color": "cushion", "round": 0.45}
+  ]
+}

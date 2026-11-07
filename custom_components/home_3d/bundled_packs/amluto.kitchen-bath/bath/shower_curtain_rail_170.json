@@ -1,0 +1,151 @@
+{
+  "id": "shower_curtain_rail_170",
+  "name": {
+    "en": "Shower curtain and straight rail, 170 cm"
+  },
+  "size": [
+    1.7,
+    0.06,
+    1.45
+  ],
+  "group": "bath",
+  "room": [
+    "bath"
+  ],
+  "tags": [
+    "shower curtain",
+    "shower rail",
+    "curtain rail",
+    "bath",
+    "over bath",
+    "tension rod",
+    "straight rail"
+  ],
+  "mount": "wall",
+  "wall_y": 0.55,
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 0.3667,
+      "y": 0.9793,
+      "h": 0.0152,
+      "color": "metal",
+      "axis": "x"
+    },
+    {
+      "shape": "cyl",
+      "x": -0.4941,
+      "z": 0.0,
+      "w": 0.0118,
+      "d": 0.8333,
+      "y": 0.9655,
+      "h": 0.0345,
+      "color": "metal",
+      "axis": "x"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.4941,
+      "z": 0.0,
+      "w": 0.0118,
+      "d": 0.8333,
+      "y": 0.9655,
+      "h": 0.0345,
+      "color": "metal",
+      "axis": "x"
+    },
+    {
+      "shape": "box",
+      "x": -0.3529,
+      "z": -0.2,
+      "w": 0.0471,
+      "d": 0.2,
+      "y": 0.0,
+      "h": 0.9655,
+      "color": "fabric"
+    },
+    {
+      "shape": "box",
+      "x": -0.3088,
+      "z": 0.2,
+      "w": 0.0471,
+      "d": 0.2,
+      "y": 0.0,
+      "h": 0.9655,
+      "color": "fabric"
+    },
+    {
+      "shape": "box",
+      "x": -0.2647,
+      "z": -0.2,
+      "w": 0.0471,
+      "d": 0.2,
+      "y": 0.0,
+      "h": 0.9655,
+      "color": "fabric"
+    },
+    {
+      "shape": "box",
+      "x": -0.2206,
+      "z": 0.2,
+      "w": 0.0471,
+      "d": 0.2,
+      "y": 0.0,
+      "h": 0.9655,
+      "color": "fabric"
+    },
+    {
+      "shape": "box",
+      "x": -0.1765,
+      "z": -0.2,
+      "w": 0.0471,
+      "d": 0.2,
+      "y": 0.0,
+      "h": 0.9655,
+      "color": "fabric"
+    },
+    {
+      "shape": "box",
+      "x": -0.1324,
+      "z": 0.2,
+      "w": 0.0471,
+      "d": 0.2,
+      "y": 0.0,
+      "h": 0.9655,
+      "color": "fabric"
+    },
+    {
+      "shape": "box",
+      "x": -0.0882,
+      "z": -0.2,
+      "w": 0.0471,
+      "d": 0.2,
+      "y": 0.0,
+      "h": 0.9655,
+      "color": "fabric"
+    },
+    {
+      "shape": "box",
+      "x": -0.0441,
+      "z": 0.2,
+      "w": 0.0471,
+      "d": 0.2,
+      "y": 0.0,
+      "h": 0.9655,
+      "color": "fabric"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": -0.2,
+      "w": 0.0471,
+      "d": 0.2,
+      "y": 0.0,
+      "h": 0.9655,
+      "color": "fabric"
+    }
+  ]
+}

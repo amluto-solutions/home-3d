@@ -1,0 +1,16 @@
+{
+  "id": "topsoil_1x1",
+  "name": {"en": "Topsoil, 1 × 1 m"},
+  "size": [1.0, 1.0, 0.06],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["soil", "earth", "dirt", "border"],
+  "family": "topsoil",
+  "variant": {"en": "1 × 1 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#4a3626", "top": "#5a4331"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

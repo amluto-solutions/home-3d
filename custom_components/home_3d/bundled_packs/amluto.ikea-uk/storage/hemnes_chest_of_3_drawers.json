@@ -1,0 +1,52 @@
+{
+  "id": "hemnes_chest_of_3_drawers",
+  "name": {
+    "en": "Chest of 3 drawers, 108x96 cm"
+  },
+  "size": [
+    1.08,
+    0.5,
+    0.96
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "drawers",
+    "chest",
+    "dresser",
+    "solid pine",
+    "white stain",
+    "black-brown",
+    "grey-green"
+  ],
+  "family": "hemnes_chest_of_drawers",
+  "variant": {
+    "en": "3 drawers · 108x96"
+  },
+  "ikea": "HEMNES",
+  "parts": [
+    {"shape": "box", "x": -0.4917, "z": -0.018, "w": 0.0167, "d": 0.964, "y": 0.1146, "h": 0.8542, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4917, "z": -0.018, "w": 0.0167, "d": 0.964, "y": 0.1146, "h": 0.8542, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.018, "w": 0.9667, "d": 0.964, "y": 0.1146, "h": 0.0187, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.492, "w": 0.9667, "d": 0.016, "y": 0.1333, "h": 0.8167, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.012, "w": 1, "d": 1, "y": 0.9688, "h": 0.0312, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4769, "z": -0.43, "w": 0.0463, "d": 0.1, "y": 0, "h": 0.1146, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4769, "z": 0.43, "w": 0.0463, "d": 0.1, "y": 0, "h": 0.1146, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4769, "z": -0.43, "w": 0.0463, "d": 0.1, "y": 0, "h": 0.1146, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4769, "z": 0.43, "w": 0.0463, "d": 0.1, "y": 0, "h": 0.1146, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.44, "w": 0.9074, "d": 0.04, "y": 0.0729, "h": 0.0417, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.482, "w": 0.9926, "d": 0.036, "y": 0.6861, "h": 0.2806, "color": "white"},
+    {"shape": "cyl", "x": -0.2481, "z": 0.5, "w": 0.0278, "d": 0.048, "y": 0.8449, "h": 0.0312, "color": "wood", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2481, "z": 0.5, "w": 0.0278, "d": 0.048, "y": 0.8449, "h": 0.0312, "color": "wood", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.482, "w": 0.9926, "d": 0.036, "y": 0.4014, "h": 0.2806, "color": "white"},
+    {"shape": "cyl", "x": -0.2481, "z": 0.5, "w": 0.0278, "d": 0.048, "y": 0.5602, "h": 0.0312, "color": "wood", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2481, "z": 0.5, "w": 0.0278, "d": 0.048, "y": 0.5602, "h": 0.0312, "color": "wood", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.482, "w": 0.9926, "d": 0.036, "y": 0.1167, "h": 0.2806, "color": "white"},
+    {"shape": "cyl", "x": -0.2481, "z": 0.5, "w": 0.0278, "d": 0.048, "y": 0.2755, "h": 0.0312, "color": "wood", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2481, "z": 0.5, "w": 0.0278, "d": 0.048, "y": 0.2755, "h": 0.0312, "color": "wood", "axis": "z", "fix": "wdh"}
+  ]
+}

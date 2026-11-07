@@ -1,0 +1,44 @@
+{
+  "id": "bave_led_track_5",
+  "name": {
+    "en": "LED ceiling track with 5 spots, 120 cm"
+  },
+  "size": [
+    1.2,
+    0.03,
+    0.08
+  ],
+  "group": "lamp",
+  "room": [
+    "kitchen",
+    "hall",
+    "living",
+    "office"
+  ],
+  "tags": [
+    "ceiling light",
+    "track",
+    "spotlight",
+    "5 spots",
+    "white",
+    "led",
+    "kitchen"
+  ],
+  "ikea": "BÄVE",
+  "light": "spot",
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.75, "h": 0.25, "color": "white", "fix": "dh"},
+    {"shape": "cyl", "x": -0.4, "z": 0.0, "w": 0.025, "d": 1, "y": 0, "h": 0.75, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4, "z": 0.0, "w": 0.0183, "d": 0.7333, "y": 0, "h": 0.0625, "color": "white", "glow": true, "fix": "h"},
+    {"shape": "cyl", "x": -0.2, "z": 0.0, "w": 0.025, "d": 1, "y": 0, "h": 0.75, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.2, "z": 0.0, "w": 0.0183, "d": 0.7333, "y": 0, "h": 0.0625, "color": "white", "glow": true, "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.025, "d": 1, "y": 0, "h": 0.75, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0183, "d": 0.7333, "y": 0, "h": 0.0625, "color": "white", "glow": true, "fix": "h"},
+    {"shape": "cyl", "x": 0.2, "z": 0.0, "w": 0.025, "d": 1, "y": 0, "h": 0.75, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2, "z": 0.0, "w": 0.0183, "d": 0.7333, "y": 0, "h": 0.0625, "color": "white", "glow": true, "fix": "h"},
+    {"shape": "cyl", "x": 0.4, "z": 0.0, "w": 0.025, "d": 1, "y": 0, "h": 0.75, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4, "z": 0.0, "w": 0.0183, "d": 0.7333, "y": 0, "h": 0.0625, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

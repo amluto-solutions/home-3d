@@ -1,0 +1,42 @@
+{
+  "id": "brimnes_wardrobe_2_doors",
+  "name": {
+    "en": "Wardrobe with 2 doors"
+  },
+  "size": [
+    0.78,
+    0.5,
+    1.9
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "wardrobe",
+    "freestanding wardrobe",
+    "clothes storage",
+    "hanging rail",
+    "white",
+    "black"
+  ],
+  "family": "brimnes_wardrobe",
+  "variant": {
+    "en": "2 doors · 78"
+  },
+  "ikea": "BRIMNES",
+  "parts": [
+    {"shape": "box", "x": -0.4885, "z": -0.02, "w": 0.0231, "d": 0.96, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4885, "z": -0.02, "w": 0.0231, "d": 0.96, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.02, "w": 1, "d": 0.96, "y": 0.9905, "h": 0.0095, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.02, "w": 0.9538, "d": 0.96, "y": 0, "h": 0.0095, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.492, "w": 0.9538, "d": 0.016, "y": 0.0095, "h": 0.9811, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.42, "w": 0.9538, "d": 0.036, "y": 0, "h": 0.0316, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.25, "z": 0.48, "w": 0.4949, "d": 0.036, "y": 0.0316, "h": 0.9663, "color": "white"},
+    {"shape": "cyl", "x": -0.0641, "z": 0.5, "w": 0.0359, "d": 0.048, "y": 0.5189, "h": 0.0147, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.25, "z": 0.48, "w": 0.4949, "d": 0.036, "y": 0.0316, "h": 0.9663, "color": "white"},
+    {"shape": "cyl", "x": 0.0641, "z": 0.5, "w": 0.0359, "d": 0.048, "y": 0.5189, "h": 0.0147, "color": "metal", "axis": "z", "fix": "wdh"}
+  ]
+}

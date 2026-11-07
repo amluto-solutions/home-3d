@@ -1,0 +1,29 @@
+{
+  "id": "rack_patch_panel_48_1u",
+  "name": {"en": "Rack patch panel 48-port 1U"},
+  "size": [0.4826, 0.05, 0.0437],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "surface",
+  "tags": ["patch panel", "cat6", "keystone", "cabling", "48 port", "1u", "rack mount", "19 inch", "rack"],
+  "family": "rack_patch_panel",
+  "variant": {"en": "48-port 1U"},
+  "rack": {"u": 1},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.01, "w": 0.9163, "d": 0.98, "y": 0.0, "h": 1.0, "color": "#3b4048", "edges": "faint"},
+    {"shape": "box", "x": -0.4793, "z": 0.46, "w": 0.0414, "d": 0.08, "y": 0.0, "h": 1.0, "color": "#3b4048"},
+    {"shape": "box", "x": 0.4793, "z": 0.46, "w": 0.0414, "d": 0.08, "y": 0.0, "h": 1.0, "color": "#3b4048"},
+    {"shape": "box", "x": -0.3206, "z": 0.3, "w": 0.1992, "d": 0.4, "y": 0.4771, "h": 0.2941, "color": "#0a0b0d"},
+    {"shape": "box", "x": -0.1069, "z": 0.3, "w": 0.1992, "d": 0.4, "y": 0.4771, "h": 0.2941, "color": "#0a0b0d"},
+    {"shape": "box", "x": 0.1069, "z": 0.3, "w": 0.1992, "d": 0.4, "y": 0.4771, "h": 0.2941, "color": "#0a0b0d"},
+    {"shape": "box", "x": 0.3206, "z": 0.3, "w": 0.1992, "d": 0.4, "y": 0.4771, "h": 0.2941, "color": "#0a0b0d"},
+    {"shape": "box", "x": -0.3206, "z": 0.3, "w": 0.1992, "d": 0.4, "y": 0.1373, "h": 0.2941, "color": "#0a0b0d"},
+    {"shape": "box", "x": -0.1069, "z": 0.3, "w": 0.1992, "d": 0.4, "y": 0.1373, "h": 0.2941, "color": "#0a0b0d"},
+    {"shape": "box", "x": 0.1069, "z": 0.3, "w": 0.1992, "d": 0.4, "y": 0.1373, "h": 0.2941, "color": "#0a0b0d"},
+    {"shape": "box", "x": 0.3206, "z": 0.3, "w": 0.1992, "d": 0.4, "y": 0.1373, "h": 0.2941, "color": "#0a0b0d"},
+    {"shape": "box", "x": 0.0, "z": 0.46, "w": 0.8135, "d": 0.08, "y": 0.7712, "h": 0.0915, "color": "white"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

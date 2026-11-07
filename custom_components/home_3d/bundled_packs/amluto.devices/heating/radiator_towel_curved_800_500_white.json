@@ -1,0 +1,44 @@
+{
+  "id": "radiator_towel_curved_800_500_white",
+  "name": {
+    "en": "Curved towel rail"
+  },
+  "size": [
+    0.5,
+    0.095,
+    0.8
+  ],
+  "group": "heating",
+  "room": [
+    "bath",
+    "kitchen",
+    "utility",
+    "bedroom"
+  ],
+  "tags": [
+    "radiator",
+    "towel rail",
+    "heated towel rail",
+    "bathroom",
+    "towel radiator",
+    "curved"
+  ],
+  "family": "radiator_towel_curved",
+  "variant": {
+    "en": "800 × 500 mm, white"
+  },
+  "mount": "wall",
+  "wall_y": 0.2,
+  "parts": [
+    {"shape": "cyl", "x": -0.44, "z": 0.0, "w": 0.05, "d": 0.2632, "y": 0.0, "h": 1.0, "color": "white"},
+    {"shape": "cyl", "x": 0.44, "z": 0.0, "w": 0.05, "d": 0.2632, "y": 0.0, "h": 1.0, "color": "white"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3684, "w": 0.86, "d": 0.2316, "y": 0.05, "h": 0.0275, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": -0.0, "w": 0.86, "d": 0.2316, "y": 0.1917, "h": 0.0275, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2697, "w": 0.86, "d": 0.2316, "y": 0.3333, "h": 0.0275, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.3684, "w": 0.86, "d": 0.2316, "y": 0.475, "h": 0.0275, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2697, "w": 0.86, "d": 0.2316, "y": 0.6167, "h": 0.0275, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": -0.0, "w": 0.86, "d": 0.2316, "y": 0.7583, "h": 0.0275, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3684, "w": 0.86, "d": 0.2316, "y": 0.9, "h": 0.0275, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.44, "z": 0.0, "w": 0.08, "d": 0.4211, "y": 0.0, "h": 0.0375, "color": "accent"}
+  ]
+}

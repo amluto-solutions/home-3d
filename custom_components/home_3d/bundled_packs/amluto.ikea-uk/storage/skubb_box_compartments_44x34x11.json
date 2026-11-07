@@ -1,0 +1,40 @@
+{
+  "id": "skubb_box_compartments_44x34x11",
+  "name": {
+    "en": "Box with compartments 44x34x11 cm"
+  },
+  "size": [
+    0.44,
+    0.34,
+    0.11
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "SKUBB",
+    "fabric box",
+    "storage box",
+    "drawer organiser",
+    "wardrobe box",
+    "white",
+    "dark grey",
+    "black",
+    "light grey"
+  ],
+  "family": "skubb_box",
+  "variant": {
+    "en": "44x34x11 compartments"
+  },
+  "ikea": "SKUBB",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "fabric", "round": 0.1},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.2273, "d": 0.0176, "y": 0.5455, "h": 0.2273, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.0227, "d": 0.8824, "y": 0.8909, "h": 0.1091, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": -0.1667, "z": 0.0, "w": 0.0227, "d": 0.8824, "y": 0.8909, "h": 0.1091, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.1667, "z": 0.0, "w": 0.0227, "d": 0.8824, "y": 0.8909, "h": 0.1091, "color": "white", "fix": "wh"}
+  ]
+}

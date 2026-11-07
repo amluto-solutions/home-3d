@@ -1,0 +1,21 @@
+{
+  "id": "trophy_shield_silver_small",
+  "name": {"en": "Trophy shield on stand, silver, small"},
+  "size": [0.18, 0.045, 0.22],
+  "group": "deco",
+  "room": ["living", "office", "hall", "study", "games", "dining"],
+  "tags": ["trophy", "award", "prize", "silver", "shield", "crest", "plaque"],
+  "family": "trophy_shield_silver",
+  "variant": {"en": "Small"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9, "d": 1, "y": 0, "h": 0.06, "color": "#2a2420", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.35, "y": 0.06, "h": 0.5, "color": "wood", "fix": "d"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.35, "y": 0.56, "h": 0.1, "color": "wood", "tx": 0.0, "tz": 0.0, "tw": 0.8, "td": 0.35},
+    {"shape": "loft", "x": 0.0, "z": 0.2, "w": 0.66, "d": 0.12, "y": 0.35, "h": 0.55, "color": "#c7cbd1", "tx": 0.0, "tz": 0.2, "tw": 0.56, "td": 0.12},
+    {"shape": "box", "x": 0.0, "z": 0.27, "w": 0.4, "d": 0.0889, "y": 0.2, "h": 0.1, "color": "#f4f4f0", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

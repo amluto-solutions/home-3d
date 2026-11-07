@@ -1,0 +1,48 @@
+{
+  "id": "grillskar_sink_unit_cabinet_172",
+  "name": {
+    "en": "Outdoor kitchen sink unit and cabinet 172 cm"
+  },
+  "size": [
+    1.72,
+    0.61,
+    1.22
+  ],
+  "group": "outdoor",
+  "room": [
+    "garden"
+  ],
+  "tags": [
+    "outdoor kitchen",
+    "garden kitchen",
+    "barbecue",
+    "bbq",
+    "patio",
+    "sink",
+    "stainless steel",
+    "black"
+  ],
+  "family": "grillskar_outdoor_kitchen",
+  "variant": {
+    "en": "172 sink and cabinet"
+  },
+  "ikea": "GRILLSKÄR",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": -0.25, "z": 0.0, "w": 0.5, "d": 1, "y": 0.0328, "h": 0.7213, "color": "metal"},
+    {"shape": "box", "x": -0.25, "z": 0.0, "w": 0.5, "d": 1, "y": 0.7377, "h": 0.0164, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": -0.375, "z": 0.4836, "w": 0.2384, "d": 0.0197, "y": 0.0656, "h": 0.6557, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": -0.125, "z": 0.4836, "w": 0.2384, "d": 0.0197, "y": 0.0656, "h": 0.6557, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": -0.2733, "z": 0.5, "w": 0.007, "d": 0.0361, "y": 0.5574, "h": 0.1639, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.2267, "z": 0.5, "w": 0.007, "d": 0.0361, "y": 0.5574, "h": 0.1639, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.25, "z": 0.0492, "w": 0.2442, "d": 0.5902, "y": 0.7541, "h": 0.0025, "color": "#8b9198", "fix": "h"},
+    {"shape": "cyl", "x": -0.25, "z": -0.3852, "w": 0.0233, "d": 0.0656, "y": 0.7541, "h": 0.2459, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.25, "z": -0.2705, "w": 0.0145, "d": 0.2459, "y": 0.9754, "h": 0.0205, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.25, "z": 0.0, "w": 0.5, "d": 1, "y": 0.0328, "h": 0.7213, "color": "metal"},
+    {"shape": "box", "x": 0.25, "z": 0.0, "w": 0.5, "d": 1, "y": 0.7377, "h": 0.0164, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0.125, "z": 0.4836, "w": 0.2384, "d": 0.0197, "y": 0.0656, "h": 0.6557, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.375, "z": 0.4836, "w": 0.2384, "d": 0.0197, "y": 0.0656, "h": 0.6557, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.2267, "z": 0.5, "w": 0.007, "d": 0.0361, "y": 0.5574, "h": 0.1639, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.2733, "z": 0.5, "w": 0.007, "d": 0.0361, "y": 0.5574, "h": 0.1639, "color": "metal", "fix": "wdh"}
+  ]
+}

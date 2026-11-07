@@ -1,0 +1,27 @@
+{
+  "id": "toaster_4_slice",
+  "name": {"en": "Toaster, 4 slice"},
+  "size": [0.4, 0.2, 0.19],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["toaster", "toast", "bread", "breakfast"],
+  "family": "toaster",
+  "variant": {"en": "4 slice"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.8, "y": 0.0, "h": 0.0632, "color": "dark", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0526, "h": 0.9474, "color": "metal", "round": 0.18},
+    {"shape": "box", "x": -0.25, "z": -0.125, "w": 0.325, "d": 0.1, "y": 0.9789, "h": 0.0211, "color": "dark"},
+    {"shape": "box", "x": -0.25, "z": 0.125, "w": 0.325, "d": 0.1, "y": 0.9789, "h": 0.0211, "color": "dark"},
+    {"shape": "box", "x": 0.25, "z": -0.125, "w": 0.325, "d": 0.1, "y": 0.9789, "h": 0.0211, "color": "dark"},
+    {"shape": "box", "x": 0.25, "z": 0.125, "w": 0.325, "d": 0.1, "y": 0.9789, "h": 0.0211, "color": "dark"},
+    {"shape": "box", "x": 0.4988, "z": 0.0, "w": 0.0025, "d": 0.15, "y": 0.5789, "h": 0.0526, "color": "dark"},
+    {"shape": "box", "x": 0.4988, "z": 0.0, "w": 0.0025, "d": 0.15, "y": 0.5789, "h": 0.0789, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4875, "w": 0.0875, "d": 0.025, "y": 0.2632, "h": 0.1842, "color": "dark", "axis": "z"},
+    {"shape": "box", "x": -0.4838, "z": 0.0, "w": 0.0025, "d": 0.12, "y": 0.4, "h": 0.35, "color": "dark"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

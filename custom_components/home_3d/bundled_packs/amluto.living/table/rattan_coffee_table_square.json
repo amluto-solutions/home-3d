@@ -1,0 +1,147 @@
+{
+  "id": "rattan_coffee_table_square",
+  "name": {
+    "en": "Square rattan glass-top coffee table"
+  },
+  "size": [
+    0.7,
+    0.7,
+    0.42
+  ],
+  "group": "table",
+  "room": [
+    "living",
+    "conservatory",
+    "garden"
+  ],
+  "tags": [
+    "coffee table",
+    "rattan",
+    "wicker",
+    "glass top",
+    "conservatory",
+    "cane",
+    "square"
+  ],
+  "family": "rattan_coffee_table",
+  "variant": {
+    "en": "70 × 70"
+  },
+  "surface": true,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": -0.4643,
+      "z": -0.4643,
+      "w": 0.0714,
+      "d": 0.0714,
+      "y": 0.0,
+      "h": 0.9762,
+      "color": "wood",
+      "round": 0.4,
+      "fix": "wd"
+    },
+    {
+      "shape": "rbox",
+      "x": -0.4643,
+      "z": 0.4643,
+      "w": 0.0714,
+      "d": 0.0714,
+      "y": 0.0,
+      "h": 0.9762,
+      "color": "wood",
+      "round": 0.4,
+      "fix": "wd"
+    },
+    {
+      "shape": "rbox",
+      "x": 0.4643,
+      "z": -0.4643,
+      "w": 0.0714,
+      "d": 0.0714,
+      "y": 0.0,
+      "h": 0.9762,
+      "color": "wood",
+      "round": 0.4,
+      "fix": "wd"
+    },
+    {
+      "shape": "rbox",
+      "x": 0.4643,
+      "z": 0.4643,
+      "w": 0.0714,
+      "d": 0.0714,
+      "y": 0.0,
+      "h": 0.9762,
+      "color": "wood",
+      "round": 0.4,
+      "fix": "wd"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": -0.4714,
+      "w": 0.8571,
+      "d": 0.0286,
+      "y": 0.7381,
+      "h": 0.2143,
+      "color": "wood",
+      "fix": "h"
+    },
+    {
+      "shape": "box",
+      "x": -0.4714,
+      "z": 0.0,
+      "w": 0.0286,
+      "d": 0.8571,
+      "y": 0.7381,
+      "h": 0.2143,
+      "color": "wood",
+      "fix": "h"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.4714,
+      "w": 0.8571,
+      "d": 0.0286,
+      "y": 0.7381,
+      "h": 0.2143,
+      "color": "wood",
+      "fix": "h"
+    },
+    {
+      "shape": "box",
+      "x": 0.4714,
+      "z": 0.0,
+      "w": 0.0286,
+      "d": 0.8571,
+      "y": 0.7381,
+      "h": 0.2143,
+      "color": "wood",
+      "fix": "h"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.8571,
+      "d": 0.8571,
+      "y": 0.1905,
+      "h": 0.0714,
+      "color": "wood",
+      "fix": "h"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.9714,
+      "d": 0.9714,
+      "y": 0.9714,
+      "h": 0.0286,
+      "color": "glass",
+      "fix": "h"
+    }
+  ]
+}

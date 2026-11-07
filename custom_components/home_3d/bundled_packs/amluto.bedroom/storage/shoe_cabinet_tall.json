@@ -1,0 +1,44 @@
+{
+  "id": "shoe_cabinet_tall",
+  "name": {
+    "en": "Shoe cabinet, tall"
+  },
+  "size": [
+    0.8,
+    0.24,
+    1.4
+  ],
+  "group": "storage",
+  "family": "shoe_cabinet",
+  "variant": {
+    "en": "3 flaps · 80 × 140"
+  },
+  "room": [
+    "hall"
+  ],
+  "tags": [
+    "shoe storage",
+    "shoe cupboard",
+    "tipping cabinet",
+    "slim cabinet",
+    "flip door",
+    "hallway"
+  ],
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.0417, "w": 0.975, "d": 0.8333, "y": 0, "h": 0.0357, "color": "body", "fix": "h"},
+    {"shape": "box", "x": -0.4888, "z": -0.0417, "w": 0.0225, "d": 0.9167, "y": 0.0357, "h": 0.95, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.4888, "z": -0.0417, "w": 0.0225, "d": 0.9167, "y": 0.0357, "h": 0.95, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0, "z": -0.0417, "w": 0.955, "d": 0.9167, "y": 0.0357, "h": 0.95, "color": "body"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.9857, "h": 0.0143, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.4583, "w": 0.9925, "d": 0.0833, "y": 0.0393, "h": 0.3124, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4979, "w": 0.125, "d": 0.0042, "y": 0.3138, "h": 0.0114, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0.4583, "w": 0.9925, "d": 0.0833, "y": 0.3545, "h": 0.3124, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4979, "w": 0.125, "d": 0.0042, "y": 0.629, "h": 0.0114, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0.4583, "w": 0.9925, "d": 0.0833, "y": 0.6698, "h": 0.3124, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.4979, "w": 0.125, "d": 0.0042, "y": 0.9443, "h": 0.0114, "color": "metal", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.4, "x2": 0.5, "z2": 0.4}
+  ]
+}

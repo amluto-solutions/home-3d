@@ -1,0 +1,24 @@
+{
+  "id": "towel_bar_450",
+  "name": {"en": "Towel bar 450"},
+  "size": [0.5, 0.08, 0.06],
+  "group": "bath",
+  "room": ["bath", "kitchen", "utility"],
+  "tags": ["towel ring", "towel bar", "towel rail", "towel holder", "chrome", "towel hook", "robe hook"],
+  "family": "towel_holder",
+  "variant": {"en": "Bar 450"},
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "cyl", "x": -0.46, "z": -0.4375, "w": 0.08, "d": 0.125, "y": 0.1667, "h": 0.6667, "color": "metal", "axis": "z", "fix": "w"},
+    {"shape": "box", "x": -0.46, "z": -0.1875, "w": 0.024, "d": 0.375, "y": 0.4, "h": 0.2, "color": "metal", "fix": "w"},
+    {"shape": "cyl", "x": 0.46, "z": -0.4375, "w": 0.08, "d": 0.125, "y": 0.1667, "h": 0.6667, "color": "metal", "axis": "z", "fix": "w"},
+    {"shape": "box", "x": 0.46, "z": -0.1875, "w": 0.024, "d": 0.375, "y": 0.4, "h": 0.2, "color": "metal", "fix": "w"},
+    {"shape": "cyl", "x": 0.0, "z": -0.0625, "w": 0.96, "d": 0.2, "y": 0.3667, "h": 0.2667, "color": "metal", "axis": "x"},
+    {"shape": "box", "x": 0.0, "z": 0.2187, "w": 0.76, "d": 0.3125, "y": 0.0, "h": 0.5, "color": "fabric"},
+    {"shape": "box", "x": 0.0, "z": -0.2625, "w": 0.76, "d": 0.225, "y": 0.0, "h": 0.5, "color": "fabric"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

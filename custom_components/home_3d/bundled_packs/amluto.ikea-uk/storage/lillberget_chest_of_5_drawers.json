@@ -1,0 +1,47 @@
+{
+  "id": "lillberget_chest_of_5_drawers",
+  "name": {
+    "en": "Chest of 5 drawers, 70x108 cm"
+  },
+  "size": [
+    0.7,
+    0.43,
+    1.08
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "drawers",
+    "chest",
+    "dresser",
+    "white",
+    "low"
+  ],
+  "family": "lillberget_chest_of_drawers",
+  "variant": {
+    "en": "5 drawers · 70x108"
+  },
+  "ikea": "LILLBERGET",
+  "parts": [
+    {"shape": "box", "x": -0.4871, "z": -0.0209, "w": 0.0257, "d": 0.9581, "y": 0.0463, "h": 0.9352, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4871, "z": -0.0209, "w": 0.0257, "d": 0.9581, "y": 0.0463, "h": 0.9352, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0209, "w": 0.9486, "d": 0.9581, "y": 0.0463, "h": 0.0167, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4907, "w": 0.9486, "d": 0.0186, "y": 0.063, "h": 0.9019, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9815, "h": 0.0185, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4116, "w": 0.9486, "d": 0.0419, "y": 0, "h": 0.0463, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4791, "w": 0.9886, "d": 0.0419, "y": 0.7963, "h": 0.1833, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4907, "w": 0.9886, "d": 0.0233, "y": 0.9593, "h": 0.0185, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4791, "w": 0.9886, "d": 0.0419, "y": 0.6093, "h": 0.1833, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4907, "w": 0.9886, "d": 0.0233, "y": 0.7722, "h": 0.0185, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4791, "w": 0.9886, "d": 0.0419, "y": 0.4222, "h": 0.1833, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4907, "w": 0.9886, "d": 0.0233, "y": 0.5852, "h": 0.0185, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4791, "w": 0.9886, "d": 0.0419, "y": 0.2352, "h": 0.1833, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4907, "w": 0.9886, "d": 0.0233, "y": 0.3981, "h": 0.0185, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4791, "w": 0.9886, "d": 0.0419, "y": 0.0481, "h": 0.1833, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4907, "w": 0.9886, "d": 0.0233, "y": 0.2111, "h": 0.0185, "color": "dark", "fix": "h"}
+  ]
+}

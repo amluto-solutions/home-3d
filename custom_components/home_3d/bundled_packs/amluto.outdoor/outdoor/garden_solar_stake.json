@@ -1,0 +1,20 @@
+{
+  "id": "garden_solar_stake",
+  "name": {"en": "Solar stake light"},
+  "size": [0.08, 0.08, 0.4],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["solar light", "stake light", "garden light", "path light", "outdoor lighting", "lamp", "border", "lighting", "solar"],
+  "family": "garden_solar",
+  "variant": {"en": "Stake, 40 cm"},
+  "light": "garden",
+  "parts": [
+    {"shape": "loft", "x": 0, "z": 0, "w": 0.25, "d": 0.25, "y": 0, "h": 0.5, "color": "#3b3e44", "tx": 0, "tz": 0, "tw": 0.15, "td": 0.15},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.15, "d": 0.15, "y": 0.5, "h": 0.25, "color": "#3b3e44"},
+    {"shape": "lathe", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.65, "h": 0.25, "color": "#f5f2e8", "profile": [[0.3, 0], [1, 0.3], [1, 0.7], [0.5, 1], [0.1, 1]], "glow": true},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.9, "h": 0.0375, "color": "#1f3a5a"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

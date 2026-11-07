@@ -1,0 +1,40 @@
+{
+  "id": "kuggis_box_lid_37x54x21",
+  "name": {
+    "en": "Box with lid 37x54x21 cm"
+  },
+  "size": [
+    0.37,
+    0.54,
+    0.21
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "office",
+    "hall",
+    "living",
+    "utility"
+  ],
+  "tags": [
+    "KUGGIS",
+    "stackable",
+    "storage box",
+    "box with lid",
+    "plastic box",
+    "white"
+  ],
+  "family": "kuggis_box",
+  "variant": {
+    "en": "37x54x21"
+  },
+  "ikea": "KUGGIS",
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.9, "color": "white", "round": 0.12},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9, "h": 0.1, "color": "white", "round": 0.2},
+    {"shape": "box", "x": -0.5, "z": 0.0, "w": 0.0108, "d": 0.2222, "y": 0.55, "h": 0.12, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.5, "z": 0.0, "w": 0.0108, "d": 0.2222, "y": 0.55, "h": 0.12, "color": "dark", "fix": "wdh"}
+  ]
+}

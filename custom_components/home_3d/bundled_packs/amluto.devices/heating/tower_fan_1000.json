@@ -1,0 +1,74 @@
+{
+  "id": "tower_fan_1000",
+  "name": {
+    "en": "Tower fan"
+  },
+  "size": [
+    0.25,
+    0.27,
+    1.02
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "fan",
+    "cooling",
+    "summer",
+    "air movement",
+    "tower fan",
+    "oscillating fan",
+    "column fan"
+  ],
+  "family": "tower_fan",
+  "variant": {
+    "en": "Tower 102 cm"
+  },
+  "electric": true,
+  "watts": 30,
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.95,
+      "d": 0.95,
+      "y": 0.0,
+      "h": 0.0294,
+      "color": "dark"
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.8,
+      "d": 0.8,
+      "y": 0.0294,
+      "h": 0.9706,
+      "color": "white",
+      "round": 0.4
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.38,
+      "w": 0.6,
+      "d": 0.0444,
+      "y": 0.18,
+      "h": 0.7,
+      "color": "dark"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "circle",
+      "x": 0,
+      "z": 0,
+      "r": 0.45
+    }
+  ]
+}

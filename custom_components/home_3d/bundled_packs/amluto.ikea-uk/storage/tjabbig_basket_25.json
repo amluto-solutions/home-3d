@@ -1,0 +1,34 @@
+{
+  "id": "tjabbig_basket_25",
+  "name": {
+    "en": "Basket, natural 25 cm"
+  },
+  "size": [
+    0.25,
+    0.25,
+    0.23
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "office",
+    "hall",
+    "living",
+    "utility"
+  ],
+  "tags": [
+    "TJABBIG",
+    "basket",
+    "round basket",
+    "natural",
+    "wicker",
+    "plant basket"
+  ],
+  "ikea": "TJABBIG",
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#c9a870", "profile": [[0.82, 0], [0.9, 0.2], [1, 0.8], [1, 1], [0.92, 1], [0.86, 0.1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.98, "d": 0.98, "y": 0.45, "h": 0.0522, "color": "#a88a55", "fix": "wdh"}
+  ]
+}

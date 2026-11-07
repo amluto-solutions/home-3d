@@ -1,0 +1,37 @@
+{
+  "id": "unifi_g6_bullet",
+  "name": {
+    "en": "UniFi G6 Bullet camera"
+  },
+  "size": [
+    0.082,
+    0.153,
+    0.082
+  ],
+  "group": "tech",
+  "tags": [
+    "security camera",
+    "camera",
+    "cctv",
+    "unifi",
+    "ubiquiti",
+    "g6 bullet",
+    "uvc g6 bullet"
+  ],
+  "family": "unifi_camera",
+  "variant": {
+    "en": "G6 Bullet"
+  },
+  "electric": true,
+  "watts": 9.9,
+  "mount": "wall",
+  "wall_y": 2.1,
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.47, "w": 0.45, "d": 0.06, "y": 0.15, "h": 0.7, "color": "white"},
+    {"shape": "cyl", "x": 0, "z": -0.2602, "w": 0.18, "d": 0.4796, "y": 0.3, "h": 0.2, "color": "white", "axis": "z"},
+    {"shape": "cyl", "x": 0, "z": 0.2098, "w": 1, "d": 0.5804, "y": 0, "h": 0.88, "color": "white", "axis": "z"},
+    {"shape": "box", "x": 0, "z": 0.2214, "w": 0.5, "d": 0.5514, "y": 0.88, "h": 0.12, "color": "white"},
+    {"shape": "cyl", "x": 0, "z": 0.485, "w": 0.86, "d": 0.03, "y": 0.06, "h": 0.76, "color": "#1c222c", "axis": "z"},
+    {"shape": "cyl", "x": 0, "z": 0.495, "w": 0.4, "d": 0.015, "y": 0.24, "h": 0.4, "color": "#0b0f17", "axis": "z"}
+  ]
+}

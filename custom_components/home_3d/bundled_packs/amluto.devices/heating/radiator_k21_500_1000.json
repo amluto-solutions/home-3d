@@ -1,0 +1,51 @@
+{
+  "id": "radiator_k21_500_1000",
+  "name": {
+    "en": "Type 21 panel radiator"
+  },
+  "size": [
+    1.0,
+    0.075,
+    0.54
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "kitchen",
+    "hall",
+    "office",
+    "kids",
+    "bath",
+    "utility",
+    "conservatory"
+  ],
+  "tags": [
+    "radiator",
+    "panel radiator",
+    "central heating",
+    "trv",
+    "type 21",
+    "k2",
+    "500 x 1000"
+  ],
+  "family": "radiator_type21",
+  "variant": {
+    "en": "500 × 1000 mm"
+  },
+  "mount": "wall",
+  "wall_y": 0.11,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.25, "w": 1.0, "d": 0.2667, "y": 0.0741, "h": 0.9259, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 1.0, "d": 0.2667, "y": 0.0741, "h": 0.9259, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.97, "d": 0.35, "y": 0.1296, "h": 0.8148, "color": "#d8d8d3"},
+    {"shape": "box", "x": -0.494, "z": 0.0, "w": 0.012, "d": 0.97, "y": 0.0741, "h": 0.9259, "color": "#ececE7"},
+    {"shape": "box", "x": 0.494, "z": 0.0, "w": 0.012, "d": 0.97, "y": 0.0741, "h": 0.9259, "color": "#ececE7"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.9667, "h": 0.0333, "color": "white", "top": "#e9e9e4"},
+    {"shape": "box", "x": 0.0, "z": 0.12, "w": 0.95, "d": 0.5, "y": 0.9944, "h": 0.0056, "color": "dark"},
+    {"shape": "cyl", "x": -0.45, "z": -0.2333, "w": 0.022, "d": 0.2933, "y": 0.0, "h": 0.0926, "color": "metal"},
+    {"shape": "cyl", "x": 0.45, "z": -0.2333, "w": 0.022, "d": 0.2933, "y": 0.0, "h": 0.0926, "color": "metal"},
+    {"shape": "cyl", "x": 0.45, "z": -0.0333, "w": 0.035, "d": 0.4667, "y": 0.0222, "h": 0.0519, "color": "metal"},
+    {"shape": "cyl", "x": 0.45, "z": -0.0333, "w": 0.03, "d": 0.5333, "y": 0.0259, "h": 0.0444, "color": "accent"}
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "branas_basket_32x34x32",
+  "name": {
+    "en": "Basket, rattan 32x34x32 cm"
+  },
+  "size": [
+    0.32,
+    0.34,
+    0.32
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "office",
+    "hall",
+    "living",
+    "utility"
+  ],
+  "tags": [
+    "BRANAS",
+    "basket",
+    "rattan basket",
+    "wicker",
+    "storage basket",
+    "natural"
+  ],
+  "family": "branas_basket",
+  "variant": {
+    "en": "Basket 32x34x32"
+  },
+  "ikea": "BRANÄS",
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#b48a55", "round": 0.14},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.86, "y": 0.9875, "h": 0.0125, "color": "#5b4528", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.96, "d": 0.0088, "y": 0.25, "h": 0.0375, "color": "#8b6a3d", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.5, "w": 0.96, "d": 0.0088, "y": 0.25, "h": 0.0375, "color": "#8b6a3d", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.96, "d": 0.0088, "y": 0.5, "h": 0.0375, "color": "#8b6a3d", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.5, "w": 0.96, "d": 0.0088, "y": 0.5, "h": 0.0375, "color": "#8b6a3d", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.96, "d": 0.0088, "y": 0.75, "h": 0.0375, "color": "#8b6a3d", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.5, "w": 0.96, "d": 0.0088, "y": 0.75, "h": 0.0375, "color": "#8b6a3d", "fix": "dh"},
+    {"shape": "box", "x": -0.5, "z": 0.0, "w": 0.0187, "d": 0.2941, "y": 0.6875, "h": 0.0938, "color": "#8b6a3d", "fix": "wdh"},
+    {"shape": "box", "x": 0.5, "z": 0.0, "w": 0.0187, "d": 0.2941, "y": 0.6875, "h": 0.0938, "color": "#8b6a3d", "fix": "wdh"}
+  ]
+}

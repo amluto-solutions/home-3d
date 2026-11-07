@@ -1,0 +1,55 @@
+{
+  "id": "radiator_flat_tube_1000",
+  "name": {
+    "en": "Horizontal designer radiator"
+  },
+  "size": [
+    1.17,
+    0.07,
+    0.68
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "kitchen",
+    "hall",
+    "office",
+    "kids",
+    "bath",
+    "utility",
+    "conservatory"
+  ],
+  "tags": [
+    "radiator",
+    "designer radiator",
+    "flat tube",
+    "horizontal radiator",
+    "anthracite",
+    "trv",
+    "central heating",
+    "modern"
+  ],
+  "family": "radiator_flat_tube",
+  "variant": {
+    "en": "600 × 1000 mm"
+  },
+  "mount": "wall",
+  "wall_y": 0.4,
+  "parts": [
+    {"shape": "box", "x": -0.4103, "z": 0.0, "w": 0.0342, "d": 1, "y": 0.1176, "h": 0.8824, "color": "#3b3d41"},
+    {"shape": "box", "x": 0.4103, "z": 0.0, "w": 0.0342, "d": 1, "y": 0.1176, "h": 0.8824, "color": "#3b3d41"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.8034, "d": 0.8571, "y": 0.1353, "h": 0.0662, "color": "#3b3d41", "round": 0.5},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.8034, "d": 0.8571, "y": 0.2333, "h": 0.0662, "color": "#3b3d41", "round": 0.5},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.8034, "d": 0.8571, "y": 0.3314, "h": 0.0662, "color": "#3b3d41", "round": 0.5},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.8034, "d": 0.8571, "y": 0.4294, "h": 0.0662, "color": "#3b3d41", "round": 0.5},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.8034, "d": 0.8571, "y": 0.5275, "h": 0.0662, "color": "#3b3d41", "round": 0.5},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.8034, "d": 0.8571, "y": 0.6255, "h": 0.0662, "color": "#3b3d41", "round": 0.5},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.8034, "d": 0.8571, "y": 0.7235, "h": 0.0662, "color": "#3b3d41", "round": 0.5},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.8034, "d": 0.8571, "y": 0.8216, "h": 0.0662, "color": "#3b3d41", "round": 0.5},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.8034, "d": 0.8571, "y": 0.9196, "h": 0.0662, "color": "#3b3d41", "round": 0.5},
+    {"shape": "cyl", "x": 0.4359, "z": 0.0, "w": 0.0427, "d": 0.3714, "y": 0.1471, "h": 0.0382, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.4744, "z": 0.0, "w": 0.0427, "d": 0.5714, "y": 0.1441, "h": 0.0588, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.4974, "z": 0.0, "w": 0.0051, "d": 0.6, "y": 0.1441, "h": 0.0618, "color": "accent", "axis": "x"}
+  ]
+}

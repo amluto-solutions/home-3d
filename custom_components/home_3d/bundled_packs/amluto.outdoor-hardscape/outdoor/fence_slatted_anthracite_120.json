@@ -1,0 +1,27 @@
+{
+  "id": "fence_slatted_anthracite_120",
+  "name": {"en": "Horizontal slatted fence, anthracite, 1.2 m high"},
+  "size": [1.83, 0.1, 1.2],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["fence", "slatted", "contemporary fence", "composite", "horizontal", "boundary", "modern"],
+  "family": "fence_slatted_anthracite",
+  "variant": {"en": "1.2 m high"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.025, "h": 0.1119, "color": "#3b3e42"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.1469, "h": 0.1119, "color": "#3d4045"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.2688, "h": 0.1119, "color": "#3b3e42"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.3906, "h": 0.1119, "color": "#3d4045"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.5125, "h": 0.1119, "color": "#3b3e42"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.6344, "h": 0.1119, "color": "#3d4045"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.7562, "h": 0.1119, "color": "#3b3e42"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8907, "d": 0.5, "y": 0.8781, "h": 0.1119, "color": "#3d4045"},
+    {"shape": "box", "x": -0.4727, "z": 0.0, "w": 0.0546, "d": 1, "y": 0, "h": 1, "color": "#292b2e", "fix": "wd"},
+    {"shape": "box", "x": -0.4727, "z": 0.0, "w": 0.0546, "d": 1, "y": 0.975, "h": 0.025, "color": "#2f3135", "fix": "wdh"},
+    {"shape": "box", "x": 0.4727, "z": 0.0, "w": 0.0546, "d": 1, "y": 0, "h": 1, "color": "#292b2e", "fix": "wd"},
+    {"shape": "box", "x": 0.4727, "z": 0.0, "w": 0.0546, "d": 1, "y": 0.975, "h": 0.025, "color": "#2f3135", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

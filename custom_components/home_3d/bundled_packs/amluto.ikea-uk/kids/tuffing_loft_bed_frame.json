@@ -1,0 +1,52 @@
+{
+  "id": "tuffing_loft_bed_frame",
+  "name": {
+    "en": "Loft bed frame 90x200"
+  },
+  "size": [
+    2.08,
+    1.02,
+    1.79
+  ],
+  "group": "kids",
+  "room": [
+    "kids",
+    "bedroom"
+  ],
+  "tags": [
+    "TUFFING",
+    "loft bed",
+    "high sleeper",
+    "metal bed",
+    "single",
+    "dark grey",
+    "mattress 90x200"
+  ],
+  "family": "tuffing_bed_frame",
+  "variant": {
+    "en": "Loft"
+  },
+  "ikea": "TUFFING",
+  "parts": [
+    {"shape": "cyl", "x": -0.488, "z": -0.451, "w": 0.0216, "d": 0.0441, "y": 0, "h": 1, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": -0.488, "z": 0.451, "w": 0.0216, "d": 0.0441, "y": 0, "h": 1, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": -0.488, "z": 0.0, "w": 0.0144, "d": 0.902, "y": 0.9832, "h": 0.0168, "color": "metal", "axis": "z", "fix": "wh"},
+    {"shape": "cyl", "x": 0.488, "z": -0.451, "w": 0.0216, "d": 0.0441, "y": 0, "h": 1, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.488, "z": 0.451, "w": 0.0216, "d": 0.0441, "y": 0, "h": 1, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.488, "z": 0.0, "w": 0.0144, "d": 0.902, "y": 0.9832, "h": 0.0168, "color": "metal", "axis": "z", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": -0.451, "w": 0.976, "d": 0.0294, "y": 0.7765, "h": 0.0335, "color": "metal", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.451, "w": 0.976, "d": 0.0294, "y": 0.7765, "h": 0.0335, "color": "metal", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9712, "d": 0.8922, "y": 0.7989, "h": 0.0112, "color": "wood"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9615, "d": 0.8824, "y": 0.8101, "h": 0.0838, "color": "white", "round": 0.25},
+    {"shape": "cyl", "x": 0.0, "z": -0.451, "w": 0.976, "d": 0.0294, "y": 0.9218, "h": 0.0168, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": -0.1202, "z": 0.451, "w": 0.7356, "d": 0.0294, "y": 0.9218, "h": 0.0168, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.451, "w": 0.976, "d": 0.0294, "y": 0.8994, "h": 0.0168, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "box", "x": 0.2837, "z": 0.4951, "w": 0.0144, "d": 0.0392, "y": 0, "h": 0.9497, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": 0.4279, "z": 0.4951, "w": 0.0144, "d": 0.0392, "y": 0, "h": 0.9497, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.3558, "z": 0.4951, "w": 0.1442, "d": 0.0245, "y": 0.1536, "h": 0.014, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0.3558, "z": 0.4951, "w": 0.1442, "d": 0.0245, "y": 0.3073, "h": 0.014, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0.3558, "z": 0.4951, "w": 0.1442, "d": 0.0245, "y": 0.4609, "h": 0.014, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0.3558, "z": 0.4951, "w": 0.1442, "d": 0.0245, "y": 0.6145, "h": 0.014, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0.3558, "z": 0.4951, "w": 0.1442, "d": 0.0245, "y": 0.7682, "h": 0.014, "color": "metal", "axis": "x", "fix": "dh"}
+  ]
+}

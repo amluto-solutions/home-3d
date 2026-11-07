@@ -1,0 +1,27 @@
+{
+  "id": "drop_leaf_table_open",
+  "name": {"en": "Drop-leaf table"},
+  "size": [0.9, 0.9, 0.74],
+  "group": "table",
+  "family": "drop_leaf_table",
+  "variant": {"en": "Leaves up"},
+  "room": ["dining", "kitchen", "living"],
+  "tags": ["drop leaf", "drop-leaf", "gateleg", "gate leg", "folding table", "small dining table", "space saving"],
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.3333, "y": 0.9662, "h": 0.0338, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8889, "d": 0.2889, "y": 0.8649, "h": 0.1014, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4389, "z": -0.1333, "w": 0.0333, "d": 0.0333, "y": 0.0, "h": 0.9662, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": -0.4389, "z": 0.1333, "w": 0.0333, "d": 0.0333, "y": 0.0, "h": 0.9662, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": -0.4389, "z": 0.0, "w": 0.0333, "d": 0.2889, "y": 0.1351, "h": 0.0405, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": 0.4389, "z": -0.1333, "w": 0.0333, "d": 0.0333, "y": 0.0, "h": 0.9662, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4389, "z": 0.1333, "w": 0.0333, "d": 0.0333, "y": 0.0, "h": 0.9662, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4389, "z": 0.0, "w": 0.0333, "d": 0.2889, "y": 0.1351, "h": 0.0405, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": -0.3344, "w": 1.0, "d": 0.3311, "y": 0.9662, "h": 0.0338, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.3344, "w": 1.0, "d": 0.3311, "y": 0.9662, "h": 0.0338, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.3722, "w": 0.0333, "d": 0.0333, "y": 0.0, "h": 0.9662, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": -0.1111, "w": 0.0333, "d": 0.5556, "y": 0.1351, "h": 0.0405, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.3722, "w": 0.0333, "d": 0.0333, "y": 0.0, "h": 0.9662, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.1111, "w": 0.0333, "d": 0.5556, "y": 0.1351, "h": 0.0405, "color": "wood", "fix": "h"}
+  ]
+}

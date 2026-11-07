@@ -1,0 +1,49 @@
+{
+  "id": "kungsfors_rail_shelves_drainer_124",
+  "name": {
+    "en": "Suspension rail with shelves, dish drainer and wall grid 124 cm"
+  },
+  "size": [
+    1.24,
+    0.32,
+    0.8
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen",
+    "utility"
+  ],
+  "tags": [
+    "wall storage",
+    "rail",
+    "open shelving",
+    "hooks",
+    "stainless steel",
+    "ash veneer"
+  ],
+  "family": "kungsfors_rail",
+  "variant": {
+    "en": "124 cm with dish drainer"
+  },
+  "ikea": "KUNGSFORS",
+  "mount": "wall",
+  "wall_y": 1.35,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4688, "w": 1, "d": 0.0625, "y": 0.9625, "h": 0.0375, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": -0.4758, "z": -0.4531, "w": 0.0161, "d": 0.0312, "y": 0, "h": 0.9625, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": -0.4531, "w": 0.0161, "d": 0.0312, "y": 0, "h": 0.9625, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": 0.4758, "z": -0.4531, "w": 0.0161, "d": 0.0312, "y": 0, "h": 0.9625, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": -0.25, "z": 0.0, "w": 0.4597, "d": 0.9688, "y": 0.65, "h": 0.025, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.25, "z": 0.0, "w": 0.4597, "d": 0.9688, "y": 0.625, "h": 0.025, "color": "metal", "fix": "h"},
+    {"shape": "cyl", "x": -0.25, "z": -0.3438, "w": 0.4597, "d": 0.0406, "y": 0.125, "h": 0.0162, "color": "metal", "axis": "x", "fix": "h"},
+    {"shape": "box", "x": 0.25, "z": 0.0, "w": 0.4597, "d": 0.9688, "y": 0.65, "h": 0.025, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.25, "z": 0.0, "w": 0.4032, "d": 0.8125, "y": 0.35, "h": 0.015, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0.129, "z": 0.0, "w": 0.0032, "d": 0.6875, "y": 0.3625, "h": 0.175, "color": "metal", "edges": "faint", "fix": "wh"},
+    {"shape": "box", "x": 0.1774, "z": 0.0, "w": 0.0032, "d": 0.6875, "y": 0.3625, "h": 0.175, "color": "metal", "edges": "faint", "fix": "wh"},
+    {"shape": "box", "x": 0.2258, "z": 0.0, "w": 0.0032, "d": 0.6875, "y": 0.3625, "h": 0.175, "color": "metal", "edges": "faint", "fix": "wh"},
+    {"shape": "box", "x": 0.2742, "z": 0.0, "w": 0.0032, "d": 0.6875, "y": 0.3625, "h": 0.175, "color": "metal", "edges": "faint", "fix": "wh"},
+    {"shape": "box", "x": 0.3226, "z": 0.0, "w": 0.0032, "d": 0.6875, "y": 0.3625, "h": 0.175, "color": "metal", "edges": "faint", "fix": "wh"},
+    {"shape": "box", "x": 0.371, "z": 0.0, "w": 0.0032, "d": 0.6875, "y": 0.3625, "h": 0.175, "color": "metal", "edges": "faint", "fix": "wh"},
+    {"shape": "box", "x": -0.25, "z": -0.4062, "w": 0.4032, "d": 0.025, "y": 0.1875, "h": 0.325, "color": "metal", "edges": "faint", "fix": "dh"}
+  ]
+}

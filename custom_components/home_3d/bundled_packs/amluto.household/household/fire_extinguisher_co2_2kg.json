@@ -1,0 +1,22 @@
+{
+  "id": "fire_extinguisher_co2_2kg",
+  "name": {"en": "Fire extinguisher"},
+  "size": [0.156, 0.156, 0.52],
+  "group": "household",
+  "room": ["hall", "kitchen", "garage", "utility", "hobby", "loft"],
+  "tags": ["fire safety", "extinguisher", "fire", "safety", "co2", "carbon dioxide", "electrical fire", "2kg"],
+  "family": "fire_extinguisher",
+  "variant": {"en": "CO2, 2 kg"},
+  "parts": [
+    {"shape": "lathe", "x": 0, "z": 0, "w": 0.7692, "d": 0.7692, "y": 0, "h": 0.72, "color": "#c0262b", "profile": [[0, 0], [0.85, 0], [1, 0.06], [1, 0.82], [0.7, 0.95], [0.3, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.7692, "d": 0.7692, "y": 0.18, "h": 0.16, "color": "#2b2b2e"},
+    {"shape": "box", "x": 0, "z": 0.3885, "w": 0.4231, "d": 0.0256, "y": 0.2, "h": 0.12, "color": "#f2eee2"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.2308, "d": 0.2308, "y": 0.68, "h": 0.06, "color": "metal"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.3231, "d": 0.2308, "y": 0.72, "h": 0.07, "color": "#1c1c1e"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.2308, "d": 0.6154, "y": 0.79, "h": 0.04, "color": "#1c1c1e"},
+    {"shape": "box", "x": 0.2692, "z": 0, "w": 0.3846, "d": 0.1385, "y": 0.9, "h": 0.025, "color": "#1c1c1e"},
+    {"shape": "cyl", "x": -0.3462, "z": 0.2308, "w": 0.0923, "d": 0.0923, "y": 0.7, "h": 0.06, "color": "#e8d44a"},
+    {"shape": "cyl", "x": 0.3846, "z": 0.0769, "w": 0.0769, "d": 0.3846, "y": 0.7485, "h": 0.0231, "color": "#1c1c1e", "axis": "z"},
+    {"shape": "loft", "x": 0.3846, "z": 0.4615, "w": 0.1538, "d": 0.2692, "y": 0.44, "h": 0.32, "color": "#1c1c1e", "tx": 0.3846, "tz": 0.2308, "tw": 0.0538, "td": 0.0769}
+  ]
+}

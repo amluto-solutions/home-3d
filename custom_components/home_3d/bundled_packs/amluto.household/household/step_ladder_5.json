@@ -1,0 +1,29 @@
+{
+  "id": "step_ladder_5",
+  "name": {"en": "Step ladder"},
+  "size": [0.5, 1.05, 1.68],
+  "group": "household",
+  "room": ["garage", "utility", "hall", "kitchen", "loft"],
+  "tags": ["ladder", "steps", "stepladder", "step stool", "aluminium ladder", "decorating", "diy"],
+  "family": "step_ladder",
+  "variant": {"en": "5 treads"},
+  "parts": [
+    {"shape": "loft", "x": -0.46, "z": 0.4714, "w": 0.07, "d": 0.0286, "y": 0.0, "h": 1, "color": "metal", "tx": -0.42, "tz": -0.316, "tw": 0.07, "td": 0.0286},
+    {"shape": "loft", "x": -0.414, "z": -0.4714, "w": 0.06, "d": 0.0286, "y": 0.0, "h": 0.7321, "color": "metal", "tx": -0.414, "tz": -0.3476, "tw": 0.06, "td": 0.0286},
+    {"shape": "cyl", "x": -0.45, "z": 0.4714, "w": 0.1, "d": 0.0476, "y": 0.0, "h": 0.0179, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.414, "z": -0.4714, "w": 0.08, "d": 0.0381, "y": 0.0, "h": 0.0179, "color": "dark", "fix": "wdh"},
+    {"shape": "loft", "x": 0.46, "z": 0.4714, "w": 0.07, "d": 0.0286, "y": 0.0, "h": 1, "color": "metal", "tx": 0.42, "tz": -0.316, "tw": 0.07, "td": 0.0286},
+    {"shape": "loft", "x": 0.414, "z": -0.4714, "w": 0.06, "d": 0.0286, "y": 0.0, "h": 0.7321, "color": "metal", "tx": 0.414, "tz": -0.3476, "tw": 0.06, "td": 0.0286},
+    {"shape": "cyl", "x": 0.45, "z": 0.4714, "w": 0.1, "d": 0.0476, "y": 0.0, "h": 0.0179, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.414, "z": -0.4714, "w": 0.08, "d": 0.0381, "y": 0.0, "h": 0.0179, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.3408, "w": 0.88, "d": 0.0952, "y": 0.1345, "h": 0.0149, "color": "metal", "edges": "faint"},
+    {"shape": "box", "x": 0.0, "z": 0.2293, "w": 0.88, "d": 0.0952, "y": 0.281, "h": 0.0149, "color": "metal", "edges": "faint"},
+    {"shape": "box", "x": 0.0, "z": 0.1177, "w": 0.88, "d": 0.0952, "y": 0.4274, "h": 0.0149, "color": "metal", "edges": "faint"},
+    {"shape": "box", "x": 0.0, "z": 0.0061, "w": 0.88, "d": 0.0952, "y": 0.5738, "h": 0.0149, "color": "metal", "edges": "faint"},
+    {"shape": "box", "x": 0.0, "z": -0.3476, "w": 0.92, "d": 0.2476, "y": 0.7173, "h": 0.0149, "color": "dark", "edges": "faint"},
+    {"shape": "cyl", "x": 0.0, "z": -0.4048, "w": 0.94, "d": 0.0286, "y": 0.9821, "h": 0.0179, "color": "metal", "axis": "x"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

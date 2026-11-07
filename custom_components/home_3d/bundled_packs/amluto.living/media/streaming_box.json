@@ -1,0 +1,20 @@
+{
+  "id": "streaming_box",
+  "name": {"en": "Streaming box"},
+  "size": [0.1, 0.1, 0.035],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "office", "loft"],
+  "tags": ["apple tv", "nvidia shield", "set-top box", "streaming", "streamer", "media player", "hdmi"],
+  "family": "streaming_device",
+  "variant": {"en": "Box"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.9714, "color": "dark", "round": 0.35},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.6, "d": 0.6, "y": 0.9714, "h": 0.0286, "color": "#26282c"},
+    {"shape": "box", "x": 0.0, "z": 0.4925, "w": 0.06, "d": 0.015, "y": 0.5, "h": 0.0857, "color": "white", "edges": "faint"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

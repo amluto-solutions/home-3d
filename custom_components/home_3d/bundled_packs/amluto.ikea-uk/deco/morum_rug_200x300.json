@@ -1,0 +1,43 @@
+{
+  "id": "morum_rug_200x300",
+  "name": {
+    "en": "Rug, flatwoven in/outdoor 200x300 cm"
+  },
+  "size": [
+    2.0,
+    3.0,
+    0.012
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "bedroom",
+    "dining",
+    "kids",
+    "office",
+    "hall",
+    "garden",
+    "conservatory"
+  ],
+  "tags": [
+    "MORUM",
+    "rug",
+    "outdoor rug",
+    "flatwoven",
+    "in/outdoor",
+    "beige",
+    "area rug"
+  ],
+  "family": "morum_rug",
+  "variant": {
+    "en": "200x300"
+  },
+  "ikea": "MORUM",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.8, "color": "fabric"},
+    {"shape": "box", "x": 0.0, "z": -0.4867, "w": 0.94, "d": 0.006, "y": 0, "h": 1, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4867, "w": 0.94, "d": 0.006, "y": 0, "h": 1, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": -0.48, "z": 0.0, "w": 0.009, "d": 0.96, "y": 0, "h": 1, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.48, "z": 0.0, "w": 0.009, "d": 0.96, "y": 0, "h": 1, "color": "white", "fix": "wh"}
+  ]
+}

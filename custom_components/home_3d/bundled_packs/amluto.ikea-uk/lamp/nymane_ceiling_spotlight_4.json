@@ -1,0 +1,46 @@
+{
+  "id": "nymane_ceiling_spotlight_4",
+  "name": {
+    "en": "Ceiling spotlight bar with 4 spots, 73 cm"
+  },
+  "size": [
+    0.73,
+    0.07,
+    0.12
+  ],
+  "group": "lamp",
+  "room": [
+    "kitchen",
+    "hall",
+    "living",
+    "office"
+  ],
+  "tags": [
+    "ceiling light",
+    "spotlight",
+    "4 spots",
+    "track",
+    "white",
+    "anthracite",
+    "kitchen"
+  ],
+  "family": "nymane_lamp",
+  "variant": {
+    "en": "Spot bar 4"
+  },
+  "ikea": "NYMÅNE",
+  "light": "spot",
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.7917, "h": 0.2083, "color": "white", "fix": "dh"},
+    {"shape": "cyl", "x": -0.3699, "z": 0.0, "w": 0.089, "d": 0.9286, "y": 0, "h": 0.7917, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3699, "z": 0.0, "w": 0.0685, "d": 0.7143, "y": 0, "h": 0.05, "color": "white", "glow": true, "fix": "h"},
+    {"shape": "cyl", "x": -0.1233, "z": 0.0, "w": 0.089, "d": 0.9286, "y": 0, "h": 0.7917, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.1233, "z": 0.0, "w": 0.0685, "d": 0.7143, "y": 0, "h": 0.05, "color": "white", "glow": true, "fix": "h"},
+    {"shape": "cyl", "x": 0.1233, "z": 0.0, "w": 0.089, "d": 0.9286, "y": 0, "h": 0.7917, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.1233, "z": 0.0, "w": 0.0685, "d": 0.7143, "y": 0, "h": 0.05, "color": "white", "glow": true, "fix": "h"},
+    {"shape": "cyl", "x": 0.3699, "z": 0.0, "w": 0.089, "d": 0.9286, "y": 0, "h": 0.7917, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3699, "z": 0.0, "w": 0.0685, "d": 0.7143, "y": 0, "h": 0.05, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "cube_shelf_2x2",
+  "name": {
+    "en": "Cube shelf 2 × 2"
+  },
+  "size": [
+    0.764,
+    0.39,
+    0.764
+  ],
+  "group": "storage",
+  "family": "cube_shelf",
+  "variant": {
+    "en": "2 × 2 cubes"
+  },
+  "room": [
+    "living",
+    "office",
+    "kids",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "cube storage",
+    "cube unit",
+    "shelving unit",
+    "room divider",
+    "shelves",
+    "shelving",
+    "bookcase",
+    "storage unit"
+  ],
+  "parts": [
+    {"shape": "box", "x": -0.4745, "z": 0, "w": 0.051, "d": 1.0, "y": 0, "h": 1.0, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4745, "z": 0, "w": 0.051, "d": 1.0, "y": 0, "h": 1.0, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.8979, "d": 1.0, "y": 0, "h": 0.051, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.8979, "d": 1.0, "y": 0.949, "h": 0.051, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.0209, "d": 1.0, "y": 0.051, "h": 0.8979, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.8979, "d": 1.0, "y": 0.4895, "h": 0.0209, "color": "white", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": 0, "z1": -0.5, "x2": 0, "z2": 0.5}
+  ]
+}

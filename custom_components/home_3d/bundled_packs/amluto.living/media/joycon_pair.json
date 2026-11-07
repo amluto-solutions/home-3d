@@ -1,0 +1,20 @@
+{
+  "id": "joycon_pair",
+  "name": {"en": "Joy-Con pair"},
+  "size": [0.075, 0.102, 0.028],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["joy-con", "joycon", "joy con", "nintendo switch", "nintendo", "gamepad", "gaming", "controller"],
+  "family": "game_controller",
+  "variant": {"en": "Detached pair"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": -0.25, "z": 0.0, "w": 0.4, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#3fb6e8", "round": 0.4},
+    {"shape": "rbox", "x": 0.25, "z": 0.0, "w": 0.4, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#e8504a", "round": 0.4},
+    {"shape": "cyl", "x": -0.25, "z": -0.2, "w": 0.2133, "d": 0.1569, "y": 0.95, "h": 0.05, "color": "#101114"},
+    {"shape": "cyl", "x": 0.25, "z": 0.15, "w": 0.2133, "d": 0.1569, "y": 0.95, "h": 0.05, "color": "#101114"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

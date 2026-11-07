@@ -1,0 +1,38 @@
+{
+  "id": "nysjon_high_cabinet_30x190",
+  "name": {
+    "en": "High cabinet 30x190 cm"
+  },
+  "size": [
+    0.3,
+    0.27,
+    1.9
+  ],
+  "group": "bath",
+  "room": [
+    "bath",
+    "utility"
+  ],
+  "tags": [
+    "NYSJON",
+    "bathroom cabinet",
+    "tall cabinet",
+    "slim cabinet",
+    "storage tower",
+    "white"
+  ],
+  "family": "nysjon_high_cabinet",
+  "variant": {
+    "en": "30x190"
+  },
+  "ikea": "NYSJÖN",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9444, "y": 0.0684, "h": 0.9316, "color": "white"},
+    {"shape": "cyl", "x": -0.4, "z": -0.3611, "w": 0.1, "d": 0.1111, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4, "z": 0.3611, "w": 0.1, "d": 0.1111, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4, "z": -0.3611, "w": 0.1, "d": 0.1111, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4, "z": 0.3611, "w": 0.1, "d": 0.1111, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4778, "w": 0.9867, "d": 0.0667, "y": 0.0737, "h": 0.9216, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.3833, "z": 0.5, "w": 0.04, "d": 0.0815, "y": 0.4987, "h": 0.0737, "color": "metal", "fix": "wdh"}
+  ]
+}

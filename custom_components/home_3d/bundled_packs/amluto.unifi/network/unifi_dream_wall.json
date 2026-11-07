@@ -1,0 +1,22 @@
+{
+  "id": "unifi_dream_wall",
+  "name": {"en": "Dream Wall"},
+  "size": [0.549, 0.062, 0.342],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall"],
+  "tags": ["unifi", "ubiquiti", "dream wall", "udw", "gateway", "router", "switch", "wall mount", "wifi 7"],
+  "family": "unifi_gateway",
+  "variant": {"en": "Dream Wall"},
+  "electric": true,
+  "watts": 112,
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "edges": "faint"},
+    {"shape": "box", "x": 0, "z": 0.495, "w": 0.9, "d": 0.01, "y": 0.1, "h": 0.2, "color": "#1b1d21"},
+    {"shape": "box", "x": 0, "z": 0.495, "w": 0.25, "d": 0.01, "y": 0.55, "h": 0.2, "color": "glass"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

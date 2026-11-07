@@ -1,0 +1,41 @@
+{
+  "id": "bamboo_tube_lamp",
+  "name": {
+    "en": "Wooden tube lamp"
+  },
+  "size": [
+    0.1,
+    0.1,
+    0.324
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "hall"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "wood lamp",
+    "bamboo lamp",
+    "tube lamp",
+    "cylinder",
+    "scandinavian",
+    "oak",
+    "ambient light"
+  ],
+  "family": "bamboo_tube_lamp",
+  "variant": {
+    "en": "Oak"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0617, "color": "wood"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.9, "y": 0.0617, "h": 0.9259, "color": "wood"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.75, "d": 0.75, "y": 0.9877, "h": 0.0123, "color": "#ffe3a8", "glow": true},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.92, "d": 0.92, "y": 0.3086, "h": 0.0093, "color": "dark"}
+  ]
+}

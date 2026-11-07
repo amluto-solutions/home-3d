@@ -1,0 +1,49 @@
+{
+  "id": "display_cabinet_narrow",
+  "name": {
+    "en": "Glass-fronted display cabinet, narrow"
+  },
+  "size": [
+    0.5,
+    0.38,
+    1.8
+  ],
+  "group": "storage",
+  "family": "display_cabinet",
+  "variant": {
+    "en": "1 door · 50 × 180"
+  },
+  "room": [
+    "living",
+    "dining"
+  ],
+  "tags": [
+    "vitrine",
+    "glass cabinet",
+    "china cabinet",
+    "curio cabinet",
+    "showcase",
+    "glass doors"
+  ],
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0, "h": 0.0389, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.478, "z": 0, "w": 0.044, "d": 1.0, "y": 0.0389, "h": 0.9444, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.478, "z": 0, "w": 0.044, "d": 1.0, "y": 0.0389, "h": 0.9444, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.9833, "h": 0.0167, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4842, "w": 0.912, "d": 0.0316, "y": 0.0389, "h": 0.9444, "color": "white"},
+    {"shape": "box", "x": 0, "z": -0.0237, "w": 0.912, "d": 0.8895, "y": 0.2278, "h": 0.0044, "color": "glass"},
+    {"shape": "box", "x": 0, "z": -0.0237, "w": 0.912, "d": 0.8895, "y": 0.4167, "h": 0.0044, "color": "glass"},
+    {"shape": "box", "x": 0, "z": -0.0237, "w": 0.912, "d": 0.8895, "y": 0.6056, "h": 0.0044, "color": "glass"},
+    {"shape": "box", "x": 0, "z": -0.0237, "w": 0.912, "d": 0.8895, "y": 0.7944, "h": 0.0044, "color": "glass"},
+    {"shape": "box", "x": 0, "z": 0.4711, "w": 0.744, "d": 0.0263, "y": 0.0633, "h": 0.8956, "color": "glass"},
+    {"shape": "box", "x": -0.412, "z": 0.4711, "w": 0.08, "d": 0.0579, "y": 0.0411, "h": 0.94, "color": "wood"},
+    {"shape": "box", "x": 0.412, "z": 0.4711, "w": 0.08, "d": 0.0579, "y": 0.0411, "h": 0.94, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0.4711, "w": 0.744, "d": 0.0579, "y": 0.0411, "h": 0.0222, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.4711, "w": 0.744, "d": 0.0579, "y": 0.9589, "h": 0.0222, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.412, "z": 0.4947, "w": 0.032, "d": 0.0105, "y": 0.4833, "h": 0.0556, "color": "metal", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.45, "x2": 0.5, "z2": 0.45}
+  ]
+}

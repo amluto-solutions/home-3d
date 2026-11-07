@@ -1,0 +1,154 @@
+{
+  "id": "console_table_100",
+  "name": {
+    "en": "Console table 100"
+  },
+  "size": [
+    1.0,
+    0.32,
+    0.78
+  ],
+  "group": "table",
+  "room": [
+    "hall",
+    "living"
+  ],
+  "tags": [
+    "console table",
+    "hall table",
+    "hallway table",
+    "sofa table",
+    "narrow table",
+    "drawers"
+  ],
+  "family": "console_table",
+  "variant": {
+    "en": "100 × 32"
+  },
+  "surface": true,
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1,
+      "d": 1,
+      "y": 0.9615,
+      "h": 0.0385,
+      "color": "wood",
+      "fix": "h"
+    },
+    {
+      "shape": "box",
+      "x": -0.46,
+      "z": -0.375,
+      "w": 0.04,
+      "d": 0.125,
+      "y": 0.0,
+      "h": 0.9615,
+      "color": "wood",
+      "fix": "wd"
+    },
+    {
+      "shape": "box",
+      "x": -0.46,
+      "z": 0.375,
+      "w": 0.04,
+      "d": 0.125,
+      "y": 0.0,
+      "h": 0.9615,
+      "color": "wood",
+      "fix": "wd"
+    },
+    {
+      "shape": "box",
+      "x": 0.46,
+      "z": -0.375,
+      "w": 0.04,
+      "d": 0.125,
+      "y": 0.0,
+      "h": 0.9615,
+      "color": "wood",
+      "fix": "wd"
+    },
+    {
+      "shape": "box",
+      "x": 0.46,
+      "z": 0.375,
+      "w": 0.04,
+      "d": 0.125,
+      "y": 0.0,
+      "h": 0.9615,
+      "color": "wood",
+      "fix": "wd"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0078,
+      "w": 0.94,
+      "d": 0.8281,
+      "y": 0.8077,
+      "h": 0.1538,
+      "color": "wood",
+      "fix": "h"
+    },
+    {
+      "shape": "box",
+      "x": -0.22,
+      "z": 0.4453,
+      "w": 0.42,
+      "d": 0.0469,
+      "y": 0.8205,
+      "h": 0.1282,
+      "color": "white",
+      "fix": "h"
+    },
+    {
+      "shape": "cyl",
+      "x": -0.22,
+      "z": 0.4875,
+      "w": 0.025,
+      "d": 0.0375,
+      "y": 0.8782,
+      "h": 0.0154,
+      "color": "metal",
+      "axis": "z",
+      "fix": "wdh"
+    },
+    {
+      "shape": "box",
+      "x": 0.22,
+      "z": 0.4453,
+      "w": 0.42,
+      "d": 0.0469,
+      "y": 0.8205,
+      "h": 0.1282,
+      "color": "white",
+      "fix": "h"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.22,
+      "z": 0.4875,
+      "w": 0.025,
+      "d": 0.0375,
+      "y": 0.8782,
+      "h": 0.0154,
+      "color": "metal",
+      "axis": "z",
+      "fix": "wdh"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.94,
+      "d": 0.8125,
+      "y": 0.1538,
+      "h": 0.0256,
+      "color": "wood",
+      "fix": "h"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "brimnes_day_bed_2_drawers",
+  "name": {
+    "en": "Day-bed with 2 drawers"
+  },
+  "size": [
+    2.05,
+    0.87,
+    0.58
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom",
+    "kids",
+    "office",
+    "living"
+  ],
+  "tags": [
+    "daybed",
+    "guest bed",
+    "extendable",
+    "single",
+    "double",
+    "drawers",
+    "white",
+    "black"
+  ],
+  "ikea": "BRIMNES",
+  "parts": [
+    {"shape": "box", "x": -0.4951, "z": 0.0, "w": 0.0098, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4951, "z": 0.0, "w": 0.0098, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.4885, "w": 0.9805, "d": 0.023, "y": 0, "h": 0.5517, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9805, "d": 0.954, "y": 0.4828, "h": 0.0345, "color": "wood"},
+    {"shape": "box", "x": -0.2451, "z": 0.4885, "w": 0.4873, "d": 0.023, "y": 0.0345, "h": 0.4138, "color": "white"},
+    {"shape": "box", "x": -0.2451, "z": 0.5, "w": 0.0683, "d": 0.0092, "y": 0.3448, "h": 0.0345, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.2451, "z": 0.4885, "w": 0.4873, "d": 0.023, "y": 0.0345, "h": 0.4138, "color": "white"},
+    {"shape": "box", "x": 0.2451, "z": 0.5, "w": 0.0683, "d": 0.0092, "y": 0.3448, "h": 0.0345, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9756, "d": 0.9195, "y": 0.5172, "h": 0.1724, "color": "white", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9756, "d": 0.9195, "y": 0.6897, "h": 0.1724, "color": "white", "round": 0.25}
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "forenlig_plant_pot_9",
+  "name": {
+    "en": "Plant pot, in/outdoor 9 cm"
+  },
+  "size": [
+    0.1,
+    0.1,
+    0.1
+  ],
+  "group": "plant",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "bedroom",
+    "office",
+    "bath",
+    "conservatory"
+  ],
+  "tags": [
+    "FORENLIG",
+    "plant pot",
+    "small pot",
+    "herb pot",
+    "white",
+    "in/outdoor"
+  ],
+  "ikea": "FÖRENLIG",
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "pot", "profile": [[0.8, 0], [0.8500000000000001, 0.04], [1, 1], [0.93, 1], [0.8400000000000001, 0.88]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.84, "d": 0.84, "y": 0.86, "h": 0.02, "color": "#4a3b2c", "fix": "h"}
+  ]
+}

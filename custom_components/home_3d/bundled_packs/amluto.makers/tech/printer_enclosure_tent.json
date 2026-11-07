@@ -1,0 +1,165 @@
+{
+  "id": "printer_enclosure_tent",
+  "name": {
+    "en": "3D printer enclosure tent"
+  },
+  "size": [
+    0.7,
+    0.7,
+    0.9
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage",
+    "loft",
+    "utility"
+  ],
+  "tags": [
+    "enclosure",
+    "tent",
+    "3d printing",
+    "fireproof",
+    "fume",
+    "cover",
+    "maker"
+  ],
+  "family": "printer_enclosure",
+  "variant": {
+    "en": "Tent 70 cm"
+  },
+  "electric": false,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "box",
+      "x": -0.4957,
+      "z": -0.4957,
+      "w": 0.0086,
+      "d": 0.0086,
+      "y": 0.0,
+      "h": 1.0,
+      "color": "metal"
+    },
+    {
+      "shape": "box",
+      "x": -0.4957,
+      "z": 0.4957,
+      "w": 0.0086,
+      "d": 0.0086,
+      "y": 0.0,
+      "h": 1.0,
+      "color": "metal"
+    },
+    {
+      "shape": "box",
+      "x": 0.4957,
+      "z": -0.4957,
+      "w": 0.0086,
+      "d": 0.0086,
+      "y": 0.0,
+      "h": 1.0,
+      "color": "metal"
+    },
+    {
+      "shape": "box",
+      "x": 0.4957,
+      "z": 0.4957,
+      "w": 0.0086,
+      "d": 0.0086,
+      "y": 0.0,
+      "h": 1.0,
+      "color": "metal"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": -0.4957,
+      "w": 1.0,
+      "d": 0.0086,
+      "y": 0.0,
+      "h": 1.0,
+      "color": "#8a8e94"
+    },
+    {
+      "shape": "box",
+      "x": -0.4957,
+      "z": 0.0,
+      "w": 0.0086,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 1.0,
+      "color": "#8a8e94",
+      "fix": "w"
+    },
+    {
+      "shape": "box",
+      "x": 0.4957,
+      "z": 0.0,
+      "w": 0.0086,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 1.0,
+      "color": "#8a8e94",
+      "fix": "w"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.9933,
+      "h": 0.0067,
+      "color": "#8a8e94"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.4957,
+      "w": 0.9714,
+      "d": 0.0057,
+      "y": 0.0222,
+      "h": 0.9556,
+      "color": "glass"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.4957,
+      "w": 0.0057,
+      "d": 0.0057,
+      "y": 0.0222,
+      "h": 0.9556,
+      "color": "dark"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": -0.4729,
+      "w": 0.1429,
+      "d": 0.0429,
+      "y": 0.8667,
+      "h": 0.1,
+      "color": "dark",
+      "axis": "z"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    },
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 0.8,
+      "d": 0.8
+    }
+  ]
+}

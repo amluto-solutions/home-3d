@@ -1,0 +1,43 @@
+{
+  "id": "strandmon_wing_chair",
+  "name": {
+    "en": "Wing chair"
+  },
+  "size": [
+    0.82,
+    0.96,
+    1.01
+  ],
+  "group": "seating",
+  "room": [
+    "living",
+    "conservatory",
+    "bedroom"
+  ],
+  "tags": [
+    "wingback",
+    "wing back chair",
+    "armchair",
+    "reading chair",
+    "beige-brown",
+    "dark grey",
+    "yellow",
+    "dark green",
+    "dark brown"
+  ],
+  "ikea": "STRANDMON",
+  "parts": [
+    {"shape": "loft", "x": -0.4146, "z": 0.3958, "w": 0.0549, "d": 0.0469, "y": 0, "h": 0.1584, "color": "wood", "tx": -0.4146, "tz": 0.3854, "tw": 0.0427, "td": 0.0365, "fix": "wd"},
+    {"shape": "loft", "x": -0.4512, "z": -0.4375, "w": 0.0427, "d": 0.0365, "y": 0, "h": 0.1584, "color": "wood", "tx": -0.4146, "tz": -0.375, "tw": 0.0549, "td": 0.0469, "fix": "wd"},
+    {"shape": "loft", "x": 0.4146, "z": 0.3958, "w": 0.0549, "d": 0.0469, "y": 0, "h": 0.1584, "color": "wood", "tx": 0.4146, "tz": 0.3854, "tw": 0.0427, "td": 0.0365, "fix": "wd"},
+    {"shape": "loft", "x": 0.4512, "z": -0.4375, "w": 0.0427, "d": 0.0365, "y": 0, "h": 0.1584, "color": "wood", "tx": 0.4146, "tz": -0.375, "tw": 0.0549, "td": 0.0469, "fix": "wd"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0208, "w": 0.878, "d": 0.875, "y": 0.1584, "h": 0.1782, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": 0.0, "z": 0.1042, "w": 0.6098, "d": 0.6458, "y": 0.3366, "h": 0.1089, "color": "cushion", "round": 0.3},
+    {"shape": "rbox", "x": -0.3902, "z": 0.1042, "w": 0.1951, "d": 0.6875, "y": 0.297, "h": 0.3366, "color": "fabric", "fix": "w", "round": 0.5},
+    {"shape": "loft", "x": -0.4024, "z": -0.1875, "w": 0.1463, "d": 0.3542, "y": 0.5941, "h": 0.3861, "color": "fabric", "tx": -0.4268, "tz": -0.2708, "tw": 0.122, "td": 0.2083},
+    {"shape": "rbox", "x": 0.3902, "z": 0.1042, "w": 0.1951, "d": 0.6875, "y": 0.297, "h": 0.3366, "color": "fabric", "fix": "w", "round": 0.5},
+    {"shape": "loft", "x": 0.4024, "z": -0.1875, "w": 0.1463, "d": 0.3542, "y": 0.5941, "h": 0.3861, "color": "fabric", "tx": 0.4268, "tz": -0.2708, "tw": 0.122, "td": 0.2083},
+    {"shape": "loft", "x": 0.0, "z": -0.3125, "w": 0.6829, "d": 0.25, "y": 0.3366, "h": 0.6634, "color": "fabric", "tz": -0.3958, "tw": 0.7561, "td": 0.1875},
+    {"shape": "loft", "x": 0.0, "z": -0.1667, "w": 0.6098, "d": 0.1042, "y": 0.4455, "h": 0.495, "color": "cushion", "tz": -0.2604, "tw": 0.6098, "td": 0.0833}
+  ]
+}

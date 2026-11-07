@@ -1,0 +1,44 @@
+{
+  "id": "slattum_bed_frame_single",
+  "name": {
+    "en": "Upholstered bed frame, Single 90x190"
+  },
+  "size": [
+    0.94,
+    1.96,
+    0.85
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "bed",
+    "bed frame",
+    "single",
+    "upholstered",
+    "fabric",
+    "dark grey",
+    "light grey",
+    "headboard"
+  ],
+  "family": "slattum_bed_frame",
+  "variant": {
+    "en": "Single · 90x190"
+  },
+  "ikea": "SLATTUM",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.4745, "w": 1, "d": 0.051, "y": 0.1412, "h": 0.8588, "color": "fabric", "fix": "d", "round": 0.3},
+    {"shape": "rbox", "x": 0.0, "z": 0.4847, "w": 1, "d": 0.0306, "y": 0.1412, "h": 0.3294, "color": "fabric", "fix": "d", "round": 0.3},
+    {"shape": "cyl", "x": -0.4362, "z": -0.4592, "w": 0.0426, "d": 0.0204, "y": 0, "h": 0.1412, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4362, "z": 0.4592, "w": 0.0426, "d": 0.0204, "y": 0, "h": 0.1412, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4362, "z": -0.4592, "w": 0.0426, "d": 0.0204, "y": 0, "h": 0.1412, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4362, "z": 0.4592, "w": 0.0426, "d": 0.0204, "y": 0, "h": 0.1412, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.484, "z": 0.0, "w": 0.0319, "d": 0.949, "y": 0.1412, "h": 0.3294, "color": "fabric", "fix": "w"},
+    {"shape": "box", "x": 0.484, "z": 0.0, "w": 0.0319, "d": 0.949, "y": 0.1412, "h": 0.3294, "color": "fabric", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9362, "d": 0.9388, "y": 0.2118, "h": 0.0235, "color": "wood"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9574, "d": 0.9694, "y": 0.2353, "h": 0.2353, "color": "white", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": -0.3776, "w": 0.8138, "d": 0.1633, "y": 0.4706, "h": 0.1412, "color": "cushion", "round": 0.45}
+  ]
+}

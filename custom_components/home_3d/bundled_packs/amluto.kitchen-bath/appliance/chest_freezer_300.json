@@ -1,0 +1,24 @@
+{
+  "id": "chest_freezer_300",
+  "name": {"en": "Chest freezer 300 l"},
+  "size": [1.25, 0.7, 0.85],
+  "group": "appliance",
+  "room": ["utility", "garage", "kitchen"],
+  "tags": ["chest freezer", "freezer", "deep freezer", "frozen"],
+  "family": "chest_freezer",
+  "variant": {"en": "300 l"},
+  "electric": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.952, "d": 0.9143, "y": 0.0, "h": 0.0235, "color": "dark", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": -0.0107, "w": 1.0, "d": 0.9786, "y": 0.0235, "h": 0.8941, "color": "white", "round": 0.06},
+    {"shape": "rbox", "x": 0.0, "z": -0.0064, "w": 1.0, "d": 0.9871, "y": 0.9176, "h": 0.0824, "color": "white", "round": 0.15, "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0079, "w": 1.0, "d": 0.9843, "y": 0.9141, "h": 0.0047, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4936, "w": 0.16, "d": 0.0129, "y": 0.9235, "h": 0.0353, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.412, "z": 0.4779, "w": 0.08, "d": 0.0014, "y": 0.7647, "h": 0.0353, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4786, "w": 0.952, "d": 0.0029, "y": 0.0471, "h": 0.0824, "color": "dark"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.5, "z1": -0.5, "x2": 0.5, "z2": 0.5}
+  ]
+}

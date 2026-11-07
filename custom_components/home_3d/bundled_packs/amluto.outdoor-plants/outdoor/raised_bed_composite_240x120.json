@@ -1,0 +1,24 @@
+{
+  "id": "raised_bed_composite_240x120",
+  "name": {"en": "Raised bed, composite, 2.4 × 1.2 m"},
+  "size": [2.4, 1.2, 0.45],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["raised bed", "vegetable bed", "planter", "grow bed", "composite"],
+  "family": "raised_bed_composite",
+  "variant": {"en": "2.4 × 1.2 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9583, "d": 0.9167, "y": 0, "h": 0.88, "color": "#4a3626", "top": "#52392a"},
+    {"shape": "box", "x": 0.0, "z": -0.4792, "w": 1, "d": 0.0417, "y": 0, "h": 1, "color": "#5a5e5a", "top": "#6b706b"},
+    {"shape": "box", "x": 0.0, "z": 0.4792, "w": 1, "d": 0.0417, "y": 0, "h": 1, "color": "#5a5e5a", "top": "#6b706b"},
+    {"shape": "box", "x": -0.4896, "z": 0.0, "w": 0.0208, "d": 0.9167, "y": 0, "h": 1, "color": "#5a5e5a", "top": "#6b706b"},
+    {"shape": "box", "x": 0.4896, "z": 0.0, "w": 0.0208, "d": 0.9167, "y": 0, "h": 1, "color": "#5a5e5a", "top": "#6b706b"},
+    {"shape": "box", "x": -0.4875, "z": -0.475, "w": 0.025, "d": 0.05, "y": 0, "h": 1, "color": "#6b706b", "fix": "wd"},
+    {"shape": "box", "x": 0.4875, "z": -0.475, "w": 0.025, "d": 0.05, "y": 0, "h": 1, "color": "#6b706b", "fix": "wd"},
+    {"shape": "box", "x": -0.4875, "z": 0.475, "w": 0.025, "d": 0.05, "y": 0, "h": 1, "color": "#6b706b", "fix": "wd"},
+    {"shape": "box", "x": 0.4875, "z": 0.475, "w": 0.025, "d": 0.05, "y": 0, "h": 1, "color": "#6b706b", "fix": "wd"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": false}
+  ]
+}

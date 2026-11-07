@@ -1,0 +1,29 @@
+{
+  "id": "rack_wall_frame_12u",
+  "name": {"en": "Wall frame 19-inch 12U"},
+  "size": [0.504, 0.305, 0.641],
+  "group": "network",
+  "room": ["office", "garage", "utility", "loft", "hall"],
+  "tags": ["19 inch", "open frame", "wall rack", "2 post", "rack"],
+  "family": "rack_wall_frame",
+  "variant": {"en": "12U"},
+  "mount": "wall",
+  "wall_y": 1,
+  "rack_frame": {"u": 12, "form": "wall_frame"},
+  "parts": [
+    {"shape": "box", "x": -0.47025, "z": -0.4508, "w": 0.0595, "d": 0.0984, "y": 0, "h": 1, "color": "dark", "edges": "faint", "fix": "w"},
+    {"shape": "box", "x": 0.47025, "z": -0.4508, "w": 0.0595, "d": 0.0984, "y": 0, "h": 1, "color": "dark", "edges": "faint", "fix": "w"},
+    {"shape": "box", "x": -0.47365, "z": 0.0164, "w": 0.0527, "d": 0.836, "y": 0, "h": 0.0468, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0.47365, "z": 0.0164, "w": 0.0527, "d": 0.836, "y": 0, "h": 0.0468, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4508, "w": 0.881, "d": 0.0984, "y": 0, "h": 0.0468, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": -0.47365, "z": 0.0164, "w": 0.0527, "d": 0.836, "y": 0.9532, "h": 0.0468, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0.47365, "z": 0.0164, "w": 0.0527, "d": 0.836, "y": 0.9532, "h": 0.0468, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4508, "w": 0.881, "d": 0.0984, "y": 0.9532, "h": 0.0468, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": -0.46305, "z": 0.4098, "w": 0.0315, "d": 0.0492, "y": 0.0839, "h": 0.8322, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": 0.46305, "z": 0.4098, "w": 0.0315, "d": 0.0492, "y": 0.0839, "h": 0.8322, "color": "metal", "fix": "w"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.4344, "x2": 0.5, "z2": 0.4344}
+  ]
+}

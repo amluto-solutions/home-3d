@@ -1,0 +1,22 @@
+{
+  "id": "ice_cream_maker_compressor",
+  "name": {"en": "Ice-cream maker, compressor, 1.5 L"},
+  "size": [0.42, 0.33, 0.26],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["ice cream maker", "ice-cream", "gelato", "sorbet", "countertop"],
+  "family": "ice_cream_maker",
+  "variant": {"en": "Compressor, 1.5 L"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.56, "color": "#c4c8cd", "round": 0.08},
+    {"shape": "lathe", "x": -0.08, "z": 0.0, "w": 0.5, "d": 0.8, "y": 0.56, "h": 0.34, "color": "glass", "profile": [[0, 0], [1, 0], [1, 1], [0, 1]]},
+    {"shape": "lathe", "x": -0.08, "z": 0.0, "w": 0.55, "d": 0.85, "y": 0.9, "h": 0.1, "color": "#25272b", "profile": [[0, 0], [1, 0], [0.9, 1], [0, 1]]},
+    {"shape": "box", "x": 0.33, "z": 0.4939, "w": 0.22, "d": 0.0121, "y": 0.34, "h": 0.1154, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.33, "z": 0.4818, "w": 0.0833, "d": 0.0455, "y": 0.12, "h": 0.1346, "color": "#25272b", "axis": "z", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

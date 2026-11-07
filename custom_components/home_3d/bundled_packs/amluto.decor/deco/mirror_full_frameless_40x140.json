@@ -1,0 +1,17 @@
+{
+  "id": "mirror_full_frameless_40x140",
+  "name": {"en": "Full-length mirror"},
+  "size": [0.4, 0.09, 1.4],
+  "group": "deco",
+  "room": ["bedroom", "hall", "bath"],
+  "tags": ["mirror", "full length mirror", "floor mirror", "leaning mirror", "dressing mirror", "frameless", "door mirror", "slim"],
+  "family": "mirror_full_length",
+  "variant": {"en": "Frameless, 40 × 140"},
+  "parts": [
+    {"shape": "loft", "x": 0, "z": 0.2778, "w": 1, "d": 0.1333, "y": 0, "h": 1, "color": "#e9eef0", "tx": 0, "tz": -0.5, "tw": 1, "td": 0.1333},
+    {"shape": "loft", "x": 0, "z": 0.4389, "w": 0.94, "d": 0.0444, "y": 0.0214, "h": 0.9571, "color": "glass", "tx": 0, "tz": -0.3056, "tw": 0.94, "td": 0.0444}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 0.5}
+  ]
+}

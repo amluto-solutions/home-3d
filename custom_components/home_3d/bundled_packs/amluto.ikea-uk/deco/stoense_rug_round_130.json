@@ -1,0 +1,38 @@
+{
+  "id": "stoense_rug_round_130",
+  "name": {
+    "en": "Rug, low pile, round 130 cm"
+  },
+  "size": [
+    1.3,
+    1.3,
+    0.019
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "bedroom",
+    "dining",
+    "kids",
+    "office"
+  ],
+  "tags": [
+    "rug",
+    "carpet",
+    "area rug",
+    "low pile",
+    "off-white",
+    "pale pink",
+    "dark grey",
+    "beige"
+  ],
+  "family": "stoense_rug",
+  "variant": {
+    "en": "Round 130"
+  },
+  "ikea": "STOENSE",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.9474, "color": "fabric"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8154, "d": 0.8154, "y": 0, "h": 1, "color": "white"}
+  ]
+}

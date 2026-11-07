@@ -1,0 +1,43 @@
+{
+  "id": "french_doors_240_sidelights",
+  "name": {"en": "French doors"},
+  "size": [2.4, 0.1, 2.1],
+  "group": "architecture",
+  "room": ["living", "dining", "kitchen", "conservatory", "garden"],
+  "tags": ["french doors", "patio doors", "garden doors", "double doors", "glazed doors", "terrace door", "door", "upvc", "sidelights"],
+  "family": "french_doors",
+  "variant": {"en": "240 cm with sidelights"},
+  "parts": [
+    {"shape": "box", "x": -0.4854, "z": 0.0, "w": 0.0292, "d": 1, "y": 0.0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.4854, "z": 0.0, "w": 0.0292, "d": 1, "y": 0.0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9417, "d": 1, "y": 0.9667, "h": 0.0333, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9417, "d": 1, "y": 0.0, "h": 0.0143, "color": "metal"},
+    {"shape": "box", "x": -0.3042, "z": 0.0, "w": 0.0292, "d": 1, "y": 0.0, "h": 0.9667, "color": "white"},
+    {"shape": "box", "x": -0.3802, "z": 0.0, "w": 0.1813, "d": 0.6, "y": 0.0143, "h": 0.0857, "color": "white"},
+    {"shape": "box", "x": -0.3802, "z": 0.0, "w": 0.1813, "d": 0.2, "y": 0.1, "h": 0.8381, "color": "glass"},
+    {"shape": "box", "x": -0.3802, "z": 0.0, "w": 0.1813, "d": 0.6, "y": 0.9381, "h": 0.0286, "color": "white"},
+    {"shape": "box", "x": 0.3042, "z": 0.0, "w": 0.0292, "d": 1, "y": 0.0, "h": 0.9667, "color": "white"},
+    {"shape": "box", "x": 0.3802, "z": 0.0, "w": 0.1813, "d": 0.6, "y": 0.0143, "h": 0.0857, "color": "white"},
+    {"shape": "box", "x": 0.3802, "z": 0.0, "w": 0.1813, "d": 0.2, "y": 0.1, "h": 0.8381, "color": "glass"},
+    {"shape": "box", "x": 0.3802, "z": 0.0, "w": 0.1813, "d": 0.6, "y": 0.9381, "h": 0.0286, "color": "white"},
+    {"shape": "box", "x": -0.2708, "z": 0.0, "w": 0.0375, "d": 0.6, "y": 0.0143, "h": 0.9381, "color": "white"},
+    {"shape": "box", "x": -0.0187, "z": 0.0, "w": 0.0375, "d": 0.6, "y": 0.0143, "h": 0.9381, "color": "white"},
+    {"shape": "box", "x": -0.1448, "z": 0.0, "w": 0.2146, "d": 0.6, "y": 0.9095, "h": 0.0429, "color": "white"},
+    {"shape": "box", "x": -0.1448, "z": 0.0, "w": 0.2146, "d": 0.6, "y": 0.0143, "h": 0.0857, "color": "white"},
+    {"shape": "box", "x": -0.1448, "z": 0.0, "w": 0.2146, "d": 0.2, "y": 0.1, "h": 0.8095, "color": "glass"},
+    {"shape": "box", "x": 0.0187, "z": 0.0, "w": 0.0375, "d": 0.6, "y": 0.0143, "h": 0.9381, "color": "white"},
+    {"shape": "box", "x": 0.2708, "z": 0.0, "w": 0.0375, "d": 0.6, "y": 0.0143, "h": 0.9381, "color": "white"},
+    {"shape": "box", "x": 0.1448, "z": 0.0, "w": 0.2146, "d": 0.6, "y": 0.9095, "h": 0.0429, "color": "white"},
+    {"shape": "box", "x": 0.1448, "z": 0.0, "w": 0.2146, "d": 0.6, "y": 0.0143, "h": 0.0857, "color": "white"},
+    {"shape": "box", "x": 0.1448, "z": 0.0, "w": 0.2146, "d": 0.2, "y": 0.1, "h": 0.8095, "color": "glass"},
+    {"shape": "box", "x": 0.0187, "z": -0.4, "w": 0.0104, "d": 0.2, "y": 0.4762, "h": 0.0762, "color": "metal"},
+    {"shape": "box", "x": 0.0396, "z": -0.4, "w": 0.0417, "d": 0.2, "y": 0.5095, "h": 0.0095, "color": "metal"},
+    {"shape": "box", "x": 0.0187, "z": 0.4, "w": 0.0104, "d": 0.2, "y": 0.4762, "h": 0.0762, "color": "metal"},
+    {"shape": "box", "x": 0.0396, "z": 0.4, "w": 0.0417, "d": 0.2, "y": 0.5095, "h": 0.0095, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.2896, "z1": 0.5, "x2": -0.0869, "z2": 0.5},
+    {"shape": "line", "x1": 0.2896, "z1": 0.5, "x2": 0.0869, "z2": 0.5}
+  ]
+}

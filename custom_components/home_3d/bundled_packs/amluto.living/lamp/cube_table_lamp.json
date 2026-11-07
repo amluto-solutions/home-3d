@@ -1,0 +1,40 @@
+{
+  "id": "cube_table_lamp",
+  "name": {
+    "en": "Cube lamp"
+  },
+  "size": [
+    0.19,
+    0.19,
+    0.188
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "cube lamp",
+    "square lamp",
+    "modern",
+    "led cube",
+    "night light",
+    "minimal",
+    "mood light"
+  ],
+  "family": "cube_table_lamp",
+  "variant": {
+    "en": "Opal cube"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9474, "d": 0.9474, "y": 0, "h": 0.9574, "color": "white", "glow": true},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0638, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9362, "h": 0.0638, "color": "dark"}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "basket_shelf",
+  "name": {"en": "Shelf basket"},
+  "size": [0.35, 0.25, 0.2],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "hall", "kids", "bath", "office", "utility"],
+  "tags": ["basket", "shelf basket", "storage basket", "woven", "wicker", "cube basket", "seagrass"],
+  "family": "basket",
+  "variant": {"en": "Shelf"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.06, "color": "#c49a6c", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.476, "w": 1.0, "d": 0.048, "y": 0.0, "h": 1.0, "color": "#c49a6c", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.476, "w": 1.0, "d": 0.048, "y": 0.0, "h": 1.0, "color": "#c49a6c", "fix": "d"},
+    {"shape": "box", "x": -0.4829, "z": 0.0, "w": 0.0343, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#c49a6c", "fix": "w"},
+    {"shape": "box", "x": -0.4829, "z": 0.0, "w": 0.0377, "d": 0.28, "y": 0.7, "h": 0.15, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.4829, "z": 0.0, "w": 0.0343, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#c49a6c", "fix": "w"},
+    {"shape": "box", "x": 0.4829, "z": 0.0, "w": 0.0377, "d": 0.28, "y": 0.7, "h": 0.15, "color": "dark", "fix": "wh"}
+  ]
+}

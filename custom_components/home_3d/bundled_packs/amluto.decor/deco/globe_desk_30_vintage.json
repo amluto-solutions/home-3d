@@ -1,0 +1,26 @@
+{
+  "id": "globe_desk_30_vintage",
+  "name": {"en": "Desk globe"},
+  "size": [0.37, 0.37, 0.44],
+  "group": "deco",
+  "room": ["office", "living", "dining", "kids", "hall"],
+  "tags": ["globe", "world", "map", "geography", "desk", "ornament", "decor", "30 cm"],
+  "family": "globe_desk",
+  "variant": {"en": "Vintage desk globe, 30 cm"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.3784, "d": 0.3784, "y": 0, "h": 0.0273, "color": "#a07a3f"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.0811, "d": 0.0811, "y": 0.0273, "h": 0.2045, "color": "#a07a3f"},
+    {"shape": "sphere", "x": 0, "z": 0, "w": 0.8108, "d": 0.8108, "y": 0.2273, "h": 0.6818, "color": "#e2d3a8"},
+    {"shape": "box", "x": 0.0317, "z": 0, "w": 0.2382, "d": 0.0432, "y": 0.1965, "h": 0.0318, "color": "#a07a3f"},
+    {"shape": "loft", "x": 0.1394, "z": 0, "w": 0.0378, "d": 0.0432, "y": 0.2192, "h": 0.0986, "color": "#a07a3f", "tx": 0.321, "tz": 0, "tw": 0.0378, "td": 0.0432},
+    {"shape": "loft", "x": 0.321, "z": 0, "w": 0.0378, "d": 0.0432, "y": 0.3178, "h": 0.1596, "color": "#a07a3f", "tx": 0.4243, "tz": 0, "tw": 0.0378, "td": 0.0432},
+    {"shape": "loft", "x": 0.4243, "z": 0, "w": 0.0378, "d": 0.0432, "y": 0.4773, "h": 0.1817, "color": "#a07a3f", "tx": 0.4243, "tz": 0, "tw": 0.0378, "td": 0.0432},
+    {"shape": "loft", "x": 0.4243, "z": 0, "w": 0.0378, "d": 0.0432, "y": 0.659, "h": 0.1596, "color": "#a07a3f", "tx": 0.321, "tz": 0, "tw": 0.0378, "td": 0.0432},
+    {"shape": "loft", "x": 0.321, "z": 0, "w": 0.0378, "d": 0.0432, "y": 0.8186, "h": 0.0986, "color": "#a07a3f", "tx": 0.1394, "tz": 0, "tw": 0.0378, "td": 0.0432},
+    {"shape": "box", "x": 0.0317, "z": 0, "w": 0.2382, "d": 0.0432, "y": 0.9081, "h": 0.0318, "color": "#a07a3f"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

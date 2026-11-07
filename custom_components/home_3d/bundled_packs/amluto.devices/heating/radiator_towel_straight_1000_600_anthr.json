@@ -1,0 +1,45 @@
+{
+  "id": "radiator_towel_straight_1000_600_anthr",
+  "name": {
+    "en": "Straight towel rail"
+  },
+  "size": [
+    0.6,
+    0.045,
+    1.0
+  ],
+  "group": "heating",
+  "room": [
+    "bath",
+    "kitchen",
+    "utility",
+    "bedroom"
+  ],
+  "tags": [
+    "radiator",
+    "towel rail",
+    "heated towel rail",
+    "bathroom",
+    "towel radiator",
+    "straight"
+  ],
+  "family": "radiator_towel_straight",
+  "variant": {
+    "en": "1000 × 600 mm, anthracite"
+  },
+  "mount": "wall",
+  "wall_y": 0.2,
+  "parts": [
+    {"shape": "cyl", "x": -0.45, "z": 0.0, "w": 0.0417, "d": 0.5556, "y": 0.0, "h": 1.0, "color": "#3a3d40"},
+    {"shape": "cyl", "x": 0.45, "z": 0.0, "w": 0.0417, "d": 0.5556, "y": 0.0, "h": 1.0, "color": "#3a3d40"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8833, "d": 0.4889, "y": 0.04, "h": 0.022, "color": "#3a3d40", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8833, "d": 0.4889, "y": 0.1657, "h": 0.022, "color": "#3a3d40", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8833, "d": 0.4889, "y": 0.2914, "h": 0.022, "color": "#3a3d40", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8833, "d": 0.4889, "y": 0.4171, "h": 0.022, "color": "#3a3d40", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8833, "d": 0.4889, "y": 0.5429, "h": 0.022, "color": "#3a3d40", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8833, "d": 0.4889, "y": 0.6686, "h": 0.022, "color": "#3a3d40", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8833, "d": 0.4889, "y": 0.7943, "h": 0.022, "color": "#3a3d40", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8833, "d": 0.4889, "y": 0.92, "h": 0.022, "color": "#3a3d40", "axis": "x"},
+    {"shape": "cyl", "x": 0.45, "z": 0.0, "w": 0.0667, "d": 0.8889, "y": 0.0, "h": 0.03, "color": "accent"}
+  ]
+}

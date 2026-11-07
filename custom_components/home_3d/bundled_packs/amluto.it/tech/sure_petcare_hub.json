@@ -1,0 +1,16 @@
+{
+  "id": "sure_petcare_hub",
+  "name": {"en": "Sure Petcare hub"},
+  "size": [0.09,0.09,0.069],
+  "group": "tech",
+  "room": ["office", "utility", "hall", "living", "loft"],
+  "tags": ["sure petcare", "surepet", "sureflap", "pet hub", "cat flap hub", "pet door", "hub", "smart home", "gateway"],
+  "family": "smart_hub",
+  "variant": {"en": "Sure Petcare hub"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "round": 0.3},
+    {"shape": "box", "x": 0, "z": 0.4978, "w": 0.2889, "d": 0.0044, "y": 0.4348, "h": 0.0435, "color": "#46d36a", "glow": true}
+  ]
+}

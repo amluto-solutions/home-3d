@@ -1,0 +1,20 @@
+{
+  "id": "bollard_light_steel_100",
+  "name": {"en": "Bollard light, stainless steel, 1 m"},
+  "size": [0.16, 0.16, 1.0],
+  "group": "lamp",
+  "room": ["garden"],
+  "tags": ["bollard", "bollard light", "path light", "post light", "garden light", "lighting", "driveway"],
+  "family": "bollard_light_steel",
+  "variant": {"en": "1 m"},
+  "electric": true,
+  "light": "bollard",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.875, "d": 0.875, "y": 0, "h": 0.78, "color": "#b8bdc1"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9062, "d": 0.9062, "y": 0.78, "h": 0.12, "color": "#fff1c9", "glow": true},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9, "h": 0.1, "color": "#a6aaae", "profile": [[1, 0], [1, 0.4], [0.6, 0.9], [0, 1]]}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

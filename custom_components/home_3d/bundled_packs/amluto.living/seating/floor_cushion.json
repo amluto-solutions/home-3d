@@ -1,0 +1,52 @@
+{
+  "id": "floor_cushion",
+  "name": {
+    "en": "Floor cushion"
+  },
+  "size": [
+    0.6,
+    0.6,
+    0.18
+  ],
+  "group": "seating",
+  "room": [
+    "living",
+    "kids",
+    "bedroom"
+  ],
+  "tags": [
+    "floor cushion",
+    "floor pillow",
+    "pouf",
+    "seat pad",
+    "meditation",
+    "round"
+  ],
+  "family": "floor_cushion",
+  "variant": {
+    "en": "Round"
+  },
+  "parts": [
+    {
+      "shape": "sphere",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1,
+      "d": 1,
+      "y": 0.0,
+      "h": 1,
+      "color": "cushion"
+    },
+    {
+      "shape": "sphere",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.0833,
+      "d": 0.0833,
+      "y": 0.8611,
+      "h": 0.1667,
+      "color": "fabric",
+      "fix": "wdh"
+    }
+  ]
+}

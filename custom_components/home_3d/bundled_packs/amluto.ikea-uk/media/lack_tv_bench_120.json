@@ -1,0 +1,43 @@
+{
+  "id": "lack_tv_bench_120",
+  "name": {
+    "en": "TV bench 120 cm"
+  },
+  "size": [
+    1.2,
+    0.35,
+    0.36
+  ],
+  "group": "media",
+  "room": [
+    "living",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "tv stand",
+    "tv unit",
+    "media unit",
+    "low",
+    "open shelves",
+    "white",
+    "black-brown",
+    "white stained oak effect",
+    "oak effect"
+  ],
+  "family": "lack_tv_bench",
+  "variant": {
+    "en": "120x35x36"
+  },
+  "ikea": "LACK",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8611, "h": 0.1389, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.1111, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4792, "z": 0.0, "w": 0.0417, "d": 1, "y": 0.1111, "h": 0.75, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4792, "z": 0.0, "w": 0.0417, "d": 1, "y": 0.1111, "h": 0.75, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.0417, "d": 1, "y": 0.1111, "h": 0.75, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9167, "d": 0.9429, "y": 0.4444, "h": 0.0556, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": -0.4914, "w": 0.9167, "d": 0.0171, "y": 0.1111, "h": 0.75, "color": "white", "fix": "d"}
+  ]
+}

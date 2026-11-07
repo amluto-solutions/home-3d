@@ -1,0 +1,15 @@
+{
+  "id": "cushion_round",
+  "name": {"en": "Round cushion 40 cm"},
+  "size": [0.4, 0.13, 0.4],
+  "group": "cushion",
+  "room": ["living", "bedroom", "conservatory", "kids"],
+  "tags": ["cushion", "scatter cushion", "sofa cushion", "throw pillow", "pillow", "round", "button"],
+  "family": "cushion",
+  "variant": {"en": "Round 40"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#d9c7a7"},
+    {"shape": "sphere", "x": 0.0, "z": 0.38, "w": 0.075, "d": 0.1538, "y": 0.4625, "h": 0.075, "color": "dark", "fix": "wdh"}
+  ]
+}

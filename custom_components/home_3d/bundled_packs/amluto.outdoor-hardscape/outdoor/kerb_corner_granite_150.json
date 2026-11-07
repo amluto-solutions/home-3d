@@ -1,0 +1,21 @@
+{
+  "id": "kerb_corner_granite_150",
+  "name": {"en": "Corner kerb, granite, 1.5 m radius"},
+  "size": [1.65, 1.65, 0.25],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["kerb", "corner kerb", "radius kerb", "junction", "curved kerb", "pavement edge"],
+  "family": "kerb_corner_granite",
+  "variant": {"en": "1.5 m radius"},
+  "parts": [
+    {"shape": "box", "x": 0.4468, "z": 0.3359, "w": 0.2523, "d": 0.0909, "y": 0, "h": 1, "color": "#8c8e91", "rot": -97.5},
+    {"shape": "box", "x": 0.3853, "z": 0.1067, "w": 0.2523, "d": 0.0909, "y": 0, "h": 1, "color": "#909295", "rot": -112.5},
+    {"shape": "box", "x": 0.2667, "z": -0.0989, "w": 0.2523, "d": 0.0909, "y": 0, "h": 1, "color": "#8c8e91", "rot": -127.5},
+    {"shape": "box", "x": 0.0989, "z": -0.2667, "w": 0.2523, "d": 0.0909, "y": 0, "h": 1, "color": "#909295", "rot": -142.5},
+    {"shape": "box", "x": -0.1067, "z": -0.3853, "w": 0.2523, "d": 0.0909, "y": 0, "h": 1, "color": "#8c8e91", "rot": -157.5},
+    {"shape": "box", "x": -0.3359, "z": -0.4468, "w": 0.2523, "d": 0.0909, "y": 0, "h": 1, "color": "#909295", "rot": -172.5}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": false}
+  ]
+}

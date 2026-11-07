@@ -1,0 +1,26 @@
+{
+  "id": "wall_clock_30",
+  "name": {"en": "Wall clock"},
+  "size": [0.3, 0.06, 0.3],
+  "group": "deco",
+  "room": ["kitchen", "living", "hall", "office", "dining", "kids"],
+  "tags": ["clock", "round clock", "analogue", "time", "kitchen clock", "wall art", "30 cm"],
+  "family": "wall_clock",
+  "variant": {"en": "30 cm, black"},
+  "mount": "wall",
+  "wall_y": 1.85,
+  "parts": [
+    {"shape": "cyl", "x": 0, "z": 0, "w": 1, "d": 0.6667, "y": 0, "h": 1, "color": "#232326", "axis": "z"},
+    {"shape": "cyl", "x": 0, "z": 0.125, "w": 0.92, "d": 0.5833, "y": 0.04, "h": 0.92, "color": "#f5f2ea", "axis": "z"},
+    {"shape": "box", "x": 0, "z": 0.4583, "w": 0.04, "d": 0.1, "y": 0.845, "h": 0.07, "color": "#232326"},
+    {"shape": "box", "x": 0.38, "z": 0.4583, "w": 0.07, "d": 0.1, "y": 0.48, "h": 0.04, "color": "#232326"},
+    {"shape": "box", "x": 0, "z": 0.4583, "w": 0.04, "d": 0.1, "y": 0.085, "h": 0.07, "color": "#232326"},
+    {"shape": "box", "x": -0.38, "z": 0.4583, "w": 0.07, "d": 0.1, "y": 0.48, "h": 0.04, "color": "#232326"},
+    {"shape": "box", "x": 0, "z": 0.475, "w": 0.0333, "d": 0.05, "y": 0.5, "h": 0.32, "color": "#232326"},
+    {"shape": "box", "x": 0.1, "z": 0.475, "w": 0.26, "d": 0.05, "y": 0.48, "h": 0.04, "color": "#232326", "rot": 0},
+    {"shape": "cyl", "x": 0, "z": 0.475, "w": 0.0667, "d": 0.0667, "y": 0.4667, "h": 0.0667, "color": "#232326", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

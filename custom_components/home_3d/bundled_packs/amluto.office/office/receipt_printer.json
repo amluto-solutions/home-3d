@@ -1,0 +1,22 @@
+{
+  "id": "receipt_printer",
+  "name": {"en": "Receipt printer"},
+  "size": [0.145, 0.19, 0.145],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby", "kitchen", "hall"],
+  "tags": ["receipt printer", "thermal printer", "ticket printer", "pos printer", "till roll", "printer"],
+  "family": "receipt_printer",
+  "variant": {"en": "Desktop"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.75, "color": "dark", "round": 0.2},
+    {"shape": "loft", "x": 0.0, "z": -0.0526, "w": 1.0, "d": 0.8947, "y": 0.75, "h": 0.25, "color": "dark", "tx": 0.0, "tz": -0.15, "tw": 1.0, "td": 0.6},
+    {"shape": "box", "x": 0.0, "z": 0.3342, "w": 0.8621, "d": 0.0211, "y": 0.75, "h": 0.03, "color": "#101114", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.3316, "w": 0.7931, "d": 0.0158, "y": 0.76, "h": 0.24, "color": "white", "tx": 0.0, "tz": 0.2816, "tw": 0.7931, "td": 0.0105},
+    {"shape": "box", "x": -0.3621, "z": 0.4789, "w": 0.069, "d": 0.0211, "y": 0.5, "h": 0.069, "color": "#46d36a", "edges": "faint", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

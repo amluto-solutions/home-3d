@@ -1,0 +1,39 @@
+{
+  "id": "virrmo_led_ceiling_lamp",
+  "name": {
+    "en": "LED ceiling lamp, round nickel 36 cm"
+  },
+  "size": [
+    0.36,
+    0.36,
+    0.076
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "kitchen",
+    "kids",
+    "bath"
+  ],
+  "tags": [
+    "ceiling light",
+    "flush",
+    "round",
+    "nickel-plated",
+    "led",
+    "hallway",
+    "bathroom"
+  ],
+  "ikea": "VIRRMO",
+  "light": "ceiling",
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8684, "h": 0.1316, "color": "metal", "fix": "h"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.8684, "color": "metal", "profile": [[0.95, 0], [1, 0.1], [1, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8611, "d": 0.8611, "y": 0, "h": 0.1579, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

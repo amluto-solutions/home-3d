@@ -1,0 +1,29 @@
+{
+  "id": "rack_wall_frame_10in_9u",
+  "name": {"en": "Wall frame 10-inch 9U"},
+  "size": [0.28, 0.3, 0.455],
+  "group": "network",
+  "room": ["office", "garage", "utility", "loft", "hall"],
+  "tags": ["10 inch", "open frame", "wall rack", "mini rack mount", "homelab", "rack"],
+  "family": "rack_wall_frame_10in",
+  "variant": {"en": "9U"},
+  "mount": "wall",
+  "wall_y": 1.1,
+  "rack_frame": {"u": 9, "form": "wall_frame", "width": 10},
+  "parts": [
+    {"shape": "box", "x": -0.44645, "z": -0.45, "w": 0.1071, "d": 0.1, "y": 0, "h": 1, "color": "dark", "edges": "faint", "fix": "w"},
+    {"shape": "box", "x": 0.44645, "z": -0.45, "w": 0.1071, "d": 0.1, "y": 0, "h": 1, "color": "dark", "edges": "faint", "fix": "w"},
+    {"shape": "box", "x": -0.44845, "z": 0.01665, "w": 0.1031, "d": 0.8333, "y": 0, "h": 0.0659, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0.44845, "z": 0.01665, "w": 0.1031, "d": 0.8333, "y": 0, "h": 0.0659, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.45, "w": 0.7858, "d": 0.1, "y": 0, "h": 0.0659, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": -0.44845, "z": 0.01665, "w": 0.1031, "d": 0.8333, "y": 0.9341, "h": 0.0659, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0.44845, "z": 0.01665, "w": 0.1031, "d": 0.8333, "y": 0.9341, "h": 0.0659, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.45, "w": 0.7858, "d": 0.1, "y": 0.9341, "h": 0.0659, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": -0.42525, "z": 0.4083, "w": 0.0567, "d": 0.05, "y": 0.0604, "h": 0.8792, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": 0.42525, "z": 0.4083, "w": 0.0567, "d": 0.05, "y": 0.0604, "h": 0.8792, "color": "metal", "fix": "w"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.4333, "x2": 0.5, "z2": 0.4333}
+  ]
+}

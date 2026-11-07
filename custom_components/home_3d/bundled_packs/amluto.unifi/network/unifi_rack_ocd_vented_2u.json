@@ -1,0 +1,26 @@
+{
+  "id": "unifi_rack_ocd_vented_2u",
+  "name": {"en": "UniFi rack panel vented 2U"},
+  "size": [0.4826, 0.0635, 0.0881],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "surface",
+  "tags": ["vented panel", "ocd panel", "ventilation", "2u", "unifi", "ubiquiti", "rack mount", "19 inch", "rack"],
+  "family": "unifi_rack_panel",
+  "variant": {"en": "Vented 2U"},
+  "rack": {"u": 2},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0079, "w": 0.9167, "d": 0.9843, "y": 0.0, "h": 1.0, "color": "#3b4048", "edges": "faint"},
+    {"shape": "box", "x": -0.4793, "z": 0.4685, "w": 0.0414, "d": 0.063, "y": 0.0, "h": 1.0, "color": "#3b4048"},
+    {"shape": "box", "x": 0.4793, "z": 0.4685, "w": 0.0414, "d": 0.063, "y": 0.0, "h": 1.0, "color": "#3b4048"},
+    {"shape": "box", "x": 0.0, "z": 0.4685, "w": 0.8288, "d": 0.063, "y": 0.0681, "h": 0.0341, "color": "#0c0d0f"},
+    {"shape": "box", "x": 0.0, "z": 0.4685, "w": 0.8288, "d": 0.063, "y": 0.2121, "h": 0.0341, "color": "#0c0d0f"},
+    {"shape": "box", "x": 0.0, "z": 0.4685, "w": 0.8288, "d": 0.063, "y": 0.356, "h": 0.0341, "color": "#0c0d0f"},
+    {"shape": "box", "x": 0.0, "z": 0.4685, "w": 0.8288, "d": 0.063, "y": 0.5, "h": 0.0341, "color": "#0c0d0f"},
+    {"shape": "box", "x": 0.0, "z": 0.4685, "w": 0.8288, "d": 0.063, "y": 0.644, "h": 0.0341, "color": "#0c0d0f"},
+    {"shape": "box", "x": 0.0, "z": 0.4685, "w": 0.8288, "d": 0.063, "y": 0.7879, "h": 0.0341, "color": "#0c0d0f"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

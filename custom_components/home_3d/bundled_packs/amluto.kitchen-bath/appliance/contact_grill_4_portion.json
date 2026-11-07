@@ -1,0 +1,25 @@
+{
+  "id": "contact_grill_4_portion",
+  "name": {"en": "Contact grill, 4 portion"},
+  "size": [0.4, 0.34, 0.15],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["grill", "countertop", "cooking", "contact grill", "health grill", "panini", "george foreman"],
+  "family": "grill",
+  "variant": {"en": "Contact, 4 portion"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.5, "color": "#25272b", "round": 0.15},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.96, "d": 0.96, "y": 0.5, "h": 0.5, "color": "#3a3d42", "round": 0.25},
+    {"shape": "box", "x": 0.0, "z": -0.28, "w": 0.7, "d": 0.0294, "y": 0.5, "h": 0.0267, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.14, "w": 0.7, "d": 0.0294, "y": 0.5, "h": 0.0267, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7, "d": 0.0294, "y": 0.5, "h": 0.0267, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.14, "w": 0.7, "d": 0.0294, "y": 0.5, "h": 0.0267, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.28, "w": 0.7, "d": 0.0294, "y": 0.5, "h": 0.0267, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.5, "d": 0.0735, "y": 0.4, "h": 0.1333, "color": "#25272b", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

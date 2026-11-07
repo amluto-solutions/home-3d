@@ -1,0 +1,18 @@
+{
+  "id": "kvm_box",
+  "name": {"en": "KVM box"},
+  "size": [0.075, 0.06, 0.045],
+  "group": "tech",
+  "room": ["office", "hobby", "loft", "utility"],
+  "tags": ["kvm", "ip kvm", "kvm over ip", "jetkvm", "pikvm", "raspberry pi", "pi", "remote control", "server access", "homelab"],
+  "family": "kvm_box",
+  "variant": {"en": "IP KVM"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.0167, "w": 1, "d": 0.9667, "y": 0.0, "h": 1, "color": "dark", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": 0.4833, "w": 0.8267, "d": 0.0167, "y": 0.1111, "h": 0.7778, "color": "glass"},
+    {"shape": "box", "x": -0.16, "z": 0.495, "w": 0.4, "d": 0.01, "y": 0.6222, "h": 0.0889, "color": "#4aa3ff"},
+    {"shape": "box", "x": 0.16, "z": 0.495, "w": 0.1867, "d": 0.01, "y": 0.2667, "h": 0.1333, "color": "#46d36a"}
+  ]
+}

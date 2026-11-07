@@ -1,0 +1,41 @@
+{
+  "id": "linnmon_adils_table_100x45",
+  "name": {
+    "en": "Table 100x45 cm"
+  },
+  "size": [
+    1.0,
+    0.45,
+    0.74
+  ],
+  "group": "office",
+  "room": [
+    "office",
+    "kids",
+    "bedroom",
+    "hobby"
+  ],
+  "tags": [
+    "LINNMON",
+    "ADILS",
+    "desk",
+    "computer desk",
+    "simple desk",
+    "white",
+    "dark grey",
+    "black"
+  ],
+  "family": "linnmon_adils_table",
+  "variant": {
+    "en": "100x45"
+  },
+  "ikea": "LINNMON / ADILS",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9541, "h": 0.0459, "color": "white", "fix": "h"},
+    {"shape": "cyl", "x": -0.4475, "z": -0.3833, "w": 0.035, "d": 0.0778, "y": 0, "h": 0.9541, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4475, "z": 0.3833, "w": 0.035, "d": 0.0778, "y": 0, "h": 0.9541, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4475, "z": -0.3833, "w": 0.035, "d": 0.0778, "y": 0, "h": 0.9541, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4475, "z": 0.3833, "w": 0.035, "d": 0.0778, "y": 0, "h": 0.9541, "color": "white", "fix": "wdh"}
+  ]
+}

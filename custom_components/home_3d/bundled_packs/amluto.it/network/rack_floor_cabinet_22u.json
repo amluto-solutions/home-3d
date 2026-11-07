@@ -1,0 +1,33 @@
+{
+  "id": "rack_floor_cabinet_22u",
+  "name": {"en": "Floor cabinet 19-inch 22U"},
+  "size": [0.6, 0.6, 1.159],
+  "group": "network",
+  "room": ["office", "garage", "utility", "loft"],
+  "tags": ["19 inch", "server cabinet", "data cabinet", "server rack", "rack"],
+  "family": "rack_floor_cabinet",
+  "variant": {"en": "22U"},
+  "mount": "floor",
+  "rack_frame": {"u": 22, "form": "cabinet", "door": "glass", "bottom": 0.1},
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9, "d": 0.9, "y": 0, "h": 0.069, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.4875, "z": -0.01665, "w": 0.025, "d": 0.9667, "y": 0.069, "h": 0.931, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.4875, "z": -0.01665, "w": 0.025, "d": 0.9667, "y": 0.069, "h": 0.931, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0, "z": -0.01665, "w": 0.95, "d": 0.9667, "y": 0.069, "h": 0.0173, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.01665, "w": 0.95, "d": 0.9667, "y": 0.9569, "h": 0.0431, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.49, "w": 0.95, "d": 0.02, "y": 0.0863, "h": 0.8706, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": -0.38895, "z": 0.3542, "w": 0.0265, "d": 0.025, "y": 0.0863, "h": 0.8437, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": 0.38895, "z": 0.3542, "w": 0.0265, "d": 0.025, "y": 0.0863, "h": 0.8437, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": -0.38895, "z": -0.4042, "w": 0.0265, "d": 0.025, "y": 0.0863, "h": 0.8437, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": 0.38895, "z": -0.4042, "w": 0.0265, "d": 0.025, "y": 0.0863, "h": 0.8437, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": -0.47085, "z": 0.48335, "w": 0.0583, "d": 0.0333, "y": 0.069, "h": 0.931, "color": "dark", "edges": "faint", "fix": "w"},
+    {"shape": "box", "x": 0.47085, "z": 0.48335, "w": 0.0583, "d": 0.0333, "y": 0.069, "h": 0.931, "color": "dark", "edges": "faint", "fix": "w"},
+    {"shape": "box", "x": 0, "z": 0.48335, "w": 0.8834, "d": 0.0333, "y": 0.069, "h": 0.0302, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.48335, "w": 0.8834, "d": 0.0333, "y": 0.9698, "h": 0.0302, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0.4708, "z": 0.4825, "w": 0.02, "d": 0.035, "y": 0.4482, "h": 0.1036, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.3667, "x2": 0.5, "z2": 0.3667}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "fruit_basket_wire",
+  "name": {"en": "Fruit basket, wire, with fruit"},
+  "size": [0.3, 0.3, 0.16],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "tags": ["fruit bowl", "fruit basket", "fruit stand", "apples", "oranges", "kitchen", "worktop"],
+  "family": "fruit_basket",
+  "variant": {"en": "Wire basket"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.7, "color": "dark", "profile": [[0, 0], [0.7, 0], [1, 1], [0.92, 1], [0.64, 0.08], [0, 0.08]]},
+    {"shape": "sphere", "x": -0.2333, "z": -0.1, "w": 0.2333, "d": 0.2333, "y": 0.38, "h": 0.4375, "color": "#c9372c", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.1667, "z": -0.2, "w": 0.2333, "d": 0.2333, "y": 0.38, "h": 0.4375, "color": "#e8a329", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.2667, "z": 0.1667, "w": 0.2333, "d": 0.2333, "y": 0.38, "h": 0.4375, "color": "#7aa63a", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.1333, "z": 0.2333, "w": 0.2333, "d": 0.2333, "y": 0.38, "h": 0.4375, "color": "#e9d04a", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.2333, "d": 0.2333, "y": 0.63, "h": 0.4375, "color": "#c9372c", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

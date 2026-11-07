@@ -1,0 +1,25 @@
+{
+  "id": "tractor_compact",
+  "name": {"en": "Compact tractor"},
+  "size": [1.4, 3.0, 2.2],
+  "group": "vehicle",
+  "room": ["garage", "garden"],
+  "tags": ["tractor", "compact tractor", "farm", "smallholding", "small", "grounds"],
+  "vehicle": true,
+  "parts": [
+    {"shape": "cyl", "x": -0.3786, "z": -0.28, "w": 0.2429, "d": 0.3667, "y": 0.0, "h": 0.5, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": -0.4143, "z": 0.33, "w": 0.1571, "d": 0.2333, "y": 0.0, "h": 0.3182, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.3786, "z": -0.28, "w": 0.2429, "d": 0.3667, "y": 0.0, "h": 0.5, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.4143, "z": 0.33, "w": 0.1571, "d": 0.2333, "y": 0.0, "h": 0.3182, "color": "dark", "axis": "x"},
+    {"shape": "rbox", "x": 0.0, "z": 0.28, "w": 0.45, "d": 0.42, "y": 0.2273, "h": 0.2955, "color": "paint", "round": 0.2},
+    {"shape": "rbox", "x": 0.0, "z": -0.08, "w": 0.55, "d": 0.4, "y": 0.2045, "h": 0.1591, "color": "paint", "round": 0.2},
+    {"shape": "rbox", "x": 0.0, "z": -0.18, "w": 0.6, "d": 0.1333, "y": 0.4318, "h": 0.0455, "color": "dark", "round": 0.4},
+    {"shape": "cyl", "x": -0.3, "z": -0.02, "w": 0.0357, "d": 0.0167, "y": 0.4545, "h": 0.5227, "color": "metal"},
+    {"shape": "cyl", "x": -0.3, "z": -0.34, "w": 0.0357, "d": 0.0167, "y": 0.4545, "h": 0.5227, "color": "metal"},
+    {"shape": "cyl", "x": 0.3, "z": -0.02, "w": 0.0357, "d": 0.0167, "y": 0.4545, "h": 0.5227, "color": "metal"},
+    {"shape": "cyl", "x": 0.3, "z": -0.34, "w": 0.0357, "d": 0.0167, "y": 0.4545, "h": 0.5227, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.18, "w": 0.7, "d": 0.42, "y": 0.9773, "h": 0.0227, "color": "paint"},
+    {"shape": "cyl", "x": 0.15, "z": 0.12, "w": 0.0429, "d": 0.02, "y": 0.5227, "h": 0.2273, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.4933, "w": 0.4, "d": 0.0133, "y": 0.3864, "h": 0.0455, "color": "#fff3cf"}
+  ]
+}

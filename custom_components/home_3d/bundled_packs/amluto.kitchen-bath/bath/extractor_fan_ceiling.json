@@ -1,0 +1,23 @@
+{
+  "id": "extractor_fan_ceiling",
+  "name": {"en": "Extractor fan, ceiling"},
+  "size": [0.2, 0.2, 0.04],
+  "group": "bath",
+  "room": ["bath", "kitchen", "utility"],
+  "tags": ["extractor fan", "extractor", "bathroom fan", "ventilation", "fan", "vent", "humidity"],
+  "family": "extractor_fan",
+  "variant": {"en": "Ceiling"},
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.25, "h": 0.75, "color": "white", "round": 0.3},
+    {"shape": "box", "x": 0.0, "z": -0.3, "w": 0.7, "d": 0.06, "y": 0.0, "h": 0.25, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.1, "w": 0.7, "d": 0.06, "y": 0.0, "h": 0.25, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.1, "w": 0.7, "d": 0.06, "y": 0.0, "h": 0.25, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.3, "w": 0.7, "d": 0.06, "y": 0.0, "h": 0.25, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "circle", "x": 0.0, "z": 0.0, "r": 0.35}
+  ]
+}

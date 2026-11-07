@@ -1,0 +1,98 @@
+{
+  "id": "single_bed_simple",
+  "name": {
+    "en": "Single bed"
+  },
+  "size": [
+    0.97,
+    2.0,
+    0.9
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "single",
+    "guest bed",
+    "3ft"
+  ],
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0,
+      "z": -0.48,
+      "w": 1,
+      "d": 0.04,
+      "y": 0,
+      "h": 1,
+      "color": "wood",
+      "fix": "d"
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.02,
+      "w": 1,
+      "d": 0.96,
+      "y": 0,
+      "h": 0.3,
+      "color": "wood"
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.02,
+      "w": 0.94,
+      "d": 0.92,
+      "y": 0.3,
+      "h": 0.2,
+      "color": "white"
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": -0.38,
+      "w": 0.6,
+      "d": 0.08,
+      "y": 0.5,
+      "h": 0.08,
+      "color": "cushion"
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.15,
+      "w": 0.98,
+      "d": 0.7,
+      "y": 0.48,
+      "h": 0.06,
+      "color": "fabric"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    },
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": -0.38,
+      "w": 0.6,
+      "d": 0.08,
+      "fill": true
+    },
+    {
+      "shape": "line",
+      "x1": -0.5,
+      "z1": -0.2,
+      "x2": 0.5,
+      "z2": -0.2
+    }
+  ]
+}

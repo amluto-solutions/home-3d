@@ -1,0 +1,19 @@
+{
+  "id": "yoga_mat_rolled",
+  "name": {"en": "Yoga mat (rolled)"},
+  "size": [0.61, 0.16, 0.16],
+  "group": "sport",
+  "room": ["living", "bedroom", "hobby", "loft", "office", "hall"],
+  "tags": ["yoga mat", "exercise mat", "pilates", "rolled", "stretching", "fitness", "gym", "workout", "strap"],
+  "family": "yoga_mat",
+  "variant": {"en": "Rolled up, with strap"},
+  "parts": [
+    {"shape": "cyl", "x": 0, "z": 0, "w": 1, "d": 0.9375, "y": 0.0313, "h": 0.9375, "color": "#2a9d9a", "axis": "x"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.8197, "d": 0.3125, "y": 0.3438, "h": 0.3125, "color": "#1f7573", "axis": "x"},
+    {"shape": "cyl", "x": -0.2951, "z": 0, "w": 0.0492, "d": 1, "y": 0, "h": 1, "color": "#e9e6dc", "axis": "x"},
+    {"shape": "cyl", "x": 0.2951, "z": 0, "w": 0.0492, "d": 1, "y": 0, "h": 1, "color": "#e9e6dc", "axis": "x"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

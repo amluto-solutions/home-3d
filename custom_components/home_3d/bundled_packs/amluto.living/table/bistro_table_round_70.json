@@ -1,0 +1,17 @@
+{
+  "id": "bistro_table_round_70",
+  "name": {"en": "Bistro table"},
+  "size": [0.7, 0.7, 0.73],
+  "group": "table",
+  "family": "bistro_table",
+  "variant": {"en": "Round Ø70"},
+  "room": ["kitchen", "dining", "garden", "conservatory"],
+  "tags": ["bistro table", "cafe table", "pedestal table", "small table", "breakfast table", "marble", "round"],
+  "surface": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.9589, "h": 0.0411, "color": "white", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9714, "d": 0.9714, "y": 0.9315, "h": 0.0274, "color": "dark", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0714, "d": 0.0714, "y": 0.0822, "h": 0.8493, "color": "dark", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.6286, "d": 0.6286, "y": 0.0, "h": 0.1644, "color": "dark", "profile": [[0, 0], [1, 0], [0.95, 0.15], [0.35, 0.5], [0.15, 1], [0, 1]], "fix": "wdh"}
+  ]
+}

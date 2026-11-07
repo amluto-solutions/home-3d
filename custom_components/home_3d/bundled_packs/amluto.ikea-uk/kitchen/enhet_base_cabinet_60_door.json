@@ -1,0 +1,41 @@
+{
+  "id": "enhet_base_cabinet_60_door",
+  "name": {
+    "en": "Base cabinet with door 60x60 cm"
+  },
+  "size": [
+    0.6,
+    0.62,
+    0.875
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen",
+    "utility"
+  ],
+  "tags": [
+    "kitchen cupboard",
+    "base unit",
+    "on legs",
+    "no worktop",
+    "white",
+    "anthracite",
+    "grey frame",
+    "oak effect"
+  ],
+  "family": "enhet_base_cabinet",
+  "variant": {
+    "en": "60 cm, door"
+  },
+  "ikea": "ENHET",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0161, "w": 1, "d": 0.9677, "y": 0.1429, "h": 0.8571, "color": "white"},
+    {"shape": "cyl", "x": -0.4375, "z": -0.4234, "w": 0.0583, "d": 0.0565, "y": 0, "h": 0.1429, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4375, "z": 0.3589, "w": 0.0583, "d": 0.0565, "y": 0, "h": 0.1429, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4375, "z": -0.4234, "w": 0.0583, "d": 0.0565, "y": 0, "h": 0.1429, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4375, "z": 0.3589, "w": 0.0583, "d": 0.0565, "y": 0, "h": 0.1429, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4823, "w": 0.9933, "d": 0.029, "y": 0.1429, "h": 0.8526, "color": "body", "fix": "d"},
+    {"shape": "box", "x": 0.4333, "z": 0.5, "w": 0.02, "d": 0.0355, "y": 0.7714, "h": 0.1829, "color": "metal", "fix": "wdh"}
+  ]
+}

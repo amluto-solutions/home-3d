@@ -1,0 +1,52 @@
+{
+  "id": "huvudspelare_gaming_chair",
+  "name": {
+    "en": "Gaming chair"
+  },
+  "size": [
+    0.6,
+    0.54,
+    1.18
+  ],
+  "group": "seating",
+  "room": [
+    "office",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "HUVUDSPELARE",
+    "gaming chair",
+    "gamer chair",
+    "office chair",
+    "racing seat",
+    "swivel",
+    "black",
+    "height adjustable 113-123 cm"
+  ],
+  "ikea": "HUVUDSPELARE",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.2778, "w": 0.5, "d": 0.0741, "y": 0.0508, "h": 0.0254, "color": "dark", "rot": -90.0, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.5, "w": 0.0833, "d": 0.0926, "y": 0, "h": 0.0424, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.2378, "z": 0.0858, "w": 0.5, "d": 0.0741, "y": 0.0508, "h": 0.0254, "color": "dark", "rot": -162.0, "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4438, "z": 0.1602, "w": 0.0833, "d": 0.0926, "y": 0, "h": 0.0424, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.1469, "z": -0.2247, "w": 0.5, "d": 0.0741, "y": 0.0508, "h": 0.0254, "color": "dark", "rot": 126.0, "fix": "wdh"},
+    {"shape": "cyl", "x": -0.2743, "z": -0.4195, "w": 0.0833, "d": 0.0926, "y": 0, "h": 0.0424, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.1469, "z": -0.2247, "w": 0.5, "d": 0.0741, "y": 0.0508, "h": 0.0254, "color": "dark", "rot": 54.0, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2743, "z": -0.4195, "w": 0.0833, "d": 0.0926, "y": 0, "h": 0.0424, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.2378, "z": 0.0858, "w": 0.5, "d": 0.0741, "y": 0.0508, "h": 0.0254, "color": "dark", "rot": -18.0, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4438, "z": 0.1602, "w": 0.0833, "d": 0.0926, "y": 0, "h": 0.0424, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1, "d": 0.1111, "y": 0.0508, "h": 0.0424, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0833, "d": 0.0926, "y": 0.0847, "h": 0.2881, "color": "metal", "fix": "wd"},
+    {"shape": "rbox", "x": 0.0, "z": 0.037, "w": 0.8333, "d": 0.8519, "y": 0.3729, "h": 0.0847, "color": "dark", "fix": "wdh", "round": 0.35},
+    {"shape": "rbox", "x": -0.3333, "z": 0.0556, "w": 0.1167, "d": 0.7407, "y": 0.4237, "h": 0.0593, "color": "dark", "fix": "wdh", "round": 0.4},
+    {"shape": "rbox", "x": 0.3333, "z": 0.0556, "w": 0.1167, "d": 0.7407, "y": 0.4237, "h": 0.0593, "color": "dark", "fix": "wdh", "round": 0.4},
+    {"shape": "rbox", "x": 0.0, "z": -0.3704, "w": 0.8333, "d": 0.2222, "y": 0.4237, "h": 0.4407, "color": "dark", "round": 0.35},
+    {"shape": "rbox", "x": 0.0, "z": -0.3519, "w": 0.5667, "d": 0.2222, "y": 0.4915, "h": 0.2881, "color": "fabric", "round": 0.3},
+    {"shape": "rbox", "x": 0.0, "z": -0.3704, "w": 0.5, "d": 0.1852, "y": 0.839, "h": 0.1441, "color": "dark", "round": 0.4},
+    {"shape": "box", "x": -0.4833, "z": -0.1111, "w": 0.0667, "d": 0.0926, "y": 0.4576, "h": 0.1186, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": -0.4833, "z": -0.0185, "w": 0.1167, "d": 0.5185, "y": 0.5763, "h": 0.0339, "color": "dark", "fix": "wdh", "round": 0.4},
+    {"shape": "box", "x": 0.4833, "z": -0.1111, "w": 0.0667, "d": 0.0926, "y": 0.4576, "h": 0.1186, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.4833, "z": -0.0185, "w": 0.1167, "d": 0.5185, "y": 0.5763, "h": 0.0339, "color": "dark", "fix": "wdh", "round": 0.4}
+  ]
+}

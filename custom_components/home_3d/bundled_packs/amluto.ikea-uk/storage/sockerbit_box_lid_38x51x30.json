@@ -1,0 +1,42 @@
+{
+  "id": "sockerbit_box_lid_38x51x30",
+  "name": {
+    "en": "Box with lid 38x51x30 cm"
+  },
+  "size": [
+    0.38,
+    0.51,
+    0.3
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "office",
+    "hall",
+    "living",
+    "utility"
+  ],
+  "tags": [
+    "SOCKERBIT",
+    "clip lid",
+    "storage box",
+    "box with lid",
+    "plastic box",
+    "white"
+  ],
+  "family": "sockerbit_box",
+  "variant": {
+    "en": "38x51x30"
+  },
+  "ikea": "SOCKERBIT",
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.9, "color": "white", "round": 0.12},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9, "h": 0.1, "color": "white", "round": 0.2},
+    {"shape": "box", "x": -0.5, "z": 0.0, "w": 0.0105, "d": 0.2353, "y": 0.55, "h": 0.12, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.5, "z": 0.0, "w": 0.0105, "d": 0.2353, "y": 0.55, "h": 0.12, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.5, "w": 0.18, "d": 0.0118, "y": 0.8333, "h": 0.1333, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.18, "d": 0.0118, "y": 0.8333, "h": 0.1333, "color": "metal", "fix": "wdh"}
+  ]
+}

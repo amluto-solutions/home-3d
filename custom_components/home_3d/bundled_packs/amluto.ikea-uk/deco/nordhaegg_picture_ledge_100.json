@@ -1,0 +1,35 @@
+{
+  "id": "nordhaegg_picture_ledge_100",
+  "name": {
+    "en": "Pine picture ledge 100 cm"
+  },
+  "size": [
+    1.0,
+    0.1,
+    0.06
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "bedroom",
+    "hall",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "picture ledge",
+    "picture shelf",
+    "pine",
+    "wooden",
+    "frames"
+  ],
+  "ikea": "NORDHÄGG",
+  "mount": "wall",
+  "wall_y": 1.2,
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.25, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.425, "w": 1, "d": 0.15, "y": 0, "h": 0.55, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.425, "w": 1, "d": 0.15, "y": 0, "h": 1, "color": "wood", "fix": "d"}
+  ]
+}

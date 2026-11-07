@@ -1,0 +1,91 @@
+{
+  "id": "toilet_roll_holder_freestanding",
+  "name": {
+    "en": "Toilet roll holder, freestanding"
+  },
+  "size": [
+    0.18,
+    0.18,
+    0.62
+  ],
+  "group": "bath",
+  "room": [
+    "bath"
+  ],
+  "tags": [
+    "toilet roll",
+    "toilet roll holder",
+    "loo roll",
+    "toilet paper",
+    "stand",
+    "freestanding",
+    "chrome",
+    "spare rolls"
+  ],
+  "family": "toilet_roll_holder",
+  "variant": {
+    "en": "Freestanding"
+  },
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 0.0323,
+      "color": "metal"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.1,
+      "d": 0.1,
+      "y": 0.0323,
+      "h": 0.9355,
+      "color": "metal"
+    },
+    {
+      "shape": "sphere",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.1667,
+      "d": 0.1667,
+      "y": 0.9516,
+      "h": 0.0484,
+      "color": "metal"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.6667,
+      "d": 0.6667,
+      "y": 0.0323,
+      "h": 0.1774,
+      "color": "white"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.6667,
+      "d": 0.6667,
+      "y": 0.2258,
+      "h": 0.1774,
+      "color": "white"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.6667,
+      "d": 0.6667,
+      "y": 0.4194,
+      "h": 0.1774,
+      "color": "white"
+    }
+  ]
+}

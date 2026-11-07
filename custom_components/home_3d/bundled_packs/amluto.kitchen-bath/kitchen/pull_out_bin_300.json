@@ -1,0 +1,32 @@
+{
+  "id": "pull_out_bin_300",
+  "name": {"en": "Pull-out bin 300"},
+  "size": [0.3, 0.6, 0.91],
+  "group": "kitchen",
+  "room": ["kitchen", "utility"],
+  "tags": ["shaker", "kitchen cupboard", "fitted kitchen", "pull-out bin", "kitchen bin", "recycling", "waste", "pull out"],
+  "family": "pull_out_bin",
+  "variant": {"en": "300"},
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0617, "w": 0.9867, "d": 0.7767, "y": 0.0, "h": 0.1648, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0367, "w": 1.0, "d": 0.9267, "y": 0.1648, "h": 0.7912, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.956, "h": 0.044, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4417, "w": 0.98, "d": 0.03, "y": 0.8055, "h": 0.1473, "color": "body"},
+    {"shape": "box", "x": -0.39, "z": 0.4617, "w": 0.2, "d": 0.01, "y": 0.8055, "h": 0.1473, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.39, "z": 0.4617, "w": 0.2, "d": 0.01, "y": 0.8055, "h": 0.1473, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.4617, "w": 0.58, "d": 0.01, "y": 0.8055, "h": 0.0368, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4617, "w": 0.58, "d": 0.01, "y": 0.9159, "h": 0.0368, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4817, "w": 0.4267, "d": 0.03, "y": 0.9277, "h": 0.0132, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4417, "w": 0.98, "d": 0.03, "y": 0.1681, "h": 0.6308, "color": "body"},
+    {"shape": "box", "x": -0.39, "z": 0.4617, "w": 0.2, "d": 0.01, "y": 0.1681, "h": 0.6308, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.39, "z": 0.4617, "w": 0.2, "d": 0.01, "y": 0.1681, "h": 0.6308, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.4617, "w": 0.58, "d": 0.01, "y": 0.1681, "h": 0.0659, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4617, "w": 0.58, "d": 0.01, "y": 0.733, "h": 0.0659, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4817, "w": 0.4267, "d": 0.03, "y": 0.4769, "h": 0.0132, "color": "metal", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "rect", "x": 0.0, "z": -0.0333, "w": 0.7333, "d": 0.7333}
+  ]
+}

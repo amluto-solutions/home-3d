@@ -1,0 +1,20 @@
+{
+  "id": "egg_chair_hanging",
+  "name": {"en": "Hanging egg chair"},
+  "size": [1.0, 1.1, 1.98],
+  "group": "seating",
+  "family": "egg_chair",
+  "variant": {"en": "Hanging, on a stand"},
+  "room": ["living", "conservatory", "bedroom", "garden"],
+  "tags": ["egg chair", "hanging chair", "swing chair", "cocoon chair", "pod chair", "rattan", "wicker", "with stand"],
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0455, "w": 0.9, "d": 0.8182, "y": 0.0, "h": 0.0202, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": -0.4, "w": 0.06, "d": 0.0545, "y": 0.0202, "h": 0.9192, "color": "dark"},
+    {"shape": "loft", "x": 0.0, "z": -0.4, "w": 0.06, "d": 0.0545, "y": 0.9091, "h": 0.0909, "color": "dark", "tx": 0.0, "tz": -0.0909, "tw": 0.06, "td": 0.0545},
+    {"shape": "box", "x": 0.0, "z": -0.0182, "w": 0.06, "d": 0.1818, "y": 0.9697, "h": 0.0303, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0455, "w": 0.02, "d": 0.0182, "y": 0.8182, "h": 0.1515, "color": "metal"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0545, "w": 0.84, "d": 0.7636, "y": 0.1515, "h": 0.6768, "color": "#b9935a", "profile": [[0, 0], [0.55, 0.03], [0.88, 0.17], [1, 0.42], [0.96, 0.66], [0.78, 0.86], [0.45, 0.98], [0, 1]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.2545, "w": 0.68, "d": 0.4727, "y": 0.2525, "h": 0.4646, "color": "cushion"},
+    {"shape": "rbox", "x": 0.0, "z": 0.3, "w": 0.6, "d": 0.4, "y": 0.2525, "h": 0.0606, "color": "cushion", "round": 0.5}
+  ]
+}

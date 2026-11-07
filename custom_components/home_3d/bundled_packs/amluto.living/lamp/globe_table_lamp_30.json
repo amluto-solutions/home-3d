@@ -1,0 +1,17 @@
+{
+  "id": "globe_table_lamp_30",
+  "name": {"en": "Globe table lamp 30 cm"},
+  "size": [0.3, 0.3, 0.42],
+  "group": "lamp",
+  "room": ["living", "dining", "bedroom", "hall", "office"],
+  "tags": ["table lamp", "globe", "opal glass", "ball lamp", "bedside lamp", "mood light"],
+  "family": "globe_table_lamp",
+  "variant": {"en": "30 cm"},
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.6, "d": 0.6, "y": 0.0, "h": 0.2, "color": "wood", "profile": [[0.0, 0.0], [1, 0.0], [1, 0.15], [0.55, 0.45], [0.35, 1], [0.0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.2, "d": 0.2, "y": 0.2, "h": 0.1, "color": "metal"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.2857, "h": 0.7143, "color": "white", "glow": true}
+  ]
+}

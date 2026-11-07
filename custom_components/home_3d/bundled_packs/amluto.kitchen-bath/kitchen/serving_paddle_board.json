@@ -1,0 +1,19 @@
+{
+  "id": "serving_paddle_board",
+  "name": {"en": "Serving paddle board, 50 cm"},
+  "size": [0.5, 0.2, 0.02],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "tags": ["chopping board", "cutting board", "kitchen", "worktop", "paddle", "pizza peel", "cheese board"],
+  "family": "serving_board",
+  "variant": {"en": "Paddle"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": -0.15, "z": 0.0, "w": 0.7, "d": 1, "y": 0, "h": 1, "color": "#b88a55", "fix": "h"},
+    {"shape": "box", "x": 0.35, "z": 0.0, "w": 0.3, "d": 0.3, "y": 0, "h": 1, "color": "#b88a55", "fix": "h"},
+    {"shape": "cyl", "x": 0.45, "z": 0.0, "w": 0.04, "d": 0.1, "y": 0, "h": 1, "color": "#101114", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

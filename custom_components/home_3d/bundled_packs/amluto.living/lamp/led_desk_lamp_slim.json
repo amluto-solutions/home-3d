@@ -1,0 +1,44 @@
+{
+  "id": "led_desk_lamp_slim",
+  "name": {
+    "en": "LED desk lamp"
+  },
+  "size": [
+    0.16,
+    0.62,
+    0.345
+  ],
+  "group": "lamp",
+  "room": [
+    "office",
+    "bedroom",
+    "kids",
+    "living"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "led desk lamp",
+    "study lamp",
+    "dimmable",
+    "touch control",
+    "task lamp",
+    "bar lamp",
+    "modern",
+    "slim"
+  ],
+  "family": "led_desk_lamp",
+  "variant": {
+    "en": "Slim bar"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0645, "w": 1, "d": 0.2581, "y": 0, "h": 0.0725, "color": "dark", "round": 0.4},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1875, "d": 0.0484, "y": 0.0725, "h": 0.1739, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.1562, "d": 0.0403, "y": 0.0725, "h": 0.8986, "color": "white"},
+    {"shape": "loft", "x": 0.0, "z": -0.0968, "w": 0.1562, "d": 0.3226, "y": 0.9275, "h": 0.0725, "color": "white", "tx": 0.0, "tz": -0.0968, "tw": 0.1562, "td": 0.3226},
+    {"shape": "box", "x": 0.0, "z": -0.2581, "w": 0.25, "d": 0.4839, "y": 0.913, "h": 0.058, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": -0.2581, "w": 0.2125, "d": 0.4516, "y": 0.8986, "h": 0.0174, "color": "white", "glow": true}
+  ]
+}

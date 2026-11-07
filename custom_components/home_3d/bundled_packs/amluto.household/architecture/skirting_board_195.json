@@ -1,0 +1,19 @@
+{
+  "id": "skirting_board_195",
+  "name": {"en": "Skirting board"},
+  "size": [2.4, 0.025, 0.195],
+  "group": "architecture",
+  "room": ["living", "dining", "bedroom", "hall", "kids", "office", "kitchen", "utility"],
+  "tags": ["skirting", "skirting board", "baseboard", "trim", "wall trim", "mdf", "painted", "white", "ogee", "victorian", "tall", "195mm"],
+  "family": "skirting_board",
+  "variant": {"en": "Ogee, 195 mm"},
+  "mount": "wall",
+  "wall_y": 0,
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.14, "w": 1, "d": 0.72, "y": 0, "h": 0.7179, "color": "white"},
+    {"shape": "box", "x": 0, "z": 0.12, "w": 1, "d": 0.76, "y": 0, "h": 0.1538, "color": "white"},
+    {"shape": "loft", "x": 0, "z": 0, "w": 1, "d": 0.88, "y": 0.7179, "h": 0.1538, "color": "white", "tx": 0, "tz": -0.12, "tw": 1, "td": 0.64},
+    {"shape": "loft", "x": 0, "z": -0.12, "w": 1, "d": 0.64, "y": 0.8718, "h": 0.1282, "color": "white", "tx": 0, "tz": -0.22, "tw": 1, "td": 0.48},
+    {"shape": "cyl", "x": 0, "z": 0.32, "w": 1, "d": 0.48, "y": 0.7744, "h": 0.0615, "color": "white", "axis": "x"}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "format": "home3d-pack",
+  "version": 2,
+  "id": "amluto.unifi",
+  "name": "UniFi",
+  "publisher": "Amluto Solutions",
+  "licence": "MIT",
+  "release": 3,
+  "description": "Ubiquiti UniFi gear: Protect cameras, doorbells and sensors, Access readers and hubs, Network access points, and the rack-mounted gateways, switches, NVRs, storage and power. Modelled for Home 3D from simple shapes. Ships with the app and works offline.",
+  "release_note": "Release 3: the pack's id is now amluto.unifi (it was theovencook.unifi); plans that name the old id still load (#424)."
+}

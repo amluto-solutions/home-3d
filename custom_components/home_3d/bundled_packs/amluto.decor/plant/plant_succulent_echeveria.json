@@ -1,0 +1,32 @@
+{
+  "id": "plant_succulent_echeveria",
+  "name": {"en": "Succulent"},
+  "size": [0.12, 0.12, 0.09],
+  "group": "plant",
+  "room": ["living", "dining", "bedroom", "office", "hall", "kitchen", "bath", "conservatory"],
+  "tags": ["plant", "succulent", "echeveria", "house plant", "windowsill", "small plant", "pot plant", "rosette"],
+  "family": "succulent",
+  "variant": {"en": "Echeveria"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0, "z": 0, "w": 0.75, "d": 0.75, "y": 0, "h": 0.5556, "color": "#b5653f", "profile": [[0, 0], [0.62, 0], [0.7, 0.04], [1, 0.9], [1, 1], [0.92, 1], [0.88, 0.9], [0, 0.88]]},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.645, "d": 0.645, "y": 0.4778, "h": 0.0111, "color": "#4a3726"},
+    {"shape": "sphere", "x": 0.2521, "z": 0, "w": 0.3896, "d": 0.2292, "y": 0.5, "h": 0.1711, "color": "#86b9a2", "rot": 0},
+    {"shape": "sphere", "x": 0.1782, "z": 0.1782, "w": 0.3896, "d": 0.2292, "y": 0.5, "h": 0.1711, "color": "#86b9a2", "rot": 45},
+    {"shape": "sphere", "x": 0, "z": 0.2521, "w": 0.3896, "d": 0.2292, "y": 0.5, "h": 0.1711, "color": "#86b9a2", "rot": 90},
+    {"shape": "sphere", "x": -0.1782, "z": 0.1782, "w": 0.3896, "d": 0.2292, "y": 0.5, "h": 0.1711, "color": "#86b9a2", "rot": 135},
+    {"shape": "sphere", "x": -0.2521, "z": 0, "w": 0.3896, "d": 0.2292, "y": 0.5, "h": 0.1711, "color": "#86b9a2", "rot": 180},
+    {"shape": "sphere", "x": -0.1782, "z": -0.1782, "w": 0.3896, "d": 0.2292, "y": 0.5, "h": 0.1711, "color": "#86b9a2", "rot": -135},
+    {"shape": "sphere", "x": 0, "z": -0.2521, "w": 0.3896, "d": 0.2292, "y": 0.5, "h": 0.1711, "color": "#86b9a2", "rot": -90},
+    {"shape": "sphere", "x": 0.1782, "z": -0.1782, "w": 0.3896, "d": 0.2292, "y": 0.5, "h": 0.1711, "color": "#86b9a2", "rot": -45},
+    {"shape": "sphere", "x": 0.0948, "z": 0.0345, "w": 0.275, "d": 0.165, "y": 0.6344, "h": 0.1833, "color": "#86b9a2", "rot": 20},
+    {"shape": "sphere", "x": -0.0035, "z": 0.1008, "w": 0.275, "d": 0.165, "y": 0.6344, "h": 0.1833, "color": "#86b9a2", "rot": 92},
+    {"shape": "sphere", "x": -0.0969, "z": 0.0278, "w": 0.275, "d": 0.165, "y": 0.6344, "h": 0.1833, "color": "#86b9a2", "rot": 164},
+    {"shape": "sphere", "x": -0.0564, "z": -0.0836, "w": 0.275, "d": 0.165, "y": 0.6344, "h": 0.1833, "color": "#86b9a2", "rot": -124},
+    {"shape": "sphere", "x": 0.0621, "z": -0.0795, "w": 0.275, "d": 0.165, "y": 0.6344, "h": 0.1833, "color": "#86b9a2", "rot": -52},
+    {"shape": "sphere", "x": 0, "z": 0, "w": 0.1833, "d": 0.1833, "y": 0.6833, "h": 0.2444, "color": "#9fc9b1"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

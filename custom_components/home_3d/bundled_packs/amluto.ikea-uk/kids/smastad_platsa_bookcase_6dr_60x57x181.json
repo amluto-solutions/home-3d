@@ -1,0 +1,52 @@
+{
+  "id": "smastad_platsa_bookcase_6dr_60x57x181",
+  "name": {
+    "en": "Bookcase with 6 drawers, white/birch, 60x57x181 cm"
+  },
+  "size": [
+    0.6,
+    0.57,
+    1.81
+  ],
+  "group": "kids",
+  "room": [
+    "kids",
+    "bedroom"
+  ],
+  "tags": [
+    "SMASTAD",
+    "PLATSA",
+    "bookcase",
+    "open shelves",
+    "6 drawers",
+    "children's storage",
+    "white",
+    "birch effect",
+    "STUVA"
+  ],
+  "family": "smastad_storage",
+  "variant": {
+    "en": "white/birch, 6 drawers · 60x57x181"
+  },
+  "ikea": "SMÅSTAD / PLATSA",
+  "parts": [
+    {"shape": "box", "x": -0.494, "z": 0, "w": 0.012, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.494, "z": 0, "w": 0.012, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.9901, "h": 0.0099, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.976, "d": 1, "y": 0, "h": 0.0276, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.493, "w": 0.976, "d": 0.014, "y": 0.0276, "h": 0.9624, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.976, "d": 0.0316, "y": 0.0276, "h": 0.16574585635359113, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.08, "d": 0.0386, "y": 0.16234585635359114, "h": 0.0066, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.976, "d": 0.0316, "y": 0.19734585635359114, "h": 0.16574585635359118, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.08, "d": 0.0386, "y": 0.3320917127071823, "h": 0.0066, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.976, "d": 0.0316, "y": 0.3670917127071823, "h": 0.08287292817679559, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.08, "d": 0.0386, "y": 0.4189646408839779, "h": 0.0066, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.976, "d": 0.0316, "y": 0.4539646408839779, "h": 0.08287292817679559, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.08, "d": 0.0386, "y": 0.5058375690607735, "h": 0.0066, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.976, "d": 0.0316, "y": 0.5408375690607735, "h": 0.08287292817679559, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.08, "d": 0.0386, "y": 0.5927104972375691, "h": 0.0066, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.976, "d": 0.0316, "y": 0.6277104972375691, "h": 0.08287292817679559, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.08, "d": 0.0386, "y": 0.6795834254143647, "h": 0.0066, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.976, "d": 0.9649, "y": 0.84, "h": 0.0099, "color": "white", "fix": "h"}
+  ]
+}

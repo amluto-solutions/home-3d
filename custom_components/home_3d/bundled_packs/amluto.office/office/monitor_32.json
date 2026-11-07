@@ -1,0 +1,19 @@
+{
+  "id": "monitor_32",
+  "name": {"en": "Monitor 32″"},
+  "size": [0.724, 0.22, 0.514],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby"],
+  "tags": ["computer monitor", "screen", "display", "pc screen", "monitor"],
+  "family": "monitor",
+  "variant": {"en": "32″"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.05, "w": 0.3729, "d": 0.85, "y": 0.0, "h": 0.035, "color": "dark", "round": 0.4, "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.2727, "w": 0.0691, "d": 0.1364, "y": 0.035, "h": 0.75, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.1136, "w": 0.4, "d": 0.1818, "y": 0.3959, "h": 0.4027, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.0227, "w": 1, "d": 0.0909, "y": 0.1946, "h": 0.8054, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.0727, "w": 0.9779, "d": 0.0091, "y": 0.2101, "h": 0.7743, "color": "glass", "screen": true}
+  ]
+}

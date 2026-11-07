@@ -1,0 +1,19 @@
+{
+  "id": "drive_concrete_3x5",
+  "name": {"en": "Concrete driveway, 3 × 5 m"},
+  "size": [3.0, 5.0, 0.05],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["concrete", "driveway", "drive", "hardstanding", "hardstanding", "parking"],
+  "family": "drive_concrete",
+  "variant": {"en": "3 × 5 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#aeaca6"},
+    {"shape": "box", "x": 0.0, "z": -0.1667, "w": 1, "d": 0.004, "y": 0.92, "h": 0.08, "color": "#8e8c86"},
+    {"shape": "box", "x": 0.0, "z": 0.1667, "w": 1, "d": 0.004, "y": 0.92, "h": 0.08, "color": "#8e8c86"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.0067, "d": 1, "y": 0.92, "h": 0.08, "color": "#8e8c86"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

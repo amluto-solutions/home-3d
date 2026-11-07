@@ -1,0 +1,23 @@
+{
+  "id": "zaptec_go",
+  "name": {"en": "Zaptec Go EV charger"},
+  "size": [0.18, 0.075, 0.242],
+  "group": "energy",
+  "room": ["garage", "garden"],
+  "tags": ["ev charger", "ev", "car charger", "charger", "electric car", "charge point", "wallbox", "zaptec", "zaptec go"],
+  "family": "ev_charger_zaptec",
+  "variant": {"en": "Go"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.0,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0, "h": 1, "color": "#2b2f35", "round": 0.2},
+    {"shape": "rbox", "x": 0.0, "z": 0.47, "w": 0.8, "d": 0.08, "y": 0.1, "h": 0.8, "color": "dark", "round": 0.3},
+    {"shape": "box", "x": 0.0, "z": 0.488, "w": 0.45, "d": 0.024, "y": 0.78, "h": 0.07, "color": "#8fe3b0"},
+    {"shape": "cyl", "x": 0.0, "z": 0.45, "w": 0.4033, "d": 0.1, "y": 0.25, "h": 0.3, "color": "#cfd2d6", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.44, "w": 0.2823, "d": 0.12, "y": 0.295, "h": 0.21, "color": "#2b2f35", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

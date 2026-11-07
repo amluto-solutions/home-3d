@@ -1,0 +1,43 @@
+{
+  "id": "loberget_sibben_childrens_desk_chair",
+  "name": {
+    "en": "Children's desk chair"
+  },
+  "size": [
+    0.56,
+    0.56,
+    0.7
+  ],
+  "group": "kids",
+  "room": [
+    "kids",
+    "bedroom"
+  ],
+  "tags": [
+    "LOBERGET",
+    "SIBBEN",
+    "children's desk chair",
+    "kids swivel chair",
+    "homework chair",
+    "white",
+    "adjustable seat 38-49 cm"
+  ],
+  "ikea": "LOBERGET / SIBBEN",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.2321, "w": 0.4643, "d": 0.0714, "y": 0.0714, "h": 0.0429, "color": "white", "rot": -90.0, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4286, "w": 0.0714, "d": 0.0714, "y": 0, "h": 0.0571, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.2208, "z": 0.0717, "w": 0.4643, "d": 0.0714, "y": 0.0714, "h": 0.0429, "color": "white", "rot": -162.0, "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4076, "z": 0.1324, "w": 0.0714, "d": 0.0714, "y": 0, "h": 0.0571, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.1365, "z": -0.1878, "w": 0.4643, "d": 0.0714, "y": 0.0714, "h": 0.0429, "color": "white", "rot": 126.0, "fix": "wdh"},
+    {"shape": "cyl", "x": -0.2519, "z": -0.3467, "w": 0.0714, "d": 0.0714, "y": 0, "h": 0.0571, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.1365, "z": -0.1878, "w": 0.4643, "d": 0.0714, "y": 0.0714, "h": 0.0429, "color": "white", "rot": 54.0, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2519, "z": -0.3467, "w": 0.0714, "d": 0.0714, "y": 0, "h": 0.0571, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.2208, "z": 0.0717, "w": 0.4643, "d": 0.0714, "y": 0.0714, "h": 0.0429, "color": "white", "rot": -18.0, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4076, "z": 0.1324, "w": 0.0714, "d": 0.0714, "y": 0, "h": 0.0571, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1071, "d": 0.1071, "y": 0.0714, "h": 0.0714, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0804, "d": 0.0804, "y": 0.1286, "h": 0.3286, "color": "metal", "fix": "wd"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0357, "w": 0.5714, "d": 0.5714, "y": 0.4429, "h": 0.0714, "color": "white", "fix": "wdh", "round": 0.4},
+    {"shape": "rbox", "x": 0.0, "z": -0.2679, "w": 0.5536, "d": 0.0714, "y": 0.5714, "h": 0.3714, "color": "white", "round": 0.45},
+    {"shape": "box", "x": 0.0, "z": -0.2143, "w": 0.0714, "d": 0.0714, "y": 0.4857, "h": 0.1429, "color": "white", "fix": "wdh"}
+  ]
+}

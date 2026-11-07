@@ -1,0 +1,48 @@
+{
+  "id": "lagkapten_alex_desk_200x60",
+  "name": {
+    "en": "Desk with two drawer units, 200x60 cm"
+  },
+  "size": [
+    2.0,
+    0.6,
+    0.73
+  ],
+  "group": "office",
+  "room": [
+    "office",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "LAGKAPTEN",
+    "ALEX",
+    "desk",
+    "writing desk",
+    "computer desk",
+    "drawers",
+    "white",
+    "white stained oak effect",
+    "black-brown"
+  ],
+  "family": "lagkapten_alex_desk",
+  "variant": {
+    "en": "200x60"
+  },
+  "ikea": "LAGKAPTEN / ALEX",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.41, "z": 0.0, "w": 0.18, "d": 0.9667, "y": 0, "h": 0.963, "color": "white", "fix": "w"},
+    {"shape": "box", "x": -0.41, "z": 0.49, "w": 0.177, "d": 0.0133, "y": 0.0068, "h": 0.1795, "color": "white", "fix": "w"},
+    {"shape": "box", "x": -0.41, "z": 0.49, "w": 0.177, "d": 0.0133, "y": 0.1945, "h": 0.1795, "color": "white", "fix": "w"},
+    {"shape": "box", "x": -0.41, "z": 0.49, "w": 0.177, "d": 0.0133, "y": 0.3822, "h": 0.1795, "color": "white", "fix": "w"},
+    {"shape": "box", "x": -0.41, "z": 0.49, "w": 0.177, "d": 0.0133, "y": 0.5699, "h": 0.1795, "color": "white", "fix": "w"},
+    {"shape": "box", "x": -0.41, "z": 0.49, "w": 0.177, "d": 0.0133, "y": 0.7575, "h": 0.1795, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.41, "z": 0.0, "w": 0.18, "d": 0.9667, "y": 0, "h": 0.963, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.41, "z": 0.49, "w": 0.177, "d": 0.0133, "y": 0.0068, "h": 0.1795, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.41, "z": 0.49, "w": 0.177, "d": 0.0133, "y": 0.1945, "h": 0.1795, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.41, "z": 0.49, "w": 0.177, "d": 0.0133, "y": 0.3822, "h": 0.1795, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.41, "z": 0.49, "w": 0.177, "d": 0.0133, "y": 0.5699, "h": 0.1795, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.41, "z": 0.49, "w": 0.177, "d": 0.0133, "y": 0.7575, "h": 0.1795, "color": "white", "fix": "w"}
+  ]
+}

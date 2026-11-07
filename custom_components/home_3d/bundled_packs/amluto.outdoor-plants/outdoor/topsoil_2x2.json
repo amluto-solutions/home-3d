@@ -1,0 +1,16 @@
+{
+  "id": "topsoil_2x2",
+  "name": {"en": "Topsoil, 2 × 2 m"},
+  "size": [2.0, 2.0, 0.06],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["soil", "earth", "dirt", "border"],
+  "family": "topsoil",
+  "variant": {"en": "2 × 2 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#4a3626", "top": "#5a4331"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

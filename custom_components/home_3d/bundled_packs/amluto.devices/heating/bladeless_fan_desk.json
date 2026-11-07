@@ -1,0 +1,109 @@
+{
+  "id": "bladeless_fan_desk",
+  "name": {
+    "en": "Bladeless fan"
+  },
+  "size": [
+    0.3,
+    0.2,
+    0.55
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "fan",
+    "cooling",
+    "summer",
+    "air movement",
+    "bladeless fan",
+    "air multiplier",
+    "ring fan",
+    "desk fan"
+  ],
+  "family": "bladeless_fan",
+  "variant": {
+    "en": "Desk ring"
+  },
+  "electric": true,
+  "watts": 40,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "lathe",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.6333,
+      "d": 0.95,
+      "y": 0.0,
+      "h": 0.2182,
+      "color": "white",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0.9,
+          0.7
+        ],
+        [
+          0.7,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 0.2,
+      "y": 0.4545,
+      "h": 0.5455,
+      "color": "white",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.025,
+      "w": 0.7,
+      "d": 0.25,
+      "y": 0.5364,
+      "h": 0.3818,
+      "color": "dark",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.1667,
+      "d": 0.25,
+      "y": 0.2182,
+      "h": 0.2545,
+      "color": "white"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "circle",
+      "x": 0,
+      "z": 0,
+      "r": 0.4
+    }
+  ]
+}

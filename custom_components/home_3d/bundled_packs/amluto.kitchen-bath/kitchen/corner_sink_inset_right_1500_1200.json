@@ -1,0 +1,41 @@
+{
+  "id": "corner_sink_inset_right_1500_1200",
+  "name": {"en": "Corner base unit with inset sink, right-hand, 1500 × 1200"},
+  "size": [1.5, 1.2, 0.91],
+  "group": "kitchen",
+  "room": ["kitchen", "utility"],
+  "tags": ["sink", "corner sink", "corner unit", "l-shaped", "90 degree", "right-hand", "kitchen cupboard", "fitted kitchen", "cabinet", "stainless", "drainer"],
+  "family": "corner_sink_inset_right",
+  "variant": {"en": "1500 × 1200"},
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": -0.2, "z": -0.2792, "w": 0.6, "d": 0.4417, "y": 0, "h": 0.1648, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.3, "z": -0.0292, "w": 0.4, "d": 0.9417, "y": 0, "h": 0.1648, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.2, "z": -0.2583, "w": 0.6, "d": 0.4833, "y": 0.1648, "h": 0.7912, "color": "white"},
+    {"shape": "box", "x": 0.3, "z": -0.0083, "w": 0.4, "d": 0.9833, "y": 0.1648, "h": 0.7912, "color": "white"},
+    {"shape": "box", "x": -0.05, "z": -0.0083, "w": 0.2973, "d": 0.0167, "y": 0.1868, "h": 0.7253, "color": "body"},
+    {"shape": "box", "x": -0.1747, "z": 0.0058, "w": 0.0107, "d": 0.0117, "y": 0.7363, "h": 0.1538, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.35, "z": -0.0083, "w": 0.2973, "d": 0.0167, "y": 0.1868, "h": 0.7253, "color": "body"},
+    {"shape": "box", "x": -0.228, "z": 0.0058, "w": 0.0107, "d": 0.0117, "y": 0.7363, "h": 0.1538, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.3, "z": 0.4917, "w": 0.3973, "d": 0.0167, "y": 0.1868, "h": 0.7253, "color": "body"},
+    {"shape": "box", "x": 0.128, "z": 0.5, "w": 0.0107, "d": 0.0117, "y": 0.7363, "h": 0.1538, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.0, "z": -0.4583, "w": 1, "d": 0.0833, "y": 0.956, "h": 0.044, "color": "#cfc9bb", "fix": "h"},
+    {"shape": "box", "x": -0.0, "z": -0.0417, "w": 1, "d": 0.0833, "y": 0.956, "h": 0.044, "color": "#cfc9bb", "fix": "h"},
+    {"shape": "box", "x": 0.4833, "z": -0.25, "w": 0.0333, "d": 0.3333, "y": 0.956, "h": 0.044, "color": "#cfc9bb", "fix": "h"},
+    {"shape": "box", "x": 0.1, "z": -0.25, "w": 0.0667, "d": 0.3333, "y": 0.956, "h": 0.044, "color": "#cfc9bb", "fix": "h"},
+    {"shape": "box", "x": -0.1167, "z": -0.25, "w": 0.3667, "d": 0.3333, "y": 0.956, "h": 0.044, "color": "#c4c8cd", "fix": "h"},
+    {"shape": "box", "x": -0.4, "z": -0.25, "w": 0.2, "d": 0.3333, "y": 0.956, "h": 0.044, "color": "#cfc9bb", "fix": "h"},
+    {"shape": "box", "x": 0.3, "z": 0.25, "w": 0.4, "d": 0.5, "y": 0.956, "h": 0.044, "color": "#cfc9bb", "fix": "h"},
+    {"shape": "box", "x": 0.3, "z": -0.25, "w": 0.3333, "d": 0.3333, "y": 0.8022, "h": 0.011, "color": "#9aa0a6", "fix": "wdh"},
+    {"shape": "box", "x": 0.4633, "z": -0.25, "w": 0.0067, "d": 0.3333, "y": 0.8132, "h": 0.1868, "color": "#c4c8cd", "fix": "h"},
+    {"shape": "box", "x": 0.1367, "z": -0.25, "w": 0.0067, "d": 0.3333, "y": 0.8132, "h": 0.1868, "color": "#c4c8cd", "fix": "h"},
+    {"shape": "box", "x": 0.3, "z": -0.4125, "w": 0.3333, "d": 0.0083, "y": 0.8132, "h": 0.1868, "color": "#c4c8cd", "fix": "h"},
+    {"shape": "box", "x": 0.3, "z": -0.0875, "w": 0.3333, "d": 0.0083, "y": 0.8132, "h": 0.1868, "color": "#c4c8cd", "fix": "h"},
+    {"shape": "cyl", "x": 0.3, "z": -0.25, "w": 0.0333, "d": 0.0417, "y": 0.8077, "h": 0.011, "color": "dark", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": -0.2, "z": -0.25, "w": 0.6, "d": 0.5},
+    {"shape": "rect", "x": 0.3, "z": 0.0, "w": 0.4, "d": 1.0},
+    {"shape": "rect", "x": 0.3, "z": -0.25, "w": 0.3333, "d": 0.3333, "fill": false}
+  ]
+}

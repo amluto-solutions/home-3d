@@ -1,0 +1,39 @@
+{
+  "id": "morum_rug_60x150",
+  "name": {
+    "en": "Rug, flatwoven in/outdoor 60x150 cm"
+  },
+  "size": [
+    0.6,
+    1.5,
+    0.012
+  ],
+  "group": "deco",
+  "room": [
+    "hall",
+    "kitchen",
+    "living",
+    "garden"
+  ],
+  "tags": [
+    "MORUM",
+    "rug",
+    "outdoor rug",
+    "flatwoven",
+    "in/outdoor",
+    "beige",
+    "runner"
+  ],
+  "family": "morum_rug",
+  "variant": {
+    "en": "60x150"
+  },
+  "ikea": "MORUM",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.8, "color": "fabric"},
+    {"shape": "box", "x": 0.0, "z": -0.4733, "w": 0.94, "d": 0.012, "y": 0, "h": 1, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4733, "w": 0.94, "d": 0.012, "y": 0, "h": 1, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": -0.4333, "z": 0.0, "w": 0.03, "d": 0.96, "y": 0, "h": 1, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.4333, "z": 0.0, "w": 0.03, "d": 0.96, "y": 0, "h": 1, "color": "white", "fix": "wh"}
+  ]
+}

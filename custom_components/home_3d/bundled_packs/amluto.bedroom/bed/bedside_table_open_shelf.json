@@ -1,0 +1,23 @@
+{
+  "id": "bedside_table_open_shelf",
+  "name": {"en": "Bedside table with shelf"},
+  "size": [0.42, 0.35, 0.55],
+  "group": "bed",
+  "family": "bedside_table",
+  "variant": {"en": "Open shelf"},
+  "room": ["bedroom", "kids"],
+  "tags": ["bedside", "bedside table", "night table", "side table", "open shelf", "nightstand"],
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": -0.4167, "z": -0.4, "w": 0.0714, "d": 0.0857, "y": 0.0, "h": 0.2182, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4167, "z": 0.4, "w": 0.0714, "d": 0.0857, "y": 0.0, "h": 0.2182, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4167, "z": -0.4, "w": 0.0714, "d": 0.0857, "y": 0.0, "h": 0.2182, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4167, "z": 0.4, "w": 0.0714, "d": 0.0857, "y": 0.0, "h": 0.2182, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.2182, "h": 0.0364, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.9545, "h": 0.0455, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4786, "z": 0.0, "w": 0.0429, "d": 1.0, "y": 0.2545, "h": 0.7, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4786, "z": 0.0, "w": 0.0429, "d": 1.0, "y": 0.2545, "h": 0.7, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.4829, "w": 0.9143, "d": 0.0343, "y": 0.2545, "h": 0.7, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0171, "w": 0.9143, "d": 0.9657, "y": 0.5818, "h": 0.0364, "color": "white", "fix": "h"}
+  ]
+}

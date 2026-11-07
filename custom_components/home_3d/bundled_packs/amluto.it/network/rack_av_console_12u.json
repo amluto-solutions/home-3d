@@ -1,0 +1,28 @@
+{
+  "id": "rack_av_console_12u",
+  "name": {"en": "AV rack 19-inch 12U"},
+  "size": [0.543, 0.6, 0.785],
+  "group": "network",
+  "room": ["living", "office", "hobby", "garage"],
+  "tags": ["19 inch", "av rack", "av console", "audio rack", "contractor rack", "rack"],
+  "family": "rack_av_console",
+  "variant": {"en": "12U"},
+  "mount": "floor",
+  "rack_frame": {"u": 12, "form": "cabinet", "door": "none", "bottom": 0.1},
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 0.8896, "d": 0.9, "y": 0, "h": 0.1019, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.4862, "z": 0, "w": 0.0276, "d": 1, "y": 0.1019, "h": 0.8981, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.4862, "z": 0, "w": 0.0276, "d": 1, "y": 0.1019, "h": 0.8981, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9448, "d": 1, "y": 0.1019, "h": 0.0255, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9448, "d": 1, "y": 0.9363, "h": 0.0637, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.49, "w": 0.9448, "d": 0.02, "y": 0.1274, "h": 0.8089, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": -0.42975, "z": 0.3542, "w": 0.0293, "d": 0.025, "y": 0.1274, "h": 0.6795, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": 0.42975, "z": 0.3542, "w": 0.0293, "d": 0.025, "y": 0.1274, "h": 0.6795, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": -0.42975, "z": -0.4042, "w": 0.0293, "d": 0.025, "y": 0.1274, "h": 0.6795, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": 0.42975, "z": -0.4042, "w": 0.0293, "d": 0.025, "y": 0.1274, "h": 0.6795, "color": "metal", "fix": "w"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.3667, "x2": 0.5, "z2": 0.3667}
+  ]
+}

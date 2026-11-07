@@ -1,0 +1,26 @@
+{
+  "id": "xbox_series_x_flat",
+  "name": {"en": "Xbox Series X"},
+  "size": [0.301, 0.151, 0.151],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["xbox series x", "xbox", "microsoft", "gaming", "console", "games console", "xbox_series_x", "series x"],
+  "family": "xbox_series_x",
+  "variant": {"en": "Flat"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 150,
+  "parts": [
+    {"shape": "cyl", "x": -0.3987, "z": -0.3642, "w": 0.0664, "d": 0.1325, "y": 0.0, "h": 0.0397, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3987, "z": 0.3642, "w": 0.0664, "d": 0.1325, "y": 0.0, "h": 0.0397, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3987, "z": -0.3642, "w": 0.0664, "d": 0.1325, "y": 0.0, "h": 0.0397, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3987, "z": 0.3642, "w": 0.0664, "d": 0.1325, "y": 0.0, "h": 0.0397, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0397, "h": 0.9603, "color": "#16171a"},
+    {"shape": "cyl", "x": -0.1993, "z": 0.0, "w": 0.3512, "d": 0.7, "y": 0.9901, "h": 0.0099, "color": "#2b2d31"},
+    {"shape": "cyl", "x": 0.4651, "z": 0.4901, "w": 0.0465, "d": 0.0199, "y": 0.3311, "h": 0.0927, "color": "metal", "axis": "z"},
+    {"shape": "box", "x": -0.1661, "z": 0.4901, "w": 0.45, "d": 0.0199, "y": 0.596, "h": 0.0265, "color": "#101114"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "metod_wall_cabinet_40x80",
+  "name": {
+    "en": "Wall cabinet with door 40x80 cm"
+  },
+  "size": [
+    0.4,
+    0.386,
+    0.8
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen",
+    "utility"
+  ],
+  "tags": [
+    "wall cupboard",
+    "wall unit",
+    "fitted kitchen",
+    "white",
+    "high-gloss white",
+    "anthracite",
+    "light grey",
+    "beige",
+    "grey-green",
+    "light green",
+    "oak effect",
+    "white wood effect"
+  ],
+  "family": "metod_wall_cabinet",
+  "variant": {
+    "en": "40x80"
+  },
+  "ikea": "METOD",
+  "mount": "wall",
+  "wall_y": 1.4,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0207, "w": 1, "d": 0.9585, "y": 0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4819, "w": 0.99, "d": 0.0466, "y": 0, "h": 0.995, "color": "body", "fix": "d"},
+    {"shape": "box", "x": -0.4, "z": 0.5, "w": 0.03, "d": 0.057, "y": 0.05, "h": 0.2, "color": "metal", "fix": "wdh"}
+  ]
+}

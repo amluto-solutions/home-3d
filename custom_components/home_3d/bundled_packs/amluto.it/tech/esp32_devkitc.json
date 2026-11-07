@@ -1,0 +1,23 @@
+{
+  "id": "esp32_devkitc",
+  "name": {"en": "ESP32 dev board (DevKitC)"},
+  "size": [0.0544,0.0279,0.013],
+  "group": "tech",
+  "room": ["office", "hobby", "utility", "loft"],
+  "tags": ["esp32", "esp", "devkit", "devkitc", "dev board", "microcontroller", "esphome", "wifi", "bluetooth", "arduino", "development board"],
+  "family": "dev_board",
+  "variant": {"en": "ESP32 DevKitC"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.4498, "w": 0.8871, "d": 0.0896, "y": 0, "h": 0.6385, "color": "dark"},
+    {"shape": "box", "x": 0, "z": 0.4498, "w": 0.8871, "d": 0.0896, "y": 0, "h": 0.6385, "color": "dark"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.6385, "h": 0.1231, "color": "#1f6f43"},
+    {"shape": "box", "x": 0.3346, "z": 0, "w": 0.3309, "d": 0.9462, "y": 0.7615, "h": 0.2385, "color": "metal"},
+    {"shape": "box", "x": 0.1875, "z": 0, "w": 0.0551, "d": 0.8566, "y": 0.7615, "h": 0.0308, "color": "#c9a227"},
+    {"shape": "box", "x": -0.4265, "z": 0, "w": 0.1471, "d": 0.233, "y": 0.7615, "h": 0.2154, "color": "metal"},
+    {"shape": "box", "x": -0.261, "z": -0.3208, "w": 0.0643, "d": 0.1254, "y": 0.7615, "h": 0.1154, "color": "dark"},
+    {"shape": "box", "x": -0.261, "z": 0.3208, "w": 0.0643, "d": 0.1254, "y": 0.7615, "h": 0.1154, "color": "dark"},
+    {"shape": "box", "x": -0.0956, "z": 0, "w": 0.0368, "d": 0.0538, "y": 0.7615, "h": 0.0615, "color": "#4aa3ff", "glow": true}
+  ]
+}

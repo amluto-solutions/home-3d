@@ -1,0 +1,37 @@
+{
+  "id": "eldfluga_bed_tent",
+  "name": {
+    "en": "Bed tent"
+  },
+  "size": [
+    0.9,
+    1.9,
+    0.8
+  ],
+  "group": "kids",
+  "room": [
+    "kids",
+    "bedroom"
+  ],
+  "tags": [
+    "ELDFLUGA",
+    "bed tent",
+    "bed canopy",
+    "play tent",
+    "children's bed",
+    "blue",
+    "green",
+    "mattress 70-90 cm"
+  ],
+  "ikea": "ELDFLUGA",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0125, "color": "white", "fix": "h"},
+    {"shape": "loft", "x": -0.3333, "z": 0.0, "w": 0.3333, "d": 0.9789, "y": 0.0125, "h": 0.625, "color": "body", "tx": -0.2444, "tz": 0.0, "tw": 0.4444, "td": 0.9789},
+    {"shape": "box", "x": -0.4944, "z": 0.0, "w": 0.0133, "d": 0.2632, "y": 0.15, "h": 0.25, "color": "dark", "fix": "wdh"},
+    {"shape": "loft", "x": 0.3333, "z": 0.0, "w": 0.3333, "d": 0.9789, "y": 0.0125, "h": 0.625, "color": "body", "tx": 0.2444, "tz": 0.0, "tw": 0.4444, "td": 0.9789},
+    {"shape": "box", "x": 0.4944, "z": 0.0, "w": 0.0133, "d": 0.2632, "y": 0.15, "h": 0.25, "color": "dark", "fix": "wdh"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.5778, "d": 0.9789, "y": 0.625, "h": 0.375, "color": "body", "tx": 0.0, "tz": 0.0, "tw": 0.2667, "td": 0.9789},
+    {"shape": "box", "x": 0.0, "z": -0.4921, "w": 0.5556, "d": 0.0053, "y": 0.0125, "h": 0.5, "color": "body", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4921, "w": 0.4444, "d": 0.0053, "y": 0.5, "h": 0.4375, "color": "body", "fix": "d"}
+  ]
+}

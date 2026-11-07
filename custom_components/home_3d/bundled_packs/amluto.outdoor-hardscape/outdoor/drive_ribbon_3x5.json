@@ -1,0 +1,18 @@
+{
+  "id": "drive_ribbon_3x5",
+  "name": {"en": "Ribbon driveway, concrete strips with grass, 3 × 5 m"},
+  "size": [3.0, 5.0, 0.05],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["driveway", "drive", "ribbon drive", "wheel tracks", "concrete strips", "grass"],
+  "family": "drive_ribbon",
+  "variant": {"en": "3 × 5 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.4, "color": "#58a23e"},
+    {"shape": "box", "x": -0.3, "z": 0.0, "w": 0.25, "d": 1, "y": 0, "h": 1, "color": "#aeaca6"},
+    {"shape": "box", "x": 0.3, "z": 0.0, "w": 0.25, "d": 1, "y": 0, "h": 1, "color": "#aeaca6"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

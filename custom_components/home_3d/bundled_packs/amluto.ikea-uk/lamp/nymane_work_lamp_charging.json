@@ -1,0 +1,42 @@
+{
+  "id": "nymane_work_lamp_charging",
+  "name": {
+    "en": "Work lamp with wireless charging pad, 67 cm"
+  },
+  "size": [
+    0.21,
+    0.34,
+    0.67
+  ],
+  "group": "lamp",
+  "room": [
+    "office",
+    "bedroom",
+    "kids",
+    "hobby"
+  ],
+  "tags": [
+    "work lamp",
+    "desk lamp",
+    "wireless charging",
+    "qi",
+    "white",
+    "anthracite"
+  ],
+  "family": "nymane_lamp",
+  "variant": {
+    "en": "Work lamp 67"
+  },
+  "ikea": "NYMÅNE",
+  "light": "table",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.1912, "w": 1, "d": 0.6176, "y": 0, "h": 0.0373, "color": "white", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": -0.1912, "w": 0.2857, "d": 0.1765, "y": 0.0373, "h": 0.006, "color": "white", "glow": true, "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": -0.1912, "w": 0.0952, "d": 0.0588, "y": 0.0373, "h": 0.5373, "color": "white", "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": -0.1912, "w": 0.0952, "d": 0.0588, "y": 0.5746, "h": 0.3209, "color": "white", "tz": 0.1765, "tw": 0.0952, "td": 0.0588, "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": 0.1765, "w": 0.3333, "d": 0.2059, "y": 0.8657, "h": 0.1343, "color": "white", "tz": 0.3382, "tw": 0.3333, "td": 0.3235},
+    {"shape": "cyl", "x": 0.0, "z": 0.3382, "w": 0.2857, "d": 0.1765, "y": 0.8582, "h": 0.009, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "spool_rack_wall_6",
+  "name": {"en": "Filament spool rack, wall 6"},
+  "size": [0.62, 0.1, 0.22],
+  "group": "tech",
+  "room": ["office", "hobby", "garage", "loft", "utility"],
+  "tags": ["filament", "spool rack", "spool holder", "3d printing", "storage", "pla", "shelf"],
+  "family": "spool_rack",
+  "variant": {"en": "Wall, 6 spools"},
+  "mount": "wall",
+  "wall_y": 1.0,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.44, "w": 1.0, "d": 0.12, "y": 0.0, "h": 1.0, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.0636, "color": "wood"},
+    {"shape": "cyl", "x": -0.4194, "z": 0.0, "w": 0.1452, "d": 0.7, "y": 0.0636, "h": 0.4091, "color": "#e8573c", "axis": "z"},
+    {"shape": "cyl", "x": -0.4194, "z": 0.2, "w": 0.0355, "d": 0.4, "y": 0.2182, "h": 0.1, "color": "metal", "axis": "z"},
+    {"shape": "cyl", "x": -0.2516, "z": 0.0, "w": 0.1452, "d": 0.7, "y": 0.0636, "h": 0.4091, "color": "#3c8de8", "axis": "z"},
+    {"shape": "cyl", "x": -0.2516, "z": 0.2, "w": 0.0355, "d": 0.4, "y": 0.2182, "h": 0.1, "color": "metal", "axis": "z"},
+    {"shape": "cyl", "x": -0.0839, "z": 0.0, "w": 0.1452, "d": 0.7, "y": 0.0636, "h": 0.4091, "color": "#46b86a", "axis": "z"},
+    {"shape": "cyl", "x": -0.0839, "z": 0.2, "w": 0.0355, "d": 0.4, "y": 0.2182, "h": 0.1, "color": "metal", "axis": "z"},
+    {"shape": "cyl", "x": 0.0839, "z": 0.0, "w": 0.1452, "d": 0.7, "y": 0.0636, "h": 0.4091, "color": "#f2c230", "axis": "z"},
+    {"shape": "cyl", "x": 0.0839, "z": 0.2, "w": 0.0355, "d": 0.4, "y": 0.2182, "h": 0.1, "color": "metal", "axis": "z"},
+    {"shape": "cyl", "x": 0.2516, "z": 0.0, "w": 0.1452, "d": 0.7, "y": 0.0636, "h": 0.4091, "color": "#e8e8e8", "axis": "z"},
+    {"shape": "cyl", "x": 0.2516, "z": 0.2, "w": 0.0355, "d": 0.4, "y": 0.2182, "h": 0.1, "color": "metal", "axis": "z"},
+    {"shape": "cyl", "x": 0.4194, "z": 0.0, "w": 0.1452, "d": 0.7, "y": 0.0636, "h": 0.4091, "color": "#2a2c30", "axis": "z"},
+    {"shape": "cyl", "x": 0.4194, "z": 0.2, "w": 0.0355, "d": 0.4, "y": 0.2182, "h": 0.1, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

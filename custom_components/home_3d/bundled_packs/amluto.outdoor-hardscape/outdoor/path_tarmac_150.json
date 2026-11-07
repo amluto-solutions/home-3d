@@ -1,0 +1,16 @@
+{
+  "id": "path_tarmac_150",
+  "name": {"en": "Tarmac path, 1.5 m"},
+  "size": [1.5, 5.0, 0.03],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["path", "tarmac", "footpath", "asphalt", "walkway"],
+  "family": "path_tarmac",
+  "variant": {"en": "1.5 × 5 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#3e4043", "top": "#484b4e"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

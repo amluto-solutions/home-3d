@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "在側邊欄新增一個頁面，用於繪製你的家並以 3D 檢視。"
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Home 3D 已經設定好了。"
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "詢問房屋",
+      "description": "將一句話交給已開啟的 Home 3D 檢視：「顯示客廳」會顯示客廳，問題由已安裝的模組回答（「什麼是開著的？」）。第一個理解這句話的檢視會回答。",
+      "fields": {
+        "text": {
+          "name": "語句",
+          "description": "要顯示或詢問的內容，就像你平常說的那樣。"
+        },
+        "screen": {
+          "name": "螢幕",
+          "description": "只有使用此螢幕名稱的檢視會回應（在檢視設定或卡片的選項螢幕中設定）。留空：所有已開啟的檢視。"
+        },
+        "speak": {
+          "name": "朗讀",
+          "description": "檢視使用 Assist 的文字轉語音朗讀回答（關閉：僅顯示）。"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Home 3D 的顯示位置。面板連結和儀表板卡片兩種方式都可使用，你仍可在 Home Assistant 自身的側邊欄設定中為自己隱藏該項目。",
+        "data": {
+          "show_in_sidebar": "在側邊欄中顯示",
+          "restore_picture_days": "保留還原點的圖片（天）"
+        },
+        "data_description": {
+          "restore_picture_days": "只有較舊的還原點仍在使用的背景或螢幕圖片，會在該還原點建立後保留這麼多天，然後在下次啟動時刪除。圖片已遺失的還原點會在沒有圖片的情況下還原。設為 0 則立即刪除這類圖片。"
+        }
+      }
+    }
+  }
+}

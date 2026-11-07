@@ -1,0 +1,50 @@
+{
+  "id": "unifi_up_ai_speaker",
+  "name": {
+    "en": "UniFi AI Speaker"
+  },
+  "size": [
+    0.2685,
+    0.0835,
+    0.192
+  ],
+  "group": "tech",
+  "tags": [
+    "ai speaker",
+    "speaker",
+    "talkback",
+    "up-ai-speaker",
+    "unifi",
+    "ubiquiti"
+  ],
+  "family": "unifi_siren",
+  "variant": {
+    "en": "AI Speaker (UP-AI-Speaker)"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 2.4,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "round": 0.15
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.48,
+      "w": 0.8,
+      "d": 0.04,
+      "y": 0.12,
+      "h": 0.76,
+      "color": "#2a2d33"
+    }
+  ]
+}

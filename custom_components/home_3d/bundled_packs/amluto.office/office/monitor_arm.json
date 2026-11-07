@@ -1,0 +1,19 @@
+{
+  "id": "monitor_arm",
+  "name": {"en": "Monitor arm (single)"},
+  "size": [0.12, 0.42, 0.5],
+  "group": "office",
+  "room": ["office", "bedroom", "hobby"],
+  "tags": ["monitor arm", "monitor mount", "vesa", "desk mount", "screen arm", "gas spring"],
+  "family": "monitor_arm",
+  "variant": {"en": "Single"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4524, "w": 0.5833, "d": 0.0952, "y": 0.0, "h": 0.12, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.4524, "w": 0.2917, "d": 0.0833, "y": 0.12, "h": 0.88, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.2857, "w": 0.3333, "d": 0.4048, "y": 0.72, "h": 0.06, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": -0.0952, "w": 0.3333, "d": 0.0952, "y": 0.7, "h": 0.1, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.1429, "w": 0.2917, "d": 0.4762, "y": 0.66, "h": 0.06, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.4524, "w": 0.8333, "d": 0.0238, "y": 0.58, "h": 0.2, "color": "dark"}
+  ]
+}

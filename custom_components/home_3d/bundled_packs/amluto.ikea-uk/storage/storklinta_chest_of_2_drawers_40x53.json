@@ -1,0 +1,44 @@
+{
+  "id": "storklinta_chest_of_2_drawers_40x53",
+  "name": {
+    "en": "Chest of 2 drawers, 40x53 cm"
+  },
+  "size": [
+    0.4,
+    0.5,
+    0.53
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "drawers",
+    "chest",
+    "dresser",
+    "white",
+    "oak effect",
+    "dark brown oak effect",
+    "dark grey",
+    "bedside"
+  ],
+  "family": "storklinta_chest_of_drawers",
+  "variant": {
+    "en": "2 drawers · 40x53"
+  },
+  "ikea": "STORKLINTA",
+  "parts": [
+    {"shape": "box", "x": -0.4775, "z": -0.018, "w": 0.045, "d": 0.964, "y": 0.1132, "h": 0.8491, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4775, "z": -0.018, "w": 0.045, "d": 0.964, "y": 0.1132, "h": 0.8491, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.018, "w": 0.91, "d": 0.964, "y": 0.1132, "h": 0.034, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.492, "w": 0.91, "d": 0.016, "y": 0.1472, "h": 0.7811, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9623, "h": 0.0377, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.424, "w": 0.91, "d": 0.036, "y": 0, "h": 0.1132, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.482, "w": 0.98, "d": 0.036, "y": 0.5415, "h": 0.417, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.392, "d": 0.044, "y": 0.7896, "h": 0.0226, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.482, "w": 0.98, "d": 0.036, "y": 0.117, "h": 0.417, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.392, "d": 0.044, "y": 0.3651, "h": 0.0226, "color": "dark", "fix": "wdh"}
+  ]
+}

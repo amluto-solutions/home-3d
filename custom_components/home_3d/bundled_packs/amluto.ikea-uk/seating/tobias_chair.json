@@ -1,0 +1,38 @@
+{
+  "id": "tobias_chair",
+  "name": {
+    "en": "Chair"
+  },
+  "size": [
+    0.55,
+    0.56,
+    0.82
+  ],
+  "group": "seating",
+  "room": [
+    "dining",
+    "kitchen"
+  ],
+  "tags": [
+    "dining chair",
+    "clear chair",
+    "acrylic",
+    "chrome",
+    "transparent",
+    "brown-red",
+    "black-grey"
+  ],
+  "ikea": "TOBIAS",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0536, "w": 0.8727, "d": 0.8214, "y": 0.5, "h": 0.0488, "color": "glass", "round": 0.4},
+    {"shape": "loft", "x": 0.0, "z": -0.375, "w": 0.8727, "d": 0.0714, "y": 0.5366, "h": 0.4634, "color": "glass", "tz": -0.4464, "tw": 0.9455, "td": 0.0714},
+    {"shape": "loft", "x": -0.4364, "z": 0.0, "w": 0.0727, "d": 0.7143, "y": 0.5366, "h": 0.2439, "color": "glass", "tx": -0.4727, "tz": -0.1429, "tw": 0.0727, "td": 0.4464},
+    {"shape": "loft", "x": 0.4364, "z": 0.0, "w": 0.0727, "d": 0.7143, "y": 0.5366, "h": 0.2439, "color": "glass", "tx": 0.4727, "tz": -0.1429, "tw": 0.0727, "td": 0.4464},
+    {"shape": "cyl", "x": -0.3636, "z": 0.0, "w": 0.0364, "d": 0.8929, "y": 0, "h": 0.0244, "color": "metal", "axis": "z", "fix": "h"},
+    {"shape": "cyl", "x": -0.3636, "z": 0.4286, "w": 0.0364, "d": 0.0357, "y": 0, "h": 0.5, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": -0.3636, "z": -0.4286, "w": 0.0364, "d": 0.0357, "y": 0, "h": 0.5, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.3636, "z": 0.0, "w": 0.0364, "d": 0.8929, "y": 0, "h": 0.0244, "color": "metal", "axis": "z", "fix": "h"},
+    {"shape": "cyl", "x": 0.3636, "z": 0.4286, "w": 0.0364, "d": 0.0357, "y": 0, "h": 0.5, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.3636, "z": -0.4286, "w": 0.0364, "d": 0.0357, "y": 0, "h": 0.5, "color": "metal", "fix": "wd"}
+  ]
+}

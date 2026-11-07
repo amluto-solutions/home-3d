@@ -1,0 +1,25 @@
+{
+  "id": "step_stool",
+  "name": {"en": "Step ladder"},
+  "size": [0.44, 0.48, 0.5],
+  "group": "household",
+  "room": ["garage", "utility", "hall", "kitchen", "loft"],
+  "tags": ["ladder", "steps", "stepladder", "step stool", "aluminium ladder", "decorating", "diy"],
+  "family": "step_ladder",
+  "variant": {"en": "2-step stool"},
+  "parts": [
+    {"shape": "loft", "x": -0.4545, "z": 0.4375, "w": 0.0795, "d": 0.0625, "y": 0.0, "h": 1, "color": "metal", "tx": -0.4091, "tz": -0.0417, "tw": 0.0795, "td": 0.0625},
+    {"shape": "loft", "x": -0.4091, "z": -0.4375, "w": 0.0682, "d": 0.0625, "y": 0.0, "h": 1, "color": "metal", "tx": -0.4091, "tz": -0.1667, "tw": 0.0682, "td": 0.0625},
+    {"shape": "cyl", "x": -0.4432, "z": 0.4375, "w": 0.1136, "d": 0.1042, "y": 0.0, "h": 0.06, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4091, "z": -0.4375, "w": 0.0909, "d": 0.0833, "y": 0.0, "h": 0.06, "color": "dark", "fix": "wdh"},
+    {"shape": "loft", "x": 0.4545, "z": 0.4375, "w": 0.0795, "d": 0.0625, "y": 0.0, "h": 1, "color": "metal", "tx": 0.4091, "tz": -0.0417, "tw": 0.0795, "td": 0.0625},
+    {"shape": "loft", "x": 0.4091, "z": -0.4375, "w": 0.0682, "d": 0.0625, "y": 0.0, "h": 1, "color": "metal", "tx": 0.4091, "tz": -0.1667, "tw": 0.0682, "td": 0.0625},
+    {"shape": "cyl", "x": 0.4432, "z": 0.4375, "w": 0.1136, "d": 0.1042, "y": 0.0, "h": 0.06, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4091, "z": -0.4375, "w": 0.0909, "d": 0.0833, "y": 0.0, "h": 0.06, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.1562, "w": 0.8636, "d": 0.2083, "y": 0.46, "h": 0.05, "color": "metal", "edges": "faint"},
+    {"shape": "box", "x": 0.0, "z": -0.1667, "w": 0.9091, "d": 0.5417, "y": 0.95, "h": 0.05, "color": "dark", "edges": "faint"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

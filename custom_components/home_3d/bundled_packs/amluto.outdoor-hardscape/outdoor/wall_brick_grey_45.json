@@ -1,0 +1,19 @@
+{
+  "id": "wall_brick_grey_45",
+  "name": {"en": "Brick garden wall, grey brick, low"},
+  "size": [2.0, 0.215, 0.45],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["wall", "garden wall", "brick wall", "boundary", "brickwork", "masonry"],
+  "family": "wall_brick_grey",
+  "variant": {"en": "Low (0.45 m)"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.995, "d": 0.9535, "y": 0, "h": 0.8889, "color": "#8e8e8a"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.3067, "h": 0.0267, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.64, "h": 0.0267, "color": "#c4bfae"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8889, "h": 0.1111, "color": "#6f6f6c"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

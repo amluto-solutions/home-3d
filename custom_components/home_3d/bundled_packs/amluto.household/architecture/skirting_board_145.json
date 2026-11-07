@@ -1,0 +1,16 @@
+{
+  "id": "skirting_board_145",
+  "name": {"en": "Skirting board"},
+  "size": [2.4, 0.02, 0.145],
+  "group": "architecture",
+  "room": ["living", "dining", "bedroom", "hall", "kids", "office", "kitchen", "utility"],
+  "tags": ["skirting", "skirting board", "baseboard", "trim", "wall trim", "mdf", "painted", "white", "chamfered", "145mm"],
+  "family": "skirting_board",
+  "variant": {"en": "Chamfered, 145 mm"},
+  "mount": "wall",
+  "wall_y": 0,
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 0.7931, "color": "white"},
+    {"shape": "loft", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.7931, "h": 0.2069, "color": "white", "tx": 0, "tz": -0.2, "tw": 1, "td": 0.6}
+  ]
+}

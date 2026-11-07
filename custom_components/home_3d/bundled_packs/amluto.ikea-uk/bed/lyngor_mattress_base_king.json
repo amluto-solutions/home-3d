@@ -1,0 +1,36 @@
+{
+  "id": "lyngor_mattress_base_king",
+  "name": {
+    "en": "Slatted mattress base with legs, King 150x200"
+  },
+  "size": [
+    1.5,
+    2.0,
+    0.3
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom"
+  ],
+  "tags": [
+    "mattress base",
+    "divan",
+    "bed base",
+    "legs",
+    "king",
+    "white",
+    "dark grey"
+  ],
+  "family": "lyngor_mattress_base",
+  "variant": {
+    "en": "King · 150x200"
+  },
+  "ikea": "LYNGÖR",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.3333, "h": 0.6667, "color": "fabric", "round": 0.08},
+    {"shape": "cyl", "x": -0.4467, "z": -0.45, "w": 0.0267, "d": 0.02, "y": 0, "h": 0.3333, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4467, "z": 0.45, "w": 0.0267, "d": 0.02, "y": 0, "h": 0.3333, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4467, "z": -0.45, "w": 0.0267, "d": 0.02, "y": 0, "h": 0.3333, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4467, "z": 0.45, "w": 0.0267, "d": 0.02, "y": 0, "h": 0.3333, "color": "wood", "fix": "wdh"}
+  ]
+}

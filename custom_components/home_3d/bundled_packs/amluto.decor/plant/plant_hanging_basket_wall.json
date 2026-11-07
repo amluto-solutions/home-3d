@@ -1,0 +1,29 @@
+{
+  "id": "plant_hanging_basket_wall",
+  "name": {"en": "Hanging basket"},
+  "size": [0.37, 0.45, 0.5],
+  "group": "plant",
+  "room": ["garden", "conservatory"],
+  "tags": ["plant", "hanging basket", "garden", "flowers", "wall bracket", "trailing", "petunia", "summer bedding", "outdoor"],
+  "family": "hanging_basket",
+  "variant": {"en": "Flowers on a wall bracket"},
+  "mount": "wall",
+  "wall_y": 1.5,
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.45, "w": 0.1351, "d": 0.0667, "y": 0, "h": 1, "color": "#2c2f33"},
+    {"shape": "box", "x": 0, "z": 0.0167, "w": 0.0811, "d": 0.8889, "y": 0, "h": 0.06, "color": "#2c2f33"},
+    {"shape": "loft", "x": 0, "z": -0.25, "w": 0.0541, "d": 0.0667, "y": 0.8, "h": 0.16, "color": "#2c2f33", "tx": 0, "tz": -0.25, "tw": 0.0541, "td": 0.0667},
+    {"shape": "lathe", "x": 0, "z": 0.0833, "w": 0.973, "d": 0.8, "y": 0.06, "h": 0.4, "color": "#33363a", "profile": [[0, 0], [0.4, 0], [1, 0.9], [1, 1], [0.92, 1], [0.35, 0.1], [0, 0.1]]},
+    {"shape": "sphere", "x": 0, "z": 0.0833, "w": 0.8649, "d": 0.7111, "y": 0.34, "h": 0.12, "color": "#7a5a3a"},
+    {"shape": "sphere", "x": 0, "z": 0.0833, "w": 0.973, "d": 0.8, "y": 0.4, "h": 0.24, "color": "#3d7a42"},
+    {"shape": "sphere", "x": -0.2703, "z": 0.0833, "w": 0.1757, "d": 0.1444, "y": 0.54, "h": 0.13, "color": "#e46f9b"},
+    {"shape": "sphere", "x": 0.1622, "z": 0.1944, "w": 0.1757, "d": 0.1444, "y": 0.54, "h": 0.13, "color": "#f0d54a"},
+    {"shape": "sphere", "x": 0.3243, "z": 0.0389, "w": 0.1757, "d": 0.1444, "y": 0.54, "h": 0.13, "color": "#8a4fa5"},
+    {"shape": "sphere", "x": -0.1081, "z": 0.35, "w": 0.1757, "d": 0.1444, "y": 0.54, "h": 0.13, "color": "#f5f2ea"},
+    {"shape": "sphere", "x": -0.3514, "z": 0.3056, "w": 0.1757, "d": 0.1444, "y": 0.54, "h": 0.13, "color": "#f0d54a"},
+    {"shape": "sphere", "x": 0.0811, "z": -0.05, "w": 0.1757, "d": 0.1444, "y": 0.54, "h": 0.13, "color": "#e46f9b"},
+    {"shape": "sphere", "x": 0.2703, "z": 0.35, "w": 0.1757, "d": 0.1444, "y": 0.54, "h": 0.13, "color": "#8a4fa5"},
+    {"shape": "sphere", "x": -0.2703, "z": -0.0722, "w": 0.1757, "d": 0.1444, "y": 0.54, "h": 0.13, "color": "#f5f2ea"},
+    {"shape": "sphere", "x": 0, "z": 0.1944, "w": 0.1757, "d": 0.1444, "y": 0.54, "h": 0.13, "color": "#e46f9b"}
+  ]
+}

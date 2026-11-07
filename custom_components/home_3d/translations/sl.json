@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "Doda stran v stransko vrstico, kjer narišeš svoj dom in ga vidiš v 3D."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Home 3D je že nastavljen."
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "Vprašaj hišo",
+      "description": "Odprtim pogledom Home 3D posreduje stavek: »Pokaži dnevno sobo« jo prikaže, na vprašanja pa odgovarjajo nameščeni moduli (»Kaj je odprto?«). Odgovori prvi pogled, ki stavek razume.",
+      "fields": {
+        "text": {
+          "name": "Stavek",
+          "description": "Kaj prikazati ali vprašati, tako kot bi to rekli."
+        },
+        "screen": {
+          "name": "Zaslon",
+          "description": "Odzove se samo pogled s tem imenom zaslona (nastavljeno v nastavitvah pogleda ali v možnosti zaslona kartice). Prazno: vsi odprti pogledi."
+        },
+        "speak": {
+          "name": "Govori",
+          "description": "Pogled svoj odgovor izgovori s pretvorbo besedila v govor v Assistu (izklopljeno: samo prikaže odgovor)."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Kje se Home 3D prikaže. Povezava na plošči in kartica na nadzorni plošči delujeta na obe možnosti, vnos pa lahko zase še vedno skrijete v nastavitvah stranske vrstice Home Assistanta.",
+        "data": {
+          "show_in_sidebar": "Prikaži v stranski vrstici",
+          "restore_picture_days": "Hrani slike obnovitvenih točk (dni)"
+        },
+        "data_description": {
+          "restore_picture_days": "Slika ozadja ali zaslona, ki jo uporablja samo starejša obnovitvena točka, se hrani toliko dni po nastanku te točke, nato pa se ob naslednjem zagonu odstrani. Obnovitvena točka, katere slike ni več, se obnovi brez nje. 0 takšne slike odstrani takoj."
+        }
+      }
+    }
+  }
+}

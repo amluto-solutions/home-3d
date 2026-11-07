@@ -1,0 +1,35 @@
+{
+  "id": "fado_table_lamp",
+  "name": {
+    "en": "Table lamp, round glass globe 25 cm"
+  },
+  "size": [
+    0.25,
+    0.25,
+    0.24
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "table lamp",
+    "globe lamp",
+    "round",
+    "glass",
+    "white",
+    "pink",
+    "mood light",
+    "smart bulb"
+  ],
+  "ikea": "FADO",
+  "light": "table",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.44, "d": 0.44, "y": 0, "h": 0.05, "color": "white", "fix": "h"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0208, "h": 0.9792, "color": "white", "glow": true}
+  ]
+}

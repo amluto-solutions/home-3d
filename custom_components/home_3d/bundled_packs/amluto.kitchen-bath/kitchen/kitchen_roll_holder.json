@@ -1,0 +1,19 @@
+{
+  "id": "kitchen_roll_holder",
+  "name": {"en": "Kitchen roll holder"},
+  "size": [0.15, 0.15, 0.32],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "tags": ["kitchen roll", "paper towel", "kitchen", "worktop"],
+  "family": "kitchen_roll_holder",
+  "variant": {"en": "Standing"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0469, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.08, "d": 0.08, "y": 0.0469, "h": 0.9531, "color": "#c4c8cd", "fix": "wd"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.8, "y": 0.0938, "h": 0.8, "color": "white", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

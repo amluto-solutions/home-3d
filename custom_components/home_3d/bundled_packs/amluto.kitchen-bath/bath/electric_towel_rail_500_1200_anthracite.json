@@ -1,0 +1,42 @@
+{
+  "id": "electric_towel_rail_500_1200_anthracite",
+  "name": {"en": "Heated towel rail 500 × 1200, anthracite, electric"},
+  "size": [0.5, 0.11, 1.2],
+  "group": "bath",
+  "room": ["bath"],
+  "tags": ["towel rail", "towel radiator", "ladder", "radiator", "towel warmer", "anthracite"],
+  "family": "heated_towel_rail",
+  "variant": {"en": "500 × 1200 anthracite electric"},
+  "mount": "wall",
+  "wall_y": 0.15,
+  "electric": true,
+  "parts": [
+    {"shape": "cyl", "x": -0.475, "z": 0.2273, "w": 0.05, "d": 0.2273, "y": 0.0, "h": 1.0, "color": "dark", "fix": "w"},
+    {"shape": "cyl", "x": 0.475, "z": 0.2273, "w": 0.05, "d": 0.2273, "y": 0.0, "h": 1.0, "color": "dark", "fix": "w"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.0325, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.0864, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.1403, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.1943, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.2482, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.3021, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.356, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.41, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.4639, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.6256, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.6796, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.7335, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.7874, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.8413, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.8952, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2273, "w": 0.9, "d": 0.2, "y": 0.9492, "h": 0.0183, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": -0.475, "z": -0.1932, "w": 0.04, "d": 0.6136, "y": 0.1167, "h": 0.0167, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.475, "z": -0.1932, "w": 0.04, "d": 0.6136, "y": 0.8667, "h": 0.0167, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.475, "z": -0.1932, "w": 0.04, "d": 0.6136, "y": 0.1167, "h": 0.0167, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.475, "z": -0.1932, "w": 0.04, "d": 0.6136, "y": 0.8667, "h": 0.0167, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.44, "z": -0.2955, "w": 0.12, "d": 0.4091, "y": 0.0, "h": 0.0667, "color": "white", "round": 0.2, "fix": "wdh"},
+    {"shape": "box", "x": 0.44, "z": -0.0864, "w": 0.06, "d": 0.0091, "y": 0.0333, "h": 0.0083, "color": "#ff7a3d", "edges": "faint", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.2273, "w": 1.0, "d": 0.2273}
+  ]
+}

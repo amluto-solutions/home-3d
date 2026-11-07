@@ -1,0 +1,18 @@
+{
+  "id": "wall_render_terracotta_90",
+  "name": {"en": "Rendered garden wall, terracotta render, half height"},
+  "size": [2.0, 0.215, 0.9],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["wall", "garden wall", "rendered wall", "painted wall", "boundary", "plaster", "stucco"],
+  "family": "wall_render_terracotta",
+  "variant": {"en": "Half height (0.9 m)"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.995, "d": 0.9535, "y": 0.1667, "h": 0.7778, "color": "#c47a56"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.1667, "color": "#8d583e"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9444, "h": 0.0556, "color": "#d6d3ca"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

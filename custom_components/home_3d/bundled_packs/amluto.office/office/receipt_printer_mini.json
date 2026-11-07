@@ -1,0 +1,22 @@
+{
+  "id": "receipt_printer_mini",
+  "name": {"en": "Receipt printer, mini"},
+  "size": [0.08, 0.11, 0.05],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby", "kitchen", "hall"],
+  "tags": ["receipt printer", "thermal printer", "ticket printer", "pos printer", "till roll", "printer"],
+  "family": "receipt_printer",
+  "variant": {"en": "Mini Bluetooth"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.75, "color": "dark", "round": 0.2},
+    {"shape": "loft", "x": 0.0, "z": -0.0909, "w": 1.0, "d": 0.8182, "y": 0.75, "h": 0.25, "color": "dark", "tx": 0.0, "tz": -0.15, "tw": 1.0, "td": 0.6},
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 0.75, "d": 0.0364, "y": 0.75, "h": 0.03, "color": "#101114", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.2455, "w": 0.625, "d": 0.0273, "y": 0.76, "h": 0.24, "color": "white", "tx": 0.0, "tz": 0.1591, "tw": 0.625, "td": 0.0182},
+    {"shape": "box", "x": -0.25, "z": 0.4636, "w": 0.125, "d": 0.0364, "y": 0.5, "h": 0.2, "color": "#46d36a", "edges": "faint", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "ikornnes_standing_mirror",
+  "name": {
+    "en": "Standing mirror, ash frame"
+  },
+  "size": [
+    0.52,
+    0.45,
+    1.67
+  ],
+  "group": "deco",
+  "room": [
+    "bedroom",
+    "hall",
+    "kids"
+  ],
+  "tags": [
+    "floor mirror",
+    "standing mirror",
+    "full-length mirror",
+    "dressing mirror",
+    "ash",
+    "wooden frame"
+  ],
+  "ikea": "IKORNNES",
+  "parts": [
+    {"shape": "loft", "x": 0.0, "z": 0.4667, "w": 1, "d": 0.0667, "y": 0, "h": 1, "color": "wood", "tx": 0.0, "tz": -0.4667, "tw": 1, "td": 0.0667},
+    {"shape": "loft", "x": 0.0, "z": 0.4732, "w": 0.8462, "d": 0.0178, "y": 0.024, "h": 0.9521, "color": "glass", "tx": 0.0, "tz": -0.4154, "tw": 0.8462, "td": 0.0178},
+    {"shape": "loft", "x": 0.0, "z": -0.4556, "w": 0.0769, "d": 0.0667, "y": 0, "h": 0.8084, "color": "wood", "tx": 0.0, "tz": -0.3212, "tw": 0.0769, "td": 0.0667}
+  ]
+}

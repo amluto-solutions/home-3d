@@ -1,0 +1,64 @@
+{
+  "id": "kivik_corner_sofa_4",
+  "name": {
+    "en": "Corner sofa, 4-seat"
+  },
+  "size": [
+    2.57,
+    2.57,
+    0.83
+  ],
+  "group": "sofa",
+  "room": [
+    "living",
+    "conservatory"
+  ],
+  "tags": [
+    "KIVIK",
+    "sofa",
+    "settee",
+    "couch",
+    "deep seat",
+    "memory foam",
+    "beige-grey",
+    "black",
+    "light beige",
+    "anthracite",
+    "dark grey"
+  ],
+  "family": "kivik_sofa",
+  "variant": {
+    "en": "Corner 4-seat"
+  },
+  "ikea": "KIVIK",
+  "parts": [
+    {"shape": "rbox", "x": 0.1848, "z": -0.3152, "w": 0.6304, "d": 0.3696, "y": 0.0361, "h": 0.3494, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": 0.1381, "z": -0.4514, "w": 0.537, "d": 0.0973, "y": 0.3855, "h": 0.494, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": 0.0039, "z": -0.2665, "w": 0.2646, "d": 0.2685, "y": 0.3855, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.0039, "z": -0.3677, "w": 0.2607, "d": 0.07, "y": 0.5422, "h": 0.4578, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.2724, "z": -0.2665, "w": 0.2646, "d": 0.2685, "y": 0.3855, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.2724, "z": -0.3677, "w": 0.2607, "d": 0.07, "y": 0.5422, "h": 0.4578, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.4533, "z": -0.3152, "w": 0.0934, "d": 0.3696, "y": 0.0361, "h": 0.7229, "color": "fabric", "fix": "w", "round": 0.35},
+    {"shape": "box", "x": -0.107, "z": -0.4767, "w": 0.0156, "d": 0.0156, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.107, "z": -0.1537, "w": 0.0156, "d": 0.0156, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4767, "z": -0.4767, "w": 0.0156, "d": 0.0156, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4767, "z": -0.1537, "w": 0.0156, "d": 0.0156, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": -0.3152, "z": -0.3152, "w": 0.3696, "d": 0.3696, "y": 0.0361, "h": 0.3494, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": -0.3152, "z": -0.4514, "w": 0.3696, "d": 0.0973, "y": 0.3855, "h": 0.494, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.4514, "z": -0.3152, "w": 0.0973, "d": 0.3696, "y": 0.3855, "h": 0.494, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.2665, "z": -0.2665, "w": 0.2685, "d": 0.2685, "y": 0.3855, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.2665, "z": -0.3677, "w": 0.2646, "d": 0.07, "y": 0.5422, "h": 0.4578, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.3677, "z": -0.2315, "w": 0.07, "d": 0.1946, "y": 0.5422, "h": 0.4578, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.3152, "z": 0.1848, "w": 0.3696, "d": 0.6304, "y": 0.0361, "h": 0.3494, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": -0.4514, "z": 0.1381, "w": 0.0973, "d": 0.537, "y": 0.3855, "h": 0.494, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.2665, "z": 0.0039, "w": 0.2685, "d": 0.2646, "y": 0.3855, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.3677, "z": 0.0039, "w": 0.07, "d": 0.2607, "y": 0.5422, "h": 0.4578, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.2665, "z": 0.2724, "w": 0.2685, "d": 0.2646, "y": 0.3855, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.3677, "z": 0.2724, "w": 0.07, "d": 0.2607, "y": 0.5422, "h": 0.4578, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.3152, "z": 0.4533, "w": 0.3696, "d": 0.0934, "y": 0.0361, "h": 0.7229, "color": "fabric", "fix": "d", "round": 0.35},
+    {"shape": "box", "x": -0.4767, "z": -0.107, "w": 0.0156, "d": 0.0156, "y": 0, "h": 0.0361, "color": "dark", "fix": "dwh"},
+    {"shape": "box", "x": -0.1537, "z": -0.107, "w": 0.0156, "d": 0.0156, "y": 0, "h": 0.0361, "color": "dark", "fix": "dwh"},
+    {"shape": "box", "x": -0.4767, "z": 0.4767, "w": 0.0156, "d": 0.0156, "y": 0, "h": 0.0361, "color": "dark", "fix": "dwh"},
+    {"shape": "box", "x": -0.1537, "z": 0.4767, "w": 0.0156, "d": 0.0156, "y": 0, "h": 0.0361, "color": "dark", "fix": "dwh"}
+  ]
+}

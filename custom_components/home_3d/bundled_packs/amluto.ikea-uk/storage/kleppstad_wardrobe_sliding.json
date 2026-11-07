@@ -1,0 +1,41 @@
+{
+  "id": "kleppstad_wardrobe_sliding",
+  "name": {
+    "en": "Wardrobe with sliding doors"
+  },
+  "size": [
+    1.17,
+    0.55,
+    1.76
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "wardrobe",
+    "freestanding wardrobe",
+    "clothes storage",
+    "hanging rail",
+    "white"
+  ],
+  "family": "kleppstad_wardrobe",
+  "variant": {
+    "en": "Sliding doors 117"
+  },
+  "ikea": "KLEPPSTAD",
+  "parts": [
+    {"shape": "box", "x": -0.4932, "z": -0.0182, "w": 0.0137, "d": 0.9636, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4932, "z": -0.0182, "w": 0.0137, "d": 0.9636, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0182, "w": 1, "d": 0.9636, "y": 0.9909, "h": 0.0091, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0182, "w": 0.9726, "d": 0.9636, "y": 0, "h": 0.0091, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4927, "w": 0.9726, "d": 0.0145, "y": 0.0091, "h": 0.9818, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4273, "w": 0.9726, "d": 0.0327, "y": 0, "h": 0.0341, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.25, "z": 0.4818, "w": 0.5085, "d": 0.0218, "y": 0.0341, "h": 0.9545, "color": "white"},
+    {"shape": "box", "x": -0.4573, "z": 0.4927, "w": 0.0171, "d": 0.0073, "y": 0.4545, "h": 0.142, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.25, "z": 0.4564, "w": 0.5085, "d": 0.0218, "y": 0.0341, "h": 0.9545, "color": "white"},
+    {"shape": "box", "x": 0.4573, "z": 0.4673, "w": 0.0171, "d": 0.0073, "y": 0.4545, "h": 0.142, "color": "dark", "fix": "wdh"}
+  ]
+}

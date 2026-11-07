@@ -1,0 +1,49 @@
+{
+  "id": "chest_of_drawers_6",
+  "name": {
+    "en": "6-drawer chest of drawers"
+  },
+  "size": [
+    1.4,
+    0.48,
+    0.8
+  ],
+  "group": "storage",
+  "family": "chest_of_drawers",
+  "variant": {
+    "en": "6 drawers, wide"
+  },
+  "room": [
+    "bedroom",
+    "kids",
+    "hall",
+    "living"
+  ],
+  "tags": [
+    "chest",
+    "bedroom furniture",
+    "wide chest",
+    "dresser"
+  ],
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.0208, "w": 0.9714, "d": 0.875, "y": 0, "h": 0.075, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.0208, "w": 1.0, "d": 0.9583, "y": 0.075, "h": 0.8938, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.9688, "h": 0.0313, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.2457, "z": 0.4792, "w": 0.4886, "d": 0.0417, "y": 0.6708, "h": 0.2879, "color": "white"},
+    {"shape": "box", "x": -0.2457, "z": 0.499, "w": 0.1, "d": 0.0021, "y": 0.8862, "h": 0.02, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.2457, "z": 0.4792, "w": 0.4886, "d": 0.0417, "y": 0.6708, "h": 0.2879, "color": "white"},
+    {"shape": "box", "x": 0.2457, "z": 0.499, "w": 0.1, "d": 0.0021, "y": 0.8862, "h": 0.02, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.2457, "z": 0.4792, "w": 0.4886, "d": 0.0417, "y": 0.3779, "h": 0.2879, "color": "white"},
+    {"shape": "box", "x": -0.2457, "z": 0.499, "w": 0.1, "d": 0.0021, "y": 0.5933, "h": 0.02, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.2457, "z": 0.4792, "w": 0.4886, "d": 0.0417, "y": 0.3779, "h": 0.2879, "color": "white"},
+    {"shape": "box", "x": 0.2457, "z": 0.499, "w": 0.1, "d": 0.0021, "y": 0.5933, "h": 0.02, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.2457, "z": 0.4792, "w": 0.4886, "d": 0.0417, "y": 0.085, "h": 0.2879, "color": "white"},
+    {"shape": "box", "x": -0.2457, "z": 0.499, "w": 0.1, "d": 0.0021, "y": 0.3004, "h": 0.02, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.2457, "z": 0.4792, "w": 0.4886, "d": 0.0417, "y": 0.085, "h": 0.2879, "color": "white"},
+    {"shape": "box", "x": 0.2457, "z": 0.499, "w": 0.1, "d": 0.0021, "y": 0.3004, "h": 0.02, "color": "metal", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.45, "x2": 0.5, "z2": 0.45}
+  ]
+}

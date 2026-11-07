@@ -1,0 +1,33 @@
+{
+  "id": "rack_wall_cabinet_15u",
+  "name": {"en": "Wall cabinet 19-inch 15U"},
+  "size": [0.6, 0.45, 0.774],
+  "group": "network",
+  "room": ["office", "garage", "utility", "loft", "hall"],
+  "tags": ["19 inch", "data cabinet", "comms cabinet", "wall rack", "server rack", "rack"],
+  "family": "rack_wall_cabinet",
+  "variant": {"en": "15U"},
+  "mount": "wall",
+  "wall_y": 0.9,
+  "rack_frame": {"u": 15, "form": "wall_cabinet", "door": "glass"},
+  "parts": [
+    {"shape": "box", "x": -0.4875, "z": -0.0222, "w": 0.025, "d": 0.9556, "y": 0, "h": 1, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.4875, "z": -0.0222, "w": 0.025, "d": 0.9556, "y": 0, "h": 1, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0, "z": -0.0222, "w": 0.95, "d": 0.9556, "y": 0, "h": 0.0646, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.0222, "w": 0.95, "d": 0.9556, "y": 0.9354, "h": 0.0646, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.48665, "w": 0.95, "d": 0.0267, "y": 0.0646, "h": 0.8708, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": -0.38895, "z": 0.35, "w": 0.0265, "d": 0.0334, "y": 0.0693, "h": 0.8614, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": 0.38895, "z": 0.35, "w": 0.0265, "d": 0.0334, "y": 0.0693, "h": 0.8614, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": -0.38895, "z": -0.39445, "w": 0.0265, "d": 0.0333, "y": 0.0693, "h": 0.8614, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": 0.38895, "z": -0.39445, "w": 0.0265, "d": 0.0333, "y": 0.0693, "h": 0.8614, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": -0.47085, "z": 0.4778, "w": 0.0583, "d": 0.0444, "y": 0, "h": 1, "color": "dark", "edges": "faint", "fix": "w"},
+    {"shape": "box", "x": 0.47085, "z": 0.4778, "w": 0.0583, "d": 0.0444, "y": 0, "h": 1, "color": "dark", "edges": "faint", "fix": "w"},
+    {"shape": "box", "x": 0, "z": 0.4778, "w": 0.8834, "d": 0.0444, "y": 0, "h": 0.0452, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.4778, "w": 0.8834, "d": 0.0444, "y": 0.9548, "h": 0.0452, "color": "dark", "edges": "faint", "fix": "h"},
+    {"shape": "box", "x": 0.4708, "z": 0.47665, "w": 0.02, "d": 0.0467, "y": 0.4225, "h": 0.155, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.3667, "x2": 0.5, "z2": 0.3667}
+  ]
+}

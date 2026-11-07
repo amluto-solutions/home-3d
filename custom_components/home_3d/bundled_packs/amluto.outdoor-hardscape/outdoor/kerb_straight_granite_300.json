@@ -1,0 +1,22 @@
+{
+  "id": "kerb_straight_granite_300",
+  "name": {"en": "Kerb, granite, 3 m"},
+  "size": [3.0, 0.15, 0.25],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["kerb", "curb", "kerbstone", "pavement edge", "road edge", "edging"],
+  "family": "kerb_straight_granite",
+  "variant": {"en": "3 m long"},
+  "parts": [
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.9987, "d": 0.8333, "y": 0, "h": 1, "color": "#8c8e91", "tx": 0.0, "tz": -0.08, "tw": 0.9987, "td": 0.6533},
+    {"shape": "box", "x": -0.3571, "z": 0.0, "w": 0.0027, "d": 0.8667, "y": 0, "h": 1, "color": "#626366"},
+    {"shape": "box", "x": -0.2143, "z": 0.0, "w": 0.0027, "d": 0.8667, "y": 0, "h": 1, "color": "#626366"},
+    {"shape": "box", "x": -0.0714, "z": 0.0, "w": 0.0027, "d": 0.8667, "y": 0, "h": 1, "color": "#626366"},
+    {"shape": "box", "x": 0.0714, "z": 0.0, "w": 0.0027, "d": 0.8667, "y": 0, "h": 1, "color": "#626366"},
+    {"shape": "box", "x": 0.2143, "z": 0.0, "w": 0.0027, "d": 0.8667, "y": 0, "h": 1, "color": "#626366"},
+    {"shape": "box", "x": 0.3571, "z": 0.0, "w": 0.0027, "d": 0.8667, "y": 0, "h": 1, "color": "#626366"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

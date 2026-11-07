@@ -1,0 +1,29 @@
+{
+  "id": "medal_display_stand_5",
+  "name": {"en": "Medal display stand, 5 medals"},
+  "size": [0.3, 0.1, 0.32],
+  "group": "deco",
+  "room": ["living", "office", "hall", "study", "games", "dining"],
+  "tags": ["trophy", "award", "prize", "gold", "medals", "silver", "bronze", "medal rack", "display"],
+  "family": "medal_display",
+  "variant": {"en": "5 medals"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.06, "color": "#2a2420", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.2, "w": 0.92, "d": 0.15, "y": 0.06, "h": 0.92, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.1, "w": 0.92, "d": 0.1, "y": 0.82, "h": 0.0375, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.38, "z": -0.05, "w": 0.1, "d": 0.04, "y": 0.45, "h": 0.4, "color": "#c0392b", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.38, "z": -0.04, "w": 0.1667, "d": 0.5, "y": 0.34, "h": 0.025, "color": "#d4af37", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": -0.19, "z": -0.05, "w": 0.1, "d": 0.04, "y": 0.45, "h": 0.4, "color": "#2c5aa0", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.19, "z": -0.04, "w": 0.1667, "d": 0.5, "y": 0.34, "h": 0.025, "color": "#c7cbd1", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.05, "w": 0.1, "d": 0.04, "y": 0.45, "h": 0.4, "color": "#f4f4f0", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.04, "w": 0.1667, "d": 0.5, "y": 0.34, "h": 0.025, "color": "#b0763a", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.19, "z": -0.05, "w": 0.1, "d": 0.04, "y": 0.45, "h": 0.4, "color": "#c0392b", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.19, "z": -0.04, "w": 0.1667, "d": 0.5, "y": 0.34, "h": 0.025, "color": "#d4af37", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.38, "z": -0.05, "w": 0.1, "d": 0.04, "y": 0.45, "h": 0.4, "color": "#2c5aa0", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.38, "z": -0.04, "w": 0.1667, "d": 0.5, "y": 0.34, "h": 0.025, "color": "#c7cbd1", "axis": "z", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

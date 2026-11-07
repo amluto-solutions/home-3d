@@ -1,0 +1,43 @@
+{
+  "id": "knoppaeng_frame_30x40",
+  "name": {
+    "en": "Picture frame with mount 30x40 cm"
+  },
+  "size": [
+    0.32,
+    0.02,
+    0.42
+  ],
+  "group": "frame",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "office"
+  ],
+  "tags": [
+    "picture frame",
+    "photo frame",
+    "mount",
+    "black",
+    "white",
+    "gallery wall"
+  ],
+  "family": "knoppaeng_frame",
+  "variant": {
+    "en": "30x40"
+  },
+  "ikea": "KNOPPÄNG",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4, "w": 1, "d": 0.2, "y": 0, "h": 1, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9714, "h": 0.0286, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0286, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.4813, "z": 0.0, "w": 0.0375, "d": 1, "y": 0.0286, "h": 0.9429, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.4813, "z": 0.0, "w": 0.0375, "d": 1, "y": 0.0286, "h": 0.9429, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.275, "w": 0.925, "d": 0.15, "y": 0.0286, "h": 0.9429, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.375, "w": 0.7375, "d": 0.1, "y": 0.1, "h": 0.8, "color": "#a9b8b4", "fix": "d"}
+  ]
+}

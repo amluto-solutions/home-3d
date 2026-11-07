@@ -1,0 +1,25 @@
+{
+  "id": "built_in_microwave",
+  "name": {"en": "Built-in microwave"},
+  "size": [0.595, 0.4, 0.39],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["microwave", "microwave oven", "combi", "grill"],
+  "family": "microwave",
+  "variant": {"en": "Built-in"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.45,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.0125, "w": 1.0, "d": 0.975, "y": 0.0, "h": 1.0, "color": "metal", "round": 0.06},
+    {"shape": "box", "x": -0.1092, "z": 0.4838, "w": 0.7479, "d": 0.0175, "y": 0.0308, "h": 0.9385, "color": "dark", "top": "metal"},
+    {"shape": "box", "x": -0.1176, "z": 0.4963, "w": 0.5966, "d": 0.0075, "y": 0.1282, "h": 0.7436, "color": "glass"},
+    {"shape": "box", "x": 0.3782, "z": 0.4838, "w": 0.2101, "d": 0.0175, "y": 0.0308, "h": 0.9385, "color": "dark"},
+    {"shape": "box", "x": 0.3782, "z": 0.4963, "w": 0.1597, "d": 0.0075, "y": 0.8205, "h": 0.0769, "color": "#7fe3ff", "edges": "faint"},
+    {"shape": "cyl", "x": 0.3739, "z": 0.4825, "w": 0.084, "d": 0.035, "y": 0.3, "h": 0.1282, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": 0.2647, "z1": -0.45, "x2": 0.2647, "z2": 0.5}
+  ]
+}

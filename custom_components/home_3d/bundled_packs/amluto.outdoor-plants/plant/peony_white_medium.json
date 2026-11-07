@@ -1,0 +1,29 @@
+{
+  "id": "peony_white_medium",
+  "name": {"en": "Peony, white, medium"},
+  "size": [0.8, 0.8, 0.85],
+  "group": "plant",
+  "room": ["garden"],
+  "tags": ["peony", "flower", "perennial", "paeonia", "white"],
+  "family": "peony_white",
+  "variant": {"en": "Medium (0.8 × 0.85 m)"},
+  "parts": [
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.92, "d": 0.92, "y": 0.05, "h": 0.83, "color": "#2f6b34"},
+    {"shape": "sphere", "x": 0.2579, "z": 0.0798, "w": 0.5, "d": 0.5, "y": 0.05, "h": 0.5, "color": "#2f6b34"},
+    {"shape": "sphere", "x": 0.0038, "z": 0.27, "w": 0.5, "d": 0.5, "y": 0.08, "h": 0.5, "color": "#3a7a3d"},
+    {"shape": "sphere", "x": -0.2556, "z": 0.0871, "w": 0.5, "d": 0.5, "y": 0.05, "h": 0.5, "color": "#2f6b34"},
+    {"shape": "sphere", "x": -0.1618, "z": -0.2162, "w": 0.5, "d": 0.5, "y": 0.08, "h": 0.5, "color": "#3a7a3d"},
+    {"shape": "sphere", "x": 0.1556, "z": -0.2207, "w": 0.5, "d": 0.5, "y": 0.05, "h": 0.5, "color": "#2f6b34"},
+    {"shape": "sphere", "x": 0.089, "z": 0.4308, "w": 0.2, "d": 0.2, "y": 0.3529, "h": 0.1694, "color": "#faf6f0"},
+    {"shape": "sphere", "x": 0.1747, "z": -0.3413, "w": 0.2, "d": 0.2, "y": 0.5329, "h": 0.1694, "color": "#faf6f0"},
+    {"shape": "sphere", "x": 0.455, "z": 0.0071, "w": 0.2, "d": 0.2, "y": 0.2513, "h": 0.1694, "color": "#faf6f0"},
+    {"shape": "sphere", "x": -0.3024, "z": -0.2316, "w": 0.2, "d": 0.2, "y": 0.5387, "h": 0.1694, "color": "#faf6f0"},
+    {"shape": "sphere", "x": -0.0071, "z": -0.2627, "w": 0.2, "d": 0.2, "y": 0.719, "h": 0.1694, "color": "#faf6f0"},
+    {"shape": "sphere", "x": -0.0872, "z": -0.1982, "w": 0.2, "d": 0.2, "y": 0.7616, "h": 0.1694, "color": "#faf6f0"},
+    {"shape": "sphere", "x": -0.2245, "z": -0.275, "w": 0.2, "d": 0.2, "y": 0.5908, "h": 0.1694, "color": "#faf6f0"},
+    {"shape": "sphere", "x": 0.1838, "z": 0.3489, "w": 0.2, "d": 0.2, "y": 0.5068, "h": 0.1694, "color": "#faf6f0"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

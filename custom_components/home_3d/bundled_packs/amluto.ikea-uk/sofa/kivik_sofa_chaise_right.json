@@ -1,0 +1,54 @@
+{
+  "id": "kivik_sofa_chaise_right",
+  "name": {
+    "en": "3-seat sofa with chaise longue, right"
+  },
+  "size": [
+    2.8,
+    1.63,
+    0.83
+  ],
+  "group": "sofa",
+  "room": [
+    "living",
+    "conservatory"
+  ],
+  "tags": [
+    "KIVIK",
+    "sofa",
+    "settee",
+    "couch",
+    "deep seat",
+    "memory foam",
+    "beige-grey",
+    "black",
+    "light beige",
+    "anthracite",
+    "dark grey"
+  ],
+  "family": "kivik_sofa",
+  "variant": {
+    "en": "3-seat + chaise right"
+  },
+  "ikea": "KIVIK",
+  "parts": [
+    {"shape": "rbox", "x": -0.1696, "z": -0.2086, "w": 0.6607, "d": 0.5828, "y": 0.0361, "h": 0.3494, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": -0.1268, "z": -0.4233, "w": 0.575, "d": 0.1534, "y": 0.3855, "h": 0.494, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.2705, "z": -0.1319, "w": 0.2839, "d": 0.4233, "y": 0.3855, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.2705, "z": -0.2914, "w": 0.2804, "d": 0.1104, "y": 0.5422, "h": 0.4578, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.017, "z": -0.1319, "w": 0.2839, "d": 0.4233, "y": 0.3855, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.017, "z": -0.2914, "w": 0.2804, "d": 0.1104, "y": 0.5422, "h": 0.4578, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.4571, "z": -0.2086, "w": 0.0857, "d": 0.5828, "y": 0.0361, "h": 0.7229, "color": "fabric", "fix": "w", "round": 0.35},
+    {"shape": "box", "x": -0.4786, "z": -0.4632, "w": 0.0143, "d": 0.0245, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.4786, "z": 0.046, "w": 0.0143, "d": 0.0245, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.1393, "z": -0.4632, "w": 0.0143, "d": 0.0245, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.1393, "z": 0.046, "w": 0.0143, "d": 0.0245, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.3304, "z": 0.0, "w": 0.3393, "d": 1, "y": 0.0361, "h": 0.3494, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": 0.2875, "z": -0.4233, "w": 0.2536, "d": 0.1534, "y": 0.3855, "h": 0.494, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": 0.2875, "z": 0.0767, "w": 0.25, "d": 0.8405, "y": 0.3855, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.2875, "z": -0.2914, "w": 0.2464, "d": 0.1104, "y": 0.5422, "h": 0.4578, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.4571, "z": 0.0, "w": 0.0857, "d": 1, "y": 0.0361, "h": 0.7229, "color": "fabric", "fix": "w", "round": 0.35},
+    {"shape": "box", "x": 0.1821, "z": 0.4632, "w": 0.0143, "d": 0.0245, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4786, "z": 0.4632, "w": 0.0143, "d": 0.0245, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"}
+  ]
+}

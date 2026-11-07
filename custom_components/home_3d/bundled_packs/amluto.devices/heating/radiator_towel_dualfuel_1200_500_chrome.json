@@ -1,0 +1,52 @@
+{
+  "id": "radiator_towel_dualfuel_1200_500_chrome",
+  "name": {
+    "en": "Dual-fuel towel rail"
+  },
+  "size": [
+    0.5,
+    0.045,
+    1.2
+  ],
+  "group": "heating",
+  "room": [
+    "bath",
+    "kitchen",
+    "utility",
+    "bedroom"
+  ],
+  "tags": [
+    "radiator",
+    "towel rail",
+    "heated towel rail",
+    "bathroom",
+    "towel radiator",
+    "straight",
+    "dual fuel",
+    "electric element"
+  ],
+  "family": "radiator_towel_dualfuel",
+  "variant": {
+    "en": "1200 × 500 mm, chrome"
+  },
+  "mount": "wall",
+  "wall_y": 0.2,
+  "electric": true,
+  "watts": 300,
+  "parts": [
+    {"shape": "cyl", "x": -0.44, "z": 0.0, "w": 0.05, "d": 0.5556, "y": 0.0, "h": 1.0, "color": "metal"},
+    {"shape": "cyl", "x": 0.44, "z": 0.0, "w": 0.05, "d": 0.5556, "y": 0.0, "h": 1.0, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.0333, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.1333, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.2333, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.3333, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.4333, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.5333, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.6333, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.7333, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.8333, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.4889, "y": 0.9333, "h": 0.0183, "color": "metal", "axis": "x"},
+    {"shape": "rbox", "x": 0.3, "z": 0.0, "w": 0.2, "d": 0.9, "y": 0.0125, "h": 0.1333, "color": "white", "round": 0.3},
+    {"shape": "box", "x": 0.3, "z": 0.0, "w": 0.14, "d": 0.95, "y": 0.0417, "h": 0.0417, "color": "dark"}
+  ]
+}

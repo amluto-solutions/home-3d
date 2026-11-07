@@ -1,0 +1,21 @@
+{
+  "id": "plant_medium",
+  "name": {"en": "Medium pot plant"},
+  "size": [0.45, 0.45, 0.7],
+  "group": "plant",
+  "room": ["living", "dining", "bedroom", "office", "hall", "kitchen", "bath", "conservatory"],
+  "tags": ["plant", "house plant", "pot plant", "potted plant", "indoor plant", "medium", "bushy"],
+  "family": "potted_plant",
+  "variant": {"en": "Medium"},
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.6, "d": 0.6, "y": 0.0, "h": 0.3714, "color": "pot", "profile": [[0.0, 0.0], [0.78, 0.0], [1, 0.92], [1, 1], [0.9, 1], [0.86, 0.88], [0.0, 0.88]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.516, "d": 0.516, "y": 0.3194, "h": 0.0111, "color": "#4a3726"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.672, "d": 0.672, "y": 0.4029, "h": 0.4714, "color": "#3f7a3a"},
+    {"shape": "sphere", "x": 0.231, "z": 0.0, "w": 0.42, "d": 0.42, "y": 0.4029, "h": 0.3929, "color": "#2e5e2c"},
+    {"shape": "sphere", "x": 0.1155, "z": 0.2001, "w": 0.42, "d": 0.42, "y": 0.4704, "h": 0.3929, "color": "#6d9c4f"},
+    {"shape": "sphere", "x": -0.1155, "z": 0.2001, "w": 0.42, "d": 0.42, "y": 0.4029, "h": 0.3929, "color": "#4c8a3f"},
+    {"shape": "sphere", "x": -0.231, "z": 0.0, "w": 0.42, "d": 0.42, "y": 0.4704, "h": 0.3929, "color": "#3f7a3a"},
+    {"shape": "sphere", "x": -0.1155, "z": -0.2001, "w": 0.42, "d": 0.42, "y": 0.4029, "h": 0.3929, "color": "#2e5e2c"},
+    {"shape": "sphere", "x": 0.1155, "z": -0.2001, "w": 0.42, "d": 0.42, "y": 0.4704, "h": 0.3929, "color": "#6d9c4f"}
+  ]
+}

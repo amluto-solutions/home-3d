@@ -1,0 +1,22 @@
+{
+  "id": "motorbike_scooter_maxi",
+  "name": {"en": "Maxi scooter"},
+  "size": [0.8, 2.2, 1.45],
+  "group": "vehicle",
+  "room": ["garage", "garden"],
+  "tags": ["motorbike", "motorcycle", "bike", "motor", "maxi scooter", "scooter", "tmax style", "commuter"],
+  "vehicle": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.3864, "w": 0.15, "d": 0.1818, "y": 0.0, "h": 0.2759, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3864, "w": 0.09, "d": 0.1364, "y": 0.0345, "h": 0.2069, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.3864, "w": 0.15, "d": 0.1818, "y": 0.0, "h": 0.2759, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.3864, "w": 0.09, "d": 0.1364, "y": 0.0345, "h": 0.2069, "color": "metal", "axis": "x"},
+    {"shape": "rbox", "x": 0.0, "z": -0.3182, "w": 0.5, "d": 0.3409, "y": 0.1724, "h": 0.4, "color": "paint", "round": 0.3},
+    {"shape": "rbox", "x": 0.0, "z": -0.3409, "w": 0.375, "d": 0.25, "y": 0.5379, "h": 0.069, "color": "dark", "round": 0.4},
+    {"shape": "box", "x": 0.0, "z": 0.0227, "w": 0.625, "d": 0.25, "y": 0.1517, "h": 0.0345, "color": "dark"},
+    {"shape": "loft", "x": 0.0, "z": 0.3409, "w": 0.375, "d": 0.2273, "y": 0.1517, "h": 0.5862, "color": "paint", "tx": 0.0, "tz": 0.2591, "tw": 0.375, "td": 0.1364},
+    {"shape": "loft", "x": 0.0, "z": 0.3864, "w": 0.0625, "d": 0.0227, "y": 0.1379, "h": 0.5862, "color": "metal", "tx": 0.0, "tz": 0.3636, "tw": 0.0625, "td": 0.0227},
+    {"shape": "box", "x": 0.0, "z": 0.35, "w": 0.875, "d": 0.0182, "y": 0.6897, "h": 0.0276, "color": "metal"},
+    {"shape": "loft", "x": 0.0, "z": 0.3409, "w": 0.5, "d": 0.0909, "y": 0.7241, "h": 0.2621, "color": "glass", "tx": 0.0, "tz": 0.2955, "tw": 0.5, "td": 0.0227}
+  ]
+}

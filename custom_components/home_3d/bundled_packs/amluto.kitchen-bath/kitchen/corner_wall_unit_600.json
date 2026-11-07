@@ -1,0 +1,31 @@
+{
+  "id": "corner_wall_unit_600",
+  "name": {"en": "Corner wall unit 600 × 600"},
+  "size": [0.6, 0.6, 0.72],
+  "group": "kitchen",
+  "room": ["kitchen", "utility"],
+  "tags": ["shaker", "kitchen cupboard", "fitted kitchen", "cabinet", "corner", "wall cupboard"],
+  "family": "corner_unit",
+  "variant": {"en": "Wall 600"},
+  "mount": "wall",
+  "wall_y": 1.45,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.245, "w": 1.0, "d": 0.51, "y": 0.0, "h": 1.0, "color": "white"},
+    {"shape": "box", "x": -0.245, "z": 0.255, "w": 0.51, "d": 0.49, "y": 0.0, "h": 1.0, "color": "white"},
+    {"shape": "box", "x": 0.275, "z": 0.025, "w": 0.44, "d": 0.03, "y": 0.0042, "h": 0.9917, "color": "body"},
+    {"shape": "box", "x": 0.105, "z": 0.045, "w": 0.1, "d": 0.01, "y": 0.0042, "h": 0.9917, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.445, "z": 0.045, "w": 0.1, "d": 0.01, "y": 0.0042, "h": 0.9917, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.275, "z": 0.045, "w": 0.24, "d": 0.01, "y": 0.0042, "h": 0.0833, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.275, "z": 0.045, "w": 0.24, "d": 0.01, "y": 0.9125, "h": 0.0833, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.105, "z": 0.065, "w": 0.02, "d": 0.03, "y": 0.0736, "h": 0.1806, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.025, "z": 0.275, "w": 0.03, "d": 0.44, "y": 0.0042, "h": 0.9917, "color": "body"},
+    {"shape": "box", "x": 0.045, "z": 0.105, "w": 0.01, "d": 0.1, "y": 0.0042, "h": 0.9917, "color": "body", "fix": "d"},
+    {"shape": "box", "x": 0.045, "z": 0.445, "w": 0.01, "d": 0.1, "y": 0.0042, "h": 0.9917, "color": "body", "fix": "d"},
+    {"shape": "box", "x": 0.045, "z": 0.275, "w": 0.01, "d": 0.24, "y": 0.0042, "h": 0.0833, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.045, "z": 0.275, "w": 0.01, "d": 0.24, "y": 0.9125, "h": 0.0833, "color": "body", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": -0.225, "w": 1.0, "d": 0.55},
+    {"shape": "rect", "x": -0.225, "z": 0.275, "w": 0.55, "d": 0.45}
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "alex_drawer_unit_9_drawers",
+  "name": {
+    "en": "Drawer unit with 9 drawers"
+  },
+  "size": [
+    0.36,
+    0.58,
+    1.16
+  ],
+  "group": "office",
+  "room": [
+    "office",
+    "bedroom",
+    "kids",
+    "hobby"
+  ],
+  "tags": [
+    "drawers",
+    "desk drawers",
+    "pedestal",
+    "storage",
+    "white",
+    "dark grey",
+    "white stained oak effect",
+    "blue"
+  ],
+  "family": "alex_drawer_unit",
+  "variant": {
+    "en": "36x116 · 9 drawers"
+  },
+  "ikea": "ALEX",
+  "parts": [
+    {"shape": "box", "x": -0.475, "z": -0.0155, "w": 0.05, "d": 0.969, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.475, "z": -0.0155, "w": 0.05, "d": 0.969, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0155, "w": 1, "d": 0.969, "y": 0.9845, "h": 0.0155, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0155, "w": 0.9, "d": 0.969, "y": 0, "h": 0.0155, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4931, "w": 0.9, "d": 0.0138, "y": 0.0155, "h": 0.969, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9889, "d": 0.031, "y": 0, "h": 0.1077, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4991, "w": 0.3333, "d": 0.0034, "y": 0.0775, "h": 0.0172, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9889, "d": 0.031, "y": 0.1111, "h": 0.1077, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4991, "w": 0.3333, "d": 0.0034, "y": 0.1886, "h": 0.0172, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9889, "d": 0.031, "y": 0.2222, "h": 0.1077, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4991, "w": 0.3333, "d": 0.0034, "y": 0.2997, "h": 0.0172, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9889, "d": 0.031, "y": 0.3333, "h": 0.1077, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4991, "w": 0.3333, "d": 0.0034, "y": 0.4108, "h": 0.0172, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9889, "d": 0.031, "y": 0.4444, "h": 0.1077, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4991, "w": 0.3333, "d": 0.0034, "y": 0.5219, "h": 0.0172, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9889, "d": 0.031, "y": 0.5556, "h": 0.1077, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4991, "w": 0.3333, "d": 0.0034, "y": 0.633, "h": 0.0172, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9889, "d": 0.031, "y": 0.6667, "h": 0.1077, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4991, "w": 0.3333, "d": 0.0034, "y": 0.7442, "h": 0.0172, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9889, "d": 0.031, "y": 0.7778, "h": 0.1077, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4991, "w": 0.3333, "d": 0.0034, "y": 0.8553, "h": 0.0172, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9889, "d": 0.031, "y": 0.8889, "h": 0.1077, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4991, "w": 0.3333, "d": 0.0034, "y": 0.9664, "h": 0.0172, "color": "dark", "fix": "wdh"}
+  ]
+}

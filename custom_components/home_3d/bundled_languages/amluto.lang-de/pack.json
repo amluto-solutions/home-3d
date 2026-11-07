@@ -1,0 +1,13 @@
+{
+  "format": "home3d-pack",
+  "version": 2,
+  "kind": "language",
+  "language": "de",
+  "id": "amluto.lang-de",
+  "name": "Deutsch",
+  "publisher": "Amluto Solutions",
+  "licence": "MIT",
+  "release": 2,
+  "description": "German texts for Home 3D.",
+  "release_note": "Release 2: the pack's id is now amluto.lang-de (it was theovencook.lang-de); plans that name the old id still load (#424)."
+}

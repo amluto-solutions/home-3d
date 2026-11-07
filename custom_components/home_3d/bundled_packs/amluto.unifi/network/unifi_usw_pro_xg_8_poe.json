@@ -1,0 +1,30 @@
+{
+  "id": "unifi_usw_pro_xg_8_poe",
+  "name": {"en": "UniFi Pro XG 8 PoE"},
+  "size": [0.2104, 0.1738, 0.0437],
+  "group": "network",
+  "room": ["office", "utility", "loft", "living", "hall"],
+  "tags": ["unifi", "ubiquiti", "switch", "network switch", "ethernet", "poe", "pro xg", "10g", "usw-pro-xg-8-poe"],
+  "family": "unifi_switch_desktop",
+  "variant": {"en": "Pro XG 8 PoE"},
+  "electric": true,
+  "watts": 61,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#cfd3d8", "round": 0.08},
+    {"shape": "box", "x": -0.405, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.3467, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.315, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.3467, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.225, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.3467, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.135, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.3467, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.045, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.3467, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.045, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.3467, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.135, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.3467, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.225, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.3467, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.315, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.3467, "color": "metal"},
+    {"shape": "box", "x": 0.405, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.3467, "color": "metal"},
+    {"shape": "box", "x": -0.44, "z": 0.4975, "w": 0.03, "d": 0.005, "y": 0.78, "h": 0.1, "color": "#4aa3ff", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

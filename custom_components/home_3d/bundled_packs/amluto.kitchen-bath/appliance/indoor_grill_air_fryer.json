@@ -1,0 +1,21 @@
+{
+  "id": "indoor_grill_air_fryer",
+  "name": {"en": "Indoor grill and air fryer"},
+  "size": [0.4, 0.38, 0.3],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["grill", "countertop", "cooking", "indoor grill", "bbq", "air fryer", "ninja foodi grill"],
+  "family": "grill",
+  "variant": {"en": "Indoor grill with air fryer"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.5, "color": "#25272b", "round": 0.1},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 0.95, "y": 0.5, "h": 0.5, "color": "#3a3d42", "round": 0.25},
+    {"shape": "box", "x": 0.0, "z": 0.4895, "w": 0.5, "d": 0.0263, "y": 0.18, "h": 0.16, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4921, "w": 0.3, "d": 0.0105, "y": 0.34, "h": 0.0667, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

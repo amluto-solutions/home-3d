@@ -1,0 +1,57 @@
+{
+  "id": "radiator_column_600_600",
+  "name": {
+    "en": "Column radiator"
+  },
+  "size": [
+    0.77,
+    0.15,
+    0.54
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "kitchen",
+    "hall",
+    "office",
+    "kids",
+    "bath",
+    "utility",
+    "conservatory"
+  ],
+  "tags": [
+    "radiator",
+    "column radiator",
+    "trv",
+    "thermostatic valve",
+    "central heating",
+    "3 column",
+    "traditional",
+    "period"
+  ],
+  "family": "radiator_column",
+  "variant": {
+    "en": "600 × 600 mm"
+  },
+  "mount": "wall",
+  "wall_y": 0.12,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.7532, "d": 0.3, "y": 0.1111, "h": 0.0833, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.7532, "d": 0.3, "y": 0.9167, "h": 0.0833, "color": "white", "axis": "x"},
+    {"shape": "rbox", "x": -0.2987, "z": 0.0, "w": 0.0561, "d": 0.6, "y": 0.1667, "h": 0.7778, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.2208, "z": 0.0, "w": 0.0561, "d": 0.6, "y": 0.1667, "h": 0.7778, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.1429, "z": 0.0, "w": 0.0561, "d": 0.6, "y": 0.1667, "h": 0.7778, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": -0.0649, "z": 0.0, "w": 0.0561, "d": 0.6, "y": 0.1667, "h": 0.7778, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.013, "z": 0.0, "w": 0.0561, "d": 0.6, "y": 0.1667, "h": 0.7778, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.0909, "z": 0.0, "w": 0.0561, "d": 0.6, "y": 0.1667, "h": 0.7778, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.1688, "z": 0.0, "w": 0.0561, "d": 0.6, "y": 0.1667, "h": 0.7778, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.2468, "z": 0.0, "w": 0.0561, "d": 0.6, "y": 0.1667, "h": 0.7778, "color": "white", "round": 0.5},
+    {"shape": "rbox", "x": 0.3247, "z": 0.0, "w": 0.0561, "d": 0.6, "y": 0.1667, "h": 0.7778, "color": "white", "round": 0.5},
+    {"shape": "box", "x": -0.2987, "z": -0.4, "w": 0.039, "d": 0.2, "y": 0.1852, "h": 0.1111, "color": "metal"},
+    {"shape": "box", "x": 0.2987, "z": -0.4, "w": 0.039, "d": 0.2, "y": 0.1852, "h": 0.1111, "color": "metal"},
+    {"shape": "cyl", "x": 0.4026, "z": 0.0, "w": 0.0649, "d": 0.1733, "y": 0.1389, "h": 0.0481, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.461, "z": 0.0, "w": 0.0649, "d": 0.2667, "y": 0.1352, "h": 0.0741, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.4961, "z": 0.0, "w": 0.0078, "d": 0.28, "y": 0.1352, "h": 0.0778, "color": "accent", "axis": "x"}
+  ]
+}

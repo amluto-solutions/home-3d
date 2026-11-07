@@ -1,0 +1,42 @@
+{
+  "id": "magnifier_desk_lamp",
+  "name": {
+    "en": "Magnifier lamp"
+  },
+  "size": [
+    0.22,
+    0.46,
+    0.44
+  ],
+  "group": "lamp",
+  "room": [
+    "office",
+    "hobby",
+    "bedroom"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "magnifying lamp",
+    "craft lamp",
+    "hobby lamp",
+    "led magnifier",
+    "sewing lamp",
+    "beauty",
+    "nail"
+  ],
+  "family": "magnifier_desk_lamp",
+  "variant": {
+    "en": "Round lens"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.2609, "w": 0.7727, "d": 0.3696, "y": 0, "h": 0.0682, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.2609, "w": 0.1364, "d": 0.0652, "y": 0.0682, "h": 0.6818, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.1273, "d": 0.6087, "y": 0.75, "h": 0.0636, "color": "white"},
+    {"shape": "cyl", "x": 0.0, "z": -0.4348, "w": 1, "d": 0.087, "y": 0.5, "h": 0.5, "color": "white", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3913, "w": 0.8182, "d": 0.0217, "y": 0.5, "h": 0.4091, "color": "glass", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": -0.4891, "w": 0.9091, "d": 0.0217, "y": 0.5, "h": 0.4545, "color": "white", "glow": true, "axis": "z"}
+  ]
+}

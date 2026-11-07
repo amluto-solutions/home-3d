@@ -1,0 +1,41 @@
+{
+  "id": "hasselbukett_plant_pot_19",
+  "name": {
+    "en": "Plant pot, in/outdoor 19 cm"
+  },
+  "size": [
+    0.24,
+    0.24,
+    0.21
+  ],
+  "group": "plant",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "bedroom",
+    "office",
+    "bath",
+    "conservatory"
+  ],
+  "tags": [
+    "HASSELBUKETT",
+    "plant pot",
+    "flower pot",
+    "planter",
+    "beige",
+    "green",
+    "grey",
+    "in/outdoor"
+  ],
+  "family": "hasselbukett_pot",
+  "variant": {
+    "en": "19 cm"
+  },
+  "ikea": "HASSELBUKETT",
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "pot", "profile": [[0.76, 0], [0.86, 0.06], [0.96, 0.9], [1, 0.9], [1, 1], [0.9, 1], [0.84, 0.9]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.84, "d": 0.84, "y": 0.86, "h": 0.02, "color": "#4a3b2c", "fix": "h"}
+  ]
+}

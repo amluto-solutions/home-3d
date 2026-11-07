@@ -1,0 +1,24 @@
+{
+  "id": "frame_tv_65",
+  "name": {"en": "Frame TV 65″"},
+  "size": [1.499, 0.03, 0.8695],
+  "group": "media",
+  "room": ["living", "bedroom", "dining", "office"],
+  "tags": ["television", "the frame", "art tv", "samsung", "art mode", "picture frame", "wall tv", "smart tv"],
+  "family": "frame_tv",
+  "variant": {"en": "65″"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.0,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.2, "w": 0.9933, "d": 0.6, "y": 0.0058, "h": 0.9885, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9655, "h": 0.0345, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0, "h": 0.0345, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.49, "z": 0.0, "w": 0.02, "d": 1, "y": 0.0345, "h": 0.931, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.49, "z": 0.0, "w": 0.02, "d": 1, "y": 0.0345, "h": 0.931, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.4333, "w": 0.96, "d": 0.1, "y": 0.0345, "h": 0.931, "color": "white", "screen": true},
+    {"shape": "box", "x": 0.0, "z": 0.4833, "w": 0.5952, "d": 0.0333, "y": 0.2021, "h": 0.5958, "color": "#6f8fa8"},
+    {"shape": "box", "x": -0.0768, "z": 0.4867, "w": 0.288, "d": 0.0267, "y": 0.2207, "h": 0.2327, "color": "#d9b26f"},
+    {"shape": "box", "x": 0.1152, "z": 0.4867, "w": 0.2112, "d": 0.0267, "y": 0.4255, "h": 0.2793, "color": "#3f5e46"}
+  ]
+}

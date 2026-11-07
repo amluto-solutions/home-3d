@@ -1,0 +1,135 @@
+{
+  "id": "bambu_a2l_3d_printer",
+  "name": {
+    "en": "Bambu Lab A2L"
+  },
+  "size": [
+    0.544,
+    0.529,
+    0.505
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage"
+  ],
+  "tags": [
+    "3d printer",
+    "printer",
+    "bambu lab",
+    "maker",
+    "filament",
+    "fdm",
+    "a2l",
+    "large format"
+  ],
+  "family": "bambu_a2l",
+  "variant": {
+    "en": "Printer only"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 0.099,
+      "color": "body"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.76,
+      "d": 0.7,
+      "y": 0.099,
+      "h": 0.0673,
+      "color": "dark"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.7,
+      "d": 0.64,
+      "y": 0.1663,
+      "h": 0.0158,
+      "color": "metal"
+    },
+    {
+      "shape": "box",
+      "x": -0.4669,
+      "z": 0.4062,
+      "w": 0.0662,
+      "d": 0.1724,
+      "y": 0.099,
+      "h": 0.6634,
+      "color": "body",
+      "fix": "w"
+    },
+    {
+      "shape": "box",
+      "x": 0.4669,
+      "z": 0.4062,
+      "w": 0.0662,
+      "d": 0.1724,
+      "y": 0.099,
+      "h": 0.6634,
+      "color": "body",
+      "fix": "w"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.4062,
+      "w": 1.0,
+      "d": 0.1724,
+      "y": 0.6436,
+      "h": 0.0673,
+      "color": "dark"
+    },
+    {
+      "shape": "rbox",
+      "x": -0.0357,
+      "z": 0.32,
+      "w": 0.1287,
+      "d": 0.1134,
+      "y": 0.5644,
+      "h": 0.1465,
+      "color": "dark",
+      "round": 0.2
+    },
+    {
+      "shape": "box",
+      "x": -0.0357,
+      "z": 0.2576,
+      "w": 0.0551,
+      "d": 0.0113,
+      "y": 0.596,
+      "h": 0.0119,
+      "color": "#fff1d0",
+      "glow": true
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    },
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 0.8,
+      "d": 0.8
+    }
+  ]
+}

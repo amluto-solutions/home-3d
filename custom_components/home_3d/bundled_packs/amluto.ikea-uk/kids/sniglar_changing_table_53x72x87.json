@@ -1,0 +1,40 @@
+{
+  "id": "sniglar_changing_table_53x72x87",
+  "name": {
+    "en": "Changing table 53x72x87 cm"
+  },
+  "size": [
+    0.53,
+    0.72,
+    0.87
+  ],
+  "group": "kids",
+  "room": [
+    "bedroom",
+    "kids",
+    "bath"
+  ],
+  "tags": [
+    "changing table",
+    "baby changing unit",
+    "nursery",
+    "changing mat",
+    "beech"
+  ],
+  "family": "sniglar_changing_table",
+  "ikea": "SNIGLAR",
+  "parts": [
+    {"shape": "box", "x": -0.4528, "z": -0.4653, "w": 0.0943, "d": 0.0694, "y": 0, "h": 0.908, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4528, "z": 0.4653, "w": 0.0943, "d": 0.0694, "y": 0, "h": 0.908, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4528, "z": -0.4653, "w": 0.0943, "d": 0.0694, "y": 0, "h": 0.908, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4528, "z": 0.4653, "w": 0.0943, "d": 0.0694, "y": 0, "h": 0.908, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8491, "d": 0.8889, "y": 0.1379, "h": 0.023, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8491, "d": 0.8889, "y": 0.46, "h": 0.023, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4792, "w": 1, "d": 0.0417, "y": 0.908, "h": 0.092, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.4792, "w": 1, "d": 0.0417, "y": 0.908, "h": 0.092, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": -0.4717, "z": 0.0, "w": 0.0566, "d": 0.9167, "y": 0.908, "h": 0.092, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": 0.4717, "z": 0.0, "w": 0.0566, "d": 0.9167, "y": 0.908, "h": 0.092, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8868, "d": 0.9167, "y": 0.8966, "h": 0.023, "color": "wood", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.8868, "d": 0.9167, "y": 0.9138, "h": 0.046, "color": "cushion", "round": 0.3}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "d1_mini",
+  "name": {"en": "D1 mini ESP board"},
+  "size": [0.0342,0.0256,0.012],
+  "group": "tech",
+  "room": ["office", "hobby", "utility", "loft"],
+  "tags": ["esp8266", "esp32", "d1 mini", "wemos", "lolin", "esp", "dev board", "microcontroller", "esphome", "wifi", "development board"],
+  "family": "dev_board",
+  "variant": {"en": "D1 mini"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.4102, "w": 0.5936, "d": 0.0977, "y": 0, "h": 0.6667, "color": "dark"},
+    {"shape": "box", "x": 0, "z": 0.4102, "w": 0.5936, "d": 0.0977, "y": 0, "h": 0.6667, "color": "dark"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.6667, "h": 0.1333, "color": "#1d3d8a"},
+    {"shape": "box", "x": 0.1462, "z": 0, "w": 0.4678, "d": 0.4883, "y": 0.8, "h": 0.2, "color": "metal"},
+    {"shape": "box", "x": -0.3655, "z": 0, "w": 0.2047, "d": 0.293, "y": 0.8, "h": 0.2, "color": "metal"}
+  ]
+}

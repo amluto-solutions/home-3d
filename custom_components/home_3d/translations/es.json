@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "Añade una página en la barra lateral donde dibujas tu casa y la ves en 3D."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Home 3D ya está configurado."
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "Pregunta a la casa",
+      "description": "Pasa una frase a las vistas abiertas de Home 3D: «Muestra el salón» lo muestra, y las preguntas las responden los módulos instalados («¿Qué está abierto?»). Responde la primera vista que entienda la frase.",
+      "fields": {
+        "text": {
+          "name": "Frase",
+          "description": "Lo que se debe mostrar o preguntar, tal como lo dirías."
+        },
+        "screen": {
+          "name": "Pantalla",
+          "description": "Solo reacciona la vista con este nombre de pantalla (se configura en los ajustes de la vista o en la opción de pantalla de la tarjeta). Vacío: todas las vistas abiertas."
+        },
+        "speak": {
+          "name": "Hablar",
+          "description": "La vista dice su respuesta con la conversión de texto a voz de Assist (desactivado: solo la muestra)."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Dónde aparece Home 3D. El enlace del panel y la tarjeta del panel de control funcionan de cualquier forma, y aun así puedes ocultar la entrada para ti en los ajustes de la barra lateral de Home Assistant.",
+        "data": {
+          "show_in_sidebar": "Mostrar en la barra lateral",
+          "restore_picture_days": "Conservar imágenes de los puntos de restauración (días)"
+        },
+        "data_description": {
+          "restore_picture_days": "Una imagen de fondo o de pantalla que solo usa un punto de restauración antiguo se conserva este número de días después de crearse ese punto, y luego se elimina en el siguiente inicio. Un punto de restauración cuya imagen ya no existe se restaura sin ella. 0 elimina estas imágenes de inmediato."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "enudden_door_hanger_35",
+  "name": {
+    "en": "Hanger for door, white 35 cm"
+  },
+  "size": [
+    0.35,
+    0.1,
+    0.13
+  ],
+  "group": "storage",
+  "room": [
+    "hall",
+    "bedroom",
+    "kids",
+    "bath",
+    "utility"
+  ],
+  "tags": [
+    "ENUDDEN",
+    "door hanger",
+    "over-door hook",
+    "hooks",
+    "white",
+    "bathroom",
+    "towel hooks"
+  ],
+  "ikea": "ENUDDEN",
+  "mount": "wall",
+  "wall_y": 1.5,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.44, "w": 1, "d": 0.12, "y": 0, "h": 1, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.6, "y": 0.8923, "h": 0.1077, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.44, "w": 1, "d": 0.12, "y": 0, "h": 0.8, "color": "white", "fix": "dh"},
+    {"shape": "cyl", "x": -0.3333, "z": 0.5, "w": 0.04, "d": 0.2, "y": 0.5385, "h": 0.1077, "color": "white", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.0, "z": 0.5, "w": 0.04, "d": 0.2, "y": 0.5385, "h": 0.1077, "color": "white", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3333, "z": 0.5, "w": 0.04, "d": 0.2, "y": 0.5385, "h": 0.1077, "color": "white", "axis": "z", "fix": "wdh"}
+  ]
+}

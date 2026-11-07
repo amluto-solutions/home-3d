@@ -1,0 +1,14 @@
+{
+  "id": "cushion_45",
+  "name": {"en": "Cushion 45 × 45 cm"},
+  "size": [0.45, 0.15, 0.45],
+  "group": "cushion",
+  "room": ["living", "bedroom", "conservatory", "kids"],
+  "tags": ["cushion", "scatter cushion", "sofa cushion", "throw pillow", "pillow", "square"],
+  "family": "cushion",
+  "variant": {"en": "45 × 45"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "cushion", "round": 0.5}
+  ]
+}

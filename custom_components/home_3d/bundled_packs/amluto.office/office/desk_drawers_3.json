@@ -1,0 +1,31 @@
+{
+  "id": "desk_drawers_3",
+  "name": {"en": "Desk drawers, 3 drawers on castors"},
+  "size": [0.4, 0.5, 0.6],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby"],
+  "tags": ["desk drawers", "pedestal", "drawer unit", "filing drawers", "mobile pedestal", "under desk"],
+  "family": "desk_drawers",
+  "variant": {"en": "3 drawers, castors"},
+  "parts": [
+    {"shape": "cyl", "x": -0.375, "z": -0.4, "w": 0.05, "d": 0.08, "y": 0.0, "h": 0.075, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": -0.375, "z": -0.4, "w": 0.06, "d": 0.048, "y": 0.0667, "h": 0.0333, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.375, "z": 0.38, "w": 0.05, "d": 0.08, "y": 0.0, "h": 0.075, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": -0.375, "z": 0.38, "w": 0.06, "d": 0.048, "y": 0.0667, "h": 0.0333, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.375, "z": -0.4, "w": 0.05, "d": 0.08, "y": 0.0, "h": 0.075, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.375, "z": -0.4, "w": 0.06, "d": 0.048, "y": 0.0667, "h": 0.0333, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.375, "z": 0.38, "w": 0.05, "d": 0.08, "y": 0.0, "h": 0.075, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.375, "z": 0.38, "w": 0.06, "d": 0.048, "y": 0.0667, "h": 0.0333, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.018, "w": 1.0, "d": 0.964, "y": 0.1, "h": 0.9, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.479, "w": 0.985, "d": 0.03, "y": 0.7873, "h": 0.2093, "color": "body"},
+    {"shape": "box", "x": 0.0, "z": 0.497, "w": 0.3, "d": 0.006, "y": 0.925, "h": 0.02, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.479, "w": 0.985, "d": 0.03, "y": 0.5713, "h": 0.2093, "color": "body"},
+    {"shape": "box", "x": 0.0, "z": 0.497, "w": 0.3, "d": 0.006, "y": 0.709, "h": 0.02, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.479, "w": 0.985, "d": 0.03, "y": 0.1033, "h": 0.4613, "color": "body"},
+    {"shape": "box", "x": 0.0, "z": 0.497, "w": 0.3, "d": 0.006, "y": 0.493, "h": 0.02, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4, "z": 0.497, "w": 0.0375, "d": 0.006, "y": 0.95, "h": 0.025, "color": "metal", "axis": "z", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

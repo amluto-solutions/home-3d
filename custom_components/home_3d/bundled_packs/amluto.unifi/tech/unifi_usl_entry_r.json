@@ -1,0 +1,51 @@
+{
+  "id": "unifi_usl_entry_r",
+  "name": {
+    "en": "UniFi Recessed Entry Sensor"
+  },
+  "size": [
+    0.022,
+    0.044,
+    0.0745
+  ],
+  "group": "tech",
+  "tags": [
+    "door sensor",
+    "recessed sensor",
+    "contact sensor",
+    "usl-entry-r",
+    "unifi",
+    "ubiquiti"
+  ],
+  "family": "unifi_sensor",
+  "variant": {
+    "en": "Recessed Entry Sensor (USL-Entry-R)"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.9,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "round": 0.3
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0.5,
+      "w": 0.4,
+      "d": 0.03,
+      "y": 0.78,
+      "h": 0.12,
+      "color": "#0b0f17",
+      "axis": "z"
+    }
+  ]
+}

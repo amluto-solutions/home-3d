@@ -1,0 +1,26 @@
+{
+  "id": "street_light_speed_sign_galvanised",
+  "name": {"en": "Street light with 30 mph speed sign, galvanised"},
+  "size": [0.9, 0.5, 5.0],
+  "group": "lamp",
+  "room": ["garden"],
+  "tags": ["street light", "lamp post", "road sign", "street sign", "sign", "lighting", "speed limit"],
+  "family": "street_light_speed_sign_galvanised",
+  "variant": {"en": "5 m"},
+  "electric": true,
+  "light": "garden",
+  "parts": [
+    {"shape": "lathe", "x": -0.2222, "z": 0.0, "w": 0.3333, "d": 0.6, "y": 0, "h": 0.04, "color": "#9ea3a8", "profile": [[1, 0], [1, 0.1], [0.45, 0.2], [0.4, 1], [0, 1]]},
+    {"shape": "lathe", "x": -0.2222, "z": 0.0, "w": 0.1778, "d": 0.32, "y": 0.04, "h": 0.96, "color": "#9ea3a8", "profile": [[1, 0], [0.75, 0.4], [0.5, 1], [0, 1]]},
+    {"shape": "loft", "x": -0.1111, "z": 0.0, "w": 0.1333, "d": 0.24, "y": 0.92, "h": 0.08, "color": "#9ea3a8", "tx": 0.3333, "tz": 0.0, "tw": 0.0778, "td": 0.14},
+    {"shape": "box", "x": 0.3333, "z": 0.0, "w": 0.5556, "d": 0.44, "y": 0.972, "h": 0.014, "color": "#8e9397"},
+    {"shape": "box", "x": 0.3333, "z": 0.0, "w": 0.4889, "d": 0.36, "y": 0.968, "h": 0.006, "color": "#fff1c9", "glow": true},
+    {"shape": "cyl", "x": -0.2222, "z": 0.34, "w": 0.5556, "d": 0.06, "y": 0.6, "h": 0.1, "color": "#c8202c", "axis": "z"},
+    {"shape": "cyl", "x": -0.2222, "z": 0.37, "w": 0.4444, "d": 0.06, "y": 0.61, "h": 0.08, "color": "#f6f6f2", "axis": "z"},
+    {"shape": "box", "x": -0.2889, "z": 0.4, "w": 0.0444, "d": 0.024, "y": 0.628, "h": 0.036, "color": "#26272a"},
+    {"shape": "box", "x": -0.1556, "z": 0.4, "w": 0.0667, "d": 0.024, "y": 0.628, "h": 0.036, "color": "#26272a"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.3}
+  ]
+}

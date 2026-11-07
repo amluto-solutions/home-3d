@@ -1,0 +1,126 @@
+{
+  "id": "elegoo_mercury_wash_cure",
+  "name": {
+    "en": "Elegoo Mercury Plus wash and cure"
+  },
+  "size": [
+    0.4,
+    0.22,
+    0.28
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage",
+    "loft",
+    "utility"
+  ],
+  "tags": [
+    "wash and cure",
+    "resin",
+    "uv",
+    "maker",
+    "post processing",
+    "elegoo",
+    "mercury"
+  ],
+  "family": "wash_cure",
+  "variant": {
+    "en": "Elegoo"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 0.3,
+      "color": "dark",
+      "round": 0.1
+    },
+    {
+      "shape": "cyl",
+      "x": -0.25,
+      "z": 0.0,
+      "w": 0.42,
+      "d": 0.8,
+      "y": 0.3,
+      "h": 0.45,
+      "color": "white"
+    },
+    {
+      "shape": "cyl",
+      "x": -0.25,
+      "z": 0.0,
+      "w": 0.44,
+      "d": 0.82,
+      "y": 0.75,
+      "h": 0.12,
+      "color": "#c9791f"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.25,
+      "z": 0.0,
+      "w": 0.42,
+      "d": 0.8,
+      "y": 0.3,
+      "h": 0.45,
+      "color": "white"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.25,
+      "z": 0.0,
+      "w": 0.44,
+      "d": 0.82,
+      "y": 0.75,
+      "h": 0.12,
+      "color": "#c9791f"
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.4909,
+      "w": 0.3,
+      "d": 0.0182,
+      "y": 0.08,
+      "h": 0.12,
+      "color": "accent",
+      "edges": "glow",
+      "round": 0.3
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.4909,
+      "w": 0.5,
+      "d": 0.0182,
+      "y": 0.0107,
+      "h": 0.0179,
+      "color": "#7fe3ff",
+      "glow": true
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    },
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 0.8,
+      "d": 0.8
+    }
+  ]
+}

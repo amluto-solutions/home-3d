@@ -1,0 +1,42 @@
+{
+  "id": "ringsta_skaftet_floor_lamp",
+  "name": {
+    "en": "Floor lamp, white fabric shade 153 cm"
+  },
+  "size": [
+    0.42,
+    0.42,
+    1.53
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "floor lamp",
+    "standard lamp",
+    "fabric shade",
+    "white",
+    "brass",
+    "nickel-plated",
+    "build your own lamp",
+    "ringsta",
+    "skaftet"
+  ],
+  "family": "ringsta_skaftet_lamp",
+  "variant": {
+    "en": "Floor 153"
+  },
+  "ikea": "RINGSTA / SKAFTET",
+  "light": "floor",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.6905, "d": 0.6905, "y": 0, "h": 0.0098, "color": "metal", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0619, "d": 0.0619, "y": 0.0065, "h": 0.7712, "color": "metal", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.7974, "h": 0.2026, "color": "white", "edges": "faint", "profile": [[1.0, 0], [1.0, 1], [0.943, 1], [0.943, 0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.2143, "d": 0.2143, "y": 0.8366, "h": 0.0588, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

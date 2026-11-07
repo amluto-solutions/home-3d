@@ -1,0 +1,42 @@
+{
+  "id": "nammaro_modular_easy_chair",
+  "name": {
+    "en": "Outdoor modular easy chair"
+  },
+  "size": [
+    0.63,
+    0.74,
+    0.7
+  ],
+  "group": "outdoor",
+  "room": [
+    "garden",
+    "conservatory"
+  ],
+  "tags": [
+    "garden sofa",
+    "lounge chair",
+    "modular",
+    "patio",
+    "acacia",
+    "light brown stained",
+    "beige",
+    "light grey-beige"
+  ],
+  "ikea": "NÄMMARÖ",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.027, "w": 1, "d": 0.9459, "y": 0.1143, "h": 0.1714, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": -0.4189, "w": 1, "d": 0.1622, "y": 0.1143, "h": 0.8857, "color": "wood"},
+    {"shape": "box", "x": -0.4365, "z": -0.4324, "w": 0.0952, "d": 0.0811, "y": 0, "h": 0.1143, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4365, "z": 0.4324, "w": 0.0952, "d": 0.0811, "y": 0, "h": 0.1143, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4365, "z": -0.4324, "w": 0.0952, "d": 0.0811, "y": 0, "h": 0.1143, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4365, "z": 0.4324, "w": 0.0952, "d": 0.0811, "y": 0, "h": 0.1143, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.3365, "w": 0.9683, "d": 0.0027, "y": 0.4214, "h": 0.0057, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.3365, "w": 0.9683, "d": 0.0027, "y": 0.5286, "h": 0.0057, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.3365, "w": 0.9683, "d": 0.0027, "y": 0.6357, "h": 0.0057, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.3365, "w": 0.9683, "d": 0.0027, "y": 0.7429, "h": 0.0057, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.3365, "w": 0.9683, "d": 0.0027, "y": 0.85, "h": 0.0057, "color": "dark", "fix": "dh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0811, "w": 0.9365, "d": 0.7838, "y": 0.2857, "h": 0.1429, "color": "cushion", "round": 0.3},
+    {"shape": "rbox", "x": 0.0, "z": -0.2838, "w": 0.9048, "d": 0.1622, "y": 0.4, "h": 0.5429, "color": "cushion", "round": 0.35}
+  ]
+}

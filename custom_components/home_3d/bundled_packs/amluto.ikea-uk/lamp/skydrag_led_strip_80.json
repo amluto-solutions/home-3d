@@ -1,0 +1,36 @@
+{
+  "id": "skydrag_led_strip_80",
+  "name": {
+    "en": "LED worktop / wardrobe light strip with sensor, 80 cm"
+  },
+  "size": [
+    0.8,
+    0.018,
+    0.018
+  ],
+  "group": "lamp",
+  "room": [
+    "kitchen",
+    "bedroom",
+    "utility",
+    "hall"
+  ],
+  "tags": [
+    "led strip",
+    "strip light",
+    "worktop light",
+    "wardrobe light",
+    "motion sensor",
+    "under cabinet",
+    "dimmable"
+  ],
+  "ikea": "SKYDRAG",
+  "light": "strip",
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.4,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 0.995, "d": 0.5, "y": 0.25, "h": 0.5, "color": "white", "glow": true, "fix": "dh"}
+  ]
+}

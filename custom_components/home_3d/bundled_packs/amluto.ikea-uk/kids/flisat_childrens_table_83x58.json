@@ -1,0 +1,38 @@
+{
+  "id": "flisat_childrens_table_83x58",
+  "name": {
+    "en": "Children's table 83x58 cm"
+  },
+  "size": [
+    0.83,
+    0.58,
+    0.48
+  ],
+  "group": "kids",
+  "room": [
+    "kids"
+  ],
+  "tags": [
+    "FLISAT",
+    "children's table",
+    "kids table",
+    "play table",
+    "pine",
+    "beige",
+    "white"
+  ],
+  "family": "flisat_childrens_table",
+  "variant": {
+    "en": "Table 83x58"
+  },
+  "ikea": "FLISAT",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9479, "h": 0.0521, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8795, "d": 0.8276, "y": 0.9062, "h": 0.0417, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4277, "z": -0.3966, "w": 0.0482, "d": 0.069, "y": 0, "h": 0.9479, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4277, "z": 0.3966, "w": 0.0482, "d": 0.069, "y": 0, "h": 0.9479, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4277, "z": -0.3966, "w": 0.0482, "d": 0.069, "y": 0, "h": 0.9479, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4277, "z": 0.3966, "w": 0.0482, "d": 0.069, "y": 0, "h": 0.9479, "color": "wood", "fix": "wdh"}
+  ]
+}

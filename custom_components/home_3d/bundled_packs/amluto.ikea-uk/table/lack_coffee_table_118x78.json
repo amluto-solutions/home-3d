@@ -1,0 +1,39 @@
+{
+  "id": "lack_coffee_table_118x78",
+  "name": {
+    "en": "Coffee table 118x78 cm"
+  },
+  "size": [
+    1.18,
+    0.78,
+    0.45
+  ],
+  "group": "table",
+  "room": [
+    "living"
+  ],
+  "tags": [
+    "coffee table",
+    "shelf",
+    "budget",
+    "white",
+    "black-brown",
+    "white stained oak effect",
+    "oak effect",
+    "blue"
+  ],
+  "family": "lack_coffee_table",
+  "variant": {
+    "en": "118x78"
+  },
+  "ikea": "LACK",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8889, "h": 0.1111, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4788, "z": -0.4679, "w": 0.0424, "d": 0.0641, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4788, "z": 0.4679, "w": 0.0424, "d": 0.0641, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4788, "z": -0.4679, "w": 0.0424, "d": 0.0641, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4788, "z": 0.4679, "w": 0.0424, "d": 0.0641, "y": 0, "h": 0.8889, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9153, "d": 0.8718, "y": 0.2222, "h": 0.0667, "color": "white", "fix": "h"}
+  ]
+}

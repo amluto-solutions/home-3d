@@ -1,0 +1,45 @@
+{
+  "id": "bergshult_wall_shelf_80x20",
+  "name": {
+    "en": "Wall shelf 80x20 cm"
+  },
+  "size": [
+    0.8,
+    0.2,
+    0.145
+  ],
+  "group": "storage",
+  "room": [
+    "living",
+    "bedroom",
+    "hall",
+    "kitchen",
+    "office",
+    "bath",
+    "kids"
+  ],
+  "tags": [
+    "BERGSHULT",
+    "PERSHULT",
+    "wall shelf",
+    "shelf with brackets",
+    "white",
+    "floating shelf"
+  ],
+  "family": "bergshult_shelf",
+  "variant": {
+    "en": "80x20"
+  },
+  "ikea": "BERGSHULT / PERSHULT",
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8276, "h": 0.1724, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.375, "z": -0.45, "w": 0.0275, "d": 0.1, "y": 0, "h": 0.8276, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.375, "z": 0.0, "w": 0.0275, "d": 0.85, "y": 0.6897, "h": 0.1379, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.375, "z": -0.25, "w": 0.0275, "d": 0.06, "y": 0.1379, "h": 0.5517, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.375, "z": -0.45, "w": 0.0275, "d": 0.1, "y": 0, "h": 0.8276, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.375, "z": 0.0, "w": 0.0275, "d": 0.85, "y": 0.6897, "h": 0.1379, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.375, "z": -0.25, "w": 0.0275, "d": 0.06, "y": 0.1379, "h": 0.5517, "color": "white", "fix": "wdh"}
+  ]
+}

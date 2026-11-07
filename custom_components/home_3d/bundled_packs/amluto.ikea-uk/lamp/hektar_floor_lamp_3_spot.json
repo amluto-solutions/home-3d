@@ -1,0 +1,47 @@
+{
+  "id": "hektar_floor_lamp_3_spot",
+  "name": {
+    "en": "Floor lamp with 3 spotlights"
+  },
+  "size": [
+    0.4,
+    0.4,
+    1.76
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "office",
+    "bedroom",
+    "hobby"
+  ],
+  "tags": [
+    "floor lamp",
+    "standard lamp",
+    "industrial",
+    "reading lamp",
+    "metal",
+    "dark grey",
+    "brown-red"
+  ],
+  "family": "hektar_floor_lamp",
+  "variant": {
+    "en": "3 spots"
+  },
+  "ikea": "HEKTAR",
+  "light": "floor",
+  "electric": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.75, "d": 0.75, "y": 0, "h": 0.017, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.075, "d": 0.075, "y": 0.017, "h": 0.9716, "color": "dark", "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.05, "d": 0.05, "y": 0.5682, "h": 0.0227, "color": "dark", "tx": 0.1429, "tz": 0.0825, "tw": 0.05, "td": 0.05},
+    {"shape": "lathe", "x": 0.2382, "z": 0.1375, "w": 0.4, "d": 0.4, "y": 0.5284, "h": 0.0795, "color": "dark", "profile": [[1, 0], [0.95, 0.4], [0.6, 0.8], [0.3, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0.2382, "z": 0.1375, "w": 0.35, "d": 0.35, "y": 0.5284, "h": 0.0045, "color": "white", "glow": true, "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.05, "d": 0.05, "y": 0.7386, "h": 0.0227, "color": "dark", "tx": -0.155, "tz": 0.0564, "tw": 0.05, "td": 0.05},
+    {"shape": "lathe", "x": -0.2584, "z": 0.0941, "w": 0.4, "d": 0.4, "y": 0.6989, "h": 0.0795, "color": "dark", "profile": [[1, 0], [0.95, 0.4], [0.6, 0.8], [0.3, 1], [0, 1]]},
+    {"shape": "cyl", "x": -0.2584, "z": 0.0941, "w": 0.35, "d": 0.35, "y": 0.6989, "h": 0.0045, "color": "white", "glow": true, "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.05, "d": 0.05, "y": 0.9091, "h": 0.0227, "color": "dark", "tx": 0.0287, "tz": -0.1625, "tw": 0.05, "td": 0.05},
+    {"shape": "lathe", "x": 0.0478, "z": -0.2708, "w": 0.4, "d": 0.4, "y": 0.8693, "h": 0.0795, "color": "dark", "profile": [[1, 0], [0.95, 0.4], [0.6, 0.8], [0.3, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0.0478, "z": -0.2708, "w": 0.35, "d": 0.35, "y": 0.8693, "h": 0.0045, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "kabbleka_led_strip_3m",
+  "name": {
+    "en": "LED lighting strip with USB, 3 m"
+  },
+  "size": [
+    3.0,
+    0.012,
+    0.012
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "kitchen",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "led strip",
+    "strip light",
+    "usb",
+    "dimmable",
+    "colour",
+    "tv backlight",
+    "desk"
+  ],
+  "ikea": "KABBLEKA",
+  "light": "strip",
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 0.8,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 0.995, "d": 0.5, "y": 0.25, "h": 0.5, "color": "white", "glow": true, "fix": "dh"}
+  ]
+}

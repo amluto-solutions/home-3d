@@ -1,0 +1,39 @@
+{
+  "id": "arstid_table_lamp",
+  "name": {
+    "en": "Table lamp, brass 55 cm"
+  },
+  "size": [
+    0.22,
+    0.22,
+    0.55
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "ARSTID",
+    "table lamp",
+    "bedside lamp",
+    "brass",
+    "white shade",
+    "classic"
+  ],
+  "family": "arstid_lamp",
+  "variant": {
+    "en": "Table lamp"
+  },
+  "ikea": "ÅRSTID",
+  "light": "table",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.6818, "d": 0.6818, "y": 0, "h": 0.0455, "color": "metal", "fix": "h", "profile": [[0, 0], [1, 0], [0.95, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0818, "d": 0.0818, "y": 0.0364, "h": 0.7455, "color": "metal", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.6909, "h": 0.3091, "color": "white", "edges": "faint", "profile": [[1, 0], [0.82, 1], [0.78, 1], [0.96, 0]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.85, "d": 0.85, "y": 0.7091, "h": 0.0145, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

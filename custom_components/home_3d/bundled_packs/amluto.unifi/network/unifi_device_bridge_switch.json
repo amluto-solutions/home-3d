@@ -1,0 +1,62 @@
+{
+  "id": "unifi_device_bridge_switch",
+  "name": {
+    "en": "UniFi Device Bridge Switch"
+  },
+  "size": [
+    0.2129,
+    0.0325,
+    0.113
+  ],
+  "group": "network",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "bridge",
+    "wifi",
+    "wireless",
+    "device bridge switch",
+    "udb-switch",
+    "wireless bridge"
+  ],
+  "family": "unifi_bridge",
+  "variant": {
+    "en": "Device Bridge Switch"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.5,
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0,
+      "z": -0.3333,
+      "w": 1,
+      "d": 0.3333,
+      "y": 0,
+      "h": 1,
+      "color": "white"
+    },
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0.1333,
+      "w": 0.814,
+      "d": 0.6,
+      "y": 0.0667,
+      "h": 0.8667,
+      "color": "white",
+      "round": 0.3
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.4833,
+      "w": 0.35,
+      "d": 0.0333,
+      "y": 0.8,
+      "h": 0.02,
+      "color": "#4aa3ff"
+    }
+  ]
+}

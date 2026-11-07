@@ -1,0 +1,21 @@
+{
+  "id": "candle_taper_pair",
+  "name": {"en": "Pair of candlesticks"},
+  "size": [0.22, 0.09, 0.42],
+  "group": "candle",
+  "room": ["dining", "living", "kitchen"],
+  "tags": ["candle", "candlesticks", "taper candles", "dinner candles", "candle holders", "brass", "pair"],
+  "family": "candle_taper",
+  "variant": {"en": "Pair"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": -0.2955, "z": 0.0, "w": 0.4091, "d": 1.0, "y": 0.0, "h": 0.4452, "color": "#b8975a", "profile": [[0.0, 0.0], [1, 0.0], [1, 0.06], [0.3, 0.15], [0.22, 0.5], [0.3, 0.8], [0.25, 0.9], [0.45, 1], [0.0, 1]]},
+    {"shape": "cyl", "x": -0.2955, "z": 0.0, "w": 0.1, "d": 0.2444, "y": 0.4452, "h": 0.4048, "color": "#f1e7d3"},
+    {"shape": "cyl", "x": -0.2955, "z": 0.0, "w": 0.0136, "d": 0.0333, "y": 0.85, "h": 0.019, "color": "#2b2b2b", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.2955, "z": 0.0, "w": 0.0545, "d": 0.1333, "y": 0.8643, "h": 0.0571, "color": "#ffb648", "fix": "wdh"},
+    {"shape": "lathe", "x": 0.2955, "z": 0.0, "w": 0.4091, "d": 1.0, "y": 0.0, "h": 0.5238, "color": "#b8975a", "profile": [[0.0, 0.0], [1, 0.0], [1, 0.06], [0.3, 0.15], [0.22, 0.5], [0.3, 0.8], [0.25, 0.9], [0.45, 1], [0.0, 1]]},
+    {"shape": "cyl", "x": 0.2955, "z": 0.0, "w": 0.1, "d": 0.2444, "y": 0.5238, "h": 0.4048, "color": "#f1e7d3"},
+    {"shape": "cyl", "x": 0.2955, "z": 0.0, "w": 0.0136, "d": 0.0333, "y": 0.9286, "h": 0.019, "color": "#2b2b2b", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.2955, "z": 0.0, "w": 0.0545, "d": 0.1333, "y": 0.9429, "h": 0.0571, "color": "#ffb648", "fix": "wdh"}
+  ]
+}

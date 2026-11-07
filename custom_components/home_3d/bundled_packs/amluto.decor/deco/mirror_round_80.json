@@ -1,0 +1,19 @@
+{
+  "id": "mirror_round_80",
+  "name": {"en": "Round mirror 80 cm"},
+  "size": [0.8, 0.03, 0.8],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "hall", "bath"],
+  "tags": ["mirror", "round mirror", "wall mirror", "circle", "brass", "gold", "large"],
+  "family": "mirror_round",
+  "variant": {"en": "80 cm brass"},
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.2, "w": 1.0, "d": 0.6, "y": 0.0, "h": 1.0, "color": "#b8975a", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.1, "w": 0.9625, "d": 0.8, "y": 0.0187, "h": 0.9625, "color": "#b9c7cd", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "line", "x1": -0.5, "z1": 0, "x2": 0.5, "z2": 0}
+  ]
+}

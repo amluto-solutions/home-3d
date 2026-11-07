@@ -1,0 +1,50 @@
+{
+  "id": "sovol_sv06_3d_printer",
+  "name": {
+    "en": "Sovol SV06"
+  },
+  "size": [
+    0.497,
+    0.388,
+    0.611
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage"
+  ],
+  "tags": [
+    "3d printer",
+    "printer",
+    "sovol",
+    "maker",
+    "filament",
+    "fdm",
+    "sv06",
+    "bedslinger"
+  ],
+  "family": "sovol_sv06",
+  "variant": {
+    "en": "Printer only"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.06, "color": "dark"},
+    {"shape": "box", "x": -0.4615, "z": -0.4583, "w": 0.0769, "d": 0.0833, "y": 0.06, "h": 0.565, "color": "body", "fix": "wd"},
+    {"shape": "box", "x": -0.4615, "z": 0.4583, "w": 0.0769, "d": 0.0833, "y": 0.06, "h": 0.565, "color": "body", "fix": "wd"},
+    {"shape": "box", "x": 0.4615, "z": -0.4583, "w": 0.0769, "d": 0.0833, "y": 0.06, "h": 0.565, "color": "body", "fix": "wd"},
+    {"shape": "box", "x": 0.4615, "z": 0.4583, "w": 0.0769, "d": 0.0833, "y": 0.06, "h": 0.565, "color": "body", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.1, "y": 0.625, "h": 0.0625, "color": "body"},
+    {"shape": "box", "x": 0.0, "z": -0.4583, "w": 1, "d": 0.0833, "y": 0.625, "h": 0.0625, "color": "body"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.62, "d": 0.62, "y": 0.3, "h": 0.02, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.1, "w": 0.9, "d": 0.04, "y": 0.55, "h": 0.03, "color": "metal"},
+    {"shape": "rbox", "x": 0.0, "z": -0.05, "w": 0.12, "d": 0.1, "y": 0.5, "h": 0.1, "color": "dark", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": -0.03, "w": 0.02, "d": 0.02, "y": 0.48, "h": 0.03, "color": "accent", "glow": true},
+    {"shape": "rbox", "x": 0.3, "z": 0.4583, "w": 0.2, "d": 0.0625, "y": 0.1, "h": 0.1, "color": "dark", "round": 0.2},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1346, "d": 0.4167, "y": 0.6875, "h": 0.3125, "color": "accent", "axis": "x"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.1923, "d": 0.0417, "y": 0.8281, "h": 0.0312, "color": "metal"}
+  ],
+  "symbol": [{"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}, {"shape": "rect", "x": 0, "z": 0, "w": 0.8, "d": 0.8}]
+}

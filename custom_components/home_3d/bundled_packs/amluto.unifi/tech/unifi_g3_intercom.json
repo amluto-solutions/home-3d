@@ -1,0 +1,96 @@
+{
+  "id": "unifi_g3_intercom",
+  "name": {
+    "en": "UniFi Access G3 Intercom"
+  },
+  "size": [
+    0.1137,
+    0.0283,
+    0.3248
+  ],
+  "group": "tech",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "access",
+    "door access",
+    "ua-g3-intercom",
+    "intercom",
+    "door station",
+    "video intercom",
+    "doorbell"
+  ],
+  "family": "unifi_access_intercom",
+  "variant": {
+    "en": "G3 Intercom"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "round": 0.15
+    },
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0.3,
+      "w": 0.88,
+      "d": 0.42,
+      "y": 0.02,
+      "h": 0.96,
+      "color": "#14181f",
+      "round": 0.1
+    },
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0.45,
+      "w": 0.76,
+      "d": 0.08,
+      "y": 0.58,
+      "h": 0.36,
+      "color": "#0b0f17",
+      "round": 0.3
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0.5,
+      "w": 0.1,
+      "d": 0.04,
+      "y": 0.9,
+      "h": 0.025,
+      "color": "#2a313c",
+      "axis": "z"
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.5,
+      "w": 0.6,
+      "d": 0.03,
+      "y": 0.34,
+      "h": 0.14,
+      "color": "#1d2430"
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.5,
+      "w": 0.55,
+      "d": 0.03,
+      "y": 0.12,
+      "h": 0.02,
+      "color": "#3a8dde"
+    }
+  ]
+}

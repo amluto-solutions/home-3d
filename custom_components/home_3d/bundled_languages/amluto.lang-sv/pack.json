@@ -1,0 +1,13 @@
+{
+  "format": "home3d-pack",
+  "version": 2,
+  "kind": "language",
+  "language": "sv",
+  "id": "amluto.lang-sv",
+  "name": "Svenska",
+  "publisher": "Amluto Solutions",
+  "licence": "MIT",
+  "release": 2,
+  "description": "Svenska texts for Home 3D (partial: a text this pack lacks shows in English).",
+  "release_note": "Release 2: the pack's id is now amluto.lang-sv (it was theovencook.lang-sv); plans that name the old id still load (#424)."
+}

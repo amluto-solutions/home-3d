@@ -1,0 +1,20 @@
+{
+  "id": "cat_shelf_bed_box",
+  "name": {"en": "Cat bed box on a wall shelf"},
+  "size": [0.5, 0.35, 0.2],
+  "group": "pets",
+  "room": ["living", "hall", "bedroom", "kitchen", "utility", "conservatory"],
+  "tags": ["cat", "cat shelf", "wall shelf", "climbing", "cat bed", "wall mounted", "perch"],
+  "family": "cat_shelf_bed",
+  "variant": {"en": "Box with cushion"},
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.1, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4786, "w": 0.92, "d": 0.0429, "y": 0.1, "h": 0.8, "color": "#f0eee8", "fix": "d"},
+    {"shape": "box", "x": -0.445, "z": 0.0, "w": 0.03, "d": 0.9429, "y": 0.1, "h": 0.6, "color": "#f0eee8", "fix": "w"},
+    {"shape": "box", "x": 0.445, "z": 0.0, "w": 0.03, "d": 0.9429, "y": 0.1, "h": 0.6, "color": "#f0eee8", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.45, "w": 0.92, "d": 0.0429, "y": 0.1, "h": 0.3, "color": "#f0eee8", "fix": "d"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.86, "d": 0.8571, "y": 0.1, "h": 0.25, "color": "cushion", "round": 0.5}
+  ]
+}

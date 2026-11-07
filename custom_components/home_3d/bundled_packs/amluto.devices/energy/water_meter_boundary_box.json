@@ -1,0 +1,18 @@
+{
+  "id": "water_meter_boundary_box",
+  "name": {"en": "Smart water meter (boundary box)"},
+  "size": [0.3, 0.2, 0.06],
+  "group": "energy",
+  "tags": ["water meter", "smart water meter", "stopcock", "stop tap", "water supply", "mains water", "flow sensor", "utility meter", "boundary box", "meter box", "water company"],
+  "family": "water_meter",
+  "variant": {"en": "Boundary box"},
+  "electric": true,
+  "room": ["garden"],
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 0.7, "color": "#555a60"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9, "d": 0.88, "y": 0.6, "h": 0.4, "color": "#2b6fb0"},
+    {"shape": "box", "x": -0.28, "z": 0, "w": 0.18, "d": 0.28, "y": 0.96, "h": 0.04, "color": "dark"},
+    {"shape": "box", "x": 0.28, "z": 0, "w": 0.18, "d": 0.28, "y": 0.96, "h": 0.04, "color": "dark"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.18, "d": 0.28, "y": 0.96, "h": 0.04, "color": "#3a8dde", "glow": true}
+  ]
+}

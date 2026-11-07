@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "Adaugă o pagină în bara laterală, unde îți desenezi locuința și o vezi în 3D."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Home 3D este deja configurat."
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "Întreabă casa",
+      "description": "Transmite o propoziție vizualizărilor Home 3D deschise: „Arată sufrageria” o afișează, iar întrebările primesc răspuns de la modulele instalate („Ce este deschis?”). Prima vizualizare care înțelege propoziția răspunde.",
+      "fields": {
+        "text": {
+          "name": "Propoziție",
+          "description": "Ce să arate sau să întrebe, așa cum ai spune-o."
+        },
+        "screen": {
+          "name": "Ecran",
+          "description": "Reacționează doar vizualizarea cu acest nume de ecran (setat în setările vizualizării sau în opțiunea de ecran a cardului). Gol: toate vizualizările deschise."
+        },
+        "speak": {
+          "name": "Vorbește",
+          "description": "Vizualizarea își rostește răspunsul cu text-to-speech de la Assist (dezactivat: doar îl afișează)."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Unde apare Home 3D. Linkul din panou și cardul din tabloul de bord funcționează oricum, iar intrarea o poți ascunde pentru tine în setările barei laterale ale Home Assistant.",
+        "data": {
+          "show_in_sidebar": "Afișează în bara laterală",
+          "restore_picture_days": "Păstrează imaginile punctelor de restaurare (zile)"
+        },
+        "data_description": {
+          "restore_picture_days": "O imagine de fundal sau de ecran pe care o folosește doar un punct de restaurare mai vechi se păstrează atâtea zile după crearea punctului, apoi se șterge la următoarea pornire. Un punct de restaurare a cărui imagine a dispărut se restaurează fără ea. 0 șterge imediat astfel de imagini."
+        }
+      }
+    }
+  }
+}

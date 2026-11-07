@@ -1,0 +1,33 @@
+{
+  "id": "afjall_mattress_double",
+  "name": {
+    "en": "Foam mattress, Double 135x190"
+  },
+  "size": [
+    1.35,
+    1.9,
+    0.12
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "mattress",
+    "double",
+    "foam",
+    "medium firm",
+    "firm",
+    "day-bed",
+    "white"
+  ],
+  "family": "afjall_mattress",
+  "variant": {
+    "en": "Double · 135x190"
+  },
+  "ikea": "ÅFJÄLL",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "round": 0.3}
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": "mulig_clothes_rack",
+  "name": {
+    "en": "Clothes rack"
+  },
+  "size": [
+    0.99,
+    0.46,
+    1.52
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall",
+    "utility",
+    "loft"
+  ],
+  "tags": [
+    "clothes rail",
+    "garment rack",
+    "hanging rail",
+    "shoe shelf",
+    "metal",
+    "white"
+  ],
+  "ikea": "MULIG",
+  "parts": [
+    {"shape": "cyl", "x": -0.4889, "z": 0.0, "w": 0.0222, "d": 0.0478, "y": 0.0197, "h": 0.9803, "color": "white", "fix": "wd"},
+    {"shape": "cyl", "x": -0.4889, "z": 0.0, "w": 0.0222, "d": 1, "y": 0, "h": 0.0197, "color": "white", "axis": "z", "fix": "w"},
+    {"shape": "cyl", "x": -0.4889, "z": 0.0, "w": 0.0222, "d": 0.913, "y": 0.0197, "h": 0.0145, "color": "white", "axis": "z", "fix": "wh"},
+    {"shape": "cyl", "x": 0.4889, "z": 0.0, "w": 0.0222, "d": 0.0478, "y": 0.0197, "h": 0.9803, "color": "white", "fix": "wd"},
+    {"shape": "cyl", "x": 0.4889, "z": 0.0, "w": 0.0222, "d": 1, "y": 0, "h": 0.0197, "color": "white", "axis": "z", "fix": "w"},
+    {"shape": "cyl", "x": 0.4889, "z": 0.0, "w": 0.0222, "d": 0.913, "y": 0.0197, "h": 0.0145, "color": "white", "axis": "z", "fix": "wh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 0.0478, "y": 0.9855, "h": 0.0145, "color": "white", "axis": "x", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": -0.2609, "w": 0.9778, "d": 0.0261, "y": 0.1316, "h": 0.0079, "color": "white", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9778, "d": 0.0261, "y": 0.1316, "h": 0.0079, "color": "white", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2609, "w": 0.9778, "d": 0.0261, "y": 0.1316, "h": 0.0079, "color": "white", "axis": "x", "fix": "dh"},
+    {"shape": "box", "x": -0.3232, "z": 0.0, "w": 0.003, "d": 0.8696, "y": 0.5066, "h": 0.4737, "color": "cushion", "fix": "d"},
+    {"shape": "box", "x": -0.1212, "z": 0.0, "w": 0.003, "d": 0.8696, "y": 0.5066, "h": 0.4737, "color": "fabric", "fix": "d"},
+    {"shape": "box", "x": 0.101, "z": 0.0, "w": 0.003, "d": 0.8696, "y": 0.5066, "h": 0.4737, "color": "cushion", "fix": "d"},
+    {"shape": "box", "x": 0.303, "z": 0.0, "w": 0.003, "d": 0.8696, "y": 0.5066, "h": 0.4737, "color": "fabric", "fix": "d"}
+  ]
+}

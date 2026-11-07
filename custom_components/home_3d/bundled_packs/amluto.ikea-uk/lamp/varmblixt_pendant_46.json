@@ -1,0 +1,38 @@
+{
+  "id": "varmblixt_pendant_46",
+  "name": {
+    "en": "LED pendant lamp, glass 46 cm"
+  },
+  "size": [
+    0.46,
+    0.46,
+    0.8
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "pendant",
+    "led",
+    "glass",
+    "white",
+    "smart"
+  ],
+  "family": "varmblixt_lamp",
+  "variant": {
+    "en": "Pendant 46"
+  },
+  "ikea": "VARMBLIXT",
+  "light": "pendant",
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.2174, "d": 0.2174, "y": 0.975, "h": 0.025, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0174, "d": 0.0174, "y": 0.275, "h": 0.7, "color": "dark", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.275, "color": "white", "glow": true, "profile": [[0, 0], [0.7, 0.05], [1, 0.25], [0.95, 0.55], [0.6, 0.9], [0.1, 1], [0, 1]]}
+  ]
+}

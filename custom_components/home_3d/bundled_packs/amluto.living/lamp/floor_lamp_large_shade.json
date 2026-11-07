@@ -1,0 +1,16 @@
+{
+  "id": "floor_lamp_large_shade",
+  "name": {"en": "Large-shade floor lamp"},
+  "size": [0.55, 0.55, 1.6],
+  "group": "lamp",
+  "room": ["living", "bedroom", "office", "conservatory"],
+  "tags": ["standard lamp", "floor light", "lampshade", "big shade", "drum shade", "reading lamp"],
+  "family": "floor_lamp_large_shade",
+  "variant": {"en": "Stem"},
+  "light": "floor",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.5455, "d": 0.5455, "y": 0.0, "h": 0.0156, "color": "metal", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0455, "d": 0.0455, "y": 0.0156, "h": 0.7937, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.7812, "h": 0.2187, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

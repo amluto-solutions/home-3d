@@ -1,0 +1,18 @@
+{
+  "id": "rack_blank_1u",
+  "name": {"en": "Rack blanking plate 1U"},
+  "size": [0.4826, 0.01, 0.0437],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "surface",
+  "tags": ["blanking plate", "blank panel", "filler panel", "1u", "rack mount", "19 inch", "rack"],
+  "family": "rack_blank",
+  "variant": {"en": "1U"},
+  "rack": {"u": 1},
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "dark", "edges": "faint"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

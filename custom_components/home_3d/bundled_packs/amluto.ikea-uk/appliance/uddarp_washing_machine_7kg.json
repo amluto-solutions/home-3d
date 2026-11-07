@@ -1,0 +1,46 @@
+{
+  "id": "uddarp_washing_machine_7kg",
+  "name": {
+    "en": "Washing machine 7 kg"
+  },
+  "size": [
+    0.595,
+    0.572,
+    0.855
+  ],
+  "group": "appliance",
+  "room": [
+    "utility",
+    "kitchen",
+    "bath",
+    "garage"
+  ],
+  "tags": [
+    "washer",
+    "front loader",
+    "laundry",
+    "freestanding",
+    "IKEA 300",
+    "white"
+  ],
+  "family": "uddarp_washing_machine",
+  "variant": {
+    "en": "7 kg"
+  },
+  "ikea": "UDDARP",
+  "electric": true,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0175, "h": 0.9825, "color": "white", "round": 0.05},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.9664, "d": 0.0105, "y": 0.8596, "h": 0.117, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": -0.3193, "z": 0.5, "w": 0.2857, "d": 0.0105, "y": 0.8772, "h": 0.0819, "color": "#dfe3e6", "fix": "wdh"},
+    {"shape": "box", "x": 0.2017, "z": 0.5, "w": 0.2353, "d": 0.007, "y": 0.8947, "h": 0.0468, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4034, "z": 0.5, "w": 0.1008, "d": 0.035, "y": 0.883, "h": 0.0702, "color": "#c9ced4", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.5, "w": 0.7731, "d": 0.0699, "y": 0.2573, "h": 0.538, "color": "#c9ced4", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.5, "w": 0.6387, "d": 0.0524, "y": 0.3041, "h": 0.4444, "color": "glass", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.9328, "d": 0.007, "y": 0.0175, "h": 0.0936, "color": "#eceff1", "fix": "dh"},
+    {"shape": "cyl", "x": -0.416, "z": -0.4126, "w": 0.0588, "d": 0.0612, "y": 0, "h": 0.0175, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.416, "z": 0.4126, "w": 0.0588, "d": 0.0612, "y": 0, "h": 0.0175, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.416, "z": -0.4126, "w": 0.0588, "d": 0.0612, "y": 0, "h": 0.0175, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.416, "z": 0.4126, "w": 0.0588, "d": 0.0612, "y": 0, "h": 0.0175, "color": "dark", "fix": "wdh"}
+  ]
+}

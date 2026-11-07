@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "在侧边栏添加一个页面，用于绘制你的家并以 3D 查看。"
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "Home 3D 已经设置好了。"
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "询问房屋",
+      "description": "将一句话交给已打开的 Home 3D 视图：“显示客厅”会显示客厅，问题由已安装的模块回答（“什么是开着的？”）。第一个能理解这句话的视图会作答。",
+      "fields": {
+        "text": {
+          "name": "语句",
+          "description": "要显示或询问的内容，就像你平时说的那样。"
+        },
+        "screen": {
+          "name": "屏幕",
+          "description": "只有使用此屏幕名称的视图会响应（在视图设置或卡片的选项屏幕中设置）。留空：所有已打开的视图。"
+        },
+        "speak": {
+          "name": "朗读",
+          "description": "视图使用 Assist 的文字转语音朗读回答（关闭：仅显示）。"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Home 3D 的显示位置。面板链接和仪表盘卡片两种方式都可用，你仍可在 Home Assistant 自身的侧边栏设置中为自己隐藏该入口。",
+        "data": {
+          "show_in_sidebar": "在侧边栏中显示",
+          "restore_picture_days": "保留还原点的图片（天）"
+        },
+        "data_description": {
+          "restore_picture_days": "仅较早的还原点仍在使用的背景或屏幕图片，会在该还原点创建后保留这么多天，然后在下次启动时删除。图片已失效的还原点会在没有图片的情况下还原。设为 0 则立即删除此类图片。"
+        }
+      }
+    }
+  }
+}

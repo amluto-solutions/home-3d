@@ -1,0 +1,28 @@
+{
+  "id": "vanity_unit_600",
+  "name": {"en": "Vanity unit 600"},
+  "size": [0.6, 0.46, 1.02],
+  "group": "bath",
+  "room": ["bath"],
+  "tags": ["vanity unit", "vanity", "basin", "washbasin", "sink", "basin unit", "bathroom cabinet", "tap"],
+  "family": "vanity_unit",
+  "variant": {"en": "600"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0435, "w": 0.9, "d": 0.8261, "y": 0.0, "h": 0.098, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0326, "w": 0.9833, "d": 0.9348, "y": 0.098, "h": 0.7157, "color": "white"},
+    {"shape": "box", "x": -0.2467, "z": 0.4565, "w": 0.48, "d": 0.0435, "y": 0.102, "h": 0.7078, "color": "body"},
+    {"shape": "box", "x": -0.0567, "z": 0.4891, "w": 0.0167, "d": 0.0217, "y": 0.6176, "h": 0.1471, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.24, "z": 0.4565, "w": 0.48, "d": 0.0435, "y": 0.102, "h": 0.7078, "color": "body"},
+    {"shape": "box", "x": 0.05, "z": 0.4891, "w": 0.0167, "d": 0.0217, "y": 0.6176, "h": 0.1471, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.8137, "h": 0.0196, "color": "white", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.087, "w": 0.7, "d": 0.6522, "y": 0.8324, "h": 0.002, "color": "#dfe4e6"},
+    {"shape": "cyl", "x": 0.0, "z": 0.1087, "w": 0.0583, "d": 0.0761, "y": 0.8333, "h": 0.002, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3913, "w": 0.075, "d": 0.0978, "y": 0.8333, "h": 0.0196, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3913, "w": 0.05, "d": 0.0652, "y": 0.8529, "h": 0.1275, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.2826, "w": 0.04, "d": 0.2174, "y": 0.951, "h": 0.0196, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "circle", "x": 0.0, "z": 0.087, "r": 0.3261}
+  ]
+}

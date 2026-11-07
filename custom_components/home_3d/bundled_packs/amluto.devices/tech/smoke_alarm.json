@@ -1,0 +1,18 @@
+{
+  "id": "smoke_alarm",
+  "name": {"en": "Smoke alarm"},
+  "size": [0.11, 0.11, 0.04],
+  "group": "tech",
+  "tags": ["smoke alarm", "smoke detector", "fire alarm", "co alarm", "carbon monoxide", "heat alarm", "detector", "nest protect", "kidde", "fireangel", "aico"],
+  "family": "smoke_alarm",
+  "variant": {"en": "Smoke"},
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "cyl", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.6, "h": 0.4, "color": "white"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.88, "d": 0.88, "y": 0.0, "h": 0.62, "color": "#f4f4ee"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.5, "d": 0.5, "y": 0.0, "h": 0.2, "color": "#d4d6da"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.32, "d": 0.32, "y": 0.0, "h": 0.15, "color": "#b8bcc2"},
+    {"shape": "cyl", "x": 0.35, "z": 0.35, "w": 0.09, "d": 0.09, "y": 0.0, "h": 0.08, "color": "#ff4a3a", "glow": true}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "nas_5_bay",
+  "name": {"en": "NAS 5-bay"},
+  "size": [0.23,0.223,0.166],
+  "group": "network",
+  "room": ["office", "utility", "loft", "living", "hall"],
+  "tags": ["nas", "network storage", "server", "synology", "ds1522", "5 bay", "file server", "hard drives", "backup", "plex server"],
+  "family": "nas",
+  "variant": {"en": "5-bay"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": -0.3611, "z": -0.3707, "w": 0.1391, "d": 0.0646, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3611, "z": 0.3707, "w": 0.1391, "d": 0.0646, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3611, "z": -0.3707, "w": 0.1391, "d": 0.0646, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3611, "z": 0.3707, "w": 0.1391, "d": 0.0646, "y": 0, "h": 0.0361, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0, "z": -0.009, "w": 1, "d": 0.9821, "y": 0.0361, "h": 0.9639, "color": "dark", "round": 0.08},
+    {"shape": "box", "x": -0.3261, "z": 0.4951, "w": 0.1565, "d": 0.0099, "y": 0.1, "h": 0.78, "color": "#3a3e46"},
+    {"shape": "box", "x": -0.3261, "z": 0.4991, "w": 0.0304, "d": 0.0018, "y": 0.76, "h": 0.0241, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": -0.1543, "z": 0.4951, "w": 0.1565, "d": 0.0099, "y": 0.1, "h": 0.78, "color": "#3a3e46"},
+    {"shape": "box", "x": -0.1543, "z": 0.4991, "w": 0.0304, "d": 0.0018, "y": 0.76, "h": 0.0241, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": 0.0174, "z": 0.4951, "w": 0.1565, "d": 0.0099, "y": 0.1, "h": 0.78, "color": "#3a3e46"},
+    {"shape": "box", "x": 0.0174, "z": 0.4991, "w": 0.0304, "d": 0.0018, "y": 0.76, "h": 0.0241, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": 0.1891, "z": 0.4951, "w": 0.1565, "d": 0.0099, "y": 0.1, "h": 0.78, "color": "#3a3e46"},
+    {"shape": "box", "x": 0.1891, "z": 0.4991, "w": 0.0304, "d": 0.0018, "y": 0.76, "h": 0.0241, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": 0.3609, "z": 0.4951, "w": 0.1565, "d": 0.0099, "y": 0.1, "h": 0.78, "color": "#3a3e46"},
+    {"shape": "box", "x": 0.3609, "z": 0.4991, "w": 0.0304, "d": 0.0018, "y": 0.76, "h": 0.0241, "color": "#46d36a", "glow": true}
+  ]
+}

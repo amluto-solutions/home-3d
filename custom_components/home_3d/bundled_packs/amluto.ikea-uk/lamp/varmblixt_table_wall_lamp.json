@@ -1,0 +1,39 @@
+{
+  "id": "varmblixt_table_wall_lamp",
+  "name": {
+    "en": "LED table/wall lamp, round glass 30 cm"
+  },
+  "size": [
+    0.3,
+    0.11,
+    0.3
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "table lamp",
+    "wall lamp",
+    "led",
+    "glass",
+    "orange",
+    "white",
+    "mood light",
+    "smart"
+  ],
+  "family": "varmblixt_lamp",
+  "variant": {
+    "en": "Table/wall 30"
+  },
+  "ikea": "VARMBLIXT",
+  "light": "table",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.1818, "w": 1, "d": 0.6364, "y": 0, "h": 1, "color": "accent", "glow": true, "axis": "z"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.7333, "d": 1, "y": 0.1, "h": 0.8, "color": "accent", "glow": true}
+  ]
+}

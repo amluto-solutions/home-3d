@@ -1,0 +1,58 @@
+{
+  "id": "fjallbo_shelving_unit_100x136",
+  "name": {
+    "en": "Shelving unit with mesh shelf 100x136 cm"
+  },
+  "size": [
+    1.0,
+    0.36,
+    1.36
+  ],
+  "group": "storage",
+  "room": [
+    "living",
+    "office",
+    "hobby",
+    "hall"
+  ],
+  "tags": [
+    "shelving unit",
+    "open shelving",
+    "industrial",
+    "black steel",
+    "mesh shelf",
+    "stained pine",
+    "brown",
+    "black"
+  ],
+  "family": "fjallbo_shelving_unit",
+  "variant": {
+    "en": "100x136"
+  },
+  "ikea": "FJÄLLBO",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": -0.4875, "z": -0.4653, "w": 0.025, "d": 0.0694, "y": 0, "h": 0.9816, "color": "dark", "fix": "wd"},
+    {"shape": "rbox", "x": -0.44, "z": -0.3333, "w": 0.07, "d": 0.1944, "y": 0.9301, "h": 0.0515, "color": "dark", "fix": "wdh", "round": 0.5},
+    {"shape": "box", "x": -0.4875, "z": 0.4653, "w": 0.025, "d": 0.0694, "y": 0, "h": 0.9816, "color": "dark", "fix": "wd"},
+    {"shape": "rbox", "x": -0.44, "z": 0.3333, "w": 0.07, "d": 0.1944, "y": 0.9301, "h": 0.0515, "color": "dark", "fix": "wdh", "round": 0.5},
+    {"shape": "box", "x": 0.4875, "z": -0.4653, "w": 0.025, "d": 0.0694, "y": 0, "h": 0.9816, "color": "dark", "fix": "wd"},
+    {"shape": "rbox", "x": 0.44, "z": -0.3333, "w": 0.07, "d": 0.1944, "y": 0.9301, "h": 0.0515, "color": "dark", "fix": "wdh", "round": 0.5},
+    {"shape": "box", "x": 0.4875, "z": 0.4653, "w": 0.025, "d": 0.0694, "y": 0, "h": 0.9816, "color": "dark", "fix": "wd"},
+    {"shape": "rbox", "x": 0.44, "z": 0.3333, "w": 0.07, "d": 0.1944, "y": 0.9301, "h": 0.0515, "color": "dark", "fix": "wdh", "round": 0.5},
+    {"shape": "box", "x": 0, "z": -0.4653, "w": 0.025, "d": 0.0694, "y": 0, "h": 0.9816, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0, "z": 0.4653, "w": 0.025, "d": 0.0694, "y": 0, "h": 0.9816, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.95, "d": 0.8611, "y": 0.0441, "h": 0.0147, "color": "dark", "fix": "h", "top": "#2b2b2e"},
+    {"shape": "box", "x": 0, "z": -0.4653, "w": 0.95, "d": 0.0694, "y": 0.0368, "h": 0.0221, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0, "z": 0.4653, "w": 0.95, "d": 0.0694, "y": 0.0368, "h": 0.0221, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.3529, "h": 0.0147, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4653, "w": 0.95, "d": 0.0694, "y": 0.3309, "h": 0.0221, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0, "z": 0.4653, "w": 0.95, "d": 0.0694, "y": 0.3309, "h": 0.0221, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.6691, "h": 0.0147, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4653, "w": 0.95, "d": 0.0694, "y": 0.6471, "h": 0.0221, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0, "z": 0.4653, "w": 0.95, "d": 0.0694, "y": 0.6471, "h": 0.0221, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.9816, "h": 0.0184, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4653, "w": 0.95, "d": 0.0694, "y": 0.9596, "h": 0.0221, "color": "dark", "fix": "dh"},
+    {"shape": "box", "x": 0, "z": 0.4653, "w": 0.95, "d": 0.0694, "y": 0.9596, "h": 0.0221, "color": "dark", "fix": "dh"}
+  ]
+}

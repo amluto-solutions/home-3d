@@ -1,0 +1,18 @@
+{
+  "id": "switch_lite",
+  "name": {"en": "Nintendo Switch Lite"},
+  "size": [0.208, 0.091, 0.014],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["switch lite", "nintendo switch", "switch", "nintendo", "gaming", "handheld", "console", "hdh-001"],
+  "family": "nintendo_switch",
+  "variant": {"en": "Lite"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#f0d24a", "round": 0.3},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.55, "d": 0.85, "y": 0.97, "h": 0.03, "color": "glass", "edges": "faint"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

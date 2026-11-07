@@ -1,0 +1,29 @@
+{
+  "id": "standing_desk_120",
+  "name": {"en": "Standing desk 120 cm"},
+  "size": [1.2, 0.8, 0.73],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby"],
+  "tags": ["desk", "workstation", "computer desk", "study desk", "home office", "standing desk", "sit-stand desk", "height adjustable", "electric desk"],
+  "family": "standing_desk",
+  "variant": {"en": "120 cm"},
+  "surface": true,
+  "electric": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.9658, "h": 0.0342, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4, "z": 0.0, "w": 0.0583, "d": 0.85, "y": 0.0, "h": 0.0479, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": -0.4, "z": -0.0062, "w": 0.0667, "d": 0.1, "y": 0.0479, "h": 0.4521, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": -0.4, "z": -0.0062, "w": 0.055, "d": 0.0825, "y": 0.5, "h": 0.4247, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": -0.4, "z": 0.0, "w": 0.05, "d": 0.8, "y": 0.9247, "h": 0.0411, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.4, "z": 0.0, "w": 0.0583, "d": 0.85, "y": 0.0, "h": 0.0479, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.4, "z": -0.0062, "w": 0.0667, "d": 0.1, "y": 0.0479, "h": 0.4521, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.4, "z": -0.0062, "w": 0.055, "d": 0.0825, "y": 0.5, "h": 0.4247, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": 0.4, "z": 0.0, "w": 0.05, "d": 0.8, "y": 0.9247, "h": 0.0411, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": -0.025, "w": 0.75, "d": 0.05, "y": 0.8973, "h": 0.0685, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.3083, "z": 0.4875, "w": 0.1167, "d": 0.025, "y": 0.9315, "h": 0.0342, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.2917, "z": 0.4991, "w": 0.0333, "d": 0.0019, "y": 0.9411, "h": 0.0137, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

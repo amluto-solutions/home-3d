@@ -1,0 +1,42 @@
+{
+  "id": "nymane_led_pendant_38",
+  "name": {
+    "en": "LED pendant lamp, dome 38 cm"
+  },
+  "size": [
+    0.38,
+    0.38,
+    0.7
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "pendant",
+    "ceiling light",
+    "dome",
+    "led",
+    "anthracite",
+    "white",
+    "smart",
+    "dimmable"
+  ],
+  "family": "nymane_lamp",
+  "variant": {
+    "en": "Pendant 38"
+  },
+  "ikea": "NYMÅNE",
+  "light": "pendant",
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.2632, "d": 0.2632, "y": 0.9643, "h": 0.0357, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0316, "d": 0.0316, "y": 0.2286, "h": 0.7429, "color": "dark", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.2286, "color": "dark", "profile": [[1.0, 0], [0.97, 0.3], [0.82, 0.62], [0.52, 0.88], [0.22, 1.0], [0.0, 1.0], [0.0, 0.938], [0.167, 0.938], [0.467, 0.818], [0.767, 0.557], [0.917, 0.237], [0.947, 0.0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.1842, "d": 0.1842, "y": 0.08, "h": 0.1, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

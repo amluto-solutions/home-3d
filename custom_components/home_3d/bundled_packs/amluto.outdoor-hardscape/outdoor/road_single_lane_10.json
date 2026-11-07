@@ -1,0 +1,18 @@
+{
+  "id": "road_single_lane_10",
+  "name": {"en": "Single-track lane, 10 m"},
+  "size": [10.0, 3.2, 0.03],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["road", "lane", "single track", "country lane", "tarmac", "street"],
+  "family": "road_single_lane",
+  "variant": {"en": "10 m long"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#3a3c3f", "top": "#43464a"},
+    {"shape": "box", "x": 0.0, "z": -0.4688, "w": 1, "d": 0.0625, "y": 0, "h": 1, "color": "#6a7a45"},
+    {"shape": "box", "x": 0.0, "z": 0.4688, "w": 1, "d": 0.0625, "y": 0, "h": 1, "color": "#6a7a45"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

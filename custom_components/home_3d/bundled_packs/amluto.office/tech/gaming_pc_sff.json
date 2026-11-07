@@ -1,0 +1,23 @@
+{
+  "id": "gaming_pc_sff",
+  "name": {"en": "Gaming PC (small form factor, RGB)"},
+  "size": [0.185, 0.376, 0.292],
+  "group": "tech",
+  "room": ["office", "bedroom", "kids", "hobby"],
+  "tags": ["gaming pc", "gaming computer", "small form factor", "sff pc", "mini-itx", "rgb", "glass", "gaming"],
+  "family": "gaming_pc",
+  "variant": {"en": "Small form factor RGB"},
+  "electric": true,
+  "watts": 250,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.9, "y": 0.0, "h": 0.0685, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0685, "h": 0.9315, "color": "#16171a"},
+    {"shape": "box", "x": -0.4892, "z": 0.0, "w": 0.0216, "d": 0.8, "y": 0.12, "h": 0.76, "color": "glass"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4947, "w": 0.7, "d": 0.0106, "y": 0.2, "h": 0.4435, "color": "#101114", "axis": "z", "edges": "glow"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4947, "w": 0.7, "d": 0.0106, "y": 0.55, "h": 0.4435, "color": "#101114", "axis": "z", "edges": "glow"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7, "d": 0.6, "y": 0.9932, "h": 0.0068, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

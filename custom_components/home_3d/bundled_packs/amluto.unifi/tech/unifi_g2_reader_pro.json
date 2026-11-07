@@ -1,0 +1,64 @@
+{
+  "id": "unifi_g2_reader_pro",
+  "name": {
+    "en": "UniFi Access G2 Reader Pro"
+  },
+  "size": [
+    0.0404,
+    0.0405,
+    0.16
+  ],
+  "group": "tech",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "access",
+    "door access",
+    "g2 reader pro",
+    "ua-g2-pro",
+    "reader",
+    "card reader",
+    "nfc"
+  ],
+  "family": "unifi_access_reader",
+  "variant": {
+    "en": "G2 Reader Pro"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "round": 0.25
+    },
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0.3,
+      "w": 0.78,
+      "d": 0.42,
+      "y": 0.06,
+      "h": 0.88,
+      "color": "#14181f",
+      "round": 0.2
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.49,
+      "w": 0.5,
+      "d": 0.03,
+      "y": 0.1,
+      "h": 0.02,
+      "color": "#3a8dde"
+    }
+  ]
+}

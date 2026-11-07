@@ -1,0 +1,61 @@
+{
+  "id": "unifi_access_button",
+  "name": {
+    "en": "UniFi Access Button"
+  },
+  "size": [
+    0.08,
+    0.02,
+    0.08
+  ],
+  "group": "tech",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "access",
+    "door access",
+    "access button",
+    "ua-button",
+    "request to exit",
+    "rex",
+    "exit button"
+  ],
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "round": 0.2
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0.5,
+      "w": 0.5,
+      "d": 0.4,
+      "y": 0.25,
+      "h": 0.5,
+      "color": "#9aa3b0",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0.5,
+      "w": 0.28,
+      "d": 0.45,
+      "y": 0.36,
+      "h": 0.28,
+      "color": "#3a8dde",
+      "axis": "z"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "tray_metal_round",
+  "name": {"en": "Round metal tray"},
+  "size": [0.35, 0.35, 0.03],
+  "group": "tray",
+  "room": ["living", "dining", "bedroom", "hall", "kitchen"],
+  "tags": ["tray", "round tray", "serving tray", "decor tray", "metal", "brass", "gold", "mirrored"],
+  "family": "tray",
+  "variant": {"en": "Brass round"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#b8975a", "profile": [[0.0, 0.0], [0.97, 0.0], [1, 1], [0.93, 1], [0.91, 0.25], [0.0, 0.25]]}
+  ]
+}

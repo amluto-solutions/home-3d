@@ -1,0 +1,20 @@
+{
+  "id": "plant_stand_tiered",
+  "name": {"en": "Plant stand"},
+  "size": [0.7, 0.42, 0.9],
+  "group": "table",
+  "family": "plant_stand",
+  "variant": {"en": "Tiered ladder"},
+  "room": ["living", "conservatory", "garden", "kitchen"],
+  "tags": ["plant stand", "plant shelf", "plant ladder", "tiered", "flower stand", "pot stand"],
+  "surface": true,
+  "parts": [
+    {"shape": "loft", "x": -0.4714, "z": 0.4286, "w": 0.05, "d": 0.0833, "y": 0.0, "h": 1.0, "color": "wood", "tx": -0.4714, "tz": -0.4286, "tw": 0.05, "td": 0.0833, "fix": "w"},
+    {"shape": "loft", "x": -0.4714, "z": -0.4286, "w": 0.05, "d": 0.0833, "y": 0.0, "h": 1.0, "color": "wood", "tx": -0.4714, "tz": -0.3571, "tw": 0.05, "td": 0.0833, "fix": "w"},
+    {"shape": "loft", "x": 0.4714, "z": 0.4286, "w": 0.05, "d": 0.0833, "y": 0.0, "h": 1.0, "color": "wood", "tx": 0.4714, "tz": -0.4286, "tw": 0.05, "td": 0.0833, "fix": "w"},
+    {"shape": "loft", "x": 0.4714, "z": -0.4286, "w": 0.05, "d": 0.0833, "y": 0.0, "h": 1.0, "color": "wood", "tx": 0.4714, "tz": -0.3571, "tw": 0.05, "td": 0.0833, "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0024, "w": 0.8857, "d": 0.4524, "y": 0.2667, "h": 0.0222, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.2679, "w": 0.8857, "d": 0.4405, "y": 0.5889, "h": 0.0222, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.406, "w": 0.8857, "d": 0.1643, "y": 0.9111, "h": 0.0222, "color": "wood", "fix": "h"}
+  ]
+}

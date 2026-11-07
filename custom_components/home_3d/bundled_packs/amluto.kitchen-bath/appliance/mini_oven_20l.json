@@ -1,0 +1,27 @@
+{
+  "id": "mini_oven_20l",
+  "name": {"en": "Mini oven, 20 L"},
+  "size": [0.45, 0.35, 0.28],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["mini oven", "toaster oven", "table top oven", "countertop", "cooking"],
+  "family": "mini_oven",
+  "variant": {"en": "20 L"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": -0.4111, "z": -0.3857, "w": 0.0556, "d": 0.0714, "y": 0, "h": 0.0429, "color": "#25272b", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4111, "z": 0.3857, "w": 0.0556, "d": 0.0714, "y": 0, "h": 0.0429, "color": "#25272b", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4111, "z": -0.3857, "w": 0.0556, "d": 0.0714, "y": 0, "h": 0.0429, "color": "#25272b", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4111, "z": 0.3857, "w": 0.0556, "d": 0.0714, "y": 0, "h": 0.0429, "color": "#25272b", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0429, "h": 0.9571, "color": "#25272b", "round": 0.1},
+    {"shape": "box", "x": -0.08, "z": 0.4886, "w": 0.6, "d": 0.0286, "y": 0.2, "h": 0.6, "color": "glass", "edges": "faint"},
+    {"shape": "box", "x": -0.08, "z": 0.5, "w": 0.5, "d": 0.0343, "y": 0.76, "h": 0.0429, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4, "z": 0.4857, "w": 0.0667, "d": 0.0429, "y": 0.3, "h": 0.1071, "color": "#c4c8cd", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4, "z": 0.4857, "w": 0.0667, "d": 0.0429, "y": 0.55, "h": 0.1071, "color": "#c4c8cd", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4, "z": 0.4857, "w": 0.0667, "d": 0.0429, "y": 0.8, "h": 0.1071, "color": "#c4c8cd", "axis": "z", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

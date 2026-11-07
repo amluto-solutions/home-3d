@@ -1,0 +1,27 @@
+{
+  "id": "corner_cloakroom_basin",
+  "name": {"en": "Corner cloakroom basin"},
+  "size": [0.4, 0.4, 0.55],
+  "group": "bath",
+  "room": ["bath", "hall"],
+  "tags": ["basin", "washbasin", "cloakroom", "wc", "small", "wall-hung", "hand basin"],
+  "family": "cloakroom_basin",
+  "variant": {"en": "Corner"},
+  "mount": "wall",
+  "wall_y": 0.46,
+  "parts": [
+    {"shape": "box", "x": -0.35, "z": 0.0, "w": 0.3, "d": 1.0, "y": 0.6, "h": 0.1091, "color": "white"},
+    {"shape": "box", "x": 0.15, "z": -0.35, "w": 0.7, "d": 0.3, "y": 0.6, "h": 0.1091, "color": "white"},
+    {"shape": "lathe", "x": 0.05, "z": 0.05, "w": 0.9, "d": 0.9, "y": 0.4545, "h": 0.2545, "color": "white", "profile": [[0, 0.3], [0.6, 0.3], [0.95, 0.7], [1, 1], [0.86, 1], [0.6, 0.45], [0, 0.45]]},
+    {"shape": "cyl", "x": -0.35, "z": -0.35, "w": 0.1125, "d": 0.1125, "y": 0.7091, "h": 0.0364, "color": "metal"},
+    {"shape": "cyl", "x": -0.35, "z": -0.35, "w": 0.075, "d": 0.075, "y": 0.7455, "h": 0.2, "color": "metal"},
+    {"shape": "box", "x": -0.35, "z": -0.25, "w": 0.06, "d": 0.2, "y": 0.8909, "h": 0.0364, "color": "metal"},
+    {"shape": "cyl", "x": -0.075, "z": -0.075, "w": 0.08, "d": 0.08, "y": 0.1818, "h": 0.3091, "color": "metal"},
+    {"shape": "lathe", "x": -0.075, "z": -0.075, "w": 0.1375, "d": 0.1375, "y": 0.0, "h": 0.2182, "color": "metal", "profile": [[0, 0], [0.8, 0], [1, 0.3], [1, 0.8], [0.6, 1], [0, 1]]},
+    {"shape": "cyl", "x": -0.075, "z": -0.2875, "w": 0.075, "d": 0.425, "y": 0.1091, "h": 0.0545, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": 0.5, "z1": -0.5, "x2": -0.5, "z2": 0.5}
+  ]
+}

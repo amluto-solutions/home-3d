@@ -1,0 +1,17 @@
+{
+  "id": "wifi_access_point_u7_wall",
+  "name": {"en": "Wi-Fi 7 access point (wall)"},
+  "size": [0.103,0.036,0.15],
+  "group": "network",
+  "tags": ["u7", "u7 pro wall", "wifi 7", "wi-fi 7", "access point", "wifi", "wireless", "unifi", "in-wall", "ap", "wall plate", "u6"],
+  "family": "wifi_access_point",
+  "variant": {"en": "Wall, Wi-Fi 7"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 0.3,
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.3333, "w": 1, "d": 0.3333, "y": 0, "h": 1, "color": "white"},
+    {"shape": "rbox", "x": 0, "z": 0.1333, "w": 0.814, "d": 0.6, "y": 0.0667, "h": 0.8667, "color": "white", "round": 0.3},
+    {"shape": "box", "x": 0, "z": 0.4833, "w": 0.3488, "d": 0.0333, "y": 0.8, "h": 0.02, "color": "#4aa3ff"}
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "stockholm_mirror_80",
+  "name": {
+    "en": "Round mirror 80 cm"
+  },
+  "size": [
+    0.8,
+    0.1,
+    0.8
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "hall",
+    "bedroom",
+    "bath",
+    "dining"
+  ],
+  "tags": [
+    "wall mirror",
+    "round",
+    "oak veneer",
+    "walnut veneer",
+    "wooden frame"
+  ],
+  "ikea": "STOCKHOLM",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.2, "w": 1, "d": 0.6, "y": 0, "h": 1, "color": "wood", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.15, "w": 0.925, "d": 0.08, "y": 0.0375, "h": 0.925, "color": "glass", "axis": "z"}
+  ]
+}

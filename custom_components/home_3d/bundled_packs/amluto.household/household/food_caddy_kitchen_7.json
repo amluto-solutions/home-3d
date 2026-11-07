@@ -1,0 +1,17 @@
+{
+  "id": "food_caddy_kitchen_7",
+  "name": {"en": "Kitchen food caddy"},
+  "size": [0.25, 0.23, 0.25],
+  "group": "household",
+  "room": ["kitchen"],
+  "tags": ["food waste", "caddy", "compost", "kitchen caddy", "7 litre", "organic", "bin"],
+  "family": "food_caddy",
+  "variant": {"en": "Kitchen, 7 L"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 0.86, "color": "#d9ddd4", "round": 0.12},
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.82, "h": 0.12, "color": "#a9d08a", "round": 0.3},
+    {"shape": "loft", "x": 0, "z": 0, "w": 0.8, "d": 0.0522, "y": 0.86, "h": 0.14, "color": "dark", "tx": 0, "tz": 0, "tw": 0.8, "td": 0.0522},
+    {"shape": "box", "x": 0, "z": 0.5, "w": 0.4, "d": 0.0261, "y": 0.48, "h": 0.2, "color": "dark"}
+  ]
+}

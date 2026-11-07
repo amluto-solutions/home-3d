@@ -1,0 +1,19 @@
+{
+  "id": "outdoor_wall_light_bulkhead",
+  "name": {"en": "Outdoor wall light (bulkhead)"},
+  "size": [0.3, 0.12, 0.17],
+  "group": "lamp",
+  "tags": ["outdoor wall light", "exterior light", "garden light", "porch light", "security light", "wall lantern", "patio light", "outside light", "ip44", "bulkhead", "oval bulkhead"],
+  "family": "outdoor_wall_light",
+  "variant": {"en": "Bulkhead"},
+  "electric": true,
+  "light": "wall",
+  "room": ["garden"],
+  "mount": "wall",
+  "wall_y": 2.2,
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": -0.2, "w": 1, "d": 0.6, "y": 0, "h": 1, "color": "white", "round": 0.45},
+    {"shape": "rbox", "x": 0, "z": 0.15, "w": 0.86, "d": 0.5, "y": 0.08, "h": 0.84, "color": "#f6f1e0", "glow": true, "round": 0.5},
+    {"shape": "rbox", "x": 0, "z": 0.05, "w": 0.92, "d": 0.12, "y": 0.04, "h": 0.92, "color": "#8a8f96", "round": 0.5}
+  ]
+}

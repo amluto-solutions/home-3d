@@ -1,0 +1,31 @@
+{
+  "id": "givenergy_inverter_ac",
+  "name": {"en": "GivEnergy inverter"},
+  "size": [0.42, 0.17, 0.38],
+  "group": "energy",
+  "room": ["garage", "utility", "loft", "hall"],
+  "tags": ["solar inverter", "hybrid inverter", "givenergy", "givtcp", "pv inverter", "battery inverter", "ac coupled"],
+  "family": "inverter",
+  "variant": {"en": "AC-coupled 3 kW"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9412, "y": 0.1579, "h": 0.8421, "color": "white", "round": 0.12},
+    {"shape": "rbox", "x": 0.0, "z": 0.4294, "w": 0.8571, "d": 0.0824, "y": 0.42, "h": 0.5, "color": "dark", "round": 0.2},
+    {"shape": "box", "x": -0.0952, "z": 0.4765, "w": 0.0429, "d": 0.0235, "y": 0.62, "h": 0.0211, "color": "#46d36a"},
+    {"shape": "box", "x": 0.0, "z": 0.4765, "w": 0.0429, "d": 0.0235, "y": 0.62, "h": 0.0211, "color": "#46d36a"},
+    {"shape": "box", "x": 0.0952, "z": 0.4765, "w": 0.0429, "d": 0.0235, "y": 0.62, "h": 0.0211, "color": "#4aa3ff"},
+    {"shape": "box", "x": 0.0, "z": 0.4765, "w": 0.4, "d": 0.0235, "y": 0.52, "h": 0.0158, "color": "metal"},
+    {"shape": "cyl", "x": -0.3, "z": 0.0, "w": 0.0714, "d": 0.1765, "y": 0.0, "h": 0.1579, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.15, "z": 0.0, "w": 0.0714, "d": 0.1765, "y": 0.0, "h": 0.1579, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0714, "d": 0.1765, "y": 0.0, "h": 0.1579, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.15, "z": 0.0, "w": 0.0714, "d": 0.1765, "y": 0.0, "h": 0.1579, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3, "z": 0.0, "w": 0.0714, "d": 0.1765, "y": 0.0, "h": 0.1579, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.3571, "z": 0.3235, "w": 0.2143, "d": 0.2941, "y": 0.2105, "h": 0.2632, "color": "#d8d8d8", "fix": "wdh"},
+    {"shape": "box", "x": 0.3571, "z": 0.4824, "w": 0.0595, "d": 0.0353, "y": 0.2895, "h": 0.1316, "color": "#c62828", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

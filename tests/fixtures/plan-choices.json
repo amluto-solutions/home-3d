@@ -1,0 +1,480 @@
+{
+  "3": {
+    "plan.energy.price_mode": [
+      "one",
+      "split"
+    ],
+    "plan.energy.rates_from": [
+      "here",
+      "sensors"
+    ],
+    "plan.floors[].furniture[].actions.double_tap.action": [
+      "camera",
+      "default",
+      "more_info",
+      "navigate",
+      "none",
+      "perform_action",
+      "toggle",
+      "url"
+    ],
+    "plan.floors[].furniture[].actions.double_tap{keys}": [
+      "action",
+      "confirm",
+      "confirm_text",
+      "data",
+      "target"
+    ],
+    "plan.floors[].furniture[].actions.hold.action": [
+      "camera",
+      "default",
+      "more_info",
+      "navigate",
+      "none",
+      "perform_action",
+      "toggle",
+      "url"
+    ],
+    "plan.floors[].furniture[].actions.hold{keys}": [
+      "action",
+      "confirm",
+      "confirm_text",
+      "data",
+      "target"
+    ],
+    "plan.floors[].furniture[].actions.tap.action": [
+      "camera",
+      "default",
+      "more_info",
+      "navigate",
+      "none",
+      "perform_action",
+      "toggle",
+      "url"
+    ],
+    "plan.floors[].furniture[].actions.tap{keys}": [
+      "action",
+      "confirm",
+      "confirm_text",
+      "data",
+      "target"
+    ],
+    "plan.floors[].furniture[].bin_kerb{keys}": [
+      "x",
+      "z"
+    ],
+    "plan.floors[].furniture[].bin_kind": [
+      "bio",
+      "garden",
+      "glass",
+      "other",
+      "paper",
+      "plastic",
+      "recycling",
+      "rest"
+    ],
+    "plan.floors[].furniture[].colors{keys}": [
+      "accent",
+      "body",
+      "cushion",
+      "dark",
+      "fabric",
+      "glass",
+      "metal",
+      "paint",
+      "plant",
+      "pot",
+      "white",
+      "wood"
+    ],
+    "plan.floors[].furniture[].gangs[]{keys}": [
+      "entity",
+      "power"
+    ],
+    "plan.floors[].furniture[].marker": [
+      "always",
+      "never",
+      "no_power"
+    ],
+    "plan.floors[].furniture[].materials.*": [
+      "fabric",
+      "glass",
+      "gloss",
+      "matt",
+      "metal",
+      "rattan"
+    ],
+    "plan.floors[].furniture[].materials{keys}": [
+      "accent",
+      "body",
+      "cushion",
+      "dark",
+      "fabric",
+      "glass",
+      "metal",
+      "paint",
+      "plant",
+      "pot",
+      "white",
+      "wood"
+    ],
+    "plan.floors[].furniture[].pictures[]{keys}": [
+      "attribute",
+      "entity",
+      "image",
+      "state"
+    ],
+    "plan.floors[].furniture[].rack.card.metrics[]": [
+      "@hottest",
+      "@online"
+    ],
+    "plan.floors[].furniture[].rack.slots[].face": [
+      "front",
+      "rear"
+    ],
+    "plan.floors[].furniture[].screen_bg": [
+      "black",
+      "white"
+    ],
+    "plan.floors[].furniture[].show_when.intervals[]{keys}": [
+      "end",
+      "from",
+      "start",
+      "to"
+    ],
+    "plan.floors[].furniture[].show_when.unavailable": [
+      "hide",
+      "show"
+    ],
+    "plan.floors[].furniture[].show_when.when": [
+      "off",
+      "on",
+      "state"
+    ],
+    "plan.floors[].furniture[].show_when{keys}": [
+      "entity",
+      "intervals",
+      "state",
+      "unavailable",
+      "when"
+    ],
+    "plan.floors[].furniture[].stair_turn": [
+      "left",
+      "right"
+    ],
+    "plan.floors[].furniture[].state_split": [
+      "left_right",
+      "top_bottom"
+    ],
+    "plan.floors[].furniture[].types[]{keys}": [
+      "state",
+      "vehicle"
+    ],
+    "plan.floors[].furniture[].valve_position": [
+      "backwash",
+      "closed",
+      "filter",
+      "recirculate",
+      "rinse",
+      "waste"
+    ],
+    "plan.floors[].openings[].hinge": [
+      "left",
+      "right"
+    ],
+    "plan.floors[].openings[].leaves": [
+      1,
+      2
+    ],
+    "plan.floors[].openings[].mark": [
+      "closed"
+    ],
+    "plan.floors[].openings[].sensor": [
+      "contact",
+      "contact_tilt",
+      "handle"
+    ],
+    "plan.floors[].openings[].sensor2": [
+      "contact",
+      "contact_tilt",
+      "handle"
+    ],
+    "plan.floors[].openings[].sill_board": [
+      "auto",
+      "inside",
+      "none",
+      "outside"
+    ],
+    "plan.floors[].openings[].style": [
+      "bars",
+      "front",
+      "front_glass",
+      "glass",
+      "glass_wall",
+      "interior",
+      "passage",
+      "sectional",
+      "sidelight",
+      "sidelights",
+      "sliding",
+      "standard",
+      "up_and_over"
+    ],
+    "plan.floors[].openings[].swing": [
+      "in",
+      "out"
+    ],
+    "plan.floors[].openings[].type": [
+      "door",
+      "garage",
+      "window"
+    ],
+    "plan.floors[].outdoor[].pool.joints[].kind": [
+      "floor",
+      "tee",
+      "wall",
+      "y"
+    ],
+    "plan.floors[].outdoor[].pool.pipes[].fittings[].kind": [
+      "sight",
+      "valve"
+    ],
+    "plan.floors[].outdoor[].pool.ports[].kind": [
+      "drain",
+      "inlet",
+      "skimmer",
+      "waste"
+    ],
+    "plan.floors[].outdoor[].pool_shape": [
+      "oval",
+      "round"
+    ],
+    "plan.floors[].outdoor[].slope_dir": [
+      "-x",
+      "-z",
+      "x",
+      "z"
+    ],
+    "plan.floors[].outdoor[].type": [
+      "balcony",
+      "bed",
+      "driveway",
+      "fence",
+      "hedge",
+      "lawn",
+      "path",
+      "pergola",
+      "pool",
+      "terrace",
+      "wild"
+    ],
+    "plan.floors[].placements[].actions.double_tap.action": [
+      "camera",
+      "default",
+      "more_info",
+      "navigate",
+      "none",
+      "perform_action",
+      "toggle",
+      "url"
+    ],
+    "plan.floors[].placements[].actions.double_tap{keys}": [
+      "action",
+      "confirm",
+      "confirm_text",
+      "data",
+      "target"
+    ],
+    "plan.floors[].placements[].actions.hold.action": [
+      "camera",
+      "default",
+      "more_info",
+      "navigate",
+      "none",
+      "perform_action",
+      "toggle",
+      "url"
+    ],
+    "plan.floors[].placements[].actions.hold{keys}": [
+      "action",
+      "confirm",
+      "confirm_text",
+      "data",
+      "target"
+    ],
+    "plan.floors[].placements[].actions.tap.action": [
+      "camera",
+      "default",
+      "more_info",
+      "navigate",
+      "none",
+      "perform_action",
+      "toggle",
+      "url"
+    ],
+    "plan.floors[].placements[].actions.tap{keys}": [
+      "action",
+      "confirm",
+      "confirm_text",
+      "data",
+      "target"
+    ],
+    "plan.floors[].placements[].marker": [
+      "always",
+      "never",
+      "no_power"
+    ],
+    "plan.floors[].placements[].mount": [
+      "ceiling",
+      "floor",
+      "table",
+      "wall"
+    ],
+    "plan.settings.alert_ignored[]{keys}": [
+      "entity",
+      "kind"
+    ],
+    "plan.settings.alert_snoozed[]{keys}": [
+      "at",
+      "entity",
+      "kind"
+    ],
+    "plan.settings.backdrop.kind": [
+      "color",
+      "gradient",
+      "image"
+    ],
+    "plan.settings.buttons[].action": [
+      "fire_dom_event",
+      "more_info",
+      "navigate",
+      "service"
+    ],
+    "plan.settings.director.motion": [
+      "all",
+      "off",
+      "person"
+    ],
+    "plan.settings.director.triggers[]{keys}": [
+      "camera",
+      "entity"
+    ],
+    "plan.settings.person_look": [
+      "figure",
+      "off",
+      "pin"
+    ],
+    "plan.settings.pets.list[].eyes": [
+      "blue",
+      "copper",
+      "dark",
+      "green",
+      "yellow"
+    ],
+    "plan.settings.pets.list[].kind": [
+      "cat",
+      "dog",
+      "rabbit"
+    ],
+    "plan.settings.pets.list[].pose": [
+      "curl",
+      "groom",
+      "lie",
+      "sit",
+      "stand"
+    ],
+    "plan.settings.pets.list[].spots[].pose": [
+      "curl",
+      "groom",
+      "lie",
+      "sit",
+      "stand"
+    ],
+    "plan.settings.pets.list[].triggers[].kind": [
+      "event",
+      "state",
+      "time"
+    ],
+    "plan.settings.pets.list[].triggers[].pose": [
+      "curl",
+      "groom",
+      "lie",
+      "sit",
+      "stand"
+    ],
+    "plan.settings.roof.hologram.place": [
+      "field",
+      "free"
+    ],
+    "plan.settings.roof.ridge": [
+      "long",
+      "short"
+    ],
+    "plan.settings.roof.sections[].axis": [
+      "x",
+      "z"
+    ],
+    "plan.settings.roof.sections[].end_u0": [
+      "gable",
+      "halfhip",
+      "hip"
+    ],
+    "plan.settings.roof.sections[].end_u1": [
+      "gable",
+      "halfhip",
+      "hip"
+    ],
+    "plan.settings.roof.sections[].shape": [
+      "flat",
+      "gable",
+      "halfhip",
+      "hip",
+      "mansard",
+      "parapet",
+      "pent",
+      "pyramid"
+    ],
+    "plan.settings.roof.solar[].align": [
+      "center",
+      "left",
+      "right"
+    ],
+    "plan.settings.roof.solar[].look": [
+      "black",
+      "blue"
+    ],
+    "plan.settings.roof.type": [
+      "custom",
+      "flat",
+      "gable",
+      "none"
+    ],
+    "plan.settings.season_rules.*[].kind": [
+      "cny",
+      "easter",
+      "fixed",
+      "nth",
+      "once"
+    ],
+    "plan.settings.season_rules.*[].nth": [
+      -1,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "plan.settings.units": [
+      "imperial",
+      "metric"
+    ],
+    "plan.settings.weather_effects[]": [
+      "clouds",
+      "fog",
+      "lightning",
+      "rain",
+      "sky",
+      "snow"
+    ]
+  }
+}

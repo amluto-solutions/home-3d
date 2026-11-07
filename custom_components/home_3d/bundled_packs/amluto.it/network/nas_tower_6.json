@@ -1,0 +1,33 @@
+{
+  "id": "nas_tower_6",
+  "name": {"en": "NAS tower, 6-bay"},
+  "size": [0.2, 0.4, 0.34],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "hobby"],
+  "tags": ["nas", "nas tower", "network storage", "file server", "home server", "hard drives", "backup", "6 bay"],
+  "family": "nas",
+  "variant": {"en": "Tower 6-bay"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.9, "y": 0.0, "h": 0.0353, "color": "dark", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0353, "h": 0.9647, "color": "dark", "round": 0.06},
+    {"shape": "box", "x": 0.0, "z": 0.495, "w": 0.88, "d": 0.01, "y": 0.0735, "h": 0.8676, "color": "#2a2d33"},
+    {"shape": "box", "x": -0.21, "z": 0.49, "w": 0.38, "d": 0.01, "y": 0.1176, "h": 0.2206, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.21, "z": 0.4975, "w": 0.06, "d": 0.005, "y": 0.3, "h": 0.0176, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": 0.2, "z": 0.49, "w": 0.38, "d": 0.01, "y": 0.1176, "h": 0.2206, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.2, "z": 0.4975, "w": 0.06, "d": 0.005, "y": 0.3, "h": 0.0176, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": -0.21, "z": 0.49, "w": 0.38, "d": 0.01, "y": 0.3676, "h": 0.2206, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.21, "z": 0.4975, "w": 0.06, "d": 0.005, "y": 0.55, "h": 0.0176, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": 0.2, "z": 0.49, "w": 0.38, "d": 0.01, "y": 0.3676, "h": 0.2206, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.2, "z": 0.4975, "w": 0.06, "d": 0.005, "y": 0.55, "h": 0.0176, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": -0.21, "z": 0.49, "w": 0.38, "d": 0.01, "y": 0.6176, "h": 0.2206, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.21, "z": 0.4975, "w": 0.06, "d": 0.005, "y": 0.8, "h": 0.0176, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": 0.2, "z": 0.49, "w": 0.38, "d": 0.01, "y": 0.6176, "h": 0.2206, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.2, "z": 0.4975, "w": 0.06, "d": 0.005, "y": 0.8, "h": 0.0176, "color": "#46d36a", "glow": true},
+    {"shape": "cyl", "x": 0.0, "z": 0.495, "w": 0.1, "d": 0.01, "y": 0.8529, "h": 0.0588, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

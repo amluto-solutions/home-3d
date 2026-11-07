@@ -1,0 +1,39 @@
+{
+  "id": "rattan_table_lamp",
+  "name": {
+    "en": "Rattan table lamp"
+  },
+  "size": [
+    0.36,
+    0.36,
+    0.48
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "dining",
+    "hall"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "rattan lamp",
+    "wicker lamp",
+    "boho",
+    "woven",
+    "natural",
+    "cane",
+    "bedside lamp"
+  ],
+  "family": "rattan_table_lamp",
+  "variant": {
+    "en": "Natural"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.5556, "d": 0.5556, "y": 0, "h": 0.5417, "color": "#c9a46a", "profile": [[0.0, 0.0], [0.7, 0.0], [1.0, 0.1923], [0.7, 0.4615], [0.4, 0.8462], [0.2, 1.0], [0.0, 1.0]]},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.5417, "h": 0.4583, "color": "#d9bd8a", "glow": true, "profile": [[0.0, 0.0], [0.6111, 0.0], [1.0, 0.4545], [0.8333, 0.9091], [0.5, 1.0], [0.0, 1.0]]}
+  ]
+}

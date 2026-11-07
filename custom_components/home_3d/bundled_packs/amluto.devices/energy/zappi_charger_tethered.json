@@ -1,0 +1,31 @@
+{
+  "id": "zappi_charger_tethered",
+  "name": {"en": "Zappi EV charger"},
+  "size": [0.4, 0.122, 0.439],
+  "group": "energy",
+  "room": ["garage", "garden"],
+  "tags": ["wallbox", "ev charger", "car charger", "myenergi", "zappi", "charge point", "electric car", "type 2", "home charger"],
+  "family": "ev_charger",
+  "variant": {"en": "Tethered"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.0,
+  "parts": [
+    {"shape": "rbox", "x": -0.15, "z": 0.0, "w": 0.7, "d": 0.9286, "y": 0.0, "h": 1, "color": "white", "round": 0.25},
+    {"shape": "rbox", "x": -0.15, "z": 0.4429, "w": 0.55, "d": 0.0857, "y": 0.1364, "h": 0.7727, "color": "dark", "round": 0.3},
+    {"shape": "box", "x": -0.15, "z": 0.4857, "w": 0.275, "d": 0.0286, "y": 0.6364, "h": 0.1364, "color": "#8fe3b0"},
+    {"shape": "cyl", "x": -0.2625, "z": 0.4857, "w": 0.04, "d": 0.0286, "y": 0.5, "h": 0.0364, "color": "#cfd2d6", "axis": "z"},
+    {"shape": "cyl", "x": -0.1875, "z": 0.4857, "w": 0.04, "d": 0.0286, "y": 0.5, "h": 0.0364, "color": "#cfd2d6", "axis": "z"},
+    {"shape": "cyl", "x": -0.1125, "z": 0.4857, "w": 0.04, "d": 0.0286, "y": 0.5, "h": 0.0364, "color": "#cfd2d6", "axis": "z"},
+    {"shape": "cyl", "x": -0.0375, "z": 0.4857, "w": 0.04, "d": 0.0286, "y": 0.5, "h": 0.0364, "color": "#cfd2d6", "axis": "z"},
+    {"shape": "box", "x": -0.15, "z": 0.4857, "w": 0.4, "d": 0.0286, "y": 0.8636, "h": 0.0136, "color": "#4aa3ff"},
+    {"shape": "cyl", "x": -0.15, "z": 0.1429, "w": 0.075, "d": 0.2143, "y": 0.0, "h": 0.0682, "color": "dark"},
+    {"shape": "cyl", "x": 0.025, "z": 0.2143, "w": 0.35, "d": 0.1571, "y": 0.0, "h": 0.05, "color": "dark", "axis": "x"},
+    {"shape": "rbox", "x": 0.375, "z": 0.0, "w": 0.175, "d": 0.7143, "y": 0.3182, "h": 0.3182, "color": "dark", "round": 0.3},
+    {"shape": "cyl", "x": 0.375, "z": 0.1429, "w": 0.15, "d": 0.5714, "y": 0.4545, "h": 0.1364, "color": "#2b2f35", "axis": "z"},
+    {"shape": "cyl", "x": 0.375, "z": 0.0, "w": 0.055, "d": 0.1571, "y": 0.0682, "h": 0.2727, "color": "dark"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

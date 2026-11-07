@@ -1,0 +1,30 @@
+{
+  "id": "forsiktig_childrens_stool",
+  "name": {
+    "en": "Children's step stool"
+  },
+  "size": [
+    0.37,
+    0.24,
+    0.13
+  ],
+  "group": "kids",
+  "room": [
+    "kids",
+    "bath"
+  ],
+  "tags": [
+    "FORSIKTIG",
+    "children's stool",
+    "step stool",
+    "toilet training",
+    "bathroom stool",
+    "white",
+    "turquoise"
+  ],
+  "ikea": "FÖRSIKTIG",
+  "parts": [
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "body", "tx": 0.0, "tz": 0.0, "tw": 0.8919, "td": 0.875, "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.8108, "d": 0.75, "y": 0.9385, "h": 0.0769, "color": "dark", "fix": "h", "round": 0.4}
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "nissedal_mirror_40x150",
+  "name": {
+    "en": "Mirror, 40x150 cm"
+  },
+  "size": [
+    0.4,
+    0.03,
+    1.5
+  ],
+  "group": "deco",
+  "room": [
+    "bedroom",
+    "hall",
+    "bath",
+    "living"
+  ],
+  "tags": [
+    "wall mirror",
+    "framed mirror",
+    "full-length mirror",
+    "white",
+    "black"
+  ],
+  "family": "nissedal_mirror",
+  "variant": {
+    "en": "40x150"
+  },
+  "ikea": "NISSEDAL",
+  "mount": "wall",
+  "wall_y": 0.4,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0233, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9767, "h": 0.0233, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4562, "z": 0.0, "w": 0.0875, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4562, "z": 0.0, "w": 0.0875, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.1333, "w": 0.825, "d": 0.2, "y": 0.0233, "h": 0.9533, "color": "glass"}
+  ]
+}

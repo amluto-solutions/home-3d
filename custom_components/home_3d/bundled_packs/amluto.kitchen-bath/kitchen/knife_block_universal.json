@@ -1,0 +1,22 @@
+{
+  "id": "knife_block_universal",
+  "name": {"en": "Knife block, universal (bristles)"},
+  "size": [0.11, 0.11, 0.24],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "tags": ["knife block", "knives", "chef knives", "kitchen", "worktop"],
+  "family": "knife_block",
+  "variant": {"en": "Universal"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.82, "color": "wood", "fix": "h"},
+    {"shape": "cyl", "x": -0.2273, "z": -0.1818, "w": 0.1091, "d": 0.1091, "y": 0.82, "h": 0.18, "color": "#101114", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.1818, "z": -0.2727, "w": 0.1091, "d": 0.1091, "y": 0.82, "h": 0.18, "color": "#101114", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2727, "z": 0.1818, "w": 0.1091, "d": 0.1091, "y": 0.82, "h": 0.18, "color": "#101114", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.1818, "z": 0.2727, "w": 0.1091, "d": 0.1091, "y": 0.82, "h": 0.18, "color": "#101114", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1091, "d": 0.1091, "y": 0.82, "h": 0.18, "color": "#101114", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

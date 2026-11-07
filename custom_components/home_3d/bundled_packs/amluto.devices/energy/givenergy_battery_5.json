@@ -1,0 +1,25 @@
+{
+  "id": "givenergy_battery_5",
+  "name": {"en": "GivEnergy battery"},
+  "size": [0.5, 0.19, 0.58],
+  "group": "energy",
+  "room": ["garage", "utility", "loft"],
+  "tags": ["home battery", "battery storage", "givenergy", "solar battery", "energy storage", "powerwall", "lithium battery"],
+  "family": "home_battery",
+  "variant": {"en": "5.2 kWh"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 0.4,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0, "h": 1, "color": "white", "round": 0.1},
+    {"shape": "box", "x": 0.0, "z": 0.4894, "w": 0.84, "d": 0.0211, "y": 0.78, "h": 0.0517, "color": "#cfd2d6"},
+    {"shape": "box", "x": -0.12, "z": 0.4894, "w": 0.05, "d": 0.0211, "y": 0.7, "h": 0.0138, "color": "#46d36a"},
+    {"shape": "box", "x": -0.04, "z": 0.4894, "w": 0.05, "d": 0.0211, "y": 0.7, "h": 0.0138, "color": "#46d36a"},
+    {"shape": "box", "x": 0.04, "z": 0.4894, "w": 0.05, "d": 0.0211, "y": 0.7, "h": 0.0138, "color": "#46d36a"},
+    {"shape": "box", "x": 0.12, "z": 0.4894, "w": 0.05, "d": 0.0211, "y": 0.7, "h": 0.0138, "color": "#cfd2d6"},
+    {"shape": "box", "x": 0.0, "z": -0.3947, "w": 0.5, "d": 0.1053, "y": 0.0, "h": 0.0517, "color": "dark"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

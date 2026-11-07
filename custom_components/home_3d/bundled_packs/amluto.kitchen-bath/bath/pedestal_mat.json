@@ -1,0 +1,20 @@
+{
+  "id": "pedestal_mat",
+  "name": {"en": "Pedestal mat"},
+  "size": [0.5, 0.5, 0.015],
+  "group": "bath",
+  "room": ["bath"],
+  "tags": ["bath mat", "bathmat", "shower mat", "mat", "rug", "toilet mat", "pedestal mat"],
+  "family": "bath_mat",
+  "variant": {"en": "Pedestal"},
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.2, "w": 1.0, "d": 0.6, "y": 0.0, "h": 1.0, "color": "fabric", "round": 0.5},
+    {"shape": "rbox", "x": -0.35, "z": -0.28, "w": 0.3, "d": 0.44, "y": 0.0, "h": 1.0, "color": "fabric", "round": 0.5},
+    {"shape": "rbox", "x": 0.35, "z": -0.28, "w": 0.3, "d": 0.44, "y": 0.0, "h": 1.0, "color": "fabric", "round": 0.5}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.2, "w": 1.0, "d": 0.6},
+    {"shape": "rect", "x": -0.35, "z": -0.3, "w": 0.3, "d": 0.4},
+    {"shape": "rect", "x": 0.35, "z": -0.3, "w": 0.3, "d": 0.4}
+  ]
+}

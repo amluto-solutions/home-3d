@@ -1,0 +1,40 @@
+{
+  "id": "mackapar_shoe_rack_78x32x40",
+  "name": {
+    "en": "Shoe rack 78x32x40 cm"
+  },
+  "size": [
+    0.78,
+    0.32,
+    0.4
+  ],
+  "group": "storage",
+  "room": [
+    "hall"
+  ],
+  "tags": [
+    "MACKAPAR",
+    "shoe rack",
+    "shoe storage",
+    "hallway",
+    "white",
+    "metal"
+  ],
+  "family": "mackapar_shoe_storage",
+  "variant": {
+    "en": "Shoe rack 78x32x40"
+  },
+  "ikea": "MACKAPÄR",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": -0.4872, "z": 0.0, "w": 0.0256, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4872, "z": 0.0, "w": 0.0256, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.4844, "w": 0.9487, "d": 0.0312, "y": 0.125, "h": 0.875, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9487, "d": 0.9375, "y": 0.05, "h": 0.03, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4625, "w": 0.9487, "d": 0.025, "y": 0.08, "h": 0.075, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9487, "d": 0.9375, "y": 0.4, "h": 0.03, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4625, "w": 0.9487, "d": 0.025, "y": 0.43, "h": 0.075, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9487, "d": 0.9375, "y": 0.75, "h": 0.03, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4625, "w": 0.9487, "d": 0.025, "y": 0.78, "h": 0.075, "color": "white", "fix": "dh"}
+  ]
+}

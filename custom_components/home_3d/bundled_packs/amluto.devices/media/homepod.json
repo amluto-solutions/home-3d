@@ -1,0 +1,43 @@
+{
+  "id": "homepod",
+  "name": {
+    "en": "Apple HomePod"
+  },
+  "size": [
+    0.142,
+    0.142,
+    0.1683
+  ],
+  "group": "media",
+  "room": [
+    "living",
+    "kitchen",
+    "bedroom",
+    "kids",
+    "office",
+    "bath",
+    "hall",
+    "dining"
+  ],
+  "tags": [
+    "homepod",
+    "apple homepod",
+    "siri",
+    "smart speaker",
+    "airplay",
+    "speaker",
+    "apple",
+    "media player"
+  ],
+  "family": "homepod",
+  "variant": {
+    "en": "HomePod"
+  },
+  "mount": "surface",
+  "electric": true,
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.9982, "color": "fabric", "profile": [[0.0, 0.0], [0.8451, 0.0], [0.9859, 0.2381], [1.0, 0.7143], [0.8451, 0.9524], [0.4225, 1.0], [0.0, 1.0]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.493, "d": 0.493, "y": 0.9911, "h": 0.0089, "color": "white", "glow": true},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.5634, "d": 0.5634, "y": 0, "h": 0.0238, "color": "dark"}
+  ]
+}

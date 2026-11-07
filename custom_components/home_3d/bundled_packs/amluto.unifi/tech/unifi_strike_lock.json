@@ -1,0 +1,51 @@
+{
+  "id": "unifi_strike_lock",
+  "name": {
+    "en": "UniFi Access Fail-Secure Strike Lock 15 mm"
+  },
+  "size": [
+    0.032,
+    0.035,
+    0.124
+  ],
+  "group": "tech",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "access",
+    "door access",
+    "strike lock",
+    "electric strike",
+    "uacc-lock-strike-secure-15mm",
+    "fail-secure"
+  ],
+  "family": "unifi_access_lock",
+  "variant": {
+    "en": "Strike"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.0,
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.45,
+      "w": 1,
+      "d": 0.1,
+      "y": 0,
+      "h": 1,
+      "color": "#aab1bc"
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": -0.05,
+      "w": 0.8,
+      "d": 0.9,
+      "y": 0.3,
+      "h": 0.4,
+      "color": "#555d6b"
+    }
+  ]
+}

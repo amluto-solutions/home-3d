@@ -1,0 +1,22 @@
+{
+  "id": "soup_maker_1_6l",
+  "name": {"en": "Soup maker, 1.6 L"},
+  "size": [0.2, 0.22, 0.31],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["soup maker", "soup", "blender", "countertop"],
+  "family": "soup_maker",
+  "variant": {"en": "1.6 L"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.28, "color": "#25272b", "round": 0.2},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.8, "y": 0.28, "h": 0.68, "color": "#c4c8cd", "profile": [[0.7, 0], [1, 0], [1, 0.9], [0.9, 1], [0.1, 1], [0, 0.9]]},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.5, "d": 0.5, "y": 0.96, "h": 0.04, "color": "#25272b", "fix": "h"},
+    {"shape": "box", "x": 0.5, "z": 0.0, "w": 0.15, "d": 0.2273, "y": 0.34, "h": 0.5, "color": "#25272b", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4909, "w": 0.3, "d": 0.0182, "y": 0.12, "h": 0.0387, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

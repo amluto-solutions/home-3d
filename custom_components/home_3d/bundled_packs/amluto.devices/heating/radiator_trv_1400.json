@@ -1,0 +1,28 @@
+{
+  "id": "radiator_trv_1400",
+  "name": {"en": "Radiator with TRV"},
+  "size": [1.52, 0.1, 0.65],
+  "group": "heating",
+  "room": ["living", "bedroom", "kitchen", "hall", "office", "kids", "bath", "utility", "conservatory"],
+  "tags": ["radiator", "panel radiator", "double panel", "trv", "thermostatic valve", "central heating", "type 22", "600 x 1400"],
+  "family": "radiator_trv",
+  "variant": {"en": "600 × 1400 mm"},
+  "mount": "wall",
+  "wall_y": 0.15,
+  "role_names": {"white": "panels", "metal": "valves", "dark": "grille", "accent": "details"},
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.32, "w": 0.9211, "d": 0.36, "y": 0.1538, "h": 0.7692, "color": "white", "top": "white"},
+    {"shape": "box", "x": 0, "z": 0.26, "w": 0.9211, "d": 0.36, "y": 0.1538, "h": 0.7692, "color": "white"},
+    {"shape": "box", "x": 0, "z": -0.03, "w": 0.9079, "d": 0.26, "y": 0.1846, "h": 0.7231, "color": "#d8d8d3"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9112, "d": 0.8, "y": 0.9308, "h": 0.0231, "color": "white", "top": "#e9e9e4"},
+    {"shape": "box", "x": 0, "z": 0.3, "w": 0.8947, "d": 0.3, "y": 0.9538, "h": 0.0077, "color": "dark"},
+    {"shape": "box", "x": -0.4474, "z": 0, "w": 0.0053, "d": 0.7, "y": 0.1538, "h": 0.7692, "color": "#e9e9e4"},
+    {"shape": "box", "x": 0.4474, "z": 0, "w": 0.0053, "d": 0.7, "y": 0.1538, "h": 0.7692, "color": "#e9e9e4"},
+    {"shape": "cyl", "x": -0.4276, "z": 0, "w": 0.0105, "d": 0.16, "y": 0, "h": 0.1385, "color": "metal"},
+    {"shape": "cyl", "x": -0.4276, "z": 0, "w": 0.0184, "d": 0.28, "y": 0.0692, "h": 0.0462, "color": "metal"},
+    {"shape": "cyl", "x": 0.4276, "z": 0, "w": 0.0105, "d": 0.16, "y": 0, "h": 0.1385, "color": "metal"},
+    {"shape": "cyl", "x": 0.4605, "z": 0, "w": 0.0395, "d": 0.3, "y": 0.0769, "h": 0.0462, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.4974, "z": 0, "w": 0.0461, "d": 0.5, "y": 0.0615, "h": 0.0769, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0.4727, "z": 0, "w": 0.0039, "d": 0.52, "y": 0.06, "h": 0.08, "color": "accent", "axis": "x"}
+  ]
+}

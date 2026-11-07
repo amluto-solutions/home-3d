@@ -1,0 +1,22 @@
+{
+  "id": "filament_dry_box",
+  "name": {"en": "Filament dry box"},
+  "size": [0.4, 0.27, 0.26],
+  "group": "tech",
+  "room": ["office", "hobby", "garage", "loft", "utility"],
+  "tags": ["filament dryer", "spool dryer", "3d printing", "pla", "petg", "dry box", "humidity", "eibos"],
+  "family": "filament_dryer",
+  "variant": {"en": "Dry box"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.5, "color": "white", "round": 0.08},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.5, "h": 0.5, "color": "glass", "round": 0.08},
+    {"shape": "cyl", "x": -0.25, "z": 0.0, "w": 0.175, "d": 0.6667, "y": 0.5385, "h": 0.3846, "color": "#e8573c", "axis": "x"},
+    {"shape": "cyl", "x": 0.25, "z": 0.0, "w": 0.175, "d": 0.6667, "y": 0.5385, "h": 0.3846, "color": "#3c8de8", "axis": "x"},
+    {"shape": "box", "x": 0.375, "z": 0.4926, "w": 0.1, "d": 0.0148, "y": 0.1538, "h": 0.1154, "color": "#7fe3ff", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "exercise_bike_recumbent",
+  "name": {"en": "Recumbent exercise bike"},
+  "size": [0.61, 1.43, 0.8],
+  "group": "sport",
+  "room": ["hobby", "garage", "bedroom", "living", "utility", "loft", "office"],
+  "tags": ["exercise bike", "recumbent", "stationary bike", "cardio", "gym", "home gym", "fitness", "low impact", "seated", "rehab"],
+  "family": "exercise_bike",
+  "variant": {"en": "Recumbent"},
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0.4615, "w": 0.9836, "d": 0.042, "y": 0, "h": 0.05, "color": "#25262a"},
+    {"shape": "box", "x": 0, "z": -0.4476, "w": 0.9016, "d": 0.042, "y": 0, "h": 0.05, "color": "#25262a"},
+    {"shape": "box", "x": 0, "z": 0.007, "w": 0.1639, "d": 0.979, "y": 0.05, "h": 0.125, "color": "#2f3237"},
+    {"shape": "rbox", "x": 0, "z": -0.2378, "w": 0.6885, "d": 0.3147, "y": 0.25, "h": 0.125, "color": "#25262a", "round": 0.25},
+    {"shape": "loft", "x": 0, "z": -0.3916, "w": 0.6557, "d": 0.0839, "y": 0.35, "h": 0.625, "color": "#25262a", "tx": 0, "tz": -0.4615, "tw": 0.623, "td": 0.0699},
+    {"shape": "loft", "x": 0, "z": 0.042, "w": 0.082, "d": 0.042, "y": 0.125, "h": 0.625, "color": "#2f3237", "tx": 0, "tz": 0.3217, "tw": 0.082, "td": 0.042},
+    {"shape": "rbox", "x": 0, "z": 0.3217, "w": 0.4918, "d": 0.0559, "y": 0.75, "h": 0.15, "color": "#25262a", "round": 0.2},
+    {"shape": "box", "x": 0, "z": 0.3357, "w": 0.2951, "d": 0.021, "y": 0.925, "h": 0.075, "color": "#8fd0ff"},
+    {"shape": "cyl", "x": 0, "z": 0.3217, "w": 0.5738, "d": 0.2797, "y": 0.125, "h": 0.5, "color": "#b9bdc2", "axis": "x"},
+    {"shape": "box", "x": -0.3279, "z": 0.1119, "w": 0.1311, "d": 0.2098, "y": 0.25, "h": 0.0375, "color": "#25262a"},
+    {"shape": "box", "x": 0.3279, "z": 0.1119, "w": 0.1311, "d": 0.2098, "y": 0.25, "h": 0.0375, "color": "#25262a"},
+    {"shape": "box", "x": -0.459, "z": -0.0979, "w": 0.0492, "d": 0.2797, "y": 0.35, "h": 0.0375, "color": "#25262a"},
+    {"shape": "box", "x": 0.459, "z": -0.0979, "w": 0.0492, "d": 0.2797, "y": 0.35, "h": 0.0375, "color": "#25262a"}
+  ]
+}

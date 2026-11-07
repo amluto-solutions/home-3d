@@ -1,0 +1,47 @@
+{
+  "id": "storklinta_chest_of_4_drawers_70x98",
+  "name": {
+    "en": "Chest of 4 drawers, 70x98 cm"
+  },
+  "size": [
+    0.7,
+    0.5,
+    0.98
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "drawers",
+    "chest",
+    "dresser",
+    "white",
+    "oak effect",
+    "dark brown oak effect",
+    "dark grey"
+  ],
+  "family": "storklinta_chest_of_drawers",
+  "variant": {
+    "en": "4 drawers · 70x98"
+  },
+  "ikea": "STORKLINTA",
+  "parts": [
+    {"shape": "box", "x": -0.4871, "z": -0.018, "w": 0.0257, "d": 0.964, "y": 0.0612, "h": 0.9184, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4871, "z": -0.018, "w": 0.0257, "d": 0.964, "y": 0.0612, "h": 0.9184, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.018, "w": 0.9486, "d": 0.964, "y": 0.0612, "h": 0.0184, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.492, "w": 0.9486, "d": 0.016, "y": 0.0796, "h": 0.8816, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9796, "h": 0.0204, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.424, "w": 0.9486, "d": 0.036, "y": 0, "h": 0.0612, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.482, "w": 0.9886, "d": 0.036, "y": 0.752, "h": 0.2255, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.2857, "d": 0.044, "y": 0.8862, "h": 0.0122, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.482, "w": 0.9886, "d": 0.036, "y": 0.5224, "h": 0.2255, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.2857, "d": 0.044, "y": 0.6566, "h": 0.0122, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.482, "w": 0.9886, "d": 0.036, "y": 0.2929, "h": 0.2255, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.2857, "d": 0.044, "y": 0.427, "h": 0.0122, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.482, "w": 0.9886, "d": 0.036, "y": 0.0633, "h": 0.2255, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.2857, "d": 0.044, "y": 0.1974, "h": 0.0122, "color": "dark", "fix": "wdh"}
+  ]
+}

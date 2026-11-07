@@ -1,0 +1,101 @@
+{
+ "id": "unifi_ai_turret",
+ "name": {
+  "en": "UniFi AI Turret camera"
+ },
+ "size": [
+  0.118,
+  0.118,
+  0.111
+ ],
+ "group": "tech",
+ "tags": [
+  "security camera",
+  "camera",
+  "cctv",
+  "unifi",
+  "ubiquiti",
+  "ai turret",
+  "uvc ai turret"
+ ],
+ "family": "unifi_camera",
+ "variant": {
+  "en": "AI Turret"
+ },
+ "electric": true,
+ "mount": "ceiling",
+ "parts": [
+  {
+   "shape": "lathe",
+   "x": 0.0,
+   "z": 0.0,
+   "w": 1.0,
+   "d": 1.0,
+   "y": 0.35,
+   "h": 0.65,
+   "color": "white",
+   "profile": [
+    [
+     0,
+     0
+    ],
+    [
+     0.86,
+     0
+    ],
+    [
+     0.97,
+     0.25
+    ],
+    [
+     1,
+     0.6
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ]
+  },
+  {
+   "shape": "lathe",
+   "x": 0.0,
+   "z": 0.0,
+   "w": 0.62,
+   "d": 0.62,
+   "y": 0.0,
+   "h": 0.38,
+   "color": "#1c222c",
+   "profile": [
+    [
+     0,
+     0
+    ],
+    [
+     0.38,
+     0.06
+    ],
+    [
+     0.7,
+     0.24
+    ],
+    [
+     0.9,
+     0.52
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ]
+  }
+ ]
+}

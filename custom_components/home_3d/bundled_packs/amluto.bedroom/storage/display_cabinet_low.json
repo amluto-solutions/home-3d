@@ -1,0 +1,52 @@
+{
+  "id": "display_cabinet_low",
+  "name": {
+    "en": "Glass-fronted display cabinet, low"
+  },
+  "size": [
+    1.0,
+    0.4,
+    0.85
+  ],
+  "group": "storage",
+  "family": "display_cabinet",
+  "variant": {
+    "en": "Low · 100 × 85"
+  },
+  "room": [
+    "living",
+    "dining"
+  ],
+  "tags": [
+    "vitrine",
+    "glass cabinet",
+    "china cabinet",
+    "curio cabinet",
+    "showcase",
+    "glass doors"
+  ],
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0, "h": 0.0824, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.489, "z": 0, "w": 0.022, "d": 1.0, "y": 0.0824, "h": 0.8824, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.489, "z": 0, "w": 0.022, "d": 1.0, "y": 0.0824, "h": 0.8824, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.9647, "h": 0.0353, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.485, "w": 0.956, "d": 0.03, "y": 0.0824, "h": 0.8824, "color": "white"},
+    {"shape": "box", "x": 0, "z": -0.0225, "w": 0.956, "d": 0.895, "y": 0.5235, "h": 0.0094, "color": "glass"},
+    {"shape": "box", "x": -0.239, "z": 0.4725, "w": 0.394, "d": 0.025, "y": 0.1341, "h": 0.7788, "color": "glass"},
+    {"shape": "box", "x": -0.456, "z": 0.4725, "w": 0.04, "d": 0.055, "y": 0.0871, "h": 0.8729, "color": "wood"},
+    {"shape": "box", "x": -0.022, "z": 0.4725, "w": 0.04, "d": 0.055, "y": 0.0871, "h": 0.8729, "color": "wood"},
+    {"shape": "box", "x": -0.239, "z": 0.4725, "w": 0.394, "d": 0.055, "y": 0.0871, "h": 0.0471, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.239, "z": 0.4725, "w": 0.394, "d": 0.055, "y": 0.9129, "h": 0.0471, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.022, "z": 0.495, "w": 0.016, "d": 0.01, "y": 0.6829, "h": 0.1176, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.239, "z": 0.4725, "w": 0.394, "d": 0.025, "y": 0.1341, "h": 0.7788, "color": "glass"},
+    {"shape": "box", "x": 0.022, "z": 0.4725, "w": 0.04, "d": 0.055, "y": 0.0871, "h": 0.8729, "color": "wood"},
+    {"shape": "box", "x": 0.456, "z": 0.4725, "w": 0.04, "d": 0.055, "y": 0.0871, "h": 0.8729, "color": "wood"},
+    {"shape": "box", "x": 0.239, "z": 0.4725, "w": 0.394, "d": 0.055, "y": 0.0871, "h": 0.0471, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.239, "z": 0.4725, "w": 0.394, "d": 0.055, "y": 0.9129, "h": 0.0471, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.022, "z": 0.495, "w": 0.016, "d": 0.01, "y": 0.6829, "h": 0.1176, "color": "metal", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.45, "x2": 0.5, "z2": 0.45}
+  ]
+}

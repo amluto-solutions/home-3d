@@ -1,0 +1,27 @@
+{
+  "id": "garden_lamp_post_240",
+  "name": {"en": "Garden lamp post"},
+  "size": [0.3, 0.3, 2.4],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["lamp post", "post light", "garden light", "lantern", "victorian", "outdoor lighting", "driveway", "lamp", "street light", "lighting"],
+  "family": "garden_post_light",
+  "variant": {"en": "Lamp post, 2.4 m"},
+  "electric": true,
+  "light": "garden",
+  "parts": [
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.6667, "d": 0.6667, "y": 0, "h": 0.125, "color": "#25262a"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.2667, "d": 0.2667, "y": 0.125, "h": 0.75, "color": "#25262a"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.4333, "d": 0.4333, "y": 0.8542, "h": 0.0167, "color": "#25262a"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.7333, "d": 0.7333, "y": 0.8667, "h": 0.1083, "color": "#f5f2e8", "glow": true},
+    {"shape": "loft", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.975, "h": 0.025, "color": "#25262a", "tx": 0, "tz": 0, "tw": 0.2, "td": 0.2},
+    {"shape": "box", "x": -0.3667, "z": -0.3667, "w": 0.0833, "d": 0.0833, "y": 0.8667, "h": 0.1083, "color": "#25262a"},
+    {"shape": "box", "x": 0.3667, "z": -0.3667, "w": 0.0833, "d": 0.0833, "y": 0.8667, "h": 0.1083, "color": "#25262a"},
+    {"shape": "box", "x": -0.3667, "z": 0.3667, "w": 0.0833, "d": 0.0833, "y": 0.8667, "h": 0.1083, "color": "#25262a"},
+    {"shape": "box", "x": 0.3667, "z": 0.3667, "w": 0.0833, "d": 0.0833, "y": 0.8667, "h": 0.1083, "color": "#25262a"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9, "d": 0.9, "y": 0.85, "h": 0.0125, "color": "#25262a"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

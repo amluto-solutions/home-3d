@@ -1,0 +1,38 @@
+{
+  "id": "nammaro_reclining_chair",
+  "name": {
+    "en": "Outdoor reclining chair"
+  },
+  "size": [
+    0.6,
+    0.71,
+    1.05
+  ],
+  "group": "outdoor",
+  "room": [
+    "garden"
+  ],
+  "tags": [
+    "garden chair",
+    "patio chair",
+    "recliner",
+    "acacia",
+    "light brown stained",
+    "cushion"
+  ],
+  "family": "nammaro_dining",
+  "variant": {
+    "en": "Reclining chair"
+  },
+  "ikea": "NÄMMARÖ",
+  "parts": [
+    {"shape": "box", "x": -0.45, "z": 0.3944, "w": 0.0667, "d": 0.0563, "y": 0, "h": 0.5905, "color": "wood"},
+    {"shape": "loft", "x": -0.45, "z": -0.3099, "w": 0.0667, "d": 0.0563, "y": 0, "h": 0.5905, "color": "wood", "tx": -0.45, "tz": -0.3944, "tw": 0.0667, "td": 0.0563},
+    {"shape": "box", "x": -0.45, "z": 0.0282, "w": 0.0833, "d": 0.8732, "y": 0.5905, "h": 0.0286, "color": "wood"},
+    {"shape": "box", "x": 0.45, "z": 0.3944, "w": 0.0667, "d": 0.0563, "y": 0, "h": 0.5905, "color": "wood"},
+    {"shape": "loft", "x": 0.45, "z": -0.3099, "w": 0.0667, "d": 0.0563, "y": 0, "h": 0.5905, "color": "wood", "tx": 0.45, "tz": -0.3944, "tw": 0.0667, "td": 0.0563},
+    {"shape": "box", "x": 0.45, "z": 0.0282, "w": 0.0833, "d": 0.8732, "y": 0.5905, "h": 0.0286, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.0704, "w": 0.8333, "d": 0.6761, "y": 0.381, "h": 0.0286, "color": "wood"},
+    {"shape": "loft", "x": 0.0, "z": -0.3099, "w": 0.8333, "d": 0.0563, "y": 0.4095, "h": 0.5905, "color": "wood", "tx": 0.0, "tz": -0.4648, "tw": 0.8333, "td": 0.0563}
+  ]
+}

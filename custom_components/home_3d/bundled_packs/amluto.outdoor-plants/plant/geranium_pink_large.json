@@ -1,0 +1,31 @@
+{
+  "id": "geranium_pink_large",
+  "name": {"en": "Geranium, pink, large"},
+  "size": [0.6, 0.6, 0.6],
+  "group": "plant",
+  "room": ["garden"],
+  "tags": ["geranium", "flower", "pelargonium", "bedding", "summer", "pink"],
+  "family": "geranium_pink",
+  "variant": {"en": "Large (0.6 × 0.6 m)"},
+  "parts": [
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.92, "d": 0.92, "y": 0.05, "h": 0.83, "color": "#3f7d3a"},
+    {"shape": "sphere", "x": 0.2579, "z": 0.0798, "w": 0.5, "d": 0.5, "y": 0.05, "h": 0.5, "color": "#3f7d3a"},
+    {"shape": "sphere", "x": 0.0038, "z": 0.27, "w": 0.5, "d": 0.5, "y": 0.08, "h": 0.5, "color": "#4e9147"},
+    {"shape": "sphere", "x": -0.2556, "z": 0.0871, "w": 0.5, "d": 0.5, "y": 0.05, "h": 0.5, "color": "#3f7d3a"},
+    {"shape": "sphere", "x": -0.1618, "z": -0.2162, "w": 0.5, "d": 0.5, "y": 0.08, "h": 0.5, "color": "#4e9147"},
+    {"shape": "sphere", "x": 0.1556, "z": -0.2207, "w": 0.5, "d": 0.5, "y": 0.05, "h": 0.5, "color": "#3f7d3a"},
+    {"shape": "sphere", "x": -0.3973, "z": -0.1675, "w": 0.12, "d": 0.12, "y": 0.3915, "h": 0.108, "color": "#ee6fa3"},
+    {"shape": "sphere", "x": 0.3021, "z": 0.1458, "w": 0.12, "d": 0.12, "y": 0.6243, "h": 0.108, "color": "#ee6fa3"},
+    {"shape": "sphere", "x": -0.4118, "z": -0.1699, "w": 0.12, "d": 0.12, "y": 0.3228, "h": 0.108, "color": "#ee6fa3"},
+    {"shape": "sphere", "x": -0.0134, "z": -0.3144, "w": 0.12, "d": 0.12, "y": 0.6556, "h": 0.108, "color": "#ee6fa3"},
+    {"shape": "sphere", "x": -0.3594, "z": 0.0298, "w": 0.12, "d": 0.12, "y": 0.5803, "h": 0.108, "color": "#ee6fa3"},
+    {"shape": "sphere", "x": -0.2462, "z": -0.3779, "w": 0.12, "d": 0.12, "y": 0.2866, "h": 0.108, "color": "#ee6fa3"},
+    {"shape": "sphere", "x": -0.3213, "z": -0.2732, "w": 0.12, "d": 0.12, "y": 0.4268, "h": 0.108, "color": "#ee6fa3"},
+    {"shape": "sphere", "x": -0.2731, "z": 0.3438, "w": 0.12, "d": 0.12, "y": 0.3569, "h": 0.108, "color": "#ee6fa3"},
+    {"shape": "sphere", "x": 0.0298, "z": -0.2778, "w": 0.12, "d": 0.12, "y": 0.7007, "h": 0.108, "color": "#ee6fa3"},
+    {"shape": "sphere", "x": 0.2984, "z": 0.0635, "w": 0.12, "d": 0.12, "y": 0.6688, "h": 0.108, "color": "#ee6fa3"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

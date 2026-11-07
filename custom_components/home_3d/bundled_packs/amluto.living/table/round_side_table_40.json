@@ -1,0 +1,99 @@
+{
+  "id": "round_side_table_40",
+  "name": {
+    "en": "Round side table 40"
+  },
+  "size": [
+    0.4,
+    0.4,
+    0.52
+  ],
+  "group": "table",
+  "room": [
+    "living",
+    "bedroom",
+    "conservatory"
+  ],
+  "tags": [
+    "side table",
+    "lamp table",
+    "end table",
+    "occasional table",
+    "round",
+    "tripod"
+  ],
+  "family": "round_side_table",
+  "variant": {
+    "en": "Ø40"
+  },
+  "surface": true,
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1,
+      "d": 1,
+      "y": 0.9519,
+      "h": 0.0481,
+      "color": "wood",
+      "fix": "h"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 0.8,
+      "d": 0.8,
+      "y": 0.32,
+      "h": 0.0385,
+      "color": "wood",
+      "fix": "h"
+    },
+    {
+      "shape": "loft",
+      "x": 0.0,
+      "z": -0.425,
+      "w": 0.075,
+      "d": 0.075,
+      "y": 0.0,
+      "h": 0.9519,
+      "color": "wood",
+      "tx": 0.0,
+      "tz": -0.3,
+      "tw": 0.075,
+      "td": 0.075,
+      "fix": "wd"
+    },
+    {
+      "shape": "loft",
+      "x": 0.3681,
+      "z": 0.2125,
+      "w": 0.075,
+      "d": 0.075,
+      "y": 0.0,
+      "h": 0.9519,
+      "color": "wood",
+      "tx": 0.2598,
+      "tz": 0.15,
+      "tw": 0.075,
+      "td": 0.075,
+      "fix": "wd"
+    },
+    {
+      "shape": "loft",
+      "x": -0.3681,
+      "z": 0.2125,
+      "w": 0.075,
+      "d": 0.075,
+      "y": 0.0,
+      "h": 0.9519,
+      "color": "wood",
+      "tx": -0.2598,
+      "tz": 0.15,
+      "tw": 0.075,
+      "td": 0.075,
+      "fix": "wd"
+    }
+  ]
+}

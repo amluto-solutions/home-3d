@@ -1,0 +1,17 @@
+{
+  "id": "mirror_full_brass_60x170",
+  "name": {"en": "Full-length mirror"},
+  "size": [0.6, 0.09, 1.7],
+  "group": "deco",
+  "room": ["bedroom", "hall", "bath"],
+  "tags": ["mirror", "full length mirror", "floor mirror", "leaning mirror", "dressing mirror", "gold", "brass", "leaning mirror", "arch"],
+  "family": "mirror_full_length",
+  "variant": {"en": "Brass frame, 60 × 170"},
+  "parts": [
+    {"shape": "loft", "x": 0, "z": 0.2778, "w": 1, "d": 0.3333, "y": 0, "h": 1, "color": "#b8964a", "tx": 0, "tz": -0.5, "tw": 1, "td": 0.3333},
+    {"shape": "loft", "x": 0, "z": 0.4418, "w": 0.9, "d": 0.0444, "y": 0.0176, "h": 0.9647, "color": "glass", "tx": 0, "tz": -0.3085, "tw": 0.9, "td": 0.0444}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 0.5}
+  ]
+}

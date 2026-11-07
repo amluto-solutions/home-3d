@@ -1,0 +1,20 @@
+{
+  "id": "garden_bollard_80",
+  "name": {"en": "Garden bollard light"},
+  "size": [0.14, 0.14, 0.8],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["bollard", "path light", "garden light", "outdoor lighting", "lamp", "driveway", "pathway", "led", "lighting"],
+  "family": "garden_bollard",
+  "variant": {"en": "80 cm"},
+  "electric": true,
+  "light": "bollard",
+  "parts": [
+    {"shape": "lathe", "x": 0, "z": 0, "w": 0.8571, "d": 0.8571, "y": 0, "h": 0.75, "color": "#3b3e44", "profile": [[0, 0], [0.8, 0], [1, 0.05], [1, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.8571, "d": 0.8571, "y": 0.75, "h": 0.2125, "color": "#f5f2e8", "glow": true},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.9625, "h": 0.0375, "color": "#3b3e44"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

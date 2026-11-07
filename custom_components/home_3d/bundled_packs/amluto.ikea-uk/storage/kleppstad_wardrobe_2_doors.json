@@ -1,0 +1,41 @@
+{
+  "id": "kleppstad_wardrobe_2_doors",
+  "name": {
+    "en": "Wardrobe with 2 doors"
+  },
+  "size": [
+    0.79,
+    0.55,
+    1.76
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "wardrobe",
+    "freestanding wardrobe",
+    "clothes storage",
+    "hanging rail",
+    "white"
+  ],
+  "family": "kleppstad_wardrobe",
+  "variant": {
+    "en": "2 doors 79"
+  },
+  "ikea": "KLEPPSTAD",
+  "parts": [
+    {"shape": "box", "x": -0.4899, "z": -0.0182, "w": 0.0203, "d": 0.9636, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4899, "z": -0.0182, "w": 0.0203, "d": 0.9636, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0182, "w": 1, "d": 0.9636, "y": 0.9909, "h": 0.0091, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0182, "w": 0.9595, "d": 0.9636, "y": 0, "h": 0.0091, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4927, "w": 0.9595, "d": 0.0145, "y": 0.0091, "h": 0.9818, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4273, "w": 0.9595, "d": 0.0327, "y": 0, "h": 0.0341, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.25, "z": 0.4818, "w": 0.4949, "d": 0.0327, "y": 0.0341, "h": 0.9636, "color": "white"},
+    {"shape": "cyl", "x": -0.0633, "z": 0.5, "w": 0.0354, "d": 0.0436, "y": 0.5318, "h": 0.0159, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.25, "z": 0.4818, "w": 0.4949, "d": 0.0327, "y": 0.0341, "h": 0.9636, "color": "white"},
+    {"shape": "cyl", "x": 0.0633, "z": 0.5, "w": 0.0354, "d": 0.0436, "y": 0.5318, "h": 0.0159, "color": "metal", "axis": "z", "fix": "wdh"}
+  ]
+}

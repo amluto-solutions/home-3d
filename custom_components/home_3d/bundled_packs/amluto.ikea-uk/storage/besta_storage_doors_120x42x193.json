@@ -1,0 +1,55 @@
+{
+  "id": "besta_storage_doors_120x42x193",
+  "name": {
+    "en": "Storage combination with doors, 120x42x193 cm"
+  },
+  "size": [
+    1.2,
+    0.42,
+    1.93
+  ],
+  "group": "storage",
+  "room": [
+    "living",
+    "dining",
+    "office",
+    "bedroom"
+  ],
+  "tags": [
+    "BESTA",
+    "sideboard",
+    "cabinet",
+    "storage cabinet",
+    "on legs",
+    "white",
+    "black-brown",
+    "white stained oak effect",
+    "oak veneer"
+  ],
+  "family": "besta_storage_doors",
+  "variant": {
+    "en": "120x193"
+  },
+  "ikea": "BESTÅ",
+  "surface": false,
+  "parts": [
+    {"shape": "box", "x": -0.4933, "z": -0.0238, "w": 0.0133, "d": 0.9524, "y": 0.0518, "h": 0.9482, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4933, "z": -0.0238, "w": 0.0133, "d": 0.9524, "y": 0.0518, "h": 0.9482, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0238, "w": 1, "d": 0.9524, "y": 0.9917, "h": 0.0083, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0238, "w": 0.9733, "d": 0.9524, "y": 0.0518, "h": 0.0083, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4905, "w": 0.9733, "d": 0.019, "y": 0.0601, "h": 0.9316, "color": "white", "fix": "d"},
+    {"shape": "cyl", "x": -0.4542, "z": -0.369, "w": 0.025, "d": 0.0714, "y": 0, "h": 0.0518, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4542, "z": 0.369, "w": 0.025, "d": 0.0714, "y": 0, "h": 0.0518, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4542, "z": -0.369, "w": 0.025, "d": 0.0714, "y": 0, "h": 0.0518, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4542, "z": 0.369, "w": 0.025, "d": 0.0714, "y": 0, "h": 0.0518, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.0238, "w": 0.0133, "d": 0.9286, "y": 0.0601, "h": 0.9316, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": -0.0238, "w": 0.9733, "d": 0.9286, "y": 0.3637, "h": 0.0083, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": -0.0238, "w": 0.9733, "d": 0.9286, "y": 0.6798, "h": 0.0083, "color": "white"},
+    {"shape": "box", "x": -0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.0528, "h": 0.314, "color": "white"},
+    {"shape": "box", "x": -0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.3689, "h": 0.314, "color": "white"},
+    {"shape": "box", "x": -0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.685, "h": 0.314, "color": "white"},
+    {"shape": "box", "x": 0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.0528, "h": 0.314, "color": "white"},
+    {"shape": "box", "x": 0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.3689, "h": 0.314, "color": "white"},
+    {"shape": "box", "x": 0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.685, "h": 0.314, "color": "white"}
+  ]
+}

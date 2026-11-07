@@ -1,0 +1,38 @@
+{
+  "id": "borgeby_side_table_46",
+  "name": {
+    "en": "Round side table 46 cm"
+  },
+  "size": [
+    0.46,
+    0.46,
+    0.55
+  ],
+  "group": "table",
+  "room": [
+    "living",
+    "bedroom"
+  ],
+  "tags": [
+    "coffee table",
+    "round",
+    "shelf",
+    "birch veneer",
+    "black"
+  ],
+  "family": "borgeby_table",
+  "variant": {
+    "en": "Side table 46"
+  },
+  "ikea": "BORGEBY",
+  "surface": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9636, "h": 0.0364, "color": "wood", "fix": "h"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9182, "h": 0.0455, "color": "wood", "fix": "h", "profile": [[0.97, 0], [1, 0], [1, 1], [0.97, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8261, "d": 0.8261, "y": 0.1091, "h": 0.0327, "color": "wood", "fix": "h"},
+    {"shape": "cyl", "x": 0.2613, "z": 0.2613, "w": 0.0652, "d": 0.0652, "y": 0, "h": 0.9636, "color": "wood", "fix": "wd"},
+    {"shape": "cyl", "x": -0.2613, "z": 0.2613, "w": 0.0652, "d": 0.0652, "y": 0, "h": 0.9636, "color": "wood", "fix": "wd"},
+    {"shape": "cyl", "x": -0.2613, "z": -0.2613, "w": 0.0652, "d": 0.0652, "y": 0, "h": 0.9636, "color": "wood", "fix": "wd"},
+    {"shape": "cyl", "x": 0.2613, "z": -0.2613, "w": 0.0652, "d": 0.0652, "y": 0, "h": 0.9636, "color": "wood", "fix": "wd"}
+  ]
+}

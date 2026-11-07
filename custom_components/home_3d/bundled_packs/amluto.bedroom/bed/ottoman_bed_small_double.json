@@ -1,0 +1,25 @@
+{
+  "id": "ottoman_bed_small_double",
+  "name": {"en": "Small double ottoman bed"},
+  "size": [1.28, 2.02, 1.15],
+  "group": "bed",
+  "family": "ottoman_bed",
+  "variant": {"en": "Small double · 120 × 190"},
+  "room": ["bedroom"],
+  "tags": ["ottoman bed", "lift up", "storage bed", "gas lift", "upholstered bed", "headboard", "small double", "4ft"],
+  "parts": [
+    {"shape": "cyl", "x": -0.4531, "z": -0.4307, "w": 0.0313, "d": 0.0198, "y": 0.0, "h": 0.0348, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4531, "z": 0.4307, "w": 0.0313, "d": 0.0198, "y": 0.0, "h": 0.0348, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4531, "z": -0.4307, "w": 0.0313, "d": 0.0198, "y": 0.0, "h": 0.0348, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4531, "z": 0.4307, "w": 0.0313, "d": 0.0198, "y": 0.0, "h": 0.0348, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0198, "w": 1.0, "d": 0.9604, "y": 0.0348, "h": 0.2783, "color": "fabric", "round": 0.1, "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0198, "w": 1.0, "d": 0.9554, "y": 0.2609, "h": 0.0043, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4975, "w": 0.0781, "d": 0.005, "y": 0.1913, "h": 0.0696, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": -0.4802, "w": 1.0, "d": 0.0396, "y": 0.0348, "h": 0.9652, "color": "fabric", "round": 0.25, "fix": "d"},
+    {"shape": "rbox", "x": 0.0, "z": -0.4592, "w": 0.9531, "d": 0.0074, "y": 0.4348, "h": 0.5304, "color": "fabric", "round": 0.4, "fix": "d"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0173, "w": 0.9375, "d": 0.9455, "y": 0.313, "h": 0.1739, "color": "white", "round": 0.2, "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.1126, "w": 0.9531, "d": 0.7599, "y": 0.4435, "h": 0.087, "color": "cushion", "round": 0.3, "fix": "dh"},
+    {"shape": "rbox", "x": -0.2344, "z": -0.3614, "w": 0.4219, "d": 0.1386, "y": 0.487, "h": 0.0957, "color": "white", "round": 0.45, "fix": "dh"},
+    {"shape": "rbox", "x": 0.2344, "z": -0.3614, "w": 0.4219, "d": 0.1386, "y": 0.487, "h": 0.0957, "color": "white", "round": 0.45, "fix": "dh"}
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "cat_tree",
+  "name": {"en": "Cat tree"},
+  "size": [0.6, 0.5, 1.4],
+  "group": "pets",
+  "room": ["living", "hall", "bedroom", "kitchen", "utility", "conservatory"],
+  "tags": ["cat", "cat tree", "cat tower", "scratching post", "sisal", "climbing", "kitty", "condo"],
+  "family": "cat_tree",
+  "variant": {"en": "Medium 140"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.0214, "color": "fabric", "fix": "h"},
+    {"shape": "cyl", "x": -0.28, "z": -0.25, "w": 0.15, "d": 0.18, "y": 0.0214, "h": 0.9179, "color": "#c8a878"},
+    {"shape": "cyl", "x": 0.28, "z": 0.2, "w": 0.15, "d": 0.18, "y": 0.0214, "h": 0.9179, "color": "#c8a878"},
+    {"shape": "rbox", "x": 0.25, "z": 0.0, "w": 0.5, "d": 0.8, "y": 0.0214, "h": 0.2143, "color": "fabric", "round": 0.15, "fix": "h"},
+    {"shape": "cyl", "x": 0.25, "z": 0.38, "w": 0.2833, "d": 0.04, "y": 0.06, "h": 0.1214, "color": "dark", "axis": "z", "fix": "h"},
+    {"shape": "box", "x": -0.2, "z": 0.0, "w": 0.6, "d": 0.9, "y": 0.5679, "h": 0.0179, "color": "fabric", "fix": "h"},
+    {"shape": "rbox", "x": -0.2, "z": 0.0, "w": 0.56, "d": 0.84, "y": 0.5857, "h": 0.0179, "color": "cushion", "fix": "h", "round": 0.5},
+    {"shape": "cyl", "x": -0.44, "z": 0.38, "w": 0.0067, "d": 0.008, "y": 0.425, "h": 0.1429, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.44, "z": 0.38, "w": 0.0833, "d": 0.1, "y": 0.3893, "h": 0.0357, "color": "accent", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.95, "d": 1.0, "y": 0.9393, "h": 0.0179, "color": "fabric", "fix": "h"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.874, "d": 0.92, "y": 0.9571, "h": 0.0429, "color": "fabric", "profile": [[0.0, 0.0], [0.95, 0.0], [1, 0.6], [0.92, 1], [0.8, 0.7], [0.75, 0.3], [0.0, 0.25]], "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.4}
+  ]
+}

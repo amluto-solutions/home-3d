@@ -1,0 +1,48 @@
+{
+  "id": "vesken_trolley_54x18x71",
+  "name": {
+    "en": "Trolley 54x18x71 cm"
+  },
+  "size": [
+    0.54,
+    0.18,
+    0.71
+  ],
+  "group": "bath",
+  "room": [
+    "bath",
+    "utility",
+    "kitchen",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "VESKEN",
+    "trolley",
+    "bathroom trolley",
+    "slim trolley",
+    "narrow cart",
+    "on wheels",
+    "white"
+  ],
+  "ikea": "VESKEN",
+  "parts": [
+    {"shape": "cyl", "x": -0.4685, "z": -0.4056, "w": 0.0333, "d": 0.1, "y": 0.0634, "h": 0.9366, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4685, "z": 0.4056, "w": 0.0333, "d": 0.1, "y": 0.0634, "h": 0.9366, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4685, "z": -0.4056, "w": 0.0333, "d": 0.1, "y": 0.0634, "h": 0.9366, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4685, "z": 0.4056, "w": 0.0333, "d": 0.1, "y": 0.0634, "h": 0.9366, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9815, "d": 0.9444, "y": 0.1972, "h": 0.0282, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4667, "w": 0.9444, "d": 0.0333, "y": 0.2254, "h": 0.0352, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.4667, "w": 0.9444, "d": 0.0333, "y": 0.2254, "h": 0.0352, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9815, "d": 0.9444, "y": 0.507, "h": 0.0282, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4667, "w": 0.9444, "d": 0.0333, "y": 0.5352, "h": 0.0352, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.4667, "w": 0.9444, "d": 0.0333, "y": 0.5352, "h": 0.0352, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9815, "d": 0.9444, "y": 0.8169, "h": 0.0282, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4667, "w": 0.9444, "d": 0.0333, "y": 0.8451, "h": 0.0352, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.4667, "w": 0.9444, "d": 0.0333, "y": 0.8451, "h": 0.0352, "color": "white", "fix": "dh"},
+    {"shape": "cyl", "x": -0.4259, "z": -0.3056, "w": 0.0833, "d": 0.1667, "y": 0, "h": 0.0634, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4259, "z": 0.3056, "w": 0.0833, "d": 0.1667, "y": 0, "h": 0.0634, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4259, "z": -0.3056, "w": 0.0833, "d": 0.1667, "y": 0, "h": 0.0634, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4259, "z": 0.3056, "w": 0.0833, "d": 0.1667, "y": 0, "h": 0.0634, "color": "dark", "axis": "z", "fix": "wdh"}
+  ]
+}

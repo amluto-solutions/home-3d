@@ -1,0 +1,20 @@
+{
+  "id": "ornament_bird",
+  "name": {"en": "Ceramic bird"},
+  "size": [0.16, 0.08, 0.15],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "hall", "office"],
+  "tags": ["ornament", "bird", "figurine", "ceramic", "decor", "shelf", "sparrow"],
+  "family": "ornament_bird",
+  "variant": {"en": "Small"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "sphere", "x": 0, "z": 0, "w": 0.625, "d": 0.9375, "y": 0.2, "h": 0.5667, "color": "#e9e4d6"},
+    {"shape": "sphere", "x": 0.25, "z": 0, "w": 0.3438, "d": 0.6875, "y": 0.5667, "h": 0.3667, "color": "#e9e4d6"},
+    {"shape": "loft", "x": 0.4688, "z": 0, "w": 0.1875, "d": 0.15, "y": 0.6667, "h": 0.1, "color": "#e0a03a", "tx": 0.5, "tz": 0, "tw": 0.0938, "td": 0.1},
+    {"shape": "loft", "x": -0.2812, "z": 0, "w": 0.25, "d": 0.375, "y": 0.2667, "h": 0.2667, "color": "#cfc8b6", "tx": -0.4687, "tz": 0, "tw": 0.1875, "td": 0.15},
+    {"shape": "box", "x": -0.0937, "z": 0, "w": 0.075, "d": 0.15, "y": 0, "h": 0.2333, "color": "#6a5a48"},
+    {"shape": "box", "x": 0.0938, "z": 0, "w": 0.075, "d": 0.15, "y": 0, "h": 0.2333, "color": "#6a5a48"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.4375, "d": 0.5, "y": 0, "h": 0.04, "color": "#6a5a48"}
+  ]
+}

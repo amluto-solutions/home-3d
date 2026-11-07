@@ -1,0 +1,36 @@
+{
+  "id": "daggkaprifol_picture_ledge_49",
+  "name": {
+    "en": "Narrow picture ledge 49 cm"
+  },
+  "size": [
+    0.49,
+    0.08,
+    0.05
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "bedroom",
+    "hall",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "picture ledge",
+    "picture shelf",
+    "kids",
+    "white",
+    "light pink",
+    "frames"
+  ],
+  "ikea": "DAGGKAPRIFOL",
+  "mount": "wall",
+  "wall_y": 1.2,
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.3, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4062, "w": 1, "d": 0.1875, "y": 0, "h": 0.55, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.4062, "w": 1, "d": 0.1875, "y": 0, "h": 1, "color": "white", "fix": "d"}
+  ]
+}

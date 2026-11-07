@@ -1,0 +1,43 @@
+{
+  "id": "tornviken_kitchen_island",
+  "name": {
+    "en": "Kitchen island 126x77 cm"
+  },
+  "size": [
+    1.26,
+    0.77,
+    0.9
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen"
+  ],
+  "tags": [
+    "island",
+    "freestanding",
+    "oak top",
+    "open shelves",
+    "towel rail",
+    "off-white",
+    "oak"
+  ],
+  "ikea": "TORNVIKEN",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9667, "h": 0.0333, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4643, "z": -0.4416, "w": 0.0397, "d": 0.0649, "y": 0, "h": 0.9667, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4643, "z": 0.4416, "w": 0.0397, "d": 0.0649, "y": 0, "h": 0.9667, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4643, "z": -0.4416, "w": 0.0397, "d": 0.0649, "y": 0, "h": 0.9667, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4643, "z": 0.4416, "w": 0.0397, "d": 0.0649, "y": 0, "h": 0.9667, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9365, "d": 0.8961, "y": 0.8778, "h": 0.0889, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9365, "d": 0.8961, "y": 0.5, "h": 0.0222, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9365, "d": 0.8961, "y": 0.1333, "h": 0.0222, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4416, "w": 0.8889, "d": 0.0156, "y": 0.8833, "h": 0.0044, "color": "dark", "fix": "dh"},
+    {"shape": "cyl", "x": -0.5, "z": 0.0, "w": 0.0159, "d": 0.7403, "y": 0.6889, "h": 0.0222, "color": "metal", "axis": "z", "fix": "wh"},
+    {"shape": "box", "x": -0.5, "z": -0.3442, "w": 0.0159, "d": 0.026, "y": 0.6778, "h": 0.0444, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.5, "z": 0.3442, "w": 0.0159, "d": 0.026, "y": 0.6778, "h": 0.0444, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.5, "z": 0.0, "w": 0.0159, "d": 0.7403, "y": 0.6889, "h": 0.0222, "color": "metal", "axis": "z", "fix": "wh"},
+    {"shape": "box", "x": 0.5, "z": -0.3442, "w": 0.0159, "d": 0.026, "y": 0.6778, "h": 0.0444, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.5, "z": 0.3442, "w": 0.0159, "d": 0.026, "y": 0.6778, "h": 0.0444, "color": "metal", "fix": "wdh"}
+  ]
+}

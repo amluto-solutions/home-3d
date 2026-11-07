@@ -1,0 +1,49 @@
+{
+  "id": "malm_chest_of_4_drawers",
+  "name": {
+    "en": "Chest of 4 drawers"
+  },
+  "size": [
+    0.8,
+    0.48,
+    1.0
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "drawers",
+    "dresser",
+    "chest",
+    "tallboy",
+    "white",
+    "high-gloss white",
+    "black-brown",
+    "white stained oak veneer",
+    "dark grey"
+  ],
+  "family": "malm_chest_of_drawers",
+  "variant": {
+    "en": "4 drawers · 80x100"
+  },
+  "ikea": "MALM",
+  "parts": [
+    {"shape": "box", "x": -0.4888, "z": -0.0187, "w": 0.0225, "d": 0.9625, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4888, "z": -0.0187, "w": 0.0225, "d": 0.9625, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0187, "w": 1, "d": 0.9625, "y": 0.982, "h": 0.018, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0187, "w": 0.955, "d": 0.9625, "y": 0, "h": 0.018, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4917, "w": 0.955, "d": 0.0167, "y": 0.018, "h": 0.964, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4167, "w": 0.955, "d": 0.0417, "y": 0, "h": 0.035, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.995, "d": 0.0375, "y": 0.035, "h": 0.2222, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 0.995, "d": 0.025, "y": 0.2572, "h": 0.012, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.995, "d": 0.0375, "y": 0.2762, "h": 0.2222, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 0.995, "d": 0.025, "y": 0.4985, "h": 0.012, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.995, "d": 0.0375, "y": 0.5175, "h": 0.2222, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 0.995, "d": 0.025, "y": 0.7397, "h": 0.012, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.995, "d": 0.0375, "y": 0.7588, "h": 0.2222, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 0.995, "d": 0.025, "y": 0.981, "h": 0.012, "color": "dark", "fix": "h"}
+  ]
+}

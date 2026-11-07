@@ -1,0 +1,62 @@
+{
+  "id": "tool_chest_roller_cabinet",
+  "name": {
+    "en": "Tool chest roller cabinet"
+  },
+  "size": [
+    0.68,
+    0.46,
+    0.85
+  ],
+  "group": "storage",
+  "family": "tool_chest",
+  "variant": {
+    "en": "Roller cabinet"
+  },
+  "room": [
+    "garage",
+    "hobby",
+    "utility"
+  ],
+  "tags": [
+    "tool box",
+    "toolbox",
+    "tool cabinet",
+    "roller cabinet",
+    "workshop",
+    "tools",
+    "mechanic"
+  ],
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": -0.3941, "z": -0.3696, "w": 0.0588, "d": 0.087, "y": 0.0941, "h": 0.0353, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3941, "z": -0.3696, "w": 0.0882, "d": 0.087, "y": 0, "h": 0.0941, "color": "dark", "axis": "x", "fix": "wdh"},
+    {"shape": "box", "x": -0.3941, "z": 0.3696, "w": 0.0588, "d": 0.087, "y": 0.0941, "h": 0.0353, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3941, "z": 0.3696, "w": 0.0882, "d": 0.087, "y": 0, "h": 0.0941, "color": "dark", "axis": "x", "fix": "wdh"},
+    {"shape": "box", "x": 0.3941, "z": -0.3696, "w": 0.0588, "d": 0.087, "y": 0.0941, "h": 0.0353, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3941, "z": -0.3696, "w": 0.0882, "d": 0.087, "y": 0, "h": 0.0941, "color": "dark", "axis": "x", "fix": "wdh"},
+    {"shape": "box", "x": 0.3941, "z": 0.3696, "w": 0.0588, "d": 0.087, "y": 0.0941, "h": 0.0353, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3941, "z": 0.3696, "w": 0.0882, "d": 0.087, "y": 0, "h": 0.0941, "color": "dark", "axis": "x", "fix": "wdh"},
+    {"shape": "box", "x": 0, "z": -0.0163, "w": 0.9353, "d": 0.9674, "y": 0.1294, "h": 0.8353, "color": "accent"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9353, "d": 1.0, "y": 0.9647, "h": 0.0353, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.4837, "w": 0.8765, "d": 0.0326, "y": 0.8769, "h": 0.0784, "color": "accent"},
+    {"shape": "box", "x": 0, "z": 0.4957, "w": 0.7882, "d": 0.0087, "y": 0.9341, "h": 0.0141, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.4837, "w": 0.8765, "d": 0.0326, "y": 0.7915, "h": 0.0784, "color": "accent"},
+    {"shape": "box", "x": 0, "z": 0.4957, "w": 0.7882, "d": 0.0087, "y": 0.8487, "h": 0.0141, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.4837, "w": 0.8765, "d": 0.0326, "y": 0.6817, "h": 0.1028, "color": "accent"},
+    {"shape": "box", "x": 0, "z": 0.4957, "w": 0.7882, "d": 0.0087, "y": 0.7633, "h": 0.0141, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.4837, "w": 0.8765, "d": 0.0326, "y": 0.5718, "h": 0.1028, "color": "accent"},
+    {"shape": "box", "x": 0, "z": 0.4957, "w": 0.7882, "d": 0.0087, "y": 0.6534, "h": 0.0141, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.4837, "w": 0.8765, "d": 0.0326, "y": 0.401, "h": 0.1638, "color": "accent"},
+    {"shape": "box", "x": 0, "z": 0.4957, "w": 0.7882, "d": 0.0087, "y": 0.5436, "h": 0.0141, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.4837, "w": 0.8765, "d": 0.0326, "y": 0.1447, "h": 0.2492, "color": "accent"},
+    {"shape": "box", "x": 0, "z": 0.4957, "w": 0.7882, "d": 0.0087, "y": 0.3727, "h": 0.0141, "color": "metal", "fix": "h"},
+    {"shape": "cyl", "x": 0.4868, "z": 0, "w": 0.0265, "d": 0.7, "y": 0.8118, "h": 0.0212, "color": "metal", "axis": "z", "fix": "wh"},
+    {"shape": "box", "x": 0.4809, "z": -0.33, "w": 0.0265, "d": 0.0435, "y": 0.8165, "h": 0.0118, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.4809, "z": 0.33, "w": 0.0265, "d": 0.0435, "y": 0.8165, "h": 0.0118, "color": "metal", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.45, "x2": 0.5, "z2": 0.45}
+  ]
+}

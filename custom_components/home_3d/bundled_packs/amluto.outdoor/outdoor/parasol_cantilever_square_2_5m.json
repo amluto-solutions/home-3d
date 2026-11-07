@@ -1,0 +1,31 @@
+{
+  "id": "parasol_cantilever_square_2_5m",
+  "name": {"en": "Lean-over parasol"},
+  "size": [3.0, 2.5, 2.7],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["parasol", "cantilever parasol", "banana parasol", "umbrella", "sun shade", "shade", "patio", "overhang parasol", "square"],
+  "family": "parasol",
+  "variant": {"en": "Square, 2.5 × 2.5 m"},
+  "parts": [
+    {"shape": "box", "x": -0.35, "z": 0.0, "w": 0.3, "d": 0.032, "y": 0.0, "h": 0.0222, "color": "dark"},
+    {"shape": "box", "x": -0.35, "z": 0.0, "w": 0.0267, "d": 0.36, "y": 0.0, "h": 0.0222, "color": "dark"},
+    {"shape": "box", "x": -0.25, "z": 0.0, "w": 0.0933, "d": 0.112, "y": 0.0222, "h": 0.0185, "color": "#8a8c8f"},
+    {"shape": "box", "x": -0.45, "z": 0.0, "w": 0.0933, "d": 0.112, "y": 0.0222, "h": 0.0185, "color": "#8a8c8f"},
+    {"shape": "box", "x": -0.35, "z": 0.12, "w": 0.0933, "d": 0.112, "y": 0.0222, "h": 0.0185, "color": "#8a8c8f"},
+    {"shape": "box", "x": -0.35, "z": -0.12, "w": 0.0933, "d": 0.112, "y": 0.0222, "h": 0.0185, "color": "#8a8c8f"},
+    {"shape": "cyl", "x": -0.35, "z": 0.0, "w": 0.0233, "d": 0.028, "y": 0.0222, "h": 0.8889, "color": "dark"},
+    {"shape": "loft", "x": -0.35, "z": 0.0, "w": 0.02, "d": 0.024, "y": 0.8519, "h": 0.1259, "color": "dark", "tx": -0.2333, "tz": 0.0, "tw": 0.02, "td": 0.024},
+    {"shape": "box", "x": -0.075, "z": 0.0, "w": 0.3167, "d": 0.02, "y": 0.9704, "h": 0.0185, "color": "dark"},
+    {"shape": "cyl", "x": 0.0833, "z": 0.0, "w": 0.0133, "d": 0.016, "y": 0.7778, "h": 0.2037, "color": "dark"},
+    {"shape": "loft", "x": 0.0833, "z": 0.0, "w": 0.8333, "d": 1, "y": 0.8222, "h": 0.1259, "color": "fabric", "tx": 0.0833, "tz": 0.0, "tw": 0.04, "td": 0.048},
+    {"shape": "box", "x": 0.0833, "z": 0.0, "w": 0.8333, "d": 1, "y": 0.8, "h": 0.0222, "color": "fabric"},
+    {"shape": "cyl", "x": 0.0833, "z": 0.0, "w": 0.02, "d": 0.024, "y": 0.963, "h": 0.0259, "color": "dark"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0833, "z": 0.0, "w": 0.8333, "d": 1.0},
+    {"shape": "line", "x1": -0.3333, "z1": -0.5, "x2": 0.5, "z2": 0.5},
+    {"shape": "line", "x1": -0.3333, "z1": 0.5, "x2": 0.5, "z2": -0.5},
+    {"shape": "rect", "x": -0.35, "z": 0.0, "w": 0.3, "d": 0.36}
+  ]
+}

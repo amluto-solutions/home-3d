@@ -1,0 +1,26 @@
+{
+  "id": "rc_car_buggy",
+  "name": {"en": "RC car, buggy"},
+  "size": [0.4, 0.24, 0.14],
+  "group": "tech",
+  "room": ["hobby", "garage", "kids", "office", "living"],
+  "tags": ["rc car", "radio controlled", "toy car", "buggy", "hobby", "remote control", "crawler", "toy"],
+  "family": "rc_car",
+  "variant": {"en": "Buggy"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": -0.2875, "z": -0.3854, "w": 0.375, "d": 0.2292, "y": 0.0, "h": 1.0, "color": "#1b1d21", "axis": "z"},
+    {"shape": "cyl", "x": -0.2875, "z": 0.3854, "w": 0.375, "d": 0.2292, "y": 0.0, "h": 1.0, "color": "#1b1d21", "axis": "z"},
+    {"shape": "cyl", "x": 0.2875, "z": -0.3854, "w": 0.375, "d": 0.2292, "y": 0.0, "h": 1.0, "color": "#1b1d21", "axis": "z"},
+    {"shape": "cyl", "x": 0.2875, "z": 0.3854, "w": 0.375, "d": 0.2292, "y": 0.0, "h": 1.0, "color": "#1b1d21", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.85, "d": 0.5, "y": 0.3214, "h": 0.1429, "color": "dark"},
+    {"shape": "rbox", "x": -0.025, "z": 0.0, "w": 0.55, "d": 0.625, "y": 0.3571, "h": 0.3571, "color": "accent", "round": 0.3},
+    {"shape": "rbox", "x": 0.3125, "z": 0.0, "w": 0.225, "d": 0.5, "y": 0.3571, "h": 0.25, "color": "accent", "round": 0.3},
+    {"shape": "box", "x": -0.35, "z": 0.0, "w": 0.25, "d": 0.9167, "y": 0.7857, "h": 0.1071, "color": "dark"},
+    {"shape": "box", "x": -0.4125, "z": -0.375, "w": 0.025, "d": 0.0833, "y": 0.3571, "h": 0.4286, "color": "dark"},
+    {"shape": "box", "x": -0.4125, "z": 0.375, "w": 0.025, "d": 0.0833, "y": 0.3571, "h": 0.4286, "color": "dark"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

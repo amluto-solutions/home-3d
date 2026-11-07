@@ -1,0 +1,25 @@
+{
+  "id": "laundry_hamper",
+  "name": {"en": "Laundry basket"},
+  "size": [0.55, 0.36, 0.62],
+  "group": "household",
+  "room": ["bedroom", "bath", "utility"],
+  "tags": ["laundry bin", "washing basket", "laundry hamper", "dirty clothes", "linen basket", "laundry sorter", "fabric hamper"],
+  "family": "laundry_basket",
+  "variant": {"en": "Two-section hamper"},
+  "parts": [
+    {"shape": "rbox", "x": -0.2545, "z": 0.0, "w": 0.4727, "d": 0.9444, "y": 0.0484, "h": 0.9194, "color": "fabric", "round": 0.08},
+    {"shape": "box", "x": -0.2545, "z": 0.0, "w": 0.4, "d": 0.8333, "y": 0.9677, "h": 0.0242, "color": "#e9e3d6"},
+    {"shape": "rbox", "x": 0.2545, "z": 0.0, "w": 0.4727, "d": 0.9444, "y": 0.0484, "h": 0.9194, "color": "fabric", "round": 0.08},
+    {"shape": "box", "x": 0.2545, "z": 0.0, "w": 0.4, "d": 0.8333, "y": 0.9677, "h": 0.0242, "color": "#e9e3d6"},
+    {"shape": "cyl", "x": -0.4727, "z": -0.4583, "w": 0.0364, "d": 0.0556, "y": 0.0, "h": 1, "color": "wood"},
+    {"shape": "cyl", "x": -0.4727, "z": 0.4583, "w": 0.0364, "d": 0.0556, "y": 0.0, "h": 1, "color": "wood"},
+    {"shape": "cyl", "x": 0.4727, "z": -0.4583, "w": 0.0364, "d": 0.0556, "y": 0.0, "h": 1, "color": "wood"},
+    {"shape": "cyl", "x": 0.4727, "z": 0.4583, "w": 0.0364, "d": 0.0556, "y": 0.0, "h": 1, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.0556, "y": 0.9677, "h": 0.0323, "color": "wood"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": 0.0, "z1": -0.5, "x2": 0.0, "z2": 0.5}
+  ]
+}

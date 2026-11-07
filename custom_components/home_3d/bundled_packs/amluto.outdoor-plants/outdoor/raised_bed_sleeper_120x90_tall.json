@@ -1,0 +1,28 @@
+{
+  "id": "raised_bed_sleeper_120x90_tall",
+  "name": {"en": "Raised bed, timber sleeper, 1.2 × 0.9 m, tall"},
+  "size": [1.2, 0.9, 0.6],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["raised bed", "vegetable bed", "planter", "grow bed", "timber sleeper"],
+  "family": "raised_bed_sleeper",
+  "variant": {"en": "1.2 × 0.9 m, tall"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9167, "d": 0.8889, "y": 0, "h": 0.88, "color": "#4a3626", "top": "#52392a"},
+    {"shape": "box", "x": 0.0, "z": -0.4722, "w": 1, "d": 0.0556, "y": 0, "h": 1, "color": "#7a5a3a", "top": "#8c6a46"},
+    {"shape": "box", "x": 0.0, "z": 0.4722, "w": 1, "d": 0.0556, "y": 0, "h": 1, "color": "#7a5a3a", "top": "#8c6a46"},
+    {"shape": "box", "x": -0.4792, "z": 0.0, "w": 0.0417, "d": 0.8889, "y": 0, "h": 1, "color": "#7a5a3a", "top": "#8c6a46"},
+    {"shape": "box", "x": 0.4792, "z": 0.0, "w": 0.0417, "d": 0.8889, "y": 0, "h": 1, "color": "#7a5a3a", "top": "#8c6a46"},
+    {"shape": "box", "x": 0.0, "z": 0.4989, "w": 1, "d": 0.0067, "y": 0.3333, "h": 0.02, "color": "#5d4329", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.4989, "w": 1, "d": 0.0067, "y": 0.3333, "h": 0.02, "color": "#5d4329", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4989, "w": 1, "d": 0.0067, "y": 0.6667, "h": 0.02, "color": "#5d4329", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.4989, "w": 1, "d": 0.0067, "y": 0.6667, "h": 0.02, "color": "#5d4329", "fix": "d"},
+    {"shape": "box", "x": -0.475, "z": -0.4667, "w": 0.05, "d": 0.0667, "y": 0, "h": 1, "color": "#8c6a46", "fix": "wd"},
+    {"shape": "box", "x": 0.475, "z": -0.4667, "w": 0.05, "d": 0.0667, "y": 0, "h": 1, "color": "#8c6a46", "fix": "wd"},
+    {"shape": "box", "x": -0.475, "z": 0.4667, "w": 0.05, "d": 0.0667, "y": 0, "h": 1, "color": "#8c6a46", "fix": "wd"},
+    {"shape": "box", "x": 0.475, "z": 0.4667, "w": 0.05, "d": 0.0667, "y": 0, "h": 1, "color": "#8c6a46", "fix": "wd"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": false}
+  ]
+}

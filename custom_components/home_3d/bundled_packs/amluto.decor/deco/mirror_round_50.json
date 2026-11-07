@@ -1,0 +1,19 @@
+{
+  "id": "mirror_round_50",
+  "name": {"en": "Round mirror 50 cm"},
+  "size": [0.5, 0.03, 0.5],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "hall", "bath"],
+  "tags": ["mirror", "round mirror", "wall mirror", "circle", "brass", "gold"],
+  "family": "mirror_round",
+  "variant": {"en": "50 cm brass"},
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.2, "w": 1.0, "d": 0.6, "y": 0.0, "h": 1.0, "color": "#b8975a", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.1, "w": 0.952, "d": 0.8, "y": 0.024, "h": 0.952, "color": "#b9c7cd", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "line", "x1": -0.5, "z1": 0, "x2": 0.5, "z2": 0}
+  ]
+}

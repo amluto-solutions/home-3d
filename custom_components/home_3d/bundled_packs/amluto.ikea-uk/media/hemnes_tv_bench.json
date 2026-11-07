@@ -1,0 +1,49 @@
+{
+  "id": "hemnes_tv_bench",
+  "name": {
+    "en": "TV bench 148 cm"
+  },
+  "size": [
+    1.48,
+    0.47,
+    0.57
+  ],
+  "group": "media",
+  "room": [
+    "living",
+    "bedroom"
+  ],
+  "tags": [
+    "tv stand",
+    "tv unit",
+    "media unit",
+    "drawers",
+    "shelf",
+    "solid pine",
+    "white stain",
+    "black-brown",
+    "light brown",
+    "country",
+    "traditional"
+  ],
+  "family": "hemnes_tv",
+  "variant": {
+    "en": "TV bench 148"
+  },
+  "ikea": "HEMNES",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9474, "h": 0.0526, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4764, "z": -0.4255, "w": 0.0338, "d": 0.1064, "y": 0, "h": 0.9474, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4764, "z": 0.4255, "w": 0.0338, "d": 0.1064, "y": 0, "h": 0.9474, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4764, "z": -0.4255, "w": 0.0338, "d": 0.1064, "y": 0, "h": 0.9474, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4764, "z": 0.4255, "w": 0.0338, "d": 0.1064, "y": 0, "h": 0.9474, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9459, "d": 0.8723, "y": 0.1053, "h": 0.0351, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9459, "d": 0.8723, "y": 0.4737, "h": 0.0351, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4574, "w": 0.9459, "d": 0.0213, "y": 0.1053, "h": 0.8421, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.2365, "z": 0.4362, "w": 0.4689, "d": 0.0426, "y": 0.1404, "h": 0.3158, "color": "white"},
+    {"shape": "cyl", "x": -0.2365, "z": 0.483, "w": 0.0169, "d": 0.0511, "y": 0.2939, "h": 0.0439, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.2365, "z": 0.4362, "w": 0.4689, "d": 0.0426, "y": 0.1404, "h": 0.3158, "color": "white"},
+    {"shape": "cyl", "x": 0.2365, "z": 0.483, "w": 0.0169, "d": 0.0511, "y": 0.2939, "h": 0.0439, "color": "metal", "axis": "z", "fix": "wdh"}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "monitor_24",
+  "name": {"en": "Monitor 24″"},
+  "size": [0.547, 0.22, 0.415],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby"],
+  "tags": ["computer monitor", "screen", "display", "pc screen", "monitor"],
+  "family": "monitor",
+  "variant": {"en": "24″"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.05, "w": 0.45, "d": 0.85, "y": 0.0, "h": 0.0434, "color": "dark", "round": 0.4, "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.2727, "w": 0.0914, "d": 0.1364, "y": 0.0434, "h": 0.75, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.1136, "w": 0.4, "d": 0.1818, "y": 0.4307, "h": 0.3795, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.0227, "w": 1, "d": 0.0909, "y": 0.241, "h": 0.759, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.0727, "w": 0.9707, "d": 0.0091, "y": 0.2602, "h": 0.7205, "color": "glass", "screen": true}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "pet_bowls",
+  "name": {"en": "Food and water bowls"},
+  "size": [0.42, 0.24, 0.07],
+  "group": "pets",
+  "room": ["kitchen", "utility", "hall", "conservatory"],
+  "tags": ["pet bowls", "cat bowl", "dog bowl", "food bowl", "water bowl", "feeding", "mat", "stainless steel"],
+  "family": "pet_bowls",
+  "variant": {"en": "On a mat"},
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.1714, "color": "#7d9a8c", "round": 0.5, "fix": "h"},
+    {"shape": "lathe", "x": -0.2381, "z": 0.0, "w": 0.381, "d": 0.6667, "y": 0.1714, "h": 0.7857, "color": "#b8bec4", "profile": [[0.0, 0.0], [0.75, 0.0], [1, 1], [0.9, 1], [0.7, 0.2], [0.0, 0.2]]},
+    {"shape": "cyl", "x": -0.2381, "z": 0.0, "w": 0.2743, "d": 0.48, "y": 0.3286, "h": 0.3536, "color": "#8a5a2b"},
+    {"shape": "lathe", "x": 0.2381, "z": 0.0, "w": 0.381, "d": 0.6667, "y": 0.1714, "h": 0.7857, "color": "#b8bec4", "profile": [[0.0, 0.0], [0.75, 0.0], [1, 1], [0.9, 1], [0.7, 0.2], [0.0, 0.2]]},
+    {"shape": "cyl", "x": 0.2381, "z": 0.0, "w": 0.2743, "d": 0.48, "y": 0.3286, "h": 0.3536, "color": "#a9cbe0"}
+  ]
+}

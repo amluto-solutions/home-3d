@@ -1,0 +1,17 @@
+{
+  "id": "conifer_gold_medium",
+  "name": {"en": "Conifer, golden, medium"},
+  "size": [0.7, 0.7, 1.6],
+  "group": "plant",
+  "room": ["garden"],
+  "tags": ["conifer", "tree", "evergreen", "cone", "fir", "golden"],
+  "family": "conifer_gold",
+  "variant": {"en": "Medium (0.7 × 1.6 m)"},
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.06, "d": 0.06, "y": 0, "h": 0.15, "color": "#6b4c33"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.08, "h": 0.92, "color": "#b9a636", "profile": [[0.9, 0], [1, 0.05], [0.55, 0.35], [0.8, 0.38], [0.4, 0.68], [0.6, 0.7], [0.15, 0.95], [0, 1]]}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

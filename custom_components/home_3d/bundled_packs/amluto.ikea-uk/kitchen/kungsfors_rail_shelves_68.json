@@ -1,0 +1,40 @@
+{
+  "id": "kungsfors_rail_shelves_68",
+  "name": {
+    "en": "Suspension rail with shelves and rail 68 cm"
+  },
+  "size": [
+    0.68,
+    0.31,
+    0.8
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen",
+    "utility"
+  ],
+  "tags": [
+    "wall storage",
+    "rail",
+    "open shelving",
+    "hooks",
+    "stainless steel",
+    "ash veneer"
+  ],
+  "family": "kungsfors_rail",
+  "variant": {
+    "en": "68 cm with shelves"
+  },
+  "ikea": "KUNGSFORS",
+  "mount": "wall",
+  "wall_y": 1.35,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4677, "w": 1, "d": 0.0645, "y": 0.9625, "h": 0.0375, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": -0.4559, "z": -0.4516, "w": 0.0294, "d": 0.0323, "y": 0, "h": 0.9625, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": 0.4559, "z": -0.4516, "w": 0.0294, "d": 0.0323, "y": 0, "h": 0.9625, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8824, "d": 0.9677, "y": 0.65, "h": 0.025, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8824, "d": 0.9677, "y": 0.625, "h": 0.025, "color": "metal", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3387, "w": 0.8824, "d": 0.0419, "y": 0.125, "h": 0.0162, "color": "metal", "axis": "x", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8824, "d": 0.9677, "y": 0.9375, "h": 0.025, "color": "wood", "fix": "h"}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "trophy_figure_silver_small",
+  "name": {"en": "Trophy figure, silver, small"},
+  "size": [0.1, 0.1, 0.22],
+  "group": "deco",
+  "room": ["living", "office", "hall", "study", "games", "dining"],
+  "tags": ["trophy", "award", "prize", "silver", "figure", "statuette", "victory", "champion"],
+  "family": "trophy_figure_silver",
+  "variant": {"en": "Small"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.121, "color": "#2a2420", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.8, "y": 0.121, "h": 0.099, "color": "#3a312b", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.4, "d": 0.04, "y": 0.044, "h": 0.066, "color": "#d4af37", "fix": "wdh"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.38, "d": 0.26, "y": 0.22, "h": 0.429, "color": "#c7cbd1", "profile": [[0.7, 0], [1, 0], [0.9, 0.5], [0.6, 1], [0, 1]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.18, "d": 0.18, "y": 0.6646, "h": 0.1326, "color": "#c7cbd1", "fix": "wd"},
+    {"shape": "box", "x": -0.2, "z": 0.0, "w": 0.07, "d": 0.07, "y": 0.61, "h": 0.3276, "color": "#c7cbd1", "fix": "wd"},
+    {"shape": "box", "x": 0.2, "z": 0.0, "w": 0.07, "d": 0.07, "y": 0.61, "h": 0.3276, "color": "#c7cbd1", "fix": "wd"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.4, "d": 0.4, "y": 0.8752, "h": 0.1248, "color": "#c7cbd1", "fix": "wd"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

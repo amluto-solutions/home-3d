@@ -1,0 +1,36 @@
+{
+  "id": "skurup_pendant_38",
+  "name": {
+    "en": "Pendant lamp, bell shade 38 cm"
+  },
+  "size": [
+    0.38,
+    0.38,
+    0.8
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "pendant",
+    "ceiling light",
+    "black",
+    "white",
+    "bell",
+    "industrial"
+  ],
+  "ikea": "SKURUP",
+  "light": "pendant",
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.2632, "d": 0.2632, "y": 0.9688, "h": 0.0312, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0316, "d": 0.0316, "y": 0.3625, "h": 0.6125, "color": "dark", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.3625, "color": "dark", "profile": [[1.0, 0], [0.98, 0.18], [0.85, 0.5], [0.5, 0.82], [0.2, 1.0], [0, 1.0], [0.0, 0.97], [0.16, 0.97], [0.46, 0.79], [0.81, 0.47], [0.94, 0.15], [0.96, 0.0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.1842, "d": 0.1842, "y": 0.1269, "h": 0.0875, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "norberg_wall_drop_leaf_table",
+  "name": {
+    "en": "Wall-mounted drop-leaf table 74x60 cm"
+  },
+  "size": [
+    0.74,
+    0.6,
+    0.75
+  ],
+  "group": "table",
+  "room": [
+    "kitchen",
+    "dining",
+    "utility",
+    "office"
+  ],
+  "tags": [
+    "drop-leaf table",
+    "folding table",
+    "wall table",
+    "small space",
+    "fold-down",
+    "white"
+  ],
+  "ikea": "NORBERG",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4833, "w": 1, "d": 0.0333, "y": 0.3333, "h": 0.6667, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0167, "w": 1, "d": 0.9667, "y": 0.9667, "h": 0.0333, "color": "white", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": -0.4333, "w": 0.0405, "d": 0.05, "y": 0.4267, "h": 0.5333, "color": "white", "tz": 0.1333, "tw": 0.0405, "td": 0.05, "fix": "w"}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "rack_cable_manager_dring_1u",
+  "name": {"en": "Rack cable manager D-ring 1U"},
+  "size": [0.4826, 0.08, 0.0437],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "surface",
+  "tags": ["cable manager", "d-ring", "cable management", "1u", "rack mount", "19 inch", "rack"],
+  "family": "rack_cable_panel",
+  "variant": {"en": "D-ring 1U"},
+  "rack": {"u": 1},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0062, "w": 0.9163, "d": 0.9875, "y": 0.0, "h": 1.0, "color": "#3b4048", "edges": "faint"},
+    {"shape": "box", "x": -0.4793, "z": 0.475, "w": 0.0414, "d": 0.05, "y": 0.0, "h": 1.0, "color": "#3b4048"},
+    {"shape": "box", "x": 0.4793, "z": 0.475, "w": 0.0414, "d": 0.05, "y": 0.0, "h": 1.0, "color": "#3b4048"},
+    {"shape": "box", "x": -0.3937, "z": 0.3625, "w": 0.0497, "d": 0.275, "y": 0.1144, "h": 0.7712, "color": "metal"},
+    {"shape": "box", "x": -0.3937, "z": 0.35, "w": 0.0332, "d": 0.3, "y": 0.2059, "h": 0.5881, "color": "dark"},
+    {"shape": "box", "x": -0.2362, "z": 0.3625, "w": 0.0497, "d": 0.275, "y": 0.1144, "h": 0.7712, "color": "metal"},
+    {"shape": "box", "x": -0.2362, "z": 0.35, "w": 0.0332, "d": 0.3, "y": 0.2059, "h": 0.5881, "color": "dark"},
+    {"shape": "box", "x": -0.0787, "z": 0.3625, "w": 0.0497, "d": 0.275, "y": 0.1144, "h": 0.7712, "color": "metal"},
+    {"shape": "box", "x": -0.0787, "z": 0.35, "w": 0.0332, "d": 0.3, "y": 0.2059, "h": 0.5881, "color": "dark"},
+    {"shape": "box", "x": 0.0787, "z": 0.3625, "w": 0.0497, "d": 0.275, "y": 0.1144, "h": 0.7712, "color": "metal"},
+    {"shape": "box", "x": 0.0787, "z": 0.35, "w": 0.0332, "d": 0.3, "y": 0.2059, "h": 0.5881, "color": "dark"},
+    {"shape": "box", "x": 0.2362, "z": 0.3625, "w": 0.0497, "d": 0.275, "y": 0.1144, "h": 0.7712, "color": "metal"},
+    {"shape": "box", "x": 0.2362, "z": 0.35, "w": 0.0332, "d": 0.3, "y": 0.2059, "h": 0.5881, "color": "dark"},
+    {"shape": "box", "x": 0.3937, "z": 0.3625, "w": 0.0497, "d": 0.275, "y": 0.1144, "h": 0.7712, "color": "metal"},
+    {"shape": "box", "x": 0.3937, "z": 0.35, "w": 0.0332, "d": 0.3, "y": 0.2059, "h": 0.5881, "color": "dark"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

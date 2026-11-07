@@ -1,0 +1,23 @@
+{
+  "id": "tray_wood_large",
+  "name": {"en": "Large wooden tray"},
+  "size": [0.6, 0.4, 0.06],
+  "group": "tray",
+  "room": ["living", "dining", "bedroom", "hall", "kitchen"],
+  "tags": ["tray", "serving tray", "decor tray", "coffee table", "wooden", "ottoman tray", "large"],
+  "family": "tray",
+  "variant": {"en": "Wood 60 × 40"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.3, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.485, "w": 1.0, "d": 0.03, "y": 0.0, "h": 1.0, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.485, "w": 1.0, "d": 0.03, "y": 0.0, "h": 1.0, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": -0.49, "z": 0.0, "w": 0.02, "d": 1.0, "y": 0.0, "h": 1.0, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": -0.49, "z": 0.0, "w": 0.022, "d": 0.3, "y": 0.5, "h": 0.3, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.49, "z": 0.0, "w": 0.02, "d": 1.0, "y": 0.0, "h": 1.0, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.49, "z": 0.0, "w": 0.022, "d": 0.3, "y": 0.5, "h": 0.3, "color": "dark", "fix": "wh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

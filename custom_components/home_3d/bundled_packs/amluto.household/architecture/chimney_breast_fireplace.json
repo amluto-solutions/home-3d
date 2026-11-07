@@ -1,0 +1,32 @@
+{
+  "id": "chimney_breast_fireplace",
+  "name": {"en": "Chimney breast"},
+  "size": [1.5, 0.83, 2.4],
+  "group": "architecture",
+  "room": ["living", "dining", "bedroom"],
+  "tags": ["chimney breast", "chimney", "fireplace", "mantelpiece", "mantel", "hearth", "alcove", "period", "fire surround"],
+  "family": "chimney_breast",
+  "variant": {"en": "Open fireplace, 150 cm"},
+  "parts": [
+    {"shape": "box", "x": -0.35, "z": -0.2711, "w": 0.3, "d": 0.4578, "y": 0.0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.35, "z": -0.2711, "w": 0.3, "d": 0.4578, "y": 0.0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": -0.2711, "w": 0.4, "d": 0.4578, "y": 0.3125, "h": 0.6875, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": -0.3795, "w": 0.4, "d": 0.241, "y": 0.0, "h": 0.3125, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": -0.1506, "w": 0.4, "d": 0.2169, "y": 0.0, "h": 0.0083, "color": "#2a2b2e"},
+    {"shape": "box", "x": 0.0, "z": -0.259, "w": 0.2667, "d": 0.241, "y": 0.0083, "h": 0.05, "color": "dark"},
+    {"shape": "cyl", "x": -0.0667, "z": -0.259, "w": 0.06, "d": 0.3614, "y": 0.05, "h": 0.0375, "color": "wood", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": -0.259, "w": 0.06, "d": 0.3614, "y": 0.05, "h": 0.0375, "color": "wood", "axis": "z"},
+    {"shape": "cyl", "x": 0.0667, "z": -0.259, "w": 0.06, "d": 0.3614, "y": 0.05, "h": 0.0375, "color": "wood", "axis": "z"},
+    {"shape": "box", "x": -0.2533, "z": -0.0181, "w": 0.1067, "d": 0.0482, "y": 0.0, "h": 0.3625, "color": "wood"},
+    {"shape": "box", "x": 0.2533, "z": -0.0181, "w": 0.1067, "d": 0.0482, "y": 0.0, "h": 0.3625, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": -0.0181, "w": 0.6133, "d": 0.0482, "y": 0.3125, "h": 0.075, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.0301, "w": 0.7333, "d": 0.241, "y": 0.3875, "h": 0.0208, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2108, "w": 0.6667, "d": 0.5422, "y": 0.0, "h": 0.0125, "color": "dark", "top": "#4a4d52", "fix": "h"},
+    {"shape": "box", "x": -0.3533, "z": -0.0325, "w": 0.2933, "d": 0.0193, "y": 0.0, "h": 0.05, "color": "white", "top": "#f2f2ef", "fix": "h"},
+    {"shape": "box", "x": 0.3533, "z": -0.0325, "w": 0.2933, "d": 0.0193, "y": 0.0, "h": 0.05, "color": "white", "top": "#f2f2ef", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": -0.2711, "w": 1.0, "d": 0.4578},
+    {"shape": "rect", "x": 0.0, "z": 0.2289, "w": 0.6667, "d": 0.5422}
+  ]
+}

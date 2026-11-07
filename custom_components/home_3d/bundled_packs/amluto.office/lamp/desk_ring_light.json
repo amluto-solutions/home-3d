@@ -1,0 +1,21 @@
+{
+  "id": "desk_ring_light",
+  "name": {"en": "Desk-clamp ring light"},
+  "size": [0.3, 0.37, 0.6],
+  "group": "lamp",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["ring light", "selfie ring light", "led ring", "video light", "streaming light", "clamp", "desk light", "streaming", "audio"],
+  "family": "desk_ring_light",
+  "variant": {"en": "Ring light"},
+  "light": "table",
+  "electric": true,
+  "watts": 18,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4054, "w": 0.1667, "d": 0.1622, "y": 0.0, "h": 0.0667, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": -0.4054, "w": 0.0833, "d": 0.0676, "y": 0.0667, "h": 0.7667, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": -0.1351, "w": 0.0667, "d": 0.5405, "y": 0.7667, "h": 0.0333, "color": "metal", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.3243, "w": 1.0, "d": 0.1351, "y": 0.4667, "h": 0.5, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.3919, "w": 0.8667, "d": 0.027, "y": 0.5, "h": 0.4333, "color": "white", "axis": "z", "glow": true}
+  ]
+}

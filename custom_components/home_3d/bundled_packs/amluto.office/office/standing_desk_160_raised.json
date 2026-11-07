@@ -1,0 +1,29 @@
+{
+  "id": "standing_desk_160_raised",
+  "name": {"en": "Standing desk 160 cm, raised"},
+  "size": [1.6, 0.8, 1.1],
+  "group": "office",
+  "room": ["office", "bedroom", "kids", "hobby"],
+  "tags": ["desk", "workstation", "computer desk", "study desk", "home office", "standing desk", "sit-stand desk", "height adjustable", "electric desk"],
+  "family": "standing_desk",
+  "variant": {"en": "160 cm raised"},
+  "surface": true,
+  "electric": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.9773, "h": 0.0227, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.425, "z": 0.0, "w": 0.0438, "d": 0.85, "y": 0.0, "h": 0.0318, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": -0.425, "z": -0.0062, "w": 0.05, "d": 0.1, "y": 0.0318, "h": 0.4682, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": -0.425, "z": -0.0062, "w": 0.0413, "d": 0.0825, "y": 0.5, "h": 0.45, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": -0.425, "z": 0.0, "w": 0.0375, "d": 0.8, "y": 0.95, "h": 0.0273, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.425, "z": 0.0, "w": 0.0438, "d": 0.85, "y": 0.0, "h": 0.0318, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.425, "z": -0.0062, "w": 0.05, "d": 0.1, "y": 0.0318, "h": 0.4682, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.425, "z": -0.0062, "w": 0.0413, "d": 0.0825, "y": 0.5, "h": 0.45, "color": "metal", "fix": "w"},
+    {"shape": "box", "x": 0.425, "z": 0.0, "w": 0.0375, "d": 0.8, "y": 0.95, "h": 0.0273, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": -0.025, "w": 0.8125, "d": 0.05, "y": 0.9318, "h": 0.0455, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.3563, "z": 0.4875, "w": 0.0875, "d": 0.025, "y": 0.9545, "h": 0.0227, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.3438, "z": 0.4991, "w": 0.025, "d": 0.0019, "y": 0.9609, "h": 0.0091, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "gate_metal_pedestrian_white_180",
+  "name": {"en": "Metal pedestrian gate, white, 1.8 m high"},
+  "size": [1.1, 0.08, 1.8],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["gate", "metal gate", "iron gate", "pedestrian gate", "wrought iron", "entrance"],
+  "family": "gate_metal_pedestrian_white",
+  "variant": {"en": "1.8 m high"},
+  "parts": [
+    {"shape": "box", "x": -0.4727, "z": 0.0, "w": 0.0636, "d": 0.875, "y": 0, "h": 1, "color": "#d6d6d3", "fix": "wd"},
+    {"shape": "sphere", "x": -0.4727, "z": 0.0, "w": 0.0818, "d": 1, "y": 0.9722, "h": 0.0444, "color": "#ffffff", "fix": "wdh"},
+    {"shape": "box", "x": 0.4727, "z": 0.0, "w": 0.0636, "d": 0.875, "y": 0, "h": 1, "color": "#d6d6d3", "fix": "wd"},
+    {"shape": "sphere", "x": 0.4727, "z": 0.0, "w": 0.0818, "d": 1, "y": 0.9722, "h": 0.0444, "color": "#ffffff", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8545, "d": 0.375, "y": 0.0667, "h": 0.0222, "color": "#eeeeea"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8545, "d": 0.375, "y": 0.9222, "h": 0.0222, "color": "#eeeeea"},
+    {"shape": "cyl", "x": -0.3636, "z": 0.0, "w": 0.0145, "d": 0.2, "y": 0.0556, "h": 0.8889, "color": "#eeeeea"},
+    {"shape": "loft", "x": -0.3636, "z": 0.0, "w": 0.0273, "d": 0.375, "y": 0.9222, "h": 0.0667, "color": "#eeeeea", "tx": -0.3636, "tz": 0.0, "tw": 0.0036, "td": 0.05},
+    {"shape": "cyl", "x": -0.2424, "z": 0.0, "w": 0.0145, "d": 0.2, "y": 0.0556, "h": 0.8889, "color": "#eeeeea"},
+    {"shape": "loft", "x": -0.2424, "z": 0.0, "w": 0.0273, "d": 0.375, "y": 0.9222, "h": 0.0667, "color": "#eeeeea", "tx": -0.2424, "tz": 0.0, "tw": 0.0036, "td": 0.05},
+    {"shape": "cyl", "x": -0.1212, "z": 0.0, "w": 0.0145, "d": 0.2, "y": 0.0556, "h": 0.8889, "color": "#eeeeea"},
+    {"shape": "loft", "x": -0.1212, "z": 0.0, "w": 0.0273, "d": 0.375, "y": 0.9222, "h": 0.0667, "color": "#eeeeea", "tx": -0.1212, "tz": 0.0, "tw": 0.0036, "td": 0.05},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0145, "d": 0.2, "y": 0.0556, "h": 0.8889, "color": "#eeeeea"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.0273, "d": 0.375, "y": 0.9222, "h": 0.0667, "color": "#eeeeea", "tx": 0.0, "tz": 0.0, "tw": 0.0036, "td": 0.05},
+    {"shape": "cyl", "x": 0.1212, "z": 0.0, "w": 0.0145, "d": 0.2, "y": 0.0556, "h": 0.8889, "color": "#eeeeea"},
+    {"shape": "loft", "x": 0.1212, "z": 0.0, "w": 0.0273, "d": 0.375, "y": 0.9222, "h": 0.0667, "color": "#eeeeea", "tx": 0.1212, "tz": 0.0, "tw": 0.0036, "td": 0.05},
+    {"shape": "cyl", "x": 0.2424, "z": 0.0, "w": 0.0145, "d": 0.2, "y": 0.0556, "h": 0.8889, "color": "#eeeeea"},
+    {"shape": "loft", "x": 0.2424, "z": 0.0, "w": 0.0273, "d": 0.375, "y": 0.9222, "h": 0.0667, "color": "#eeeeea", "tx": 0.2424, "tz": 0.0, "tw": 0.0036, "td": 0.05},
+    {"shape": "cyl", "x": 0.3636, "z": 0.0, "w": 0.0145, "d": 0.2, "y": 0.0556, "h": 0.8889, "color": "#eeeeea"},
+    {"shape": "loft", "x": 0.3636, "z": 0.0, "w": 0.0273, "d": 0.375, "y": 0.9222, "h": 0.0667, "color": "#eeeeea", "tx": 0.3636, "tz": 0.0, "tw": 0.0036, "td": 0.05},
+    {"shape": "box", "x": 0.3273, "z": 0.375, "w": 0.0727, "d": 0.3125, "y": 0.5, "h": 0.0278, "color": "#c9a84a"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

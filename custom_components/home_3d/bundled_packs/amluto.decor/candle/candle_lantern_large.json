@@ -1,0 +1,25 @@
+{
+  "id": "candle_lantern_large",
+  "name": {"en": "Candle lantern large"},
+  "size": [0.24, 0.24, 0.5],
+  "group": "candle",
+  "room": ["living", "dining", "bedroom", "hall", "garden", "conservatory"],
+  "tags": ["lantern", "candle lantern", "hurricane lamp", "storm lantern", "black metal"],
+  "family": "candle_lantern",
+  "variant": {"en": "Large"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.04, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.4667, "z": -0.4667, "w": 0.0667, "d": 0.0667, "y": 0.04, "h": 0.68, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": -0.4667, "z": 0.4667, "w": 0.0667, "d": 0.0667, "y": 0.04, "h": 0.68, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.4667, "z": -0.4667, "w": 0.0667, "d": 0.0667, "y": 0.04, "h": 0.68, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.4667, "z": 0.4667, "w": 0.0667, "d": 0.0667, "y": 0.04, "h": 0.68, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9333, "d": 0.9333, "y": 0.04, "h": 0.68, "color": "#dfe9ec"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.72, "h": 0.03, "color": "dark", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.75, "h": 0.16, "color": "dark", "tw": 0.06, "td": 0.06},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.32, "d": 0.05, "y": 0.91, "h": 0.09, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4, "d": 0.4, "y": 0.04, "h": 0.3, "color": "#f1e7d3"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0125, "d": 0.0125, "y": 0.34, "h": 0.016, "color": "#2b2b2b", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.05, "d": 0.05, "y": 0.352, "h": 0.048, "color": "#ffb648", "fix": "wdh"}
+  ]
+}

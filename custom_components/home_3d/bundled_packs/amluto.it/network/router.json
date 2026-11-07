@@ -1,0 +1,28 @@
+{
+  "id": "router",
+  "name": {"en": "Wi-Fi router"},
+  "size": [0.26, 0.17, 0.2],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage", "living"],
+  "tags": ["router", "wifi router", "wi-fi", "broadband", "internet", "hub", "modem", "gateway"],
+  "family": "router",
+  "variant": {"en": "With antennas"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": -0.3654, "z": 0.0, "w": 0.1154, "d": 0.6471, "y": 0.0, "h": 0.02, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.3654, "z": 0.0, "w": 0.1154, "d": 0.6471, "y": 0.0, "h": 0.02, "color": "dark", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.02, "h": 0.18, "color": "white", "round": 0.2},
+    {"shape": "cyl", "x": -0.4231, "z": -0.3235, "w": 0.0462, "d": 0.0706, "y": 0.2, "h": 0.8, "color": "white", "fix": "wd"},
+    {"shape": "cyl", "x": -0.1538, "z": -0.3235, "w": 0.0462, "d": 0.0706, "y": 0.2, "h": 0.8, "color": "white", "fix": "wd"},
+    {"shape": "cyl", "x": 0.1538, "z": -0.3235, "w": 0.0462, "d": 0.0706, "y": 0.2, "h": 0.8, "color": "white", "fix": "wd"},
+    {"shape": "cyl", "x": 0.4231, "z": -0.3235, "w": 0.0462, "d": 0.0706, "y": 0.2, "h": 0.8, "color": "white", "fix": "wd"},
+    {"shape": "box", "x": -0.1923, "z": 0.4882, "w": 0.0769, "d": 0.0235, "y": 0.08, "h": 0.03, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": -0.0385, "z": 0.4882, "w": 0.0769, "d": 0.0235, "y": 0.08, "h": 0.03, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": 0.1154, "z": 0.4882, "w": 0.0769, "d": 0.0235, "y": 0.08, "h": 0.03, "color": "#46d36a", "glow": true},
+    {"shape": "box", "x": 0.2692, "z": 0.4882, "w": 0.0769, "d": 0.0235, "y": 0.08, "h": 0.03, "color": "#ffb04a", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

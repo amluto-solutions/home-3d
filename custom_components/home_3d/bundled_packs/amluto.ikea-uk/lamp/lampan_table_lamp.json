@@ -1,0 +1,37 @@
+{
+  "id": "lampan_table_lamp",
+  "name": {
+    "en": "Table lamp, white drum shade 29 cm"
+  },
+  "size": [
+    0.19,
+    0.19,
+    0.29
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "kids"
+  ],
+  "tags": [
+    "table lamp",
+    "bedside lamp",
+    "white",
+    "black",
+    "cheap",
+    "classic",
+    "student"
+  ],
+  "ikea": "LAMPAN",
+  "light": "table",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.6842, "d": 0.6842, "y": 0, "h": 0.0414, "color": "white", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0737, "d": 0.0737, "y": 0.0345, "h": 0.4828, "color": "white", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.4483, "h": 0.5517, "color": "white", "edges": "faint", "profile": [[1.0, 0], [0.789, 1], [0.663, 1], [0.874, 0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.3158, "d": 0.3158, "y": 0.5517, "h": 0.2069, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

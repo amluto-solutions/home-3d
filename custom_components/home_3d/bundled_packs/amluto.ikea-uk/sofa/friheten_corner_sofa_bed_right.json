@@ -1,0 +1,53 @@
+{
+  "id": "friheten_corner_sofa_bed_right",
+  "name": {
+    "en": "Corner sofa-bed with storage, chaise right"
+  },
+  "size": [
+    2.3,
+    1.51,
+    0.86
+  ],
+  "group": "sofa",
+  "room": [
+    "living",
+    "conservatory"
+  ],
+  "tags": [
+    "FRIHETEN",
+    "sofa bed",
+    "sofa-bed",
+    "corner sofa",
+    "storage",
+    "guest bed",
+    "dark grey",
+    "light grey",
+    "beige",
+    "dark blue"
+  ],
+  "family": "friheten_sofa_bed",
+  "variant": {
+    "en": "Corner, chaise right"
+  },
+  "ikea": "FRIHETEN",
+  "parts": [
+    {"shape": "rbox", "x": -0.1739, "z": -0.202, "w": 0.6522, "d": 0.596, "y": 0.0465, "h": 0.314, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": -0.1478, "z": -0.4205, "w": 0.6, "d": 0.1589, "y": 0.3605, "h": 0.5233, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.2978, "z": -0.1225, "w": 0.2957, "d": 0.4305, "y": 0.3605, "h": 0.1512, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.2978, "z": -0.2815, "w": 0.2913, "d": 0.1192, "y": 0.5116, "h": 0.4884, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.0022, "z": -0.1225, "w": 0.2957, "d": 0.4305, "y": 0.3605, "h": 0.1512, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.0022, "z": -0.2815, "w": 0.2913, "d": 0.1192, "y": 0.5116, "h": 0.4884, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.4739, "z": -0.202, "w": 0.0522, "d": 0.596, "y": 0.0465, "h": 0.6744, "color": "fabric", "fix": "w", "round": 0.3},
+    {"shape": "box", "x": -0.4739, "z": -0.4603, "w": 0.013, "d": 0.0199, "y": 0, "h": 0.0465, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.4739, "z": 0.0563, "w": 0.013, "d": 0.0199, "y": 0, "h": 0.0465, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.1261, "z": -0.4603, "w": 0.013, "d": 0.0199, "y": 0, "h": 0.0465, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.1261, "z": 0.0563, "w": 0.013, "d": 0.0199, "y": 0, "h": 0.0465, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.3261, "z": 0.0, "w": 0.3478, "d": 1, "y": 0.0465, "h": 0.314, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": 0.3261, "z": -0.4205, "w": 0.3478, "d": 0.1589, "y": 0.3605, "h": 0.5233, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": 0.3261, "z": 0.0795, "w": 0.3435, "d": 0.8344, "y": 0.3605, "h": 0.1512, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.3261, "z": -0.2815, "w": 0.3391, "d": 0.1192, "y": 0.5116, "h": 0.4884, "color": "cushion", "round": 0.35},
+    {"shape": "box", "x": 0.1783, "z": 0.4603, "w": 0.013, "d": 0.0199, "y": 0, "h": 0.0465, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4739, "z": 0.4603, "w": 0.013, "d": 0.0199, "y": 0, "h": 0.0465, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.3261, "z": 0.0662, "w": 0.3304, "d": 0.0066, "y": 0.3547, "h": 0.0058, "color": "dark", "fix": "dh"}
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "elegoo_centauri_carbon_3d_printer_canvas",
+  "name": {
+    "en": "Elegoo Centauri Carbon with CANVAS"
+  },
+  "size": [
+    0.398,
+    0.404,
+    0.71
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage"
+  ],
+  "tags": [
+    "3d printer",
+    "printer",
+    "elegoo",
+    "maker",
+    "filament",
+    "fdm",
+    "centauri carbon",
+    "corexy"
+  ],
+  "family": "elegoo_centauri_carbon",
+  "variant": {
+    "en": "With CANVAS"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0496, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": -0.475, "w": 1, "d": 0.05, "y": 0.0496, "h": 0.5623, "color": "body"},
+    {"shape": "box", "x": -0.4756, "z": 0.025, "w": 0.0488, "d": 0.95, "y": 0.0496, "h": 0.5623, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.4756, "z": 0.025, "w": 0.0488, "d": 0.95, "y": 0.0496, "h": 0.5623, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.6119, "h": 0.0496, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.485, "w": 0.9024, "d": 0.02, "y": 0.065, "h": 0.5491, "color": "glass"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9024, "d": 0.03, "y": 0.516, "h": 0.0198, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.1, "w": 0.62, "d": 0.62, "y": 0.172, "h": 0.0132, "color": "metal"},
+    {"shape": "rbox", "x": 0.0, "z": 0.1, "w": 0.12, "d": 0.12, "y": 0.4962, "h": 0.0529, "color": "dark", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": 0.4, "w": 0.8, "d": 0.035, "y": 0.5822, "h": 0.0132, "color": "#fff1d0", "glow": true},
+    {"shape": "rbox", "x": 0.3, "z": 0.49, "w": 0.22, "d": 0.015, "y": 0.0099, "h": 0.0298, "color": "accent", "edges": "glow", "round": 0.2},
+    {"shape": "cyl", "x": 0.3, "z": 0.46, "w": 0.0854, "d": 0.075, "y": 0.5788, "h": 0.0615, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.3, "z": 0.49, "w": 0.0537, "d": 0.015, "y": 0.5835, "h": 0.0369, "color": "glass", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7317, "d": 0.6, "y": 0.6615, "h": 0.3385, "color": "body"},
+    {"shape": "box", "x": 0.0, "z": 0.29, "w": 0.6585, "d": 0.0125, "y": 0.6846, "h": 0.2923, "color": "glass"},
+    {"shape": "cyl", "x": -0.2524, "z": 0.0, "w": 0.1463, "d": 0.42, "y": 0.6923, "h": 0.2369, "color": "accent", "axis": "z"},
+    {"shape": "cyl", "x": -0.0841, "z": 0.0, "w": 0.1463, "d": 0.42, "y": 0.6923, "h": 0.2369, "color": "white", "axis": "z"},
+    {"shape": "cyl", "x": 0.0841, "z": 0.0, "w": 0.1463, "d": 0.42, "y": 0.6923, "h": 0.2369, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.2524, "z": 0.0, "w": 0.1463, "d": 0.42, "y": 0.6923, "h": 0.2369, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [{"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}, {"shape": "rect", "x": 0, "z": 0, "w": 0.8, "d": 0.8}]
+}

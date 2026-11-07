@@ -1,0 +1,22 @@
+{
+  "id": "trailer_car",
+  "name": {"en": "Car trailer"},
+  "size": [2.1, 5.5, 0.7],
+  "group": "vehicle",
+  "room": ["garage", "garden"],
+  "tags": ["trailer", "towing", "car transporter", "flatbed", "recovery"],
+  "vehicle": true,
+  "parts": [
+    {"shape": "cyl", "x": -0.4524, "z": -0.12, "w": 0.0857, "d": 0.1091, "y": 0.0, "h": 0.8571, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.4524, "z": -0.12, "w": 0.0857, "d": 0.1091, "y": 0.0, "h": 0.8571, "color": "dark", "axis": "x"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.95, "d": 0.85, "y": 0.5714, "h": 0.1143, "color": "metal"},
+    {"shape": "box", "x": -0.47, "z": 0.0, "w": 0.0238, "d": 0.85, "y": 0.6857, "h": 0.0571, "color": "paint"},
+    {"shape": "box", "x": 0.47, "z": 0.0, "w": 0.0238, "d": 0.85, "y": 0.6857, "h": 0.0571, "color": "paint"},
+    {"shape": "box", "x": 0.0, "z": -0.42, "w": 0.95, "d": 0.0091, "y": 0.6857, "h": 0.0571, "color": "paint"},
+    {"shape": "box", "x": 0.0, "z": 0.4, "w": 0.95, "d": 0.0091, "y": 0.6857, "h": 0.1429, "color": "paint"},
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 0.0238, "d": 0.5091, "y": 0.5714, "h": 0.0714, "color": "metal"},
+    {"shape": "box", "x": 0.1429, "z": 0.25, "w": 0.0238, "d": 0.5091, "y": 0.5714, "h": 0.0714, "color": "metal"},
+    {"shape": "box", "x": -0.1429, "z": 0.25, "w": 0.0238, "d": 0.5091, "y": 0.5714, "h": 0.0714, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.4, "w": 0.8, "d": 0.15, "y": 0.6857, "h": 0.0429, "color": "dark"}
+  ]
+}

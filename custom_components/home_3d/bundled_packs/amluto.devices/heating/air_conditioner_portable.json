@@ -1,0 +1,26 @@
+{
+  "id": "air_conditioner_portable",
+  "name": {"en": "Air conditioning unit"},
+  "size": [0.4, 0.5, 0.75],
+  "group": "heating",
+  "room": ["bedroom", "office", "living", "kids"],
+  "tags": ["air conditioning", "air con", "aircon", "split unit", "ac", "cooling", "mini split", "portable ac", "air cooler", "dehumidifier"],
+  "family": "air_conditioner",
+  "variant": {"en": "Portable"},
+  "electric": true,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.12, "w": 0.95, "d": 0.72, "y": 0.04, "h": 0.9333, "color": "white", "round": 0.12},
+    {"shape": "cyl", "x": -0.35, "z": -0.14, "w": 0.1, "d": 0.08, "y": 0.0, "h": 0.04, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.35, "z": 0.38, "w": 0.1, "d": 0.08, "y": 0.0, "h": 0.04, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.35, "z": -0.14, "w": 0.1, "d": 0.08, "y": 0.0, "h": 0.04, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.35, "z": 0.38, "w": 0.1, "d": 0.08, "y": 0.0, "h": 0.04, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.24, "w": 0.75, "d": 0.36, "y": 0.976, "h": 0.0053, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.482, "w": 0.5, "d": 0.008, "y": 0.8267, "h": 0.0533, "color": "#7fd0ff"},
+    {"shape": "box", "x": 0.0, "z": 0.482, "w": 0.75, "d": 0.008, "y": 0.16, "h": 0.4, "color": "#dcdcdc"},
+    {"shape": "cyl", "x": 0.0, "z": -0.28, "w": 0.375, "d": 0.24, "y": 0.56, "h": 0.2, "color": "metal", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": -0.36, "w": 0.325, "d": 0.26, "y": 0.6667, "h": 0.3333, "color": "#d8d8d8"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.12, "w": 0.95, "d": 0.72}
+  ]
+}

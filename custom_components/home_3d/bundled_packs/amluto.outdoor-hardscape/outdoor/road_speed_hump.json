@@ -1,0 +1,23 @@
+{
+  "id": "road_speed_hump",
+  "name": {"en": "Speed hump"},
+  "size": [6.0, 3.5, 0.08],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["road", "speed hump", "speed bump", "traffic calming", "street"],
+  "family": "road_speed_hump",
+  "variant": {"en": "6 × 3.5 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.25, "color": "#3a3c3f"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.25, "h": 0.75, "color": "#3a3c3f", "tx": 0.0, "tz": 0.0, "tw": 1, "td": 0.5714},
+    {"shape": "box", "x": -0.4167, "z": 0.0, "w": 0.05, "d": 0.5429, "y": 0.975, "h": 0.0375, "color": "#3a3c3f"},
+    {"shape": "box", "x": -0.25, "z": 0.0, "w": 0.05, "d": 0.5429, "y": 0.975, "h": 0.0375, "color": "#eeeeea"},
+    {"shape": "box", "x": -0.0833, "z": 0.0, "w": 0.05, "d": 0.5429, "y": 0.975, "h": 0.0375, "color": "#3a3c3f"},
+    {"shape": "box", "x": 0.0833, "z": 0.0, "w": 0.05, "d": 0.5429, "y": 0.975, "h": 0.0375, "color": "#eeeeea"},
+    {"shape": "box", "x": 0.25, "z": 0.0, "w": 0.05, "d": 0.5429, "y": 0.975, "h": 0.0375, "color": "#3a3c3f"},
+    {"shape": "box", "x": 0.4167, "z": 0.0, "w": 0.05, "d": 0.5429, "y": 0.975, "h": 0.0375, "color": "#eeeeea"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

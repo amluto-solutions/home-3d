@@ -1,0 +1,27 @@
+{
+  "id": "scooter_kick_adult",
+  "name": {"en": "Kick scooter"},
+  "size": [0.59, 0.99, 1.02],
+  "group": "vehicle",
+  "room": ["hall", "garage", "utility", "garden"],
+  "tags": ["scooter", "kick scooter", "push scooter", "folding scooter", "commuter", "micro scooter", "adult", "transport"],
+  "family": "scooter",
+  "variant": {"en": "Folding kick scooter, adult"},
+  "vehicle": true,
+  "colors": {"paint": "#25262a"},
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.0934, "w": 0.2203, "d": 0.5253, "y": 0.098, "h": 0.0294, "color": "paint"},
+    {"shape": "box", "x": 0, "z": -0.0934, "w": 0.1864, "d": 0.5051, "y": 0.1275, "h": 0.0039, "color": "#3a3d42"},
+    {"shape": "cyl", "x": 0, "z": -0.4167, "w": 0.0508, "d": 0.1515, "y": 0, "h": 0.1471, "color": "#25262a", "axis": "x"},
+    {"shape": "cyl", "x": 0, "z": -0.4167, "w": 0.0576, "d": 0.0758, "y": 0.0368, "h": 0.0735, "color": "#b9bdc2", "axis": "x"},
+    {"shape": "box", "x": 0, "z": -0.4167, "w": 0.0847, "d": 0.1212, "y": 0.1667, "h": 0.0294, "color": "paint"},
+    {"shape": "cyl", "x": 0, "z": 0.3914, "w": 0.0593, "d": 0.202, "y": 0, "h": 0.1961, "color": "#25262a", "axis": "x"},
+    {"shape": "cyl", "x": 0, "z": 0.3914, "w": 0.0661, "d": 0.101, "y": 0.049, "h": 0.098, "color": "#b9bdc2", "axis": "x"},
+    {"shape": "loft", "x": 0, "z": 0.3712, "w": 0.0576, "d": 0.0343, "y": 0.098, "h": 0.8627, "color": "#b9bdc2", "tx": 0, "tz": 0.2904, "tw": 0.0576, "td": 0.0343},
+    {"shape": "loft", "x": 0, "z": 0.3712, "w": 0.0847, "d": 0.0505, "y": 0.098, "h": 0.1471, "color": "paint", "tx": 0, "tz": 0.3712, "tw": 0.0847, "td": 0.0505},
+    {"shape": "cyl", "x": 0, "z": 0.2904, "w": 0.8475, "d": 0.0253, "y": 0.9681, "h": 0.0245, "color": "#25262a", "axis": "x"},
+    {"shape": "cyl", "x": -0.4068, "z": 0.2904, "w": 0.1695, "d": 0.0354, "y": 0.9632, "h": 0.0343, "color": "#c1272d", "axis": "x"},
+    {"shape": "cyl", "x": 0.4068, "z": 0.2904, "w": 0.1695, "d": 0.0354, "y": 0.9632, "h": 0.0343, "color": "#c1272d", "axis": "x"},
+    {"shape": "box", "x": 0, "z": 0.3914, "w": 0.0678, "d": 0.0404, "y": 0.2647, "h": 0.0392, "color": "#b9bdc2"}
+  ]
+}

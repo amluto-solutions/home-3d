@@ -1,0 +1,45 @@
+{
+  "id": "blahaj_shark_100",
+  "name": {
+    "en": "Soft toy shark 100 cm"
+  },
+  "size": [
+    1.0,
+    0.36,
+    0.3
+  ],
+  "group": "kids",
+  "room": [
+    "kids",
+    "bedroom",
+    "living"
+  ],
+  "tags": [
+    "BLAHAJ",
+    "shark",
+    "soft toy",
+    "plush",
+    "cuddly toy",
+    "stuffed animal",
+    "grey",
+    "blue",
+    "large"
+  ],
+  "family": "blahaj_soft_toy",
+  "variant": {
+    "en": "100 cm"
+  },
+  "ikea": "BLÅHAJ",
+  "parts": [
+    {"shape": "sphere", "x": 0.08, "z": 0.0, "w": 0.62, "d": 0.9444, "y": 0.0667, "h": 0.9333, "color": "fabric"},
+    {"shape": "sphere", "x": 0.32, "z": 0.0, "w": 0.36, "d": 0.7778, "y": 0.1, "h": 0.7333, "color": "fabric"},
+    {"shape": "sphere", "x": -0.2, "z": 0.0, "w": 0.4, "d": 0.5556, "y": 0.1333, "h": 0.5667, "color": "fabric"},
+    {"shape": "sphere", "x": 0.09, "z": 0.0278, "w": 0.5, "d": 0.7222, "y": 0.05, "h": 0.3333, "color": "white"},
+    {"shape": "loft", "x": -0.43, "z": 0.0, "w": 0.1, "d": 0.0833, "y": 0.0667, "h": 0.8667, "color": "fabric", "tx": -0.48, "tz": 0.0, "tw": 0.1, "td": 0.0556},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.16, "d": 0.0833, "y": 0.6667, "h": 0.3333, "color": "fabric", "tx": -0.05, "tz": 0.0, "tw": 0.03, "td": 0.0278},
+    {"shape": "loft", "x": 0.14, "z": -0.3889, "w": 0.14, "d": 0.2778, "y": 0.0667, "h": 0.1, "color": "fabric", "tx": 0.06, "tz": -0.5, "tw": 0.05, "td": 0.1111},
+    {"shape": "loft", "x": 0.14, "z": 0.3889, "w": 0.14, "d": 0.2778, "y": 0.0667, "h": 0.1, "color": "fabric", "tx": 0.06, "tz": 0.5, "tw": 0.05, "td": 0.1111},
+    {"shape": "sphere", "x": 0.42, "z": 0.2222, "w": 0.025, "d": 0.0556, "y": 0.3667, "h": 0.0833, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.42, "z": -0.2222, "w": 0.025, "d": 0.0556, "y": 0.3667, "h": 0.0833, "color": "dark", "fix": "wdh"}
+  ]
+}

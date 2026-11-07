@@ -1,0 +1,23 @@
+{
+  "id": "whiteboard_120x90",
+  "name": {"en": "Whiteboard 120 × 90"},
+  "size": [1.2, 0.05, 0.9],
+  "group": "office",
+  "room": ["office", "kids", "kitchen", "hobby", "hall"],
+  "tags": ["whiteboard", "dry wipe board", "white board", "magnetic board", "planner", "office board"],
+  "family": "whiteboard",
+  "variant": {"en": "120 × 90"},
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.26, "w": 1.0, "d": 0.48, "y": 0.0, "h": 1.0, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.975, "d": 0.04, "y": 0.0167, "h": 0.9667, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.24, "w": 0.8333, "d": 0.52, "y": 0.0, "h": 0.0133, "color": "metal", "fix": "h"},
+    {"shape": "cyl", "x": -0.3333, "z": 0.36, "w": 0.1, "d": 0.28, "y": 0.0133, "h": 0.0178, "color": "#c0392b", "axis": "x", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.2917, "z": 0.36, "w": 0.1, "d": 0.28, "y": 0.0133, "h": 0.0178, "color": "#2c5fd6", "axis": "x", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.25, "z": 0.36, "w": 0.1, "d": 0.28, "y": 0.0133, "h": 0.0178, "color": "dark", "axis": "x", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

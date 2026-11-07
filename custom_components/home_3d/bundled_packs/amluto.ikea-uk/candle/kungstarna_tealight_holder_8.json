@@ -1,0 +1,38 @@
+{
+  "id": "kungstarna_tealight_holder_8",
+  "name": {
+    "en": "Tealight holder, glass/gold-colour 8 cm"
+  },
+  "size": [
+    0.07,
+    0.07,
+    0.08
+  ],
+  "group": "candle",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "bedroom"
+  ],
+  "tags": [
+    "KUNGSTARNA",
+    "tealight holder",
+    "candle holder",
+    "glass",
+    "gold-colour",
+    "votive"
+  ],
+  "family": "kungstarna_holder",
+  "variant": {
+    "en": "Tealight 8"
+  },
+  "ikea": "KUNGSTÄRNA",
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "glass", "profile": [[0.7, 0], [1, 0.25], [1, 1], [0.92, 1], [0.86, 0.2]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.7, "d": 0.7, "y": 0, "h": 0.1, "color": "#c8a45a", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.5429, "d": 0.5429, "y": 0.2, "h": 0.2, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4857, "d": 0.4857, "y": 0.325, "h": 0.15, "color": "#f1ead9", "fix": "wdh"}
+  ]
+}

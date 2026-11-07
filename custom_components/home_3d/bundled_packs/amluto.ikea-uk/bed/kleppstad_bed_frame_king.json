@@ -1,0 +1,41 @@
+{
+  "id": "kleppstad_bed_frame_king",
+  "name": {
+    "en": "Bed frame with upholstered headboard, King"
+  },
+  "size": [
+    1.56,
+    2.07,
+    0.86
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom"
+  ],
+  "tags": [
+    "bed",
+    "bed frame",
+    "upholstered headboard",
+    "king",
+    "white",
+    "beige"
+  ],
+  "family": "kleppstad_bed_frame",
+  "variant": {
+    "en": "King · 150x200"
+  },
+  "ikea": "KLEPPSTAD",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.4758, "w": 0.9872, "d": 0.0386, "y": 0.2326, "h": 0.7674, "color": "fabric", "fix": "d", "round": 0.25},
+    {"shape": "box", "x": 0.0, "z": -0.4855, "w": 1, "d": 0.0193, "y": 0, "h": 0.2558, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4928, "w": 1, "d": 0.0145, "y": 0.093, "h": 0.2209, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.4904, "z": 0.0097, "w": 0.0192, "d": 0.971, "y": 0.093, "h": 0.2209, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4904, "z": 0.0097, "w": 0.0192, "d": 0.971, "y": 0.093, "h": 0.2209, "color": "white", "fix": "w"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0145, "w": 0.9615, "d": 0.9662, "y": 0.2791, "h": 0.2326, "color": "white", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": -0.3792, "w": 0.8173, "d": 0.1546, "y": 0.5116, "h": 0.1395, "color": "cushion", "round": 0.45},
+    {"shape": "box", "x": -0.4856, "z": -0.4891, "w": 0.0288, "d": 0.0217, "y": 0, "h": 0.093, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4856, "z": 0.4891, "w": 0.0288, "d": 0.0217, "y": 0, "h": 0.093, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4856, "z": -0.4891, "w": 0.0288, "d": 0.0217, "y": 0, "h": 0.093, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4856, "z": 0.4891, "w": 0.0288, "d": 0.0217, "y": 0, "h": 0.093, "color": "white", "fix": "wdh"}
+  ]
+}

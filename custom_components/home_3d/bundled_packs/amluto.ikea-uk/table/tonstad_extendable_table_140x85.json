@@ -1,0 +1,42 @@
+{
+  "id": "tonstad_extendable_table_140x85",
+  "name": {
+    "en": "Extendable table 140/196x85 cm"
+  },
+  "size": [
+    1.4,
+    0.85,
+    0.75
+  ],
+  "group": "table",
+  "room": [
+    "dining",
+    "kitchen"
+  ],
+  "tags": [
+    "dining table",
+    "extending table",
+    "oak veneer",
+    "brown stained oak",
+    "off-white",
+    "seats 6"
+  ],
+  "family": "tonstad_extendable_table",
+  "variant": {
+    "en": "140/196x85"
+  },
+  "ikea": "TONSTAD",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.96, "h": 0.04, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4607, "z": -0.4353, "w": 0.0357, "d": 0.0588, "y": 0, "h": 0.96, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": -0.4607, "z": 0.4353, "w": 0.0357, "d": 0.0588, "y": 0, "h": 0.96, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4607, "z": -0.4353, "w": 0.0357, "d": 0.0588, "y": 0, "h": 0.96, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4607, "z": 0.4353, "w": 0.0357, "d": 0.0588, "y": 0, "h": 0.96, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.4353, "w": 0.9214, "d": 0.0235, "y": 0.8667, "h": 0.0933, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4353, "w": 0.9214, "d": 0.0235, "y": 0.8667, "h": 0.0933, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.4607, "z": 0.0, "w": 0.0143, "d": 0.8706, "y": 0.8667, "h": 0.0933, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4607, "z": 0.0, "w": 0.0143, "d": 0.8706, "y": 0.8667, "h": 0.0933, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.0029, "d": 0.9765, "y": 0.9593, "h": 0.0013, "color": "dark", "fix": "wh"}
+  ]
+}

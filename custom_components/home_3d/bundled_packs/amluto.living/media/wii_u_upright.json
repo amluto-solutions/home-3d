@@ -1,0 +1,23 @@
+{
+  "id": "wii_u_upright",
+  "name": {"en": "Nintendo Wii U"},
+  "size": [0.046, 0.172, 0.269],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["wii u", "wiiu", "nintendo wii u", "nintendo", "gaming", "console", "games console", "wup-101"],
+  "family": "wii_u",
+  "variant": {"en": " upright"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 33,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.8, "y": 0.0, "h": 0.0446, "color": "dark", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0446, "h": 0.9554, "color": "white", "round": 0.25},
+    {"shape": "box", "x": 0.085, "z": 0.4913, "w": 0.07, "d": 0.0174, "y": 0.1927, "h": 0.4299, "color": "#101114"},
+    {"shape": "box", "x": -0.2674, "z": 0.4913, "w": 0.0652, "d": 0.0174, "y": 0.7612, "h": 0.172, "color": "#4aa3ff", "edges": "faint"},
+    {"shape": "cyl", "x": -0.19, "z": 0.4913, "w": 0.22, "d": 0.0174, "y": 0.9143, "h": 0.0376, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

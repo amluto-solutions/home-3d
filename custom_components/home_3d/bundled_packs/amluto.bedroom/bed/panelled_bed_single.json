@@ -1,0 +1,27 @@
+{
+  "id": "panelled_bed_single",
+  "name": {"en": "Single bed with panelled headboard"},
+  "size": [0.97, 2.02, 1.35],
+  "group": "bed",
+  "family": "panelled_bed",
+  "variant": {"en": "Single · 90 × 190"},
+  "room": ["bedroom", "kids"],
+  "tags": ["upholstered bed", "headboard", "panelled headboard", "bed frame", "single", "3ft"],
+  "parts": [
+    {"shape": "box", "x": -0.4538, "z": -0.4257, "w": 0.0308, "d": 0.0198, "y": 0, "h": 0.0593, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": -0.4538, "z": 0.4703, "w": 0.0308, "d": 0.0198, "y": 0, "h": 0.0593, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4538, "z": -0.4257, "w": 0.0308, "d": 0.0198, "y": 0, "h": 0.0593, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.4538, "z": 0.4703, "w": 0.0308, "d": 0.0198, "y": 0, "h": 0.0593, "color": "wood", "fix": "wdh"},
+    {"shape": "rbox", "x": 0, "z": 0.0223, "w": 1.0, "d": 0.9554, "y": 0.0593, "h": 0.2074, "color": "fabric", "round": 0.12, "fix": "h"},
+    {"shape": "rbox", "x": 0, "z": 0.0198, "w": 0.9231, "d": 0.9307, "y": 0.2667, "h": 0.163, "color": "white", "round": 0.2, "fix": "h"},
+    {"shape": "rbox", "x": 0, "z": 0.1559, "w": 0.9538, "d": 0.6782, "y": 0.3704, "h": 0.0889, "color": "cushion", "round": 0.3, "fix": "h"},
+    {"shape": "rbox", "x": 0, "z": 0.3886, "w": 0.9538, "d": 0.2228, "y": 0.3704, "h": 0.1, "color": "fabric", "round": 0.3, "fix": "dh"},
+    {"shape": "rbox", "x": 0.0, "z": -0.3267, "w": 0.8, "d": 0.198, "y": 0.4296, "h": 0.1037, "color": "white", "round": 0.45, "fix": "dh"},
+    {"shape": "box", "x": 0, "z": -0.4876, "w": 1.0, "d": 0.0248, "y": 0.0593, "h": 0.9259, "color": "fabric", "fix": "d"},
+    {"shape": "rbox", "x": 0, "z": -0.4851, "w": 1.0, "d": 0.0297, "y": 0.963, "h": 0.037, "color": "fabric", "round": 0.5, "fix": "dh"},
+    {"shape": "rbox", "x": -0.375, "z": -0.4678, "w": 0.244, "d": 0.0248, "y": 0.2222, "h": 0.7481, "color": "fabric", "round": 0.45, "fix": "d"},
+    {"shape": "rbox", "x": -0.125, "z": -0.4678, "w": 0.244, "d": 0.0248, "y": 0.2222, "h": 0.7481, "color": "fabric", "round": 0.45, "fix": "d"},
+    {"shape": "rbox", "x": 0.125, "z": -0.4678, "w": 0.244, "d": 0.0248, "y": 0.2222, "h": 0.7481, "color": "fabric", "round": 0.45, "fix": "d"},
+    {"shape": "rbox", "x": 0.375, "z": -0.4678, "w": 0.244, "d": 0.0248, "y": 0.2222, "h": 0.7481, "color": "fabric", "round": 0.45, "fix": "d"}
+  ]
+}

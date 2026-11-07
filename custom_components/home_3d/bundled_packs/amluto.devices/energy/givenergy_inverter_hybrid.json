@@ -1,0 +1,31 @@
+{
+  "id": "givenergy_inverter_hybrid",
+  "name": {"en": "GivEnergy inverter"},
+  "size": [0.53, 0.2, 0.46],
+  "group": "energy",
+  "room": ["garage", "utility", "loft", "hall"],
+  "tags": ["solar inverter", "hybrid inverter", "givenergy", "givtcp", "pv inverter", "battery inverter", "ac coupled"],
+  "family": "inverter",
+  "variant": {"en": "Hybrid 5 kW"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 0.95, "y": 0.1304, "h": 0.8696, "color": "white", "round": 0.12},
+    {"shape": "rbox", "x": 0.0, "z": 0.44, "w": 0.8868, "d": 0.07, "y": 0.42, "h": 0.5, "color": "dark", "round": 0.2},
+    {"shape": "box", "x": -0.0755, "z": 0.48, "w": 0.034, "d": 0.02, "y": 0.62, "h": 0.0174, "color": "#46d36a"},
+    {"shape": "box", "x": 0.0, "z": 0.48, "w": 0.034, "d": 0.02, "y": 0.62, "h": 0.0174, "color": "#46d36a"},
+    {"shape": "box", "x": 0.0755, "z": 0.48, "w": 0.034, "d": 0.02, "y": 0.62, "h": 0.0174, "color": "#4aa3ff"},
+    {"shape": "box", "x": 0.0, "z": 0.48, "w": 0.4, "d": 0.02, "y": 0.52, "h": 0.013, "color": "metal"},
+    {"shape": "cyl", "x": -0.3, "z": 0.0, "w": 0.0566, "d": 0.15, "y": 0.0, "h": 0.1304, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.15, "z": 0.0, "w": 0.0566, "d": 0.15, "y": 0.0, "h": 0.1304, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0566, "d": 0.15, "y": 0.0, "h": 0.1304, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.15, "z": 0.0, "w": 0.0566, "d": 0.15, "y": 0.0, "h": 0.1304, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3, "z": 0.0, "w": 0.0566, "d": 0.15, "y": 0.0, "h": 0.1304, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.3868, "z": 0.35, "w": 0.1698, "d": 0.25, "y": 0.1739, "h": 0.2174, "color": "#d8d8d8", "fix": "wdh"},
+    {"shape": "box", "x": 0.3868, "z": 0.485, "w": 0.0472, "d": 0.03, "y": 0.2391, "h": 0.1087, "color": "#c62828", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "trotten_drawer_unit_castors",
+  "name": {
+    "en": "Drawer unit with 3 drawers on castors"
+  },
+  "size": [
+    0.4,
+    0.47,
+    0.56
+  ],
+  "group": "office",
+  "room": [
+    "office"
+  ],
+  "tags": [
+    "pedestal",
+    "mobile pedestal",
+    "under desk drawers",
+    "on wheels",
+    "white",
+    "anthracite"
+  ],
+  "ikea": "TROTTEN",
+  "parts": [
+    {"shape": "box", "x": -0.48, "z": -0.017, "w": 0.04, "d": 0.966, "y": 0.1071, "h": 0.8929, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.48, "z": -0.017, "w": 0.04, "d": 0.966, "y": 0.1071, "h": 0.8929, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.017, "w": 1, "d": 0.966, "y": 0.9714, "h": 0.0286, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.017, "w": 0.92, "d": 0.966, "y": 0.1071, "h": 0.0286, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4915, "w": 0.92, "d": 0.017, "y": 0.1357, "h": 0.8357, "color": "white", "fix": "d"},
+    {"shape": "cyl", "x": -0.375, "z": -0.3723, "w": 0.1375, "d": 0.0426, "y": 0, "h": 0.0982, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.375, "z": 0.3723, "w": 0.1375, "d": 0.0426, "y": 0, "h": 0.0982, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.375, "z": -0.3723, "w": 0.1375, "d": 0.0426, "y": 0, "h": 0.0982, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.375, "z": 0.3723, "w": 0.1375, "d": 0.0426, "y": 0, "h": 0.0982, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.483, "w": 0.99, "d": 0.034, "y": 0.1071, "h": 0.2905, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.4, "d": 0.0255, "y": 0.3351, "h": 0.0214, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.483, "w": 0.99, "d": 0.034, "y": 0.4048, "h": 0.2905, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.4, "d": 0.0255, "y": 0.6327, "h": 0.0214, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.483, "w": 0.99, "d": 0.034, "y": 0.7024, "h": 0.2905, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.4, "d": 0.0255, "y": 0.9304, "h": 0.0214, "color": "dark", "fix": "wdh"}
+  ]
+}

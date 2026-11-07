@@ -1,0 +1,48 @@
+{
+  "id": "unifi_panic_bar",
+  "name": {
+    "en": "UniFi Access Panic Bar"
+  },
+  "size": [
+    0.294,
+    0.094,
+    0.838
+  ],
+  "group": "tech",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "access",
+    "door access",
+    "panic bar",
+    "uacc-panicbar",
+    "push bar",
+    "exit device"
+  ],
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 0.5,
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0,
+      "z": -0.2,
+      "w": 1,
+      "d": 0.6,
+      "y": 0,
+      "h": 1,
+      "color": "#aab1bc"
+    },
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0.35,
+      "w": 0.95,
+      "d": 0.3,
+      "y": 0.45,
+      "h": 0.2,
+      "color": "#8a93a3",
+      "round": 0.3
+    }
+  ]
+}

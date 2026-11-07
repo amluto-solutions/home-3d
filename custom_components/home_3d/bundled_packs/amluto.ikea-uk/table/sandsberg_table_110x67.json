@@ -1,0 +1,36 @@
+{
+  "id": "sandsberg_table_110x67",
+  "name": {
+    "en": "Table 110x67 cm"
+  },
+  "size": [
+    1.1,
+    0.67,
+    0.75
+  ],
+  "group": "table",
+  "room": [
+    "dining",
+    "kitchen"
+  ],
+  "tags": [
+    "dining table",
+    "kitchen table",
+    "metal legs",
+    "black",
+    "4 seats"
+  ],
+  "ikea": "SANDSBERG",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9733, "h": 0.0267, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.4682, "z": -0.4478, "w": 0.0273, "d": 0.0448, "y": 0, "h": 0.9733, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": -0.4682, "z": 0.4478, "w": 0.0273, "d": 0.0448, "y": 0, "h": 0.9733, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.4682, "z": -0.4478, "w": 0.0273, "d": 0.0448, "y": 0, "h": 0.9733, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.4682, "z": 0.4478, "w": 0.0273, "d": 0.0448, "y": 0, "h": 0.9733, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.4478, "w": 0.9364, "d": 0.0299, "y": 0.92, "h": 0.0533, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4478, "w": 0.9364, "d": 0.0299, "y": 0.92, "h": 0.0533, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.4682, "z": 0.0, "w": 0.0182, "d": 0.8955, "y": 0.92, "h": 0.0533, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.4682, "z": 0.0, "w": 0.0182, "d": 0.8955, "y": 0.92, "h": 0.0533, "color": "dark", "fix": "h"}
+  ]
+}

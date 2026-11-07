@@ -1,0 +1,40 @@
+{
+  "id": "drona_box_33x38x33",
+  "name": {
+    "en": "Box 33x38x33 cm"
+  },
+  "size": [
+    0.33,
+    0.38,
+    0.33
+  ],
+  "group": "storage",
+  "room": [
+    "kids",
+    "bedroom",
+    "office",
+    "hall"
+  ],
+  "tags": [
+    "DRONA",
+    "fabric box",
+    "storage box",
+    "KALLAX box",
+    "shelf insert",
+    "dark grey",
+    "black",
+    "yellow",
+    "blue",
+    "light grey"
+  ],
+  "family": "drona_box",
+  "variant": {
+    "en": "33x38x33"
+  },
+  "ikea": "DRÖNA",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "fabric", "round": 0.06},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.3939, "d": 0.0158, "y": 0.7576, "h": 0.0909, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9697, "d": 0.9737, "y": 0.9909, "h": 0.0091, "color": "dark", "fix": "h"}
+  ]
+}

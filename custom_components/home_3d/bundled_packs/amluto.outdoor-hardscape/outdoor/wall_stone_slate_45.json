@@ -1,0 +1,26 @@
+{
+  "id": "wall_stone_slate_45",
+  "name": {"en": "Stone garden wall, slate, low"},
+  "size": [2.0, 0.3, 0.45],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["wall", "garden wall", "stone wall", "boundary", "masonry", "dressed stone"],
+  "family": "wall_stone_slate",
+  "variant": {"en": "Low (0.45 m)"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.98, "d": 0.8667, "y": 0, "h": 0.8667, "color": "#363a3e"},
+    {"shape": "rbox", "x": -0.3625, "z": 0.0, "w": 0.269, "d": 1, "y": 0.0133, "h": 0.4067, "color": "#5e646d", "round": 0.12},
+    {"shape": "rbox", "x": -0.1125, "z": 0.0, "w": 0.219, "d": 1, "y": 0.0133, "h": 0.4067, "color": "#595f67", "round": 0.12},
+    {"shape": "rbox", "x": 0.125, "z": 0.0, "w": 0.244, "d": 1, "y": 0.0133, "h": 0.4067, "color": "#565c64", "round": 0.12},
+    {"shape": "rbox", "x": 0.375, "z": 0.0, "w": 0.244, "d": 1, "y": 0.0133, "h": 0.4067, "color": "#555b62", "round": 0.12},
+    {"shape": "rbox", "x": -0.425, "z": 0.0, "w": 0.144, "d": 1, "y": 0.4467, "h": 0.4067, "color": "#50565d", "round": 0.12},
+    {"shape": "rbox", "x": -0.2125, "z": 0.0, "w": 0.269, "d": 1, "y": 0.4467, "h": 0.4067, "color": "#60666f", "round": 0.12},
+    {"shape": "rbox", "x": 0.05, "z": 0.0, "w": 0.244, "d": 1, "y": 0.4467, "h": 0.4067, "color": "#50555d", "round": 0.12},
+    {"shape": "rbox", "x": 0.2875, "z": 0.0, "w": 0.219, "d": 1, "y": 0.4467, "h": 0.4067, "color": "#555b62", "round": 0.12},
+    {"shape": "rbox", "x": 0.45, "z": 0.0, "w": 0.094, "d": 1, "y": 0.4467, "h": 0.4067, "color": "#50565d", "round": 0.12},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8667, "h": 0.1333, "color": "#4c5258"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

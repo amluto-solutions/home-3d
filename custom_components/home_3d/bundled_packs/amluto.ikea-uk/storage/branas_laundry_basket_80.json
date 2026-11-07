@@ -1,0 +1,45 @@
+{
+  "id": "branas_laundry_basket_80",
+  "name": {
+    "en": "Laundry basket with lining, rattan 80 l"
+  },
+  "size": [
+    0.41,
+    0.41,
+    0.6
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "bath",
+    "utility"
+  ],
+  "tags": [
+    "BRANAS",
+    "laundry basket",
+    "washing basket",
+    "rattan",
+    "wicker",
+    "lining",
+    "80 l"
+  ],
+  "family": "branas_basket",
+  "variant": {
+    "en": "Laundry 80 l"
+  },
+  "ikea": "BRANÄS",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.9, "color": "#b48a55", "round": 0.1},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.94, "d": 0.94, "y": 0.82, "h": 0.18, "color": "fabric", "round": 0.3},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.96, "d": 0.0073, "y": 0.2, "h": 0.0233, "color": "#8b6a3d", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.5, "w": 0.96, "d": 0.0073, "y": 0.2, "h": 0.0233, "color": "#8b6a3d", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.96, "d": 0.0073, "y": 0.4, "h": 0.0233, "color": "#8b6a3d", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.5, "w": 0.96, "d": 0.0073, "y": 0.4, "h": 0.0233, "color": "#8b6a3d", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.96, "d": 0.0073, "y": 0.6, "h": 0.0233, "color": "#8b6a3d", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.5, "w": 0.96, "d": 0.0073, "y": 0.6, "h": 0.0233, "color": "#8b6a3d", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.96, "d": 0.0073, "y": 0.8, "h": 0.0233, "color": "#8b6a3d", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.5, "w": 0.96, "d": 0.0073, "y": 0.8, "h": 0.0233, "color": "#8b6a3d", "fix": "dh"},
+    {"shape": "box", "x": -0.5, "z": 0.0, "w": 0.0146, "d": 0.2927, "y": 0.7, "h": 0.0583, "color": "#8b6a3d", "fix": "wdh"},
+    {"shape": "box", "x": 0.5, "z": 0.0, "w": 0.0146, "d": 0.2927, "y": 0.7, "h": 0.0583, "color": "#8b6a3d", "fix": "wdh"}
+  ]
+}

@@ -1,0 +1,40 @@
+# EV charger checklist (#237)
+
+Wall-mounted EV chargers from the main UK, European and US brands, in `amluto.devices/energy/` beside the myenergi
+zappi. Sizes are W x D x H in mm as the unit hangs on the wall, without the cable. We model each charger ourselves from
+simple shapes; no maker pictures, 3D files or logos are used. Each brand has its own `ev_charger_<brand>` family, so
+variants of one brand fold into one library card; every `ev_charger*` family is a wallbox in the energy flow. Tags carry
+"ev", "ev charger", "car charger", "charger" and the brand and model names for library search.
+
+Status: `maker` = a manufacturer datasheet or manual gives the figure; `retailer` = shops or reviews give it. Sizes were
+looked up on 1 November 2026 through web search summaries, so some maker PDFs were not opened in full. Nothing here is
+an estimate: a model whose size could not be found is left out (see the end).
+
+The existing myenergi zappi items (`zappi_charger`, `zappi_charger_tethered`) were resized to the datasheet: myenergi
+zappi v2.1 datasheet (https://www.myenergi.com/wp-content/uploads/2023/03/zappi-v2.1-Datasheet-Rev-2.1.7-ENGLISH-June-2023.pdf),
+enclosure 439 H x 282 W x 122 D mm, the same for tethered and untethered (CEF
+https://www.cef.co.uk/catalogue/products/5173013-zappi-v2-1-22kw-ev-charging-station-with-32a-type-2-tethered-lead-black
+agrees). The tethered item keeps its wider 400 mm footprint, which includes a cable holster beside the enclosure; that
+holster is not in the datasheet.
+
+| Item id | Charger | Size W x D x H (mm) | Status | Source / note |
+| --- | --- | --- | --- | --- |
+| `ohme_home_pro` | Ohme Home Pro EV charger | 200 x 100 x 170 | maker | Ohme spec page and datasheets (https://www.yesss.co.uk/7kw-home-pro-ev-charger-type-2-tethered-8m-black, https://solarquotes.com.au/wp-content/uploads/2024/10/Technical-Datasheet-Ohme-Home-Pro-7.4kW.pdf, https://cdn.yesss.co.uk/documents/1935281_03_OHME0002GB002_Datasheet_fecb9b8dec8cc0464386258f04ce8875.pdf): 170 H x 200 W x 100 D mm. An Ohme AU shop page that says 230 x 140 x 100 is the ePod size and is ignored. |
+| `ohme_epod` | Ohme ePod EV charger | 140 x 100 x 230 | retailer | 230 H x 140 W x 100 D mm in the TechRadar Home Pro review (https://www.techradar.com/vehicle-tech/hybrid-electric-vehicles/ohme-home-pro-review) and on an Ohme AU shop page (https://ohme-ev.com/au/shop/). Ohme's own ePod datasheet was not read. |
+| `hypervolt_home_3` | Hypervolt Home 3 EV charger | 243 x 101 x 328 | maker | Hypervolt Home 3 data sheet (https://cdn.shopify.com/s/files/1/0742/0654/4170/files/Hypervolt3_data_sheet_1.pdf): 328 H x 243 W x 101 D mm; Wickes agrees (https://www.wickes.co.uk/Hypervolt-Home-3-Pro-7kW-UltraWhite-7-5m-Tethered-Lead-Smart+Solar-EV-Charger/p/9000284437). |
+| `pod_point_solo_3_tethered` | Pod Point Solo 3 EV charger | 290 x 112 x 330 | maker | Pod Point Solo 3 Home datasheet (https://cdn-www.pod-point.com/PP-D-210089-5-Solo-3-Home-Datasheet.pdf) and Solo 3S datasheet (https://cdn-www.pod-point.com/PDD-2301664-5-Solo-3S-Home-Datasheet.pdf): 330 H x 290 W x 112 D mm tethered; Electric Point agrees (https://www.electricpoint.com/pod-point-solo-3-domestic-7kw-tethered-car-charger.html). |
+| `pod_point_solo_3_untethered` | Pod Point Solo 3 EV charger | 290 x 167 x 330 | maker | Same Pod Point datasheets: 167 mm deep with the Type 2 socket (https://www.electricpoint.com/pod-point-solo-3-domestic-7kw-untethered-universal-car-charger.html). |
+| `andersen_a2` | Andersen A2 EV charger | 348 x 148 x 494 | retailer | 494 H x 348 W x 148 D mm at TradeSparky (https://www.tradesparky.com/more/electrical-vehicle-charging/charging-point-wall-mounted/andersen-a2-ev-charger-22kw-a222cg-cheltenham-graphite), Electric Point (https://www.electricpoint.com/andersen-ev-charger-7kw-tethered-cheltenham-graphite-8-5m-2.html) and Smart Home Charge (https://smarthomecharge.co.uk/chargers/andersen/andersen-a2-5.5m-integrated-cable). Tobin International says 156 D (https://tobinternational.co.uk/?p=21261), so depth is +-8 mm. The figure includes the cable chamber. Andersen's own sheet was not read. |
+| `wallbox_pulsar_plus` | Wallbox Pulsar Plus EV charger | 166 x 82 x 163 | maker | Wallbox Pulsar Plus datasheet (https://support.wallbox.com/wp-content/uploads/2019/07/EN_Pulsar-Plus_Datasheet_20190528.pdf; 2025 sheet https://support.wallbox.com/wp-content/uploads/ht_kb/2025/06/Wallbox_Datasheet_PulsarPlus_Tethered_EN_b.pdf): 166 x 163 x 82 mm without cable. Which of 166 and 163 is the width is our reading (3 mm). |
+| `wallbox_pulsar_max` | Wallbox Pulsar Max EV charger | 198 x 99 x 201 | maker | Wallbox Pulsar Max datasheet, tethered version (https://cdn.shopify.com/s/files/1/0598/3830/0230/files/JET_Charge_Technical_Datasheet_PulsarMax.pdf, https://support.wallbox.com/en/knowledge-base/pulsar-max-online-ig): 198 x 201 x 99 mm without cable; Ideal NZ reads it as W 198, H 201, D 99 (https://www.ideal.co.nz/products/wbxpulsarmaxt2b). |
+| `easee_home` | Easee Home EV charger | 193 x 106 x 256 | maker | Easee datasheet (https://cdn.yesss.co.uk/documents/1778660_03_10101_Datasheet_df48bfb68e082738a83b0bdd887b17b9.pdf): H 256 x W 193 x D 106 mm. Galaxus lists 3-4 mm more or less (https://www.galaxus.nl/en/s4/product/easee-home-type-2-22-kw-32-a-ev-chargers-15369773). Modelled with a Type 2 socket. |
+| `zaptec_go` | Zaptec Go EV charger | 180 x 75 x 242 | maker | Zaptec product sheet (https://help.zaptec.com/hc/article_attachments/36068564256401) and Bornay (https://www.bornay.com/en/products/electric-mobility/zaptec-go): H 242 x W 180 x D 75 mm. |
+| `zaptec_go_2` | Zaptec Go 2 EV charger | 178 x 73 x 239 | maker | Zaptec Go 2 product sheet (https://help.zaptec.com/hc/article_attachments/33332948823825): H 239 x W 178 x D 73 mm. Some retailers show the original Go size for the Go 2. |
+| `tesla_wall_connector_gen3` | Tesla Wall Connector Gen 3 EV charger | 155 x 110 x 345 | maker | Tesla Gen 3 Wall Connector installation manual (https://digitalassets.tesla.com/tesla-contents/image/upload/gen-3-wall-connector-manual-en-gb.pdf): H 345 x W 155 x D 110 mm (13.6 x 6.1 x 4.3 in) without cable; Energysage agrees (https://www.energysage.com/ev-charging/ev-charging-stations/tesla-gen-3-ev-charger-review/). |
+| `chargepoint_home_flex` | ChargePoint Home Flex EV charger | 179 x 180 x 284 | retailer | 11.19 H x 7.06 W x 7.07 D in (284 x 179 x 180 mm) at Bulbs.com (https://www.bulbs.com/product/CPH50--HARDWIRE-L23-NACS) and Dixon Electric; the ChargePoint datasheet (https://docs.chargepoint.com/ref-docs-sec/content/pdfs/home/cph50/cph50-ds.pdf) holds it in a drawing that could not be read as text. A 5.20 in figure on some listings is not used. |
+| `juicebox_40` | JuiceBox 40 EV charger | 173 x 147 x 469 | maker | Enel X JuiceBox 40 spec sheet (https://www.wisconsinpublicservice.com/services/electric-vehicles/pdf/juicebox-40.pdf): main enclosure H 469 x W 173 x D 147 mm (18.5 x 6.8 x 5.8 in); the Enel X French datasheet agrees. EnergySage's 10 x 6 x 3.5 in is not used. |
+| `emporia_ev_charger` | Emporia EV charger | 230 x 86 x 320 | retailer | 320 x 230 x 86 mm (12.6 x 9 x 3.4 in) on Emporia's spec sheet as quoted by retailers (https://shop.qmerit.com/products/emporia-48a-charger-j1772, https://www.emporiaenergy.com/wp-content/uploads/2025/01/Emporia-Classic-Smart-EV-ChargerV.4.pdf). The sources do not label height and width; 320 high x 230 wide is our reading. |
+| `grizzl_e_smart` | Grizzl-E Smart EV charger | 159 x 95 x 260 | maker | Grizzl-E Smart manual (https://grizzl-e.com/manuals/smart/Grizzl-E_Smart_GrizzlEConnect_V2.0.pdf, via search summary): 10.25 x 6.25 x 3.75 in (260 x 159 x 95 mm); a retailer's 6.25 x 3.54 x 10.25 in agrees on width and height (https://www.shopabunda.com/products/grizzl-e-smart-level-2-240v-40a-electric-vehicle-ev-charger-metal-case-ul-tested-and-certified-energy-star-indoor-outdoor-electric-car-fast-charging-station-nema-6-50-avalanche). Orientation is our reading. |
+
+Left out for want of a verifiable size: Wallbox Commander 2 (sources give 221 x 152 x 115 mm but not which edge is the
+width), Grizzl-E Classic (no size found).

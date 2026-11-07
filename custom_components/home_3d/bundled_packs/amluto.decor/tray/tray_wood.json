@@ -1,0 +1,23 @@
+{
+  "id": "tray_wood",
+  "name": {"en": "Wooden tray"},
+  "size": [0.45, 0.3, 0.05],
+  "group": "tray",
+  "room": ["living", "dining", "bedroom", "hall", "kitchen"],
+  "tags": ["tray", "serving tray", "decor tray", "coffee table", "wooden", "oak"],
+  "family": "tray",
+  "variant": {"en": "Wood 45 × 30"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.3, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.48, "w": 1.0, "d": 0.04, "y": 0.0, "h": 1.0, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.48, "w": 1.0, "d": 0.04, "y": 0.0, "h": 1.0, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": -0.4867, "z": 0.0, "w": 0.0267, "d": 1.0, "y": 0.0, "h": 1.0, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": -0.4867, "z": 0.0, "w": 0.0293, "d": 0.3, "y": 0.5, "h": 0.3, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.4867, "z": 0.0, "w": 0.0267, "d": 1.0, "y": 0.0, "h": 1.0, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4867, "z": 0.0, "w": 0.0293, "d": 0.3, "y": 0.5, "h": 0.3, "color": "dark", "fix": "wh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

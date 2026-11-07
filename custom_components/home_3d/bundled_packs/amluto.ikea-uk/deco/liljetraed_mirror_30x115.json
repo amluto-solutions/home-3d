@@ -1,0 +1,33 @@
+{
+  "id": "liljetraed_mirror_30x115",
+  "name": {
+    "en": "Slim framed mirror 30x115 cm"
+  },
+  "size": [
+    0.3,
+    0.02,
+    1.15
+  ],
+  "group": "deco",
+  "room": [
+    "hall",
+    "bedroom",
+    "bath",
+    "kids"
+  ],
+  "tags": [
+    "mirror",
+    "wall mirror",
+    "full-length mirror",
+    "slim",
+    "black",
+    "white"
+  ],
+  "ikea": "LILJETRÄD",
+  "mount": "wall",
+  "wall_y": 0.93,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.05, "w": 1, "d": 0.9, "y": 0, "h": 1, "color": "dark", "round": 0.02},
+    {"shape": "box", "x": 0.0, "z": 0.325, "w": 0.8667, "d": 0.35, "y": 0.0174, "h": 0.9652, "color": "glass", "fix": "d"}
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "friheten_sofa_bed_3",
+  "name": {
+    "en": "3-seat sofa-bed"
+  },
+  "size": [
+    2.25,
+    1.05,
+    0.83
+  ],
+  "group": "sofa",
+  "room": [
+    "living",
+    "conservatory"
+  ],
+  "tags": [
+    "FRIHETEN",
+    "sofa bed",
+    "storage",
+    "guest bed",
+    "dark grey",
+    "light grey",
+    "beige",
+    "dark blue"
+  ],
+  "family": "friheten_sofa_bed",
+  "variant": {
+    "en": "3-seat sofa-bed"
+  },
+  "ikea": "FRIHETEN",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0482, "h": 0.3494, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": 0.0, "z": -0.3571, "w": 0.8933, "d": 0.2857, "y": 0.3976, "h": 0.4819, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.2978, "z": 0.1429, "w": 0.2933, "d": 0.7048, "y": 0.3976, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.2978, "z": -0.1286, "w": 0.2889, "d": 0.1714, "y": 0.5542, "h": 0.4458, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.0, "z": 0.1429, "w": 0.2933, "d": 0.7048, "y": 0.3976, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": -0.1286, "w": 0.2889, "d": 0.1714, "y": 0.5542, "h": 0.4458, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.2978, "z": 0.1429, "w": 0.2933, "d": 0.7048, "y": 0.3976, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.2978, "z": -0.1286, "w": 0.2889, "d": 0.1714, "y": 0.5542, "h": 0.4458, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.4733, "z": 0.0, "w": 0.0533, "d": 1, "y": 0.0482, "h": 0.6988, "color": "fabric", "fix": "w", "round": 0.3},
+    {"shape": "rbox", "x": 0.4733, "z": 0.0, "w": 0.0533, "d": 1, "y": 0.0482, "h": 0.6988, "color": "fabric", "fix": "w", "round": 0.3},
+    {"shape": "box", "x": -0.4733, "z": -0.4429, "w": 0.0133, "d": 0.0286, "y": 0, "h": 0.0482, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.4733, "z": 0.4429, "w": 0.0133, "d": 0.0286, "y": 0, "h": 0.0482, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4733, "z": -0.4429, "w": 0.0133, "d": 0.0286, "y": 0, "h": 0.0482, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4733, "z": 0.4429, "w": 0.0133, "d": 0.0286, "y": 0, "h": 0.0482, "color": "dark", "fix": "wdh"}
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "rug_runner_80x300",
+  "name": {"en": "Runner 80 × 300 cm"},
+  "size": [0.8, 3.0, 0.012],
+  "group": "deco",
+  "room": ["hall", "kitchen", "living"],
+  "tags": ["rug", "runner", "hallway runner", "hall runner", "carpet runner", "long rug"],
+  "family": "rug_runner",
+  "variant": {"en": "80 × 300"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.85, "color": "#3f4f5f"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.84, "d": 0.9573, "y": 0.0, "h": 0.93, "color": "#c7c0b3"},
+    {"shape": "box", "x": 0.0, "z": -0.3829, "w": 0.84, "d": 0.0167, "y": 0.0, "h": 1.0, "color": "#6d7f8f", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.3829, "w": 0.294, "d": 0.06, "y": 0.0, "h": 0.97, "color": "#3f4f5f", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.1915, "w": 0.84, "d": 0.0167, "y": 0.0, "h": 1.0, "color": "#6d7f8f", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.1915, "w": 0.294, "d": 0.06, "y": 0.0, "h": 0.97, "color": "#3f4f5f", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.84, "d": 0.0167, "y": 0.0, "h": 1.0, "color": "#6d7f8f", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.294, "d": 0.06, "y": 0.0, "h": 0.97, "color": "#3f4f5f", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.1915, "w": 0.84, "d": 0.0167, "y": 0.0, "h": 1.0, "color": "#6d7f8f", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.1915, "w": 0.294, "d": 0.06, "y": 0.0, "h": 0.97, "color": "#3f4f5f", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.3829, "w": 0.84, "d": 0.0167, "y": 0.0, "h": 1.0, "color": "#6d7f8f", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.3829, "w": 0.294, "d": 0.06, "y": 0.0, "h": 0.97, "color": "#3f4f5f", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.495, "w": 0.9, "d": 0.01, "y": 0.0, "h": 0.4, "color": "#efe8da", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.495, "w": 0.9, "d": 0.01, "y": 0.0, "h": 0.4, "color": "#efe8da", "fix": "d"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "rect", "x": 0, "z": 0, "w": 0.84, "d": 0.9573}
+  ]
+}

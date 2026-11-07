@@ -1,0 +1,29 @@
+{
+  "id": "rack_unifi_eav_fiber",
+  "name": {"en": "UniFi EAV Fiber"},
+  "size": [0.4826, 0.48, 0.0437],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "surface",
+  "tags": ["switch", "network switch", "unifi", "ubiquiti", "1u", "rack mount", "19 inch", "rack", "enterprise a/v", "sfp+"],
+  "family": "rack_switch",
+  "variant": {"en": "UniFi Enterprise A/V Fiber"},
+  "electric": true,
+  "watts": 150,
+  "rack": {"u": 1},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.001, "w": 0.9167, "d": 0.9979, "y": 0.0, "h": 1.0, "color": "#cfd3d8", "edges": "faint"},
+    {"shape": "box", "x": -0.4793, "z": 0.4958, "w": 0.0414, "d": 0.0083, "y": 0.0, "h": 1.0, "color": "#cfd3d8"},
+    {"shape": "box", "x": 0.4793, "z": 0.4958, "w": 0.0414, "d": 0.0083, "y": 0.0, "h": 1.0, "color": "#cfd3d8"},
+    {"shape": "box", "x": -0.413, "z": 0.4958, "w": 0.058, "d": 0.0083, "y": 0.3169, "h": 0.3661, "color": "glass"},
+    {"shape": "box", "x": -0.2959, "z": 0.4958, "w": 0.143, "d": 0.0083, "y": 0.2597, "h": 0.2059, "color": "metal"},
+    {"shape": "box", "x": -0.1426, "z": 0.4958, "w": 0.143, "d": 0.0083, "y": 0.2597, "h": 0.2059, "color": "metal"},
+    {"shape": "box", "x": -0.2959, "z": 0.4958, "w": 0.143, "d": 0.0083, "y": 0.5343, "h": 0.2059, "color": "metal"},
+    {"shape": "box", "x": -0.1426, "z": 0.4958, "w": 0.143, "d": 0.0083, "y": 0.5343, "h": 0.2059, "color": "metal"},
+    {"shape": "box", "x": -0.0203, "z": 0.4958, "w": 0.0684, "d": 0.0083, "y": 0.3627, "h": 0.2746, "color": "metal"},
+    {"shape": "box", "x": 0.4337, "z": 0.4958, "w": 0.0083, "d": 0.0083, "y": 0.8169, "h": 0.0915, "color": "accent"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "bollard_light_black_50",
+  "name": {"en": "Bollard light, black, 0.5 m"},
+  "size": [0.16, 0.16, 0.5],
+  "group": "lamp",
+  "room": ["garden"],
+  "tags": ["bollard", "bollard light", "path light", "post light", "garden light", "lighting", "driveway"],
+  "family": "bollard_light_black",
+  "variant": {"en": "0.5 m"},
+  "electric": true,
+  "light": "bollard",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.875, "d": 0.875, "y": 0, "h": 0.78, "color": "#26272a"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9062, "d": 0.9062, "y": 0.78, "h": 0.12, "color": "#fff1c9", "glow": true},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9, "h": 0.1, "color": "#222326", "profile": [[1, 0], [1, 0.4], [0.6, 0.9], [0, 1]]}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

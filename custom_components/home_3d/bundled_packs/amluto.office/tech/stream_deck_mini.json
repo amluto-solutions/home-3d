@@ -1,0 +1,22 @@
+{
+  "id": "stream_deck_mini",
+  "name": {"en": "Elgato Stream Deck Mini"},
+  "size": [0.084, 0.06, 0.058],
+  "group": "tech",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["stream deck mini", "stream deck", "elgato", "macro pad", "control surface", "streaming", "audio"],
+  "family": "stream_deck",
+  "variant": {"en": "Mini"},
+  "electric": true,
+  "watts": 1,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "dark", "round": 0.15},
+    {"shape": "rbox", "x": -0.28, "z": -0.2, "w": 0.2296, "d": 0.328, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": -0.28, "z": 0.2, "w": 0.2296, "d": 0.328, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": -0.2, "w": 0.2296, "d": 0.328, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": 0.2, "w": 0.2296, "d": 0.328, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": 0.28, "z": -0.2, "w": 0.2296, "d": 0.328, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25},
+    {"shape": "rbox", "x": 0.28, "z": 0.2, "w": 0.2296, "d": 0.328, "y": 0.96, "h": 0.04, "color": "#1c1f24", "round": 0.25}
+  ]
+}

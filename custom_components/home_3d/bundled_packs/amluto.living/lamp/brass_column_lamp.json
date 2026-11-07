@@ -1,0 +1,45 @@
+{
+  "id": "brass_column_lamp",
+  "name": {
+    "en": "Brass column lamp"
+  },
+  "size": [
+    0.34,
+    0.34,
+    0.62
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "hall",
+    "dining",
+    "kids"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "brass lamp",
+    "column lamp",
+    "classic",
+    "empire shade",
+    "gold",
+    "traditional",
+    "candlestick"
+  ],
+  "family": "brass_column_lamp",
+  "variant": {
+    "en": "Brass"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4118, "d": 0.4118, "y": 0, "h": 0.0403, "color": "#b08d57"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1471, "d": 0.1471, "y": 0.0403, "h": 0.0806, "color": "#b08d57"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0882, "d": 0.0882, "y": 0.121, "h": 0.4839, "color": "#b08d57"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.1765, "d": 0.1765, "y": 0.3226, "h": 0.0968, "color": "#b08d57"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1471, "d": 0.1471, "y": 0.6048, "h": 0.0484, "color": "#b08d57"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.6452, "h": 0.3548, "color": "white", "tx": 0.0, "tz": 0.0, "tw": 0.7647, "td": 0.7647, "glow": true}
+  ]
+}

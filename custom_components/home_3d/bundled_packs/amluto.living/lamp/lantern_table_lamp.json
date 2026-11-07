@@ -1,0 +1,46 @@
+{
+  "id": "lantern_table_lamp",
+  "name": {
+    "en": "Lantern table lamp"
+  },
+  "size": [
+    0.2,
+    0.2,
+    0.33
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "conservatory"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "lantern lamp",
+    "farmhouse",
+    "black metal",
+    "glass lantern",
+    "hurricane lamp",
+    "rustic",
+    "candle style"
+  ],
+  "family": "lantern_table_lamp",
+  "variant": {
+    "en": "Black"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.9, "y": 0, "h": 0.0909, "color": "#2a2b2d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.8, "y": 0.0909, "h": 0.6667, "color": "glass"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.6, "d": 0.6, "y": 0.303, "h": 0.303, "color": "#ffe3a8", "glow": true},
+    {"shape": "box", "x": -0.4, "z": -0.4, "w": 0.06, "d": 0.06, "y": 0.0909, "h": 0.6667, "color": "#2a2b2d"},
+    {"shape": "box", "x": 0.4, "z": -0.4, "w": 0.06, "d": 0.06, "y": 0.0909, "h": 0.6667, "color": "#2a2b2d"},
+    {"shape": "box", "x": -0.4, "z": 0.4, "w": 0.06, "d": 0.06, "y": 0.0909, "h": 0.6667, "color": "#2a2b2d"},
+    {"shape": "box", "x": 0.4, "z": 0.4, "w": 0.06, "d": 0.06, "y": 0.0909, "h": 0.6667, "color": "#2a2b2d"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.7576, "h": 0.1818, "color": "#2a2b2d", "tx": 0.0, "tz": 0.0, "tw": 0.25, "td": 0.25},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.3, "d": 0.3, "y": 0.9394, "h": 0.0606, "color": "#2a2b2d"}
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "unifi_u7_mesh",
+  "name": {
+    "en": "UniFi U7 Mesh"
+  },
+  "size": [
+    0.0485,
+    0.0485,
+    0.1595
+  ],
+  "group": "network",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "access point",
+    "wifi",
+    "wireless",
+    "u7 mesh",
+    "u7-mesh",
+    "outdoor",
+    "weatherproof"
+  ],
+  "family": "unifi_ap_outdoor",
+  "variant": {
+    "en": "U7 Mesh"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 2.5,
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white"
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.85,
+      "h": 0.04,
+      "color": "#4aa3ff"
+    }
+  ]
+}

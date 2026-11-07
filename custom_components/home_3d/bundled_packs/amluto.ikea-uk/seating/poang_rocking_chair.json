@@ -1,0 +1,48 @@
+{
+  "id": "poang_rocking_chair",
+  "name": {
+    "en": "Rocking chair, bentwood"
+  },
+  "size": [
+    0.68,
+    0.94,
+    0.95
+  ],
+  "group": "seating",
+  "room": [
+    "living",
+    "conservatory",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "POANG",
+    "armchair",
+    "reading chair",
+    "bentwood",
+    "cantilever",
+    "birch veneer",
+    "oak",
+    "walnut effect",
+    "black-brown",
+    "beige"
+  ],
+  "family": "poang",
+  "variant": {
+    "en": "Rocking chair"
+  },
+  "ikea": "POÄNG",
+  "parts": [
+    {"shape": "rbox", "x": -0.4706, "z": 0.0, "w": 0.0515, "d": 1, "y": 0, "h": 0.0526, "color": "wood", "fix": "w", "round": 0.5},
+    {"shape": "loft", "x": -0.4706, "z": 0.4149, "w": 0.0515, "d": 0.0426, "y": 0.0632, "h": 0.5579, "color": "wood", "tx": -0.4706, "tz": 0.2872, "tw": 0.0515, "td": 0.0426, "fix": "w"},
+    {"shape": "rbox", "x": -0.4706, "z": 0.0213, "w": 0.0735, "d": 0.6, "y": 0.6, "h": 0.0368, "color": "wood", "fix": "w", "round": 0.5},
+    {"shape": "loft", "x": -0.4706, "z": -0.3723, "w": 0.0515, "d": 0.0426, "y": 0.0632, "h": 0.5579, "color": "wood", "tx": -0.4706, "tz": -0.2128, "tw": 0.0515, "td": 0.0426, "fix": "w"},
+    {"shape": "rbox", "x": 0.4706, "z": 0.0, "w": 0.0515, "d": 1, "y": 0, "h": 0.0526, "color": "wood", "fix": "w", "round": 0.5},
+    {"shape": "loft", "x": 0.4706, "z": 0.4149, "w": 0.0515, "d": 0.0426, "y": 0.0632, "h": 0.5579, "color": "wood", "tx": 0.4706, "tz": 0.2872, "tw": 0.0515, "td": 0.0426, "fix": "w"},
+    {"shape": "rbox", "x": 0.4706, "z": 0.0213, "w": 0.0735, "d": 0.6, "y": 0.6, "h": 0.0368, "color": "wood", "fix": "w", "round": 0.5},
+    {"shape": "loft", "x": 0.4706, "z": -0.3723, "w": 0.0515, "d": 0.0426, "y": 0.0632, "h": 0.5579, "color": "wood", "tx": 0.4706, "tz": -0.2128, "tw": 0.0515, "td": 0.0426, "fix": "w"},
+    {"shape": "loft", "x": 0.0, "z": 0.0851, "w": 0.8235, "d": 0.5106, "y": 0.3368, "h": 0.1053, "color": "cushion", "tz": 0.0426, "tw": 0.8235, "td": 0.5106},
+    {"shape": "loft", "x": 0.0, "z": -0.1702, "w": 0.8235, "d": 0.1489, "y": 0.4105, "h": 0.5895, "color": "cushion", "tz": -0.4362, "tw": 0.7941, "td": 0.117},
+    {"shape": "rbox", "x": 0.0, "z": -0.3936, "w": 0.7647, "d": 0.1064, "y": 0.7895, "h": 0.2105, "color": "cushion", "round": 0.5}
+  ]
+}

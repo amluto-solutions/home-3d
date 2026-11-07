@@ -1,0 +1,36 @@
+{
+  "id": "skogsta_table_round_120",
+  "name": {
+    "en": "Round dining table 120 cm"
+  },
+  "size": [
+    1.2,
+    1.2,
+    0.74
+  ],
+  "group": "table",
+  "room": [
+    "dining",
+    "kitchen"
+  ],
+  "tags": [
+    "dining table",
+    "kitchen table",
+    "acacia",
+    "solid wood",
+    "black legs",
+    "6 seats"
+  ],
+  "family": "skogsta_table",
+  "variant": {
+    "en": "Round 120"
+  },
+  "ikea": "SKOGSTA",
+  "surface": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9459, "h": 0.0541, "color": "wood", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1, "d": 0.1, "y": 0, "h": 0.9459, "color": "dark", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.5833, "d": 0.05, "y": 0, "h": 0.0405, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.05, "d": 0.5833, "y": 0, "h": 0.0405, "color": "dark", "fix": "h"}
+  ]
+}

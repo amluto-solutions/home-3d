@@ -1,0 +1,29 @@
+{
+  "id": "motorbike_touring",
+  "name": {"en": "Touring motorbike"},
+  "size": [1.0, 2.5, 1.5],
+  "group": "vehicle",
+  "room": ["garage", "garden"],
+  "tags": ["motorbike", "motorcycle", "bike", "motor", "touring", "tourer", "panniers", "gold wing style"],
+  "vehicle": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.344, "w": 0.18, "d": 0.272, "y": 0.0, "h": 0.4533, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": -0.344, "w": 0.108, "d": 0.204, "y": 0.0567, "h": 0.34, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.344, "w": 0.18, "d": 0.272, "y": 0.0, "h": 0.4533, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.344, "w": 0.108, "d": 0.204, "y": 0.0567, "h": 0.34, "color": "metal", "axis": "x"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.22, "d": 0.3, "y": 0.1133, "h": 0.28, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.04, "w": 0.24, "d": 0.096, "y": 0.2933, "h": 0.16, "color": "metal", "axis": "x"},
+    {"shape": "rbox", "x": 0.0, "z": 0.08, "w": 0.28, "d": 0.2, "y": 0.5333, "h": 0.1667, "color": "paint", "round": 0.4},
+    {"shape": "rbox", "x": 0.0, "z": -0.264, "w": 0.3, "d": 0.3, "y": 0.5333, "h": 0.0667, "color": "dark", "round": 0.4},
+    {"shape": "loft", "x": 0.0, "z": 0.344, "w": 0.06, "d": 0.02, "y": 0.2267, "h": 0.5733, "color": "metal", "tx": 0.0, "tz": 0.272, "tw": 0.06, "td": 0.02},
+    {"shape": "box", "x": 0.0, "z": 0.272, "w": 0.78, "d": 0.016, "y": 0.8, "h": 0.0267, "color": "metal"},
+    {"shape": "sphere", "x": 0.0, "z": 0.344, "w": 0.2, "d": 0.08, "y": 0.6667, "h": 0.1333, "color": "#fff3cf"},
+    {"shape": "cyl", "x": 0.17, "z": -0.344, "w": 0.12, "d": 0.36, "y": 0.1133, "h": 0.08, "color": "metal", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": -0.384, "w": 0.18, "d": 0.12, "y": 0.5467, "h": 0.1333, "color": "paint"},
+    {"shape": "box", "x": 0.0, "z": -0.492, "w": 0.14, "d": 0.012, "y": 0.5667, "h": 0.04, "color": "#b3141b"},
+    {"shape": "loft", "x": 0.0, "z": 0.264, "w": 0.4, "d": 0.08, "y": 0.8667, "h": 0.2667, "color": "glass", "tx": 0.0, "tz": 0.204, "tw": 0.4, "td": 0.02},
+    {"shape": "box", "x": -0.38, "z": -0.364, "w": 0.24, "d": 0.2, "y": 0.4667, "h": 0.2667, "color": "paint"},
+    {"shape": "box", "x": 0.38, "z": -0.364, "w": 0.24, "d": 0.2, "y": 0.4667, "h": 0.2667, "color": "paint"},
+    {"shape": "rbox", "x": 0.0, "z": -0.424, "w": 0.4, "d": 0.16, "y": 0.6, "h": 0.2333, "color": "paint", "round": 0.3}
+  ]
+}

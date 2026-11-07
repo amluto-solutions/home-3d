@@ -1,0 +1,19 @@
+{
+  "id": "hot_tub_round_180",
+  "name": {"en": "Hot tub"},
+  "size": [1.8, 1.8, 0.88],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["hot tub", "spa", "jacuzzi", "4 person", "round", "jets", "garden", "relax", "heated", "cover"],
+  "family": "hot_tub",
+  "variant": {"en": "Round, 4 people, 1.8 m"},
+  "electric": true,
+  "parts": [
+    {"shape": "lathe", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 0.8182, "color": "#5a4a3e", "profile": [[0, 0], [0.97, 0], [1, 0.05], [1, 1], [0, 1]]},
+    {"shape": "lathe", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.7727, "h": 0.1364, "color": "#e9ecef", "profile": [[0, 0], [1, 0], [1, 1], [0, 1]]},
+    {"shape": "lathe", "x": 0, "z": 0, "w": 0.9778, "d": 0.9778, "y": 0.8864, "h": 0.1136, "color": "#3a3d42", "profile": [[0, 0], [0.98, 0], [1, 0.4], [0.9, 0.9], [0.5, 1], [0, 1]]}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

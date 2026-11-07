@@ -1,0 +1,26 @@
+{
+  "id": "sculpture_twist_60",
+  "name": {"en": "Twisted sculpture"},
+  "size": [0.17, 0.17, 0.6],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "hall", "office"],
+  "tags": ["sculpture", "statue", "abstract", "ornament", "art", "spiral", "decor", "twist"],
+  "family": "sculpture_twist",
+  "variant": {"en": "Twisted column, 60 cm"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 0.05, "color": "#2c2d30"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.72, "d": 0.72, "y": 0.05, "h": 0.0825, "color": "#eee9dd", "rot": -45},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.72, "d": 0.72, "y": 0.1292, "h": 0.0825, "color": "#eee9dd", "rot": -36.81818181818182},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.72, "d": 0.72, "y": 0.2083, "h": 0.0825, "color": "#eee9dd", "rot": -28.636363636363637},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.72, "d": 0.72, "y": 0.2875, "h": 0.0825, "color": "#eee9dd", "rot": -20.454545454545453},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.72, "d": 0.72, "y": 0.3667, "h": 0.0825, "color": "#eee9dd", "rot": -12.272727272727273},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.72, "d": 0.72, "y": 0.4458, "h": 0.0825, "color": "#eee9dd", "rot": -4.0909090909090935},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.72, "d": 0.72, "y": 0.525, "h": 0.0825, "color": "#eee9dd", "rot": 4.0909090909090935},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.72, "d": 0.72, "y": 0.6042, "h": 0.0825, "color": "#eee9dd", "rot": 12.272727272727273},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.72, "d": 0.72, "y": 0.6833, "h": 0.0825, "color": "#eee9dd", "rot": 20.454545454545453},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.72, "d": 0.72, "y": 0.7625, "h": 0.0825, "color": "#eee9dd", "rot": 28.63636363636364},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.72, "d": 0.72, "y": 0.8417, "h": 0.0825, "color": "#eee9dd", "rot": 36.81818181818181},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.72, "d": 0.72, "y": 0.9208, "h": 0.0825, "color": "#eee9dd", "rot": 45}
+  ]
+}

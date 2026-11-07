@@ -1,0 +1,28 @@
+{
+  "id": "washing_line_posts_4m",
+  "name": {"en": "Washing line"},
+  "size": [4, 0.7, 1.9],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["washing line", "clothes line", "t-posts", "laundry", "drying", "fixed line", "five lines", "garden", "clothesline"],
+  "family": "washing_line",
+  "variant": {"en": "Two T-posts, 4 m, with laundry"},
+  "parts": [
+    {"shape": "cyl", "x": -0.4875, "z": 0, "w": 0.015, "d": 0.0857, "y": 0, "h": 0.9895, "color": "#2f5d44"},
+    {"shape": "box", "x": -0.4875, "z": 0, "w": 0.0125, "d": 1, "y": 0.9737, "h": 0.0211, "color": "#2f5d44"},
+    {"shape": "cyl", "x": 0.4875, "z": 0, "w": 0.015, "d": 0.0857, "y": 0, "h": 0.9895, "color": "#2f5d44"},
+    {"shape": "box", "x": 0.4875, "z": 0, "w": 0.0125, "d": 1, "y": 0.9737, "h": 0.0211, "color": "#2f5d44"},
+    {"shape": "box", "x": 0, "z": -0.4, "w": 0.975, "d": 0.0071, "y": 0.9842, "h": 0.0026, "color": "#e9e6dc"},
+    {"shape": "box", "x": 0, "z": -0.2, "w": 0.975, "d": 0.0071, "y": 0.9842, "h": 0.0026, "color": "#e9e6dc"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.975, "d": 0.0071, "y": 0.9842, "h": 0.0026, "color": "#e9e6dc"},
+    {"shape": "box", "x": 0, "z": 0.2, "w": 0.975, "d": 0.0071, "y": 0.9842, "h": 0.0026, "color": "#e9e6dc"},
+    {"shape": "box", "x": 0, "z": 0.4, "w": 0.975, "d": 0.0071, "y": 0.9842, "h": 0.0026, "color": "#e9e6dc"},
+    {"shape": "box", "x": -0.3, "z": -0.4, "w": 0.125, "d": 0.0171, "y": 0.7474, "h": 0.2368, "color": "#f2f0e8"},
+    {"shape": "box", "x": -0.15, "z": 0, "w": 0.125, "d": 0.0171, "y": 0.7474, "h": 0.2368, "color": "#9ec3e4"},
+    {"shape": "box", "x": 0.075, "z": 0.2, "w": 0.175, "d": 0.0171, "y": 0.7474, "h": 0.2368, "color": "#f2f0e8"},
+    {"shape": "box", "x": 0.25, "z": -0.2, "w": 0.1125, "d": 0.0171, "y": 0.7474, "h": 0.2368, "color": "#d99ab0"}
+  ],
+  "symbol": [
+    {"shape": "line", "x1": -0.5, "z1": 0, "x2": 0.5, "z2": 0}
+  ]
+}

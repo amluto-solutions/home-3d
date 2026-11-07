@@ -1,0 +1,25 @@
+{
+  "id": "slow_cooker_6_5l",
+  "name": {"en": "Slow cooker, 6.5 L"},
+  "size": [0.43, 0.3, 0.28],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["cooker", "countertop", "cooking", "slow cooker", "crock pot", "casserole"],
+  "family": "slow_cooker",
+  "variant": {"en": "6.5 L"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.86, "d": 1, "y": 0, "h": 0.62, "color": "#c4c8cd", "profile": [[0, 0], [0.92, 0], [1, 0.08], [1, 0.9], [0.95, 1], [0, 1]]},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.8342, "d": 0.97, "y": 0.6, "h": 0.36, "color": "glass", "profile": [[0, 0], [1, 0], [0.96, 0.5], [0.55, 0.95], [0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.093, "d": 0.1333, "y": 0.94, "h": 0.05, "color": "#25272b", "fix": "wdh"},
+    {"shape": "box", "x": -0.4579, "z": 0.0, "w": 0.0698, "d": 0.2333, "y": 0.5, "h": 0.1071, "color": "#25272b", "fix": "wdh"},
+    {"shape": "box", "x": 0.4579, "z": 0.0, "w": 0.0698, "d": 0.2333, "y": 0.5, "h": 0.1071, "color": "#25272b", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4933, "w": 0.344, "d": 0.0133, "y": 0.3, "h": 0.0893, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.2408, "z": 0.4833, "w": 0.0698, "d": 0.0667, "y": 0.3, "h": 0.1071, "color": "#c4c8cd", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2408, "z": 0.4833, "w": 0.0698, "d": 0.0667, "y": 0.3, "h": 0.1071, "color": "#c4c8cd", "axis": "z", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

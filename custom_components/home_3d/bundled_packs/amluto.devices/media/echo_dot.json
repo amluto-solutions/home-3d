@@ -1,0 +1,45 @@
+{
+  "id": "echo_dot",
+  "name": {
+    "en": "Amazon Echo Dot"
+  },
+  "size": [
+    0.1,
+    0.1,
+    0.089
+  ],
+  "group": "media",
+  "room": [
+    "living",
+    "kitchen",
+    "bedroom",
+    "kids",
+    "office",
+    "bath",
+    "hall",
+    "dining"
+  ],
+  "tags": [
+    "echo dot",
+    "alexa",
+    "amazon echo",
+    "smart speaker",
+    "voice assistant",
+    "speaker",
+    "amazon",
+    "media player"
+  ],
+  "family": "amazon_echo",
+  "variant": {
+    "en": "Dot"
+  },
+  "mount": "surface",
+  "electric": true,
+  "parts": [
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "fabric"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0899, "color": "#1f2a38", "glow": true},
+    {"shape": "cyl", "x": -0.25, "z": 0.0, "w": 0.12, "d": 0.12, "y": 0.9326, "h": 0.0449, "color": "dark"},
+    {"shape": "cyl", "x": 0.25, "z": 0.0, "w": 0.12, "d": 0.12, "y": 0.9326, "h": 0.0449, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1, "d": 0.1, "y": 0.9494, "h": 0.0337, "color": "dark"}
+  ]
+}

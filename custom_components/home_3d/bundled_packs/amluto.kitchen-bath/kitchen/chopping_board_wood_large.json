@@ -1,0 +1,17 @@
+{
+  "id": "chopping_board_wood_large",
+  "name": {"en": "Chopping board, wood, large"},
+  "size": [0.5, 0.35, 0.03],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "tags": ["chopping board", "cutting board", "kitchen", "worktop", "wood"],
+  "family": "chopping_board_wood",
+  "variant": {"en": "Large 50×35"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#b88a55", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "besta_tv_bench_120x42x48_doors",
+  "name": {
+    "en": "TV bench with doors, 120x42x48 cm"
+  },
+  "size": [
+    1.2,
+    0.42,
+    0.48
+  ],
+  "group": "media",
+  "room": [
+    "living",
+    "bedroom"
+  ],
+  "tags": [
+    "BESTA",
+    "TV unit",
+    "media unit",
+    "TV stand",
+    "low cabinet",
+    "white",
+    "black-brown",
+    "white stained oak effect",
+    "dark grey"
+  ],
+  "family": "besta_tv_bench",
+  "variant": {
+    "en": "120x48 with doors"
+  },
+  "ikea": "BESTÅ",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": -0.4933, "z": -0.0238, "w": 0.0133, "d": 0.9524, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4933, "z": -0.0238, "w": 0.0133, "d": 0.9524, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0238, "w": 1, "d": 0.9524, "y": 0.9667, "h": 0.0333, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0238, "w": 0.9733, "d": 0.9524, "y": 0, "h": 0.0333, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4905, "w": 0.9733, "d": 0.019, "y": 0.0333, "h": 0.9333, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.0238, "w": 0.0133, "d": 0.9286, "y": 0.0333, "h": 0.9333, "color": "white"},
+    {"shape": "box", "x": -0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.0063, "h": 0.9875, "color": "white"},
+    {"shape": "box", "x": 0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.0063, "h": 0.9875, "color": "white"}
+  ]
+}

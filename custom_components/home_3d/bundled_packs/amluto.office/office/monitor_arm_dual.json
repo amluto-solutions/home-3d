@@ -1,0 +1,22 @@
+{
+  "id": "monitor_arm_dual",
+  "name": {"en": "Monitor arm (dual)"},
+  "size": [0.9, 0.3, 0.5],
+  "group": "office",
+  "room": ["office", "bedroom", "hobby"],
+  "tags": ["monitor arm", "dual monitor", "monitor mount", "vesa", "desk mount", "screen arm"],
+  "family": "monitor_arm",
+  "variant": {"en": "Dual"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4333, "w": 0.0778, "d": 0.1333, "y": 0.0, "h": 0.12, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.4333, "w": 0.0389, "d": 0.1167, "y": 0.12, "h": 0.88, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.3, "w": 0.8, "d": 0.1167, "y": 0.76, "h": 0.06, "color": "dark"},
+    {"shape": "cyl", "x": -0.3889, "z": -0.3, "w": 0.0444, "d": 0.1333, "y": 0.74, "h": 0.1, "color": "metal"},
+    {"shape": "box", "x": -0.3889, "z": 0.0667, "w": 0.0389, "d": 0.6667, "y": 0.7, "h": 0.06, "color": "dark"},
+    {"shape": "box", "x": -0.3889, "z": 0.4667, "w": 0.1111, "d": 0.0333, "y": 0.62, "h": 0.2, "color": "dark"},
+    {"shape": "cyl", "x": 0.3889, "z": -0.3, "w": 0.0444, "d": 0.1333, "y": 0.74, "h": 0.1, "color": "metal"},
+    {"shape": "box", "x": 0.3889, "z": 0.0667, "w": 0.0389, "d": 0.6667, "y": 0.7, "h": 0.06, "color": "dark"},
+    {"shape": "box", "x": 0.3889, "z": 0.4667, "w": 0.1111, "d": 0.0333, "y": 0.62, "h": 0.2, "color": "dark"}
+  ]
+}

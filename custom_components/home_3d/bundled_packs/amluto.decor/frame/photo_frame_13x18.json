@@ -1,0 +1,21 @@
+{
+  "id": "photo_frame_13x18",
+  "name": {"en": "Photo frame 13 × 18 cm"},
+  "size": [0.18, 0.1, 0.23],
+  "group": "frame",
+  "room": ["living", "dining", "bedroom", "hall", "office"],
+  "tags": ["photo", "picture", "frame", "standing frame", "desk frame"],
+  "family": "photo_frame",
+  "variant": {"en": "13 × 18 wood"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": -0.45, "z": 0.25, "w": 0.1, "d": 0.14, "y": 0.0, "h": 1.0, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.45, "z": 0.25, "w": 0.1, "d": 0.14, "y": 0.0, "h": 1.0, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 1.0, "d": 0.14, "y": 0.9217, "h": 0.0783, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.25, "w": 1.0, "d": 0.14, "y": 0.0, "h": 0.0783, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.23, "w": 0.9, "d": 0.06, "y": 0.0391, "h": 0.9217, "color": "#efebe3"},
+    {"shape": "box", "x": 0.0, "z": 0.27, "w": 0.6667, "d": 0.06, "y": 0.463, "h": 0.4065, "color": "#c98e6b"},
+    {"shape": "box", "x": 0.0, "z": 0.27, "w": 0.6667, "d": 0.06, "y": 0.1304, "h": 0.3326, "color": "#5f7a6a"},
+    {"shape": "loft", "x": 0.0, "z": -0.32, "w": 0.18, "d": 0.06, "y": 0.0, "h": 0.62, "color": "wood", "tz": 0.06, "td": 0.06}
+  ]
+}

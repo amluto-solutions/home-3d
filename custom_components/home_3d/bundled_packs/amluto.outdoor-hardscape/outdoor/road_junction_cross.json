@@ -1,0 +1,22 @@
+{
+  "id": "road_junction_cross",
+  "name": {"en": "Road junction, crossroads"},
+  "size": [10.0, 10.0, 0.15],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["road", "junction", "crossroads", "intersection", "t junction", "street", "tarmac"],
+  "family": "road_junction_cross",
+  "variant": {"en": "10 × 10 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.58, "y": 0, "h": 0.2, "color": "#3a3c3f"},
+    {"shape": "box", "x": 0.0, "z": -0.395, "w": 0.58, "d": 0.21, "y": 0, "h": 0.2, "color": "#3a3c3f"},
+    {"shape": "box", "x": 0.0, "z": 0.395, "w": 0.58, "d": 0.21, "y": 0, "h": 0.2, "color": "#3a3c3f"},
+    {"shape": "box", "x": -0.395, "z": -0.395, "w": 0.21, "d": 0.21, "y": 0, "h": 1, "color": "#b5b3ad"},
+    {"shape": "box", "x": -0.395, "z": 0.395, "w": 0.21, "d": 0.21, "y": 0, "h": 1, "color": "#b5b3ad"},
+    {"shape": "box", "x": 0.395, "z": -0.395, "w": 0.21, "d": 0.21, "y": 0, "h": 1, "color": "#b5b3ad"},
+    {"shape": "box", "x": 0.395, "z": 0.395, "w": 0.21, "d": 0.21, "y": 0, "h": 1, "color": "#b5b3ad"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

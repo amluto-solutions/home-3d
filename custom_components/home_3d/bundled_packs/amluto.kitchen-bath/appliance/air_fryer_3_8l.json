@@ -1,0 +1,26 @@
+{
+  "id": "air_fryer_3_8l",
+  "name": {"en": "Air fryer, 3.8 L"},
+  "size": [0.26, 0.33, 0.28],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["air fryer", "airfryer", "fryer", "cooking", "countertop", "ninja", "compact"],
+  "family": "air_fryer",
+  "variant": {"en": "3.8 L"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": -0.3846, "z": -0.4091, "w": 0.0962, "d": 0.0758, "y": 0, "h": 0.0357, "color": "#25272b", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3846, "z": 0.4091, "w": 0.0962, "d": 0.0758, "y": 0, "h": 0.0357, "color": "#25272b", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3846, "z": -0.4091, "w": 0.0962, "d": 0.0758, "y": 0, "h": 0.0357, "color": "#25272b", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3846, "z": 0.4091, "w": 0.0962, "d": 0.0758, "y": 0, "h": 0.0357, "color": "#25272b", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": -0.0606, "w": 1, "d": 0.8788, "y": 0.0357, "h": 0.9643, "color": "#25272b", "round": 0.12},
+    {"shape": "rbox", "x": 0.0, "z": 0.4697, "w": 0.8462, "d": 0.0909, "y": 0.1071, "h": 0.58, "color": "#3a3d42", "round": 0.15},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.5, "d": 0.0758, "y": 0.4, "h": 0.1071, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.3788, "w": 0.7308, "d": 0.0303, "y": 0.78, "h": 0.17, "color": "#2a2c30", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4091, "w": 0.4, "d": 0.0121, "y": 0.82, "h": 0.0429, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

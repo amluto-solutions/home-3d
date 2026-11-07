@@ -1,0 +1,17 @@
+{
+  "id": "ha_blue",
+  "name": {"en": "Home Assistant Blue"},
+  "size": [0.105,0.098,0.033],
+  "group": "tech",
+  "room": ["office", "utility", "hall", "living", "loft"],
+  "tags": ["home assistant", "ha blue", "blue", "odroid", "odroid-n2", "smart home", "hub", "controller", "server"],
+  "family": "smart_hub",
+  "variant": {"en": "Home Assistant Blue"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "dark", "round": 0.1},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.8571, "d": 0.8571, "y": 0.9758, "h": 0.0242, "color": "metal"},
+    {"shape": "box", "x": 0, "z": 0.498, "w": 0.5714, "d": 0.0041, "y": 0.4242, "h": 0.1515, "color": "#4aa3ff", "glow": true}
+  ]
+}

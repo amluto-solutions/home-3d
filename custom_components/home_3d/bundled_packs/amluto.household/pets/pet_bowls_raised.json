@@ -1,0 +1,21 @@
+{
+  "id": "pet_bowls_raised",
+  "name": {"en": "Raised food and water bowls"},
+  "size": [0.42, 0.22, 0.14],
+  "group": "pets",
+  "room": ["kitchen", "utility", "hall", "conservatory"],
+  "tags": ["pet bowls", "cat bowl", "dog bowl", "raised feeder", "elevated", "food bowl", "water bowl", "wooden stand"],
+  "family": "pet_bowls",
+  "variant": {"en": "Raised stand"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.7143, "h": 0.2143, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4524, "z": -0.4091, "w": 0.0595, "d": 0.1136, "y": 0.0, "h": 0.7143, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": -0.4524, "z": 0.4091, "w": 0.0595, "d": 0.1136, "y": 0.0, "h": 0.7143, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4524, "z": -0.4091, "w": 0.0595, "d": 0.1136, "y": 0.0, "h": 0.7143, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4524, "z": 0.4091, "w": 0.0595, "d": 0.1136, "y": 0.0, "h": 0.7143, "color": "wood", "fix": "wd"},
+    {"shape": "lathe", "x": -0.2381, "z": 0.0, "w": 0.381, "d": 0.7273, "y": 0.6071, "h": 0.3929, "color": "#b8bec4", "profile": [[0.0, 0.0], [0.75, 0.0], [1, 1], [0.9, 1], [0.7, 0.2], [0.0, 0.2]]},
+    {"shape": "cyl", "x": -0.2381, "z": 0.0, "w": 0.2743, "d": 0.5236, "y": 0.6857, "h": 0.1768, "color": "#8a5a2b"},
+    {"shape": "lathe", "x": 0.2381, "z": 0.0, "w": 0.381, "d": 0.7273, "y": 0.6071, "h": 0.3929, "color": "#b8bec4", "profile": [[0.0, 0.0], [0.75, 0.0], [1, 1], [0.9, 1], [0.7, 0.2], [0.0, 0.2]]},
+    {"shape": "cyl", "x": 0.2381, "z": 0.0, "w": 0.2743, "d": 0.5236, "y": 0.6857, "h": 0.1768, "color": "#a9cbe0"}
+  ]
+}

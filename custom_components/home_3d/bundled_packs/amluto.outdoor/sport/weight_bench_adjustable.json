@@ -1,0 +1,22 @@
+{
+  "id": "weight_bench_adjustable",
+  "name": {"en": "Adjustable weight bench"},
+  "size": [0.51, 1.54, 0.76],
+  "group": "sport",
+  "room": ["hobby", "garage", "bedroom", "living", "utility", "loft", "office"],
+  "tags": ["weight bench", "bench", "gym", "home gym", "weights", "strength", "fitness", "incline bench", "adjustable", "workout", "dumbbells"],
+  "family": "weight_bench",
+  "variant": {"en": "Adjustable incline"},
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0.1591, "w": 0.549, "d": 0.3247, "y": 0.5526, "h": 0.1053, "color": "#25262a", "round": 0.25},
+    {"shape": "loft", "x": 0, "z": -0.2045, "w": 0.549, "d": 0.0649, "y": 0.5263, "h": 0.0921, "color": "#25262a", "tx": 0, "tz": -0.2045, "tw": 0.549, "td": 0.0649},
+    {"shape": "loft", "x": 0, "z": -0.0747, "w": 0.549, "d": 0.3247, "y": 0.6053, "h": 0.3947, "color": "#25262a", "tx": 0, "tz": -0.3344, "tw": 0.549, "td": 0.3247},
+    {"shape": "box", "x": 0, "z": -0.0227, "w": 0.1373, "d": 0.7143, "y": 0.4605, "h": 0.0789, "color": "#2c2f33"},
+    {"shape": "box", "x": 0, "z": 0.3799, "w": 0.9804, "d": 0.039, "y": 0, "h": 0.0658, "color": "#2c2f33"},
+    {"shape": "box", "x": 0, "z": -0.4253, "w": 0.9804, "d": 0.039, "y": 0, "h": 0.0658, "color": "#2c2f33"},
+    {"shape": "box", "x": 0, "z": 0.1721, "w": 0.1373, "d": 0.0455, "y": 0.0658, "h": 0.5, "color": "#2c2f33"},
+    {"shape": "box", "x": 0, "z": -0.2825, "w": 0.1373, "d": 0.0455, "y": 0.0658, "h": 0.4211, "color": "#2c2f33"},
+    {"shape": "cyl", "x": -0.3922, "z": 0.4318, "w": 0.098, "d": 0.1299, "y": 0.2961, "h": 0.0658, "color": "#25262a", "axis": "z"},
+    {"shape": "cyl", "x": 0.3922, "z": 0.4318, "w": 0.098, "d": 0.1299, "y": 0.2961, "h": 0.0658, "color": "#25262a", "axis": "z"}
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "billy_bookcase_40x28x237",
+  "name": {
+    "en": "Bookcase 40x28x237 cm"
+  },
+  "size": [
+    0.4,
+    0.28,
+    2.37
+  ],
+  "group": "storage",
+  "room": [
+    "living",
+    "office",
+    "kids",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "bookshelf",
+    "books",
+    "shelving",
+    "white",
+    "black oak effect",
+    "oak effect",
+    "brown walnut effect",
+    "oak veneer"
+  ],
+  "family": "billy_bookcase",
+  "variant": {
+    "en": "40x28x237 with extension"
+  },
+  "ikea": "BILLY",
+  "parts": [
+    {"shape": "box", "x": -0.4813, "z": 0.0, "w": 0.0375, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4813, "z": 0.0, "w": 0.0375, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.4286, "w": 0.925, "d": 0.0536, "y": 0, "h": 0.0274, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4893, "w": 0.925, "d": 0.0214, "y": 0, "h": 1, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.925, "d": 1, "y": 0.846, "h": 0.0063, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.925, "d": 0.9643, "y": 0.0274, "h": 0.0063, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0107, "w": 0.925, "d": 0.9286, "y": 0.166, "h": 0.0063, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0107, "w": 0.925, "d": 0.9286, "y": 0.3013, "h": 0.0063, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0107, "w": 0.925, "d": 0.9286, "y": 0.4367, "h": 0.0063, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0107, "w": 0.925, "d": 0.9286, "y": 0.5721, "h": 0.0063, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0107, "w": 0.925, "d": 0.9286, "y": 0.7075, "h": 0.0063, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.925, "d": 1, "y": 0.9937, "h": 0.0063, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4929, "w": 1, "d": 0.0143, "y": 0.8515, "h": 0.0017, "color": "dark", "fix": "wdh"}
+  ]
+}

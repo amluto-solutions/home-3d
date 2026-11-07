@@ -1,0 +1,43 @@
+{
+  "id": "knoppaeng_frame_50x70",
+  "name": {
+    "en": "Picture frame with mount 50x70 cm"
+  },
+  "size": [
+    0.52,
+    0.02,
+    0.72
+  ],
+  "group": "frame",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "office"
+  ],
+  "tags": [
+    "picture frame",
+    "photo frame",
+    "mount",
+    "black",
+    "white",
+    "gallery wall"
+  ],
+  "family": "knoppaeng_frame",
+  "variant": {
+    "en": "50x70"
+  },
+  "ikea": "KNOPPÄNG",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4, "w": 1, "d": 0.2, "y": 0, "h": 1, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9833, "h": 0.0167, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0167, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.4885, "z": 0.0, "w": 0.0231, "d": 1, "y": 0.0167, "h": 0.9667, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.4885, "z": 0.0, "w": 0.0231, "d": 1, "y": 0.0167, "h": 0.9667, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.275, "w": 0.9538, "d": 0.15, "y": 0.0167, "h": 0.9667, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.375, "w": 0.8, "d": 0.1, "y": 0.0722, "h": 0.8556, "color": "#a9b8b4", "fix": "d"}
+  ]
+}

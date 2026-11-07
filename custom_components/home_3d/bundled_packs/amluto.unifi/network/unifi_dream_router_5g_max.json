@@ -1,0 +1,20 @@
+{
+  "id": "unifi_dream_router_5g_max",
+  "name": {"en": "Dream Router 5G Max"},
+  "size": [0.11, 0.11, 0.25],
+  "group": "network",
+  "room": ["office", "utility", "loft", "living", "hall"],
+  "tags": ["unifi", "ubiquiti", "dream router", "udr-5g-max", "5g", "gateway", "router", "wifi 7", "broadband"],
+  "family": "unifi_gateway",
+  "variant": {"en": "Dream Router 5G Max"},
+  "electric": true,
+  "watts": 35,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "round": 0.15},
+    {"shape": "box", "x": 0, "z": 0.4975, "w": 0.4, "d": 0.005, "y": 0.88, "h": 0.03, "color": "#4aa3ff", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

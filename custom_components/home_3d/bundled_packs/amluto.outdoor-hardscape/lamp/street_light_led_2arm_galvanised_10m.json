@@ -1,0 +1,25 @@
+{
+  "id": "street_light_led_2arm_galvanised_10m",
+  "name": {"en": "Double-arm street light, galvanised, 10 m"},
+  "size": [2.6, 0.45, 10.0],
+  "group": "lamp",
+  "room": ["garden"],
+  "tags": ["street light", "lamp post", "LED", "streetlight", "road lighting", "column", "lighting"],
+  "family": "street_light_led_2arm_galvanised",
+  "variant": {"en": "10 m"},
+  "electric": true,
+  "light": "garden",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.1154, "d": 0.6667, "y": 0, "h": 0.025, "color": "#9ea3a8", "profile": [[1, 0], [1, 0.1], [0.45, 0.2], [0.4, 1], [0, 1]]},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.0615, "d": 0.3556, "y": 0.025, "h": 0.975, "color": "#9ea3a8", "profile": [[1, 0], [0.75, 0.4], [0.5, 1], [0, 1]]},
+    {"shape": "loft", "x": -0.0385, "z": 0.0, "w": 0.0462, "d": 0.2667, "y": 0.965, "h": 0.045, "color": "#9ea3a8", "tx": -0.3462, "tz": 0.0, "tw": 0.0269, "td": 0.1556},
+    {"shape": "box", "x": -0.3923, "z": 0.0, "w": 0.2385, "d": 0.5778, "y": 0.988, "h": 0.007, "color": "#8e9397"},
+    {"shape": "box", "x": -0.3923, "z": 0.0, "w": 0.2154, "d": 0.4889, "y": 0.986, "h": 0.003, "color": "#fff1c9", "glow": true},
+    {"shape": "loft", "x": 0.0385, "z": 0.0, "w": 0.0462, "d": 0.2667, "y": 0.965, "h": 0.045, "color": "#9ea3a8", "tx": 0.3462, "tz": 0.0, "tw": 0.0269, "td": 0.1556},
+    {"shape": "box", "x": 0.3923, "z": 0.0, "w": 0.2385, "d": 0.5778, "y": 0.988, "h": 0.007, "color": "#8e9397"},
+    {"shape": "box", "x": 0.3923, "z": 0.0, "w": 0.2154, "d": 0.4889, "y": 0.986, "h": 0.003, "color": "#fff1c9", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.35}
+  ]
+}

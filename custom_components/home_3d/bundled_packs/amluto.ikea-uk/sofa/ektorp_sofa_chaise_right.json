@@ -1,0 +1,53 @@
+{
+  "id": "ektorp_sofa_chaise_right",
+  "name": {
+    "en": "3-seat sofa with chaise longue, right"
+  },
+  "size": [
+    2.52,
+    1.63,
+    0.88
+  ],
+  "group": "sofa",
+  "room": [
+    "living",
+    "conservatory"
+  ],
+  "tags": [
+    "EKTORP",
+    "sofa",
+    "settee",
+    "rolled arms",
+    "washable cover",
+    "classic",
+    "beige",
+    "dark grey",
+    "white",
+    "multicolour"
+  ],
+  "family": "ektorp_sofa",
+  "variant": {
+    "en": "3-seat + chaise right"
+  },
+  "ikea": "EKTORP",
+  "parts": [
+    {"shape": "rbox", "x": -0.1706, "z": -0.2301, "w": 0.6587, "d": 0.5399, "y": 0.0341, "h": 0.3295, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": -0.123, "z": -0.4264, "w": 0.5635, "d": 0.1472, "y": 0.3636, "h": 0.5227, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.2639, "z": -0.1564, "w": 0.2778, "d": 0.3865, "y": 0.3636, "h": 0.1477, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.2639, "z": -0.2975, "w": 0.2738, "d": 0.1104, "y": 0.5114, "h": 0.4886, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.0179, "z": -0.1564, "w": 0.2778, "d": 0.3865, "y": 0.3636, "h": 0.1477, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.0179, "z": -0.2975, "w": 0.2738, "d": 0.1104, "y": 0.5114, "h": 0.4886, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.4524, "z": -0.2301, "w": 0.0952, "d": 0.5399, "y": 0.0341, "h": 0.7159, "color": "fabric", "fix": "w", "round": 0.5},
+    {"shape": "box", "x": -0.4762, "z": -0.4632, "w": 0.0159, "d": 0.0245, "y": 0, "h": 0.0341, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.4762, "z": 0.0031, "w": 0.0159, "d": 0.0245, "y": 0, "h": 0.0341, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.1349, "z": -0.4632, "w": 0.0159, "d": 0.0245, "y": 0, "h": 0.0341, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.1349, "z": 0.0031, "w": 0.0159, "d": 0.0245, "y": 0, "h": 0.0341, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.3294, "z": 0.0, "w": 0.3413, "d": 1, "y": 0.0341, "h": 0.3295, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": 0.2817, "z": -0.4264, "w": 0.246, "d": 0.1472, "y": 0.3636, "h": 0.5227, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": 0.2817, "z": 0.0736, "w": 0.2421, "d": 0.8466, "y": 0.3636, "h": 0.1477, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.2817, "z": -0.2975, "w": 0.2381, "d": 0.1104, "y": 0.5114, "h": 0.4886, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.4524, "z": 0.0, "w": 0.0952, "d": 1, "y": 0.0341, "h": 0.7159, "color": "fabric", "fix": "w", "round": 0.5},
+    {"shape": "box", "x": 0.1825, "z": 0.4632, "w": 0.0159, "d": 0.0245, "y": 0, "h": 0.0341, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4762, "z": 0.4632, "w": 0.0159, "d": 0.0245, "y": 0, "h": 0.0341, "color": "dark", "fix": "wdh"}
+  ]
+}

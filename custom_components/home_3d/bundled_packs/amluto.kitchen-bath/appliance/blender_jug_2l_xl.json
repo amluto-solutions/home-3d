@@ -1,0 +1,24 @@
+{
+  "id": "blender_jug_2l_xl",
+  "name": {"en": "Blender, 2.1 L jug (high power)"},
+  "size": [0.23, 0.23, 0.47],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["blender", "smoothie", "countertop", "power blender", "jug blender", "ninja"],
+  "family": "blender",
+  "variant": {"en": "2.1 L jug"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.2, "color": "#25272b", "round": 0.25},
+    {"shape": "cyl", "x": 0.0, "z": 0.4826, "w": 0.1087, "d": 0.0522, "y": 0.08, "h": 0.0532, "color": "#c4c8cd", "axis": "z", "fix": "wdh"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.9, "y": 0.2, "h": 0.72, "color": "glass", "profile": [[0.55, 0], [0.8, 0], [1, 0.9], [0.95, 1], [0, 1]]},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.9, "y": 0.9, "h": 0.1, "color": "#25272b", "profile": [[0, 0], [1, 0], [0.9, 1], [0, 1]]},
+    {"shape": "box", "x": 0.5, "z": 0.0, "w": 0.1087, "d": 0.1522, "y": 0.38, "h": 0.45, "color": "#25272b", "fix": "wdh"},
+    {"shape": "box", "x": 0.4783, "z": 0.0, "w": 0.1739, "d": 0.1522, "y": 0.38, "h": 0.0532, "color": "#25272b", "fix": "wdh"},
+    {"shape": "box", "x": 0.4783, "z": 0.0, "w": 0.1739, "d": 0.1522, "y": 0.8, "h": 0.0532, "color": "#25272b", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

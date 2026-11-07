@@ -1,0 +1,25 @@
+{
+  "id": "chimney_breast_mantel",
+  "name": {"en": "Chimney breast"},
+  "size": [1.5, 0.83, 2.4],
+  "group": "architecture",
+  "room": ["living", "dining", "bedroom"],
+  "tags": ["chimney breast", "chimney", "fireplace", "mantelpiece", "mantel", "hearth", "alcove", "period", "fire surround"],
+  "family": "chimney_breast",
+  "variant": {"en": "With mantelpiece, 150 cm"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.2711, "w": 1, "d": 0.4578, "y": 0.0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": -0.0277, "w": 0.4667, "d": 0.0289, "y": 0.0, "h": 0.3125, "color": "#2f3034"},
+    {"shape": "box", "x": -0.28, "z": -0.0181, "w": 0.0933, "d": 0.0482, "y": 0.0, "h": 0.375, "color": "wood"},
+    {"shape": "box", "x": 0.28, "z": -0.0181, "w": 0.0933, "d": 0.0482, "y": 0.0, "h": 0.375, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": -0.0181, "w": 0.6533, "d": 0.0482, "y": 0.3417, "h": 0.0667, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.0422, "w": 0.76, "d": 0.2169, "y": 0.4083, "h": 0.0208, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.2108, "w": 0.6667, "d": 0.5422, "y": 0.0, "h": 0.0125, "color": "dark", "top": "#4a4d52", "fix": "h"},
+    {"shape": "box", "x": -0.3533, "z": -0.0325, "w": 0.1333, "d": 0.0193, "y": 0.0, "h": 0.05, "color": "white", "top": "#f2f2ef", "fix": "h"},
+    {"shape": "box", "x": 0.3533, "z": -0.0325, "w": 0.1333, "d": 0.0193, "y": 0.0, "h": 0.05, "color": "white", "top": "#f2f2ef", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": -0.2711, "w": 1.0, "d": 0.4578},
+    {"shape": "rect", "x": 0.0, "z": 0.2289, "w": 0.6667, "d": 0.5422}
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "broom_mop_wall_rack",
+  "name": {"en": "Broom and mop wall rack"},
+  "size": [0.62, 0.1, 1.5],
+  "group": "household",
+  "room": ["utility", "garage", "kitchen", "hall"],
+  "tags": ["broom", "mop", "wall rack", "cleaning", "storage", "tool holder", "dustpan", "spring clips"],
+  "family": "broom_mop_rack",
+  "variant": {"en": "With broom, mop and dustpan"},
+  "mount": "wall",
+  "wall_y": 0.15,
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.4, "w": 1, "d": 0.18, "y": 0.6, "h": 0.0267, "color": "metal"},
+    {"shape": "box", "x": 0, "z": -0.4, "w": 1, "d": 0.18, "y": 0.2333, "h": 0.0267, "color": "metal"},
+    {"shape": "box", "x": -0.3226, "z": -0.15, "w": 0.0806, "d": 0.3, "y": 0.5933, "h": 0.04, "color": "dark"},
+    {"shape": "box", "x": -0.3226, "z": -0.15, "w": 0.0806, "d": 0.3, "y": 0.2267, "h": 0.04, "color": "dark"},
+    {"shape": "box", "x": 0.0323, "z": -0.15, "w": 0.0806, "d": 0.3, "y": 0.5933, "h": 0.04, "color": "dark"},
+    {"shape": "box", "x": 0.0323, "z": -0.15, "w": 0.0806, "d": 0.3, "y": 0.2267, "h": 0.04, "color": "dark"},
+    {"shape": "cyl", "x": -0.3226, "z": -0.15, "w": 0.0403, "d": 0.25, "y": 0.08, "h": 0.8933, "color": "#c4a06e"},
+    {"shape": "box", "x": -0.3226, "z": 0, "w": 0.4194, "d": 0.6, "y": 0, "h": 0.0667, "color": "#6a6f77"},
+    {"shape": "box", "x": -0.3226, "z": 0, "w": 0.4194, "d": 0.45, "y": 0.0667, "h": 0.03, "color": "#2a5ea8"},
+    {"shape": "cyl", "x": 0.0323, "z": -0.15, "w": 0.0403, "d": 0.25, "y": 0, "h": 0.96, "color": "#8a8f96"},
+    {"shape": "sphere", "x": 0.0323, "z": 0, "w": 0.2581, "d": 1, "y": 0.9067, "h": 0.0933, "color": "#f2f0e8"},
+    {"shape": "box", "x": 0.4032, "z": -0.3, "w": 0.0968, "d": 0.3, "y": 0.5467, "h": 0.02, "color": "metal"},
+    {"shape": "loft", "x": 0.4032, "z": -0.1, "w": 0.3226, "d": 0.4, "y": 0.3067, "h": 0.2533, "color": "#c0262b", "tx": 0.4032, "tz": -0.3, "tw": 0.3226, "td": 0.2}
+  ]
+}

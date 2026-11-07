@@ -1,0 +1,17 @@
+{
+  "id": "kitchen_bench_120",
+  "name": {"en": "Kitchen bench"},
+  "size": [1.2, 0.35, 0.46],
+  "group": "seating",
+  "family": "kitchen_bench",
+  "variant": {"en": "120"},
+  "room": ["kitchen", "dining", "hall", "garden"],
+  "tags": ["bench", "dining bench", "kitchen bench", "farmhouse", "wooden bench", "seat", "backless"],
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.913, "h": 0.087, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4167, "z": 0.0, "w": 0.0333, "d": 0.8286, "y": 0.0, "h": 0.913, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4167, "z": 0.0, "w": 0.0333, "d": 0.8286, "y": 0.0, "h": 0.913, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.0857, "y": 0.1739, "h": 0.1304, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4143, "w": 0.9333, "d": 0.0571, "y": 0.7391, "h": 0.1739, "color": "wood", "fix": "h"}
+  ]
+}

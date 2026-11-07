@@ -1,0 +1,19 @@
+{
+  "id": "trophy_crystal_gold_small",
+  "name": {"en": "Crystal award, gold base, small"},
+  "size": [0.08, 0.04, 0.2],
+  "group": "deco",
+  "room": ["living", "office", "hall", "study", "games", "dining"],
+  "tags": ["trophy", "award", "prize", "gold", "crystal", "glass award", "obelisk"],
+  "family": "trophy_crystal_gold",
+  "variant": {"en": "Small"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8, "d": 1, "y": 0, "h": 0.1, "color": "#d4af37", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.7, "d": 0.7, "y": 0.1, "h": 0.9, "color": "glass", "tx": 0.0, "tz": 0.0, "tw": 0.3, "td": 0.3, "edges": "faint"},
+    {"shape": "box", "x": 0.0, "z": 0.36, "w": 0.4, "d": 0.1, "y": 0.2, "h": 0.05, "color": "#d4af37", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

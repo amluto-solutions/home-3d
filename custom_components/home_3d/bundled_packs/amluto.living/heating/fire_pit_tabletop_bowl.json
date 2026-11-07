@@ -1,0 +1,41 @@
+{
+  "id": "fire_pit_tabletop_bowl",
+  "name": {
+    "en": "Tabletop fire bowl"
+  },
+  "size": [
+    0.26,
+    0.26,
+    0.14
+  ],
+  "group": "heating",
+  "room": [
+    "garden",
+    "conservatory",
+    "living",
+    "dining"
+  ],
+  "tags": [
+    "tabletop fire",
+    "fire bowl",
+    "mini fire pit",
+    "concrete bowl",
+    "patio",
+    "table fire",
+    "ethanol",
+    "decor"
+  ],
+  "family": "fire_pit_tabletop",
+  "variant": {
+    "en": "26 cm"
+  },
+  "light": "table",
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.5714, "color": "#c9c9c4", "profile": [[0.0, 0.0], [0.4615, 0.0], [0.9231, 0.625], [1.0, 1.0], [0.9231, 1.0], [0.4615, 0.25], [0.0, 0.25]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.6154, "d": 0.6154, "y": 0.0857, "h": 0.1429, "color": "#5a5a58"},
+    {"shape": "loft", "x": -0.1154, "z": 0.0, "w": 0.1923, "d": 0.1154, "y": 0.2857, "h": 0.5, "color": "#ff8a2a", "tx": -0.1154, "tz": 0.0, "tw": 0.0288, "td": 0.0192, "glow": true},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.1923, "d": 0.1154, "y": 0.2857, "h": 0.7143, "color": "#ffc24a", "tx": 0.0, "tz": 0.0, "tw": 0.0288, "td": 0.0192, "glow": true},
+    {"shape": "loft", "x": 0.1154, "z": 0.0, "w": 0.1923, "d": 0.1154, "y": 0.2857, "h": 0.5, "color": "#ff8a2a", "tx": 0.1154, "tz": 0.0, "tw": 0.0288, "td": 0.0192, "glow": true}
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "lisabo_table_round_105",
+  "name": {
+    "en": "Round table 105 cm"
+  },
+  "size": [
+    1.05,
+    1.05,
+    0.74
+  ],
+  "group": "table",
+  "room": [
+    "dining",
+    "kitchen"
+  ],
+  "tags": [
+    "dining table",
+    "ash veneer",
+    "black",
+    "splayed legs",
+    "4 seats"
+  ],
+  "family": "lisabo_table",
+  "variant": {
+    "en": "Round 105"
+  },
+  "ikea": "LISABO",
+  "surface": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.973, "h": 0.027, "color": "wood", "fix": "h"},
+    {"shape": "loft", "x": -0.2857, "z": -0.2857, "w": 0.0333, "d": 0.0333, "y": 0, "h": 0.973, "color": "wood", "tx": -0.2286, "tz": -0.2286, "tw": 0.0429, "td": 0.0429, "fix": "wd"},
+    {"shape": "loft", "x": -0.2857, "z": 0.2857, "w": 0.0333, "d": 0.0333, "y": 0, "h": 0.973, "color": "wood", "tx": -0.2286, "tz": 0.2286, "tw": 0.0429, "td": 0.0429, "fix": "wd"},
+    {"shape": "loft", "x": 0.2857, "z": -0.2857, "w": 0.0333, "d": 0.0333, "y": 0, "h": 0.973, "color": "wood", "tx": 0.2286, "tz": -0.2286, "tw": 0.0429, "td": 0.0429, "fix": "wd"},
+    {"shape": "loft", "x": 0.2857, "z": 0.2857, "w": 0.0333, "d": 0.0333, "y": 0, "h": 0.973, "color": "wood", "tx": 0.2286, "tz": 0.2286, "tw": 0.0429, "td": 0.0429, "fix": "wd"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.6857, "d": 0.6857, "y": 0.8919, "h": 0.0811, "color": "wood", "fix": "h"}
+  ]
+}

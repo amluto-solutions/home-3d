@@ -1,0 +1,66 @@
+{
+  "id": "scratching_post_simple",
+  "name": {
+    "en": "Cat scratching post"
+  },
+  "size": [
+    0.4,
+    0.4,
+    0.8
+  ],
+  "group": "pets",
+  "room": [
+    "living",
+    "hall"
+  ],
+  "tags": [
+    "cat",
+    "sisal",
+    "scratcher"
+  ],
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 0.04,
+      "color": "fabric",
+      "fix": "h"
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 0.25,
+      "d": 0.25,
+      "y": 0.04,
+      "h": 0.86,
+      "color": "#c8a878"
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0,
+      "w": 0.8,
+      "d": 0.8,
+      "y": 0.9,
+      "h": 0.05,
+      "color": "fabric",
+      "fix": "h"
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0,
+      "w": 0.7,
+      "d": 0.7,
+      "y": 0.95,
+      "h": 0.05,
+      "color": "cushion",
+      "fix": "h"
+    }
+  ]
+}

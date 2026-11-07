@@ -1,0 +1,41 @@
+{
+  "id": "hektar_floor_lamp",
+  "name": {
+    "en": "Industrial floor lamp"
+  },
+  "size": [
+    0.4,
+    0.55,
+    1.81
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "office",
+    "bedroom",
+    "hobby"
+  ],
+  "tags": [
+    "floor lamp",
+    "standard lamp",
+    "industrial",
+    "reading lamp",
+    "metal",
+    "dark grey",
+    "brown-red"
+  ],
+  "family": "hektar_floor_lamp",
+  "variant": {
+    "en": "Single shade"
+  },
+  "ikea": "HEKTAR",
+  "light": "floor",
+  "electric": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.1364, "w": 0.85, "d": 0.6182, "y": 0, "h": 0.0166, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.1364, "w": 0.075, "d": 0.0545, "y": 0.0166, "h": 0.8011, "color": "dark", "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": -0.1364, "w": 0.075, "d": 0.0545, "y": 0.8177, "h": 0.0994, "color": "dark", "tz": 0.1091, "tw": 0.075, "td": 0.0545},
+    {"shape": "lathe", "x": 0.0, "z": 0.2091, "w": 0.7875, "d": 0.5727, "y": 0.8508, "h": 0.1492, "color": "dark", "profile": [[1, 0], [0.97, 0.25], [0.75, 0.55], [0.4, 0.75], [0.25, 0.9], [0.2, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.2091, "w": 0.725, "d": 0.5273, "y": 0.8508, "h": 0.0055, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

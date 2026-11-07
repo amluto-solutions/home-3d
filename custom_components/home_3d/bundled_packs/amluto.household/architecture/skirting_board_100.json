@@ -1,0 +1,16 @@
+{
+  "id": "skirting_board_100",
+  "name": {"en": "Skirting board"},
+  "size": [2.4, 0.018, 0.1],
+  "group": "architecture",
+  "room": ["living", "dining", "bedroom", "hall", "kids", "office", "kitchen", "utility"],
+  "tags": ["skirting", "skirting board", "baseboard", "trim", "wall trim", "mdf", "painted", "white", "bullnose", "100mm"],
+  "family": "skirting_board",
+  "variant": {"en": "Bullnose, 100 mm"},
+  "mount": "wall",
+  "wall_y": 0,
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 0.92, "color": "white"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 1, "d": 0.7778, "y": 0.86, "h": 0.14, "color": "white", "axis": "x"}
+  ]
+}

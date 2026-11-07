@@ -1,0 +1,25 @@
+{
+  "id": "unifi_usw_flex_xg",
+  "name": {"en": "UniFi Flex XG"},
+  "size": [0.135, 0.185, 0.032],
+  "group": "network",
+  "room": ["office", "utility", "loft", "living", "hall"],
+  "tags": ["unifi", "ubiquiti", "switch", "network switch", "ethernet", "flex", "10g", "usw-flex-xg"],
+  "family": "unifi_switch_desktop",
+  "variant": {"en": "Flex XG 10 GbE"},
+  "electric": true,
+  "watts": 25,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "round": 0.08},
+    {"shape": "box", "x": -0.36, "z": 0.4975, "w": 0.144, "d": 0.005, "y": 0.2, "h": 0.45, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.18, "z": 0.4975, "w": 0.144, "d": 0.005, "y": 0.2, "h": 0.45, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.0, "z": 0.4975, "w": 0.144, "d": 0.005, "y": 0.2, "h": 0.45, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.18, "z": 0.4975, "w": 0.144, "d": 0.005, "y": 0.2, "h": 0.45, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.36, "z": 0.4975, "w": 0.144, "d": 0.005, "y": 0.2, "h": 0.45, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.44, "z": 0.4975, "w": 0.03, "d": 0.005, "y": 0.78, "h": 0.1, "color": "#4aa3ff", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

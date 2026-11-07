@@ -1,0 +1,16 @@
+{
+  "id": "unifi_cloud_gateway_fiber",
+  "name": {"en": "Cloud gateway, wide (Fiber)"},
+  "size": [0.2128,0.1276,0.03],
+  "group": "network",
+  "room": ["office", "utility", "loft", "living", "hall"],
+  "tags": ["unifi", "cloud gateway", "ucg", "ucg-fiber", "gateway", "router", "firewall", "10g", "broadband", "internet", "ubiquiti"],
+  "family": "unifi_gateway",
+  "variant": {"en": "Cloud Gateway Fiber"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "round": 0.15},
+    {"shape": "box", "x": 0, "z": 0.4984, "w": 0.4229, "d": 0.0031, "y": 0.6667, "h": 0.1667, "color": "#4aa3ff", "glow": true}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "unifi_usw_lite_8_poe",
+  "name": {"en": "UniFi Lite 8 PoE"},
+  "size": [0.0996, 0.1637, 0.0317],
+  "group": "network",
+  "room": ["office", "utility", "loft", "living", "hall"],
+  "tags": ["unifi", "ubiquiti", "switch", "network switch", "ethernet", "poe", "lite", "usw-lite-8-poe"],
+  "family": "unifi_switch_desktop",
+  "variant": {"en": "Lite 8 PoE"},
+  "electric": true,
+  "watts": 8,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "round": 0.08},
+    {"shape": "box", "x": -0.4, "z": 0.4975, "w": 0.08, "d": 0.005, "y": 0.2, "h": 0.3, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.3, "z": 0.4975, "w": 0.08, "d": 0.005, "y": 0.2, "h": 0.3, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.2, "z": 0.4975, "w": 0.08, "d": 0.005, "y": 0.2, "h": 0.3, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.1, "z": 0.4975, "w": 0.08, "d": 0.005, "y": 0.2, "h": 0.3, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.0, "z": 0.4975, "w": 0.08, "d": 0.005, "y": 0.2, "h": 0.3, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.1, "z": 0.4975, "w": 0.08, "d": 0.005, "y": 0.2, "h": 0.3, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.2, "z": 0.4975, "w": 0.08, "d": 0.005, "y": 0.2, "h": 0.3, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.3, "z": 0.4975, "w": 0.08, "d": 0.005, "y": 0.2, "h": 0.3, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.4, "z": 0.4975, "w": 0.08, "d": 0.005, "y": 0.2, "h": 0.3, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.44, "z": 0.4975, "w": 0.03, "d": 0.005, "y": 0.78, "h": 0.1, "color": "#4aa3ff", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

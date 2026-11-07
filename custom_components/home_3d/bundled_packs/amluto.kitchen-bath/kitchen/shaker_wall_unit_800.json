@@ -1,0 +1,31 @@
+{
+  "id": "shaker_wall_unit_800",
+  "name": {"en": "Shaker wall unit 800"},
+  "size": [0.8, 0.33, 0.72],
+  "group": "kitchen",
+  "room": ["kitchen", "utility"],
+  "tags": ["shaker", "kitchen cupboard", "fitted kitchen", "cabinet", "wall cupboard", "door"],
+  "family": "shaker_wall_unit",
+  "variant": {"en": "800"},
+  "mount": "wall",
+  "wall_y": 1.45,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0636, "w": 1.0, "d": 0.8727, "y": 0.0, "h": 1.0, "color": "white"},
+    {"shape": "box", "x": -0.25, "z": 0.4, "w": 0.4925, "d": 0.0545, "y": 0.0042, "h": 0.9917, "color": "body"},
+    {"shape": "box", "x": -0.4587, "z": 0.4364, "w": 0.075, "d": 0.0182, "y": 0.0042, "h": 0.9917, "color": "body", "fix": "w"},
+    {"shape": "box", "x": -0.0413, "z": 0.4364, "w": 0.075, "d": 0.0182, "y": 0.0042, "h": 0.9917, "color": "body", "fix": "w"},
+    {"shape": "box", "x": -0.25, "z": 0.4364, "w": 0.3425, "d": 0.0182, "y": 0.0042, "h": 0.0833, "color": "body", "fix": "h"},
+    {"shape": "box", "x": -0.25, "z": 0.4364, "w": 0.3425, "d": 0.0182, "y": 0.9125, "h": 0.0833, "color": "body", "fix": "h"},
+    {"shape": "box", "x": -0.0413, "z": 0.4727, "w": 0.015, "d": 0.0545, "y": 0.0736, "h": 0.1806, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.25, "z": 0.4, "w": 0.4925, "d": 0.0545, "y": 0.0042, "h": 0.9917, "color": "body"},
+    {"shape": "box", "x": 0.0413, "z": 0.4364, "w": 0.075, "d": 0.0182, "y": 0.0042, "h": 0.9917, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.4587, "z": 0.4364, "w": 0.075, "d": 0.0182, "y": 0.0042, "h": 0.9917, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.25, "z": 0.4364, "w": 0.3425, "d": 0.0182, "y": 0.0042, "h": 0.0833, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.25, "z": 0.4364, "w": 0.3425, "d": 0.0182, "y": 0.9125, "h": 0.0833, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0413, "z": 0.4727, "w": 0.015, "d": 0.0545, "y": 0.0736, "h": 0.1806, "color": "metal", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.5, "z1": -0.5, "x2": 0.5, "z2": 0.5}
+  ]
+}

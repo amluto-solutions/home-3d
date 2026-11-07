@@ -1,0 +1,26 @@
+{
+  "id": "wall_stone_sandstone_45",
+  "name": {"en": "Stone garden wall, red sandstone, low"},
+  "size": [2.0, 0.3, 0.45],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["wall", "garden wall", "stone wall", "boundary", "masonry", "dressed stone"],
+  "family": "wall_stone_sandstone",
+  "variant": {"en": "Low (0.45 m)"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.98, "d": 0.8667, "y": 0, "h": 0.8667, "color": "#6a432c"},
+    {"shape": "rbox", "x": -0.3625, "z": 0.0, "w": 0.269, "d": 1, "y": 0.0133, "h": 0.4067, "color": "#9c6341", "round": 0.12},
+    {"shape": "rbox", "x": -0.1125, "z": 0.0, "w": 0.219, "d": 1, "y": 0.0133, "h": 0.4067, "color": "#a06643", "round": 0.12},
+    {"shape": "rbox", "x": 0.125, "z": 0.0, "w": 0.244, "d": 1, "y": 0.0133, "h": 0.4067, "color": "#b7754d", "round": 0.12},
+    {"shape": "rbox", "x": 0.375, "z": 0.0, "w": 0.244, "d": 1, "y": 0.0133, "h": 0.4067, "color": "#9e6542", "round": 0.12},
+    {"shape": "rbox", "x": -0.425, "z": 0.0, "w": 0.144, "d": 1, "y": 0.4467, "h": 0.4067, "color": "#a36844", "round": 0.12},
+    {"shape": "rbox", "x": -0.2125, "z": 0.0, "w": 0.269, "d": 1, "y": 0.4467, "h": 0.4067, "color": "#bb774e", "round": 0.12},
+    {"shape": "rbox", "x": 0.05, "z": 0.0, "w": 0.244, "d": 1, "y": 0.4467, "h": 0.4067, "color": "#b9754e", "round": 0.12},
+    {"shape": "rbox", "x": 0.2875, "z": 0.0, "w": 0.219, "d": 1, "y": 0.4467, "h": 0.4067, "color": "#a96b47", "round": 0.12},
+    {"shape": "rbox", "x": 0.45, "z": 0.0, "w": 0.094, "d": 1, "y": 0.4467, "h": 0.4067, "color": "#9e6543", "round": 0.12},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.8667, "h": 0.1333, "color": "#965f3f"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

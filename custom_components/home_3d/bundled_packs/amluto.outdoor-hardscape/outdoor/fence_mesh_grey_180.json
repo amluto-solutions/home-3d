@@ -1,0 +1,30 @@
+{
+  "id": "fence_mesh_grey_180",
+  "name": {"en": "Welded mesh fence panel, galvanised, 1.8 m high"},
+  "size": [2.5, 0.06, 1.8],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["fence", "mesh fence", "welded mesh", "security fence", "wire", "boundary"],
+  "family": "fence_mesh_grey",
+  "variant": {"en": "1.8 m high"},
+  "parts": [
+    {"shape": "box", "x": -0.488, "z": 0.0, "w": 0.024, "d": 1, "y": 0, "h": 1, "color": "#93979b", "fix": "wd"},
+    {"shape": "box", "x": 0.488, "z": 0.0, "w": 0.024, "d": 1, "y": 0, "h": 1, "color": "#93979b", "fix": "wd"},
+    {"shape": "box", "x": -0.357, "z": 0.0, "w": 0.0048, "d": 0.2, "y": 0.0167, "h": 0.9667, "color": "#b3b9bd"},
+    {"shape": "box", "x": -0.238, "z": 0.0, "w": 0.0048, "d": 0.2, "y": 0.0167, "h": 0.9667, "color": "#b3b9bd"},
+    {"shape": "box", "x": -0.119, "z": 0.0, "w": 0.0048, "d": 0.2, "y": 0.0167, "h": 0.9667, "color": "#b3b9bd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.0048, "d": 0.2, "y": 0.0167, "h": 0.9667, "color": "#b3b9bd"},
+    {"shape": "box", "x": 0.119, "z": 0.0, "w": 0.0048, "d": 0.2, "y": 0.0167, "h": 0.9667, "color": "#b3b9bd"},
+    {"shape": "box", "x": 0.238, "z": 0.0, "w": 0.0048, "d": 0.2, "y": 0.0167, "h": 0.9667, "color": "#b3b9bd"},
+    {"shape": "box", "x": 0.357, "z": 0.0, "w": 0.0048, "d": 0.2, "y": 0.0167, "h": 0.9667, "color": "#b3b9bd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.952, "d": 0.2, "y": 0.0167, "h": 0.0067, "color": "#b3b9bd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.952, "d": 0.2, "y": 0.2078, "h": 0.0067, "color": "#b3b9bd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.952, "d": 0.2, "y": 0.3989, "h": 0.0067, "color": "#b3b9bd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.952, "d": 0.2, "y": 0.59, "h": 0.0067, "color": "#b3b9bd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.952, "d": 0.2, "y": 0.7811, "h": 0.0067, "color": "#b3b9bd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.952, "d": 0.2, "y": 0.9722, "h": 0.0067, "color": "#b3b9bd"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

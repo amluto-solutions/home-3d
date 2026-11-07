@@ -1,0 +1,41 @@
+{
+  "id": "nymane_led_ceiling_45",
+  "name": {
+    "en": "LED ceiling lamp, round white 45 cm"
+  },
+  "size": [
+    0.45,
+    0.45,
+    0.08
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "kitchen",
+    "kids"
+  ],
+  "tags": [
+    "ceiling light",
+    "flush",
+    "round",
+    "white",
+    "led",
+    "smart",
+    "dimmable"
+  ],
+  "family": "nymane_lamp",
+  "variant": {
+    "en": "Ceiling 45"
+  },
+  "ikea": "NYMÅNE",
+  "light": "ceiling",
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "edges": "faint", "profile": [[0.9, 0], [1, 0.12], [1, 0.8], [0.92, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8889, "d": 0.8889, "y": 0, "h": 0.15, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

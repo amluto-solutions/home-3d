@@ -1,0 +1,32 @@
+{
+  "id": "humlemott_throw_folded",
+  "name": {
+    "en": "Throw 130x170 cm, folded"
+  },
+  "size": [
+    0.45,
+    0.32,
+    0.07
+  ],
+  "group": "throw",
+  "room": [
+    "living",
+    "bedroom"
+  ],
+  "tags": [
+    "throw",
+    "blanket",
+    "sofa throw",
+    "folded",
+    "off-white",
+    "130x170"
+  ],
+  "ikea": "HUMLEMOTT",
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "fabric", "round": 0.4},
+    {"shape": "box", "x": 0.0, "z": 0.4938, "w": 0.9111, "d": 0.0125, "y": 0.25, "h": 0.0429, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4938, "w": 0.9111, "d": 0.0125, "y": 0.5, "h": 0.0429, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4938, "w": 0.9111, "d": 0.0125, "y": 0.75, "h": 0.0429, "color": "white", "fix": "dh"}
+  ]
+}

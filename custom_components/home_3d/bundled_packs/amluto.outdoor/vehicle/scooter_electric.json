@@ -1,0 +1,30 @@
+{
+  "id": "scooter_electric",
+  "name": {"en": "Electric scooter"},
+  "size": [0.65, 1.27, 1.16],
+  "group": "vehicle",
+  "room": ["hall", "garage", "utility", "garden"],
+  "tags": ["scooter", "electric scooter", "e-scooter", "escooter", "commuter", "battery", "folding", "micro mobility", "transport", "charging"],
+  "family": "scooter",
+  "variant": {"en": "Electric, folding"},
+  "electric": true,
+  "vehicle": true,
+  "colors": {"paint": "#2c2f33"},
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": -0.0394, "w": 0.2769, "d": 0.4882, "y": 0.0862, "h": 0.0517, "color": "paint", "round": 0.3},
+    {"shape": "box", "x": 0, "z": -0.0236, "w": 0.2154, "d": 0.3937, "y": 0.1379, "h": 0.0034, "color": "#17171a"},
+    {"shape": "cyl", "x": 0, "z": -0.3937, "w": 0.0769, "d": 0.1575, "y": 0, "h": 0.1724, "color": "#25262a", "axis": "x"},
+    {"shape": "cyl", "x": 0, "z": -0.3937, "w": 0.0831, "d": 0.0787, "y": 0.0431, "h": 0.0862, "color": "#b9bdc2", "axis": "x"},
+    {"shape": "box", "x": 0, "z": -0.3937, "w": 0.1538, "d": 0.2047, "y": 0.1379, "h": 0.0259, "color": "paint"},
+    {"shape": "cyl", "x": 0, "z": 0.3937, "w": 0.0769, "d": 0.1575, "y": 0, "h": 0.1724, "color": "#25262a", "axis": "x"},
+    {"shape": "cyl", "x": 0, "z": 0.3937, "w": 0.0831, "d": 0.0787, "y": 0.0431, "h": 0.0862, "color": "#b9bdc2", "axis": "x"},
+    {"shape": "box", "x": 0, "z": 0.3937, "w": 0.0923, "d": 0.2047, "y": 0.1724, "h": 0.0431, "color": "paint"},
+    {"shape": "loft", "x": 0, "z": 0.3937, "w": 0.0692, "d": 0.0354, "y": 0.1293, "h": 0.8362, "color": "paint", "tx": 0, "tz": 0.315, "tw": 0.0692, "td": 0.0354},
+    {"shape": "cyl", "x": 0, "z": 0.315, "w": 0.8923, "d": 0.0236, "y": 0.9698, "h": 0.0259, "color": "#25262a", "axis": "x"},
+    {"shape": "cyl", "x": -0.4154, "z": 0.315, "w": 0.1538, "d": 0.0315, "y": 0.9655, "h": 0.0345, "color": "#25262a", "axis": "x"},
+    {"shape": "cyl", "x": 0.4154, "z": 0.315, "w": 0.1538, "d": 0.0315, "y": 0.9655, "h": 0.0345, "color": "#25262a", "axis": "x"},
+    {"shape": "rbox", "x": 0, "z": 0.315, "w": 0.2462, "d": 0.0551, "y": 0.9483, "h": 0.0517, "color": "#17171a", "round": 0.3},
+    {"shape": "box", "x": 0, "z": 0.3441, "w": 0.1538, "d": 0.0031, "y": 0.9612, "h": 0.0259, "color": "#8fd0ff"},
+    {"shape": "box", "x": 0, "z": 0.4094, "w": 0.0923, "d": 0.0315, "y": 0.2586, "h": 0.0345, "color": "#f5f2e8"}
+  ]
+}

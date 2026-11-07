@@ -1,0 +1,63 @@
+{
+  "id": "toilet_roll_holder_wall",
+  "name": {
+    "en": "Toilet roll holder, wall"
+  },
+  "size": [
+    0.16,
+    0.12,
+    0.12
+  ],
+  "group": "bath",
+  "room": [
+    "bath"
+  ],
+  "tags": [
+    "toilet roll",
+    "toilet roll holder",
+    "loo roll",
+    "toilet paper",
+    "wall mounted",
+    "chrome"
+  ],
+  "family": "toilet_roll_holder",
+  "variant": {
+    "en": "Wall"
+  },
+  "mount": "wall",
+  "wall_y": 0.65,
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": -0.4375,
+      "z": -0.4583,
+      "w": 0.125,
+      "d": 0.0833,
+      "y": 0.5,
+      "h": 0.4167,
+      "color": "metal",
+      "axis": "z"
+    },
+    {
+      "shape": "box",
+      "x": -0.4375,
+      "z": -0.0833,
+      "w": 0.075,
+      "d": 0.75,
+      "y": 0.625,
+      "h": 0.1,
+      "color": "metal"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0312,
+      "z": 0.0,
+      "w": 0.6875,
+      "d": 0.9167,
+      "y": 0.0833,
+      "h": 0.9167,
+      "color": "white",
+      "axis": "x"
+    }
+  ]
+}

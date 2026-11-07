@@ -1,0 +1,17 @@
+{
+  "id": "manhole_cover_60",
+  "name": {"en": "Manhole cover"},
+  "size": [0.6, 0.6, 0.03],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["manhole", "inspection cover", "drain cover", "access chamber", "drainage"],
+  "family": "manhole_cover",
+  "variant": {"en": "60 cm"},
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.6667, "color": "#44474a"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.75, "d": 0.75, "y": 0.6667, "h": 0.3333, "color": "#2c2e30"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

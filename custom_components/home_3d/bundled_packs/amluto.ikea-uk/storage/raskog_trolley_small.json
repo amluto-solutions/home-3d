@@ -1,0 +1,51 @@
+{
+  "id": "raskog_trolley_small",
+  "name": {
+    "en": "Trolley, small"
+  },
+  "size": [
+    0.28,
+    0.38,
+    0.61
+  ],
+  "group": "storage",
+  "room": [
+    "kitchen",
+    "office",
+    "bath",
+    "kids",
+    "hobby",
+    "bedroom"
+  ],
+  "tags": [
+    "RASKOG",
+    "cart",
+    "kitchen trolley",
+    "art trolley",
+    "on wheels",
+    "white",
+    "grey-green",
+    "blue",
+    "beige"
+  ],
+  "family": "raskog_trolley",
+  "variant": {
+    "en": "28x38x61"
+  },
+  "ikea": "RÅSKOG",
+  "parts": [
+    {"shape": "cyl", "x": -0.4286, "z": -0.4211, "w": 0.0571, "d": 0.0421, "y": 0.082, "h": 0.918, "color": "white", "fix": "wd"},
+    {"shape": "cyl", "x": -0.4286, "z": -0.4211, "w": 0.1786, "d": 0.0421, "y": 0, "h": 0.082, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4286, "z": 0.4211, "w": 0.0571, "d": 0.0421, "y": 0.082, "h": 0.918, "color": "white", "fix": "wd"},
+    {"shape": "cyl", "x": -0.4286, "z": 0.4211, "w": 0.1786, "d": 0.0421, "y": 0, "h": 0.082, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4286, "z": -0.4211, "w": 0.0571, "d": 0.0421, "y": 0.082, "h": 0.918, "color": "white", "fix": "wd"},
+    {"shape": "cyl", "x": 0.4286, "z": -0.4211, "w": 0.1786, "d": 0.0421, "y": 0, "h": 0.082, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4286, "z": 0.4211, "w": 0.0571, "d": 0.0421, "y": 0.082, "h": 0.918, "color": "white", "fix": "wd"},
+    {"shape": "cyl", "x": 0.4286, "z": 0.4211, "w": 0.1786, "d": 0.0421, "y": 0, "h": 0.082, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.4211, "w": 0.9286, "d": 0.0421, "y": 0.9738, "h": 0.0262, "color": "white", "axis": "x", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4211, "w": 0.9286, "d": 0.0421, "y": 0.9738, "h": 0.0262, "color": "white", "axis": "x", "fix": "h"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.8571, "d": 0.8421, "y": 0.1475, "h": 0.123, "color": "white", "profile": [[0, 0], [0.92, 0], [1, 1], [0.96, 1], [0.88, 0.12], [0, 0.12]]},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.8571, "d": 0.8421, "y": 0.4836, "h": 0.123, "color": "white", "profile": [[0, 0], [0.92, 0], [1, 1], [0.96, 1], [0.88, 0.12], [0, 0.12]]},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.8571, "d": 0.8421, "y": 0.8033, "h": 0.123, "color": "white", "profile": [[0, 0], [0.92, 0], [1, 1], [0.96, 1], [0.88, 0.12], [0, 0.12]]}
+  ]
+}

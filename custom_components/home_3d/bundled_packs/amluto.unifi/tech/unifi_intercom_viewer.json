@@ -1,0 +1,60 @@
+{
+  "id": "unifi_intercom_viewer",
+  "name": {
+    "en": "UniFi Access Intercom Viewer"
+  },
+  "size": [
+    0.135,
+    0.032,
+    0.185
+  ],
+  "group": "tech",
+  "tags": [
+    "unifi",
+    "ubiquiti",
+    "access",
+    "door access",
+    "intercom viewer",
+    "ua-intercom-viewer",
+    "indoor",
+    "touchscreen",
+    "display"
+  ],
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.3,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "round": 0.15
+    },
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0.3,
+      "w": 0.88,
+      "d": 0.42,
+      "y": 0.06,
+      "h": 0.88,
+      "color": "#0b0f17",
+      "round": 0.1
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0.5,
+      "w": 0.6,
+      "d": 0.02,
+      "y": 0.45,
+      "h": 0.02,
+      "color": "#3a8dde"
+    }
+  ]
+}

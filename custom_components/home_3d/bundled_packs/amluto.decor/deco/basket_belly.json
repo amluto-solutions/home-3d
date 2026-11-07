@@ -1,0 +1,17 @@
+{
+  "id": "basket_belly",
+  "name": {"en": "Belly basket"},
+  "size": [0.4, 0.4, 0.42],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "hall", "kids", "bath", "utility"],
+  "tags": ["basket", "belly basket", "seagrass", "storage basket", "woven", "wicker", "plant basket"],
+  "family": "basket",
+  "variant": {"en": "Round 40"},
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#c49a6c", "profile": [[0.0, 0.0], [0.8, 0.0], [0.97, 0.3], [1, 0.75], [0.96, 1], [0.91, 1], [0.95, 0.75], [0.92, 0.3], [0.75, 0.04], [0.0, 0.04]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.82, "h": 0.12, "color": "#a57c4d"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.99, "d": 0.99, "y": 0.3, "h": 0.04, "color": "#8a6440"},
+    {"shape": "box", "x": -0.47, "z": 0.0, "w": 0.06, "d": 0.18, "y": 0.8, "h": 0.08, "color": "#6b4a2b"},
+    {"shape": "box", "x": 0.47, "z": 0.0, "w": 0.06, "d": 0.18, "y": 0.8, "h": 0.08, "color": "#6b4a2b"}
+  ]
+}

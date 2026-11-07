@@ -1,0 +1,38 @@
+{
+  "id": "stilren_vase_12",
+  "name": {
+    "en": "Vase, white 12 cm"
+  },
+  "size": [
+    0.065,
+    0.065,
+    0.12
+  ],
+  "group": "vase",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "bedroom",
+    "bath",
+    "office"
+  ],
+  "tags": [
+    "STILREN",
+    "vase",
+    "ceramic vase",
+    "white",
+    "dark grey-beige",
+    "bud vase",
+    "small vase"
+  ],
+  "family": "stilren_vase",
+  "variant": {
+    "en": "12 cm"
+  },
+  "ikea": "STILREN",
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "profile": [[0.5, 0], [0.9, 0.1], [1, 0.34], [0.86, 0.68], [0.55, 0.9], [0.6, 1], [0.44, 1], [0.38, 0.86]]}
+  ]
+}

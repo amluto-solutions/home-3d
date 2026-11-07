@@ -1,0 +1,50 @@
+{
+  "id": "alex_drawer_unit_36x70",
+  "name": {
+    "en": "Drawer unit 36x70 cm"
+  },
+  "size": [
+    0.36,
+    0.58,
+    0.7
+  ],
+  "group": "office",
+  "room": [
+    "office",
+    "bedroom",
+    "kids",
+    "hobby"
+  ],
+  "tags": [
+    "drawers",
+    "desk drawers",
+    "pedestal",
+    "storage",
+    "white",
+    "dark grey",
+    "white stained oak effect",
+    "blue"
+  ],
+  "family": "alex_drawer_unit",
+  "variant": {
+    "en": "36x70 · 5 drawers"
+  },
+  "ikea": "ALEX",
+  "parts": [
+    {"shape": "box", "x": -0.475, "z": -0.0155, "w": 0.05, "d": 0.969, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.475, "z": -0.0155, "w": 0.05, "d": 0.969, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0155, "w": 1, "d": 0.969, "y": 0.9743, "h": 0.0257, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0155, "w": 0.9, "d": 0.969, "y": 0, "h": 0.0257, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4931, "w": 0.9, "d": 0.0138, "y": 0.0257, "h": 0.9486, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9889, "d": 0.031, "y": 0, "h": 0.1943, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4991, "w": 0.3333, "d": 0.0034, "y": 0.1443, "h": 0.0286, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9889, "d": 0.031, "y": 0.2, "h": 0.1943, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4991, "w": 0.3333, "d": 0.0034, "y": 0.3443, "h": 0.0286, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9889, "d": 0.031, "y": 0.4, "h": 0.1943, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4991, "w": 0.3333, "d": 0.0034, "y": 0.5443, "h": 0.0286, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9889, "d": 0.031, "y": 0.6, "h": 0.1943, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4991, "w": 0.3333, "d": 0.0034, "y": 0.7443, "h": 0.0286, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9889, "d": 0.031, "y": 0.8, "h": 0.1943, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4991, "w": 0.3333, "d": 0.0034, "y": 0.9443, "h": 0.0286, "color": "dark", "fix": "wdh"}
+  ]
+}

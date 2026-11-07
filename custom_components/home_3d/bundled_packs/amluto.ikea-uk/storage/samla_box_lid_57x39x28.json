@@ -1,0 +1,42 @@
+{
+  "id": "samla_box_lid_57x39x28",
+  "name": {
+    "en": "Box with lid, transparent 57x39x28 cm"
+  },
+  "size": [
+    0.57,
+    0.39,
+    0.28
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "office",
+    "hall",
+    "living",
+    "utility"
+  ],
+  "tags": [
+    "SAMLA",
+    "transparent",
+    "clear box",
+    "plastic box",
+    "45 l",
+    "stackable"
+  ],
+  "family": "samla_box",
+  "variant": {
+    "en": "57x39x28"
+  },
+  "ikea": "SAMLA",
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.9, "color": "glass", "round": 0.12},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9, "h": 0.1, "color": "glass", "round": 0.2},
+    {"shape": "box", "x": -0.5, "z": 0.0, "w": 0.007, "d": 0.3077, "y": 0.55, "h": 0.12, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.5, "z": 0.0, "w": 0.007, "d": 0.3077, "y": 0.55, "h": 0.12, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.5, "w": 0.18, "d": 0.0154, "y": 0.8286, "h": 0.1429, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.18, "d": 0.0154, "y": 0.8286, "h": 0.1429, "color": "white", "fix": "wdh"}
+  ]
+}

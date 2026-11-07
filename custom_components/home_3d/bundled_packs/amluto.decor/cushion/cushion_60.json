@@ -1,0 +1,15 @@
+{
+  "id": "cushion_60",
+  "name": {"en": "Cushion 60 × 60 cm"},
+  "size": [0.6, 0.18, 0.6],
+  "group": "cushion",
+  "room": ["living", "bedroom", "conservatory", "kids"],
+  "tags": ["cushion", "scatter cushion", "sofa cushion", "throw pillow", "pillow", "square", "large", "piped"],
+  "family": "cushion",
+  "variant": {"en": "60 × 60"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#b8a589", "round": 0.5},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.35, "y": 0.0, "h": 1.0, "color": "dark", "round": 0.5}
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Home 3D",
+        "description": "Hozzáad egy oldalt az oldalsávhoz, ahol megrajzolod az otthonodat és 3D-ben látod."
+      }
+    },
+    "abort": {
+      "single_instance_allowed": "A Home 3D már be van állítva."
+    }
+  },
+  "services": {
+    "ask": {
+      "name": "Kérdezd meg a házat",
+      "description": "Egy mondatot továbbít a megnyitott Home 3D nézeteknek: a „Mutasd a nappalit” megmutatja a nappalit, a kérdésekre pedig a telepített modulok válaszolnak („Mi van nyitva?”). Az első nézet, amelyik érti a mondatot, válaszol.",
+      "fields": {
+        "text": {
+          "name": "Mondat",
+          "description": "Amit meg kell mutatni vagy kérdezni, ahogy mondanád."
+        },
+        "screen": {
+          "name": "Képernyő",
+          "description": "Csak az a nézet reagál, amelynek ez a képernyőneve van (a nézet beállításaiban vagy a kártya képernyő-opciójában adható meg). Üresen: minden megnyitott nézet."
+        },
+        "speak": {
+          "name": "Beszéd",
+          "description": "A nézet az Assist szövegfelolvasásával mondja el a válaszát (ki: csak megjeleníti)."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Home 3D",
+        "description": "Hol jelenik meg a Home 3D. A panel-hivatkozás és az irányítópult-kártya mindkét esetben működik, a bejegyzést pedig a Home Assistant saját oldalsáv-beállításaiban továbbra is elrejtheted magadnak.",
+        "data": {
+          "show_in_sidebar": "Megjelenítés az oldalsávon",
+          "restore_picture_days": "Visszaállítási pontok képeinek megtartása (nap)"
+        },
+        "data_description": {
+          "restore_picture_days": "Az a háttér- vagy képernyőkép, amelyet csak egy régebbi visszaállítási pont használ, a pont létrehozása után ennyi napig megmarad, majd a következő indításkor törlődik. Az olyan visszaállítási pont, amelynek képe már nincs meg, kép nélkül áll vissza. A 0 azonnal törli az ilyen képeket."
+        }
+      }
+    }
+  }
+}

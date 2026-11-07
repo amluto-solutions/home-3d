@@ -1,0 +1,30 @@
+{
+  "id": "unifi_usw_flex_2_5g_8",
+  "name": {"en": "UniFi Flex 2.5G 8"},
+  "size": [0.2129, 0.076, 0.0335],
+  "group": "network",
+  "room": ["office", "utility", "loft", "living", "hall"],
+  "tags": ["unifi", "ubiquiti", "switch", "network switch", "ethernet", "flex", "2.5g", "usw-flex-2.5g-8"],
+  "family": "unifi_switch_desktop",
+  "variant": {"en": "Flex 2.5G 8-port"},
+  "electric": true,
+  "watts": 14,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "round": 0.08},
+    {"shape": "box", "x": -0.405, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.45, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.315, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.45, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.225, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.45, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.135, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.45, "color": "#1b1d21"},
+    {"shape": "box", "x": -0.045, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.45, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.045, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.45, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.135, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.45, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.225, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.45, "color": "#1b1d21"},
+    {"shape": "box", "x": 0.315, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.45, "color": "metal"},
+    {"shape": "box", "x": 0.405, "z": 0.4975, "w": 0.072, "d": 0.005, "y": 0.2, "h": 0.45, "color": "metal"},
+    {"shape": "box", "x": -0.44, "z": 0.4975, "w": 0.03, "d": 0.005, "y": 0.78, "h": 0.1, "color": "#4aa3ff", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

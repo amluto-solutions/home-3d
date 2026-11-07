@@ -1,0 +1,63 @@
+{
+  "id": "vimle_sofa_corner_5",
+  "name": {
+    "en": "Corner sofa, 5-seat"
+  },
+  "size": [
+    3.19,
+    2.49,
+    0.83
+  ],
+  "group": "sofa",
+  "room": [
+    "living",
+    "conservatory"
+  ],
+  "tags": [
+    "sofa",
+    "settee",
+    "couch",
+    "modular sofa",
+    "fabric sofa",
+    "beige",
+    "grey",
+    "grey-green",
+    "dark green",
+    "dark blue"
+  ],
+  "family": "vimle_sofa",
+  "variant": {
+    "en": "Corner 5-seat"
+  },
+  "ikea": "VIMLE",
+  "parts": [
+    {"shape": "rbox", "x": 0.1536, "z": -0.3032, "w": 0.6928, "d": 0.3936, "y": 0.0723, "h": 0.4337, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": 0.1536, "z": -0.4518, "w": 0.6458, "d": 0.0964, "y": 0.4337, "h": 0.5663, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.0852, "z": -0.259, "w": 0.2121, "d": 0.2972, "y": 0.4337, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.0852, "z": -0.3715, "w": 0.209, "d": 0.0803, "y": 0.5542, "h": 0.4217, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.1301, "z": -0.259, "w": 0.2121, "d": 0.2972, "y": 0.4337, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.1301, "z": -0.3715, "w": 0.209, "d": 0.0803, "y": 0.5542, "h": 0.4217, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.3454, "z": -0.259, "w": 0.2121, "d": 0.2972, "y": 0.4337, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.3454, "z": -0.3715, "w": 0.209, "d": 0.0803, "y": 0.5542, "h": 0.4217, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.4765, "z": -0.3032, "w": 0.047, "d": 0.3936, "y": 0.0723, "h": 0.747, "color": "fabric", "fix": "w", "round": 0.3},
+    {"shape": "box", "x": -0.174, "z": -0.4759, "w": 0.0125, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.174, "z": -0.1305, "w": 0.0125, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4812, "z": -0.4759, "w": 0.0125, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4812, "z": -0.1305, "w": 0.0125, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": -0.3464, "z": -0.3032, "w": 0.3072, "d": 0.3936, "y": 0.0723, "h": 0.4337, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": -0.3464, "z": -0.4518, "w": 0.3072, "d": 0.0964, "y": 0.4337, "h": 0.5663, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.4624, "z": -0.3032, "w": 0.0752, "d": 0.3936, "y": 0.4337, "h": 0.5663, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.3119, "z": -0.259, "w": 0.232, "d": 0.2972, "y": 0.4337, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.3464, "z": 0.1968, "w": 0.3072, "d": 0.6064, "y": 0.0723, "h": 0.4337, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": -0.4624, "z": 0.1968, "w": 0.0752, "d": 0.5462, "y": 0.4337, "h": 0.5663, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.3119, "z": 0.0301, "w": 0.232, "d": 0.2691, "y": 0.4337, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.3997, "z": 0.0301, "w": 0.0627, "d": 0.2651, "y": 0.5542, "h": 0.4217, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.3119, "z": 0.3032, "w": 0.232, "d": 0.2691, "y": 0.4337, "h": 0.1566, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.3997, "z": 0.3032, "w": 0.0627, "d": 0.2651, "y": 0.5542, "h": 0.4217, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.3464, "z": 0.4699, "w": 0.3072, "d": 0.0602, "y": 0.0723, "h": 0.747, "color": "fabric", "fix": "d", "round": 0.3},
+    {"shape": "box", "x": -0.4812, "z": -0.0823, "w": 0.0125, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "dwh"},
+    {"shape": "box", "x": -0.2116, "z": -0.0823, "w": 0.0125, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "dwh"},
+    {"shape": "box", "x": -0.4812, "z": 0.4759, "w": 0.0125, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "dwh"},
+    {"shape": "box", "x": -0.2116, "z": 0.4759, "w": 0.0125, "d": 0.0161, "y": 0, "h": 0.0723, "color": "dark", "fix": "dwh"}
+  ]
+}

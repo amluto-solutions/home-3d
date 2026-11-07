@@ -1,0 +1,30 @@
+{
+  "id": "wall_stone_cotswold_90",
+  "name": {"en": "Stone garden wall, Cotswold stone, half height"},
+  "size": [2.0, 0.3, 0.9],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["wall", "garden wall", "stone wall", "boundary", "masonry", "dressed stone"],
+  "family": "wall_stone_cotswold",
+  "variant": {"en": "Half height (0.9 m)"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.98, "d": 0.8667, "y": 0, "h": 0.9333, "color": "#796c53"},
+    {"shape": "rbox", "x": -0.3625, "z": 0.0, "w": 0.269, "d": 1, "y": 0.0067, "h": 0.2978, "color": "#c9b48a", "round": 0.12},
+    {"shape": "rbox", "x": -0.1125, "z": 0.0, "w": 0.219, "d": 1, "y": 0.0067, "h": 0.2978, "color": "#c1ad85", "round": 0.12},
+    {"shape": "rbox", "x": 0.125, "z": 0.0, "w": 0.244, "d": 1, "y": 0.0067, "h": 0.2978, "color": "#c9b48a", "round": 0.12},
+    {"shape": "rbox", "x": 0.375, "z": 0.0, "w": 0.244, "d": 1, "y": 0.0067, "h": 0.2978, "color": "#b8a57e", "round": 0.12},
+    {"shape": "rbox", "x": -0.425, "z": 0.0, "w": 0.144, "d": 1, "y": 0.3178, "h": 0.2978, "color": "#d3bd91", "round": 0.12},
+    {"shape": "rbox", "x": -0.2125, "z": 0.0, "w": 0.269, "d": 1, "y": 0.3178, "h": 0.2978, "color": "#b9a67f", "round": 0.12},
+    {"shape": "rbox", "x": 0.05, "z": 0.0, "w": 0.244, "d": 1, "y": 0.3178, "h": 0.2978, "color": "#cbb68b", "round": 0.12},
+    {"shape": "rbox", "x": 0.2875, "z": 0.0, "w": 0.219, "d": 1, "y": 0.3178, "h": 0.2978, "color": "#c8b38a", "round": 0.12},
+    {"shape": "rbox", "x": 0.45, "z": 0.0, "w": 0.094, "d": 1, "y": 0.3178, "h": 0.2978, "color": "#b6a37d", "round": 0.12},
+    {"shape": "rbox", "x": -0.3625, "z": 0.0, "w": 0.269, "d": 1, "y": 0.6289, "h": 0.2978, "color": "#c8b389", "round": 0.12},
+    {"shape": "rbox", "x": -0.1125, "z": 0.0, "w": 0.219, "d": 1, "y": 0.6289, "h": 0.2978, "color": "#b2a07a", "round": 0.12},
+    {"shape": "rbox", "x": 0.125, "z": 0.0, "w": 0.244, "d": 1, "y": 0.6289, "h": 0.2978, "color": "#cbb68b", "round": 0.12},
+    {"shape": "rbox", "x": 0.375, "z": 0.0, "w": 0.244, "d": 1, "y": 0.6289, "h": 0.2978, "color": "#c5b087", "round": 0.12},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9333, "h": 0.0667, "color": "#ab9975"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

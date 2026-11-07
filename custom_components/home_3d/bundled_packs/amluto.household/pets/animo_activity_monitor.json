@@ -1,0 +1,50 @@
+{
+  "id": "animo_activity_monitor",
+  "name": {
+    "en": "Sure Petcare Animo (collar monitor)"
+  },
+  "size": [
+    0.037,
+    0.0115,
+    0.037
+  ],
+  "group": "pets",
+  "room": [],
+  "tags": [
+    "sure petcare",
+    "surepet",
+    "animo",
+    "activity monitor",
+    "collar",
+    "dog tracker",
+    "pet tracker",
+    "behaviour",
+    "smart"
+  ],
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 0.35,
+      "d": 0.35,
+      "y": 0.9,
+      "h": 0.2,
+      "color": "#46d36a",
+      "glow": true,
+      "axis": "z"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "ottoman_bed_super_king",
+  "name": {"en": "Super king ottoman bed"},
+  "size": [1.88, 2.12, 1.15],
+  "group": "bed",
+  "family": "ottoman_bed",
+  "variant": {"en": "Super king · 180 × 200"},
+  "room": ["bedroom"],
+  "tags": ["ottoman bed", "lift up", "storage bed", "gas lift", "upholstered bed", "headboard", "super king", "6ft"],
+  "parts": [
+    {"shape": "cyl", "x": -0.4681, "z": -0.434, "w": 0.0213, "d": 0.0189, "y": 0.0, "h": 0.0348, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4681, "z": 0.434, "w": 0.0213, "d": 0.0189, "y": 0.0, "h": 0.0348, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4681, "z": -0.434, "w": 0.0213, "d": 0.0189, "y": 0.0, "h": 0.0348, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4681, "z": 0.434, "w": 0.0213, "d": 0.0189, "y": 0.0, "h": 0.0348, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0189, "w": 1.0, "d": 0.9623, "y": 0.0348, "h": 0.2783, "color": "fabric", "round": 0.1, "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0189, "w": 1.0, "d": 0.9575, "y": 0.2609, "h": 0.0043, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4976, "w": 0.0532, "d": 0.0047, "y": 0.1913, "h": 0.0696, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": -0.4811, "w": 1.0, "d": 0.0377, "y": 0.0348, "h": 0.9652, "color": "fabric", "round": 0.25, "fix": "d"},
+    {"shape": "rbox", "x": 0.0, "z": -0.4611, "w": 0.9681, "d": 0.0071, "y": 0.4348, "h": 0.5304, "color": "fabric", "round": 0.4, "fix": "d"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0165, "w": 0.9574, "d": 0.9481, "y": 0.313, "h": 0.1739, "color": "white", "round": 0.2, "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.1073, "w": 0.9681, "d": 0.7712, "y": 0.4435, "h": 0.087, "color": "cushion", "round": 0.3, "fix": "dh"},
+    {"shape": "rbox", "x": -0.2394, "z": -0.3679, "w": 0.4468, "d": 0.1321, "y": 0.487, "h": 0.0957, "color": "white", "round": 0.45, "fix": "dh"},
+    {"shape": "rbox", "x": 0.2394, "z": -0.3679, "w": 0.4468, "d": 0.1321, "y": 0.487, "h": 0.0957, "color": "white", "round": 0.45, "fix": "dh"}
+  ]
+}

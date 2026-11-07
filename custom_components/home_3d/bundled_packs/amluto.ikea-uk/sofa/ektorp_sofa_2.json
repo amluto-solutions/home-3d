@@ -1,0 +1,47 @@
+{
+  "id": "ektorp_sofa_2",
+  "name": {
+    "en": "2-seat sofa"
+  },
+  "size": [
+    1.79,
+    0.88,
+    0.88
+  ],
+  "group": "sofa",
+  "room": [
+    "living",
+    "conservatory"
+  ],
+  "tags": [
+    "EKTORP",
+    "sofa",
+    "settee",
+    "rolled arms",
+    "washable cover",
+    "classic",
+    "beige",
+    "dark grey",
+    "white",
+    "multicolour"
+  ],
+  "family": "ektorp_sofa",
+  "variant": {
+    "en": "2-seat"
+  },
+  "ikea": "EKTORP",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0341, "h": 0.3295, "color": "fabric", "round": 0.1},
+    {"shape": "rbox", "x": 0.0, "z": -0.3636, "w": 0.7318, "d": 0.2727, "y": 0.3636, "h": 0.5227, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.183, "z": 0.1364, "w": 0.3603, "d": 0.7159, "y": 0.3636, "h": 0.1477, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": -0.183, "z": -0.125, "w": 0.3547, "d": 0.2045, "y": 0.5114, "h": 0.4886, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.183, "z": 0.1364, "w": 0.3603, "d": 0.7159, "y": 0.3636, "h": 0.1477, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.183, "z": -0.125, "w": 0.3547, "d": 0.2045, "y": 0.5114, "h": 0.4886, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.433, "z": 0.0, "w": 0.1341, "d": 1, "y": 0.0341, "h": 0.7159, "color": "fabric", "fix": "w", "round": 0.5},
+    {"shape": "rbox", "x": 0.433, "z": 0.0, "w": 0.1341, "d": 1, "y": 0.0341, "h": 0.7159, "color": "fabric", "fix": "w", "round": 0.5},
+    {"shape": "box", "x": -0.4665, "z": -0.4318, "w": 0.0223, "d": 0.0455, "y": 0, "h": 0.0341, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.4665, "z": 0.4318, "w": 0.0223, "d": 0.0455, "y": 0, "h": 0.0341, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4665, "z": -0.4318, "w": 0.0223, "d": 0.0455, "y": 0, "h": 0.0341, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.4665, "z": 0.4318, "w": 0.0223, "d": 0.0455, "y": 0, "h": 0.0341, "color": "dark", "fix": "wdh"}
+  ]
+}

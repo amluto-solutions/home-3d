@@ -1,0 +1,19 @@
+{
+  "id": "floor_lamp_large_shade_tripod",
+  "name": {"en": "Large-shade tripod floor lamp"},
+  "size": [0.6, 0.6, 1.55],
+  "group": "lamp",
+  "room": ["living", "bedroom", "office", "conservatory"],
+  "tags": ["standard lamp", "floor light", "tripod", "lampshade", "big shade", "wooden legs"],
+  "family": "floor_lamp_large_shade",
+  "variant": {"en": "Tripod"},
+  "light": "floor",
+  "parts": [
+    {"shape": "loft", "x": 0.0, "z": 0.45, "w": 0.05, "d": 0.05, "y": 0.0, "h": 0.7226, "color": "wood", "tx": 0.0, "tz": 0.05, "tw": 0.05, "td": 0.05},
+    {"shape": "loft", "x": -0.3897, "z": -0.225, "w": 0.05, "d": 0.05, "y": 0.0, "h": 0.7226, "color": "wood", "tx": -0.0433, "tz": -0.025, "tw": 0.05, "td": 0.05},
+    {"shape": "loft", "x": 0.3897, "z": -0.225, "w": 0.05, "d": 0.05, "y": 0.0, "h": 0.7226, "color": "wood", "tx": 0.0433, "tz": -0.025, "tw": 0.05, "td": 0.05},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.1, "d": 0.1, "y": 0.6968, "h": 0.0387, "color": "wood"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0417, "d": 0.0417, "y": 0.7355, "h": 0.0516, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9167, "d": 0.9167, "y": 0.7742, "h": 0.2258, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

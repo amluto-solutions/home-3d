@@ -1,0 +1,75 @@
+{
+  "id": "pedal_bin_30l",
+  "name": {
+    "en": "Pedal bin, 30 L"
+  },
+  "size": [
+    0.3,
+    0.36,
+    0.65
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen",
+    "utility"
+  ],
+  "tags": [
+    "pedal bin",
+    "bin",
+    "kitchen bin",
+    "waste bin",
+    "rubbish",
+    "30 litre",
+    "steel",
+    "soft close"
+  ],
+  "family": "pedal_bin",
+  "variant": {
+    "en": "30 L kitchen"
+  },
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": -0.0556,
+      "w": 1.0,
+      "d": 0.8889,
+      "y": 0.0308,
+      "h": 0.8923,
+      "color": "metal",
+      "round": 0.25
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": -0.0556,
+      "w": 1.0,
+      "d": 0.9028,
+      "y": 0.9231,
+      "h": 0.0769,
+      "color": "metal",
+      "round": 0.4
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": -0.0556,
+      "w": 1.0,
+      "d": 0.8889,
+      "y": 0.0,
+      "h": 0.0385,
+      "color": "dark",
+      "round": 0.2
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.4167,
+      "w": 0.4,
+      "d": 0.1667,
+      "y": 0.0,
+      "h": 0.0462,
+      "color": "dark"
+    }
+  ]
+}

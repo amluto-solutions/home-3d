@@ -1,0 +1,27 @@
+{
+  "id": "extractor_fan_timer",
+  "name": {"en": "Extractor fan with timer and humidistat"},
+  "size": [0.16, 0.05, 0.16],
+  "group": "bath",
+  "room": ["bath", "kitchen", "utility"],
+  "tags": ["extractor fan", "extractor", "bathroom fan", "ventilation", "fan", "vent", "humidity"],
+  "family": "extractor_fan",
+  "variant": {"en": "Wall, humidistat"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 2.0,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.1, "w": 1.0, "d": 0.8, "y": 0.0, "h": 1.0, "color": "white", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": 0.38, "w": 0.75, "d": 0.24, "y": 0.125, "h": 0.75, "color": "white", "round": 0.3},
+    {"shape": "box", "x": 0.0, "z": 0.485, "w": 0.5625, "d": 0.03, "y": 0.25, "h": 0.0375, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.485, "w": 0.5625, "d": 0.03, "y": 0.375, "h": 0.0375, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.485, "w": 0.5625, "d": 0.03, "y": 0.5, "h": 0.0375, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.485, "w": 0.5625, "d": 0.03, "y": 0.625, "h": 0.0375, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.485, "w": 0.5625, "d": 0.03, "y": 0.75, "h": 0.0375, "color": "metal"},
+    {"shape": "box", "x": 0.3125, "z": 0.49, "w": 0.05, "d": 0.02, "y": 0.75, "h": 0.05, "color": "#ffb547", "edges": "faint"},
+    {"shape": "box", "x": -0.3125, "z": 0.49, "w": 0.05, "d": 0.02, "y": 0.75, "h": 0.05, "color": "#7fe3ff", "edges": "faint"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

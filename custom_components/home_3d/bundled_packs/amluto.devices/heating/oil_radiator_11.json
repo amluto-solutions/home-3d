@@ -1,0 +1,39 @@
+{
+  "id": "oil_radiator_11",
+  "name": {"en": "Oil-filled radiator"},
+  "size": [0.65, 0.27, 0.65],
+  "group": "heating",
+  "room": ["bedroom", "living", "office", "hall", "utility", "kids", "conservatory"],
+  "tags": ["oil heater", "oil-filled heater", "portable heater", "electric radiator", "plug-in radiator", "heater", "fins", "winter"],
+  "family": "oil_radiator",
+  "variant": {"en": "11 fins"},
+  "electric": true,
+  "parts": [
+    {"shape": "rbox", "x": -0.4108, "z": 0, "w": 0.0554, "d": 0.8148, "y": 0.1538, "h": 0.7692, "color": "white", "round": 0.45},
+    {"shape": "rbox", "x": -0.3308, "z": 0, "w": 0.0554, "d": 0.8148, "y": 0.1538, "h": 0.7692, "color": "white", "round": 0.45},
+    {"shape": "rbox", "x": -0.2508, "z": 0, "w": 0.0554, "d": 0.8148, "y": 0.1538, "h": 0.7692, "color": "white", "round": 0.45},
+    {"shape": "rbox", "x": -0.1708, "z": 0, "w": 0.0554, "d": 0.8148, "y": 0.1538, "h": 0.7692, "color": "white", "round": 0.45},
+    {"shape": "rbox", "x": -0.0908, "z": 0, "w": 0.0554, "d": 0.8148, "y": 0.1538, "h": 0.7692, "color": "white", "round": 0.45},
+    {"shape": "rbox", "x": -0.0108, "z": 0, "w": 0.0554, "d": 0.8148, "y": 0.1538, "h": 0.7692, "color": "white", "round": 0.45},
+    {"shape": "rbox", "x": 0.0692, "z": 0, "w": 0.0554, "d": 0.8148, "y": 0.1538, "h": 0.7692, "color": "white", "round": 0.45},
+    {"shape": "rbox", "x": 0.1492, "z": 0, "w": 0.0554, "d": 0.8148, "y": 0.1538, "h": 0.7692, "color": "white", "round": 0.45},
+    {"shape": "rbox", "x": 0.2292, "z": 0, "w": 0.0554, "d": 0.8148, "y": 0.1538, "h": 0.7692, "color": "white", "round": 0.45},
+    {"shape": "rbox", "x": 0.3092, "z": 0, "w": 0.0554, "d": 0.8148, "y": 0.1538, "h": 0.7692, "color": "white", "round": 0.45},
+    {"shape": "rbox", "x": 0.3892, "z": 0, "w": 0.0554, "d": 0.8148, "y": 0.1538, "h": 0.7692, "color": "white", "round": 0.45},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.9385, "d": 0.1296, "y": 0.1577, "h": 0.0538, "color": "white", "axis": "x"},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.9385, "d": 0.1296, "y": 0.85, "h": 0.0538, "color": "white", "axis": "x"},
+    {"shape": "rbox", "x": 0, "z": 0.1111, "w": 0.9692, "d": 0.7407, "y": 0.9154, "h": 0.0846, "color": "dark", "round": 0.2},
+    {"shape": "cyl", "x": 0.3923, "z": 0.4444, "w": 0.0615, "d": 0.1481, "y": 0.9, "h": 0.1, "color": "metal"},
+    {"shape": "cyl", "x": 0.2692, "z": 0.4444, "w": 0.0615, "d": 0.1481, "y": 0.9, "h": 0.1, "color": "metal"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9077, "d": 0.1852, "y": 0.0462, "h": 0.0615, "color": "dark"},
+    {"shape": "box", "x": -0.3769, "z": 0, "w": 0.0769, "d": 0.7407, "y": 0, "h": 0.0615, "color": "dark"},
+    {"shape": "cyl", "x": -0.3769, "z": 0.2963, "w": 0.0615, "d": 0.1481, "y": 0, "h": 0.0769, "color": "dark"},
+    {"shape": "cyl", "x": -0.3769, "z": -0.2963, "w": 0.0615, "d": 0.1481, "y": 0, "h": 0.0769, "color": "dark"},
+    {"shape": "box", "x": 0.3769, "z": 0, "w": 0.0769, "d": 0.7407, "y": 0, "h": 0.0615, "color": "dark"},
+    {"shape": "cyl", "x": 0.3769, "z": 0.2963, "w": 0.0615, "d": 0.1481, "y": 0, "h": 0.0769, "color": "dark"},
+    {"shape": "cyl", "x": 0.3769, "z": -0.2963, "w": 0.0615, "d": 0.1481, "y": 0, "h": 0.0769, "color": "dark"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 0.85}
+  ]
+}

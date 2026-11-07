@@ -1,0 +1,26 @@
+{
+  "id": "ps3_flat",
+  "name": {"en": "PlayStation 3"},
+  "size": [0.29, 0.29, 0.065],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["ps3", "playstation 3", "sony", "gaming", "console", "games console", "playstation3", "ps3 slim"],
+  "family": "ps3",
+  "variant": {"en": " flat"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 70,
+  "parts": [
+    {"shape": "cyl", "x": -0.3966, "z": -0.3966, "w": 0.069, "d": 0.069, "y": 0.0, "h": 0.0923, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.3966, "z": 0.3966, "w": 0.069, "d": 0.069, "y": 0.0, "h": 0.0923, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3966, "z": -0.3966, "w": 0.069, "d": 0.069, "y": 0.0, "h": 0.0923, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3966, "z": 0.3966, "w": 0.069, "d": 0.069, "y": 0.0, "h": 0.0923, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0923, "h": 0.9077, "color": "#1c1d20", "round": 0.12},
+    {"shape": "box", "x": -0.12, "z": 0.4948, "w": 0.45, "d": 0.0103, "y": 0.5915, "h": 0.0635, "color": "#101114"},
+    {"shape": "box", "x": 0.34, "z": 0.4948, "w": 0.18, "d": 0.0103, "y": 0.2738, "h": 0.0462, "color": "#7be07b", "edges": "faint"},
+    {"shape": "cyl", "x": 0.43, "z": 0.4948, "w": 0.0448, "d": 0.0103, "y": 0.2738, "h": 0.1997, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

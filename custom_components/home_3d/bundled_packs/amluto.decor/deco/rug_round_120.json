@@ -1,0 +1,22 @@
+{
+  "id": "rug_round_120",
+  "name": {"en": "Round rug 120 cm"},
+  "size": [1.2, 1.2, 0.012],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "kids", "office", "hall"],
+  "tags": ["rug", "round rug", "circle rug", "carpet", "jute", "area rug"],
+  "family": "rug_round",
+  "variant": {"en": "120 cm"},
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.8, "color": "#c2a878"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.9, "y": 0.0, "h": 0.84, "color": "#8a6e4b"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.82, "d": 0.82, "y": 0.0, "h": 0.88, "color": "#c2a878"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.55, "d": 0.55, "y": 0.0, "h": 0.92, "color": "#8a6e4b"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.47, "d": 0.47, "y": 0.0, "h": 0.96, "color": "#c2a878"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.2, "d": 0.2, "y": 0.0, "h": 1.0, "color": "#8a6e4b"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5},
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.41}
+  ]
+}

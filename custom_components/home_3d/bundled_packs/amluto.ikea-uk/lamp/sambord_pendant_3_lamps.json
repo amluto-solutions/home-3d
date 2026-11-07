@@ -1,0 +1,48 @@
+{
+  "id": "sambord_pendant_3_lamps",
+  "name": {
+    "en": "Pendant lamp with 3 shades on a rail, 110 cm"
+  },
+  "size": [
+    1.1,
+    0.15,
+    0.5
+  ],
+  "group": "lamp",
+  "room": [
+    "dining",
+    "kitchen",
+    "living"
+  ],
+  "tags": [
+    "pendant",
+    "ceiling light",
+    "3 lamps",
+    "rail",
+    "black",
+    "white",
+    "kitchen island",
+    "dining table"
+  ],
+  "family": "sambord_lamp",
+  "variant": {
+    "en": "Pendant 3 lamps"
+  },
+  "ikea": "SAMBORD",
+  "light": "pendant",
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.2667, "y": 0.94, "h": 0.06, "color": "dark", "fix": "dh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0727, "d": 0.5333, "y": 0.9, "h": 0.04, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4091, "z": 0.0, "w": 0.0091, "d": 0.0667, "y": 0.24, "h": 0.7, "color": "dark", "fix": "wd"},
+    {"shape": "lathe", "x": -0.4091, "z": 0.0, "w": 0.1364, "d": 1, "y": 0, "h": 0.22, "color": "white", "profile": [[1.0, 0], [0.97, 0.3], [0.82, 0.62], [0.52, 0.88], [0.22, 1.0], [0.0, 1.0], [0.0, 0.909], [0.087, 0.909], [0.387, 0.789], [0.687, 0.529], [0.837, 0.209], [0.867, 0.0]]},
+    {"shape": "sphere", "x": -0.4091, "z": 0.0, "w": 0.0409, "d": 0.3, "y": 0.06, "h": 0.09, "color": "white", "glow": true, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0091, "d": 0.0667, "y": 0.24, "h": 0.7, "color": "dark", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.1364, "d": 1, "y": 0, "h": 0.22, "color": "white", "profile": [[1.0, 0], [0.97, 0.3], [0.82, 0.62], [0.52, 0.88], [0.22, 1.0], [0.0, 1.0], [0.0, 0.909], [0.087, 0.909], [0.387, 0.789], [0.687, 0.529], [0.837, 0.209], [0.867, 0.0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.0409, "d": 0.3, "y": 0.06, "h": 0.09, "color": "white", "glow": true, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4091, "z": 0.0, "w": 0.0091, "d": 0.0667, "y": 0.24, "h": 0.7, "color": "dark", "fix": "wd"},
+    {"shape": "lathe", "x": 0.4091, "z": 0.0, "w": 0.1364, "d": 1, "y": 0, "h": 0.22, "color": "white", "profile": [[1.0, 0], [0.97, 0.3], [0.82, 0.62], [0.52, 0.88], [0.22, 1.0], [0.0, 1.0], [0.0, 0.909], [0.087, 0.909], [0.387, 0.789], [0.687, 0.529], [0.837, 0.209], [0.867, 0.0]]},
+    {"shape": "sphere", "x": 0.4091, "z": 0.0, "w": 0.0409, "d": 0.3, "y": 0.06, "h": 0.09, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

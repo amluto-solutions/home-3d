@@ -1,0 +1,21 @@
+{
+  "id": "cat_tree_small",
+  "name": {"en": "Small cat tree"},
+  "size": [0.45, 0.4, 0.9],
+  "group": "pets",
+  "room": ["living", "hall", "bedroom", "kitchen", "utility", "conservatory"],
+  "tags": ["cat", "cat tree", "cat tower", "scratching post", "sisal", "climbing", "kitty", "condo"],
+  "family": "cat_tree",
+  "variant": {"en": "Small 90"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.0333, "color": "fabric", "fix": "h"},
+    {"shape": "cyl", "x": -0.28, "z": -0.25, "w": 0.2, "d": 0.225, "y": 0.0333, "h": 0.8722, "color": "#c8a878"},
+    {"shape": "cyl", "x": 0.28, "z": 0.2, "w": 0.2, "d": 0.225, "y": 0.0333, "h": 0.8722, "color": "#c8a878"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.95, "d": 1.0, "y": 0.9056, "h": 0.0278, "color": "fabric", "fix": "h"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.874, "d": 0.92, "y": 0.9333, "h": 0.0667, "color": "fabric", "profile": [[0.0, 0.0], [0.95, 0.0], [1, 0.6], [0.92, 1], [0.8, 0.7], [0.75, 0.3], [0.0, 0.25]], "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.4}
+  ]
+}

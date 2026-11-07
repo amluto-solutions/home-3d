@@ -1,0 +1,47 @@
+{
+  "id": "wooden_crate",
+  "name": {
+    "en": "Wooden crate"
+  },
+  "size": [
+    0.5,
+    0.32,
+    0.3
+  ],
+  "group": "storage",
+  "family": "wooden_crate",
+  "variant": {
+    "en": "1 crate"
+  },
+  "room": [
+    "garage",
+    "kitchen",
+    "living",
+    "hobby",
+    "utility"
+  ],
+  "tags": [
+    "crate",
+    "apple crate",
+    "fruit crate",
+    "slatted box",
+    "rustic"
+  ],
+  "parts": [
+    {"shape": "box", "x": -0.478, "z": 0, "w": 0.028, "d": 1.0, "y": 0, "h": 1.0, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.478, "z": 0, "w": 0.028, "d": 1.0, "y": 0, "h": 1.0, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": -0.496, "z": 0, "w": 0.006, "d": 0.4, "y": 0.7, "h": 0.14, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.496, "z": 0, "w": 0.006, "d": 0.4, "y": 0.7, "h": 0.14, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.928, "d": 0.9688, "y": 0, "h": 0.04, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0.4812, "w": 0.928, "d": 0.0375, "y": 0.0333, "h": 0.2389, "color": "wood"},
+    {"shape": "box", "x": 0, "z": -0.4813, "w": 0.928, "d": 0.0375, "y": 0.0333, "h": 0.2389, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0.4812, "w": 0.928, "d": 0.0375, "y": 0.3556, "h": 0.2389, "color": "wood"},
+    {"shape": "box", "x": 0, "z": -0.4813, "w": 0.928, "d": 0.0375, "y": 0.3556, "h": 0.2389, "color": "wood"},
+    {"shape": "box", "x": 0, "z": 0.4812, "w": 0.928, "d": 0.0375, "y": 0.6778, "h": 0.2389, "color": "wood"},
+    {"shape": "box", "x": 0, "z": -0.4813, "w": 0.928, "d": 0.0375, "y": 0.6778, "h": 0.2389, "color": "wood"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "rect", "x": 0, "z": 0, "w": 0.93, "d": 0.92}
+  ]
+}

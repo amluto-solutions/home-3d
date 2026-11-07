@@ -1,0 +1,28 @@
+{
+  "id": "microwave_25l",
+  "name": {"en": "Combination microwave 25 l"},
+  "size": [0.51, 0.42, 0.3],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["microwave", "microwave oven", "combi", "grill"],
+  "family": "microwave",
+  "variant": {"en": "25 l combi"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": -0.402, "z": -0.381, "w": 0.0588, "d": 0.0714, "y": 0.0, "h": 0.04, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.402, "z": 0.381, "w": 0.0588, "d": 0.0714, "y": 0.0, "h": 0.04, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.402, "z": -0.381, "w": 0.0588, "d": 0.0714, "y": 0.0, "h": 0.04, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.402, "z": 0.381, "w": 0.0588, "d": 0.0714, "y": 0.0, "h": 0.04, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": -0.0119, "w": 1.0, "d": 0.9762, "y": 0.04, "h": 0.96, "color": "metal", "round": 0.06},
+    {"shape": "box", "x": -0.1078, "z": 0.4845, "w": 0.7451, "d": 0.0167, "y": 0.08, "h": 0.88, "color": "dark", "top": "metal"},
+    {"shape": "box", "x": -0.1176, "z": 0.4964, "w": 0.5686, "d": 0.0071, "y": 0.2067, "h": 0.6267, "color": "glass"},
+    {"shape": "box", "x": 0.3775, "z": 0.4845, "w": 0.2059, "d": 0.0167, "y": 0.08, "h": 0.88, "color": "dark"},
+    {"shape": "box", "x": 0.3775, "z": 0.4964, "w": 0.1471, "d": 0.0071, "y": 0.7667, "h": 0.1, "color": "#7fe3ff", "edges": "faint"},
+    {"shape": "cyl", "x": 0.3725, "z": 0.4833, "w": 0.098, "d": 0.0333, "y": 0.328, "h": 0.1667, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": 0.2647, "z1": -0.4524, "x2": 0.2647, "z2": 0.5}
+  ]
+}

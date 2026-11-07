@@ -1,0 +1,17 @@
+{
+  "id": "ha_green",
+  "name": {"en": "Home Assistant Green"},
+  "size": [0.112,0.112,0.032],
+  "group": "tech",
+  "room": ["office", "utility", "hall", "living", "loft"],
+  "tags": ["home assistant", "ha green", "green", "smart home", "hub", "controller", "server", "nabu casa"],
+  "family": "smart_hub",
+  "variant": {"en": "Home Assistant Green"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "round": 0.2},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.8036, "d": 0.8036, "y": 0.975, "h": 0.025, "color": "#2b2f36"},
+    {"shape": "box", "x": 0, "z": 0.4982, "w": 0.3393, "d": 0.0036, "y": 0.375, "h": 0.125, "color": "#4aa3ff", "glow": true}
+  ]
+}

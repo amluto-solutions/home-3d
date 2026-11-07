@@ -1,0 +1,17 @@
+{
+  "id": "wifi_access_point_in_wall",
+  "name": {"en": "Wi-Fi access point (in-wall, wide)"},
+  "size": [0.096,0.0312,0.1397],
+  "group": "network",
+  "tags": ["u6 in-wall", "u6-iw", "in wall", "wall plate", "access point", "wifi", "wireless", "unifi", "in-wall", "ap", "u6"],
+  "family": "wifi_access_point",
+  "variant": {"en": "In-wall, wide"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 0.3,
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.3333, "w": 1, "d": 0.3333, "y": 0, "h": 1, "color": "white"},
+    {"shape": "rbox", "x": 0, "z": 0.1333, "w": 0.814, "d": 0.6, "y": 0.0667, "h": 0.8667, "color": "white", "round": 0.3},
+    {"shape": "box", "x": 0, "z": 0.4833, "w": 0.3488, "d": 0.0333, "y": 0.8, "h": 0.02, "color": "#4aa3ff"}
+  ]
+}

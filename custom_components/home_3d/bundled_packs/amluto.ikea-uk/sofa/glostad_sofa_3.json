@@ -1,0 +1,48 @@
+{
+  "id": "glostad_sofa_3",
+  "name": {
+    "en": "3-seat sofa, compact"
+  },
+  "size": [
+    1.71,
+    0.78,
+    0.68
+  ],
+  "group": "sofa",
+  "room": [
+    "living",
+    "kids",
+    "office",
+    "bedroom"
+  ],
+  "tags": [
+    "GLOSTAD",
+    "small sofa",
+    "compact sofa",
+    "loveseat",
+    "budget sofa",
+    "dark grey",
+    "medium blue",
+    "beige"
+  ],
+  "family": "glostad_sofa",
+  "variant": {
+    "en": "3-seat"
+  },
+  "ikea": "GLOSTAD",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0256, "w": 0.9591, "d": 0.9487, "y": 0.25, "h": 0.2059, "color": "fabric", "round": 0.08},
+    {"shape": "rbox", "x": 0.0, "z": -0.359, "w": 0.9591, "d": 0.2308, "y": 0.4559, "h": 0.5441, "color": "fabric", "round": 0.2},
+    {"shape": "rbox", "x": -0.3197, "z": 0.1154, "w": 0.3138, "d": 0.7179, "y": 0.4559, "h": 0.1471, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": 0.1154, "w": 0.3138, "d": 0.7179, "y": 0.4559, "h": 0.1471, "color": "cushion", "round": 0.25},
+    {"shape": "rbox", "x": 0.3197, "z": 0.1154, "w": 0.3138, "d": 0.7179, "y": 0.4559, "h": 0.1471, "color": "cushion", "round": 0.25},
+    {"shape": "box", "x": -0.4898, "z": 0.0, "w": 0.0205, "d": 0.9487, "y": 0.25, "h": 0.5882, "color": "fabric", "fix": "w"},
+    {"shape": "box", "x": -0.4898, "z": -0.4487, "w": 0.0117, "d": 0.0256, "y": 0, "h": 0.25, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.4898, "z": 0.4487, "w": 0.0117, "d": 0.0256, "y": 0, "h": 0.25, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.4898, "z": 0.0, "w": 0.0117, "d": 0.9231, "y": 0, "h": 0.0294, "color": "metal", "fix": "wh"},
+    {"shape": "box", "x": 0.4898, "z": 0.0, "w": 0.0205, "d": 0.9487, "y": 0.25, "h": 0.5882, "color": "fabric", "fix": "w"},
+    {"shape": "box", "x": 0.4898, "z": -0.4487, "w": 0.0117, "d": 0.0256, "y": 0, "h": 0.25, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.4898, "z": 0.4487, "w": 0.0117, "d": 0.0256, "y": 0, "h": 0.25, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.4898, "z": 0.0, "w": 0.0117, "d": 0.9231, "y": 0, "h": 0.0294, "color": "metal", "fix": "wh"}
+  ]
+}

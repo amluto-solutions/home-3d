@@ -1,0 +1,145 @@
+{
+  "id": "bambu_ams_lite",
+  "name": {
+    "en": "Bambu Lab AMS lite"
+  },
+  "size": [
+    0.397,
+    0.208,
+    0.342
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage"
+  ],
+  "tags": [
+    "ams lite",
+    "bambu lab",
+    "multi colour",
+    "filament"
+  ],
+  "family": "bambu_ams",
+  "variant": {
+    "en": "AMS lite"
+  },
+  "electric": false,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 0.04,
+      "color": "white",
+      "round": 0.1
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.96,
+      "h": 0.04,
+      "color": "white",
+      "round": 0.1
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": -0.4739,
+      "w": 1.0,
+      "d": 0.0522,
+      "y": 0.04,
+      "h": 0.92,
+      "color": "white"
+    },
+    {
+      "shape": "box",
+      "x": -0.4793,
+      "z": 0.0261,
+      "w": 0.0414,
+      "d": 0.9478,
+      "y": 0.04,
+      "h": 0.92,
+      "color": "white",
+      "fix": "w"
+    },
+    {
+      "shape": "box",
+      "x": 0.4793,
+      "z": 0.0261,
+      "w": 0.0414,
+      "d": 0.9478,
+      "y": 0.04,
+      "h": 0.92,
+      "color": "white",
+      "fix": "w"
+    },
+    {
+      "shape": "cyl",
+      "x": -0.344,
+      "z": 0.0217,
+      "w": 0.211,
+      "d": 0.9043,
+      "y": 0.3958,
+      "h": 0.2084,
+      "color": "#e8573c",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": -0.1147,
+      "z": 0.0217,
+      "w": 0.211,
+      "d": 0.9043,
+      "y": 0.3958,
+      "h": 0.2084,
+      "color": "#3c8de8",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.1147,
+      "z": 0.0217,
+      "w": 0.211,
+      "d": 0.9043,
+      "y": 0.3958,
+      "h": 0.2084,
+      "color": "#f2c230",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.344,
+      "z": 0.0217,
+      "w": 0.211,
+      "d": 0.9043,
+      "y": 0.3958,
+      "h": 0.2084,
+      "color": "#e8e8e8",
+      "axis": "z"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    },
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 0.8,
+      "d": 0.8
+    }
+  ]
+}

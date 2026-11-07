@@ -1,0 +1,24 @@
+{
+  "id": "rug_120x170",
+  "name": {"en": "Rectangular rug 120 × 170 cm"},
+  "size": [1.2, 1.7, 0.012],
+  "group": "deco",
+  "room": ["living", "dining", "bedroom", "kids", "office"],
+  "tags": ["rug", "carpet", "area rug", "floor rug", "rectangular"],
+  "family": "rug",
+  "variant": {"en": "120 × 170"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.85, "color": "#7c5a43"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8667, "d": 0.9059, "y": 0.0, "h": 0.93, "color": "#d8cbb4"},
+    {"shape": "box", "x": 0.0, "z": 0.4106, "w": 0.7467, "d": 0.0118, "y": 0.0, "h": 1.0, "color": "#7c5a43", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.4106, "w": 0.7467, "d": 0.0118, "y": 0.0, "h": 1.0, "color": "#7c5a43", "fix": "d"},
+    {"shape": "box", "x": -0.3733, "z": 0.0, "w": 0.0167, "d": 0.8212, "y": 0.0, "h": 1.0, "color": "#7c5a43", "fix": "w"},
+    {"shape": "box", "x": 0.3733, "z": 0.0, "w": 0.0167, "d": 0.8212, "y": 0.0, "h": 1.0, "color": "#7c5a43", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.2987, "d": 0.2464, "y": 0.0, "h": 0.97, "color": "#7c5a43"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.2487, "d": 0.2111, "y": 0.0, "h": 1.0, "color": "#d8cbb4"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "rect", "x": 0, "z": 0, "w": 0.8667, "d": 0.9059}
+  ]
+}

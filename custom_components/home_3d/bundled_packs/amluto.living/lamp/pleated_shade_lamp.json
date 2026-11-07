@@ -1,0 +1,40 @@
+{
+  "id": "pleated_shade_lamp",
+  "name": {
+    "en": "Pleated-shade table lamp"
+  },
+  "size": [
+    0.4,
+    0.4,
+    0.5
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "hall",
+    "dining",
+    "kids"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "pleated shade",
+    "fabric shade",
+    "empire shade",
+    "bedside lamp",
+    "classic",
+    "cream"
+  ],
+  "family": "pleated_shade_lamp",
+  "variant": {
+    "en": "Cream"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.4, "d": 0.4, "y": 0, "h": 0.6, "color": "#c9b99a", "profile": [[0.0, 0.0], [0.875, 0.0], [1.0, 0.1333], [0.5, 0.5333], [0.3125, 0.9333], [0.5, 1.0], [0.0, 1.0]]},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.6, "h": 0.4, "color": "white", "glow": true, "profile": [[0.0, 0.0], [0.5, 0.0], [1.0, 0.95], [1.0, 1.0], [0.5, 1.0], [0.0, 0.95]]}
+  ]
+}

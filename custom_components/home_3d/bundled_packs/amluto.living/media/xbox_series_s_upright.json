@@ -1,0 +1,22 @@
+{
+  "id": "xbox_series_s_upright",
+  "name": {"en": "Xbox Series S"},
+  "size": [0.0635, 0.151, 0.275],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "hobby", "loft", "office"],
+  "tags": ["xbox series s", "xbox", "microsoft", "gaming", "console", "games console", "series s"],
+  "family": "xbox_series_s",
+  "variant": {"en": " upright"},
+  "electric": true,
+  "mount": "surface",
+  "watts": 80,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.8, "y": 0.0, "h": 0.0436, "color": "dark", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0436, "h": 0.9564, "color": "white", "round": 0.12},
+    {"shape": "box", "x": 0.4882, "z": 0.0, "w": 0.0236, "d": 0.96, "y": 0.0628, "h": 0.9181, "color": "#101114"},
+    {"shape": "cyl", "x": -0.19, "z": 0.4901, "w": 0.22, "d": 0.0199, "y": 0.9077, "h": 0.0508, "color": "metal", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

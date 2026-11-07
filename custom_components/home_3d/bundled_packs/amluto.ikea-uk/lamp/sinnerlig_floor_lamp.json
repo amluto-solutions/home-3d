@@ -1,0 +1,40 @@
+{
+  "id": "sinnerlig_floor_lamp",
+  "name": {
+    "en": "Floor lamp, woven bamboo shade 127 cm"
+  },
+  "size": [
+    0.52,
+    0.52,
+    1.27
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "floor lamp",
+    "bamboo",
+    "rattan look",
+    "natural",
+    "handmade",
+    "boho",
+    "woven"
+  ],
+  "family": "sinnerlig_lamp",
+  "variant": {
+    "en": "Floor 127"
+  },
+  "ikea": "SINNERLIG",
+  "light": "floor",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0236, "color": "wood", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0769, "d": 0.0769, "y": 0.0236, "h": 0.6299, "color": "wood", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.5192, "d": 0.5192, "y": 0.6142, "h": 0.3858, "color": "wood", "edges": "faint", "profile": [[0.55, 0], [0.9, 0.2], [1.0, 0.5], [0.9, 0.8], [0.55, 1.0], [0.0, 1.0], [0.0, 0.97], [0.5, 0.97], [0.85, 0.77], [0.95, 0.47], [0.85, 0.17], [0.5, 0.0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.1923, "d": 0.1923, "y": 0.748, "h": 0.0787, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

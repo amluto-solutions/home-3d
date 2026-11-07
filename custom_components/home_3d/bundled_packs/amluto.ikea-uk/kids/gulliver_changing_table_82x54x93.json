@@ -1,0 +1,40 @@
+{
+  "id": "gulliver_changing_table_82x54x93",
+  "name": {
+    "en": "Changing table 82x54x93 cm"
+  },
+  "size": [
+    0.82,
+    0.54,
+    0.93
+  ],
+  "group": "kids",
+  "room": [
+    "bedroom",
+    "kids",
+    "bath"
+  ],
+  "tags": [
+    "changing table",
+    "baby changing unit",
+    "nursery",
+    "changing mat",
+    "white"
+  ],
+  "family": "gulliver_changing_table",
+  "ikea": "GULLIVER",
+  "parts": [
+    {"shape": "box", "x": -0.4695, "z": -0.4537, "w": 0.061, "d": 0.0926, "y": 0, "h": 0.914, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4695, "z": 0.4537, "w": 0.061, "d": 0.0926, "y": 0, "h": 0.914, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4695, "z": -0.4537, "w": 0.061, "d": 0.0926, "y": 0, "h": 0.914, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4695, "z": 0.4537, "w": 0.061, "d": 0.0926, "y": 0, "h": 0.914, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9024, "d": 0.8519, "y": 0.129, "h": 0.0215, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9024, "d": 0.8519, "y": 0.46, "h": 0.0215, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4722, "w": 1, "d": 0.0556, "y": 0.914, "h": 0.086, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.4722, "w": 1, "d": 0.0556, "y": 0.914, "h": 0.086, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": -0.4817, "z": 0.0, "w": 0.0366, "d": 0.8889, "y": 0.914, "h": 0.086, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.4817, "z": 0.0, "w": 0.0366, "d": 0.8889, "y": 0.914, "h": 0.086, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9268, "d": 0.8889, "y": 0.9032, "h": 0.0215, "color": "white", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9268, "d": 0.8889, "y": 0.9194, "h": 0.043, "color": "cushion", "round": 0.3}
+  ]
+}

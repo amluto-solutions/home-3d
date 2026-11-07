@@ -1,0 +1,14 @@
+{
+  "id": "cushion_lumbar",
+  "name": {"en": "Rectangular cushion 30 × 50 cm"},
+  "size": [0.5, 0.13, 0.3],
+  "group": "cushion",
+  "room": ["living", "bedroom", "conservatory", "kids"],
+  "tags": ["cushion", "scatter cushion", "sofa cushion", "throw pillow", "pillow", "rectangular", "lumbar", "oblong"],
+  "family": "cushion",
+  "variant": {"en": "30 × 50"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#c47b4f", "round": 0.5}
+  ]
+}

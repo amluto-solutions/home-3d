@@ -1,0 +1,22 @@
+{
+  "id": "japanese_maple_green_medium",
+  "name": {"en": "Japanese maple, green, medium"},
+  "size": [1.6, 1.6, 2.0],
+  "group": "plant",
+  "room": ["garden"],
+  "tags": ["japanese maple", "tree", "acer", "small tree", "autumn", "green"],
+  "family": "japanese_maple_green",
+  "variant": {"en": "Medium (1.6 × 2 m)"},
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.12, "d": 0.12, "y": 0, "h": 0.55, "color": "#5b4334", "profile": [[1, 0], [0.7, 0.4], [0.55, 1], [0, 1]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.85, "d": 0.85, "y": 0.42, "h": 0.55, "color": "#5e9a3e"},
+    {"shape": "sphere", "x": 0.2457, "z": 0.1342, "w": 0.42, "d": 0.42, "y": 0.45, "h": 0.35, "color": "#5e9a3e"},
+    {"shape": "sphere", "x": -0.0517, "z": 0.2752, "w": 0.42, "d": 0.42, "y": 0.52, "h": 0.35, "color": "#74b04d"},
+    {"shape": "sphere", "x": -0.2777, "z": 0.0358, "w": 0.42, "d": 0.42, "y": 0.45, "h": 0.35, "color": "#5e9a3e"},
+    {"shape": "sphere", "x": -0.1199, "z": -0.253, "w": 0.42, "d": 0.42, "y": 0.52, "h": 0.35, "color": "#74b04d"},
+    {"shape": "sphere", "x": 0.2036, "z": -0.1922, "w": 0.42, "d": 0.42, "y": 0.45, "h": 0.35, "color": "#5e9a3e"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

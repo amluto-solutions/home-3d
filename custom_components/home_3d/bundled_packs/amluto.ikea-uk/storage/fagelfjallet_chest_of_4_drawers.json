@@ -1,0 +1,48 @@
+{
+  "id": "fagelfjallet_chest_of_4_drawers",
+  "name": {
+    "en": "Chest of 4 drawers, 82x101 cm"
+  },
+  "size": [
+    0.82,
+    0.51,
+    1.01
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "drawers",
+    "chest",
+    "dresser",
+    "off-white",
+    "dark grey-blue"
+  ],
+  "family": "fagelfjallet_chest_of_drawers",
+  "variant": {
+    "en": "4 drawers · 82x101"
+  },
+  "ikea": "FÅGELFJÄLLET",
+  "parts": [
+    {"shape": "box", "x": -0.489, "z": -0.0176, "w": 0.022, "d": 0.9647, "y": 0.099, "h": 0.8812, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.489, "z": -0.0176, "w": 0.022, "d": 0.9647, "y": 0.099, "h": 0.8812, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0176, "w": 0.9561, "d": 0.9647, "y": 0.099, "h": 0.0178, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4922, "w": 0.9561, "d": 0.0157, "y": 0.1168, "h": 0.8455, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0098, "w": 1, "d": 1, "y": 0.9802, "h": 0.0198, "color": "white", "fix": "h"},
+    {"shape": "loft", "x": -0.4421, "z": -0.3873, "w": 0.0256, "d": 0.0412, "y": 0, "h": 0.099, "color": "white", "tw": 0.0427, "td": 0.0686, "fix": "wdh"},
+    {"shape": "loft", "x": -0.4421, "z": 0.3873, "w": 0.0256, "d": 0.0412, "y": 0, "h": 0.099, "color": "white", "tw": 0.0427, "td": 0.0686, "fix": "wdh"},
+    {"shape": "loft", "x": 0.4421, "z": -0.3873, "w": 0.0256, "d": 0.0412, "y": 0, "h": 0.099, "color": "white", "tw": 0.0427, "td": 0.0686, "fix": "wdh"},
+    {"shape": "loft", "x": 0.4421, "z": 0.3873, "w": 0.0256, "d": 0.0412, "y": 0, "h": 0.099, "color": "white", "tw": 0.0427, "td": 0.0686, "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4824, "w": 0.9902, "d": 0.0353, "y": 0.7619, "h": 0.2163, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.1463, "d": 0.0235, "y": 0.8816, "h": 0.0297, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4824, "w": 0.9902, "d": 0.0353, "y": 0.5416, "h": 0.2163, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.1463, "d": 0.0235, "y": 0.6613, "h": 0.0297, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4824, "w": 0.9902, "d": 0.0353, "y": 0.3213, "h": 0.2163, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.1463, "d": 0.0235, "y": 0.441, "h": 0.0297, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4824, "w": 0.9902, "d": 0.0353, "y": 0.101, "h": 0.2163, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.1463, "d": 0.0235, "y": 0.2207, "h": 0.0297, "color": "wood", "fix": "wdh"}
+  ]
+}

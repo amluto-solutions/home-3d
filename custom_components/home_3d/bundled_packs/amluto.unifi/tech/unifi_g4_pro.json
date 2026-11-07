@@ -1,0 +1,21 @@
+{
+  "id": "unifi_g4_pro",
+  "name": {"en": "UniFi G4 Pro camera"},
+  "size": [0.09, 0.24, 0.125],
+  "group": "tech",
+  "tags": ["security camera", "camera", "cctv", "unifi", "ubiquiti", "g4 pro", "uvc g4 pro"],
+  "family": "unifi_camera",
+  "variant": {"en": "G4 Pro"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 2.05,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.4625, "w": 1, "d": 0.075, "y": 0.0, "h": 0.72, "color": "white", "axis": "z"},
+    {"shape": "rbox", "x": 0.0, "z": -0.2854, "w": 0.3333, "d": 0.2792, "y": 0.24, "h": 0.24, "color": "white", "round": 0.4},
+    {"shape": "sphere", "x": 0.0, "z": -0.1667, "w": 0.4, "d": 0.15, "y": 0.288, "h": 0.288, "color": "white"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0875, "w": 0.8667, "d": 0.675, "y": 0.368, "h": 0.624, "color": "white", "axis": "z"},
+    {"shape": "box", "x": 0.0, "z": 0.1875, "w": 0.9556, "d": 0.625, "y": 0.896, "h": 0.104, "color": "white"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4333, "w": 0.7333, "d": 0.05, "y": 0.416, "h": 0.528, "color": "#1c222c", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4625, "w": 0.3333, "d": 0.0417, "y": 0.56, "h": 0.24, "color": "#0b0f17", "axis": "z"}
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "poang_footstool",
+  "name": {
+    "en": "Footstool, bentwood"
+  },
+  "size": [
+    0.68,
+    0.54,
+    0.39
+  ],
+  "group": "seating",
+  "room": [
+    "living",
+    "conservatory",
+    "bedroom"
+  ],
+  "tags": [
+    "POANG",
+    "footstool",
+    "foot rest",
+    "bentwood",
+    "birch veneer",
+    "oak",
+    "walnut effect",
+    "black-brown",
+    "beige"
+  ],
+  "family": "poang",
+  "variant": {
+    "en": "Footstool"
+  },
+  "ikea": "POÄNG",
+  "parts": [
+    {"shape": "rbox", "x": -0.4706, "z": 0.0, "w": 0.0515, "d": 0.9259, "y": 0, "h": 0.0769, "color": "wood", "fix": "w", "round": 0.5},
+    {"shape": "loft", "x": -0.4706, "z": 0.3889, "w": 0.0515, "d": 0.0648, "y": 0.0513, "h": 0.7692, "color": "wood", "tx": -0.4706, "tz": 0.2407, "tw": 0.0515, "td": 0.0648, "fix": "w"},
+    {"shape": "loft", "x": -0.4706, "z": -0.3889, "w": 0.0515, "d": 0.0648, "y": 0.0513, "h": 0.7692, "color": "wood", "tx": -0.4706, "tz": -0.2407, "tw": 0.0515, "td": 0.0648, "fix": "w"},
+    {"shape": "rbox", "x": 0.4706, "z": 0.0, "w": 0.0515, "d": 0.9259, "y": 0, "h": 0.0769, "color": "wood", "fix": "w", "round": 0.5},
+    {"shape": "loft", "x": 0.4706, "z": 0.3889, "w": 0.0515, "d": 0.0648, "y": 0.0513, "h": 0.7692, "color": "wood", "tx": 0.4706, "tz": 0.2407, "tw": 0.0515, "td": 0.0648, "fix": "w"},
+    {"shape": "loft", "x": 0.4706, "z": -0.3889, "w": 0.0515, "d": 0.0648, "y": 0.0513, "h": 0.7692, "color": "wood", "tx": 0.4706, "tz": -0.2407, "tw": 0.0515, "td": 0.0648, "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8824, "d": 0.6667, "y": 0.7436, "h": 0.0513, "color": "wood", "fix": "h"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.8235, "d": 1, "y": 0.7436, "h": 0.2564, "color": "cushion", "round": 0.4}
+  ]
+}

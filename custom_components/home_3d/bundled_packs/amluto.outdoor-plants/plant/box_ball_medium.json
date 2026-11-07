@@ -1,0 +1,17 @@
+{
+  "id": "box_ball_medium",
+  "name": {"en": "Box ball, medium"},
+  "size": [0.5, 0.5, 0.5],
+  "group": "plant",
+  "room": ["garden"],
+  "tags": ["box ball", "topiary", "buxus", "clipped", "green"],
+  "family": "box_ball",
+  "variant": {"en": "Medium (0.5 × 0.5 m)"},
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.06, "d": 0.06, "y": 0, "h": 0.25, "color": "#6b4c33"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.18, "h": 0.82, "color": "#2f6b34"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

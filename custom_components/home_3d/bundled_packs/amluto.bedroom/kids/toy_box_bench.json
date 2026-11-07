@@ -1,0 +1,16 @@
+{
+  "id": "toy_box_bench",
+  "name": {"en": "Toy box bench"},
+  "size": [0.9, 0.4, 0.48],
+  "group": "kids",
+  "family": "toy_box",
+  "variant": {"en": "Bench with cushion"},
+  "room": ["kids", "bedroom", "living", "hall"],
+  "tags": ["toy box", "storage bench", "toy storage", "window seat", "bench", "cushion", "lid"],
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.8333, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.8333, "h": 0.0417, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4963, "w": 0.9111, "d": 0.0075, "y": 0.125, "h": 0.5833, "color": "white", "edges": "faint", "fix": "d"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9778, "d": 0.95, "y": 0.875, "h": 0.125, "color": "cushion", "round": 0.4, "fix": "h"}
+  ]
+}

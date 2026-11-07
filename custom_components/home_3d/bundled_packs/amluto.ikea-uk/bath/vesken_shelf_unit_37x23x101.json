@@ -1,0 +1,46 @@
+{
+  "id": "vesken_shelf_unit_37x23x101",
+  "name": {
+    "en": "Shelf unit 37x23x101 cm"
+  },
+  "size": [
+    0.37,
+    0.23,
+    1.01
+  ],
+  "group": "bath",
+  "room": [
+    "bath",
+    "utility",
+    "kitchen",
+    "hall"
+  ],
+  "tags": [
+    "VESKEN",
+    "bathroom shelf",
+    "slim shelf",
+    "toilet shelf",
+    "metal shelf",
+    "white",
+    "narrow"
+  ],
+  "family": "vesken_shelf_unit",
+  "variant": {
+    "en": "37x23x101"
+  },
+  "ikea": "VESKEN",
+  "parts": [
+    {"shape": "cyl", "x": -0.4459, "z": -0.413, "w": 0.0541, "d": 0.087, "y": 0, "h": 1, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4459, "z": 0.413, "w": 0.0541, "d": 0.087, "y": 0, "h": 1, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4459, "z": -0.413, "w": 0.0541, "d": 0.087, "y": 0, "h": 1, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4459, "z": 0.413, "w": 0.0541, "d": 0.087, "y": 0, "h": 1, "color": "white", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.973, "d": 0.9565, "y": 0.1188, "h": 0.0218, "color": "white", "fix": "h", "round": 0.15},
+    {"shape": "box", "x": 0.0, "z": 0.4478, "w": 0.8919, "d": 0.0348, "y": 0.1386, "h": 0.0297, "color": "white", "fix": "dh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.973, "d": 0.9565, "y": 0.4158, "h": 0.0218, "color": "white", "fix": "h", "round": 0.15},
+    {"shape": "box", "x": 0.0, "z": 0.4478, "w": 0.8919, "d": 0.0348, "y": 0.4356, "h": 0.0297, "color": "white", "fix": "dh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.973, "d": 0.9565, "y": 0.7129, "h": 0.0218, "color": "white", "fix": "h", "round": 0.15},
+    {"shape": "box", "x": 0.0, "z": 0.4478, "w": 0.8919, "d": 0.0348, "y": 0.7327, "h": 0.0297, "color": "white", "fix": "dh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.973, "d": 0.9565, "y": 0.9604, "h": 0.0218, "color": "white", "fix": "h", "round": 0.15},
+    {"shape": "box", "x": 0.0, "z": 0.4478, "w": 0.8919, "d": 0.0348, "y": 0.9802, "h": 0.0297, "color": "white", "fix": "dh"}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "juicebox_40",
+  "name": {"en": "JuiceBox 40 EV charger"},
+  "size": [0.173, 0.147, 0.469],
+  "group": "energy",
+  "room": ["garage", "garden"],
+  "tags": ["ev charger", "ev", "car charger", "charger", "electric car", "charge point", "wallbox", "juicebox", "juicebox 40", "enel x", "enel x way", "j1772"],
+  "family": "ev_charger_juicebox",
+  "variant": {"en": "40"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.0,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0, "h": 1, "color": "#4b5057", "round": 0.2},
+    {"shape": "rbox", "x": 0.0, "z": 0.47, "w": 0.8, "d": 0.08, "y": 0.1, "h": 0.8, "color": "dark", "round": 0.3},
+    {"shape": "box", "x": 0.0, "z": 0.488, "w": 0.45, "d": 0.024, "y": 0.78, "h": 0.07, "color": "#4aa3ff"},
+    {"shape": "rbox", "x": 0.0, "z": 0.4, "w": 0.4, "d": 0.2, "y": 0.18, "h": 0.4, "color": "#2b2f35", "round": 0.3},
+    {"shape": "cyl", "x": 0.0, "z": 0.38, "w": 0.4, "d": 0.24, "y": 0.3062, "h": 0.1475, "color": "#cfd2d6", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "smart_hub_puck",
+  "name": {"en": "Smart home hub, round"},
+  "size": [0.1, 0.1, 0.04],
+  "group": "tech",
+  "room": ["office", "utility", "hall", "living", "loft"],
+  "tags": ["smart hub", "home assistant", "zigbee", "z-wave", "bridge", "gateway", "smart home", "controller"],
+  "family": "smart_hub",
+  "variant": {"en": "Round"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "white", "profile": [[0, 0], [0.9, 0], [1, 0.2], [1, 0.8], [0.85, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.6, "d": 0.6, "y": 0.975, "h": 0.025, "color": "white", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0.0, "z": 0.0, "r": 0.5}
+  ]
+}

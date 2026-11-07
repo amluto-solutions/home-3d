@@ -1,0 +1,45 @@
+{
+  "id": "trotten_sit_stand_desk_160x80",
+  "name": {
+    "en": "Sit/stand desk 160x80 cm"
+  },
+  "size": [
+    1.6,
+    0.8,
+    0.71
+  ],
+  "group": "office",
+  "room": [
+    "office",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "TROTTEN",
+    "sit/stand desk",
+    "standing desk",
+    "electric desk",
+    "height adjustable 71-118 cm",
+    "white",
+    "ash effect"
+  ],
+  "family": "trotten_sit_stand_desk",
+  "variant": {
+    "en": "160x80"
+  },
+  "ikea": "TROTTEN",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9648, "h": 0.0352, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4313, "z": 0.0, "w": 0.0375, "d": 0.85, "y": 0, "h": 0.0423, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": -0.4313, "z": 0.0, "w": 0.0406, "d": 0.0813, "y": 0.0423, "h": 0.8662, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4313, "z": 0.0, "w": 0.0312, "d": 0.0625, "y": 0.0986, "h": 0.8662, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.4313, "z": 0.0, "w": 0.0375, "d": 0.75, "y": 0.9085, "h": 0.0563, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.4313, "z": 0.0, "w": 0.0375, "d": 0.85, "y": 0, "h": 0.0423, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.4313, "z": 0.0, "w": 0.0406, "d": 0.0813, "y": 0.0423, "h": 0.8662, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4313, "z": 0.0, "w": 0.0312, "d": 0.0625, "y": 0.0986, "h": 0.8662, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.4313, "z": 0.0, "w": 0.0375, "d": 0.75, "y": 0.9085, "h": 0.0563, "color": "white", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": -0.25, "w": 0.8125, "d": 0.05, "y": 0.8944, "h": 0.0704, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.3125, "z": 0.4625, "w": 0.05, "d": 0.0625, "y": 0.9296, "h": 0.0352, "color": "dark", "fix": "wdh"}
+  ]
+}

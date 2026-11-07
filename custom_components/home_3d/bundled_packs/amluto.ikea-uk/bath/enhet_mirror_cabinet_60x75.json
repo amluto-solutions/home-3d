@@ -1,0 +1,47 @@
+{
+  "id": "enhet_mirror_cabinet_60x75",
+  "name": {
+    "en": "Mirror cabinet with doors 60x75 cm"
+  },
+  "size": [
+    0.6,
+    0.17,
+    0.75
+  ],
+  "group": "bath",
+  "room": [
+    "bath",
+    "utility",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "mirror cabinet",
+    "bathroom mirror",
+    "wall cabinet",
+    "ENHET",
+    "white",
+    "anthracite"
+  ],
+  "family": "enhet_mirror_cabinet",
+  "variant": {
+    "en": "60x75"
+  },
+  "ikea": "ENHET",
+  "mount": "wall",
+  "wall_y": 1.3,
+  "parts": [
+    {"shape": "box", "x": -0.4867, "z": 0.0, "w": 0.0267, "d": 0.9176, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4867, "z": 0.0, "w": 0.0267, "d": 0.9176, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9176, "y": 0.9787, "h": 0.0213, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9176, "y": 0, "h": 0.0213, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4706, "w": 0.9467, "d": 0.0588, "y": 0.0213, "h": 0.9573, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.0588, "w": 0.9467, "d": 0.7647, "y": 0.4, "h": 0.016, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.25, "z": 0.4588, "w": 0.4933, "d": 0.0824, "y": 0.0053, "h": 0.9893, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.25, "z": 0.5, "w": 0.4333, "d": 0.0176, "y": 0.0267, "h": 0.9467, "color": "glass", "fix": "d"},
+    {"shape": "box", "x": -0.05, "z": 0.5, "w": 0.02, "d": 0.1294, "y": 0.4333, "h": 0.1333, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.25, "z": 0.4588, "w": 0.4933, "d": 0.0824, "y": 0.0053, "h": 0.9893, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.25, "z": 0.5, "w": 0.4333, "d": 0.0176, "y": 0.0267, "h": 0.9467, "color": "glass", "fix": "d"},
+    {"shape": "box", "x": 0.05, "z": 0.5, "w": 0.02, "d": 0.1294, "y": 0.4333, "h": 0.1333, "color": "metal", "fix": "wdh"}
+  ]
+}

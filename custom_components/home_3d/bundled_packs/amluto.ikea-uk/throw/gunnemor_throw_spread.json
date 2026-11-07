@@ -1,0 +1,40 @@
+{
+  "id": "gunnemor_throw_spread",
+  "name": {
+    "en": "Throw 130x170 cm, spread out"
+  },
+  "size": [
+    1.3,
+    1.7,
+    0.04
+  ],
+  "group": "throw",
+  "room": [
+    "living",
+    "bedroom"
+  ],
+  "tags": [
+    "GUNNEMOR",
+    "throw",
+    "blanket",
+    "bed throw",
+    "spread",
+    "off-white",
+    "grey-beige",
+    "130x170"
+  ],
+  "family": "gunnemor_throw",
+  "variant": {
+    "en": "130x170"
+  },
+  "ikea": "GUNNEMOR",
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.8, "color": "fabric", "round": 0.3},
+    {"shape": "box", "x": 0.0, "z": -0.45, "w": 0.98, "d": 0.0235, "y": 0, "h": 0.9, "color": "#cbbba3", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.405, "w": 0.98, "d": 0.0235, "y": 0, "h": 0.9, "color": "#cbbba3", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.405, "w": 0.98, "d": 0.0235, "y": 0, "h": 0.9, "color": "#cbbba3", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.45, "w": 0.98, "d": 0.0235, "y": 0, "h": 0.9, "color": "#cbbba3", "fix": "dh"},
+    {"shape": "rbox", "x": 0.22, "z": 0.22, "w": 0.3846, "d": 0.2941, "y": 0.4, "h": 0.6, "color": "fabric", "rot": 18, "round": 0.45}
+  ]
+}

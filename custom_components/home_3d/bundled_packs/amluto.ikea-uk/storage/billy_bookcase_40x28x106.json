@@ -1,0 +1,44 @@
+{
+  "id": "billy_bookcase_40x28x106",
+  "name": {
+    "en": "Bookcase 40x28x106 cm"
+  },
+  "size": [
+    0.4,
+    0.28,
+    1.06
+  ],
+  "group": "storage",
+  "room": [
+    "living",
+    "office",
+    "kids",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "bookshelf",
+    "books",
+    "shelving",
+    "white",
+    "black oak effect",
+    "oak effect",
+    "brown walnut effect",
+    "oak veneer"
+  ],
+  "family": "billy_bookcase",
+  "variant": {
+    "en": "40x28x106"
+  },
+  "ikea": "BILLY",
+  "parts": [
+    {"shape": "box", "x": -0.4813, "z": 0.0, "w": 0.0375, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4813, "z": 0.0, "w": 0.0375, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.4286, "w": 0.925, "d": 0.0536, "y": 0, "h": 0.0613, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4893, "w": 0.925, "d": 0.0214, "y": 0, "h": 1, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.925, "d": 1, "y": 0.9858, "h": 0.0142, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.925, "d": 0.9643, "y": 0.0613, "h": 0.0142, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0107, "w": 0.925, "d": 0.9286, "y": 0.3719, "h": 0.0142, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0107, "w": 0.925, "d": 0.9286, "y": 0.6753, "h": 0.0142, "color": "white"}
+  ]
+}

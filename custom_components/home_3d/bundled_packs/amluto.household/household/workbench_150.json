@@ -1,0 +1,33 @@
+{
+  "id": "workbench_150",
+  "name": {"en": "Workbench"},
+  "size": [1.5, 0.6, 0.9],
+  "group": "household",
+  "room": ["garage", "hobby", "utility"],
+  "tags": ["work bench", "workshop", "garage bench", "diy", "vice", "tool bench", "potting bench"],
+  "family": "workbench",
+  "variant": {"en": "150 cm"},
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9556, "h": 0.0444, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4667, "z": -0.4167, "w": 0.04, "d": 0.1, "y": 0.0, "h": 0.9556, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": -0.4667, "z": 0.4167, "w": 0.04, "d": 0.1, "y": 0.0, "h": 0.9556, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": -0.4667, "z": 0.0, "w": 0.0267, "d": 0.8333, "y": 0.1667, "h": 0.0444, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": 0.4667, "z": -0.4167, "w": 0.04, "d": 0.1, "y": 0.0, "h": 0.9556, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4667, "z": 0.4167, "w": 0.04, "d": 0.1, "y": 0.0, "h": 0.9556, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4667, "z": 0.0, "w": 0.0267, "d": 0.8333, "y": 0.1667, "h": 0.0444, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.96, "d": 0.9, "y": 0.1667, "h": 0.0222, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4167, "w": 0.8933, "d": 0.05, "y": 0.8667, "h": 0.0889, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4167, "w": 0.8933, "d": 0.05, "y": 0.8667, "h": 0.0889, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.38, "z": 0.45, "w": 0.12, "d": 0.1, "y": 0.8556, "h": 0.1444, "color": "#1e5aa8", "fix": "wdh"},
+    {"shape": "box", "x": 0.38, "z": 0.4916, "w": 0.1067, "d": 0.0167, "y": 0.9444, "h": 0.0556, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.38, "z": 0.4833, "w": 0.0133, "d": 0.0333, "y": 0.8778, "h": 0.0222, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.38, "z": 0.4933, "w": 0.12, "d": 0.0133, "y": 0.8811, "h": 0.0156, "color": "metal", "axis": "x", "fix": "wdh"},
+    {"shape": "box", "x": -0.3, "z": 0.0, "w": 0.2533, "d": 0.5, "y": 0.1889, "h": 0.2222, "color": "#c62828", "fix": "wdh"},
+    {"shape": "box", "x": -0.3, "z": 0.0, "w": 0.24, "d": 0.4667, "y": 0.4111, "h": 0.0111, "color": "dark", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "rect", "x": 0.38, "z": 0.4667, "w": 0.12, "d": 0.1333, "fill": true}
+  ]
+}

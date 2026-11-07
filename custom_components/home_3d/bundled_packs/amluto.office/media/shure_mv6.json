@@ -1,0 +1,19 @@
+{
+  "id": "shure_mv6",
+  "name": {"en": "Shure MV6 gaming USB mic"},
+  "size": [0.09, 0.09, 0.17],
+  "group": "media",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["shure", "mv6", "gaming mic", "usb mic", "microphone", "streaming", "audio"],
+  "family": "shure_usb",
+  "variant": {"en": "MV6"},
+  "electric": true,
+  "watts": 2.5,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.0882, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.2222, "d": 0.2222, "y": 0.0882, "h": 0.1765, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.5667, "d": 0.5667, "y": 0.2647, "h": 0.7353, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.5667, "d": 0.5667, "y": 0.8824, "h": 0.1176, "color": "#2b2f36"}
+  ]
+}

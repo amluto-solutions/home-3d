@@ -1,0 +1,77 @@
+{
+  "id": "unifi_doorbell_lite",
+  "name": {
+    "en": "UniFi Doorbell Lite"
+  },
+  "size": [
+    0.04,
+    0.0264,
+    0.137
+  ],
+  "group": "tech",
+  "tags": [
+    "security camera",
+    "camera",
+    "doorbell",
+    "video doorbell",
+    "front door",
+    "unifi",
+    "ubiquiti",
+    "doorbell lite",
+    "uvc doorbell lite"
+  ],
+  "family": "unifi_doorbell",
+  "variant": {
+    "en": "Doorbell Lite"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "round": 0.3
+    },
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0.4,
+      "w": 0.8,
+      "d": 0.2,
+      "y": 0.04,
+      "h": 0.92,
+      "color": "#1c222c",
+      "round": 0.25
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0.46,
+      "w": 0.45,
+      "d": 0.1,
+      "y": 0.72,
+      "h": 0.17,
+      "color": "#0b0f17",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0.46,
+      "w": 0.5,
+      "d": 0.1,
+      "y": 0.14,
+      "h": 0.18,
+      "color": "#3a8dde",
+      "axis": "z",
+      "glow": true
+    }
+  ]
+}

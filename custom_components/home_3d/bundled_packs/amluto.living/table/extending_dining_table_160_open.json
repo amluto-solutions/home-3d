@@ -1,0 +1,24 @@
+{
+  "id": "extending_dining_table_160_open",
+  "name": {"en": "Extending dining table"},
+  "size": [2.2, 0.95, 0.75],
+  "group": "table",
+  "family": "extending_dining_table",
+  "variant": {"en": "160–220 cm, opened"},
+  "room": ["dining", "kitchen"],
+  "tags": ["dining table", "extending table", "extendable", "kitchen table", "6–8 seater", "leaf", "butterfly leaf"],
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.96, "h": 0.04, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4263, "w": 0.9455, "d": 0.0211, "y": 0.8533, "h": 0.1067, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4263, "w": 0.9455, "d": 0.0211, "y": 0.8533, "h": 0.1067, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4682, "z": 0.0, "w": 0.0091, "d": 0.8737, "y": 0.8533, "h": 0.1067, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": 0.4682, "z": 0.0, "w": 0.0091, "d": 0.8737, "y": 0.8533, "h": 0.1067, "color": "wood", "fix": "wh"},
+    {"shape": "box", "x": -0.4614, "z": -0.4105, "w": 0.0318, "d": 0.0737, "y": 0.0, "h": 0.96, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": -0.4614, "z": 0.4105, "w": 0.0318, "d": 0.0737, "y": 0.0, "h": 0.96, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4614, "z": -0.4105, "w": 0.0318, "d": 0.0737, "y": 0.0, "h": 0.96, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4614, "z": 0.4105, "w": 0.0318, "d": 0.0737, "y": 0.0, "h": 0.96, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": -0.1136, "z": 0.0, "w": 0.0018, "d": 0.9895, "y": 0.9987, "h": 0.0013, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.1136, "z": 0.0, "w": 0.0018, "d": 0.9895, "y": 0.9987, "h": 0.0013, "color": "dark", "fix": "w"}
+  ]
+}

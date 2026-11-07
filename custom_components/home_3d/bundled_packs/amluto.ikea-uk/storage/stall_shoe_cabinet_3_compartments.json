@@ -1,0 +1,45 @@
+{
+  "id": "stall_shoe_cabinet_3_compartments",
+  "name": {
+    "en": "Shoe cabinet with 3 compartments"
+  },
+  "size": [
+    0.79,
+    0.29,
+    1.48
+  ],
+  "group": "storage",
+  "room": [
+    "hall"
+  ],
+  "tags": [
+    "STALL",
+    "shoe cabinet",
+    "shoe storage",
+    "slim shoe cabinet",
+    "hallway",
+    "white",
+    "flip-down doors"
+  ],
+  "family": "stall_shoe_cabinet",
+  "variant": {
+    "en": "3 compartments 79x29x148"
+  },
+  "ikea": "STÄLL",
+  "parts": [
+    {"shape": "box", "x": -0.4899, "z": 0.0, "w": 0.0203, "d": 0.9655, "y": 0.0203, "h": 0.9797, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4899, "z": 0.0, "w": 0.0203, "d": 0.9655, "y": 0.0203, "h": 0.9797, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9655, "y": 0.9892, "h": 0.0108, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9595, "d": 0.9655, "y": 0.0203, "h": 0.0108, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4828, "w": 0.9595, "d": 0.0276, "y": 0.0203, "h": 0.9797, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.0345, "w": 0.962, "d": 0.8276, "y": 0, "h": 0.0203, "color": "dark", "fix": "wh"},
+    {"shape": "loft", "x": 0.0, "z": 0.4655, "w": 0.9519, "d": 0.0552, "y": 0.0372, "h": 0.3104, "color": "white", "tx": 0.0, "tz": 0.5, "tw": 0.9519, "td": 0.0552},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.1519, "d": 0.0414, "y": 0.3252, "h": 0.0081, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9595, "d": 0.9655, "y": 0.3489, "h": 0.0068, "color": "white", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.4655, "w": 0.9519, "d": 0.0552, "y": 0.3556, "h": 0.3104, "color": "white", "tx": 0.0, "tz": 0.5, "tw": 0.9519, "td": 0.0552},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.1519, "d": 0.0414, "y": 0.6437, "h": 0.0081, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9595, "d": 0.9655, "y": 0.6673, "h": 0.0068, "color": "white", "fix": "h"},
+    {"shape": "loft", "x": 0.0, "z": 0.4655, "w": 0.9519, "d": 0.0552, "y": 0.6741, "h": 0.3104, "color": "white", "tx": 0.0, "tz": 0.5, "tw": 0.9519, "td": 0.0552},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.1519, "d": 0.0414, "y": 0.9622, "h": 0.0081, "color": "metal", "fix": "wdh"}
+  ]
+}

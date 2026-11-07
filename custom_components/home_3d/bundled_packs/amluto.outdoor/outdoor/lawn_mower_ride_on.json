@@ -1,0 +1,24 @@
+{
+  "id": "lawn_mower_ride_on",
+  "name": {"en": "Ride-on mower"},
+  "size": [1.05, 1.8, 1.15],
+  "group": "outdoor",
+  "room": ["garden", "garage"],
+  "tags": ["lawnmower", "ride-on", "ride on mower", "lawn tractor", "grass", "garden", "garden tractor", "mower", "sit-on"],
+  "family": "lawn_mower",
+  "variant": {"en": "Ride-on"},
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0.2667, "w": 0.4762, "d": 0.3889, "y": 0.2435, "h": 0.3478, "color": "#2f7a3a", "round": 0.2},
+    {"shape": "box", "x": 0, "z": 0.4556, "w": 0.381, "d": 0.0222, "y": 0.3478, "h": 0.1217, "color": "#2c2f33"},
+    {"shape": "rbox", "x": 0, "z": -0.1111, "w": 0.5905, "d": 0.3889, "y": 0.2435, "h": 0.1217, "color": "#2f7a3a", "round": 0.15},
+    {"shape": "rbox", "x": 0, "z": -0.1667, "w": 0.3619, "d": 0.2222, "y": 0.3478, "h": 0.1043, "color": "#2c2f33", "round": 0.2},
+    {"shape": "rbox", "x": 0, "z": -0.2889, "w": 0.3619, "d": 0.0556, "y": 0.4174, "h": 0.2609, "color": "#2c2f33", "round": 0.2},
+    {"shape": "cyl", "x": 0, "z": 0.1111, "w": 0.3238, "d": 0.1889, "y": 0.3913, "h": 0.0104, "color": "#2c2f33"},
+    {"shape": "cyl", "x": 0, "z": 0.1111, "w": 0.0381, "d": 0.0222, "y": 0.3913, "h": 0.3043, "color": "#2c2f33"},
+    {"shape": "cyl", "x": -0.381, "z": 0.3056, "w": 0.1143, "d": 0.1889, "y": 0, "h": 0.2957, "color": "#25262a", "axis": "x"},
+    {"shape": "cyl", "x": -0.381, "z": -0.2889, "w": 0.1524, "d": 0.2556, "y": 0, "h": 0.4, "color": "#25262a", "axis": "x"},
+    {"shape": "cyl", "x": 0.381, "z": 0.3056, "w": 0.1143, "d": 0.1889, "y": 0, "h": 0.2957, "color": "#25262a", "axis": "x"},
+    {"shape": "cyl", "x": 0.381, "z": -0.2889, "w": 0.1524, "d": 0.2556, "y": 0, "h": 0.4, "color": "#25262a", "axis": "x"},
+    {"shape": "box", "x": 0, "z": 0.1944, "w": 0.9524, "d": 0.25, "y": 0.087, "h": 0.1217, "color": "#2f7a3a"}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "half_wall_200_tall",
+  "name": {"en": "Half-wall with cap"},
+  "size": [2.0, 0.15, 1.1],
+  "group": "architecture",
+  "tags": ["half wall", "dwarf wall", "pony wall", "partition", "capping", "divider", "nib wall", "low wall", "room divider"],
+  "family": "half_wall",
+  "variant": {"en": "200 cm long, 1.1 m high"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.6667, "y": 0.0, "h": 0.9682, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": -0.3733, "w": 1, "d": 0.08, "y": 0.0, "h": 0.0909, "color": "white", "top": "#f2f2ef", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.3733, "w": 1, "d": 0.08, "y": 0.0, "h": 0.0909, "color": "white", "top": "#f2f2ef", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9682, "h": 0.0318, "color": "wood", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 0.6667}
+  ]
+}

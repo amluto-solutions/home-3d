@@ -1,0 +1,30 @@
+{
+  "id": "vase_flowers_tall",
+  "name": {"en": "Tall vase with eucalyptus"},
+  "size": [0.34, 0.34, 0.8],
+  "group": "vase",
+  "room": ["living", "dining", "bedroom", "hall", "kitchen"],
+  "tags": ["vase", "flowers", "bouquet", "flower vase", "fresh flowers", "eucalyptus", "glass", "branches", "tall"],
+  "family": "vase_flowers",
+  "variant": {"en": "Tall stems"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.5, "d": 0.5, "y": 0.0, "h": 0.375, "color": "#cfe0e3", "profile": [[0.0, 0.0], [0.7, 0.0], [0.75, 0.9], [0.6, 1], [0.0, 1]]},
+    {"shape": "cyl", "x": 0.0882, "z": 0.0, "w": 0.0235, "d": 0.0235, "y": 0.3, "h": 0.525, "color": "#2e5e2c"},
+    {"shape": "cyl", "x": -0.1176, "z": 0.0588, "w": 0.0235, "d": 0.0235, "y": 0.3, "h": 0.5, "color": "#2e5e2c"},
+    {"shape": "cyl", "x": 0.0294, "z": -0.1176, "w": 0.0235, "d": 0.0235, "y": 0.3, "h": 0.55, "color": "#2e5e2c"},
+    {"shape": "cyl", "x": -0.0588, "z": -0.0588, "w": 0.0235, "d": 0.0235, "y": 0.3, "h": 0.475, "color": "#2e5e2c"},
+    {"shape": "sphere", "x": 0.1686, "z": 0.0522, "w": 0.1471, "d": 0.0882, "y": 0.5625, "h": 0.0562, "color": "#8fae9a"},
+    {"shape": "sphere", "x": 0.0166, "z": 0.2347, "w": 0.1471, "d": 0.0882, "y": 0.625, "h": 0.0562, "color": "#a3bfae"},
+    {"shape": "sphere", "x": -0.1764, "z": 0.1061, "w": 0.1471, "d": 0.0882, "y": 0.6875, "h": 0.0562, "color": "#7a9c88"},
+    {"shape": "sphere", "x": -0.2245, "z": -0.1403, "w": 0.1471, "d": 0.0882, "y": 0.6, "h": 0.0562, "color": "#8fae9a"},
+    {"shape": "sphere", "x": 0.0154, "z": -0.1758, "w": 0.1471, "d": 0.0882, "y": 0.75, "h": 0.0562, "color": "#a3bfae"},
+    {"shape": "sphere", "x": 0.1964, "z": -0.1296, "w": 0.1471, "d": 0.0882, "y": 0.825, "h": 0.0562, "color": "#7a9c88"},
+    {"shape": "sphere", "x": 0.2011, "z": 0.2534, "w": 0.1471, "d": 0.0882, "y": 0.775, "h": 0.0562, "color": "#8fae9a"},
+    {"shape": "sphere", "x": -0.1782, "z": 0.3047, "w": 0.1471, "d": 0.0882, "y": 0.875, "h": 0.0562, "color": "#a3bfae"},
+    {"shape": "sphere", "x": -0.2936, "z": -0.0172, "w": 0.1471, "d": 0.0882, "y": 0.9, "h": 0.0562, "color": "#7a9c88"},
+    {"shape": "sphere", "x": -0.173, "z": -0.3076, "w": 0.1471, "d": 0.0882, "y": 0.825, "h": 0.0562, "color": "#8fae9a"},
+    {"shape": "sphere", "x": 0.1791, "z": -0.3378, "w": 0.1471, "d": 0.0882, "y": 0.725, "h": 0.0562, "color": "#a3bfae"},
+    {"shape": "sphere", "x": 0.0588, "z": 0.0, "w": 0.1471, "d": 0.0882, "y": 0.925, "h": 0.0562, "color": "#7a9c88"}
+  ]
+}

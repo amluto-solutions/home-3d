@@ -1,0 +1,65 @@
+{
+  "id": "gullaberg_chest_of_8_drawers",
+  "name": {
+    "en": "Chest of 8 drawers, 168x100 cm"
+  },
+  "size": [
+    1.68,
+    0.48,
+    1.0
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "drawers",
+    "chest",
+    "dresser",
+    "white",
+    "grey",
+    "wide"
+  ],
+  "family": "gullaberg_chest_of_drawers",
+  "variant": {
+    "en": "8 drawers · 168x100"
+  },
+  "ikea": "GULLABERG",
+  "parts": [
+    {"shape": "box", "x": -0.4946, "z": -0.0187, "w": 0.0107, "d": 0.9625, "y": 0.2, "h": 0.78, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4946, "z": -0.0187, "w": 0.0107, "d": 0.9625, "y": 0.2, "h": 0.78, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0187, "w": 0.9786, "d": 0.9625, "y": 0.2, "h": 0.018, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4917, "w": 0.9786, "d": 0.0167, "y": 0.218, "h": 0.744, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0104, "w": 1, "d": 1, "y": 0.98, "h": 0.02, "color": "white", "fix": "h"},
+    {"shape": "loft", "x": -0.4717, "z": -0.3802, "w": 0.0125, "d": 0.0438, "y": 0, "h": 0.2, "color": "white", "tw": 0.0208, "td": 0.0729, "fix": "wdh"},
+    {"shape": "loft", "x": -0.4717, "z": 0.3802, "w": 0.0125, "d": 0.0438, "y": 0, "h": 0.2, "color": "white", "tw": 0.0208, "td": 0.0729, "fix": "wdh"},
+    {"shape": "loft", "x": 0.4717, "z": -0.3802, "w": 0.0125, "d": 0.0438, "y": 0, "h": 0.2, "color": "white", "tw": 0.0208, "td": 0.0729, "fix": "wdh"},
+    {"shape": "loft", "x": 0.4717, "z": 0.3802, "w": 0.0125, "d": 0.0438, "y": 0, "h": 0.2, "color": "white", "tw": 0.0208, "td": 0.0729, "fix": "wdh"},
+    {"shape": "box", "x": -0.2494, "z": 0.4812, "w": 0.4964, "d": 0.0375, "y": 0.787, "h": 0.191, "color": "white"},
+    {"shape": "cyl", "x": -0.3735, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.8675, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.1253, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.8675, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.2494, "z": 0.4812, "w": 0.4964, "d": 0.0375, "y": 0.787, "h": 0.191, "color": "white"},
+    {"shape": "cyl", "x": 0.1253, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.8675, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3735, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.8675, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": -0.2494, "z": 0.4812, "w": 0.4964, "d": 0.0375, "y": 0.592, "h": 0.191, "color": "white"},
+    {"shape": "cyl", "x": -0.3735, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.6725, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.1253, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.6725, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.2494, "z": 0.4812, "w": 0.4964, "d": 0.0375, "y": 0.592, "h": 0.191, "color": "white"},
+    {"shape": "cyl", "x": 0.1253, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.6725, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3735, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.6725, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": -0.2494, "z": 0.4812, "w": 0.4964, "d": 0.0375, "y": 0.397, "h": 0.191, "color": "white"},
+    {"shape": "cyl", "x": -0.3735, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.4775, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.1253, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.4775, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.2494, "z": 0.4812, "w": 0.4964, "d": 0.0375, "y": 0.397, "h": 0.191, "color": "white"},
+    {"shape": "cyl", "x": 0.1253, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.4775, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3735, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.4775, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": -0.2494, "z": 0.4812, "w": 0.4964, "d": 0.0375, "y": 0.202, "h": 0.191, "color": "white"},
+    {"shape": "cyl", "x": -0.3735, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.2825, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.1253, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.2825, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.2494, "z": 0.4812, "w": 0.4964, "d": 0.0375, "y": 0.202, "h": 0.191, "color": "white"},
+    {"shape": "cyl", "x": 0.1253, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.2825, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.3735, "z": 0.5, "w": 0.0179, "d": 0.05, "y": 0.2825, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "olivblad_plant_stand_58",
+  "name": {
+    "en": "Round plant stand 58 cm"
+  },
+  "size": [
+    0.45,
+    0.45,
+    0.58
+  ],
+  "group": "plant",
+  "room": [
+    "living",
+    "conservatory",
+    "hall",
+    "bedroom",
+    "garden"
+  ],
+  "tags": [
+    "plant stand",
+    "plant table",
+    "pot stand",
+    "metal",
+    "black",
+    "in/outdoor"
+  ],
+  "family": "olivblad_plant_stand",
+  "variant": {
+    "en": "Round 58"
+  },
+  "ikea": "OLIVBLAD",
+  "surface": true,
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.931, "h": 0.069, "color": "dark", "fix": "h", "profile": [[0, 0], [1, 0], [1, 1], [0.94, 1], [0.94, 0.15], [0, 0.15]]},
+    {"shape": "loft", "x": 0.0, "z": 0.4556, "w": 0.0333, "d": 0.0333, "y": 0, "h": 0.931, "color": "dark", "tx": 0.0, "tz": 0.3889, "tw": 0.0333, "td": 0.0333},
+    {"shape": "loft", "x": -0.3945, "z": -0.2278, "w": 0.0333, "d": 0.0333, "y": 0, "h": 0.931, "color": "dark", "tx": -0.3368, "tz": -0.1944, "tw": 0.0333, "td": 0.0333},
+    {"shape": "loft", "x": 0.3945, "z": -0.2278, "w": 0.0333, "d": 0.0333, "y": 0, "h": 0.931, "color": "dark", "tx": 0.3368, "tz": -0.1944, "tw": 0.0333, "td": 0.0333},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.8, "y": 0.3, "h": 0.0207, "color": "dark", "profile": [[0.9, 0], [1, 0], [1, 1], [0.9, 1]]}
+  ]
+}

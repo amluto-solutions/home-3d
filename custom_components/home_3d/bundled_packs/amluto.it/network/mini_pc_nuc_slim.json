@@ -1,0 +1,17 @@
+{
+  "id": "mini_pc_nuc_slim",
+  "name": {"en": "Mini PC, NUC slim"},
+  "size": [0.117,0.112,0.037],
+  "group": "network",
+  "room": ["office", "utility", "loft", "living", "hall"],
+  "tags": ["intel nuc", "asus nuc", "nuc 13 pro", "nuc 14 pro", "nuc slim", "mini pc", "nuc", "micro pc", "small pc", "home server", "server", "homelab"],
+  "family": "mini_pc",
+  "variant": {"en": "NUC slim"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "dark", "round": 0.12},
+    {"shape": "box", "x": 0, "z": 0.4973, "w": 0.8, "d": 0.0054, "y": 0.3, "h": 0.3, "color": "dark"},
+    {"shape": "box", "x": -0.3, "z": 0.4982, "w": 0.0171, "d": 0.0036, "y": 0.65, "h": 0.0541, "color": "#4aa3ff", "glow": true}
+  ]
+}

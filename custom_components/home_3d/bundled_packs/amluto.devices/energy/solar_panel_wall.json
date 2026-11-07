@@ -1,0 +1,26 @@
+{
+  "id": "solar_panel_wall",
+  "name": {"en": "Solar panel"},
+  "size": [1.134, 0.05, 1.722],
+  "group": "energy",
+  "room": ["garden"],
+  "tags": ["pv", "photovoltaic", "solar module", "solar array", "ground mount", "solar pv", "balcony solar", "plug-in solar"],
+  "family": "solar_panel",
+  "variant": {"en": "Wall or balcony"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 0.4,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.16, "w": 1, "d": 0.68, "y": 0.0, "h": 1, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.24, "w": 0.97, "d": 0.12, "y": 0.0099, "h": 0.9803, "color": "#1d2b4f", "edges": "faint"},
+    {"shape": "box", "x": 0.0, "z": 0.31, "w": 0.97, "d": 0.04, "y": 0.1709, "h": 0.0046, "color": "#2f4470"},
+    {"shape": "box", "x": 0.0, "z": 0.31, "w": 0.97, "d": 0.04, "y": 0.3343, "h": 0.0046, "color": "#2f4470"},
+    {"shape": "box", "x": 0.0, "z": 0.31, "w": 0.97, "d": 0.04, "y": 0.4977, "h": 0.0046, "color": "#2f4470"},
+    {"shape": "box", "x": 0.0, "z": 0.31, "w": 0.97, "d": 0.04, "y": 0.6611, "h": 0.0046, "color": "#2f4470"},
+    {"shape": "box", "x": 0.0, "z": 0.31, "w": 0.97, "d": 0.04, "y": 0.8244, "h": 0.0046, "color": "#2f4470"},
+    {"shape": "box", "x": 0.0, "z": 0.31, "w": 0.0053, "d": 0.04, "y": 0.0099, "h": 0.9803, "color": "#2f4470"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

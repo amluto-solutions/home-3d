@@ -1,0 +1,34 @@
+{
+  "id": "jall_laundry_bag_stand",
+  "name": {
+    "en": "Laundry bag with stand, 50 l"
+  },
+  "size": [
+    0.43,
+    0.42,
+    0.6
+  ],
+  "group": "household",
+  "room": [
+    "bedroom",
+    "bath",
+    "utility",
+    "kids"
+  ],
+  "tags": [
+    "laundry basket",
+    "laundry hamper",
+    "washing basket",
+    "foldable",
+    "white"
+  ],
+  "ikea": "JÄLL",
+  "parts": [
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.8, "y": 0.1667, "h": 0.8, "color": "fabric", "tw": 0.9535, "td": 0.9524},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.95, "h": 0.0333, "color": "white", "fix": "h"},
+    {"shape": "loft", "x": -0.4535, "z": 0.0, "w": 0.0349, "d": 1, "y": 0, "h": 0.95, "color": "white", "tx": -0.4535, "tw": 0.0349, "td": 0.0357},
+    {"shape": "loft", "x": -0.4535, "z": 0.0, "w": 0.0349, "d": 0.0357, "y": 0, "h": 0.95, "color": "white", "tw": 0.0349, "td": 1},
+    {"shape": "loft", "x": 0.4535, "z": 0.0, "w": 0.0349, "d": 1, "y": 0, "h": 0.95, "color": "white", "tx": 0.4535, "tw": 0.0349, "td": 0.0357},
+    {"shape": "loft", "x": 0.4535, "z": 0.0, "w": 0.0349, "d": 0.0357, "y": 0, "h": 0.95, "color": "white", "tw": 0.0349, "td": 1}
+  ]
+}

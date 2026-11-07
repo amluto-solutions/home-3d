@@ -1,0 +1,41 @@
+{
+  "id": "skogsta_table_74x74x90",
+  "name": {
+    "en": "Counter-height table 74x74 cm"
+  },
+  "size": [
+    0.74,
+    0.74,
+    0.9
+  ],
+  "group": "table",
+  "room": [
+    "kitchen",
+    "dining"
+  ],
+  "tags": [
+    "dining table",
+    "kitchen table",
+    "acacia",
+    "solid wood",
+    "black legs",
+    "bar table"
+  ],
+  "family": "skogsta_table",
+  "variant": {
+    "en": "74x74 counter height"
+  },
+  "ikea": "SKOGSTA",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9556, "h": 0.0444, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.3378, "z": -0.3919, "w": 0.0541, "d": 0.0541, "y": 0.0333, "h": 0.9222, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.3378, "z": 0.3919, "w": 0.0541, "d": 0.0541, "y": 0.0333, "h": 0.9222, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.3378, "z": 0.0, "w": 0.0676, "d": 0.8649, "y": 0, "h": 0.0333, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": -0.3378, "z": 0.0, "w": 0.0676, "d": 0.8378, "y": 0.9111, "h": 0.0444, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.3378, "z": -0.3919, "w": 0.0541, "d": 0.0541, "y": 0.0333, "h": 0.9222, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.3378, "z": 0.3919, "w": 0.0541, "d": 0.0541, "y": 0.0333, "h": 0.9222, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.3378, "z": 0.0, "w": 0.0676, "d": 0.8649, "y": 0, "h": 0.0333, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.3378, "z": 0.0, "w": 0.0676, "d": 0.8378, "y": 0.9111, "h": 0.0444, "color": "dark", "fix": "wh"}
+  ]
+}

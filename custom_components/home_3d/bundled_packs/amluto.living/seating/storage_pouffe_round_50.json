@@ -1,0 +1,89 @@
+{
+  "id": "storage_pouffe_round_50",
+  "name": {
+    "en": "Round storage pouffe 50"
+  },
+  "size": [
+    0.5,
+    0.5,
+    0.45
+  ],
+  "group": "seating",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "storage pouffe",
+    "pouf",
+    "ottoman",
+    "storage stool",
+    "round",
+    "drum"
+  ],
+  "family": "storage_pouffe",
+  "variant": {
+    "en": "Ø50"
+  },
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1,
+      "d": 1,
+      "y": 0.0,
+      "h": 0.8444,
+      "color": "fabric"
+    },
+    {
+      "shape": "lathe",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1,
+      "d": 1,
+      "y": 0.8444,
+      "h": 0.1556,
+      "color": "cushion",
+      "fix": "h",
+      "profile": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0.5
+        ],
+        [
+          0.9,
+          0.95
+        ],
+        [
+          0.6,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1,
+      "d": 1,
+      "y": 0.0,
+      "h": 0.0444,
+      "color": "dark",
+      "fix": "h"
+    }
+  ]
+}

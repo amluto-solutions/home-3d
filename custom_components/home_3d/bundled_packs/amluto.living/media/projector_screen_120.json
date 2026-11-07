@@ -1,0 +1,22 @@
+{
+  "id": "projector_screen_120",
+  "name": {"en": "Projector screen 120″, electric"},
+  "size": [2.82, 0.09, 1.85],
+  "group": "media",
+  "room": ["living", "loft", "bedroom", "office", "kids"],
+  "tags": ["projector screen", "screen", "home cinema", "pull-down screen", "movie", "16:9", "motorised"],
+  "family": "projector_screen",
+  "variant": {"en": "120″ electric"},
+  "mount": "wall",
+  "wall_y": 0.3999999999999999,
+  "electric": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.9514, "h": 0.0486, "color": "white", "axis": "x"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9574, "d": 0.2222, "y": 0.0, "h": 0.0162, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9787, "d": 0.0889, "y": 0.0162, "h": 0.9351, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.0556, "w": 0.9433, "d": 0.0222, "y": 0.0324, "h": 0.8108, "color": "white", "screen": true}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

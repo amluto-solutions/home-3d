@@ -1,0 +1,103 @@
+{
+  "id": "wall_fan_12",
+  "name": {
+    "en": "Wall-mounted fan"
+  },
+  "size": [
+    0.35,
+    0.22,
+    0.38
+  ],
+  "group": "heating",
+  "room": [
+    "office",
+    "living",
+    "bedroom",
+    "garage",
+    "hobby"
+  ],
+  "tags": [
+    "fan",
+    "cooling",
+    "summer",
+    "air movement",
+    "wall fan",
+    "wall mounted fan",
+    "oscillating fan",
+    "12 inch"
+  ],
+  "family": "wall_fan",
+  "variant": {
+    "en": "30 cm (12 in)"
+  },
+  "electric": true,
+  "watts": 40,
+  "mount": "wall",
+  "wall_y": 1.9,
+  "parts": [
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": -0.47,
+      "w": 0.3,
+      "d": 0.0909,
+      "y": 0.05,
+      "h": 0.9,
+      "color": "metal"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": -0.2,
+      "w": 0.2,
+      "d": 0.4,
+      "y": 0.4,
+      "h": 0.1842,
+      "color": "white",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.15,
+      "w": 1.0,
+      "d": 0.3,
+      "y": 0.0,
+      "h": 1.0,
+      "color": "glass",
+      "axis": "z",
+      "edges": "faint"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.3,
+      "w": 0.85,
+      "d": 0.0909,
+      "y": 0.075,
+      "h": 0.85,
+      "color": "white",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.4,
+      "w": 0.15,
+      "d": 0.1364,
+      "y": 0.425,
+      "h": 0.15,
+      "color": "metal",
+      "axis": "z"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    }
+  ]
+}

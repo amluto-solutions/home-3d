@@ -1,0 +1,26 @@
+{
+  "id": "pull_out_larder_300",
+  "name": {"en": "Pull-out larder 300"},
+  "size": [0.3, 0.6, 2.15],
+  "group": "kitchen",
+  "room": ["kitchen", "utility"],
+  "tags": ["shaker", "kitchen cupboard", "fitted kitchen", "larder", "pantry", "tall unit", "pull-out larder", "pull out", "tall pull-out"],
+  "family": "larder_unit",
+  "variant": {"en": "Pull-out 300"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.06, "w": 0.9867, "d": 0.78, "y": 0.0, "h": 0.0698, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.035, "w": 1.0, "d": 0.93, "y": 0.0698, "h": 0.9302, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.445, "w": 0.98, "d": 0.03, "y": 0.0712, "h": 0.9274, "color": "body"},
+    {"shape": "box", "x": -0.39, "z": 0.465, "w": 0.2, "d": 0.01, "y": 0.0712, "h": 0.9274, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.39, "z": 0.465, "w": 0.2, "d": 0.01, "y": 0.0712, "h": 0.9274, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.465, "w": 0.58, "d": 0.01, "y": 0.0712, "h": 0.0279, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.465, "w": 0.58, "d": 0.01, "y": 0.9707, "h": 0.0279, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.485, "w": 0.4267, "d": 0.03, "y": 0.5321, "h": 0.0056, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.485, "w": 0.04, "d": 0.03, "y": 0.7907, "h": 0.1395, "color": "metal", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.5, "z1": -0.5, "x2": 0.5, "z2": 0.5},
+    {"shape": "line", "x1": -0.5, "z1": 0.5, "x2": 0.5, "z2": -0.5}
+  ]
+}

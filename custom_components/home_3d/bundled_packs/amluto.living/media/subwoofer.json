@@ -1,0 +1,20 @@
+{
+  "id": "subwoofer",
+  "name": {"en": "Wireless subwoofer"},
+  "size": [0.22, 0.4, 0.42],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "office", "loft"],
+  "tags": ["soundbar", "sound bar", "speaker", "tv speaker", "home cinema", "subwoofer", "sonos"],
+  "family": "soundbar",
+  "variant": {"en": "Subwoofer"},
+  "electric": true,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0357, "h": 0.9643, "color": "dark", "round": 0.1},
+    {"shape": "cyl", "x": -0.4773, "z": 0.0, "w": 0.0455, "d": 0.7, "y": 0.1667, "h": 0.6667, "color": "#2a2c30", "axis": "x"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7273, "d": 0.85, "y": 0.0, "h": 0.0357, "color": "#2a2c30", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4963, "w": 0.0364, "d": 0.0075, "y": 0.881, "h": 0.019, "color": "white", "edges": "faint", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

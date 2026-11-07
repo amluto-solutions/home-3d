@@ -1,0 +1,42 @@
+{
+  "id": "charging_desk_lamp",
+  "name": {
+    "en": "Desk lamp with wireless charger"
+  },
+  "size": [
+    0.2,
+    0.46,
+    0.34
+  ],
+  "group": "lamp",
+  "room": [
+    "office",
+    "bedroom",
+    "living"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "charging lamp",
+    "qi charger",
+    "wireless charger",
+    "usb lamp",
+    "led desk lamp",
+    "dimmable",
+    "touch"
+  ],
+  "family": "charging_desk_lamp",
+  "variant": {
+    "en": "White"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0435, "w": 1, "d": 0.4348, "y": 0, "h": 0.0882, "color": "white", "round": 0.3},
+    {"shape": "cyl", "x": 0.0, "z": 0.0435, "w": 0.6, "d": 0.2609, "y": 0.0882, "h": 0.0088, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.2174, "w": 0.15, "d": 0.0652, "y": 0.0882, "h": 0.8824, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0217, "w": 0.15, "d": 0.4348, "y": 0.9118, "h": 0.0882, "color": "white"},
+    {"shape": "rbox", "x": 0.0, "z": -0.2609, "w": 0.3, "d": 0.4783, "y": 0.8824, "h": 0.1176, "color": "white", "round": 0.4},
+    {"shape": "box", "x": 0.0, "z": -0.2609, "w": 0.225, "d": 0.4348, "y": 0.8765, "h": 0.0118, "color": "white", "glow": true}
+  ]
+}

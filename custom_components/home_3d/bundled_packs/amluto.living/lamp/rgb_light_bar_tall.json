@@ -1,0 +1,20 @@
+{
+  "id": "rgb_light_bar_tall",
+  "name": {"en": "RGB light bar (tall)"},
+  "size": [0.05, 0.05, 0.45],
+  "group": "lamp",
+  "room": ["living", "office", "bedroom", "hobby", "kids"],
+  "tags": ["rgb light bar", "light bar", "gaming light", "corner light", "govee", "led bar", "gaming", "ambient"],
+  "family": "rgb_light_bar",
+  "variant": {"en": "Tall"},
+  "electric": true,
+  "watts": 12,
+  "light": "strip",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.0267, "color": "#1c1d20", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.7, "d": 0.7, "y": 0.0267, "h": 0.9733, "color": "white", "edges": "glow", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

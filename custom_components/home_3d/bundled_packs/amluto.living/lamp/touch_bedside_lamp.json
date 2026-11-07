@@ -1,0 +1,40 @@
+{
+  "id": "touch_bedside_lamp",
+  "name": {
+    "en": "Touch bedside lamp"
+  },
+  "size": [
+    0.12,
+    0.12,
+    0.22
+  ],
+  "group": "lamp",
+  "room": [
+    "bedroom",
+    "kids",
+    "living",
+    "office"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "touch lamp",
+    "bedside lamp",
+    "led lamp",
+    "dimmable",
+    "night light",
+    "cylinder",
+    "usb"
+  ],
+  "family": "touch_bedside_lamp",
+  "variant": {
+    "en": "Cylinder"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0545, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9167, "d": 0.9167, "y": 0.0545, "h": 0.9091, "color": "white", "glow": true},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.9583, "d": 0.9583, "y": 0.9636, "h": 0.0364, "color": "dark"}
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "cone_table_lamp",
+  "name": {
+    "en": "Cone-shade table lamp"
+  },
+  "size": [
+    0.3,
+    0.3,
+    0.5
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "hall",
+    "dining",
+    "kids"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "cone lamp",
+    "conical shade",
+    "modern",
+    "black",
+    "minimal",
+    "bedside lamp",
+    "reading lamp"
+  ],
+  "family": "cone_table_lamp",
+  "variant": {
+    "en": "Black stem"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4667, "d": 0.4667, "y": 0, "h": 0.04, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0833, "d": 0.0833, "y": 0.04, "h": 0.6, "color": "dark"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.6, "h": 0.4, "color": "#e8e0d0", "tx": 0.0, "tz": 0.0, "tw": 0.2, "td": 0.2, "glow": true}
+  ]
+}

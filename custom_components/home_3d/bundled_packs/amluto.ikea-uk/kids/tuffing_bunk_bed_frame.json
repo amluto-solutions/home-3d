@@ -1,0 +1,58 @@
+{
+  "id": "tuffing_bunk_bed_frame",
+  "name": {
+    "en": "Bunk bed frame 90x200"
+  },
+  "size": [
+    2.07,
+    1.015,
+    1.305
+  ],
+  "group": "kids",
+  "room": [
+    "kids",
+    "bedroom"
+  ],
+  "tags": [
+    "TUFFING",
+    "bunk bed",
+    "bunk beds",
+    "two beds",
+    "metal bed",
+    "single",
+    "dark grey",
+    "mattress 90x200"
+  ],
+  "family": "tuffing_bed_frame",
+  "variant": {
+    "en": "Bunk"
+  },
+  "ikea": "TUFFING",
+  "parts": [
+    {"shape": "cyl", "x": -0.4879, "z": -0.4507, "w": 0.0217, "d": 0.0443, "y": 0, "h": 1, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": -0.4879, "z": 0.4507, "w": 0.0217, "d": 0.0443, "y": 0, "h": 1, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": -0.4879, "z": 0.0, "w": 0.0145, "d": 0.9015, "y": 0.977, "h": 0.023, "color": "metal", "axis": "z", "fix": "wh"},
+    {"shape": "cyl", "x": 0.4879, "z": -0.4507, "w": 0.0217, "d": 0.0443, "y": 0, "h": 1, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.4879, "z": 0.4507, "w": 0.0217, "d": 0.0443, "y": 0, "h": 1, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.4879, "z": 0.0, "w": 0.0145, "d": 0.9015, "y": 0.977, "h": 0.023, "color": "metal", "axis": "z", "fix": "wh"},
+    {"shape": "box", "x": 0.0, "z": -0.4507, "w": 0.9758, "d": 0.0296, "y": 0.1456, "h": 0.046, "color": "metal", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4507, "w": 0.9758, "d": 0.0296, "y": 0.1456, "h": 0.046, "color": "metal", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.971, "d": 0.8916, "y": 0.1762, "h": 0.0153, "color": "wood"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9662, "d": 0.8867, "y": 0.1916, "h": 0.1149, "color": "white", "round": 0.25},
+    {"shape": "cyl", "x": 0.0, "z": -0.4507, "w": 0.9758, "d": 0.0296, "y": 0.3448, "h": 0.023, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": -0.1208, "z": 0.4507, "w": 0.7343, "d": 0.0296, "y": 0.3448, "h": 0.023, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": -0.4507, "w": 0.9758, "d": 0.0296, "y": 0.6973, "h": 0.046, "color": "metal", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.4507, "w": 0.9758, "d": 0.0296, "y": 0.6973, "h": 0.046, "color": "metal", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.971, "d": 0.8916, "y": 0.728, "h": 0.0153, "color": "wood"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9662, "d": 0.8867, "y": 0.7433, "h": 0.1149, "color": "white", "round": 0.25},
+    {"shape": "cyl", "x": 0.0, "z": -0.4507, "w": 0.9758, "d": 0.0296, "y": 0.8966, "h": 0.023, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": -0.1208, "z": 0.4507, "w": 0.7343, "d": 0.0296, "y": 0.8966, "h": 0.023, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "box", "x": 0.2826, "z": 0.4951, "w": 0.0145, "d": 0.0394, "y": 0, "h": 0.9349, "color": "metal", "fix": "wd"},
+    {"shape": "box", "x": 0.4275, "z": 0.4951, "w": 0.0145, "d": 0.0394, "y": 0, "h": 0.9349, "color": "metal", "fix": "wd"},
+    {"shape": "cyl", "x": 0.3551, "z": 0.4951, "w": 0.1449, "d": 0.0246, "y": 0.1494, "h": 0.0192, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0.3551, "z": 0.4951, "w": 0.1449, "d": 0.0246, "y": 0.2989, "h": 0.0192, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0.3551, "z": 0.4951, "w": 0.1449, "d": 0.0246, "y": 0.4483, "h": 0.0192, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0.3551, "z": 0.4951, "w": 0.1449, "d": 0.0246, "y": 0.5977, "h": 0.0192, "color": "metal", "axis": "x", "fix": "dh"},
+    {"shape": "cyl", "x": 0.3551, "z": 0.4951, "w": 0.1449, "d": 0.0246, "y": 0.7471, "h": 0.0192, "color": "metal", "axis": "x", "fix": "dh"}
+  ]
+}

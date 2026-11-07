@@ -1,0 +1,21 @@
+{
+  "id": "mic_arm_broadcast",
+  "name": {"en": "Broadcast mic arm with dynamic mic"},
+  "size": [0.12, 0.75, 0.5],
+  "group": "media",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["broadcast mic", "dynamic mic", "mic arm", "boom arm", "podcast", "sm7b style", "xlr", "streaming", "audio"],
+  "family": "desk_mic",
+  "variant": {"en": "Broadcast arm"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4, "w": 0.4167, "d": 0.08, "y": 0.0, "h": 0.1, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": -0.4, "w": 0.2917, "d": 0.0467, "y": 0.1, "h": 0.8, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.4, "w": 0.3333, "d": 0.0533, "y": 0.88, "h": 0.08, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": -0.0267, "w": 0.2083, "d": 0.8267, "y": 0.91, "h": 0.05, "color": "metal", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4, "w": 0.2917, "d": 0.0467, "y": 0.83, "h": 0.12, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4, "w": 0.4833, "d": 0.0773, "y": 0.6, "h": 0.24, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4, "w": 0.625, "d": 0.1, "y": 0.48, "h": 0.16, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4, "w": 0.7917, "d": 0.1267, "y": 0.36, "h": 0.16, "color": "#2b2f36"}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "thermostat_round",
+  "name": {"en": "Wall thermostat (round dial)"},
+  "size": [0.09, 0.03, 0.09],
+  "group": "tech",
+  "tags": ["wall thermostat", "thermostat", "smart thermostat", "heating control", "room thermostat", "hive", "nest", "tado", "climate"],
+  "family": "thermostat",
+  "variant": {"en": "Round dial"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 1.5,
+  "parts": [
+    {"shape": "cyl", "x": 0, "z": -0.32, "w": 1, "d": 0.35, "y": 0.0, "h": 1, "color": "white", "axis": "z"},
+    {"shape": "cyl", "x": 0, "z": 0.05, "w": 0.88, "d": 0.4, "y": 0.06, "h": 0.88, "color": "metal", "axis": "z"},
+    {"shape": "cyl", "x": 0, "z": 0.3, "w": 0.7, "d": 0.2, "y": 0.15000000000000002, "h": 0.7, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0, "z": 0.42, "w": 0.25, "d": 0.06, "y": 0.375, "h": 0.25, "color": "#ff8a3a", "axis": "z", "glow": true}
+  ]
+}

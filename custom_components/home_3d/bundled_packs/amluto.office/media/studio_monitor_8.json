@@ -1,0 +1,20 @@
+{
+  "id": "studio_monitor_8",
+  "name": {"en": "Studio monitor 8\""},
+  "size": [0.295, 0.35, 0.395],
+  "group": "media",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["8 inch", "studio monitor", "nearfield", "monitor speaker", "speaker", "streaming", "audio"],
+  "family": "studio_monitor",
+  "variant": {"en": "8\""},
+  "electric": true,
+  "watts": 70,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "dark", "round": 0.08},
+    {"shape": "box", "x": 0.0, "z": 0.49, "w": 0.9, "d": 0.0171, "y": 0.04, "h": 0.92, "color": "#1c1f24"},
+    {"shape": "cyl", "x": 0.0, "z": 0.5, "w": 0.78, "d": 0.0343, "y": 0.07, "h": 0.5825, "color": "metal", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.5, "w": 0.429, "d": 0.0229, "y": 0.2011, "h": 0.3204, "color": "#1c1f24", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.5, "w": 0.28, "d": 0.0286, "y": 0.76, "h": 0.2091, "color": "metal", "axis": "z"}
+  ]
+}

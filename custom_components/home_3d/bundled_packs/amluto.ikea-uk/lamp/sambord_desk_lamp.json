@@ -1,0 +1,41 @@
+{
+  "id": "sambord_desk_lamp",
+  "name": {
+    "en": "Desk lamp, swing arm and dome shade 46 cm"
+  },
+  "size": [
+    0.16,
+    0.46,
+    0.46
+  ],
+  "group": "lamp",
+  "room": [
+    "office",
+    "bedroom",
+    "kids",
+    "hobby"
+  ],
+  "tags": [
+    "desk lamp",
+    "swing arm",
+    "black",
+    "white",
+    "dome shade"
+  ],
+  "family": "sambord_lamp",
+  "variant": {
+    "en": "Desk 46"
+  },
+  "ikea": "SAMBORD",
+  "light": "table",
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.3261, "w": 1, "d": 0.3478, "y": 0, "h": 0.0435, "color": "dark", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3261, "w": 0.1, "d": 0.0348, "y": 0.0435, "h": 0.2826, "color": "dark", "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": -0.3261, "w": 0.0875, "d": 0.0304, "y": 0.3043, "h": 0.413, "color": "dark", "tz": 0.0435, "tw": 0.0875, "td": 0.0304, "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": 0.0435, "w": 0.075, "d": 0.0261, "y": 0.6522, "h": 0.2609, "color": "dark", "tz": 0.3261, "tw": 0.075, "td": 0.0261, "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.3261, "w": 0.8125, "d": 0.2826, "y": 0.6739, "h": 0.2609, "color": "white", "profile": [[1.0, 0], [0.97, 0.3], [0.82, 0.62], [0.52, 0.88], [0.22, 1.0], [0.0, 1.0], [0.0, 0.917], [0.066, 0.917], [0.366, 0.797], [0.666, 0.537], [0.816, 0.217], [0.846, 0.0]]},
+    {"shape": "sphere", "x": 0.0, "z": 0.3261, "w": 0.2812, "d": 0.0978, "y": 0.7174, "h": 0.0978, "color": "white", "glow": true, "fix": "wdh"}
+  ]
+}

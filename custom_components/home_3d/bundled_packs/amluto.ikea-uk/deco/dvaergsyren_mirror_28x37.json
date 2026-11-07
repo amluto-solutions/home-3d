@@ -1,0 +1,36 @@
+{
+  "id": "dvaergsyren_mirror_28x37",
+  "name": {
+    "en": "Wooden-frame mirror 28x37 cm"
+  },
+  "size": [
+    0.28,
+    0.02,
+    0.37
+  ],
+  "group": "deco",
+  "room": [
+    "hall",
+    "bath",
+    "bedroom",
+    "living"
+  ],
+  "tags": [
+    "mirror",
+    "wall mirror",
+    "oak veneer",
+    "walnut veneer",
+    "wooden frame"
+  ],
+  "family": "dvaergsyren_mirror",
+  "variant": {
+    "en": "28x37"
+  },
+  "ikea": "DVÄRGSYREN",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.05, "w": 1, "d": 0.9, "y": 0, "h": 1, "color": "wood", "round": 0.02},
+    {"shape": "box", "x": 0.0, "z": 0.325, "w": 0.8214, "d": 0.35, "y": 0.0676, "h": 0.8649, "color": "glass", "fix": "d"}
+  ]
+}

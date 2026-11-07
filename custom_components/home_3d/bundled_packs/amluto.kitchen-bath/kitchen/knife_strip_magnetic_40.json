@@ -1,0 +1,26 @@
+{
+  "id": "knife_strip_magnetic_40",
+  "name": {"en": "Magnetic knife strip, 40 cm"},
+  "size": [0.4, 0.03, 0.22],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "tags": ["knife strip", "magnetic knife rack", "knives", "kitchen", "wall"],
+  "family": "knife_block",
+  "variant": {"en": "Magnetic strip"},
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.2, "w": 1, "d": 0.6667, "y": 0.55, "h": 0.1, "color": "wood", "fix": "dh"},
+    {"shape": "box", "x": -0.36, "z": 0.0, "w": 0.075, "d": 0.2, "y": 0, "h": 0.58, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "box", "x": -0.36, "z": 0.0, "w": 0.05, "d": 0.4, "y": 0.58, "h": 0.4, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": -0.12, "z": 0.0, "w": 0.075, "d": 0.2, "y": 0, "h": 0.58, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "box", "x": -0.12, "z": 0.0, "w": 0.05, "d": 0.4, "y": 0.58, "h": 0.4, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.12, "z": 0.0, "w": 0.075, "d": 0.2, "y": 0, "h": 0.58, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "box", "x": 0.12, "z": 0.0, "w": 0.05, "d": 0.4, "y": 0.58, "h": 0.4, "color": "#101114", "fix": "wdh"},
+    {"shape": "box", "x": 0.36, "z": 0.0, "w": 0.075, "d": 0.2, "y": 0, "h": 0.58, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "box", "x": 0.36, "z": 0.0, "w": 0.05, "d": 0.4, "y": 0.58, "h": 0.4, "color": "#101114", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

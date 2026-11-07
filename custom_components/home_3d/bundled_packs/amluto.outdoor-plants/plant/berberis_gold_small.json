@@ -1,0 +1,22 @@
+{
+  "id": "berberis_gold_small",
+  "name": {"en": "Berberis, golden, small"},
+  "size": [0.5, 0.5, 0.5],
+  "group": "plant",
+  "room": ["garden"],
+  "tags": ["berberis", "shrub", "barberry", "foliage", "golden"],
+  "family": "berberis_gold",
+  "variant": {"en": "Small (0.5 × 0.5 m)"},
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.05, "d": 0.05, "y": 0, "h": 0.22, "color": "#6b4c33"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.92, "d": 0.92, "y": 0.12, "h": 0.76, "color": "#d2b13a"},
+    {"shape": "sphere", "x": 0.2579, "z": 0.0798, "w": 0.5, "d": 0.5, "y": 0.12, "h": 0.5, "color": "#d2b13a"},
+    {"shape": "sphere", "x": 0.0038, "z": 0.27, "w": 0.5, "d": 0.5, "y": 0.15, "h": 0.5, "color": "#e3c752"},
+    {"shape": "sphere", "x": -0.2556, "z": 0.0871, "w": 0.5, "d": 0.5, "y": 0.12, "h": 0.5, "color": "#d2b13a"},
+    {"shape": "sphere", "x": -0.1618, "z": -0.2162, "w": 0.5, "d": 0.5, "y": 0.15, "h": 0.5, "color": "#e3c752"},
+    {"shape": "sphere", "x": 0.1556, "z": -0.2207, "w": 0.5, "d": 0.5, "y": 0.12, "h": 0.5, "color": "#d2b13a"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

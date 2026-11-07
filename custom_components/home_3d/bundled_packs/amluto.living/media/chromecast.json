@@ -1,0 +1,20 @@
+{
+  "id": "chromecast",
+  "name": {"en": "Streaming dongle (Chromecast)"},
+  "size": [0.07, 0.065, 0.014],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "office", "loft"],
+  "tags": ["chromecast", "google tv", "cast", "streaming", "streamer", "media player", "hdmi"],
+  "family": "streaming_device",
+  "variant": {"en": "Dongle"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": -0.0714, "z": 0.0, "w": 0.8571, "d": 0.9231, "y": 0.0, "h": 1.0, "color": "white", "profile": [[0, 0], [0.95, 0], [1, 0.5], [0.9, 1], [0, 1]]},
+    {"shape": "box", "x": 0.3929, "z": 0.0, "w": 0.2143, "d": 0.1231, "y": 0.2857, "h": 0.3571, "color": "dark"},
+    {"shape": "cyl", "x": -0.0714, "z": 0.0, "w": 0.1429, "d": 0.1538, "y": 0.9643, "h": 0.0357, "color": "white", "glow": true}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": -0.0714, "z": 0.0, "r": 0.4615}
+  ]
+}

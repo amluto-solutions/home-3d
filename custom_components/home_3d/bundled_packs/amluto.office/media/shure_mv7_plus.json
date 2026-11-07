@@ -1,0 +1,19 @@
+{
+  "id": "shure_mv7_plus",
+  "name": {"en": "Shure MV7+ podcast mic"},
+  "size": [0.09, 0.207, 0.164],
+  "group": "media",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["shure", "mv7+", "mv7 plus", "mv7", "usb mic", "xlr mic", "podcast mic", "microphone", "streaming", "audio"],
+  "family": "shure_usb",
+  "variant": {"en": "MV7+"},
+  "electric": true,
+  "watts": 2.5,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.2826, "w": 1.0, "d": 0.4348, "y": 0.0, "h": 0.0915, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": -0.2826, "w": 0.2222, "d": 0.0966, "y": 0.0915, "h": 0.5488, "color": "metal"},
+    {"shape": "cyl", "x": 0.0, "z": 0.1449, "w": 0.7389, "d": 0.6763, "y": 0.5793, "h": 0.4055, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4758, "w": 0.7389, "d": 0.0483, "y": 0.5793, "h": 0.4055, "color": "#2b2f36", "axis": "z"}
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "tool_chest_top_box",
+  "name": {
+    "en": "Tool chest top box"
+  },
+  "size": [
+    0.66,
+    0.32,
+    0.42
+  ],
+  "group": "storage",
+  "family": "tool_chest",
+  "variant": {
+    "en": "Top chest"
+  },
+  "room": [
+    "garage",
+    "hobby",
+    "utility"
+  ],
+  "tags": [
+    "tool box",
+    "toolbox",
+    "tool cabinet",
+    "roller cabinet",
+    "workshop",
+    "tools",
+    "mechanic"
+  ],
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.0187, "w": 0.9333, "d": 0.9625, "y": 0, "h": 0.7619, "color": "accent"},
+    {"shape": "rbox", "x": 0, "z": 0, "w": 0.9333, "d": 1.0, "y": 0.7619, "h": 0.2381, "color": "accent", "round": 0.15},
+    {"shape": "box", "x": 0, "z": 0.4938, "w": 0.4293, "d": 0.0125, "y": 0.7262, "h": 0.0357, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.4812, "w": 0.8727, "d": 0.0375, "y": 0.5103, "h": 0.2159, "color": "accent"},
+    {"shape": "box", "x": 0, "z": 0.4938, "w": 0.7818, "d": 0.0125, "y": 0.6881, "h": 0.0238, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.4812, "w": 0.8727, "d": 0.0375, "y": 0.2802, "h": 0.2159, "color": "accent"},
+    {"shape": "box", "x": 0, "z": 0.4938, "w": 0.7818, "d": 0.0125, "y": 0.4579, "h": 0.0238, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0.4812, "w": 0.8727, "d": 0.0375, "y": 0.05, "h": 0.2159, "color": "accent"},
+    {"shape": "box", "x": 0, "z": 0.4938, "w": 0.7818, "d": 0.0125, "y": 0.2278, "h": 0.0238, "color": "metal", "fix": "h"},
+    {"shape": "box", "x": -0.4803, "z": 0, "w": 0.0273, "d": 0.4375, "y": 0.5952, "h": 0.0476, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.4803, "z": 0, "w": 0.0273, "d": 0.4375, "y": 0.5952, "h": 0.0476, "color": "metal", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": 0.45, "x2": 0.5, "z2": 0.45}
+  ]
+}

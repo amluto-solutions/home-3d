@@ -1,0 +1,45 @@
+{
+  "id": "malm_chest_of_2_drawers",
+  "name": {
+    "en": "Chest of 2 drawers (bedside)"
+  },
+  "size": [
+    0.4,
+    0.48,
+    0.55
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "drawers",
+    "dresser",
+    "chest",
+    "bedside",
+    "white",
+    "high-gloss white",
+    "black-brown",
+    "white stained oak veneer",
+    "dark grey"
+  ],
+  "family": "malm_chest_of_drawers",
+  "variant": {
+    "en": "2 drawers · 40x55"
+  },
+  "ikea": "MALM",
+  "parts": [
+    {"shape": "box", "x": -0.4775, "z": -0.0187, "w": 0.045, "d": 0.9625, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4775, "z": -0.0187, "w": 0.045, "d": 0.9625, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0187, "w": 1, "d": 0.9625, "y": 0.9673, "h": 0.0327, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0187, "w": 0.91, "d": 0.9625, "y": 0, "h": 0.0327, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4917, "w": 0.91, "d": 0.0167, "y": 0.0327, "h": 0.9345, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4167, "w": 0.91, "d": 0.0417, "y": 0, "h": 0.0636, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.0636, "h": 0.4336, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 0.99, "d": 0.025, "y": 0.4973, "h": 0.0218, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.5318, "h": 0.4336, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 0.99, "d": 0.025, "y": 0.9655, "h": 0.0218, "color": "dark", "fix": "h"}
+  ]
+}

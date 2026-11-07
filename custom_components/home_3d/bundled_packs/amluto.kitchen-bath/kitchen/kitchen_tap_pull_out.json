@@ -1,0 +1,22 @@
+{
+  "id": "kitchen_tap_pull_out",
+  "name": {"en": "Kitchen tap, pull-out spray"},
+  "size": [0.05, 0.2, 0.28],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "tags": ["tap", "mixer tap", "kitchen tap", "faucet", "sink", "worktop"],
+  "family": "kitchen_tap",
+  "variant": {"en": "Pull-out"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.42, "w": 1, "d": 0.25, "y": 0, "h": 0.0429, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.42, "w": 0.64, "d": 0.16, "y": 0.0429, "h": 0.7, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.2, "w": 0.52, "d": 0.13, "y": 0.55, "h": 0.45, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.12, "w": 0.56, "d": 0.55, "y": 0.88, "h": 0.1, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.14, "w": 0.6, "d": 0.15, "y": 0.76, "h": 0.12, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "box", "x": 0.5, "z": -0.42, "w": 0.8, "d": 0.05, "y": 0.5, "h": 0.0357, "color": "#c4c8cd", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

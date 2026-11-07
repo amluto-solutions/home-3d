@@ -1,0 +1,87 @@
+{
+  "id": "kitchen_chair_simple",
+  "name": {
+    "en": "Kitchen chair"
+  },
+  "size": [
+    0.45,
+    0.5,
+    0.88
+  ],
+  "group": "seating",
+  "room": [
+    "kitchen",
+    "dining"
+  ],
+  "tags": [
+    "dining chair",
+    "wooden chair"
+  ],
+  "parts": [
+    {
+      "shape": "box",
+      "x": -0.42,
+      "z": 0.42,
+      "w": 0.08,
+      "d": 0.07,
+      "y": 0,
+      "h": 0.5,
+      "color": "wood",
+      "fix": "wd"
+    },
+    {
+      "shape": "box",
+      "x": 0.42,
+      "z": 0.42,
+      "w": 0.08,
+      "d": 0.07,
+      "y": 0,
+      "h": 0.5,
+      "color": "wood",
+      "fix": "wd"
+    },
+    {
+      "shape": "box",
+      "x": -0.42,
+      "z": -0.42,
+      "w": 0.08,
+      "d": 0.07,
+      "y": 0,
+      "h": 1,
+      "color": "wood",
+      "fix": "wd"
+    },
+    {
+      "shape": "box",
+      "x": 0.42,
+      "z": -0.42,
+      "w": 0.08,
+      "d": 0.07,
+      "y": 0,
+      "h": 1,
+      "color": "wood",
+      "fix": "wd"
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0.5,
+      "h": 0.05,
+      "color": "wood",
+      "fix": "h"
+    },
+    {
+      "shape": "box",
+      "x": 0,
+      "z": -0.42,
+      "w": 0.84,
+      "d": 0.06,
+      "y": 0.8,
+      "h": 0.16,
+      "color": "wood"
+    }
+  ]
+}

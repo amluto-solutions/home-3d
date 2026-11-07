@@ -1,0 +1,39 @@
+{
+  "id": "salt_lamp",
+  "name": {
+    "en": "Salt lamp"
+  },
+  "size": [
+    0.2,
+    0.17,
+    0.25
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "salt lamp",
+    "himalayan salt",
+    "rock salt",
+    "night light",
+    "orange glow",
+    "wellness",
+    "natural"
+  ],
+  "family": "salt_lamp",
+  "variant": {
+    "en": "Wooden base"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.65, "d": 0.7647, "y": 0, "h": 0.1, "color": "wood"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.1, "h": 0.8, "color": "#f09a5a", "tx": 0.0, "tz": 0.0, "tw": 0.6, "td": 0.5882, "glow": true},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.6, "d": 0.5882, "y": 0.76, "h": 0.24, "color": "#f09a5a", "glow": true}
+  ]
+}

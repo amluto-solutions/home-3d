@@ -1,0 +1,17 @@
+{
+  "id": "slzb_06",
+  "name": {"en": "SMLIGHT SLZB-06 Ethernet Zigbee coordinator"},
+  "size": [0.16,0.024,0.028],
+  "group": "tech",
+  "room": ["office", "utility", "hall", "living", "loft"],
+  "tags": ["zigbee stick", "zigbee dongle", "coordinator", "zigbee coordinator", "slzb-06", "slzb", "smlight", "poe", "ethernet", "network zigbee", "home assistant", "smart home"],
+  "family": "zigbee_stick",
+  "variant": {"en": "SMLIGHT SLZB-06"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": -0.1875, "z": 0, "w": 0.625, "d": 1, "y": 0, "h": 1, "color": "white", "round": 0.2},
+    {"shape": "box", "x": 0.2063, "z": 0, "w": 0.375, "d": 0.3636, "y": 0.3333, "h": 0.3333, "color": "dark"},
+    {"shape": "box", "x": -0.3875, "z": 0.4909, "w": 0.0625, "d": 0.0182, "y": 0.3333, "h": 0.125, "color": "#46d36a", "glow": true}
+  ]
+}

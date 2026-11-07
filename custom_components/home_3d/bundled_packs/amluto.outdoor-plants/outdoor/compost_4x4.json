@@ -1,0 +1,16 @@
+{
+  "id": "compost_4x4",
+  "name": {"en": "Compost, 4 × 4 m"},
+  "size": [4.0, 4.0, 0.06],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["soil", "compost", "mulch", "peat"],
+  "family": "compost",
+  "variant": {"en": "4 × 4 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#2f241a", "top": "#3b2d20"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

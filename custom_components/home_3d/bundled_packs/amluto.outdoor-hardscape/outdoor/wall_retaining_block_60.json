@@ -1,0 +1,23 @@
+{
+  "id": "wall_retaining_block_60",
+  "name": {"en": "Concrete block retaining wall, 0.6 m high"},
+  "size": [2.0, 0.3, 0.6],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["wall", "retaining wall", "concrete block", "garden wall", "landscaping", "terrace"],
+  "family": "wall_retaining_block",
+  "variant": {"en": "0.6 m high"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.995, "d": 0.9667, "y": 0, "h": 1, "color": "#9a9a96"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.49, "h": 0.02, "color": "#7e7e7a"},
+    {"shape": "box", "x": -0.25, "z": 0.0, "w": 0.006, "d": 1, "y": 0, "h": 0.5, "color": "#7e7e7a"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.006, "d": 1, "y": 0, "h": 0.5, "color": "#7e7e7a"},
+    {"shape": "box", "x": 0.25, "z": 0.0, "w": 0.006, "d": 1, "y": 0, "h": 0.5, "color": "#7e7e7a"},
+    {"shape": "box", "x": -0.125, "z": 0.0, "w": 0.006, "d": 1, "y": 0.5, "h": 0.5, "color": "#7e7e7a"},
+    {"shape": "box", "x": 0.125, "z": 0.0, "w": 0.006, "d": 1, "y": 0.5, "h": 0.5, "color": "#7e7e7a"},
+    {"shape": "box", "x": 0.375, "z": 0.0, "w": 0.006, "d": 1, "y": 0.5, "h": 0.5, "color": "#7e7e7a"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

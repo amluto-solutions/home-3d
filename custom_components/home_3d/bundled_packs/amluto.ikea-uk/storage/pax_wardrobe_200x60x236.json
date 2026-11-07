@@ -1,0 +1,49 @@
+{
+  "id": "pax_wardrobe_200x60x236",
+  "name": {
+    "en": "Wardrobe with 4 doors, 200x60x236 cm"
+  },
+  "size": [
+    2.0,
+    0.6,
+    2.36
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "wardrobe",
+    "fitted wardrobe",
+    "hinged doors",
+    "clothes storage",
+    "white",
+    "dark grey",
+    "grey-beige",
+    "white stained oak effect",
+    "walnut effect"
+  ],
+  "family": "pax_wardrobe",
+  "variant": {
+    "en": "200x236 · 4 doors"
+  },
+  "ikea": "PAX",
+  "parts": [
+    {"shape": "box", "x": -0.4955, "z": -0.0167, "w": 0.009, "d": 0.9667, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4955, "z": -0.0167, "w": 0.009, "d": 0.9667, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0167, "w": 1, "d": 0.9667, "y": 0.9924, "h": 0.0076, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0167, "w": 0.982, "d": 0.9667, "y": 0, "h": 0.0076, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4933, "w": 0.982, "d": 0.0133, "y": 0.0076, "h": 0.9847, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4667, "w": 0.982, "d": 0.0333, "y": 0, "h": 0.0339, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.375, "z": 0.4833, "w": 0.2485, "d": 0.0333, "y": 0.0021, "h": 0.9958, "color": "white"},
+    {"shape": "box", "x": -0.27, "z": 0.5, "w": 0.006, "d": 0.0367, "y": 0.5076, "h": 0.0847, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.125, "z": 0.4833, "w": 0.2485, "d": 0.0333, "y": 0.0021, "h": 0.9958, "color": "white"},
+    {"shape": "box", "x": -0.23, "z": 0.5, "w": 0.006, "d": 0.0367, "y": 0.5076, "h": 0.0847, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.125, "z": 0.4833, "w": 0.2485, "d": 0.0333, "y": 0.0021, "h": 0.9958, "color": "white"},
+    {"shape": "box", "x": 0.23, "z": 0.5, "w": 0.006, "d": 0.0367, "y": 0.5076, "h": 0.0847, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.375, "z": 0.4833, "w": 0.2485, "d": 0.0333, "y": 0.0021, "h": 0.9958, "color": "white"},
+    {"shape": "box", "x": 0.27, "z": 0.5, "w": 0.006, "d": 0.0367, "y": 0.5076, "h": 0.0847, "color": "metal", "fix": "wdh"}
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "samverka_tealight_holder_8",
+  "name": {
+    "en": "Tealight holder, white 8 cm"
+  },
+  "size": [
+    0.08,
+    0.08,
+    0.08
+  ],
+  "group": "candle",
+  "room": [
+    "living",
+    "dining",
+    "hall",
+    "bedroom"
+  ],
+  "tags": [
+    "SAMVERKA",
+    "tealight holder",
+    "candle holder",
+    "white",
+    "ceramic",
+    "stoneware"
+  ],
+  "family": "samverka_holder",
+  "variant": {
+    "en": "Tealight 8"
+  },
+  "ikea": "SAMVERKA",
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "white", "profile": [[0.62, 0], [0.9, 0.2], [1, 0.6], [0.95, 1], [0.84, 1], [0.78, 0.25]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.475, "d": 0.475, "y": 0.25, "h": 0.2, "color": "metal", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.425, "d": 0.425, "y": 0.375, "h": 0.15, "color": "#f1ead9", "fix": "wdh"}
+  ]
+}

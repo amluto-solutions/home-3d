@@ -1,0 +1,33 @@
+{
+  "id": "sedum_green_medium",
+  "name": {"en": "Sedum, green, medium"},
+  "size": [0.5, 0.5, 0.4],
+  "group": "plant",
+  "room": ["garden"],
+  "tags": ["sedum", "ground cover", "succulent", "stonecrop", "green"],
+  "family": "sedum_green",
+  "variant": {"en": "Medium (0.5 × 0.4 m)"},
+  "parts": [
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.95, "d": 0.95, "y": 0, "h": 0.96, "color": "#7fa57a"},
+    {"shape": "sphere", "x": 0.2786, "z": 0.028, "w": 0.45, "d": 0.45, "y": 0, "h": 0.72, "color": "#7fa57a"},
+    {"shape": "sphere", "x": 0.0595, "z": 0.2736, "w": 0.45, "d": 0.45, "y": 0, "h": 0.72, "color": "#92b88c"},
+    {"shape": "sphere", "x": -0.2418, "z": 0.1411, "w": 0.45, "d": 0.45, "y": 0, "h": 0.72, "color": "#7fa57a"},
+    {"shape": "sphere", "x": -0.209, "z": -0.1864, "w": 0.45, "d": 0.45, "y": 0, "h": 0.72, "color": "#92b88c"},
+    {"shape": "sphere", "x": 0.1127, "z": -0.2563, "w": 0.45, "d": 0.45, "y": 0, "h": 0.72, "color": "#7fa57a"},
+    {"shape": "sphere", "x": -0.1344, "z": 0.036, "w": 0.1, "d": 0.1, "y": 0.7417, "h": 0.1, "color": "#c4d58a"},
+    {"shape": "sphere", "x": -0.3259, "z": 0.1047, "w": 0.1, "d": 0.1, "y": 0.5837, "h": 0.1, "color": "#c4d58a"},
+    {"shape": "sphere", "x": -0.3527, "z": -0.1814, "w": 0.1, "d": 0.1, "y": 0.5415, "h": 0.1, "color": "#c4d58a"},
+    {"shape": "sphere", "x": -0.3509, "z": 0.1254, "w": 0.1, "d": 0.1, "y": 0.5602, "h": 0.1, "color": "#c4d58a"},
+    {"shape": "sphere", "x": -0.1739, "z": -0.0624, "w": 0.1, "d": 0.1, "y": 0.7063, "h": 0.1, "color": "#c4d58a"},
+    {"shape": "sphere", "x": 0.1516, "z": -0.0071, "w": 0.1, "d": 0.1, "y": 0.7319, "h": 0.1, "color": "#c4d58a"},
+    {"shape": "sphere", "x": -0.0111, "z": -0.4087, "w": 0.1, "d": 0.1, "y": 0.532, "h": 0.1, "color": "#c4d58a"},
+    {"shape": "sphere", "x": 0.0442, "z": 0.0717, "w": 0.1, "d": 0.1, "y": 0.7845, "h": 0.1, "color": "#c4d58a"},
+    {"shape": "sphere", "x": 0.3447, "z": -0.1443, "w": 0.1, "d": 0.1, "y": 0.5594, "h": 0.1, "color": "#c4d58a"},
+    {"shape": "sphere", "x": 0.2184, "z": -0.0589, "w": 0.1, "d": 0.1, "y": 0.674, "h": 0.1, "color": "#c4d58a"},
+    {"shape": "sphere", "x": -0.2753, "z": 0.2442, "w": 0.1, "d": 0.1, "y": 0.5638, "h": 0.1, "color": "#c4d58a"},
+    {"shape": "sphere", "x": 0.2628, "z": -0.0459, "w": 0.1, "d": 0.1, "y": 0.6425, "h": 0.1, "color": "#c4d58a"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

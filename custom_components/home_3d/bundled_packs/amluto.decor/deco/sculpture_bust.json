@@ -1,0 +1,19 @@
+{
+  "id": "sculpture_bust",
+  "name": {"en": "Classical bust"},
+  "size": [0.24, 0.16, 0.5],
+  "group": "deco",
+  "room": ["living", "dining", "hall", "office"],
+  "tags": ["sculpture", "bust", "statue", "ornament", "plaster", "classical", "head", "decor"],
+  "family": "sculpture_bust",
+  "variant": {"en": "On plinth"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 0.6667, "d": 0.8125, "y": 0, "h": 0.2, "color": "#d9d3c4"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.75, "d": 0.9375, "y": 0.2, "h": 0.04, "color": "#e9e4d6"},
+    {"shape": "lathe", "x": 0, "z": 0, "w": 1, "d": 0.75, "y": 0.24, "h": 0.34, "color": "#efeadd", "profile": [[0, 0], [0.9, 0], [1, 0.15], [0.7, 0.55], [0.3, 0.9], [0.18, 1], [0, 1]]},
+    {"shape": "cyl", "x": 0, "z": 0, "w": 0.2917, "d": 0.4375, "y": 0.54, "h": 0.14, "color": "#efeadd"},
+    {"shape": "sphere", "x": 0, "z": 0, "w": 0.5, "d": 0.875, "y": 0.64, "h": 0.34, "color": "#efeadd"},
+    {"shape": "box", "x": 0, "z": 0.4063, "w": 0.1042, "d": 0.25, "y": 0.76, "h": 0.08, "color": "#efeadd"}
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "rack_pdu_vertical_8_0u",
+  "name": {"en": "Vertical PDU 8-way 0U"},
+  "size": [0.052, 0.045, 0.4],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "wall",
+  "wall_y": 0.3,
+  "tags": ["pdu", "power distribution unit", "power strip", "sockets", "vertical", "0u", "rack mount", "19 inch", "rack"],
+  "family": "rack_pdu",
+  "variant": {"en": "Vertical 8-way 0U"},
+  "electric": true,
+  "watts": 2,
+  "rack": {"u": 0, "width": "half"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0111, "w": 1.0, "d": 0.9778, "y": 0.0, "h": 1.0, "color": "#3b4048", "edges": "faint"},
+    {"shape": "box", "x": 0.0, "z": 0.4556, "w": 0.6154, "d": 0.0889, "y": 0.1, "h": 0.14, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.4556, "w": 0.6154, "d": 0.0889, "y": 0.3, "h": 0.14, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.4556, "w": 0.6154, "d": 0.0889, "y": 0.5, "h": 0.14, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.4556, "w": 0.6154, "d": 0.0889, "y": 0.7, "h": 0.14, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.4556, "w": 0.3846, "d": 0.0889, "y": 0.925, "h": 0.035, "color": "accent"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

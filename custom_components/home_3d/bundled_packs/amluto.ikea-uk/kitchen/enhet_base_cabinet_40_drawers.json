@@ -1,0 +1,45 @@
+{
+  "id": "enhet_base_cabinet_40_drawers",
+  "name": {
+    "en": "Base cabinet with 3 drawers 40x60 cm"
+  },
+  "size": [
+    0.4,
+    0.62,
+    0.875
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen",
+    "utility"
+  ],
+  "tags": [
+    "kitchen cupboard",
+    "base unit",
+    "on legs",
+    "no worktop",
+    "white",
+    "anthracite",
+    "grey frame",
+    "oak effect"
+  ],
+  "family": "enhet_base_cabinet",
+  "variant": {
+    "en": "40 cm, 3 drawers"
+  },
+  "ikea": "ENHET",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0161, "w": 1, "d": 0.9677, "y": 0.1429, "h": 0.8571, "color": "white"},
+    {"shape": "cyl", "x": -0.4063, "z": -0.4234, "w": 0.0875, "d": 0.0565, "y": 0, "h": 0.1429, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4063, "z": 0.3589, "w": 0.0875, "d": 0.0565, "y": 0, "h": 0.1429, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4063, "z": -0.4234, "w": 0.0875, "d": 0.0565, "y": 0, "h": 0.1429, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4063, "z": 0.3589, "w": 0.0875, "d": 0.0565, "y": 0, "h": 0.1429, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4823, "w": 0.99, "d": 0.029, "y": 0.1429, "h": 0.2811, "color": "body", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.5, "d": 0.0355, "y": 0.2789, "h": 0.0137, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4823, "w": 0.99, "d": 0.029, "y": 0.4286, "h": 0.2811, "color": "body", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.5, "d": 0.0355, "y": 0.5646, "h": 0.0137, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4823, "w": 0.99, "d": 0.029, "y": 0.7143, "h": 0.2811, "color": "body", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.5, "d": 0.0355, "y": 0.8503, "h": 0.0137, "color": "metal", "fix": "wdh"}
+  ]
+}

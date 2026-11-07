@@ -1,0 +1,47 @@
+{
+  "id": "micke_desk_142x50",
+  "name": {
+    "en": "Desk 142x50 cm"
+  },
+  "size": [
+    1.42,
+    0.5,
+    0.75
+  ],
+  "group": "office",
+  "room": [
+    "office",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "desk",
+    "computer desk",
+    "writing desk",
+    "drawers",
+    "cable outlet",
+    "white",
+    "black-brown",
+    "anthracite"
+  ],
+  "family": "micke_desk",
+  "variant": {
+    "en": "142x50"
+  },
+  "ikea": "MICKE",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9667, "h": 0.0333, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.4937, "z": 0.0, "w": 0.0127, "d": 1, "y": 0, "h": 0.9667, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.48, "w": 0.9746, "d": 0.036, "y": 0.4667, "h": 0.4667, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.4937, "z": 0.0, "w": 0.0127, "d": 1, "y": 0, "h": 0.9667, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.2599, "z": 0.0, "w": 0.0127, "d": 1, "y": 0, "h": 0.9667, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.3768, "z": 0.0, "w": 0.2211, "d": 0.96, "y": 0.0667, "h": 0.024, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.3768, "z": 0.48, "w": 0.2183, "d": 0.036, "y": 0.0667, "h": 0.5333, "color": "white"},
+    {"shape": "box", "x": 0.3768, "z": 0.5, "w": 0.0704, "d": 0.008, "y": 0.5067, "h": 0.016, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.3768, "z": 0.0, "w": 0.2211, "d": 0.96, "y": 0.6267, "h": 0.024, "color": "white"},
+    {"shape": "box", "x": 0.3768, "z": 0.48, "w": 0.2183, "d": 0.036, "y": 0.84, "h": 0.12, "color": "white"},
+    {"shape": "box", "x": 0.3768, "z": 0.5, "w": 0.0704, "d": 0.008, "y": 0.8933, "h": 0.016, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.1056, "z": 0.48, "w": 0.4225, "d": 0.036, "y": 0.84, "h": 0.12, "color": "white"},
+    {"shape": "box", "x": -0.1056, "z": 0.5, "w": 0.0704, "d": 0.008, "y": 0.8933, "h": 0.016, "color": "dark", "fix": "wdh"}
+  ]
+}

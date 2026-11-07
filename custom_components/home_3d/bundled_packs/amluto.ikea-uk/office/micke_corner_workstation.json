@@ -1,0 +1,44 @@
+{
+  "id": "micke_corner_workstation",
+  "name": {
+    "en": "Corner desk with shelf unit"
+  },
+  "size": [
+    1.42,
+    1.0,
+    1.42
+  ],
+  "group": "office",
+  "room": [
+    "office",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "corner desk",
+    "workstation",
+    "L-shaped desk",
+    "computer desk",
+    "white",
+    "black-brown"
+  ],
+  "family": "micke_desk",
+  "variant": {
+    "en": "Corner 100x142"
+  },
+  "ikea": "MICKE",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.25, "w": 1, "d": 0.5, "y": 0.5106, "h": 0.0176, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.3239, "z": 0.25, "w": 0.3521, "d": 0.5, "y": 0.5106, "h": 0.0176, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.4937, "z": -0.25, "w": 0.0127, "d": 0.5, "y": 0, "h": 0.5282, "color": "white", "fix": "w"},
+    {"shape": "box", "x": -0.4937, "z": 0.0, "w": 0.0127, "d": 1, "y": 0, "h": 0.5282, "color": "white", "fix": "w"},
+    {"shape": "box", "x": -0.3239, "z": 0.491, "w": 0.3521, "d": 0.018, "y": 0, "h": 0.5106, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.49, "w": 0.9718, "d": 0.02, "y": 0.2817, "h": 0.2465, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0704, "z": -0.37, "w": 0.7042, "d": 0.25, "y": 0.5282, "h": 0.0127, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0704, "z": -0.37, "w": 0.7042, "d": 0.25, "y": 0.9873, "h": 0.0127, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.2746, "z": -0.37, "w": 0.0127, "d": 0.25, "y": 0.5282, "h": 0.4718, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4155, "z": -0.37, "w": 0.0127, "d": 0.25, "y": 0.5282, "h": 0.4718, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0704, "z": -0.37, "w": 0.7042, "d": 0.25, "y": 0.7606, "h": 0.0127, "color": "white"},
+    {"shape": "box", "x": 0.0704, "z": -0.49, "w": 0.7042, "d": 0.01, "y": 0.5282, "h": 0.4718, "color": "white", "fix": "d"}
+  ]
+}

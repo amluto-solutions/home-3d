@@ -1,0 +1,14 @@
+{"id":"oak_bedside_table","name":{"en":"Oak bedside table"},"size":[0.5,0.4,0.55],"group":"table","room":["bedroom"],"tags":["bedside table","nightstand","night table","bedside cabinet","side table","oak","drawer","open shelf"],"surface":true,"parts":[
+  {"shape":"box","x":-0.46,"z":0.45,"w":0.08,"d":0.1,"y":0,"h":0.1818,"color":"wood","fix":"wd"},
+  {"shape":"box","x":0.46,"z":0.45,"w":0.08,"d":0.1,"y":0,"h":0.1818,"color":"wood","fix":"wd"},
+  {"shape":"box","x":-0.46,"z":-0.45,"w":0.08,"d":0.1,"y":0,"h":0.1818,"color":"wood","fix":"wd"},
+  {"shape":"box","x":0.46,"z":-0.45,"w":0.08,"d":0.1,"y":0,"h":0.1818,"color":"wood","fix":"wd"},
+  {"shape":"box","x":-0.482,"z":0,"w":0.036,"d":1,"y":0.1818,"h":0.8182,"color":"wood"},
+  {"shape":"box","x":0.482,"z":0,"w":0.036,"d":1,"y":0.1818,"h":0.8182,"color":"wood"},
+  {"shape":"box","x":0,"z":-0.49,"w":0.928,"d":0.02,"y":0.1818,"h":0.8182,"color":"wood"},
+  {"shape":"box","x":0,"z":0,"w":1,"d":1,"y":0.9545,"h":0.0455,"color":"wood","fix":"h"},
+  {"shape":"box","x":0,"z":0.01,"w":0.928,"d":0.98,"y":0.7273,"h":0.0364,"color":"wood"},
+  {"shape":"box","x":0,"z":0.01,"w":0.928,"d":0.98,"y":0.3636,"h":0.0364,"color":"wood"},
+  {"shape":"box","x":0,"z":0.45,"w":0.928,"d":0.05,"y":0.7636,"h":0.1909,"color":"wood"},
+  {"shape":"sphere","x":0,"z":0.475,"w":0.04,"d":0.05,"y":0.8409,"h":0.0364,"color":"metal","fix":"wdh"}
+  ]}

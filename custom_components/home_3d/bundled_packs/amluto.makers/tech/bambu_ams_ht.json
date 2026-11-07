@@ -1,0 +1,112 @@
+{
+  "id": "bambu_ams_ht",
+  "name": {
+    "en": "Bambu Lab AMS HT"
+  },
+  "size": [
+    0.114,
+    0.28,
+    0.245
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage"
+  ],
+  "tags": [
+    "ams ht",
+    "bambu lab",
+    "filament",
+    "dryer"
+  ],
+  "family": "bambu_ams",
+  "variant": {
+    "en": "AMS HT"
+  },
+  "electric": false,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 0.05,
+      "color": "white",
+      "round": 0.1
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.95,
+      "h": 0.05,
+      "color": "white",
+      "round": 0.1
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": -0.48,
+      "w": 1.0,
+      "d": 0.04,
+      "y": 0.05,
+      "h": 0.9,
+      "color": "white"
+    },
+    {
+      "shape": "box",
+      "x": -0.4647,
+      "z": 0.02,
+      "w": 0.0706,
+      "d": 0.96,
+      "y": 0.05,
+      "h": 0.9,
+      "color": "white",
+      "fix": "w"
+    },
+    {
+      "shape": "box",
+      "x": 0.4647,
+      "z": 0.02,
+      "w": 0.0706,
+      "d": 0.96,
+      "y": 0.05,
+      "h": 0.9,
+      "color": "white",
+      "fix": "w"
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.0167,
+      "w": 0.7901,
+      "d": 0.9267,
+      "y": 0.2141,
+      "h": 0.5718,
+      "color": "#e8573c",
+      "axis": "z"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    },
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 0.8,
+      "d": 0.8
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "nosund_ceiling_lamp",
+  "name": {
+    "en": "Ceiling lamp, birch plywood bowl 44 cm"
+  },
+  "size": [
+    0.44,
+    0.44,
+    0.13
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "kitchen",
+    "kids"
+  ],
+  "tags": [
+    "ceiling light",
+    "birch",
+    "plywood",
+    "wood",
+    "bowl",
+    "natural",
+    "scandinavian"
+  ],
+  "ikea": "NÖSUND",
+  "light": "ceiling",
+  "electric": true,
+  "mount": "ceiling",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.2727, "d": 0.2727, "y": 0.9077, "h": 0.0923, "color": "wood", "fix": "wdh"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.9077, "color": "wood", "profile": [[1.0, 0], [1.0, 0.45], [0.82, 0.85], [0.4, 1.0], [0.0, 1.0], [0.0, 0.94], [0.37, 0.94], [0.79, 0.79], [0.97, 0.39], [0.97, 0.0]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8636, "d": 0.8636, "y": 0.0923, "h": 0.0923, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

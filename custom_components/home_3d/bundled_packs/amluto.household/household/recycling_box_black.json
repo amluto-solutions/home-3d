@@ -1,0 +1,19 @@
+{
+  "id": "recycling_box_black",
+  "name": {"en": "Recycling box"},
+  "size": [0.58, 0.4, 0.35],
+  "group": "household",
+  "room": ["garden", "utility", "garage", "kitchen", "hall"],
+  "tags": ["recycling", "kerbside box", "bin", "55 litre", "waste", "sorting", "cans", "plastic"],
+  "family": "recycling_box",
+  "variant": {"en": "Black box, 55 L"},
+  "parts": [
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9483, "d": 0.925, "y": 0, "h": 0.0857, "color": "#2c2f33"},
+    {"shape": "box", "x": 0, "z": 0.475, "w": 1, "d": 0.05, "y": 0, "h": 1, "color": "#2c2f33"},
+    {"shape": "box", "x": 0, "z": -0.475, "w": 1, "d": 0.05, "y": 0, "h": 1, "color": "#2c2f33"},
+    {"shape": "box", "x": -0.4828, "z": 0, "w": 0.0345, "d": 0.9, "y": 0, "h": 1, "color": "#2c2f33"},
+    {"shape": "box", "x": 0.4828, "z": 0, "w": 0.0345, "d": 0.9, "y": 0, "h": 1, "color": "#2c2f33"},
+    {"shape": "box", "x": 0, "z": 0.5, "w": 0.3793, "d": 0.01, "y": 0.68, "h": 0.2, "color": "#111111"},
+    {"shape": "box", "x": 0, "z": -0.5, "w": 0.3793, "d": 0.01, "y": 0.68, "h": 0.2, "color": "#111111"}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "mammut_childrens_table_77x55",
+  "name": {
+    "en": "Children's table 77x55 cm"
+  },
+  "size": [
+    0.77,
+    0.55,
+    0.48
+  ],
+  "group": "kids",
+  "room": [
+    "kids",
+    "garden"
+  ],
+  "tags": [
+    "MAMMUT",
+    "children's table",
+    "kids table",
+    "plastic table",
+    "in/outdoor",
+    "white",
+    "pink",
+    "blue",
+    "green"
+  ],
+  "family": "mammut_childrens_furniture",
+  "variant": {
+    "en": "Table 77x55"
+  },
+  "ikea": "MAMMUT",
+  "surface": true,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9271, "h": 0.0729, "color": "body", "fix": "h", "round": 0.2},
+    {"shape": "loft", "x": -0.4221, "z": -0.3909, "w": 0.0779, "d": 0.1091, "y": 0, "h": 0.9271, "color": "body", "tx": -0.4351, "tz": -0.4091, "tw": 0.0649, "td": 0.0909, "fix": "wd"},
+    {"shape": "loft", "x": -0.4221, "z": 0.3909, "w": 0.0779, "d": 0.1091, "y": 0, "h": 0.9271, "color": "body", "tx": -0.4351, "tz": 0.4091, "tw": 0.0649, "td": 0.0909, "fix": "wd"},
+    {"shape": "loft", "x": 0.4221, "z": -0.3909, "w": 0.0779, "d": 0.1091, "y": 0, "h": 0.9271, "color": "body", "tx": 0.4351, "tz": -0.4091, "tw": 0.0649, "td": 0.0909, "fix": "wd"},
+    {"shape": "loft", "x": 0.4221, "z": 0.3909, "w": 0.0779, "d": 0.1091, "y": 0, "h": 0.9271, "color": "body", "tx": 0.4351, "tz": 0.4091, "tw": 0.0649, "td": 0.0909, "fix": "wd"}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "raspberry_pi_case_4",
+  "name": {"en": "Raspberry Pi 4 in official case"},
+  "size": [0.097,0.07,0.025],
+  "group": "tech",
+  "room": ["office", "hobby", "utility", "loft"],
+  "tags": ["raspberry pi", "pi", "pi 4", "rpi", "pi case", "single board computer", "sbc", "official case", "pihole", "homelab"],
+  "family": "raspberry_pi",
+  "variant": {"en": "Pi 4 official case"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 0.56, "color": "white", "round": 0.08},
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.56, "h": 0.44, "color": "#c1272d", "round": 0.08}
+  ]
+}

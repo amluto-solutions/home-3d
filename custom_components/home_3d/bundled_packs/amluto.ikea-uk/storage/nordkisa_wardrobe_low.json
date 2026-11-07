@@ -1,0 +1,47 @@
+{
+  "id": "nordkisa_wardrobe_low",
+  "name": {
+    "en": "Open wardrobe with sliding door, 120x123 cm"
+  },
+  "size": [
+    1.2,
+    0.47,
+    1.23
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "wardrobe",
+    "open wardrobe",
+    "sliding door",
+    "bamboo",
+    "clothes rail",
+    "shelves"
+  ],
+  "family": "nordkisa_wardrobe",
+  "variant": {
+    "en": "120x123"
+  },
+  "ikea": "NORDKISA",
+  "parts": [
+    {"shape": "box", "x": -0.4917, "z": -0.0319, "w": 0.0167, "d": 0.9362, "y": 0, "h": 1, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4917, "z": -0.0319, "w": 0.0167, "d": 0.9362, "y": 0, "h": 1, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0319, "w": 1, "d": 0.9362, "y": 0.9837, "h": 0.0163, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0319, "w": 0.9667, "d": 0.9362, "y": 0, "h": 0.0163, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4915, "w": 0.9667, "d": 0.017, "y": 0.0163, "h": 0.9675, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.3936, "w": 0.9667, "d": 0.0426, "y": 0, "h": 0.0407, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0319, "w": 0.0167, "d": 0.8936, "y": 0.0407, "h": 0.9431, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0319, "w": 0.9667, "d": 0.8936, "y": 0.4878, "h": 0.0163, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.25, "z": 0.4745, "w": 0.5, "d": 0.034, "y": 0.0488, "h": 0.935, "color": "wood", "edges": "faint"},
+    {"shape": "box", "x": 0.0833, "z": 0.4957, "w": 0.0033, "d": 0.0085, "y": 0.0488, "h": 0.935, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.1667, "z": 0.4957, "w": 0.0033, "d": 0.0085, "y": 0.0488, "h": 0.935, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.25, "z": 0.4957, "w": 0.0033, "d": 0.0085, "y": 0.0488, "h": 0.935, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.3333, "z": 0.4957, "w": 0.0033, "d": 0.0085, "y": 0.0488, "h": 0.935, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.4167, "z": 0.4957, "w": 0.0033, "d": 0.0085, "y": 0.0488, "h": 0.935, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.4745, "w": 0.9833, "d": 0.0426, "y": 0.9756, "h": 0.0163, "color": "metal", "fix": "h"}
+  ]
+}

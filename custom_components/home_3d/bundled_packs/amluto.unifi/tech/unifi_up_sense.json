@@ -1,0 +1,49 @@
+{
+  "id": "unifi_up_sense",
+  "name": {
+    "en": "UniFi All-In-One Sensor"
+  },
+  "size": [
+    0.024,
+    0.024,
+    0.0835
+  ],
+  "group": "tech",
+  "tags": [
+    "all-in-one sensor",
+    "motion sensor",
+    "temperature sensor",
+    "up-sense",
+    "unifi",
+    "ubiquiti"
+  ],
+  "family": "unifi_sensor",
+  "variant": {
+    "en": "All-In-One Sensor (UP-Sense)"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white"
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0,
+      "w": 0.5,
+      "d": 0.5,
+      "y": 0.9,
+      "h": 0.05,
+      "color": "#3a8dde",
+      "glow": true
+    }
+  ]
+}

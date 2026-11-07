@@ -1,0 +1,23 @@
+{
+  "id": "kvm_box_switch",
+  "name": {"en": "KVM switch (4-port)"},
+  "size": [0.24, 0.11, 0.05],
+  "group": "tech",
+  "room": ["office", "hobby"],
+  "tags": ["kvm", "kvm switch", "usb switch", "hdmi switch", "keyboard switch", "desk", "homelab"],
+  "family": "kvm_box",
+  "variant": {"en": "4-port switch"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.0182, "w": 1, "d": 0.9636, "y": 0.0, "h": 1, "color": "metal", "round": 0.15},
+    {"shape": "cyl", "x": -0.3125, "z": 0.4818, "w": 0.0667, "d": 0.0182, "y": 0.24, "h": 0.32, "color": "dark", "axis": "z"},
+    {"shape": "box", "x": -0.3125, "z": 0.4864, "w": 0.025, "d": 0.0091, "y": 0.68, "h": 0.08, "color": "#46d36a"},
+    {"shape": "cyl", "x": -0.1042, "z": 0.4818, "w": 0.0667, "d": 0.0182, "y": 0.24, "h": 0.32, "color": "dark", "axis": "z"},
+    {"shape": "box", "x": -0.1042, "z": 0.4864, "w": 0.025, "d": 0.0091, "y": 0.68, "h": 0.08, "color": "dark"},
+    {"shape": "cyl", "x": 0.1042, "z": 0.4818, "w": 0.0667, "d": 0.0182, "y": 0.24, "h": 0.32, "color": "dark", "axis": "z"},
+    {"shape": "box", "x": 0.1042, "z": 0.4864, "w": 0.025, "d": 0.0091, "y": 0.68, "h": 0.08, "color": "dark"},
+    {"shape": "cyl", "x": 0.3125, "z": 0.4818, "w": 0.0667, "d": 0.0182, "y": 0.24, "h": 0.32, "color": "dark", "axis": "z"},
+    {"shape": "box", "x": 0.3125, "z": 0.4864, "w": 0.025, "d": 0.0091, "y": 0.68, "h": 0.08, "color": "dark"}
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "metod_base_cabinet_60",
+  "name": {
+    "en": "Base cabinet with door 60x60 cm"
+  },
+  "size": [
+    0.6,
+    0.62,
+    0.88
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen",
+    "utility"
+  ],
+  "tags": [
+    "kitchen cupboard",
+    "base unit",
+    "fitted kitchen",
+    "no worktop",
+    "white",
+    "high-gloss white",
+    "anthracite",
+    "light grey",
+    "beige",
+    "grey-green",
+    "light green",
+    "oak effect"
+  ],
+  "family": "metod_base_cabinet",
+  "variant": {
+    "en": "60 cm"
+  },
+  "ikea": "METOD",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0484, "w": 0.9933, "d": 0.8387, "y": 0, "h": 0.0909, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0161, "w": 1, "d": 0.9677, "y": 0.0909, "h": 0.9091, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4823, "w": 0.9933, "d": 0.029, "y": 0.0909, "h": 0.9045, "color": "body", "fix": "d"},
+    {"shape": "box", "x": -0.4333, "z": 0.5, "w": 0.02, "d": 0.0355, "y": 0.7727, "h": 0.1818, "color": "metal", "fix": "wdh"}
+  ]
+}

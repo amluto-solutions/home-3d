@@ -1,0 +1,191 @@
+{
+  "id": "anycubic_m7_3d_printer_camera",
+  "name": {
+    "en": "Anycubic Photon Mono M7 with camera"
+  },
+  "size": [
+    0.312,
+    0.315,
+    0.52
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage",
+    "loft",
+    "utility"
+  ],
+  "tags": [
+    "3d printer",
+    "printer",
+    "resin",
+    "msla",
+    "uv",
+    "maker",
+    "anycubic",
+    "photon",
+    "m7"
+  ],
+  "family": "anycubic_m7",
+  "variant": {
+    "en": "With camera"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.0,
+      "h": 0.3,
+      "color": "body",
+      "round": 0.1
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.4926,
+      "w": 0.4,
+      "d": 0.0148,
+      "y": 0.105,
+      "h": 0.12,
+      "color": "dark",
+      "round": 0.2
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.02,
+      "w": 0.7,
+      "d": 0.6,
+      "y": 0.3,
+      "h": 0.0122,
+      "color": "metal"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": -0.4185,
+      "w": 0.5,
+      "d": 0.1111,
+      "y": 0.3,
+      "h": 0.6796,
+      "color": "metal"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": -0.1,
+      "w": 0.5,
+      "d": 0.5,
+      "y": 0.685,
+      "h": 0.0163,
+      "color": "metal"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.0,
+      "w": 1.0,
+      "d": 1.0,
+      "y": 0.9837,
+      "h": 0.0163,
+      "color": "#c9791f"
+    },
+    {
+      "shape": "box",
+      "x": -0.4852,
+      "z": 0.0,
+      "w": 0.0296,
+      "d": 1.0,
+      "y": 0.3,
+      "h": 0.6837,
+      "color": "#c9791f",
+      "fix": "w"
+    },
+    {
+      "shape": "box",
+      "x": 0.4852,
+      "z": 0.0,
+      "w": 0.0296,
+      "d": 1.0,
+      "y": 0.3,
+      "h": 0.6837,
+      "color": "#c9791f",
+      "fix": "w"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": -0.4852,
+      "w": 1.0,
+      "d": 0.0296,
+      "y": 0.3,
+      "h": 0.6837,
+      "color": "#c9791f"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.4852,
+      "w": 0.9407,
+      "d": 0.0296,
+      "y": 0.3082,
+      "h": 0.6673,
+      "color": "glass"
+    },
+    {
+      "shape": "box",
+      "x": 0.0,
+      "z": 0.3,
+      "w": 0.6,
+      "d": 0.0444,
+      "y": 0.9673,
+      "h": 0.0122,
+      "color": "#b57cff",
+      "glow": true
+    },
+    {
+      "shape": "rbox",
+      "x": 0.0,
+      "z": 0.4667,
+      "w": 0.1704,
+      "d": 0.0667,
+      "y": 0.8735,
+      "h": 0.0694,
+      "color": "metal",
+      "round": 0.3
+    },
+    {
+      "shape": "cyl",
+      "x": 0.0,
+      "z": 0.4778,
+      "w": 0.0741,
+      "d": 0.037,
+      "y": 0.8939,
+      "h": 0.0408,
+      "color": "#15151a",
+      "axis": "z"
+    }
+  ],
+  "symbol": [
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1
+    },
+    {
+      "shape": "rect",
+      "x": 0,
+      "z": 0,
+      "w": 0.8,
+      "d": 0.8
+    }
+  ]
+}

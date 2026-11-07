@@ -1,0 +1,23 @@
+{
+  "id": "tray_metal",
+  "name": {"en": "Metal tray"},
+  "size": [0.4, 0.25, 0.04],
+  "group": "tray",
+  "room": ["living", "dining", "bedroom", "hall", "kitchen"],
+  "tags": ["tray", "serving tray", "decor tray", "coffee table", "metal", "black", "steel"],
+  "family": "tray",
+  "variant": {"en": "Black metal"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.3, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.488, "w": 1.0, "d": 0.024, "y": 0.0, "h": 1.0, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.488, "w": 1.0, "d": 0.024, "y": 0.0, "h": 1.0, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": -0.4925, "z": 0.0, "w": 0.015, "d": 1.0, "y": 0.0, "h": 1.0, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": -0.4925, "z": 0.0, "w": 0.0165, "d": 0.3, "y": 0.5, "h": 0.3, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.4925, "z": 0.0, "w": 0.015, "d": 1.0, "y": 0.0, "h": 1.0, "color": "dark", "fix": "w"},
+    {"shape": "box", "x": 0.4925, "z": 0.0, "w": 0.0165, "d": 0.3, "y": 0.5, "h": 0.3, "color": "dark", "fix": "wh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

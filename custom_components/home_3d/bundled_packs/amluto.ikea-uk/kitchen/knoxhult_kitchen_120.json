@@ -1,0 +1,45 @@
+{
+  "id": "knoxhult_kitchen_120",
+  "name": {
+    "en": "Kitchen 120 cm"
+  },
+  "size": [
+    1.2,
+    0.61,
+    2.2
+  ],
+  "group": "kitchen",
+  "room": [
+    "kitchen",
+    "utility"
+  ],
+  "tags": [
+    "fitted kitchen",
+    "kitchen units",
+    "wall cabinets",
+    "white",
+    "white frame",
+    "dark grey",
+    "oak effect"
+  ],
+  "family": "knoxhult_kitchen",
+  "variant": {
+    "en": "120 cm"
+  },
+  "ikea": "KNOXHULT",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0574, "w": 0.9917, "d": 0.8197, "y": 0, "h": 0.0364, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.0246, "w": 1, "d": 0.9508, "y": 0.0364, "h": 0.3609, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.3973, "h": 0.0164, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.25, "z": 0.4656, "w": 0.4967, "d": 0.0295, "y": 0.0364, "h": 0.3573, "color": "body", "fix": "d"},
+    {"shape": "box", "x": -0.0333, "z": 0.5, "w": 0.01, "d": 0.0361, "y": 0.3045, "h": 0.0727, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.25, "z": 0.4656, "w": 0.4967, "d": 0.0295, "y": 0.3273, "h": 0.0664, "color": "body", "fix": "dh"},
+    {"shape": "box", "x": 0.25, "z": 0.5, "w": 0.25, "d": 0.0361, "y": 0.3586, "h": 0.0055, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": 0.25, "z": 0.4656, "w": 0.4967, "d": 0.0295, "y": 0.0364, "h": 0.2891, "color": "body", "fix": "d"},
+    {"shape": "box", "x": 0.4667, "z": 0.5, "w": 0.01, "d": 0.0361, "y": 0.2364, "h": 0.0727, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.25, "z": -0.2541, "w": 0.5, "d": 0.4918, "y": 0.6591, "h": 0.3409, "color": "white"},
+    {"shape": "box", "x": -0.25, "z": 0.0066, "w": 0.4967, "d": 0.0295, "y": 0.6591, "h": 0.3391, "color": "body", "fix": "d"},
+    {"shape": "box", "x": -0.4667, "z": 0.041, "w": 0.01, "d": 0.0361, "y": 0.6773, "h": 0.0727, "color": "metal", "fix": "wdh"}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "projector_ultra_short_throw",
+  "name": {"en": "Projector, ultra short throw"},
+  "size": [0.55, 0.36, 0.13],
+  "group": "media",
+  "room": ["living", "loft", "bedroom", "office", "kids"],
+  "tags": ["projector", "beamer", "home cinema", "movie", "4k projector", "short throw"],
+  "family": "projector",
+  "variant": {"en": "Ultra short throw"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": -0.4273, "z": 0.3611, "w": 0.0455, "d": 0.0694, "y": 0.0, "h": 0.0923, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4273, "z": 0.3611, "w": 0.0455, "d": 0.0694, "y": 0.0, "h": 0.0923, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": -0.3611, "w": 0.0455, "d": 0.0694, "y": 0.0, "h": 0.0923, "color": "dark", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": -0.0139, "w": 1.0, "d": 0.9722, "y": 0.0923, "h": 0.9077, "color": "white", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": -0.2917, "w": 0.7818, "d": 0.25, "y": 0.9846, "h": 0.0154, "color": "dark", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": -0.2917, "w": 0.1273, "d": 0.1667, "y": 0.9077, "h": 0.0923, "color": "glass"},
+    {"shape": "rbox", "x": 0.0, "z": 0.4833, "w": 0.9273, "d": 0.0333, "y": 0.1692, "h": 0.6769, "color": "fabric", "round": 0.3}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": "surefeed_pet_feeder_connect",
+  "name": {
+    "en": "SureFeed Microchip Pet Feeder Connect"
+  },
+  "size": [
+    0.23,
+    0.32,
+    0.2
+  ],
+  "group": "pets",
+  "room": [
+    "kitchen",
+    "utility",
+    "hall",
+    "conservatory"
+  ],
+  "tags": [
+    "sure petcare",
+    "surepet",
+    "surefeed",
+    "microchip",
+    "pet feeder",
+    "feeder",
+    "cat feeder",
+    "dog feeder",
+    "smart",
+    "food bowl",
+    "connect",
+    "hub"
+  ],
+  "family": "surefeed_feeder",
+  "variant": {
+    "en": "Connect"
+  },
+  "mount": "floor",
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 0.55,
+      "color": "white",
+      "round": 0.2
+    },
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0.08,
+      "w": 0.8,
+      "d": 0.7,
+      "y": 0.5,
+      "h": 0.5,
+      "color": "#4a5258",
+      "round": 0.2
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0.12,
+      "w": 0.55,
+      "d": 0.55,
+      "y": 0.52,
+      "h": 0.1,
+      "color": "#3d7ea6"
+    },
+    {
+      "shape": "box",
+      "x": 0.3,
+      "z": 0.5,
+      "w": 0.1,
+      "d": 0.02,
+      "y": 0.4,
+      "h": 0.04,
+      "color": "#46d36a",
+      "glow": true
+    }
+  ]
+}

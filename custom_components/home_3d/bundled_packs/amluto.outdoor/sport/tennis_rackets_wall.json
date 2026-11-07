@@ -1,0 +1,24 @@
+{
+  "id": "tennis_rackets_wall",
+  "name": {"en": "Tennis rackets on a wall"},
+  "size": [0.6, 0.05, 0.7],
+  "group": "sport",
+  "room": ["hall", "living", "hobby", "garage", "kids"],
+  "tags": ["tennis", "rackets", "racquets", "wall display", "wall decor", "pair"],
+  "family": "tennis_rackets_wall",
+  "variant": {"en": "Pair"},
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "cyl", "x": -0.25, "z": -0.35, "w": 0.02, "d": 0.3, "y": 0.97, "h": 0.03, "color": "dark", "axis": "z"},
+    {"shape": "sphere", "x": -0.25, "z": -0.05, "w": 0.45, "d": 0.5, "y": 0.53, "h": 0.45, "color": "#1f5fa8"},
+    {"shape": "sphere", "x": -0.25, "z": 0.0, "w": 0.3833, "d": 0.56, "y": 0.56, "h": 0.39, "color": "#ece9dc"},
+    {"shape": "loft", "x": -0.25, "z": -0.05, "w": 0.05, "d": 0.4, "y": 0.36, "h": 0.19, "color": "#1f5fa8", "tw": 0.12, "td": 0.02},
+    {"shape": "cyl", "x": -0.25, "z": -0.05, "w": 0.0533, "d": 0.5, "y": 0.0, "h": 0.37, "color": "dark"},
+    {"shape": "cyl", "x": 0.25, "z": -0.35, "w": 0.02, "d": 0.3, "y": 0.97, "h": 0.03, "color": "dark", "axis": "z"},
+    {"shape": "sphere", "x": 0.25, "z": -0.05, "w": 0.45, "d": 0.5, "y": 0.53, "h": 0.45, "color": "#c62828"},
+    {"shape": "sphere", "x": 0.25, "z": 0.0, "w": 0.3833, "d": 0.56, "y": 0.56, "h": 0.39, "color": "#ece9dc"},
+    {"shape": "loft", "x": 0.25, "z": -0.05, "w": 0.05, "d": 0.4, "y": 0.36, "h": 0.19, "color": "#c62828", "tw": 0.12, "td": 0.02},
+    {"shape": "cyl", "x": 0.25, "z": -0.05, "w": 0.0533, "d": 0.5, "y": 0.0, "h": 0.37, "color": "#f0eee8"}
+  ]
+}

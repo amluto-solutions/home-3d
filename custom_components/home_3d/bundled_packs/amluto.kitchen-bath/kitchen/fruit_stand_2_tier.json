@@ -1,0 +1,26 @@
+{
+  "id": "fruit_stand_2_tier",
+  "name": {"en": "Fruit stand, 2 tier, with fruit"},
+  "size": [0.28, 0.28, 0.38],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "tags": ["fruit bowl", "fruit basket", "fruit stand", "apples", "oranges", "kitchen", "worktop"],
+  "family": "fruit_basket",
+  "variant": {"en": "2 tier"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0429, "d": 0.0429, "y": 0.0526, "h": 0.9474, "color": "#c4c8cd", "fix": "wd"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.0526, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.12, "h": 0.14, "color": "#c4c8cd", "profile": [[0, 0], [1, 0.6], [1, 1], [0.9, 1], [0, 0.1]]},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.8, "y": 0.5, "h": 0.12, "color": "#c4c8cd", "profile": [[0, 0], [1, 0.6], [1, 1], [0.9, 1], [0, 0.1]]},
+    {"shape": "sphere", "x": -0.2857, "z": 0.0714, "w": 0.25, "d": 0.25, "y": 0.26, "h": 0.1842, "color": "#c9372c", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.2857, "z": 0.1786, "w": 0.25, "d": 0.25, "y": 0.26, "h": 0.1842, "color": "#e8a329", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.0, "z": -0.2143, "w": 0.25, "d": 0.25, "y": 0.26, "h": 0.1842, "color": "#7aa63a", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.1429, "z": -0.0357, "w": 0.25, "d": 0.25, "y": 0.26, "h": 0.1842, "color": "#e9d04a", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.1786, "z": 0.0714, "w": 0.25, "d": 0.25, "y": 0.26, "h": 0.1842, "color": "#c9372c", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.2143, "d": 0.2143, "y": 0.62, "h": 0.1579, "color": "#c9372c", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

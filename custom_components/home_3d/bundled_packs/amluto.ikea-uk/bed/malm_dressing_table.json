@@ -1,0 +1,37 @@
+{
+  "id": "malm_dressing_table",
+  "name": {
+    "en": "Dressing table with glass top"
+  },
+  "size": [
+    1.2,
+    0.41,
+    0.78
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom"
+  ],
+  "tags": [
+    "vanity table",
+    "makeup table",
+    "desk",
+    "glass top",
+    "white",
+    "high-gloss white",
+    "dark grey",
+    "black-brown"
+  ],
+  "ikea": "MALM",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9744, "h": 0.0256, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0244, "w": 0.9333, "d": 0.8049, "y": 0.9718, "h": 0.0051, "color": "glass", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9333, "d": 0.9024, "y": 0.8205, "h": 0.1538, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.4512, "w": 0.9167, "d": 0.0049, "y": 0.8205, "h": 0.0154, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": -0.4833, "z": -0.4512, "w": 0.0333, "d": 0.0976, "y": 0, "h": 0.9744, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": -0.4833, "z": 0.4512, "w": 0.0333, "d": 0.0976, "y": 0, "h": 0.9744, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4833, "z": -0.4512, "w": 0.0333, "d": 0.0976, "y": 0, "h": 0.9744, "color": "white", "fix": "wdh"},
+    {"shape": "box", "x": 0.4833, "z": 0.4512, "w": 0.0333, "d": 0.0976, "y": 0, "h": 0.9744, "color": "white", "fix": "wdh"}
+  ]
+}

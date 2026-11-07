@@ -1,0 +1,18 @@
+{
+  "id": "fire_blanket",
+  "name": {"en": "Fire blanket"},
+  "size": [0.2, 0.045, 0.21],
+  "group": "household",
+  "room": ["kitchen", "hall", "utility"],
+  "tags": ["fire safety", "kitchen", "blanket", "chip pan", "fire", "safety"],
+  "family": "fire_blanket",
+  "variant": {"en": "In wall holder"},
+  "mount": "wall",
+  "wall_y": 1.4,
+  "parts": [
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#c0262b", "round": 0.15},
+    {"shape": "box", "x": 0, "z": 0.5, "w": 0.7, "d": 0.0889, "y": 0.5476, "h": 0.3333, "color": "#f2eee2"},
+    {"shape": "box", "x": -0.15, "z": 0.5, "w": 0.06, "d": 0.2667, "y": 0, "h": 0.4762, "color": "#f2eee2"},
+    {"shape": "box", "x": 0.15, "z": 0.5, "w": 0.06, "d": 0.2667, "y": 0, "h": 0.4762, "color": "#f2eee2"}
+  ]
+}

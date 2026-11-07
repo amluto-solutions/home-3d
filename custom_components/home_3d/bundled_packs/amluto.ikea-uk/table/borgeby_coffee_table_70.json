@@ -1,0 +1,38 @@
+{
+  "id": "borgeby_coffee_table_70",
+  "name": {
+    "en": "Round coffee table 70 cm"
+  },
+  "size": [
+    0.7,
+    0.7,
+    0.45
+  ],
+  "group": "table",
+  "room": [
+    "living",
+    "bedroom"
+  ],
+  "tags": [
+    "coffee table",
+    "round",
+    "shelf",
+    "birch veneer",
+    "black"
+  ],
+  "family": "borgeby_table",
+  "variant": {
+    "en": "Coffee table 70"
+  },
+  "ikea": "BORGEBY",
+  "surface": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9556, "h": 0.0444, "color": "wood", "fix": "h"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9, "h": 0.0556, "color": "wood", "fix": "h", "profile": [[0.97, 0], [1, 0], [1, 1], [0.97, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8857, "d": 0.8857, "y": 0.1333, "h": 0.04, "color": "wood", "fix": "h"},
+    {"shape": "cyl", "x": 0.2929, "z": 0.2929, "w": 0.0429, "d": 0.0429, "y": 0, "h": 0.9556, "color": "wood", "fix": "wd"},
+    {"shape": "cyl", "x": -0.2929, "z": 0.2929, "w": 0.0429, "d": 0.0429, "y": 0, "h": 0.9556, "color": "wood", "fix": "wd"},
+    {"shape": "cyl", "x": -0.2929, "z": -0.2929, "w": 0.0429, "d": 0.0429, "y": 0, "h": 0.9556, "color": "wood", "fix": "wd"},
+    {"shape": "cyl", "x": 0.2929, "z": -0.2929, "w": 0.0429, "d": 0.0429, "y": 0, "h": 0.9556, "color": "wood", "fix": "wd"}
+  ]
+}

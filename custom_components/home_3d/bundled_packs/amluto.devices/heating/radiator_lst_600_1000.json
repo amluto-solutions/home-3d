@@ -1,0 +1,54 @@
+{
+  "id": "radiator_lst_600_1000",
+  "name": {
+    "en": "Low surface temperature radiator"
+  },
+  "size": [
+    1.0,
+    0.115,
+    0.64
+  ],
+  "group": "heating",
+  "room": [
+    "living",
+    "bedroom",
+    "kitchen",
+    "hall",
+    "office",
+    "kids",
+    "bath",
+    "utility",
+    "conservatory"
+  ],
+  "tags": [
+    "radiator",
+    "lst",
+    "low surface temperature",
+    "school radiator",
+    "care home",
+    "hospital",
+    "central heating",
+    "trv"
+  ],
+  "family": "radiator_lst",
+  "variant": {
+    "en": "600 × 1000 mm"
+  },
+  "mount": "wall",
+  "wall_y": 0.11,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0625, "h": 0.9375, "color": "white", "round": 0.18},
+    {"shape": "box", "x": 0.0, "z": 0.1, "w": 0.94, "d": 0.55, "y": 0.9938, "h": 0.0063, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.4826, "w": 0.92, "d": 0.0348, "y": 0.175, "h": 0.0187, "color": "#d4d4cf"},
+    {"shape": "box", "x": 0.0, "z": 0.4826, "w": 0.92, "d": 0.0348, "y": 0.2687, "h": 0.0187, "color": "#d4d4cf"},
+    {"shape": "box", "x": 0.0, "z": 0.4826, "w": 0.92, "d": 0.0348, "y": 0.3625, "h": 0.0187, "color": "#d4d4cf"},
+    {"shape": "box", "x": 0.0, "z": 0.4826, "w": 0.92, "d": 0.0348, "y": 0.4562, "h": 0.0187, "color": "#d4d4cf"},
+    {"shape": "box", "x": 0.0, "z": 0.4826, "w": 0.92, "d": 0.0348, "y": 0.55, "h": 0.0187, "color": "#d4d4cf"},
+    {"shape": "box", "x": 0.0, "z": 0.4826, "w": 0.92, "d": 0.0348, "y": 0.6437, "h": 0.0187, "color": "#d4d4cf"},
+    {"shape": "box", "x": 0.0, "z": 0.4826, "w": 0.92, "d": 0.0348, "y": 0.7375, "h": 0.0187, "color": "#d4d4cf"},
+    {"shape": "cyl", "x": -0.45, "z": -0.3261, "w": 0.022, "d": 0.1913, "y": 0.0, "h": 0.0781, "color": "metal"},
+    {"shape": "cyl", "x": 0.45, "z": -0.3261, "w": 0.022, "d": 0.1913, "y": 0.0, "h": 0.0781, "color": "metal"},
+    {"shape": "cyl", "x": 0.45, "z": -0.1957, "w": 0.035, "d": 0.3043, "y": 0.0187, "h": 0.0437, "color": "metal"},
+    {"shape": "cyl", "x": 0.45, "z": -0.1957, "w": 0.03, "d": 0.3478, "y": 0.0219, "h": 0.0375, "color": "accent"}
+  ]
+}

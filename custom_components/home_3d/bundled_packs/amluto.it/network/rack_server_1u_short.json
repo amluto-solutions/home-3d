@@ -1,0 +1,27 @@
+{
+  "id": "rack_server_1u_short",
+  "name": {"en": "Rack server 1U short-depth"},
+  "size": [0.4826, 0.4, 0.0437],
+  "group": "network",
+  "room": ["office", "utility", "loft", "hall", "garage"],
+  "mount": "surface",
+  "tags": ["server", "rack server", "short depth", "1u", "rack mount", "19 inch", "rack"],
+  "family": "rack_server",
+  "variant": {"en": "Server 1U short-depth"},
+  "electric": true,
+  "watts": 90,
+  "rack": {"u": 1},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.0012, "w": 0.9163, "d": 0.9975, "y": 0.0, "h": 1.0, "color": "#3b4048", "edges": "faint"},
+    {"shape": "box", "x": -0.4793, "z": 0.495, "w": 0.0414, "d": 0.01, "y": 0.0, "h": 1.0, "color": "#3b4048"},
+    {"shape": "box", "x": 0.4793, "z": 0.495, "w": 0.0414, "d": 0.01, "y": 0.0, "h": 1.0, "color": "#3b4048"},
+    {"shape": "box", "x": -0.3322, "z": 0.495, "w": 0.2114, "d": 0.01, "y": 0.1373, "h": 0.7254, "color": "#2a2d33"},
+    {"shape": "box", "x": -0.1146, "z": 0.495, "w": 0.2114, "d": 0.01, "y": 0.1373, "h": 0.7254, "color": "#2a2d33"},
+    {"shape": "box", "x": 0.355, "z": 0.495, "w": 0.029, "d": 0.01, "y": 0.3398, "h": 0.3204, "color": "metal"},
+    {"shape": "box", "x": 0.4068, "z": 0.495, "w": 0.0083, "d": 0.01, "y": 0.5915, "h": 0.0915, "color": "accent"},
+    {"shape": "box", "x": 0.3964, "z": 0.495, "w": 0.029, "d": 0.01, "y": 0.3169, "h": 0.1831, "color": "glass"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

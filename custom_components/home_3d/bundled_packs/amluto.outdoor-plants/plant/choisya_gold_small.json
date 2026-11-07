@@ -1,0 +1,36 @@
+{
+  "id": "choisya_gold_small",
+  "name": {"en": "Choisya, golden leaf, small"},
+  "size": [0.7, 0.7, 0.7],
+  "group": "plant",
+  "room": ["garden"],
+  "tags": ["choisya", "shrub", "mexican orange blossom", "golden"],
+  "family": "choisya_gold",
+  "variant": {"en": "Small (0.7 × 0.7 m)"},
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.05, "d": 0.05, "y": 0, "h": 0.22, "color": "#6b4c33"},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.92, "d": 0.92, "y": 0.12, "h": 0.76, "color": "#c9b53d"},
+    {"shape": "sphere", "x": 0.2579, "z": 0.0798, "w": 0.5, "d": 0.5, "y": 0.12, "h": 0.5, "color": "#c9b53d"},
+    {"shape": "sphere", "x": 0.0038, "z": 0.27, "w": 0.5, "d": 0.5, "y": 0.15, "h": 0.5, "color": "#dcc94f"},
+    {"shape": "sphere", "x": -0.2556, "z": 0.0871, "w": 0.5, "d": 0.5, "y": 0.12, "h": 0.5, "color": "#c9b53d"},
+    {"shape": "sphere", "x": -0.1618, "z": -0.2162, "w": 0.5, "d": 0.5, "y": 0.15, "h": 0.5, "color": "#dcc94f"},
+    {"shape": "sphere", "x": 0.1556, "z": -0.2207, "w": 0.5, "d": 0.5, "y": 0.12, "h": 0.5, "color": "#c9b53d"},
+    {"shape": "sphere", "x": -0.4337, "z": 0.0701, "w": 0.05, "d": 0.05, "y": 0.4255, "h": 0.045, "color": "#fbfaf4"},
+    {"shape": "sphere", "x": -0.3864, "z": -0.0688, "w": 0.05, "d": 0.05, "y": 0.5816, "h": 0.045, "color": "#fbfaf4"},
+    {"shape": "sphere", "x": 0.3674, "z": -0.1034, "w": 0.05, "d": 0.05, "y": 0.6069, "h": 0.045, "color": "#fbfaf4"},
+    {"shape": "sphere", "x": -0.0954, "z": -0.4389, "w": 0.05, "d": 0.05, "y": 0.37, "h": 0.045, "color": "#fbfaf4"},
+    {"shape": "sphere", "x": 0.4152, "z": -0.1181, "w": 0.05, "d": 0.05, "y": 0.4595, "h": 0.045, "color": "#fbfaf4"},
+    {"shape": "sphere", "x": 0.2687, "z": 0.345, "w": 0.05, "d": 0.05, "y": 0.4353, "h": 0.045, "color": "#fbfaf4"},
+    {"shape": "sphere", "x": 0.1687, "z": -0.2226, "w": 0.05, "d": 0.05, "y": 0.7708, "h": 0.045, "color": "#fbfaf4"},
+    {"shape": "sphere", "x": -0.2192, "z": -0.2559, "w": 0.05, "d": 0.05, "y": 0.6919, "h": 0.045, "color": "#fbfaf4"},
+    {"shape": "sphere", "x": 0.0121, "z": -0.4466, "w": 0.05, "d": 0.05, "y": 0.3851, "h": 0.045, "color": "#fbfaf4"},
+    {"shape": "sphere", "x": 0.3863, "z": -0.169, "w": 0.05, "d": 0.05, "y": 0.497, "h": 0.045, "color": "#fbfaf4"},
+    {"shape": "sphere", "x": 0.1085, "z": 0.2483, "w": 0.05, "d": 0.05, "y": 0.7801, "h": 0.045, "color": "#fbfaf4"},
+    {"shape": "sphere", "x": -0.4472, "z": 0.0695, "w": 0.05, "d": 0.05, "y": 0.3442, "h": 0.045, "color": "#fbfaf4"},
+    {"shape": "sphere", "x": 0.3302, "z": -0.3085, "w": 0.05, "d": 0.05, "y": 0.3496, "h": 0.045, "color": "#fbfaf4"},
+    {"shape": "sphere", "x": -0.1357, "z": 0.4057, "w": 0.05, "d": 0.05, "y": 0.4748, "h": 0.045, "color": "#fbfaf4"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

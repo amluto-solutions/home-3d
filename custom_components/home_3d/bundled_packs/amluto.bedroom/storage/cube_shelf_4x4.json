@@ -1,0 +1,51 @@
+{
+  "id": "cube_shelf_4x4",
+  "name": {
+    "en": "Cube shelf 4 × 4"
+  },
+  "size": [
+    1.466,
+    0.39,
+    1.466
+  ],
+  "group": "storage",
+  "family": "cube_shelf",
+  "variant": {
+    "en": "4 × 4 cubes"
+  },
+  "room": [
+    "living",
+    "office",
+    "kids",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "cube storage",
+    "cube unit",
+    "shelving unit",
+    "room divider",
+    "shelves",
+    "shelving",
+    "bookcase",
+    "storage unit"
+  ],
+  "parts": [
+    {"shape": "box", "x": -0.4867, "z": 0, "w": 0.0266, "d": 1.0, "y": 0, "h": 1.0, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4867, "z": 0, "w": 0.0266, "d": 1.0, "y": 0, "h": 1.0, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9468, "d": 1.0, "y": 0, "h": 0.0266, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9468, "d": 1.0, "y": 0.9734, "h": 0.0266, "color": "white", "fix": "h"},
+    {"shape": "box", "x": -0.2394, "z": 0, "w": 0.0109, "d": 1.0, "y": 0.0266, "h": 0.9468, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.0109, "d": 1.0, "y": 0.0266, "h": 0.9468, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.2394, "z": 0, "w": 0.0109, "d": 1.0, "y": 0.0266, "h": 0.9468, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9468, "d": 1.0, "y": 0.2551, "h": 0.0109, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9468, "d": 1.0, "y": 0.4945, "h": 0.0109, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0, "z": 0, "w": 0.9468, "d": 1.0, "y": 0.734, "h": 0.0109, "color": "white", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.2394, "z1": -0.5, "x2": -0.2394, "z2": 0.5},
+    {"shape": "line", "x1": 0, "z1": -0.5, "x2": 0, "z2": 0.5},
+    {"shape": "line", "x1": 0.2394, "z1": -0.5, "x2": 0.2394, "z2": 0.5}
+  ]
+}

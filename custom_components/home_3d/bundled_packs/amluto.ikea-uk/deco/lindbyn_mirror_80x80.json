@@ -1,0 +1,38 @@
+{
+  "id": "lindbyn_mirror_80x80",
+  "name": {
+    "en": "Mirror, thin frame 80x80 cm"
+  },
+  "size": [
+    0.8,
+    0.03,
+    0.8
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "hall",
+    "bedroom",
+    "bath",
+    "dining"
+  ],
+  "tags": [
+    "mirror",
+    "wall mirror",
+    "thin frame",
+    "black",
+    "gold colour",
+    "square"
+  ],
+  "family": "lindbyn_mirror",
+  "variant": {
+    "en": "80x80"
+  },
+  "ikea": "LINDBYN",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.0333, "w": 1, "d": 0.9333, "y": 0, "h": 1, "color": "dark", "round": 0.1},
+    {"shape": "box", "x": 0.0, "z": 0.3833, "w": 0.9625, "d": 0.2333, "y": 0.0187, "h": 0.9625, "color": "glass", "fix": "d"}
+  ]
+}

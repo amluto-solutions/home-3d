@@ -1,0 +1,42 @@
+{
+  "id": "alex_desk_132x58",
+  "name": {
+    "en": "Desk with drawer 132x58 cm"
+  },
+  "size": [
+    1.32,
+    0.58,
+    0.76
+  ],
+  "group": "office",
+  "room": [
+    "office",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "ALEX",
+    "desk",
+    "writing desk",
+    "computer desk",
+    "drawer",
+    "white",
+    "dark grey",
+    "oak effect"
+  ],
+  "family": "alex_desk",
+  "variant": {
+    "en": "132x58"
+  },
+  "ikea": "ALEX",
+  "surface": true,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9605, "h": 0.0395, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": -0.4848, "z": 0.0, "w": 0.0303, "d": 0.9655, "y": 0, "h": 0.9605, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4848, "z": 0.0, "w": 0.0303, "d": 0.9655, "y": 0, "h": 0.9605, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.4828, "w": 0.9394, "d": 0.0345, "y": 0.3947, "h": 0.5658, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.0172, "w": 0.4773, "d": 0.9138, "y": 0.8158, "h": 0.1316, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.481, "w": 0.4742, "d": 0.031, "y": 0.8158, "h": 0.1263, "color": "white", "fix": "dh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.0758, "d": 0.0172, "y": 0.8882, "h": 0.0158, "color": "dark", "fix": "wdh"}
+  ]
+}

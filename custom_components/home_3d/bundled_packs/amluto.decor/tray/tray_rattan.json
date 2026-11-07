@@ -1,0 +1,23 @@
+{
+  "id": "tray_rattan",
+  "name": {"en": "Rattan tray"},
+  "size": [0.45, 0.3, 0.07],
+  "group": "tray",
+  "room": ["living", "dining", "bedroom", "hall", "kitchen"],
+  "tags": ["tray", "serving tray", "decor tray", "coffee table", "rattan", "wicker", "woven"],
+  "family": "tray",
+  "variant": {"en": "Rattan 45 × 30"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 0.3, "color": "#b98b57"},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 1.0, "d": 0.05, "y": 0.0, "h": 1.0, "color": "#b98b57", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": -0.475, "w": 1.0, "d": 0.05, "y": 0.0, "h": 1.0, "color": "#b98b57", "fix": "d"},
+    {"shape": "box", "x": -0.4833, "z": 0.0, "w": 0.0333, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#b98b57", "fix": "w"},
+    {"shape": "box", "x": -0.4833, "z": 0.0, "w": 0.0367, "d": 0.3, "y": 0.5, "h": 0.3, "color": "dark", "fix": "wh"},
+    {"shape": "box", "x": 0.4833, "z": 0.0, "w": 0.0333, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#b98b57", "fix": "w"},
+    {"shape": "box", "x": 0.4833, "z": 0.0, "w": 0.0367, "d": 0.3, "y": 0.5, "h": 0.3, "color": "dark", "fix": "wh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}
+  ]
+}

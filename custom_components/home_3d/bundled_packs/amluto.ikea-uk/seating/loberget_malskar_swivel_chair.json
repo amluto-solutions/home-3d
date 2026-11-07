@@ -1,0 +1,47 @@
+{
+  "id": "loberget_malskar_swivel_chair",
+  "name": {
+    "en": "Swivel chair"
+  },
+  "size": [
+    0.67,
+    0.67,
+    0.9
+  ],
+  "group": "seating",
+  "room": [
+    "office",
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "LOBERGET",
+    "MALSKAR",
+    "swivel chair",
+    "office chair",
+    "desk chair",
+    "white",
+    "black",
+    "adjustable seat 45-56 cm"
+  ],
+  "ikea": "LOBERGET / MALSKÄR",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.2313, "w": 0.4627, "d": 0.0597, "y": 0.0667, "h": 0.0333, "color": "white", "rot": -90.0, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4328, "w": 0.0746, "d": 0.0746, "y": 0, "h": 0.0556, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.22, "z": 0.0715, "w": 0.4627, "d": 0.0597, "y": 0.0667, "h": 0.0333, "color": "white", "rot": -162.0, "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4117, "z": 0.1338, "w": 0.0746, "d": 0.0746, "y": 0, "h": 0.0556, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": -0.136, "z": -0.1872, "w": 0.4627, "d": 0.0597, "y": 0.0667, "h": 0.0333, "color": "white", "rot": 126.0, "fix": "wdh"},
+    {"shape": "cyl", "x": -0.2544, "z": -0.3502, "w": 0.0746, "d": 0.0746, "y": 0, "h": 0.0556, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.136, "z": -0.1872, "w": 0.4627, "d": 0.0597, "y": 0.0667, "h": 0.0333, "color": "white", "rot": 54.0, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2544, "z": -0.3502, "w": 0.0746, "d": 0.0746, "y": 0, "h": 0.0556, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.22, "z": 0.0715, "w": 0.4627, "d": 0.0597, "y": 0.0667, "h": 0.0333, "color": "white", "rot": -18.0, "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4117, "z": 0.1338, "w": 0.0746, "d": 0.0746, "y": 0, "h": 0.0556, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0896, "d": 0.0896, "y": 0.0667, "h": 0.0556, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0746, "d": 0.0746, "y": 0.1111, "h": 0.3333, "color": "metal", "fix": "wd"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0448, "w": 0.6866, "d": 0.6866, "y": 0.4444, "h": 0.0667, "color": "white", "fix": "wdh", "round": 0.4},
+    {"shape": "rbox", "x": 0.0, "z": 0.0448, "w": 0.597, "d": 0.6269, "y": 0.5111, "h": 0.0556, "color": "dark", "fix": "wdh", "round": 0.5},
+    {"shape": "box", "x": 0.0, "z": -0.2687, "w": 0.0746, "d": 0.0746, "y": 0.5333, "h": 0.1556, "color": "white", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": -0.3284, "w": 0.7164, "d": 0.0746, "y": 0.6111, "h": 0.3778, "color": "white", "round": 0.45},
+    {"shape": "rbox", "x": 0.0, "z": -0.2985, "w": 0.597, "d": 0.0597, "y": 0.6444, "h": 0.2889, "color": "dark", "round": 0.45}
+  ]
+}

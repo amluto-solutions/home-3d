@@ -1,0 +1,26 @@
+{
+  "id": "hosta_blue_large",
+  "name": {"en": "Hosta, blue, large"},
+  "size": [0.9, 0.9, 0.75],
+  "group": "plant",
+  "room": ["garden"],
+  "tags": ["hosta", "foliage", "shade", "perennial", "blue"],
+  "family": "hosta_blue",
+  "variant": {"en": "Large (0.9 × 0.75 m)"},
+  "parts": [
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.35, "d": 0.35, "y": 0, "h": 0.45, "color": "#5f8fa0"},
+    {"shape": "sphere", "x": 0.2548, "z": 0.0517, "w": 0.46, "d": 0.34, "y": 0.1, "h": 0.38, "color": "#5f8fa0", "rot": 11.5},
+    {"shape": "sphere", "x": 0.1437, "z": 0.2167, "w": 0.46, "d": 0.34, "y": 0.3, "h": 0.38, "color": "#76a5b4", "rot": 56.5},
+    {"shape": "sphere", "x": -0.0517, "z": 0.2548, "w": 0.46, "d": 0.34, "y": 0.1, "h": 0.38, "color": "#5f8fa0", "rot": 101.5},
+    {"shape": "sphere", "x": -0.2167, "z": 0.1437, "w": 0.46, "d": 0.34, "y": 0.3, "h": 0.38, "color": "#76a5b4", "rot": 146.5},
+    {"shape": "sphere", "x": -0.2548, "z": -0.0517, "w": 0.46, "d": 0.34, "y": 0.1, "h": 0.38, "color": "#5f8fa0", "rot": 191.5},
+    {"shape": "sphere", "x": -0.1437, "z": -0.2167, "w": 0.46, "d": 0.34, "y": 0.3, "h": 0.38, "color": "#76a5b4", "rot": 236.5},
+    {"shape": "sphere", "x": 0.0517, "z": -0.2548, "w": 0.46, "d": 0.34, "y": 0.1, "h": 0.38, "color": "#5f8fa0", "rot": 281.5},
+    {"shape": "sphere", "x": 0.2167, "z": -0.1437, "w": 0.46, "d": 0.34, "y": 0.3, "h": 0.38, "color": "#76a5b4", "rot": 326.5},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.025, "d": 0.025, "y": 0.3, "h": 0.7, "color": "#6a8a45"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.12, "d": 0.12, "y": 0.7, "h": 0.3, "color": "#e4e0f2", "tx": 0.0, "tz": 0.0, "tw": 0.0111, "td": 0.0111}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

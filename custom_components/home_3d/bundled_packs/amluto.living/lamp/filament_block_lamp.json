@@ -1,0 +1,41 @@
+{
+  "id": "filament_block_lamp",
+  "name": {
+    "en": "Filament bulb lamp"
+  },
+  "size": [
+    0.18,
+    0.1,
+    0.245
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "hall"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "edison lamp",
+    "filament lamp",
+    "bare bulb",
+    "industrial",
+    "vintage",
+    "exposed bulb",
+    "wooden base"
+  ],
+  "family": "filament_block_lamp",
+  "variant": {
+    "en": "Wood block"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 0.2041, "color": "wood"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.2222, "d": 0.4, "y": 0.2041, "h": 0.1224, "color": "metal"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.4444, "d": 0.8, "y": 0.3265, "h": 0.6735, "color": "glass", "glow": true, "profile": [[0.0, 0.0], [0.375, 0.0], [0.7, 0.1818], [1.0, 0.5455], [0.75, 0.8485], [0.25, 0.9697], [0.0, 1.0]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0333, "d": 0.06, "y": 0.3673, "h": 0.2857, "color": "#ffd27a", "glow": true}
+  ]
+}

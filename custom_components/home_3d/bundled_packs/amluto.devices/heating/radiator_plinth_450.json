@@ -1,0 +1,40 @@
+{
+  "id": "radiator_plinth_450",
+  "name": {
+    "en": "Plinth heater"
+  },
+  "size": [
+    0.45,
+    0.25,
+    0.11
+  ],
+  "group": "heating",
+  "room": [
+    "kitchen",
+    "utility",
+    "bath",
+    "hall"
+  ],
+  "tags": [
+    "radiator",
+    "plinth heater",
+    "kickspace",
+    "kitchen plinth",
+    "fan convector",
+    "central heating"
+  ],
+  "family": "radiator_plinth",
+  "variant": {
+    "en": "450 mm"
+  },
+  "mount": "floor",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "white", "round": 0.15},
+    {"shape": "box", "x": 0.0, "z": 0.484, "w": 0.8, "d": 0.016, "y": 0.1818, "h": 0.0727, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.484, "w": 0.8, "d": 0.016, "y": 0.3455, "h": 0.0727, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.484, "w": 0.8, "d": 0.016, "y": 0.5091, "h": 0.0727, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.484, "w": 0.8, "d": 0.016, "y": 0.6727, "h": 0.0727, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.484, "w": 0.8, "d": 0.016, "y": 0.8364, "h": 0.0727, "color": "dark"},
+    {"shape": "box", "x": 0.3778, "z": 0.484, "w": 0.1111, "d": 0.024, "y": 0.4545, "h": 0.3636, "color": "#ececE7"}
+  ]
+}

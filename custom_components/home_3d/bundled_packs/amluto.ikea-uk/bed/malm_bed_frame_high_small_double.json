@@ -1,0 +1,39 @@
+{
+  "id": "malm_bed_frame_high_small_double",
+  "name": {
+    "en": "High bed frame, Small double 120x190"
+  },
+  "size": [
+    1.35,
+    1.99,
+    1.0
+  ],
+  "group": "bed",
+  "room": [
+    "bedroom",
+    "kids"
+  ],
+  "tags": [
+    "bed",
+    "bed frame",
+    "small double",
+    "white",
+    "black-brown",
+    "white stained oak veneer",
+    "oak veneer"
+  ],
+  "family": "malm_bed_frame_high",
+  "variant": {
+    "en": "Small double · 120x190"
+  },
+  "ikea": "MALM",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4899, "w": 1, "d": 0.0201, "y": 0, "h": 1, "color": "white", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.495, "w": 1, "d": 0.0101, "y": 0, "h": 0.38, "color": "white", "fix": "d"},
+    {"shape": "box", "x": -0.4926, "z": 0.0101, "w": 0.0148, "d": 0.9799, "y": 0, "h": 0.38, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.4926, "z": 0.0101, "w": 0.0148, "d": 0.9799, "y": 0, "h": 0.38, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0101, "w": 0.9704, "d": 0.9698, "y": 0.2, "h": 0.03, "color": "wood"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0101, "w": 0.8889, "d": 0.9548, "y": 0.23, "h": 0.2, "color": "white", "round": 0.25},
+    {"shape": "rbox", "x": 0.0, "z": -0.3995, "w": 0.7556, "d": 0.1608, "y": 0.43, "h": 0.12, "color": "cushion", "round": 0.45}
+  ]
+}

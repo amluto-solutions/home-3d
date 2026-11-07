@@ -1,0 +1,39 @@
+{
+  "id": "pjatteryd_picture_50x70",
+  "name": {
+    "en": "Framed picture 50x70 cm"
+  },
+  "size": [
+    0.5,
+    0.03,
+    0.7
+  ],
+  "group": "frame",
+  "room": [
+    "living",
+    "dining",
+    "bedroom",
+    "hall",
+    "office"
+  ],
+  "tags": [
+    "PJATTERYD",
+    "picture",
+    "print",
+    "wall art",
+    "framed",
+    "gallery wall",
+    "poster"
+  ],
+  "family": "pjatteryd_picture",
+  "variant": {
+    "en": "50x70"
+  },
+  "ikea": "PJÄTTERYD",
+  "mount": "wall",
+  "wall_y": 1.1,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.8333, "y": 0, "h": 1, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.45, "w": 0.92, "d": 0.0667, "y": 0.0286, "h": 0.9429, "color": "#8aa39b", "fix": "d"}
+  ]
+}

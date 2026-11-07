@@ -1,0 +1,16 @@
+{
+  "id": "road_two_lane_plain_10",
+  "name": {"en": "Road, two lanes, no markings, 10 m"},
+  "size": [10.0, 6.0, 0.03],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["road", "street", "tarmac", "asphalt", "highway"],
+  "family": "road_two_lane_plain",
+  "variant": {"en": "10 m long, unmarked"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#3a3c3f", "top": "#43464a"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

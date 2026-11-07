@@ -1,0 +1,22 @@
+{
+  "id": "ice_cream_maker_pint",
+  "name": {"en": "Ice-cream maker, frozen dessert"},
+  "size": [0.17, 0.22, 0.35],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["ice cream maker", "ice-cream", "creami", "frozen dessert", "sorbet", "countertop"],
+  "family": "ice_cream_maker",
+  "variant": {"en": "Frozen dessert"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.0909, "w": 1, "d": 0.8182, "y": 0, "h": 1, "color": "#25272b", "round": 0.12},
+    {"shape": "box", "x": 0.0, "z": 0.4318, "w": 0.72, "d": 0.0545, "y": 0.52, "h": 0.3, "color": "glass", "edges": "faint"},
+    {"shape": "box", "x": 0.0, "z": 0.4455, "w": 0.72, "d": 0.0545, "y": 0.2, "h": 0.18, "color": "#3a3d42", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4455, "w": 0.5, "d": 0.0182, "y": 0.9, "h": 0.0343, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": -0.1, "w": 0.5, "d": 0.35, "y": 0.96, "h": 0.04, "color": "#c4c8cd", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

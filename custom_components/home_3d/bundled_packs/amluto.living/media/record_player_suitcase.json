@@ -1,0 +1,28 @@
+{
+  "id": "record_player_suitcase",
+  "name": {"en": "Record player, suitcase"},
+  "size": [0.36, 0.32, 0.3],
+  "group": "media",
+  "room": ["living", "bedroom", "office", "dining"],
+  "tags": ["record player", "turntable", "vinyl", "records", "deck", "hi-fi", "lp"],
+  "family": "record_player",
+  "variant": {"en": "Suitcase"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0781, "w": 1.0, "d": 0.8438, "y": 0.0, "h": 0.2333, "color": "accent", "round": 0.2},
+    {"shape": "box", "x": 0.0, "z": -0.4219, "w": 1.0, "d": 0.1562, "y": 0.0, "h": 1.0, "color": "accent"},
+    {"shape": "box", "x": 0.0, "z": 0.4938, "w": 0.2778, "d": 0.0125, "y": 0.0667, "h": 0.1, "color": "metal"},
+    {"shape": "cyl", "x": -0.3333, "z": 0.4969, "w": 0.1667, "d": 0.0063, "y": 0.05, "h": 0.1333, "color": "fabric", "axis": "z"},
+    {"shape": "cyl", "x": -0.0556, "z": 0.0781, "w": 0.6667, "d": 0.75, "y": 0.2333, "h": 0.04, "color": "metal"},
+    {"shape": "cyl", "x": -0.0556, "z": 0.0781, "w": 0.6389, "d": 0.7187, "y": 0.2733, "h": 0.01, "color": "#141418"},
+    {"shape": "cyl", "x": -0.0556, "z": 0.0781, "w": 0.2778, "d": 0.3125, "y": 0.2817, "h": 0.0033, "color": "accent"},
+    {"shape": "cyl", "x": 0.3333, "z": -0.125, "w": 0.0972, "d": 0.1094, "y": 0.2333, "h": 0.1, "color": "metal"},
+    {"shape": "box", "x": 0.3333, "z": 0.1719, "w": 0.0278, "d": 0.5938, "y": 0.3167, "h": 0.0233, "color": "metal", "rot": -15},
+    {"shape": "cyl", "x": 0.3611, "z": 0.375, "w": 0.0694, "d": 0.0781, "y": 0.2333, "h": 0.04, "color": "metal"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "circle", "x": -0.0556, "z": 0.0781, "r": 0.375}
+  ]
+}

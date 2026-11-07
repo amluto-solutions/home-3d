@@ -1,0 +1,33 @@
+{
+  "id": "headboard_small_double",
+  "name": {"en": "Small double headboard"},
+  "size": [1.28, 0.1, 1.25],
+  "group": "bed",
+  "family": "headboard",
+  "variant": {"en": "Small double · 120 × 190"},
+  "room": ["bedroom"],
+  "tags": ["headboard", "buttoned headboard", "upholstered", "strutted headboard", "bed head", "small double", "4ft"],
+  "parts": [
+    {"shape": "box", "x": -0.4023, "z": -0.35, "w": 0.0391, "d": 0.3, "y": 0.0, "h": 0.496, "color": "wood", "fix": "wd"},
+    {"shape": "box", "x": 0.4023, "z": -0.35, "w": 0.0391, "d": 0.3, "y": 0.0, "h": 0.496, "color": "wood", "fix": "wd"},
+    {"shape": "rbox", "x": 0.0, "z": 0.05, "w": 1.0, "d": 0.9, "y": 0.44, "h": 0.56, "color": "fabric", "round": 0.35, "fix": "d"},
+    {"shape": "rbox", "x": 0.0, "z": 0.4, "w": 0.9531, "d": 0.2, "y": 0.464, "h": 0.512, "color": "fabric", "round": 0.4, "fix": "d"},
+    {"shape": "sphere", "x": -0.4219, "z": 0.44, "w": 0.0188, "d": 0.12, "y": 0.5664, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.2531, "z": 0.44, "w": 0.0188, "d": 0.12, "y": 0.5664, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.0844, "z": 0.44, "w": 0.0187, "d": 0.12, "y": 0.5664, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.0844, "z": 0.44, "w": 0.0187, "d": 0.12, "y": 0.5664, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.2531, "z": 0.44, "w": 0.0188, "d": 0.12, "y": 0.5664, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.4219, "z": 0.44, "w": 0.0188, "d": 0.12, "y": 0.5664, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.3375, "z": 0.44, "w": 0.0188, "d": 0.12, "y": 0.6944, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.1687, "z": 0.44, "w": 0.0188, "d": 0.12, "y": 0.6944, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.0, "z": 0.44, "w": 0.0187, "d": 0.12, "y": 0.6944, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.1688, "z": 0.44, "w": 0.0188, "d": 0.12, "y": 0.6944, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.3375, "z": 0.44, "w": 0.0188, "d": 0.12, "y": 0.6944, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.4219, "z": 0.44, "w": 0.0188, "d": 0.12, "y": 0.8224, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.2531, "z": 0.44, "w": 0.0188, "d": 0.12, "y": 0.8224, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": -0.0844, "z": 0.44, "w": 0.0187, "d": 0.12, "y": 0.8224, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.0844, "z": 0.44, "w": 0.0187, "d": 0.12, "y": 0.8224, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.2531, "z": 0.44, "w": 0.0188, "d": 0.12, "y": 0.8224, "h": 0.0192, "color": "dark", "fix": "wdh"},
+    {"shape": "sphere", "x": 0.4219, "z": 0.44, "w": 0.0188, "d": 0.12, "y": 0.8224, "h": 0.0192, "color": "dark", "fix": "wdh"}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "smart_plug",
+  "name": {"en": "Smart plug"},
+  "size": [0.06, 0.07, 0.06],
+  "group": "energy",
+  "tags": ["smart socket", "smart plug", "wifi plug", "zigbee plug", "energy monitoring plug", "shelly plug", "tapo", "hive", "kasa"],
+  "family": "smart_plug",
+  "variant": {"en": "Standard"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 0.3,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.4571, "w": 0.86, "d": 0.0857, "y": 0.0, "h": 1, "color": "white"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0571, "w": 0.9667, "d": 0.8857, "y": 0.0333, "h": 0.9333, "color": "white", "round": 0.3},
+    {"shape": "box", "x": -0.2, "z": 0.4857, "w": 0.0667, "d": 0.0286, "y": 0.5, "h": 0.1667, "color": "dark"},
+    {"shape": "box", "x": 0.2, "z": 0.4857, "w": 0.0667, "d": 0.0286, "y": 0.5, "h": 0.1667, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.4857, "w": 0.0667, "d": 0.0286, "y": 0.2, "h": 0.1667, "color": "dark"},
+    {"shape": "cyl", "x": 0.3, "z": 0.4857, "w": 0.1667, "d": 0.0286, "y": 0.75, "h": 0.1667, "color": "#4aa3ff", "axis": "z"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

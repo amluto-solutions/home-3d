@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Home 3D icon, for dark cards</title>
+  <g transform="translate(256 256) scale(1.2) translate(-256 -256)">
+    <circle cx="256" cy="232" r="152" fill="#48CDEB"/>
+    <path d="M172 280L256 206L340 280H318V366H194V280Z" fill="#0E2542" stroke="#0E2542" stroke-width="12" stroke-linejoin="round"/>
+    <rect x="236" y="302" width="40" height="40" rx="9" fill="#FFB545"/>
+    <polygon points="166,366 346,366 378,422 134,422" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="20" stroke-linejoin="round"/>
+    <path d="M142 201A118 118 0 0 1 197 130" fill="none" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,48 @@
+{
+  "id": "ladder_shelf",
+  "name": {
+    "en": "Ladder shelf"
+  },
+  "size": [
+    0.6,
+    0.38,
+    1.8
+  ],
+  "group": "storage",
+  "family": "ladder_shelf",
+  "variant": {
+    "en": "5 shelves · 60 × 180"
+  },
+  "room": [
+    "living",
+    "bedroom",
+    "bath",
+    "hall"
+  ],
+  "tags": [
+    "leaning shelf",
+    "ladder bookcase",
+    "shelves",
+    "shelving",
+    "wall shelf"
+  ],
+  "parts": [
+    {"shape": "loft", "x": -0.4708, "z": 0.4605, "w": 0.0583, "d": 0.0789, "y": 0, "h": 1.0, "color": "wood", "tx": -0.4708, "tz": -0.4079, "tw": 0.0583, "td": 0.0789, "fix": "w"},
+    {"shape": "loft", "x": 0.4708, "z": 0.4605, "w": 0.0583, "d": 0.0789, "y": 0, "h": 1.0, "color": "wood", "tx": 0.4708, "tz": -0.4079, "tw": 0.0583, "td": 0.0789, "fix": "w"},
+    {"shape": "box", "x": 0, "z": -0.018, "w": 0.8833, "d": 0.9474, "y": 0.0333, "h": 0.0111, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4719, "w": 0.8833, "d": 0.0395, "y": 0.0444, "h": 0.0167, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.1186, "w": 0.8833, "d": 0.7627, "y": 0.2556, "h": 0.0111, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4803, "w": 0.8833, "d": 0.0395, "y": 0.2667, "h": 0.0167, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.2151, "w": 0.8833, "d": 0.5697, "y": 0.4778, "h": 0.0111, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4803, "w": 0.8833, "d": 0.0395, "y": 0.4889, "h": 0.0167, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.3116, "w": 0.8833, "d": 0.3768, "y": 0.7, "h": 0.0111, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4803, "w": 0.8833, "d": 0.0395, "y": 0.7111, "h": 0.0167, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4081, "w": 0.8833, "d": 0.1838, "y": 0.9222, "h": 0.0111, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0, "z": -0.4803, "w": 0.8833, "d": 0.0395, "y": 0.9333, "h": 0.0167, "color": "wood", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "line", "x1": -0.5, "z1": -0.3, "x2": 0.5, "z2": -0.3},
+    {"shape": "line", "x1": -0.5, "z1": 0.1, "x2": 0.5, "z2": 0.1}
+  ]
+}

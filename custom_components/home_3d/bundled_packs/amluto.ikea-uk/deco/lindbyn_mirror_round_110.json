@@ -1,0 +1,38 @@
+{
+  "id": "lindbyn_mirror_round_110",
+  "name": {
+    "en": "Round mirror, thin frame 110 cm"
+  },
+  "size": [
+    1.1,
+    0.03,
+    1.1
+  ],
+  "group": "deco",
+  "room": [
+    "living",
+    "hall",
+    "bedroom",
+    "bath",
+    "dining"
+  ],
+  "tags": [
+    "mirror",
+    "wall mirror",
+    "round",
+    "thin frame",
+    "black",
+    "gold colour"
+  ],
+  "family": "lindbyn_mirror",
+  "variant": {
+    "en": "Round 110"
+  },
+  "ikea": "LINDBYN",
+  "mount": "wall",
+  "wall_y": 0.95,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.1667, "w": 1, "d": 0.6667, "y": 0, "h": 1, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.1333, "w": 0.9782, "d": 0.2, "y": 0.0109, "h": 0.9782, "color": "glass", "axis": "z"}
+  ]
+}

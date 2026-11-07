@@ -1,0 +1,26 @@
+{
+  "id": "multi_cooker_8l",
+  "name": {"en": "Multi-cooker, 8 L"},
+  "size": [0.41, 0.4, 0.37],
+  "group": "appliance",
+  "room": ["kitchen"],
+  "tags": ["cooker", "countertop", "cooking", "multi cooker", "pressure cooker", "ninja", "foodi", "steamer"],
+  "family": "multi_cooker",
+  "variant": {"en": "8 L"},
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.8049, "d": 1, "y": 0, "h": 0.62, "color": "#25272b", "profile": [[0, 0], [0.92, 0], [1, 0.08], [1, 0.9], [0.95, 1], [0, 1]]},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.7807, "d": 0.97, "y": 0.6, "h": 0.36, "color": "#3a3d42", "profile": [[0, 0], [1, 0], [0.96, 0.5], [0.55, 0.95], [0, 1]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0976, "d": 0.1, "y": 0.94, "h": 0.05, "color": "#25272b", "fix": "wdh"},
+    {"shape": "box", "x": -0.4317, "z": 0.0, "w": 0.0732, "d": 0.175, "y": 0.5, "h": 0.0811, "color": "#25272b", "fix": "wdh"},
+    {"shape": "box", "x": 0.4317, "z": 0.0, "w": 0.0732, "d": 0.175, "y": 0.5, "h": 0.0811, "color": "#25272b", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.495, "w": 0.322, "d": 0.01, "y": 0.3, "h": 0.0676, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.2254, "z": 0.4875, "w": 0.0732, "d": 0.05, "y": 0.3, "h": 0.0811, "color": "#c4c8cd", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.2254, "z": 0.4875, "w": 0.0732, "d": 0.05, "y": 0.3, "h": 0.0811, "color": "#c4c8cd", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": -0.1771, "z": 0.3, "w": 0.122, "d": 0.075, "y": 0.97, "h": 0.027, "color": "#c4c8cd", "fix": "wdh"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

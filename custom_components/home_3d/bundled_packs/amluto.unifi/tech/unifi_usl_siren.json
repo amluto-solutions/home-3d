@@ -1,0 +1,63 @@
+{
+  "id": "unifi_usl_siren",
+  "name": {
+    "en": "UniFi Siren"
+  },
+  "size": [
+    0.1399,
+    0.035,
+    0.1399
+  ],
+  "group": "tech",
+  "tags": [
+    "siren",
+    "alarm siren",
+    "sounder",
+    "usl-siren",
+    "unifi",
+    "ubiquiti"
+  ],
+  "family": "unifi_siren",
+  "variant": {
+    "en": "Siren (USL-Siren)"
+  },
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 2.2,
+  "parts": [
+    {
+      "shape": "rbox",
+      "x": 0,
+      "z": 0,
+      "w": 1,
+      "d": 1,
+      "y": 0,
+      "h": 1,
+      "color": "white",
+      "round": 0.2
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0.4,
+      "w": 0.7,
+      "d": 0.2,
+      "y": 0.15,
+      "h": 0.7,
+      "color": "#e6e9ee",
+      "axis": "z"
+    },
+    {
+      "shape": "cyl",
+      "x": 0,
+      "z": 0.5,
+      "w": 0.3,
+      "d": 0.02,
+      "y": 0.35,
+      "h": 0.3,
+      "color": "#3a8dde",
+      "axis": "z",
+      "glow": true
+    }
+  ]
+}

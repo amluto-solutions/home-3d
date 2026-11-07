@@ -1,0 +1,38 @@
+{
+  "id": "vesken_corner_shelf_unit_33x33x71",
+  "name": {
+    "en": "Corner shelf unit 33x33x71 cm"
+  },
+  "size": [
+    0.33,
+    0.33,
+    0.71
+  ],
+  "group": "bath",
+  "room": [
+    "bath",
+    "utility",
+    "kitchen"
+  ],
+  "tags": [
+    "VESKEN",
+    "corner shelf",
+    "bathroom shelf",
+    "metal shelf",
+    "white"
+  ],
+  "family": "vesken_shelf_unit",
+  "variant": {
+    "en": "Corner 33x33x71"
+  },
+  "ikea": "VESKEN",
+  "parts": [
+    {"shape": "cyl", "x": -0.4394, "z": -0.4394, "w": 0.0606, "d": 0.0606, "y": 0, "h": 1, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4394, "z": -0.4394, "w": 0.0606, "d": 0.0606, "y": 0, "h": 1, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4394, "z": 0.4394, "w": 0.0606, "d": 0.0606, "y": 0, "h": 1, "color": "white", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4394, "z": 0.4394, "w": 0.0606, "d": 0.0606, "y": 0, "h": 1, "color": "white", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9697, "d": 0.9697, "y": 0.1408, "h": 0.031, "color": "white", "fix": "h", "round": 0.3},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9697, "d": 0.9697, "y": 0.4789, "h": 0.031, "color": "white", "fix": "h", "round": 0.3},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.9697, "d": 0.9697, "y": 0.8169, "h": 0.031, "color": "white", "fix": "h", "round": 0.3}
+  ]
+}

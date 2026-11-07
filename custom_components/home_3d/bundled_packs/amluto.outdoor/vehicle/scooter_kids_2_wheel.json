@@ -1,0 +1,16 @@
+{
+  "id": "scooter_kids_2_wheel",
+  "name": {"en": "Kids kick scooter"},
+  "size": [0.3, 0.65, 0.85],
+  "group": "vehicle",
+  "room": ["garage", "garden"],
+  "tags": ["scooter", "kick scooter", "stunt scooter", "kids scooter", "child"],
+  "vehicle": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": -0.4077, "w": 0.1, "d": 0.1846, "y": 0.0, "h": 0.1412, "color": "dark", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4077, "w": 0.1, "d": 0.1846, "y": 0.0, "h": 0.1412, "color": "dark", "axis": "x"},
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 0.4, "d": 0.8523, "y": 0.0988, "h": 0.0353, "color": "paint", "round": 0.3},
+    {"shape": "loft", "x": 0.0, "z": 0.4077, "w": 0.1, "d": 0.0462, "y": 0.0706, "h": 0.8706, "color": "metal", "tx": 0.0, "tz": 0.3615, "tw": 0.1, "td": 0.0462},
+    {"shape": "box", "x": 0.0, "z": 0.3615, "w": 1.0, "d": 0.0462, "y": 0.9412, "h": 0.0353, "color": "dark"}
+  ]
+}

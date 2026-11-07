@@ -1,0 +1,30 @@
+{
+  "id": "street_light_victorian_green_300",
+  "name": {"en": "Victorian street lamp, green, 3 m"},
+  "size": [0.5, 0.5, 3.0],
+  "group": "lamp",
+  "room": ["garden"],
+  "tags": ["street light", "lamp post", "victorian", "cast iron", "street lamp", "lantern", "lighting"],
+  "family": "street_light_victorian_green",
+  "variant": {"en": "3 m"},
+  "electric": true,
+  "light": "garden",
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.8, "d": 0.8, "y": 0, "h": 0.22, "color": "#2f4a3a", "profile": [[1, 0], [1, 0.08], [0.6, 0.14], [0.55, 0.3], [0.7, 0.4], [0.5, 0.55], [0.4, 1], [0, 1]]},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 0.3, "d": 0.3, "y": 0.22, "h": 0.6, "color": "#2f4a3a", "profile": [[1, 0], [0.6, 0.1], [0.5, 0.6], [0.8, 0.75], [0.5, 0.82], [0.5, 1], [0, 1]]},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9, "d": 0.05, "y": 0.74, "h": 0.01, "color": "#2f4a3a"},
+    {"shape": "sphere", "x": 0.4, "z": 0.0, "w": 0.06, "d": 0.06, "y": 0.74, "h": 0.01, "color": "#385946"},
+    {"shape": "sphere", "x": -0.4, "z": 0.0, "w": 0.06, "d": 0.06, "y": 0.74, "h": 0.01, "color": "#385946"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.5, "d": 0.5, "y": 0.83, "h": 0.03, "color": "#2f4a3a"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.42, "d": 0.42, "y": 0.86, "h": 0.09, "color": "#fff1c9", "glow": true},
+    {"shape": "box", "x": -0.22, "z": -0.22, "w": 0.04, "d": 0.04, "y": 0.86, "h": 0.09, "color": "#2f4a3a", "fix": "wd"},
+    {"shape": "box", "x": -0.22, "z": 0.22, "w": 0.04, "d": 0.04, "y": 0.86, "h": 0.09, "color": "#2f4a3a", "fix": "wd"},
+    {"shape": "box", "x": 0.22, "z": -0.22, "w": 0.04, "d": 0.04, "y": 0.86, "h": 0.09, "color": "#2f4a3a", "fix": "wd"},
+    {"shape": "box", "x": 0.22, "z": 0.22, "w": 0.04, "d": 0.04, "y": 0.86, "h": 0.09, "color": "#2f4a3a", "fix": "wd"},
+    {"shape": "loft", "x": 0.0, "z": 0.0, "w": 0.6, "d": 0.6, "y": 0.95, "h": 0.04, "color": "#2f4a3a", "tx": 0.0, "tz": 0.0, "tw": 0.12, "td": 0.12},
+    {"shape": "sphere", "x": 0.0, "z": 0.0, "w": 0.12, "d": 0.12, "y": 0.9767, "h": 0.0233, "color": "#385946"}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5}
+  ]
+}

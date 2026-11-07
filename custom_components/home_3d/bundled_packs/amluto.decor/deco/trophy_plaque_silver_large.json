@@ -1,0 +1,22 @@
+{
+  "id": "trophy_plaque_silver_large",
+  "name": {"en": "Wall trophy plaque, silver, large"},
+  "size": [0.25, 0.02, 0.3],
+  "group": "deco",
+  "room": ["living", "office", "hall", "study", "games", "dining"],
+  "tags": ["trophy", "award", "prize", "silver", "plaque", "wall plaque", "engraved"],
+  "family": "trophy_plaque_silver",
+  "variant": {"en": "Large"},
+  "mount": "wall",
+  "wall_y": 1.2,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.8, "d": 0.2, "y": 0.14, "h": 0.72, "color": "#c7cbd1", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.6, "d": 0.15, "y": 0.62, "h": 0.06, "color": "#2a2420", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.52, "d": 0.15, "y": 0.45, "h": 0.06, "color": "#2a2420", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.44, "d": 0.15, "y": 0.28, "h": 0.06, "color": "#2a2420", "fix": "d"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

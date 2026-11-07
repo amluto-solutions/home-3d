@@ -1,0 +1,58 @@
+{
+  "id": "storage_boxes_4",
+  "name": {
+    "en": "4 stacked storage boxes"
+  },
+  "size": [
+    0.6,
+    0.4,
+    1.24
+  ],
+  "group": "storage",
+  "family": "storage_boxes",
+  "variant": {
+    "en": "4 boxes"
+  },
+  "room": [
+    "office",
+    "loft",
+    "bedroom",
+    "garage",
+    "kids",
+    "utility"
+  ],
+  "tags": [
+    "plastic box",
+    "clear box",
+    "box with lid",
+    "stacking boxes",
+    "tote",
+    "loft storage"
+  ],
+  "parts": [
+    {"shape": "loft", "x": 0, "z": 0, "w": 0.9, "d": 0.875, "y": 0, "h": 0.2298, "color": "glass", "tx": 0, "tz": 0, "tw": 0.9667, "td": 0.96},
+    {"shape": "box", "x": -0.0333, "z": -0.025, "w": 0.6667, "d": 0.65, "y": 0.004, "h": 0.1085, "color": "cushion"},
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.2298, "h": 0.0202, "color": "white", "round": 0.3},
+    {"shape": "box", "x": -0.4792, "z": 0, "w": 0.055, "d": 0.4, "y": 0.1895, "h": 0.0573, "color": "accent"},
+    {"shape": "box", "x": 0.4792, "z": 0, "w": 0.055, "d": 0.4, "y": 0.1895, "h": 0.0573, "color": "accent"},
+    {"shape": "loft", "x": 0, "z": 0, "w": 0.9, "d": 0.875, "y": 0.25, "h": 0.2298, "color": "glass", "tx": 0, "tz": 0, "tw": 0.9667, "td": 0.96},
+    {"shape": "box", "x": -0.0333, "z": -0.025, "w": 0.6667, "d": 0.65, "y": 0.254, "h": 0.146, "color": "cushion"},
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.4798, "h": 0.0202, "color": "white", "round": 0.3},
+    {"shape": "box", "x": -0.4792, "z": 0, "w": 0.055, "d": 0.4, "y": 0.4395, "h": 0.0573, "color": "accent"},
+    {"shape": "box", "x": 0.4792, "z": 0, "w": 0.055, "d": 0.4, "y": 0.4395, "h": 0.0573, "color": "accent"},
+    {"shape": "loft", "x": 0, "z": 0, "w": 0.9, "d": 0.875, "y": 0.5, "h": 0.2298, "color": "glass", "tx": 0, "tz": 0, "tw": 0.9667, "td": 0.96},
+    {"shape": "box", "x": -0.0333, "z": -0.025, "w": 0.6667, "d": 0.65, "y": 0.504, "h": 0.1085, "color": "cushion"},
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.7298, "h": 0.0202, "color": "white", "round": 0.3},
+    {"shape": "box", "x": -0.4792, "z": 0, "w": 0.055, "d": 0.4, "y": 0.6895, "h": 0.0573, "color": "accent"},
+    {"shape": "box", "x": 0.4792, "z": 0, "w": 0.055, "d": 0.4, "y": 0.6895, "h": 0.0573, "color": "accent"},
+    {"shape": "loft", "x": 0, "z": 0, "w": 0.9, "d": 0.875, "y": 0.75, "h": 0.2298, "color": "glass", "tx": 0, "tz": 0, "tw": 0.9667, "td": 0.96},
+    {"shape": "box", "x": -0.0333, "z": -0.025, "w": 0.6667, "d": 0.65, "y": 0.754, "h": 0.146, "color": "cushion"},
+    {"shape": "rbox", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.9798, "h": 0.0202, "color": "white", "round": 0.3},
+    {"shape": "box", "x": -0.4792, "z": 0, "w": 0.055, "d": 0.4, "y": 0.9395, "h": 0.0573, "color": "accent"},
+    {"shape": "box", "x": 0.4792, "z": 0, "w": 0.055, "d": 0.4, "y": 0.9395, "h": 0.0573, "color": "accent"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},
+    {"shape": "rect", "x": 0, "z": 0, "w": 0.9, "d": 0.85}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "tv_ambilight_75",
+  "name": {"en": "TV with Ambilight 75″"},
+  "size": [1.7004, 0.075, 0.962],
+  "group": "media",
+  "room": ["living", "bedroom", "kids", "office"],
+  "tags": ["television", "ambilight", "philips", "wall tv", "wall-mounted", "smart tv", "bias lighting"],
+  "family": "tv_ambilight",
+  "variant": {"en": "75″"},
+  "electric": true,
+  "mount": "wall",
+  "wall_y": 0.8,
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.3667, "w": 0.2352, "d": 0.2667, "y": 0.3, "h": 0.35, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.0333, "w": 0.7394, "d": 0.4, "y": 0.1185, "h": 0.7505, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": -0.0333, "w": 1, "d": 0.4, "y": 0.9875, "h": 0.0125, "color": "dark", "glow": true},
+    {"shape": "box", "x": -0.4965, "z": -0.0333, "w": 0.0071, "d": 0.4, "y": 0.0494, "h": 0.9381, "color": "dark", "glow": true},
+    {"shape": "box", "x": 0.4965, "z": -0.0333, "w": 0.0071, "d": 0.4, "y": 0.0494, "h": 0.9381, "color": "dark", "glow": true},
+    {"shape": "box", "x": 0.0, "z": 0.32, "w": 0.9859, "d": 0.3333, "y": 0.0, "h": 0.9875, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.4867, "w": 0.9765, "d": 0.0267, "y": 0.0083, "h": 0.9709, "color": "glass", "screen": true},
+    {"shape": "box", "x": 0.0, "z": 0.4733, "w": 0.0176, "d": 0.0533, "y": 0.0, "h": 0.0062, "color": "metal"}
+  ]
+}

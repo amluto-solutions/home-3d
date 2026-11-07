@@ -1,0 +1,17 @@
+{
+  "id": "butcher_block_45",
+  "name": {"en": "Butcher block, 45 × 35 cm"},
+  "size": [0.45, 0.35, 0.05],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "tags": ["chopping board", "cutting board", "kitchen", "worktop", "butchers block", "thick"],
+  "family": "butcher_block",
+  "variant": {"en": "Butcher block"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#9b6b3a", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "french_door_fridge_freezer",
+  "name": {"en": "French door fridge freezer"},
+  "size": [0.91, 0.72, 1.78],
+  "group": "appliance",
+  "room": ["kitchen", "utility"],
+  "tags": ["fridge", "freezer", "american", "side by side", "double door", "ice", "water dispenser"],
+  "family": "american_fridge_freezer",
+  "variant": {"en": "French door"},
+  "electric": true,
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": -0.0694, "w": 1.0, "d": 0.8611, "y": 0.0112, "h": 0.9888, "color": "metal", "round": 0.04},
+    {"shape": "box", "x": 0.0, "z": -0.0625, "w": 0.9121, "d": 0.7361, "y": 0.0, "h": 0.0112, "color": "dark", "fix": "h"},
+    {"shape": "rbox", "x": -0.2516, "z": 0.3958, "w": 0.4967, "d": 0.0694, "y": 0.4073, "h": 0.5927, "color": "metal", "round": 0.08},
+    {"shape": "rbox", "x": 0.2516, "z": 0.3958, "w": 0.4967, "d": 0.0694, "y": 0.4073, "h": 0.5927, "color": "metal", "round": 0.08},
+    {"shape": "rbox", "x": 0.0, "z": 0.3958, "w": 1.0, "d": 0.0694, "y": 0.0169, "h": 0.3848, "color": "metal", "round": 0.08},
+    {"shape": "rbox", "x": -0.033, "z": 0.4653, "w": 0.0242, "d": 0.0694, "y": 0.5169, "h": 0.4213, "color": "dark", "round": 0.4, "fix": "w"},
+    {"shape": "rbox", "x": 0.033, "z": 0.4653, "w": 0.0242, "d": 0.0694, "y": 0.5169, "h": 0.4213, "color": "dark", "round": 0.4, "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.4583, "w": 0.6593, "d": 0.0556, "y": 0.3596, "h": 0.0112, "color": "dark"},
+    {"shape": "box", "x": 0.2308, "z": 0.4347, "w": 0.1978, "d": 0.0083, "y": 0.7584, "h": 0.0281, "color": "#7fe3ff", "edges": "faint"}
+  ],
+  "symbol": [
+    {"shape": "line", "x1": 0.0, "z1": 0.3611, "x2": 0.0, "z2": 0.5},
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},
+    {"shape": "line", "x1": -0.5, "z1": 0.3611, "x2": 0.5, "z2": 0.3611}
+  ]
+}

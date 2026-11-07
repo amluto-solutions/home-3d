@@ -1,0 +1,23 @@
+{
+  "id": "scarlett_4i4",
+  "name": {"en": "Focusrite Scarlett 4i4"},
+  "size": [0.18, 0.129, 0.059],
+  "group": "media",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["scarlett 4i4", "scarlett", "focusrite", "audio interface", "usb interface", "xlr", "streaming", "audio"],
+  "family": "scarlett",
+  "variant": {"en": "4i4"},
+  "electric": true,
+  "watts": 5,
+  "mount": "surface",
+  "parts": [
+    {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#c8141b", "round": 0.1},
+    {"shape": "box", "x": 0.0, "z": 0.485, "w": 0.96, "d": 0.03, "y": 0.08, "h": 0.84, "color": "dark"},
+    {"shape": "cyl", "x": -0.36, "z": 0.1, "w": 0.108, "d": 0.1507, "y": 0.98, "h": 0.02, "color": "metal"},
+    {"shape": "cyl", "x": -0.18, "z": 0.1, "w": 0.108, "d": 0.1507, "y": 0.98, "h": 0.02, "color": "metal"},
+    {"shape": "cyl", "x": -0.0, "z": 0.1, "w": 0.108, "d": 0.1507, "y": 0.98, "h": 0.02, "color": "metal"},
+    {"shape": "cyl", "x": 0.18, "z": 0.1, "w": 0.108, "d": 0.1507, "y": 0.98, "h": 0.02, "color": "metal"},
+    {"shape": "cyl", "x": 0.36, "z": 0.1, "w": 0.108, "d": 0.1507, "y": 0.98, "h": 0.02, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": -0.2, "w": 0.5, "d": 0.08, "y": 0.98, "h": 0.02, "color": "dark"}
+  ]
+}

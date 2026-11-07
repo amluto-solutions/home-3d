@@ -1,0 +1,30 @@
+{
+  "id": "modular_corner_sofa_large_left",
+  "name": {"en": "Modular corner sofa"},
+  "size": [3.1, 2.4, 0.8],
+  "group": "sofa",
+  "family": "modular_corner_sofa",
+  "variant": {"en": "Large, corner on the left · 310 × 240"},
+  "room": ["living"],
+  "tags": ["corner sofa", "L-shaped sofa", "l shape", "modular", "sectional", "couch", "settee", "corner group"],
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.2958, "w": 0.9742, "d": 0.375, "y": 0.0, "h": 0.1, "color": "dark"},
+    {"shape": "box", "x": -0.3419, "z": 0.1875, "w": 0.2903, "d": 0.5917, "y": 0.0, "h": 0.1, "color": "dark"},
+    {"shape": "rbox", "x": -0.3419, "z": -0.2958, "w": 0.3135, "d": 0.405, "y": 0.1, "h": 0.35, "color": "fabric", "round": 0.08},
+    {"shape": "rbox", "x": -0.0258, "z": -0.2958, "w": 0.3135, "d": 0.405, "y": 0.1, "h": 0.35, "color": "fabric", "round": 0.08},
+    {"shape": "rbox", "x": 0.2903, "z": -0.2958, "w": 0.3135, "d": 0.405, "y": 0.1, "h": 0.35, "color": "fabric", "round": 0.08},
+    {"shape": "rbox", "x": -0.3419, "z": 0.1708, "w": 0.3135, "d": 0.5217, "y": 0.1, "h": 0.35, "color": "fabric", "round": 0.08},
+    {"shape": "rbox", "x": -0.0258, "z": -0.4542, "w": 0.9484, "d": 0.0917, "y": 0.45, "h": 0.55, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": -0.4645, "z": 0.0125, "w": 0.071, "d": 0.8417, "y": 0.45, "h": 0.55, "color": "fabric", "round": 0.15},
+    {"shape": "rbox", "x": 0.4742, "z": -0.2958, "w": 0.0516, "d": 0.4083, "y": 0.1, "h": 0.65, "color": "fabric", "round": 0.3},
+    {"shape": "rbox", "x": -0.3419, "z": 0.4667, "w": 0.3161, "d": 0.0667, "y": 0.1, "h": 0.65, "color": "fabric", "round": 0.3},
+    {"shape": "rbox", "x": -0.0258, "z": -0.249, "w": 0.3097, "d": 0.3104, "y": 0.45, "h": 0.125, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": 0.2903, "z": -0.249, "w": 0.3097, "d": 0.3104, "y": 0.45, "h": 0.125, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.3065, "z": -0.249, "w": 0.2387, "d": 0.3104, "y": 0.45, "h": 0.125, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.3056, "z": 0.1708, "w": 0.2403, "d": 0.5208, "y": 0.45, "h": 0.125, "color": "cushion", "round": 0.35},
+    {"shape": "rbox", "x": -0.3065, "z": -0.3792, "w": 0.2387, "d": 0.075, "y": 0.55, "h": 0.425, "color": "cushion", "round": 0.4},
+    {"shape": "rbox", "x": -0.0258, "z": -0.3792, "w": 0.3097, "d": 0.075, "y": 0.55, "h": 0.425, "color": "cushion", "round": 0.4},
+    {"shape": "rbox", "x": 0.2903, "z": -0.3792, "w": 0.3097, "d": 0.075, "y": 0.55, "h": 0.425, "color": "cushion", "round": 0.4},
+    {"shape": "rbox", "x": -0.4065, "z": 0.1708, "w": 0.0581, "d": 0.5167, "y": 0.55, "h": 0.425, "color": "cushion", "round": 0.4}
+  ]
+}

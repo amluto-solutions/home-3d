@@ -1,0 +1,14 @@
+{
+  "id": "tablecloth_round_160",
+  "name": {"en": "Round tablecloth"},
+  "size": [1.6, 1.6, 0.012],
+  "group": "deco",
+  "room": ["dining", "kitchen", "living", "garden"],
+  "tags": ["table linen", "cloth", "table cover", "dining table", "linen", "tablecloth"],
+  "family": "tablecloth",
+  "variant": {"en": "Round 160"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "lathe", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#f4f1ea", "profile": [[0, 0], [1, 0], [1, 1], [0, 1]]}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "shure_sm7b",
+  "name": {"en": "Shure SM7B broadcast mic"},
+  "size": [0.1, 0.19, 0.096],
+  "group": "media",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["shure", "sm7b", "dynamic mic", "broadcast mic", "microphone", "streaming", "audio"],
+  "family": "shure_sm7",
+  "variant": {"en": "SM7B"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": -0.45, "z": 0.0, "w": 0.1, "d": 0.2632, "y": 0.0, "h": 1.0, "color": "dark"},
+    {"shape": "box", "x": 0.45, "z": 0.0, "w": 0.1, "d": 0.2632, "y": 0.0, "h": 1.0, "color": "dark"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.64, "d": 1.0, "y": 0.1667, "h": 0.6667, "color": "dark", "axis": "z"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2632, "w": 0.64, "d": 0.4737, "y": 0.1667, "h": 0.6667, "color": "#2b2f36", "axis": "z"}
+  ]
+}

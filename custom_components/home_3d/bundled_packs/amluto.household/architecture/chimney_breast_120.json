@@ -1,0 +1,17 @@
+{
+  "id": "chimney_breast_120",
+  "name": {"en": "Chimney breast"},
+  "size": [1.2, 0.4, 2.4],
+  "group": "architecture",
+  "room": ["living", "dining", "bedroom"],
+  "tags": ["chimney breast", "chimney", "fireplace", "mantelpiece", "mantel", "hearth", "alcove", "period", "fire surround"],
+  "family": "chimney_breast",
+  "variant": {"en": "Plain, 120 cm"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": -0.025, "w": 1, "d": 0.95, "y": 0.0, "h": 1, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.47, "w": 1, "d": 0.04, "y": 0.0, "h": 0.05, "color": "white", "top": "#f2f2ef", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": -0.025, "w": 1.0, "d": 0.95}
+  ]
+}

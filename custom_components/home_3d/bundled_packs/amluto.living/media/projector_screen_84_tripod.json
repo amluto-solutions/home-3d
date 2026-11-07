@@ -1,0 +1,24 @@
+{
+  "id": "projector_screen_84_tripod",
+  "name": {"en": "Projector screen 84″ on a tripod"},
+  "size": [2.02, 0.75, 2.05],
+  "group": "media",
+  "room": ["living", "loft", "bedroom", "office", "kids"],
+  "tags": ["projector screen", "screen", "home cinema", "pull-down screen", "movie", "16:9"],
+  "family": "projector_screen",
+  "variant": {"en": "84″ tripod"},
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0173, "d": 0.0467, "y": 0.0, "h": 0.9756, "color": "metal", "fix": "w"},
+    {"shape": "loft", "x": 0.0, "z": -0.4733, "w": 0.0099, "d": 0.0267, "y": 0.0, "h": 0.2927, "color": "metal", "tx": 0.0, "tz": 0.0, "tw": 0.0099, "td": 0.0267},
+    {"shape": "loft", "x": -0.1584, "z": 0.4733, "w": 0.0099, "d": 0.0267, "y": 0.0, "h": 0.2927, "color": "metal", "tx": 0.0, "tz": 0.0, "tw": 0.0099, "td": 0.0267},
+    {"shape": "loft", "x": 0.1584, "z": 0.4733, "w": 0.0099, "d": 0.0267, "y": 0.0, "h": 0.2927, "color": "metal", "tx": 0.0, "tz": 0.0, "tw": 0.0099, "td": 0.0267},
+    {"shape": "cyl", "x": 0.0, "z": 0.0533, "w": 1.0, "d": 0.1067, "y": 0.9268, "h": 0.0146, "color": "metal", "axis": "x"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0667, "w": 1.0, "d": 0.12, "y": 0.2927, "h": 0.0439, "color": "dark", "axis": "x"},
+    {"shape": "box", "x": 0.0, "z": 0.02, "w": 0.0198, "d": 0.04, "y": 0.3366, "h": 0.0537, "color": "metal"},
+    {"shape": "box", "x": 0.0, "z": 0.0433, "w": 0.9703, "d": 0.0067, "y": 0.3902, "h": 0.5366, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.048, "w": 0.9208, "d": 0.0027, "y": 0.4049, "h": 0.5122, "color": "white", "screen": true}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}
+  ]
+}

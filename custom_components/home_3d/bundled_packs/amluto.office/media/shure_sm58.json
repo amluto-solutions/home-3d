@@ -1,0 +1,15 @@
+{
+  "id": "shure_sm58",
+  "name": {"en": "Shure SM58 handheld mic"},
+  "size": [0.051, 0.162, 0.051],
+  "group": "media",
+  "room": ["office", "hobby", "living", "bedroom"],
+  "tags": ["shure", "sm58", "vocal mic", "dynamic mic", "microphone", "streaming", "audio"],
+  "family": "shure_handheld",
+  "variant": {"en": "SM58"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.6863, "d": 0.7, "y": 0.1569, "h": 0.6863, "color": "#3a3d42", "axis": "z"},
+    {"shape": "sphere", "x": 0.0, "z": 0.3426, "w": 1.0, "d": 0.3148, "y": 0.0, "h": 1.0, "color": "metal"}
+  ]
+}

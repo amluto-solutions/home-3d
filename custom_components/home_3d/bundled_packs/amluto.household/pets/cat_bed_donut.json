@@ -1,0 +1,17 @@
+{
+  "id": "cat_bed_donut",
+  "name": {"en": "Donut cat bed"},
+  "size": [0.5, 0.5, 0.18],
+  "group": "pets",
+  "room": ["living", "hall", "bedroom", "kitchen", "utility", "conservatory"],
+  "tags": ["cat", "cat bed", "donut bed", "calming bed", "plush", "fluffy", "pet bed", "round bed", "dog bed"],
+  "family": "cat_bed_donut",
+  "variant": {"en": "50 cm"},
+  "parts": [
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0, "y": 0.0, "h": 1.0, "color": "#d9cdbf", "profile": [[0.0, 0.0], [0.85, 0.0], [0.97, 0.3], [1, 0.6], [0.88, 0.95], [0.72, 1], [0.6, 0.8], [0.52, 0.42], [0.0, 0.36]]}
+  ],
+  "symbol": [
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.5},
+    {"shape": "circle", "x": 0, "z": 0, "r": 0.27}
+  ]
+}

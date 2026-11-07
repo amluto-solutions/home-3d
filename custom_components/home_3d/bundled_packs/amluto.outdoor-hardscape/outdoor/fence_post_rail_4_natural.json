@@ -1,0 +1,25 @@
+{
+  "id": "fence_post_rail_4_natural",
+  "name": {"en": "Post and rail fence, 4 rail, natural"},
+  "size": [3.0, 0.1, 1.3],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["fence", "post and rail", "paddock fence", "rail fence", "boundary", "rural", "timber"],
+  "family": "fence_post_rail_4_natural",
+  "variant": {"en": "4 rails, 1.3 m high, 3 m span"},
+  "parts": [
+    {"shape": "box", "x": -0.4833, "z": 0.0, "w": 0.0333, "d": 1, "y": 0, "h": 1, "color": "#9c7548", "fix": "wd"},
+    {"shape": "box", "x": -0.4833, "z": 0.0, "w": 0.0333, "d": 1, "y": 0.9769, "h": 0.0231, "color": "#b38753", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.0333, "d": 1, "y": 0, "h": 1, "color": "#9c7548", "fix": "wd"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.0333, "d": 1, "y": 0.9769, "h": 0.0231, "color": "#b38753", "fix": "wdh"},
+    {"shape": "box", "x": 0.4833, "z": 0.0, "w": 0.0333, "d": 1, "y": 0, "h": 1, "color": "#9c7548", "fix": "wd"},
+    {"shape": "box", "x": 0.4833, "z": 0.0, "w": 0.0333, "d": 1, "y": 0.9769, "h": 0.0231, "color": "#b38753", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 0.45, "y": 0.28, "h": 0.0692, "color": "#b88a55", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 0.45, "y": 0.4867, "h": 0.0692, "color": "#b88a55", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 0.45, "y": 0.6933, "h": 0.0692, "color": "#b88a55", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9667, "d": 0.45, "y": 0.9, "h": 0.0692, "color": "#b88a55", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

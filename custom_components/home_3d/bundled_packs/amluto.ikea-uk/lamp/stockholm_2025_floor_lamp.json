@@ -1,0 +1,35 @@
+{
+  "id": "stockholm_2025_floor_lamp",
+  "name": {
+    "en": "Floor lamp, brass with textile shade"
+  },
+  "size": [
+    0.5,
+    0.5,
+    1.59
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office"
+  ],
+  "tags": [
+    "STOCKHOLM",
+    "floor lamp",
+    "standard lamp",
+    "brass",
+    "white",
+    "textile shade",
+    "classic"
+  ],
+  "ikea": "STOCKHOLM 2025",
+  "light": "floor",
+  "electric": true,
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.6, "d": 0.6, "y": 0, "h": 0.0157, "color": "metal", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.04, "d": 0.04, "y": 0.0157, "h": 0.9371, "color": "metal", "fix": "wd"},
+    {"shape": "lathe", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.7862, "h": 0.2138, "color": "white", "edges": "faint", "profile": [[1, 0], [0.62, 1], [0.58, 1], [0.97, 0]]},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.88, "d": 0.88, "y": 0.7925, "h": 0.005, "color": "white", "glow": true, "fix": "h"}
+  ]
+}

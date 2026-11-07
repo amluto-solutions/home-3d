@@ -1,0 +1,11 @@
+{
+  "format": "home3d-pack",
+  "version": 2,
+  "id": "amluto.bedroom",
+  "name": "Bedroom & kids",
+  "publisher": "Amluto Solutions",
+  "licence": "MIT",
+  "release": 2,
+  "description": "Beds, kids' furniture and storage for bedrooms and nurseries, modelled for Home 3D from simple shapes. Ships with the app and works offline.",
+  "release_note": "Release 2: the pack's id is now amluto.bedroom (it was theovencook.bedroom); plans that name the old id still load (#424)."
+}

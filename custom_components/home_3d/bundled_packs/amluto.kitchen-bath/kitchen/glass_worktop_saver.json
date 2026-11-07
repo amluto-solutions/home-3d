@@ -1,0 +1,17 @@
+{
+  "id": "glass_worktop_saver",
+  "name": {"en": "Glass worktop saver, 38 × 28 cm"},
+  "size": [0.38, 0.28, 0.01],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "tags": ["chopping board", "cutting board", "kitchen", "worktop", "glass board", "worktop saver", "trivet"],
+  "family": "glass_board",
+  "variant": {"en": "Glass"},
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#bfe0e6", "fix": "h"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

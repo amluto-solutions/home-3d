@@ -1,0 +1,44 @@
+{
+  "id": "bankers_lamp",
+  "name": {
+    "en": "Bankers lamp"
+  },
+  "size": [
+    0.352,
+    0.16,
+    0.44
+  ],
+  "group": "lamp",
+  "room": [
+    "living",
+    "bedroom",
+    "office",
+    "hall",
+    "dining",
+    "kids"
+  ],
+  "tags": [
+    "table lamp",
+    "desk lamp",
+    "bankers lamp",
+    "library lamp",
+    "green glass",
+    "brass",
+    "traditional",
+    "study"
+  ],
+  "family": "bankers_lamp",
+  "variant": {
+    "en": "Green"
+  },
+  "mount": "surface",
+  "light": "table",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.4545, "d": 1, "y": 0, "h": 0.0455, "color": "#b08d57"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.0852, "d": 0.1875, "y": 0.0455, "h": 0.6364, "color": "#b08d57"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.142, "d": 0.3125, "y": 0.6591, "h": 0.0682, "color": "#b08d57"},
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8523, "d": 0.875, "y": 0.6818, "h": 0.3182, "color": "#1f6b45", "glow": true, "axis": "x"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8523, "d": 0.875, "y": 0.6818, "h": 0.0227, "color": "#145232"},
+    {"shape": "box", "x": 0.483, "z": 0.0, "w": 0.0341, "d": 0.075, "y": 0.8182, "h": 0.0273, "color": "#b08d57"}
+  ]
+}

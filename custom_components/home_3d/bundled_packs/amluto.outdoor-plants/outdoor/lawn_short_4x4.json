@@ -1,0 +1,17 @@
+{
+  "id": "lawn_short_4x4",
+  "name": {"en": "Lawn, short, 4 × 4 m"},
+  "size": [4.0, 4.0, 0.03],
+  "group": "outdoor",
+  "room": ["garden"],
+  "tags": ["lawn", "turf", "mown", "grass"],
+  "family": "lawn_short",
+  "variant": {"en": "4 × 4 m"},
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0, "h": 1, "color": "#4a3626"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.1667, "h": 1, "color": "#58a23e", "top": "#6cb84c"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}
+  ]
+}

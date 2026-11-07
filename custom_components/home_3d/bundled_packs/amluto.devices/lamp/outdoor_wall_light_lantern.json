@@ -1,0 +1,22 @@
+{
+  "id": "outdoor_wall_light_lantern",
+  "name": {"en": "Outdoor wall light (lantern)"},
+  "size": [0.17, 0.2, 0.32],
+  "group": "lamp",
+  "tags": ["outdoor wall light", "exterior light", "garden light", "porch light", "security light", "wall lantern", "patio light", "outside light", "ip44", "lantern"],
+  "family": "outdoor_wall_light",
+  "variant": {"en": "Lantern"},
+  "electric": true,
+  "light": "wall",
+  "room": ["garden"],
+  "mount": "wall",
+  "wall_y": 2.0,
+  "parts": [
+    {"shape": "box", "x": 0, "z": -0.42, "w": 0.35, "d": 0.16, "y": 0.2, "h": 0.55, "color": "#23262b"},
+    {"shape": "box", "x": 0, "z": -0.12, "w": 0.2, "d": 0.4, "y": 0.42, "h": 0.06, "color": "#23262b"},
+    {"shape": "box", "x": 0, "z": 0.1, "w": 0.85, "d": 0.7, "y": 0.1, "h": 0.06, "color": "#23262b"},
+    {"shape": "box", "x": 0, "z": 0.1, "w": 0.7, "d": 0.55, "y": 0.16, "h": 0.6, "color": "#fff0c8", "glow": true},
+    {"shape": "loft", "x": 0, "z": 0.1, "w": 0.85, "d": 0.7, "y": 0.76, "h": 0.12, "color": "#23262b", "tw": 0.3, "td": 0.25},
+    {"shape": "sphere", "x": 0, "z": 0.1, "w": 0.15, "d": 0.15, "y": 0.88, "h": 0.12, "color": "#23262b"}
+  ]
+}

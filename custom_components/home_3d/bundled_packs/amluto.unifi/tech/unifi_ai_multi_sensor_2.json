@@ -1,0 +1,106 @@
+{
+ "id": "unifi_ai_multi_sensor_2",
+ "name": {
+  "en": "UniFi AI Multi Sensor 2 camera"
+ },
+ "size": [
+  0.218,
+  0.132,
+  0.0935
+ ],
+ "group": "tech",
+ "tags": [
+  "security camera",
+  "camera",
+  "cctv",
+  "unifi",
+  "ubiquiti",
+  "ai multi sensor 2",
+  "uvc ai multi sensor 2",
+  "ai ms 2",
+  "uvc ai ms 2"
+ ],
+ "family": "unifi_camera",
+ "variant": {
+  "en": "AI MS 2"
+ },
+ "electric": true,
+ "mount": "ceiling",
+ "parts": [
+  {
+   "shape": "rbox",
+   "x": 0.0,
+   "z": 0.0,
+   "w": 1.0,
+   "d": 1.0,
+   "y": 0.3743,
+   "h": 0.6257,
+   "color": "white",
+   "round": 0.3
+  },
+  {
+   "shape": "lathe",
+   "x": -0.2523,
+   "z": 0.0,
+   "w": 0.2844,
+   "d": 0.4697,
+   "y": 0.0,
+   "h": 0.4813,
+   "color": "#1c222c",
+   "profile": [
+    [
+     0,
+     0
+    ],
+    [
+     0.5,
+     0.1
+    ],
+    [
+     0.9,
+     0.5
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ]
+  },
+  {
+   "shape": "lathe",
+   "x": 0.2523,
+   "z": 0.0,
+   "w": 0.2844,
+   "d": 0.4697,
+   "y": 0.0,
+   "h": 0.4813,
+   "color": "#1c222c",
+   "profile": [
+    [
+     0,
+     0
+    ],
+    [
+     0.5,
+     0.1
+    ],
+    [
+     0.9,
+     0.5
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     0,
+     1
+    ]
+   ]
+  }
+ ]
+}

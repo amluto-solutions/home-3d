@@ -1,0 +1,48 @@
+{
+  "id": "ankarudden_chest_of_4_drawers",
+  "name": {
+    "en": "Chest of 4 drawers, 80x107 cm"
+  },
+  "size": [
+    0.8,
+    0.48,
+    1.07
+  ],
+  "group": "storage",
+  "room": [
+    "bedroom",
+    "kids",
+    "hall"
+  ],
+  "tags": [
+    "drawers",
+    "chest",
+    "dresser",
+    "oak effect",
+    "wood look"
+  ],
+  "family": "ankarudden_chest_of_drawers",
+  "variant": {
+    "en": "4 drawers · 80x107"
+  },
+  "ikea": "ANKARUDDEN",
+  "parts": [
+    {"shape": "box", "x": -0.4888, "z": -0.0187, "w": 0.0225, "d": 0.9625, "y": 0.1121, "h": 0.8692, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.4888, "z": -0.0187, "w": 0.0225, "d": 0.9625, "y": 0.1121, "h": 0.8692, "color": "wood", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.0187, "w": 0.955, "d": 0.9625, "y": 0.1121, "h": 0.0168, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.4917, "w": 0.955, "d": 0.0167, "y": 0.129, "h": 0.8355, "color": "wood", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9813, "h": 0.0187, "color": "wood", "fix": "h"},
+    {"shape": "cyl", "x": -0.4406, "z": -0.3802, "w": 0.0438, "d": 0.0729, "y": 0, "h": 0.1121, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": -0.4406, "z": 0.3802, "w": 0.0438, "d": 0.0729, "y": 0, "h": 0.1121, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4406, "z": -0.3802, "w": 0.0438, "d": 0.0729, "y": 0, "h": 0.1121, "color": "wood", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.4406, "z": 0.3802, "w": 0.0438, "d": 0.0729, "y": 0, "h": 0.1121, "color": "wood", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.7659, "h": 0.2136, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458, "y": 0.8931, "h": 0.0112, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.5486, "h": 0.2136, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458, "y": 0.6758, "h": 0.0112, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.3313, "h": 0.2136, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458, "y": 0.4586, "h": 0.0112, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.114, "h": 0.2136, "color": "wood"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458, "y": 0.2413, "h": 0.0112, "color": "dark", "fix": "wdh"}
+  ]
+}

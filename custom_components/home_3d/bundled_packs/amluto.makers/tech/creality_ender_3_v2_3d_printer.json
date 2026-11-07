@@ -1,0 +1,47 @@
+{
+  "id": "creality_ender_3_v2_3d_printer",
+  "name": {
+    "en": "Creality Ender-3 V2"
+  },
+  "size": [
+    0.475,
+    0.47,
+    0.62
+  ],
+  "group": "tech",
+  "room": [
+    "office",
+    "hobby",
+    "garage"
+  ],
+  "tags": [
+    "3d printer",
+    "printer",
+    "creality",
+    "maker",
+    "filament",
+    "fdm",
+    "ender 3 v2",
+    "bedslinger"
+  ],
+  "family": "creality_ender_3_v2",
+  "variant": {
+    "en": "Printer only"
+  },
+  "electric": true,
+  "mount": "surface",
+  "parts": [
+    {"shape": "box", "x": 0.0, "z": 0.08, "w": 0.92, "d": 0.78, "y": 0, "h": 0.09, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.12, "w": 0.6, "d": 0.52, "y": 0.09, "h": 0.02, "color": "metal"},
+    {"shape": "box", "x": 0.17, "z": 0.46, "w": 0.3, "d": 0.1, "y": 0.02, "h": 0.06, "color": "accent"},
+    {"shape": "box", "x": -0.42, "z": -0.2, "w": 0.07, "d": 0.09, "y": 0.09, "h": 0.6035, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.42, "z": -0.2, "w": 0.07, "d": 0.09, "y": 0.09, "h": 0.6035, "color": "body", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": -0.2, "w": 0.92, "d": 0.09, "y": 0.6129, "h": 0.0806, "color": "body", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": -0.2, "w": 0.84, "d": 0.05, "y": 0.42, "h": 0.035, "color": "metal"},
+    {"shape": "rbox", "x": 0.05, "z": -0.14, "w": 0.12, "d": 0.12, "y": 0.35, "h": 0.12, "color": "dark", "round": 0.2},
+    {"shape": "box", "x": 0.05, "z": -0.12, "w": 0.02, "d": 0.02, "y": 0.33, "h": 0.03, "color": "accent", "glow": true},
+    {"shape": "cyl", "x": 0.0, "z": -0.2, "w": 0.1474, "d": 0.4255, "y": 0.6935, "h": 0.3226, "color": "accent", "axis": "x"},
+    {"shape": "box", "x": 0.0, "z": -0.2, "w": 0.2105, "d": 0.0426, "y": 0.8387, "h": 0.0323, "color": "metal"}
+  ],
+  "symbol": [{"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1}, {"shape": "rect", "x": 0, "z": 0, "w": 0.8, "d": 0.8}]
+}

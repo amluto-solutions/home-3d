@@ -1,0 +1,44 @@
+{
+  "id": "kallax_shelving_unit_77x77",
+  "name": {
+    "en": "Cube shelving unit 2x2, 77x77 cm"
+  },
+  "size": [
+    0.77,
+    0.39,
+    0.77
+  ],
+  "group": "storage",
+  "room": [
+    "living",
+    "office",
+    "kids",
+    "bedroom",
+    "hall"
+  ],
+  "tags": [
+    "cube storage",
+    "bookcase",
+    "room divider",
+    "vinyl storage",
+    "4 cubes",
+    "white",
+    "black-brown",
+    "white stained oak effect",
+    "walnut effect",
+    "high-gloss white"
+  ],
+  "family": "kallax_shelving_unit",
+  "variant": {
+    "en": "2x2 · 77x77"
+  },
+  "ikea": "KALLAX",
+  "parts": [
+    {"shape": "box", "x": -0.474, "z": 0.0, "w": 0.0519, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.474, "z": 0.0, "w": 0.0519, "d": 1, "y": 0, "h": 1, "color": "white", "fix": "w"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8961, "d": 1, "y": 0.9481, "h": 0.0519, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8961, "d": 1, "y": 0, "h": 0.0519, "color": "white", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.026, "d": 0.9897, "y": 0.0519, "h": 0.8961, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8961, "d": 0.9897, "y": 0.487, "h": 0.026, "color": "white"}
+  ]
+}

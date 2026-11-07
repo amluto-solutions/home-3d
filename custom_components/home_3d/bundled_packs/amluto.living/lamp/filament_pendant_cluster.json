@@ -1,0 +1,24 @@
+{
+  "id": "filament_pendant_cluster",
+  "name": {"en": "Filament bulb pendant cluster"},
+  "size": [0.34, 0.34, 1.0],
+  "group": "lamp",
+  "room": ["kitchen", "dining", "living", "hall"],
+  "tags": ["pendant", "bare bulb", "edison bulb", "filament", "cluster", "industrial", "hanging light"],
+  "family": "filament_pendant",
+  "variant": {"en": "Cluster of 3"},
+  "mount": "ceiling",
+  "light": "pendant",
+  "parts": [
+    {"shape": "cyl", "x": 0.0, "z": 0.0, "w": 0.8824, "d": 0.8824, "y": 0.975, "h": 0.025, "color": "dark", "fix": "h"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2941, "w": 0.0235, "d": 0.0235, "y": 0.19, "h": 0.785, "color": "dark", "fix": "wd"},
+    {"shape": "cyl", "x": 0.0, "z": 0.2941, "w": 0.1029, "d": 0.1029, "y": 0.13, "h": 0.065, "color": "metal"},
+    {"shape": "lathe", "x": 0.0, "z": 0.2941, "w": 0.1882, "d": 0.1882, "y": 0.0, "h": 0.14, "color": "white", "glow": true, "profile": [[0.0, 0.0], [0.45, 0.04], [0.92, 0.28], [1, 0.48], [0.82, 0.72], [0.42, 0.88], [0.36, 1], [0.0, 1]]},
+    {"shape": "cyl", "x": -0.2547, "z": -0.1471, "w": 0.0235, "d": 0.0235, "y": 0.34, "h": 0.635, "color": "dark", "fix": "wd"},
+    {"shape": "cyl", "x": -0.2547, "z": -0.1471, "w": 0.1029, "d": 0.1029, "y": 0.28, "h": 0.065, "color": "metal"},
+    {"shape": "lathe", "x": -0.2547, "z": -0.1471, "w": 0.1882, "d": 0.1882, "y": 0.15, "h": 0.14, "color": "white", "glow": true, "profile": [[0.0, 0.0], [0.45, 0.04], [0.92, 0.28], [1, 0.48], [0.82, 0.72], [0.42, 0.88], [0.36, 1], [0.0, 1]]},
+    {"shape": "cyl", "x": 0.2547, "z": -0.1471, "w": 0.0235, "d": 0.0235, "y": 0.47, "h": 0.505, "color": "dark", "fix": "wd"},
+    {"shape": "cyl", "x": 0.2547, "z": -0.1471, "w": 0.1029, "d": 0.1029, "y": 0.41, "h": 0.065, "color": "metal"},
+    {"shape": "lathe", "x": 0.2547, "z": -0.1471, "w": 0.1882, "d": 0.1882, "y": 0.28, "h": 0.14, "color": "white", "glow": true, "profile": [[0.0, 0.0], [0.45, 0.04], [0.92, 0.28], [1, 0.48], [0.82, 0.72], [0.42, 0.88], [0.36, 1], [0.0, 1]]}
+  ]
+}
