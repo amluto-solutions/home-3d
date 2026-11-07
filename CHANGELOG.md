@@ -2,6 +2,10 @@
 
 All notable changes to Home 3D.
 
+## Home 3D 1.3.1 (7 November 2026)
+
+- The Marketplace names Amluto Solutions as the maker of Home 3D (code owner `@amluto-solutions`).
+
 ## Home 3D 1.3.0 (7 November 2026)
 
 - Home 3D moves to Amluto Solutions: the project is at github.com/amluto-solutions/home-3d and the packs list and "Install from GitHub" use amluto-solutions/home-3d-packs. The bundled furniture and language packs are now `amluto.*` instead of `theovencook.*` (publisher "Amluto Solutions", each one release up). Nothing to do: plans, backups, recipe copies, pins, roll backs, installed packs, favourites and recent items that name the old ids still load under the new ones, and both prefixes stay reserved for Home 3D's own packs. Living, Office & tech and Smart-home devices stay out of the packs repository until older versions read their part names (#424).
