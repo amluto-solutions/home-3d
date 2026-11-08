@@ -15,3 +15,12 @@ private/
 frontend/_*.mjs
 frontend/_*.mts
 frontend/_*.ts
+
+# Built by tools/build-site.py
+dist/
+# Copied from the Home 3D checkout by tools/build-site.py
+demo/static/
+# The hosting account's details (tools/deploy.mjs)
+tools/deploy.local.json
+# Screenshots from the checks and reviews
+.impeccable/review/

@@ -12,7 +12,7 @@ sidebar panel with a plan editor and a live 3D view, plus a dashboard card (`cus
 - Read-only 2D plan of the same building, for dashboards and wall tablets: device states, the same tap, hold and
   double-tap actions as in 3D, camera pictures from the plan. Switch with the 2D/3D buttons in the panel (or open it
   with `?view=2d`) and on the card.
-- Furniture library with built-in models and furniture packs you can import yourself.
+- Furniture library with thousands of free built-in models, plus free furniture packs you can make and share with the community.
 - Built-in extras: camera cockpit and motion trail, weather outside, live screens, energy view, sound, car,
   household, time travel and the fun extras.
 - Restore points and a full backup of the plan, its pictures and the packs.
@@ -113,8 +113,9 @@ With locating on, Home 3D creates one room sensor per tracked device. Those sens
 
 ## Furniture packs
 
-Home 3D comes with 14 packs of furniture inside the integration, so a new install needs no internet. More packs are
-free and optional. You can get them in three ways:
+Home 3D includes 3,217 items in 14 built-in packs, ready to use offline. Furniture packs are free: Home 3D does not
+sell item packs or put models behind a payment. More community packs are optional, and you can make and share your own
+for everyone to use. You can add packs in three ways:
 
 - **Browse packs** in the editor's library lists the packs in
   [amluto-solutions/home-3d-packs](https://github.com/amluto-solutions/home-3d-packs) and community packs. Before
@@ -128,6 +129,12 @@ A pack is a folder of plain JSON: a `pack.json` that names the pack and its lice
 [docs/packs.md](docs/packs.md)). Packs are data only, with no code, pictures or links, and Home Assistant checks every
 file on import. `python tools/fp3dpack.py validate <folder>` checks a pack before you import or publish it. A new pack
 release changes nothing in your house until you update the items; auto-update is off by default.
+
+Want to add something the library is missing? Build a pack from your own models, then share it with the community for
+free through the [community pack list](https://github.com/amluto-solutions/home-3d-packs). See
+[how to make and publish a pack](docs/packs.md). Pack ideas and questions belong in
+[Discussions](https://github.com/amluto-solutions/home-3d/discussions); report bugs in the
+[issue tracker](https://github.com/amluto-solutions/home-3d/issues/new/choose).
 
 Racks, rack-mount gear, links to Home Assistant, the rack card and voice questions are in [docs/racks.md](docs/racks.md).
 
@@ -152,5 +159,9 @@ affiliated with it; see [NOTICE](NOTICE).
 
 ## Support
 
-Home 3D is free and stays free. If it is useful to you, [buy Amluto a coffee](https://buymeacoffee.com/amluto). Report
-problems in [the issue tracker](https://github.com/amluto-solutions/home-3d/issues).
+Home 3D is free and stays free. If it is useful to you, [buy Amluto a coffee](https://buymeacoffee.com/amluto).
+
+- **Ideas:** [Discussions → Ideas](https://github.com/amluto-solutions/home-3d/discussions/categories/ideas)
+- **Questions:** [Discussions → Q&A](https://github.com/amluto-solutions/home-3d/discussions/categories/q-a)
+- **Bugs:** [open an issue](https://github.com/amluto-solutions/home-3d/issues/new/choose)
+- **What changed:** [Changelog](CHANGELOG.md) · [releases](https://github.com/amluto-solutions/home-3d/releases)

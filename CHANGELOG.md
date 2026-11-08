@@ -2,6 +2,11 @@
 
 All notable changes to Home 3D.
 
+## Home 3D 1.3.2 (8 November 2026)
+
+- The README says that every furniture pack is free, and how to make a pack and share it with the community.
+- Ideas and questions go to GitHub Discussions (Ideas, Q&A), bugs to the issue form; the README links to them.
+
 ## Home 3D 1.3.1 (7 November 2026)
 
 - The Marketplace names Amluto Solutions as the maker of Home 3D (code owner `@amluto-solutions`).
