@@ -5,7 +5,7 @@
   "name": "IKEA UK range",
   "publisher": "Amluto Solutions",
   "licence": "MIT",
-  "release": 6,
+  "release": 7,
   "description": "IKEA UK bestsellers in their sizes, modelled for Home 3D from simple shapes. Search by the readable name or the IKEA name. Not made or endorsed by IKEA.",
-  "release_note": "Release 6: the pack's id is now amluto.ikea-uk (it was theovencook.ikea-uk); plans that name the old id still load (#424)."
+  "release_note": "Release 7: published by Amluto Solutions as amluto.ikea-uk (#424)."
 }

@@ -5,7 +5,7 @@
   "name": "Smart-home devices",
   "publisher": "Amluto Solutions",
   "licence": "MIT",
-  "release": 4,
+  "release": 5,
   "description": "Smart-home devices for Home 3D: sensors, switches, thermostats, doorbells, boilers, meters, alarms, smart speakers and radiators, modelled from simple shapes so they can be linked to their Home Assistant entities. Ships with the app and works offline.",
-  "release_note": "Release 4: the pack's id is now amluto.devices (it was theovencook.devices); plans that name the old id still load (#424)."
+  "release_note": "Release 5: published by Amluto Solutions as amluto.devices (#424)."
 }

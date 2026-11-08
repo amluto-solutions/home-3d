@@ -7,7 +7,7 @@
   "name": "Deutsch",
   "publisher": "Amluto Solutions",
   "licence": "MIT",
-  "release": 2,
+  "release": 3,
   "description": "German texts for Home 3D.",
-  "release_note": "Release 2: the pack's id is now amluto.lang-de (it was theovencook.lang-de); plans that name the old id still load (#424)."
+  "release_note": "Release 3: published by Amluto Solutions as amluto.lang-de (#424)."
 }

@@ -122,7 +122,6 @@ packs ([Updates](packs.md#updates)). A backup carries the installed language pac
 The bundled packs are `amluto.lang-cs`, `-da`, `-de`, `-es`, `-fi`, `-fr`, `-hu`, `-it`, `-nb`, `-nl`, `-nn`,
 `-pl`, `-pt`, `-ro`, `-sl`, `-sv` and `-zh`. `amluto.lang-de` has every text; the others have nearly every text, and a text they lack
 shows in English, and a pack installed later (or a newer release of a bundled one) can add the missing ones.
-They were `theovencook.lang-*` before #424; an installed copy under an old id is still read, as `amluto.lang-*`.
 The language a device chose is kept by its code (`de`), not by pack id, so it stays.
 
 The names of furniture come from their packs (`name` by language), not from a language pack.

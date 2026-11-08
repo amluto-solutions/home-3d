@@ -26,8 +26,6 @@ from .pack_github import _get, parse_url
 from .packs import OFFICIAL_OWNER, PackError, verify_item
 
 DEFAULT_INDEX_URL = "https://raw.githubusercontent.com/amluto-solutions/home-3d-packs/main/index.json"
-# the default before Home 3D moved to amluto-solutions (#424): a setting that names it gets today's list
-OLD_INDEX_URLS = frozenset({"https://raw.githubusercontent.com/theovencook/home-3d-packs/main/index.json"})
 INDEX_FORMAT = "home3d-pack-index"
 INDEX_VERSION = 1
 # how long a fetched index is used before it is fetched again (a refresh asks at once)
@@ -71,7 +69,7 @@ def index_url(text: str | None) -> str:
     """The index URL to fetch for a setting (empty: the default). A github.com "blob" link becomes its raw file;
     anything but an https file on raw.githubusercontent.com raises PackError("bad_url")."""
     text = (text or "").strip()
-    if not text or text in OLD_INDEX_URLS:
+    if not text:
         return DEFAULT_INDEX_URL
     if len(text) > MAX_URL_LENGTH:
         raise PackError("bad_url", "the index URL is too long")

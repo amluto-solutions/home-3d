@@ -775,66 +775,27 @@ def is_bundled(bundled: list[dict[str, Any]], pack_id: str) -> bool:
 RESERVED_PREFIX = "amluto."
 RESERVED_PUBLISHER = "Amluto Solutions"
 OFFICIAL_OWNER = "amluto-solutions"
-# Home 3D moved from the GitHub user theovencook to the organisation amluto-solutions (#424); its packs were
-# theovencook.* before. The old prefix and publisher stay reserved, so no other pack can take them over, and packs
-# already installed from the old account still count as official.
-RESERVED_PREFIXES = (RESERVED_PREFIX, "theovencook.")
 # compared folded (see _folded)
-RESERVED_PUBLISHERS = frozenset({"amlutosolutions", "amluto", "theovencook"})
-OFFICIAL_OWNERS = frozenset({OFFICIAL_OWNER, "theovencook"})
-# Old id prefix -> new one (#424). A pack id or item type with an old prefix names the same pack under its new id:
-# plans, backups, recipe copies, pins, rollback entries and installed packs are read with the new one.
-RENAMED_PREFIXES = {"theovencook.": RESERVED_PREFIX}
-
-
-def renamed_pack_id(pack_id: str) -> str:
-    """The id a pack has now: its new id when Home 3D's packs were renamed (#424), else itself."""
-    for old, new in RENAMED_PREFIXES.items():
-        if pack_id.startswith(old):
-            return new + pack_id[len(old) :]
-    return pack_id
-
-
-def renamed_pack(pack: dict[str, Any]) -> dict[str, Any]:
-    """A pack under its new id (#424): an installed copy, a backup's or one fetched from the old account still says
-    theovencook.* in its pack.json. The same object when its id did not change."""
-    new_id = renamed_pack_id(str(pack.get("id", "")))
-    return pack if new_id == pack.get("id") else {**pack, "id": new_id}
-
-
-def renamed_installed(packs: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """The installed packs with our old ids renamed (#424), one per id: when a pack is installed under both its old
-    and its new id, the higher release stays (on a tie the one already under the new id). Each pack keeps its source,
-    so an update check still asks where it came from. The same list when nothing was renamed."""
-    if not any(renamed_pack(p) is not p for p in packs):
-        return packs
-    by_id: dict[str, tuple[tuple[int, bool], dict[str, Any]]] = {}
-    for pack in packs:
-        new = renamed_pack(pack)
-        rank = (int(new.get("release", 1)), new is pack)
-        if new["id"] not in by_id or by_id[new["id"]][0] < rank:
-            by_id[new["id"]] = (rank, new)
-    return [entry for _rank, entry in by_id.values()]
+RESERVED_PUBLISHERS = frozenset({"amlutosolutions", "amluto"})
 
 
 def _folded(text: Any) -> str:
-    """A name without case, spaces, dots, dashes and underscores ("The Oven-Cook" -> "theovencook")."""
+    """A name without case, spaces, dots, dashes and underscores ("Amluto Solutions" -> "amlutosolutions")."""
     return re.sub(r"[\s._-]+", "", str(text or "")).casefold()
 
 
 def is_reserved(pack: dict[str, Any]) -> bool:
-    """Whether a pack uses an id prefix or a publisher of Home 3D's own packs (today's or the old ones, #424)."""
+    """Whether a pack uses the id prefix or the publisher of Home 3D's own packs."""
     pack_id = str(pack.get("id", ""))
-    return pack_id.startswith(RESERVED_PREFIXES) or _folded(pack.get("publisher")) in RESERVED_PUBLISHERS
+    return pack_id.startswith(RESERVED_PREFIX) or _folded(pack.get("publisher")) in RESERVED_PUBLISHERS
 
 
 def is_official(origin: Any) -> bool:
-    """Whether a pack's origin is an official source: installed from GitHub from Home 3D's own account (the
-    organisation, or the user account its packs came from before #424)."""
+    """Whether a pack's origin is an official source: installed from GitHub from Home 3D's own account."""
     return (
         isinstance(origin, dict)
         and origin.get("type") == "github"
-        and str(origin.get("owner", "")).casefold() in OFFICIAL_OWNERS
+        and str(origin.get("owner", "")).casefold() == OFFICIAL_OWNER
     )
 
 
@@ -958,22 +919,20 @@ def source_of_folder(files: dict[str, str]) -> dict[str, Any]:
 
 def checked_folder(files: dict[str, str]) -> tuple[dict[str, Any], dict[str, Any]]:
     """A pack folder's checked payload and the source kept with it; raises PackError. Plain work without the event
-    loop: a large pack takes a while, so callers run it in the executor (#176). A pack with an old id of ours comes
-    under its new id (#424): its files still name the old one."""
-    return renamed_pack(verify_folder(files)), source_of_folder(files)
+    loop: a large pack takes a while, so callers run it in the executor (#176)."""
+    return verify_folder(files), source_of_folder(files)
 
 
 def checked_file(text: str) -> tuple[dict[str, Any], dict[str, Any]]:
     """An old single-file pack's checked payload and the source kept with it; raises PackError (see checked_folder)."""
-    return renamed_pack(verify_pack(text)), parts_of(text)
+    return verify_pack(text), parts_of(text)
 
 
 def checked_source(source: Any) -> tuple[dict[str, Any], dict[str, Any]]:
     """The kept source of an imported pack checked again (a backup being restored), as an import keeps it: the
     payload, and the source with only what a pack is read from (#376: no readme or licence text, no fields this
     version does not read). Raises PackError. The caller adds a checked origin."""
-    # a backup made before #424 holds our packs under their old ids
-    payload = renamed_pack(verify_source(source))
+    payload = verify_source(source)
     if isinstance(source.get("files"), dict):
         return payload, source_of_folder(source["files"])
     fields = {str(k) for k in PAYLOAD_SCHEMA.schema}

@@ -5,7 +5,7 @@
   "name": "IT & network",
   "publisher": "Amluto Solutions",
   "licence": "MIT",
-  "release": 3,
+  "release": 4,
   "description": "Racks, switches, routers, NAS boxes, access points and UPSs for the cupboard under the stairs or the server room, modelled for Home 3D from simple shapes. Ships with the app and works offline.",
-  "release_note": "Release 3: the pack's id is now amluto.it (it was theovencook.it); plans that name the old id still load (#424)."
+  "release_note": "Release 4: published by Amluto Solutions as amluto.it (#424)."
 }

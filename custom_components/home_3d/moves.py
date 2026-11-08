@@ -10,11 +10,6 @@ saved (an imported plan or home, a backup or a restore point being restored, the
 resolves through the table, so a plan exported before a move loads and renders. A pack all of whose items moved away
 can be retired: nothing needs it any more.
 
-Home 3D's own packs were renamed from theovencook.* to amluto.* (#424). That is a rule, not ~3,000 table lines: every
-type is read through `renamed_type` first (packs.RENAMED_PREFIXES), then through the table, whose entries name the
-new ids. So "pack:theovencook.core:air_fryer" ends up as "pack:amluto.kitchen-bath:air_fryer" in one step, and an
-item a pack dropped since (kept only as the plan's recipe copy) is renamed as well.
-
 This module only depends on the standard library, packs.py and recipes.py.
 """
 
@@ -25,7 +20,7 @@ import logging
 from pathlib import Path
 from typing import Any
 
-from .packs import recipe_hash, renamed_pack_id
+from .packs import recipe_hash
 from .recipes import PACK_TYPE_PREFIX
 
 _LOGGER = logging.getLogger(__name__)
@@ -59,7 +54,7 @@ def parse_moves(data: Any) -> Moves:
     if not isinstance(table, dict):
         return {}
     clean = {
-        renamed_type(old): renamed_type(new)
+        old: new
         for old, new in table.items()
         if isinstance(old, str) and isinstance(new, str) and split_type(old) and split_type(new)
     }
@@ -86,18 +81,9 @@ def split_type(type_: str) -> tuple[str, str] | None:
     return (pack, item) if pack and item else None
 
 
-def renamed_type(type_: str) -> str:
-    """A pack item type under its pack's new id (#424: theovencook.* -> amluto.*), else itself."""
-    parts = split_type(type_)
-    if parts is None or (pack := renamed_pack_id(parts[0])) == parts[0]:
-        return type_
-    return f"{PACK_TYPE_PREFIX}{pack}:{parts[1]}"
-
-
 def resolve(type_: str, moves: Moves) -> str:
-    """The type an item has now: its new type when its pack was renamed (#424) or it moved, else itself."""
-    renamed = renamed_type(type_)
-    return moves.get(renamed, renamed)
+    """The type an item has now: its new type when it moved, else itself."""
+    return moves.get(type_, type_)
 
 
 def moved_copy(entry: Any, new_type: str) -> Any:
@@ -222,7 +208,6 @@ def retired_packs(moves: Moves, installed: set[str]) -> set[str]:
 
 def migrate_pins(pinned: set[str], moves: Moves, installed: set[str]) -> set[str]:
     """The pinned packs (#26) after moves: a pinned pack's pin also holds every pack its items moved into, and a
-    retired pack keeps no pin. A pin under an old id of our packs follows it to the new id (#424)."""
-    pinned = {renamed_pack_id(p) for p in pinned}
+    retired pack keeps no pin."""
     out = set(pinned) | {_pack_of(new) for old, new in moves.items() if _pack_of(old) in pinned}
     return out - retired_packs(moves, installed)

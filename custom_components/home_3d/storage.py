@@ -52,7 +52,6 @@ from .packs import (
     language_of,
     library_pack,
     load_bundled,
-    renamed_installed,
     strings_hash,
     with_bundled,
 )
@@ -758,11 +757,7 @@ class FloorplanData:
         becomes the first home, read from the stores it always had (nothing is copied). A list of homes that is lost
         or damaged is made again from the homes' stores on disk (#379)."""
         packs = await self._pack_store.async_load()
-        installed = list((packs or {}).get("packs", []))
-        # packs installed under our old ids (theovencook.*) are kept under the new ones (#424), written back once
-        self.packs = renamed_installed(installed)
-        if self.packs is not installed:
-            await self._pack_store.async_save({"packs": self.packs})
+        self.packs = list((packs or {}).get("packs", []))
         # the bundled furniture packs, then the bundled language packs (#196)
         self.bundled = await self.hass.async_add_executor_job(load_bundled)
         self.bundled += await self.hass.async_add_executor_job(load_bundled, BUNDLED_LANGUAGES_DIR)

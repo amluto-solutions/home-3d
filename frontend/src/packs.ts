@@ -252,33 +252,9 @@ export function setPacks(packs: FurniturePack[], quiet = false): void {
   if (!quiet) version++;
 }
 
-/**
- * Home 3D's own packs were renamed from theovencook.* to amluto.* (#424, the backend's packs.RENAMED_PREFIXES): an old
- * id names the same pack under its new id. A rule, not a table: plans, backups, favourites and recent lists keep
- * old ids, and an item a pack dropped since (kept only as the plan's recipe copy) is renamed as well.
- */
-const RENAMED_PREFIXES: readonly (readonly [string, string])[] = [["theovencook.", "amluto."]];
-
-/** The id a pack has now: its new id when Home 3D's packs were renamed (#424), else itself. */
-export function renamedPackId(id: string): string {
-  for (const [old, now] of RENAMED_PREFIXES) if (id.startsWith(old)) return now + id.slice(old.length);
-  return id;
-}
-
-/** A pack item type (or a library key that starts with one) under its pack's new id (#424), else itself. */
-export function renamedPackType(type: string): string {
-  if (!isPackType(type)) return type;
-  const rest = type.slice("pack:".length);
-  const at = rest.indexOf(":");
-  if (at <= 0) return type;
-  const pack = renamedPackId(rest.slice(0, at));
-  return pack === rest.slice(0, at) ? type : `pack:${pack}${rest.slice(at)}`;
-}
-
-/** The type an item has now: its new type when its pack was renamed (#424) or it moved to another pack (#110), else itself. */
+/** The type an item has now: its new type when it moved to another pack (#110), else itself. */
 export function resolvePackType(type: string): string {
-  const renamed = renamedPackType(type);
-  return moved.get(renamed) ?? renamed;
+  return moved.get(type) ?? type;
 }
 
 /**
@@ -287,7 +263,6 @@ export function resolvePackType(type: string): string {
  * nothing moved; the backend migrates whatever reaches it as well.
  */
 export function migratePlanTypes(building: Building): Building {
-  // an old id of our packs is renamed even when nothing moved (#424)
   const had = (t: string | null | undefined): t is string => !!t && resolvePackType(t) !== t;
   // gear in a rack is placed by slot type (#113)
   const itemMoved = (f: Furniture): boolean => had(f.type) || had(f.vehicle) || (f.types ?? []).some((t) => had(t.vehicle)) || (f.rack?.slots ?? []).some((s) => had(s.type));

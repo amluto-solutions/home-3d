@@ -5,7 +5,7 @@
   "name": "Garden plants & ground",
   "publisher": "Amluto Solutions",
   "licence": "MIT",
-  "release": 3,
+  "release": 4,
   "description": "Grass in several lengths, soils and mulches, raised beds and 50 garden plants in sizes and colours, modelled for Home 3D from simple shapes. Ships with the app and works offline.",
-  "release_note": "Release 3: the pack's id is now amluto.outdoor-plants (it was theovencook.outdoor-plants); plans that name the old id still load (#424)."
+  "release_note": "Release 4: published by Amluto Solutions as amluto.outdoor-plants (#424)."
 }

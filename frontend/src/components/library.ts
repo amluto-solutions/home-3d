@@ -10,7 +10,6 @@ import { css, html, LitElement, nothing } from "lit";
 import { repeat } from "lit/directives/repeat.js";
 import { KINDS, activeFilters, cardsOf, searchLibrary, warmIndex, sizeText, type LibraryCard, type LibraryChip, type LibraryEntry, type LibraryFilter, type Room, ROOMS } from "../library-index.ts";
 import { updatesOnCard } from "../pack-updates.ts";
-import { renamedPackType } from "../packs.ts";
 import { tokens } from "../styles.ts";
 import { thumbFor } from "../thumbs.ts";
 
@@ -50,10 +49,10 @@ function save(key: string, value: unknown): void {
   }
 }
 
-/** A stored list of library keys (favourites, recent), with old pack ids renamed (#424). */
+/** A stored list of library keys (favourites, recent). */
 function storedKeys(key: string): string[] {
   const list = load<unknown>(key, []);
-  return Array.isArray(list) ? list.filter((k): k is string => typeof k === "string").map(renamedPackType) : [];
+  return Array.isArray(list) ? list.filter((k): k is string => typeof k === "string") : [];
 }
 
 export class FurnitureLibrary extends LitElement {
@@ -157,7 +156,6 @@ export class FurnitureLibrary extends LitElement {
     this._open = Array.isArray(stored) ? new Set(stored) : null;
     this._shut = new Set(load<string[]>(STORE_SHUT, []));
     this._searchShut = new Set();
-    // kept before #424 under our packs' old ids (theovencook.*): read under the new ones
     this._fav = storedKeys(STORE_FAV);
     this._recent = storedKeys(STORE_RECENT);
     this._recentShut = load<boolean>(STORE_RECENT_SHUT, false) === true;

@@ -85,11 +85,11 @@ def _offered(hass: HomeAssistant, pack_id: str) -> dict:
 
 
 def test_the_reserved_id_and_publisher_need_an_official_origin() -> None:
-    official = {"type": "github", "owner": "TheOvenCook", "repo": "home-3d-packs"}
+    official = {"type": "github", "owner": "Amluto-Solutions", "repo": "home-3d-packs"}
     for pack in (
         _pack("amluto.living"),
         _pack("acme.chairs", publisher="Amluto Solutions"),
-        _pack("acme.chairs", publisher="The Oven-Cook"),
+        _pack("acme.chairs", publisher="Amluto-Solutions"),
     ):
         assert packs.is_reserved(pack)
         assert packs.official_only(pack, official) is pack

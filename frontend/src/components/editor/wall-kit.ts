@@ -7,7 +7,7 @@ import { translate, type I18nKey } from "../../i18n.ts";
 import { FURNITURE_TYPES, LAMP_MODEL, uid, type Furniture, type Room } from "../../model.ts";
 import { load3d } from "../../load3d.ts";
 import { ensureRecipes } from "../../pack-recipes.ts";
-import { furnitureSize, packInfo, packItemName, packType, renamedPackType } from "../../packs.ts";
+import { furnitureSize, packInfo, packItemName, packType } from "../../packs.ts";
 import { WALL_CATS, HANGING, WALL_FIT, WALL_FIT_MIN, round, type RunCtx, fold, EN_HASS } from "./helpers.ts";
 import type { Fp3dEditor } from "../editor.ts";
 
@@ -77,8 +77,7 @@ export class WallKitPart {
   wallRecent(this: Fp3dEditor): string[] {
     try {
       const list = JSON.parse(localStorage.getItem("home3d.wallRecent") ?? "[]");
-      // a type kept before #424 under our packs' old ids (theovencook.*) is read under the new one
-      const types = Array.isArray(list) ? list.filter((t): t is string => typeof t === "string").map(renamedPackType) : [];
+      const types = Array.isArray(list) ? list.filter((t): t is string => typeof t === "string") : [];
       return types.filter((t) => FURNITURE_TYPES.includes(t as never) || !!packInfo(t));
     } catch {
       return [];

@@ -2,6 +2,12 @@
 
 All notable changes to Home 3D.
 
+## Home 3D 1.4.0 (8 November 2026)
+
+- Pack ids from before 1.3.0 are no longer converted. Homes opened in 1.3.0 or later are already converted and do not
+  change. A plan file, backup or restore point saved before 1.3.0 loses the furniture it placed from the bundled
+  packs, and a pack installed before 1.3.0 from Home 3D's own packs list must be installed again (#424).
+
 ## Home 3D 1.3.2 (8 November 2026)
 
 - The README says that every furniture pack is free, and how to make a pack and share it with the community.
@@ -13,7 +19,7 @@ All notable changes to Home 3D.
 
 ## Home 3D 1.3.0 (7 November 2026)
 
-- Home 3D moves to Amluto Solutions: the project is at github.com/amluto-solutions/home-3d and the packs list and "Install from GitHub" use amluto-solutions/home-3d-packs. The bundled furniture and language packs are now `amluto.*` instead of `theovencook.*` (publisher "Amluto Solutions", each one release up). Nothing to do: plans, backups, recipe copies, pins, roll backs, installed packs, favourites and recent items that name the old ids still load under the new ones, and both prefixes stay reserved for Home 3D's own packs. Living, Office & tech and Smart-home devices stay out of the packs repository until older versions read their part names (#424).
+- The bundled furniture and language packs are `amluto.*`, published by "Amluto Solutions" (each one release up), and the packs list and "Install from GitHub" use amluto-solutions/home-3d-packs. Living, Office & tech and Smart-home devices stay out of the packs repository until older versions read their part names (#424).
 - The README explains installing from the Marketplace, what reaches GitHub for furniture packs (and only for them), and the three ways to get more packs.
 
 ## Home 3D 1.2.0 (7 November 2026)
@@ -85,7 +91,7 @@ All notable changes to Home 3D.
 - The locating room sensors write a state only when their own room or settings change, and once a minute while the device is heard; probability, since and last_seen stay in the state but are no longer recorded (#365).
 - Locating after a reload of Home 3D: open views follow the new service at once, a change made just before is kept, the lab recorder stops with the entry (and its recordings are deleted when Home 3D is removed), a presence sensor moved to another area confirms its new room, and locating switched on before Bluetooth has loaded starts once it has (#368).
 - Locating does far less work each second in a big house: a faster distance, the pooled samples built once per estimate and capped at 120 a room, and a window measured only against the samples of the four rooms whose middle is nearest; 4 learned devices x 12 rooms plus 5 devices on the pool went from 93 ms to about 5 ms an estimate (#370).
-- Packs: no pack replaces one of another kind; only Home 3D's own GitHub account may use the `theovencook.` ids and publisher, replacing a bundled or official pack asks first naming it, an index entry installs only the pack it names, and only the default index marks packs official (#372).
+- Packs: no pack replaces one of another kind; only Home 3D's own GitHub account may use the `amluto.` ids and publisher, replacing a bundled or official pack asks first naming it, an index entry installs only the pack it names, and only the default index marks packs official (#372).
 - Packs: the installed release with other content or from another place asks first (also for a pinned pack) and can be rolled back; auto-update holds a release that changes the kind or publisher or removes placed items, and says why (#373).
 - Packs: the pack index is read and checked outside the event loop, and the list of placed items with an update compares stored hashes before checking any copy again (#374).
 - Packs: a folder import is measured before it is sent (too large instead of a dropped connection), GitHub installs keep to the same byte limit, and a full backup sends large packs ahead in parts (#375).
@@ -205,7 +211,7 @@ All notable changes to Home 3D.
 
 - **Modal dialogs keep the keyboard:** the ask dialog, the editor's help overlay, the wall view, the pool part card, the rack sheet and the item editor are `aria-modal`, take the focus when they open, keep Tab and Shift+Tab inside and give the focus back when they close.
 - **Changes are announced:** one polite live region tells a screen reader about another home, floor or look, an undo or redo, and a follow switch (Home Assistant's theme, the sun) that picking a look turned off.
-- **Languages are packs:** English is built in and the fallback for every text. Any other language comes from a language pack (`"kind": "language"` in `pack.json`, its texts in `strings.json`), checked, installed (folder or GitHub URL), updated, listed and removed like a furniture pack, under **Languages** on the Extensions page. German is the first: it ships as the bundled pack `theovencook.lang-de` and is no longer a file next to the bundles. Pages get a language's texts from Home Assistant (`home_3d/languages/get`) and keep them by their hash. See `docs/languages.md`.
+- **Languages are packs:** English is built in and the fallback for every text. Any other language comes from a language pack (`"kind": "language"` in `pack.json`, its texts in `strings.json`), checked, installed (folder or GitHub URL), updated, listed and removed like a furniture pack, under **Languages** on the Extensions page. German is the first: it ships as the bundled pack `amluto.lang-de` and is no longer a file next to the bundles. Pages get a language's texts from Home Assistant (`home_3d/languages/get`) and keep them by their hash. See `docs/languages.md`.
 - **Smaller editor bundles:** only the main bundle carries the English texts; the editor (971 -> 847 KB) and the card editor (157 -> 33 KB) borrow them from the page.
 - **The page names its language:** the panel, the cards and the card editor carry `lang`: Home Assistant's language when its texts are there, else English.
 - **All languages are packs (#217):** the 16 partial tables (French, Spanish, Dutch, Italian, Hungarian, Danish, Swedish, Norwegian Bokmål and Nynorsk, Finnish, Czech, Polish, Romanian, Slovenian, Chinese, Portuguese) now ship as bundled language packs like German, and `frontend/lang/*.json` and its loader are gone. The item editor, Settings, time travel, locating setup and microphone probe texts moved into the English table and the packs (German included), so those pages speak the page's language; a test fails when a text table appears anywhere else.
@@ -228,9 +234,9 @@ All notable changes to Home 3D.
 - **Vehicles catalogue:** about 195 cars (the most popular models of 20 brands, at their real outer sizes), four snowmobiles, bikes (road, gravel, mountain, e-mountain, folding, BMX, cargo, balance), motorbikes, golf carts, quad bikes, mobility scooters, scooters, a compact tractor, a caravan and trailers in the Garden & outdoor pack. A new colour role `paint` gives every vehicle a paint colour: ten base colours and a hex value in the item panel. Checklist with sizes and sources: `docs/vehicles.md`.
 - **The core pack is split and retired:** its 847 items moved into themed packs (Living, Bedroom & kids, Kitchen & bath, Office & tech, IT & network, Decor & plants, Garden & outdoor, Household & building, plus the Smart-home devices and Makers packs). Item ids are unchanged; plans migrate on load through `moved_items.json`.
 - **Pack format v2:** a pack is a folder (`pack.json` plus one JSON file per item, no code), checked like before. A pack holds up to 1000 items.
-- **Bundled packs:** `theovencook.core` (furniture, lamps, media, office and network gear, kitchen and bath, heating and energy, decor, plants, outdoor, vehicles and architecture) and `theovencook.ikea-uk` (IKEA UK models, searchable by their IKEA name) come with the integration, next to two themed packs: `theovencook.makers` (3D printers and workshop kit) and `theovencook.devices` (smart-home devices). The library can be narrowed to one pack.
+- **Bundled packs:** `amluto.core` (furniture, lamps, media, office and network gear, kitchen and bath, heating and energy, decor, plants, outdoor, vehicles and architecture) and `amluto.ikea-uk` (IKEA UK models, searchable by their IKEA name) come with the integration, next to two themed packs: `amluto.makers` (3D printers and workshop kit) and `amluto.devices` (smart-home devices). The library can be narrowed to one pack.
 - **Library vocabulary:** items sort into rooms and kinds, and the search knows UK words as well as US ones.
-- **Install a pack from a GitHub URL:** a repository, or a pack folder inside one (`.../tree/main/theovencook.core`), installs without a file upload. Only data is fetched; code, pictures and links are refused.
+- **Install a pack from a GitHub URL:** a repository, or a pack folder inside one (`.../tree/main/amluto.core`), installs without a file upload. Only data is fetched; code, pictures and links are refused.
 - **Updates, pin and roll back:** packs installed from GitHub are checked daily, weekly or monthly (or on demand). A newer release changes nothing in the house until you update the items one by one, or switch on auto-update. A pack can be pinned to its release or rolled back to the previous one; placed items show an update badge.
 - **Plans keep a recipe copy of every placed item:** a house still looks the same after a pack is updated, replaced or removed. Removing a pack leaves its furniture in the plan.
 - **The library loads light:** the pack list sends an index of every item; the recipes come on demand and are kept in the browser.

@@ -7,7 +7,7 @@
   "name": "Français",
   "publisher": "Amluto Solutions",
   "licence": "MIT",
-  "release": 2,
+  "release": 3,
   "description": "Français texts for Home 3D (partial: a text this pack lacks shows in English).",
-  "release_note": "Release 2: the pack's id is now amluto.lang-fr (it was theovencook.lang-fr); plans that name the old id still load (#424)."
+  "release_note": "Release 3: published by Amluto Solutions as amluto.lang-fr (#424)."
 }

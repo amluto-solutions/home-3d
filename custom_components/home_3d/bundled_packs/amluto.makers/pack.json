@@ -5,7 +5,7 @@
   "name": "Makers",
   "publisher": "Amluto Solutions",
   "licence": "MIT",
-  "release": 3,
+  "release": 4,
   "description": "3D printers (FDM and resin), wash and cure stations and workshop kit for makers, modelled for Home 3D from simple shapes. Printers show their progress, chamber light and camera when linked to a printer entity. Ships with the app and works offline.",
-  "release_note": "Release 3: the pack's id is now amluto.makers (it was theovencook.makers); plans that name the old id still load (#424)."
+  "release_note": "Release 4: published by Amluto Solutions as amluto.makers (#424)."
 }

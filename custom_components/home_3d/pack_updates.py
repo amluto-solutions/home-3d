@@ -59,8 +59,6 @@ from .packs import (
     official_only,
     pack_hash,
     recipe_hash,
-    renamed_pack,
-    renamed_pack_id,
     with_bundled,
 )
 from .recipes import PACK_TYPE_PREFIX, installed_copies, placed_types, recipe_copy
@@ -234,19 +232,14 @@ class PackUpdates:
 
     def _follow_moves(self) -> bool:
         """Pins and rollback entries after items moved between packs (#110): a pin follows the items into their new
-        packs; a retired pack (every item moved out, no longer installed) keeps no pin, rollback entry or check. Pins,
-        rollback entries and checks under our packs' old ids (theovencook.*) go to the new ids (#424). Whether
-        anything changed."""
+        packs; a retired pack (every item moved out, no longer installed) keeps no pin, rollback entry or check.
+        Whether anything changed."""
         moves = self.data.moves
         installed = {p["id"] for p in with_bundled(self.data.bundled, self.data.packs)}
         retired = retired_packs(moves, installed)
         pinned = migrate_pins(self.pinned, moves, installed)
-        previous = {
-            renamed_pack_id(k): renamed_pack(v) if isinstance(v, dict) else v
-            for k, v in self.previous.items()
-            if renamed_pack_id(k) not in retired
-        }
-        checks = {renamed_pack_id(k): v for k, v in self.checks.items() if renamed_pack_id(k) not in retired}
+        previous = {k: v for k, v in self.previous.items() if k not in retired}
+        checks = {k: v for k, v in self.checks.items() if k not in retired}
         if (pinned, previous, checks) == (self.pinned, self.previous, self.checks):
             return False
         self.pinned, self.previous, self.checks = pinned, previous, checks
@@ -672,8 +665,7 @@ class PackUpdates:
         (with auto-update off it is only recorded as available). Raises PackError."""
         release = pack.get("release", 1)
         commit, pack_json = await latest_release(self.hass, origin)
-        # a pack installed from the old account still says theovencook.* in its pack.json (#424)
-        if pack_json is not None and renamed_pack_id(str(pack_json["id"])) != pack["id"]:
+        if pack_json is not None and pack_json["id"] != pack["id"]:
             raise PackError("not_a_pack", f"the folder now holds the pack {pack_json['id']}")
         latest = pack_json["release"] if pack_json is not None else release
         result["latest_release"] = latest

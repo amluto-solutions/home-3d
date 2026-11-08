@@ -784,10 +784,8 @@ imported pack; a bundled pack that does not check is logged and left out.
   asks first, naming the pack it replaces (`replaces_bundled`; the page sends it again with `confirm: true`). An older
   copy is kept but the bundled one is shown. Removing the copy brings the bundled one back.
 - The id prefix `amluto.` and the publisher `Amluto Solutions` belong to Home 3D's own packs: only the bundled packs
-  and packs installed from `github.com/amluto-solutions` may use them. The old prefix `theovencook.` and publisher
-  `theovencook` (before #424) stay reserved too, and packs already installed from `github.com/theovencook` still
-  count as official. A folder or file import, another GitHub account or a
-  backup without such an origin is refused with `reserved_id`. Replacing an installed `amluto.*` pack with one
+  and packs installed from `github.com/amluto-solutions` may use them. A folder or file import, another GitHub
+  account or a backup without such an origin is refused with `reserved_id`. Replacing an installed `amluto.*` pack with one
   from another URL asks first (`replaces_official`).
 - No pack replaces a pack of another kind under the same id (a furniture pack can't take a language pack's place):
   `other_kind`, whatever is confirmed.
@@ -846,11 +844,6 @@ new type (the item id may change too):
 - A later move of the same item adds another entry (`a -> b`, then `b -> c`); the chain is followed.
 - `tests/test_moved_items.py` checks that every entry leads to an item a bundled pack has, and that no bundled pack
   still offers an old id.
-
-Home 3D's own packs were called `theovencook.*` before they moved to Amluto (#424). Old ids are still read: a plan,
-backup, recipe copy, pin, rollback entry or installed pack that names `theovencook.<pack>` is read as
-`amluto.<pack>`. That is a rule in code (`RENAMED_PREFIXES` in `packs.py`, `renamedPackId` in the frontend's
-`packs.ts`), applied before the table, so the table's entries name the `amluto.*` ids.
 
 ### The themed bundled packs
 
