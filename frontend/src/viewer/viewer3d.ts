@@ -436,6 +436,8 @@ function distanceToRing(x: number, z: number, ring: readonly [number, number][])
 const GROUND_CELLS = 32;
 /** Press duration that counts as a long press (ms). */
 const HOLD_MS = 500;
+/** A frame asked for and not drawn after this long is asked for again (a lost requestAnimationFrame froze the view). */
+const FRAME_LOST_MS = 500;
 /** Time constant of window and blind movements (ms). */
 const OPENING_TAU = 160;
 /** Frame interval while only the energy flow moves (ms): about 30 frames per second. */
@@ -721,6 +723,8 @@ export class FloorplanViewer {
   private wallMode: WallMode = "auto";
   private explode: boolean;
   private frame = 0;
+  /** When `frame` was asked for: one that has not come after FRAME_LOST_MS is taken as lost (see invalidate). */
+  private frameAskedAt = 0;
   private lastFrame = 0;
   private disposed = false;
   private readonly resizeObserver: ResizeObserver;
@@ -897,6 +901,10 @@ export class FloorplanViewer {
     lines?: AlignLines;
   } | null = null;
   private ghost: LineSegments | null = null;
+  /** One material for every ghost: a new one per drag move compiled the line shader again each time (freeze, Intel Arc). */
+  private ghostMat: LineBasicMaterial | null = null;
+  /** The items the ghost shows boxes for. */
+  private ghostIds: string[] = [];
   private selectedSet: string[] = [];
   private theme: Theme = "neon";
   private readonly themeUniform: ThemeUniform = { value: 0 };
@@ -1845,6 +1853,7 @@ export class FloorplanViewer {
 
   /** Further pieces chosen with it (a block, a multi choice): each gets a wireframe box too. */
   selectFurnitureSet(ids: readonly string[]): void {
+    if (ids.length === this.selectedSet.length && ids.every((id, i) => id === this.selectedSet[i])) return;
     this.selectedSet = [...ids];
     this.updateGhost();
     this.invalidate();
@@ -2585,6 +2594,8 @@ export class FloorplanViewer {
       o.geometry.dispose();
       (o.material as Material).dispose();
     }
+    this.ghost?.geometry.dispose();
+    this.ghostMat?.dispose();
     this.sunFx.dispose();
     this.unwatchContext?.();
     this.showContextNote(false);
@@ -2624,7 +2635,14 @@ export class FloorplanViewer {
   }
 
   invalidate(): void {
-    if (this.frame || this.disposed || document.hidden || !this.onScreen) return;
+    if (this.disposed || document.hidden || !this.onScreen) return;
+    if (this.frame) {
+      // a frame asked for long ago and never drawn was lost (seen once after a group drag): ask again, else the
+      // view stays frozen until a reload
+      if (performance.now() - this.frameAskedAt < FRAME_LOST_MS) return;
+      cancelAnimationFrame(this.frame);
+    }
+    this.frameAskedAt = performance.now();
     this.frame = requestAnimationFrame((t) => this.render(t));
   }
 
@@ -5350,21 +5368,27 @@ export class FloorplanViewer {
     // the same alignment guides as in the 2D editor (#143): rooms' centre lines, other items' edges and centres; an
     // axis no guide takes goes on the grid; Alt moves freely. Tolerance: the editor's pixels on screen
     // when seen level, else 8 cm.
-    const s = f && !free ? snapPoint([rx, rz], halfSize(f), (g.lines ??= this.alignLinesOf(fv.floor, f.id)), sc ? sc.perPx * SNAP_GUIDE_PX : 0.08) : null;
+    const s = f && !free ? snapPoint([rx, rz], halfSize(f), (g.lines ??= this.alignLinesOf(fv.floor, this.movingWith(f.id))), sc ? sc.perPx * SNAP_GUIDE_PX : 0.08) : null;
     const gx = s?.x ? s.p[0] : free ? Math.round(rx * 100) / 100 : Math.round(rx / grid) * grid;
     const gz = s?.z ? s.p[1] : free ? Math.round(rz * 100) / 100 : Math.round(rz / grid) * grid;
     // the whole piece stays in its room: pushed against a wall it stops there
     [g.x, g.z] = f ? clampIntoRoom(fv.floor, f, gx, gz, this.building?.settings.wall_interior ?? 0) : [gx, gz];
     g.moved = true;
-    this.updateGhost();
+    // the boxes are built once; a move only shifts them (no GPU buffers made or freed per pointer move)
+    this.moveGhost();
     this.invalidate();
   }
 
-  /** Alignment lines on a floor (#143): every item's box but `skip`'s, and the rooms' centre lines. */
-  private alignLinesOf(floor: Floor, skip: string): AlignLines {
+  /** Alignment lines on a floor (#143): every item's box but those in `skip` (what moves along), and the rooms' centre lines. */
+  private alignLinesOf(floor: Floor, skip: readonly string[]): AlignLines {
     const boxes: Box[] = [];
-    for (const m of floor.furniture) if (m.id !== skip) boxes.push(itemBox(m));
+    for (const m of floor.furniture) if (!skip.includes(m.id)) boxes.push(itemBox(m));
     return alignLines(boxes, floor.rooms);
+  }
+
+  /** The items that move with the grabbed one: the whole selection when it is part of it, else just it. */
+  private movingWith(id: string): string[] {
+    return this.ghostIds.includes(id) ? this.ghostIds : [id];
   }
 
   private dropFurniture(): void {
@@ -5382,35 +5406,64 @@ export class FloorplanViewer {
     this.updateGhost();
   }
 
-  /** Wireframe box around the selected item, at its drag position while it is dragged. */
+  /**
+   * Wireframe boxes around the selected items (a multi selection or block too), where they stand in the plan; a drag
+   * shifts them all (moveGhost). Same number of lines as before: the buffers are written over, not made anew.
+   */
   private updateGhost(): void {
-    if (this.ghost) {
-      this.ghost.geometry.dispose();
-      (this.ghost.material as Material).dispose();
-      this.scene.remove(this.ghost);
-      this.ghost = null;
-    }
     const ids = [...new Set([...(this.selectedFurniture ? [this.selectedFurniture] : []), ...this.selectedSet])];
     const lines = new LineBuffer();
     let at: FloorView | undefined;
+    const shown: string[] = [];
     for (const id of ids) {
       const fv = this.floors.find((q) => q.floor.furniture.some((m) => m.id === id));
       const f = fv?.floor.furniture.find((m) => m.id === id);
       if (!fv || !f) continue;
       at ??= fv;
+      shown.push(id);
       this.ghostBox(lines, fv, f, id === this.selectedFurniture ? new Color(0.25, 0.9, 1) : new Color(1, 0.71, 0.28));
     }
-    if (!at) return;
-    this.ghost = new LineSegments(lines.geometry(), new LineBasicMaterial({ vertexColors: true, depthTest: false, transparent: true }));
+    this.ghostIds = shown;
+    if (!at) {
+      if (this.ghost) {
+        this.ghost.geometry.dispose();
+        this.scene.remove(this.ghost);
+        this.ghost = null;
+      }
+      return;
+    }
+    this.ghostMat ??= new LineBasicMaterial({ vertexColors: true, depthTest: false, transparent: true });
+    const pos = this.ghost?.geometry.getAttribute("position");
+    const col = this.ghost?.geometry.getAttribute("color");
+    if (this.ghost && pos && col && pos.count * 3 === lines.p.length) {
+      (pos.array as Float32Array).set(lines.p);
+      (col.array as Float32Array).set(lines.c);
+      pos.needsUpdate = col.needsUpdate = true;
+      this.ghost.geometry.computeBoundingSphere();
+    } else if (this.ghost) {
+      this.ghost.geometry.dispose();
+      this.ghost.geometry = lines.geometry();
+    } else {
+      this.ghost = new LineSegments(lines.geometry(), this.ghostMat);
+      this.ghost.renderOrder = 20;
+      this.scene.add(this.ghost);
+    }
     this.ghost.position.y = at.floor.elevation + at.y;
-    this.ghost.renderOrder = 20;
-    this.scene.add(this.ghost);
+    this.moveGhost();
+  }
+
+  /** While an item is dragged: its box (and the boxes of the items that go along) at the drag position. */
+  private moveGhost(): void {
+    if (!this.ghost) return;
+    const g = this.grab;
+    const f = g && this.ghostIds.includes(g.id) ? this.floorMap.get(g.floorId)?.floor.furniture.find((m) => m.id === g.id) : undefined;
+    this.ghost.position.x = g && f ? g.x - f.x : 0;
+    this.ghost.position.z = g && f ? g.z - f.z : 0;
   }
 
   /** The wireframe box of one piece (its front edge brighter at floor level). */
   private ghostBox(lines: LineBuffer, fv: FloorView, f: Furniture, color: Color): void {
-    const x = this.grab?.id === f.id ? this.grab.x : f.x;
-    const z = this.grab?.id === f.id ? this.grab.z : f.z;
+    const { x, z } = f;
     const H = fv.floor.height;
     // a spot lowered by hand stands at its height above the floor like a wall item
     const hanging = ["lamp_ceiling", "lamp_downlight", "lamp_spot", "lamp_panel", "lamp_pendant", "lamp_fan"].includes(f.type) && f.mount_y == null;

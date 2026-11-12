@@ -315,6 +315,8 @@ export class Fp3dEditor extends LitElement {
   /** Whether Shift is held (the 3D views report taps without their keys). */
   shiftHeld = false;
   readonly onShift = (e: KeyboardEvent) => (this.shiftHeld = e.shiftKey);
+  /** The window lost the keys (Alt+Tab with Shift down, a hidden tab): no keyup comes, so Shift is let go here. */
+  readonly onKeysLost = () => (this.shiftHeld = false);
   /** Library pictures for the wall view's side bar (type -> image). */
   kitPics = new Map<string, string>();
   kitPicsAsked = new Set<string>();
@@ -747,6 +749,8 @@ export class Fp3dEditor extends LitElement {
     super.connectedCallback();
     window.addEventListener("keydown", this.onKey);
     window.addEventListener("keyup", this.onShift);
+    window.addEventListener("blur", this.onKeysLost);
+    document.addEventListener("visibilitychange", this.onKeysLost);
     if (!this.topic) this.watchPhone(true);
   }
 
@@ -754,6 +758,8 @@ export class Fp3dEditor extends LitElement {
     super.disconnectedCallback();
     window.removeEventListener("keydown", this.onKey);
     window.removeEventListener("keyup", this.onShift);
+    window.removeEventListener("blur", this.onKeysLost);
+    document.removeEventListener("visibilitychange", this.onKeysLost);
     this.watchPhone(false);
     this.resizeObserver?.disconnect();
     // the thumbnail renderer holds a WebGL context: freed with the editor, made anew when a picture is next drawn (#200)

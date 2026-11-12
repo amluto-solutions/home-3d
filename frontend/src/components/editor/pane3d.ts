@@ -69,6 +69,17 @@ export class Pane3dPart {
     this.change((doc) => e.detail.change(doc));
   }
 
+  /**
+   * An item tapped or grabbed in the 3D pane. One of a multi selection keeps the selection: grabbing it moves them
+   * all, as in the plan (selecting it alone dropped the others, and only the grabbed item moved).
+   */
+  onFurnitureSelected3d(this: Fp3dEditor, e: CustomEvent<{ id: string | null }>): void {
+    const id = e.detail.id;
+    if (id && this._multi.length > 1 && this._multi.includes(id)) return;
+    if (id) this.selectFrom3d("furniture", id);
+    else if (this._furnitureId) this.selectFrom3d("furniture", null);
+  }
+
   /** Furnishing in the 3D pane: the item moved there is moved in the draft (undoable, saved with the plan). */
   onFurnitureMoved3d(this: Fp3dEditor, e: CustomEvent<{ id: string; x: number; z: number }>): void {
     const { id, x, z } = e.detail;
@@ -287,6 +298,7 @@ export class Pane3dPart {
         .surfaceGrab=${this.isEditor && this.houseTool ? this.surfaceGrabber : null}
         .furnishTypes=${this._tool === "energy" ? ENERGY_DEVICES : this._tool === "roof" ? [] : null}
         .selectedFurniture=${this._furnitureId}
+        .selectedSet=${this._furnitureId ? this.selection() : []}
         .selectedDevice=${this._deviceId}
         .quality=${"auto"}
         .floorThumbs=${false}
@@ -295,10 +307,7 @@ export class Pane3dPart {
         .panelOpen=${false}
         .alerts=${false}
         .scenes=${false}
-        @furniture-select=${(e: CustomEvent<{ id: string | null }>) => {
-          if (e.detail.id) this.selectFrom3d("furniture", e.detail.id);
-          else if (this._furnitureId) this.selectFrom3d("furniture", null);
-        }}
+        @furniture-select=${this.onFurnitureSelected3d}
         @furniture-move=${this.onFurnitureMoved3d}
         @plan-change=${this.onPlanChange3d}
         @device-select=${(e: CustomEvent<{ id: string | null }>) => {

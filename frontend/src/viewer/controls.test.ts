@@ -45,6 +45,96 @@ test("a second finger neither moves nor drops a furniture drag (#174)", async ()
   assert.deepEqual(log, ["drag20", "drop"]);
 });
 
+test("a furniture drag passes on one move per frame, the last one before the drop, and ends when capture is lost", async () => {
+  const { OrbitControls } = await import("./controls.ts");
+  const g = globalThis as Record<string, unknown>;
+  const frames = new Map<number, () => void>();
+  let next = 0;
+  g.requestAnimationFrame = (fn: () => void) => (frames.set(++next, fn), next);
+  g.cancelAnimationFrame = (id: number) => frames.delete(id);
+  const runFrames = () => {
+    const due = [...frames.values()];
+    frames.clear();
+    for (const fn of due) fn();
+  };
+  try {
+    const handlers: Record<string, (e: unknown) => void> = {};
+    const el = {
+      addEventListener: (t: string, fn: (e: unknown) => void) => (handlers[t] = fn),
+      removeEventListener: () => {},
+      setPointerCapture: () => {},
+      getBoundingClientRect: () => ({ left: 0, top: 0, width: 100, height: 100 }),
+      clientHeight: 100,
+    };
+    const log: string[] = [];
+    const events = { tap() {}, doubleTap() {}, hold() {}, change() {}, grab: () => true, drag: (x: number) => log.push(`drag${x}`), drop: () => log.push("drop") };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    new OrbitControls(el as any, {} as any, events as any);
+    const ev = (x: number) => ({ pointerId: 1, button: 0, clientX: x, clientY: 5, pointerType: "mouse", timeStamp: performance.now(), altKey: false, shiftKey: false });
+    handlers.pointerdown(ev(10));
+    handlers.pointermove(ev(11));
+    handlers.pointermove(ev(12));
+    handlers.pointermove(ev(13));
+    assert.deepEqual(log, [], "moves wait for the frame");
+    assert.equal(frames.size, 1, "one frame asked for, not one per move");
+    runFrames();
+    assert.deepEqual(log, ["drag13"], "only the newest move of the frame");
+    handlers.pointermove(ev(20));
+    handlers.pointerup(ev(20));
+    assert.deepEqual(log, ["drag13", "drag20", "drop"], "the last move goes before the drop");
+    assert.equal(frames.size, 0, "no frame left over");
+    // a second grab that loses its capture without a pointerup is dropped, not left stuck
+    handlers.pointerdown(ev(30));
+    handlers.pointermove(ev(31));
+    handlers.lostpointercapture({ ...ev(31), type: "lostpointercapture" });
+    assert.deepEqual(log.slice(3), ["drag31", "drop"]);
+    // after the drop, moves turn nothing into drags
+    handlers.pointermove(ev(40));
+    runFrames();
+    assert.equal(log.length, 5);
+  } finally {
+    delete g.requestAnimationFrame;
+    delete g.cancelAnimationFrame;
+  }
+});
+
+test("a drag move does not wait for a frame that never comes", async () => {
+  const { OrbitControls } = await import("./controls.ts");
+  const g = globalThis as Record<string, unknown>;
+  g.requestAnimationFrame = () => 1; // frames stalled: the callback never runs
+  g.cancelAnimationFrame = () => {};
+  const realNow = performance.now.bind(performance);
+  let now = 1000;
+  performance.now = () => now;
+  try {
+    const handlers: Record<string, (e: unknown) => void> = {};
+    const el = {
+      addEventListener: (t: string, fn: (e: unknown) => void) => (handlers[t] = fn),
+      removeEventListener: () => {},
+      setPointerCapture: () => {},
+      getBoundingClientRect: () => ({ left: 0, top: 0, width: 100, height: 100 }),
+      clientHeight: 100,
+    };
+    const log: string[] = [];
+    const events = { tap() {}, doubleTap() {}, hold() {}, change() {}, grab: () => true, drag: (x: number) => log.push(`drag${x}`), drop: () => log.push("drop") };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    new OrbitControls(el as any, {} as any, events as any);
+    const ev = (x: number) => ({ pointerId: 1, button: 0, clientX: x, clientY: 5, pointerType: "mouse", timeStamp: now, altKey: false, shiftKey: false });
+    handlers.pointerdown(ev(10));
+    handlers.pointermove(ev(11));
+    now += 50;
+    handlers.pointermove(ev(12));
+    assert.deepEqual(log, []);
+    now += 100;
+    handlers.pointermove(ev(13));
+    assert.deepEqual(log, ["drag13"], "past the wait it goes at once");
+  } finally {
+    performance.now = realNow;
+    delete g.requestAnimationFrame;
+    delete g.cancelAnimationFrame;
+  }
+});
+
 test("a resting mouse reports where it hovers; a pressed button, a finger or leaving does not hover (#284)", async () => {
   const { OrbitControls } = await import("./controls.ts");
   const handlers: Record<string, (e: unknown) => void> = {};

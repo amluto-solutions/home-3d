@@ -2,6 +2,16 @@
 
 All notable changes to Home 3D.
 
+## Home 3D 1.4.1 (12 November 2026)
+
+- Editor, 3D view: dragging an item no longer freezes the 3D view. Each drag move made a new outline material, so the
+  browser compiled its shader again on every pointer move; on some graphics cards the view stopped drawing until a
+  reload. The outline is now made once and only moved during a drag, and a frame that never arrives is asked for again.
+- Editor, 3D view: grabbing one item of a multi selection keeps the selection, and the drop moves every selected item
+  by the same step, as in the plan (before, only the grabbed item moved). The 3D view outlines the whole selection.
+- Editor, 3D view: a drag passes on at most one move per frame, its last move always counts, and a drag ends when the
+  pointer is taken away (an alert, a window switch). Shift is let go when the window loses the keys.
+
 ## Home 3D 1.4.0 (8 November 2026)
 
 - Pack ids from before 1.3.0 are no longer converted. Homes opened in 1.3.0 or later are already converted and do not

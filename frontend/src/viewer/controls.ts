@@ -39,6 +39,8 @@ export interface ControlEvents {
 }
 
 const HOLD_MS = 500;
+/** A drag move waits for a frame at most this long; then it goes at once (frames stalled, see Viewer3D.invalidate). */
+const DRAG_WAIT_MS = 100;
 /**
  * A move or wheel event this old when it is handled waited out a freeze (building the house just after
  * opening, a slow tablet): it is dropped, not replayed – replayed, the view caught up seconds later and landed
@@ -111,6 +113,13 @@ export class OrbitControls {
   private grabbing = false;
   /** The pointer that started the furniture drag; every other pointer is ignored until it lifts (#174). */
   private grabId: number | null = null;
+  /**
+   * The newest drag move not yet passed on: pointer moves come faster than frames (a 1000 Hz mouse), so one
+   * per frame goes to events.drag. A move waiting longer than DRAG_WAIT_MS goes at once (a page whose frames stall).
+   */
+  private pendingDrag: [number, number, boolean] | null = null;
+  private dragFrame = 0;
+  private dragAskedAt = 0;
   /** A swipe on an object: vertical moves go to events.swipeMove. */
   private swiping: { startY: number } | null = null;
   private pinch: { dist: number; mid: [number, number] } | null = null;
@@ -137,6 +146,10 @@ export class OrbitControls {
     });
     on("pointerup", (e) => this.onUp(e));
     on("pointercancel", (e) => this.onUp(e));
+    // capture taken away (an alert, a window switch) without a pointerup: a furniture drag ends there, never stuck
+    on("lostpointercapture", (e) => {
+      if (this.grabbing && e.pointerId === this.grabId) this.onUp(e);
+    });
     on("wheel", (e) => this.onWheel(e), { passive: false });
     on("contextmenu", (e) => e.preventDefault());
     on("keydown", (e) => this.onKey(e));
@@ -167,6 +180,8 @@ export class OrbitControls {
 
   dispose(): void {
     clearTimeout(this.holdTimer);
+    this.cancelDragFrame();
+    this.pendingDrag = null;
     for (const [type, fn] of this.listeners) this.el.removeEventListener(type, fn);
   }
 
@@ -279,7 +294,7 @@ export class OrbitControls {
     if (!p) return;
     if (this.grabbing) {
       if (e.pointerId !== this.grabId) return;
-      if (this.events.drag) this.events.drag(...this.local(e), e.altKey);
+      if (this.events.drag) this.queueDrag(...this.local(e), e.altKey);
       return;
     }
     if (stale(e, performance.now()) && !this.swiping) {
@@ -348,10 +363,38 @@ export class OrbitControls {
     this.events.change();
   }
 
+  /** A drag move, passed on with the next frame (only the newest of the moves before it). */
+  private queueDrag(x: number, y: number, free: boolean): void {
+    this.pendingDrag = [x, y, free];
+    const raf = globalThis.requestAnimationFrame;
+    // no frames to wait for (tests, a worker), or frames stalled: at once
+    if (!raf || (this.dragFrame && performance.now() - this.dragAskedAt > DRAG_WAIT_MS)) return this.flushDrag();
+    if (this.dragFrame) return;
+    this.dragAskedAt = performance.now();
+    this.dragFrame = raf(() => {
+      this.dragFrame = 0;
+      this.flushDrag();
+    });
+  }
+
+  private flushDrag(): void {
+    this.cancelDragFrame();
+    const p = this.pendingDrag;
+    this.pendingDrag = null;
+    if (p && this.grabbing) this.events.drag?.(...p);
+  }
+
+  private cancelDragFrame(): void {
+    if (this.dragFrame) globalThis.cancelAnimationFrame?.(this.dragFrame);
+    this.dragFrame = 0;
+  }
+
   private onUp(e: PointerEvent): void {
     if (!this.pointers.has(e.pointerId)) return;
     if (this.grabbing) {
       if (e.pointerId !== this.grabId) return;
+      // the last move counts: it goes before the drop
+      this.flushDrag();
       this.grabbing = false;
       this.grabId = null;
       this.pointers.delete(e.pointerId);
