@@ -5,8 +5,10 @@
 
 import { Color, type BufferGeometry } from "three";
 import { sidelightLayout, isFrontDoor, openingStyle } from "../model.ts";
+import type { Opening } from "../model.ts";
 import type { OpeningInfo } from "./build.ts";
 import { ALWAYS, GeoBuffer, shade } from "./geo.ts";
+import { palette } from "./palette.ts";
 
 export interface OpeningState {
   /** Window sash or door leaf: 0 = closed, 1 = swung open. */
@@ -19,6 +21,8 @@ export interface OpeningState {
   tilt2?: number;
   /** Closed fraction of the blind or garage door (0 = up, 1 = down); null = no blind. */
   cover: number | null;
+  /** A venetian blind or Raffstore: how far its slats stand open (1 = level, 0 = shut); null or missing: a plain blind. */
+  slats?: number | null;
   /** A sensor reports the state (contact, tilt sensor or cover); without one "closed" is a guess. */
   sensed?: boolean;
   /** The door's smart lock is unlocked: the leaf's free edge glows softly (#682). */
@@ -27,11 +31,12 @@ export interface OpeningState {
 
 export const CLOSED: OpeningState = { open: 0, open2: 0, tilt: 0, tilt2: 0, cover: null };
 
-const FRAME = 0x1f3052;
-const FRAME_TOP = 0x2a4270;
-const SASH = 0x22375f;
-const SILL = 0x1c2a47;
-const BLIND_BOX = 0x16223a;
+/** Colours of the parts: neon, or natural materials while a homely style is on (palette.ts, #436): white frames and leaves, a grey door front. */
+const OP = palette(
+  { FRAME: 0x1f3052, FRAME_TOP: 0x2a4270, SASH: 0x22375f, SILL: 0x1c2a47, BLIND_BOX: 0x16223a, LEAF: 0x1c2c4d, LEAF_TOP: 0x27406b, LEAF_FRONT: 0x111a30, LEAF_FRONT_TOP: 0x1c2a47, HANDLE: 0x5b7cff, HANDLE_TOP: 0x8aa2ff, GLASS: shade(0x37e0ff, 0.08) },
+  { FRAME: 0xf3f3f1, FRAME_TOP: 0xfbfbfa, SASH: 0xeeeeec, SILL: 0xe3dfd7, BLIND_BOX: 0xdedbd5, LEAF: 0xf3f1ec, LEAF_TOP: 0xfbfaf7, LEAF_FRONT: 0x464b53, LEAF_FRONT_TOP: 0x585e67, HANDLE: 0x9da3ab, HANDLE_TOP: 0xbcc2c9, GLASS: new Color(0xb9d6e6) },
+);
+
 const OPEN_WARM = 0xffb547;
 /** The stock accent: the leaf edge of an unlocked door (takes the user's accent in the neon look). */
 const UNLOCKED = 0x37e0ff;
@@ -40,13 +45,6 @@ const OPEN_ANGLE = 1.2;
 const DOOR_ANGLE = 1.5;
 /** How far a door without a sensor stands open (devices.ts DOOR_DEFAULT_OPEN): its own angle counts in full. */
 const SENSORLESS_OPEN = 0.5;
-const LEAF = 0x1c2c4d;
-const LEAF_TOP = 0x27406b;
-const LEAF_FRONT = 0x111a30;
-const LEAF_FRONT_TOP = 0x1c2a47;
-const HANDLE = 0x5b7cff;
-const HANDLE_TOP = 0x8aa2ff;
-const GLASS = shade(0x37e0ff, 0.08);
 const TILT_ANGLE = 0.2;
 
 type Tf = (x: number, n: number, y: number) => number[];
@@ -93,6 +91,52 @@ function panel(buf: GeoBuffer, tf: Tf, x0: number, x1: number, n: number, y0: nu
     part(y0, cut, ALWAYS);
     part(cut, y1, bucket);
   }
+}
+
+/** A blind hung inside the room (a roller shade): windows and doors only, never a garage door. */
+export function blindInside(o: Pick<Opening, "type" | "blind_side">): boolean {
+  return o.blind_side === "inside" && o.type !== "garage";
+}
+
+/** Distance between the slats of a venetian blind, their depth, and how steep they stand when shut (radians). */
+const SLAT_PITCH = 0.07;
+const SLAT_DEPTH = 0.075;
+const SLAT_SHUT = 1.4;
+/** Below this the slats count as shut: the blind is drawn as one closed panel, like a roller shutter. */
+const SLATS_SHUT = 0.04;
+
+/**
+ * How much of the opening a blind covers for the light (0 = none, 1 = all): the lowered part of a venetian blind
+ * lets light through as far as its slats stand open.
+ */
+export function lightCover(st: Pick<OpeningState, "cover" | "slats"> | null | undefined): number {
+  const cover = Math.min(1, Math.max(0, st?.cover ?? 0));
+  return typeof st?.slats === "number" ? cover * (1 - Math.min(1, Math.max(0, st.slats))) : cover;
+}
+
+/**
+ * The slats of a venetian blind from `y1` down to `y0`, each a strip turned about its long axis: level when open
+ * (1), steep when shut (0). `n` is the plane the blind hangs in; `side` 1 hangs outside (the outer edge drops),
+ * −1 inside the room (the edge towards the room drops). Each strip folds away with its wall above the cut height.
+ * Returns how many strips it drew.
+ */
+export function slatStrips(buf: GeoBuffer, tf: Tf, x0: number, x1: number, n: number, y0: number, y1: number, open: number, color: Color, cut: number, bucket: number, side = 1): number {
+  const a = (1 - Math.min(1, Math.max(0, open))) * SLAT_SHUT;
+  const dn = ((Math.cos(a) * SLAT_DEPTH) / 2) * side;
+  const dy = (Math.sin(a) * SLAT_DEPTH) / 2;
+  let count = 0;
+  for (let y = y1 - SLAT_PITCH / 2; y > y0 - 1e-6; y -= SLAT_PITCH) {
+    const fold = y <= cut + 1e-6 ? ALWAYS : bucket;
+    // the low edge (away from the room outside) carries the texture's bright line
+    const p = tf(x0, n - dn, y - dy);
+    const q = tf(x1, n - dn, y - dy);
+    const r = tf(x1, n + dn, y + dy);
+    const t = tf(x0, n + dn, y + dy);
+    buf.tri(p, q, r, color, color, color, [0, 0.03, 1, 0.03, 1, 0.85], fold);
+    buf.tri(p, r, t, color, color, color, [0, 0.03, 1, 0.85, 0, 0.85], fold);
+    count++;
+  }
+  return count;
 }
 
 /** Horizontal quad in local coordinates (x along the opening, n towards the room) at height y. */
@@ -164,16 +208,16 @@ function boardsOf(info: OpeningInfo, infos: readonly OpeningInfo[], frames: GeoB
   const boards = sillBoards(info, infos);
   const W = info.width;
   const S = Math.max(info.sill, 0.03);
-  if (boards.inside) splitBox(frames, tf, -0.04, W + 0.04, mid + fd, info.faceRoom + 0.07, S - 0.03, S, new Color(SILL), top, cut, bucket);
-  if (boards.outside) splitBox(frames, tf, -0.03, W + 0.03, -info.faceOut - 0.06, mid - fd, S - 0.04, S - 0.02, new Color(SILL), top, cut, bucket);
+  if (boards.inside) splitBox(frames, tf, -0.04, W + 0.04, mid + fd, info.faceRoom + 0.07, S - 0.03, S, new Color(OP.SILL), top, cut, bucket);
+  if (boards.outside) splitBox(frames, tf, -0.03, W + 0.03, -info.faceOut - 0.06, mid - fd, S - 0.04, S - 0.02, new Color(OP.SILL), top, cut, bucket);
 }
 
 export function buildOpeningParts(infos: readonly OpeningInfo[], states: ReadonlyMap<string, OpeningState>, cut: number): OpeningParts {
   const frames = new GeoBuffer();
   const glass = new GeoBuffer();
   const blinds = new GeoBuffer(true);
-  const frameC = new Color(FRAME);
-  const frameTop = new Color(FRAME_TOP);
+  const frameC = new Color(OP.FRAME);
+  const frameTop = new Color(OP.FRAME_TOP);
   const frameTris: OpeningParts["frameTris"] = [];
   const glassTris: OpeningParts["glassTris"] = [];
   const blindTris: OpeningParts["blindTris"] = [];
@@ -196,8 +240,8 @@ export function buildOpeningParts(infos: readonly OpeningInfo[], states: Readonl
       const n0 = -info.faceOut - 0.012;
       const n1 = info.faceRoom + 0.012;
       const garageOpen = info.opening.type === "garage" && (markClosed ? !!st.sensed && (st.cover ?? 1) >= 0.95 : (st.cover ?? 1) < 0.95);
-      const frameC = garageOpen ? shade(OPEN_WARM, 0.8) : new Color(FRAME);
-      const frameTop = garageOpen ? shade(OPEN_WARM, 1) : new Color(FRAME_TOP);
+      const frameC = garageOpen ? shade(OPEN_WARM, 0.8) : new Color(OP.FRAME);
+      const frameTop = garageOpen ? shade(OPEN_WARM, 1) : new Color(OP.FRAME_TOP);
       // a door may start above the floor (a cupboard door on a raised landing): everything stands on its sill
       splitBox(frames, tf, -0.045, 0.02, n0, n1, S, T + 0.045, frameC, frameTop, cut, bucket);
       splitBox(frames, tf, W - 0.02, W + 0.045, n0, n1, S, T + 0.045, frameC, frameTop, cut, bucket);
@@ -226,7 +270,7 @@ export function buildOpeningParts(infos: readonly OpeningInfo[], states: Readonl
           splitBox(frames, tf, a, a + fw, n0, n1, S + 0.02, T - 0.02, frameC, frameTop, cut, bucket);
           splitBox(frames, tf, b - fw, b, n0, n1, S + 0.02, T - 0.02, frameC, frameTop, cut, bucket);
           splitBox(frames, tf, a + fw, b - fw, n0, n1, S + 0.02, S + 0.12, frameC, frameTop, cut, bucket);
-          panel(glass, tf, a + fw, b - fw, glassN, S + 0.12, T - 0.02, GLASS, cut, bucket);
+          panel(glass, tf, a + fw, b - fw, glassN, S + 0.12, T - 0.02, OP.GLASS, cut, bucket);
         }
         x0 = lights.x0;
         x1 = lights.x1;
@@ -237,7 +281,7 @@ export function buildOpeningParts(infos: readonly OpeningInfo[], states: Readonl
       if (info.exterior && (front || style === "glass")) splitBox(frames, tf, W / 2 - 0.08, W / 2 + 0.08, -info.faceOut - 0.1, -info.faceOut, T + 0.1, T + 0.17, shade(OPEN_WARM, 0.55), shade(OPEN_WARM, 0.85), cut, ALWAYS);
       if (front) {
         // threshold across the wall
-        splitBox(frames, tf, 0.02, W - 0.02, -info.faceOut - 0.02, info.faceRoom, S, S + 0.02, new Color(SILL), frameTop, cut, bucket);
+        splitBox(frames, tf, 0.02, W - 0.02, -info.faceOut - 0.02, info.faceRoom, S, S + 0.02, new Color(OP.SILL), frameTop, cut, bucket);
       }
       const leaves: [boolean, number][] = passage ? [] : [[info.hingeAtStart, st.open]];
       if (two && !passage) leaves.push([!info.hingeAtStart, st.open2 ?? 0]);
@@ -261,30 +305,30 @@ export function buildOpeningParts(infos: readonly OpeningInfo[], states: Readonl
         // open or shut, the leaf's part above the cut height folds away with its wall (#244): swung or slid out of
         // the wall it would otherwise stand full height over the cut walls
         const warm = markClosed ? !!st.sensed && open < 0.05 : open > 0.9;
-        const leafC = warm ? shade(OPEN_WARM, 0.7) : new Color(front ? LEAF_FRONT : LEAF);
-        const leafTop = warm ? shade(OPEN_WARM, 0.9) : new Color(front ? LEAF_FRONT_TOP : LEAF_TOP);
+        const leafC = warm ? shade(OPEN_WARM, 0.7) : new Color(front ? OP.LEAF_FRONT : OP.LEAF);
+        const leafTop = warm ? shade(OPEN_WARM, 0.9) : new Color(front ? OP.LEAF_FRONT_TOP : OP.LEAF_TOP);
         if (style === "glass") {
           // a glass door: slim stiles and rails around a pane
           splitBox(frames, leafTf, 0, 0.05, -thick, 0, S + 0.01, T - 0.01, leafC, leafTop, cut, bucket);
           splitBox(frames, leafTf, lw - 0.05, lw, -thick, 0, S + 0.01, T - 0.01, leafC, leafTop, cut, bucket);
           splitBox(frames, leafTf, 0.05, lw - 0.05, -thick, 0, S + 0.01, S + 0.12, leafC, leafTop, cut, bucket);
           splitBox(frames, leafTf, 0.05, lw - 0.05, -thick, 0, T - 0.08, T - 0.01, leafC, leafTop, cut, bucket);
-          panel(glass, leafTf, 0.05, lw - 0.05, -thick / 2, S + 0.12, T - 0.08, GLASS, cut, bucket);
+          panel(glass, leafTf, 0.05, lw - 0.05, -thick / 2, S + 0.12, T - 0.08, OP.GLASS, cut, bucket);
         } else {
           splitBox(frames, leafTf, 0, lw, -thick, 0, S + 0.01, T - 0.01, leafC, leafTop, cut, bucket);
         }
         // the pane on both faces of the solid leaf: from outside the leaf hid it (#712)
         for (const n of [0.001, -thick - 0.001]) {
-          if (style === "front_glass") panel(glass, leafTf, 0.12, lw - 0.12, n, S + (T - S) * 0.55, T - 0.18, GLASS, cut, bucket);
-          else if (front) panel(glass, leafTf, 0.1, 0.18, n, S + 0.3, T - 0.3, GLASS, cut, bucket);
+          if (style === "front_glass") panel(glass, leafTf, 0.12, lw - 0.12, n, S + (T - S) * 0.55, T - 0.18, OP.GLASS, cut, bucket);
+          else if (front) panel(glass, leafTf, 0.1, 0.18, n, S + 0.3, T - 0.3, OP.GLASS, cut, bucket);
         }
         // handle on both sides: a knob on a room door, a bar on a front door
         const hy = S + Math.min(1.05, (T - S) * 0.5);
         const hh = front ? 0.3 : 0.012;
         const hx0 = front ? lw - 0.11 : lw - 0.16;
         const hx1 = front ? lw - 0.08 : lw - 0.05;
-        splitBox(frames, leafTf, hx0, hx1, 0.004, 0.05, hy - hh, hy + hh, new Color(HANDLE), new Color(HANDLE_TOP), cut, bucket);
-        splitBox(frames, leafTf, hx0, hx1, -thick - 0.05, -thick - 0.004, hy - hh, hy + hh, new Color(HANDLE), new Color(HANDLE_TOP), cut, bucket);
+        splitBox(frames, leafTf, hx0, hx1, 0.004, 0.05, hy - hh, hy + hh, new Color(OP.HANDLE), new Color(OP.HANDLE_TOP), cut, bucket);
+        splitBox(frames, leafTf, hx0, hx1, -thick - 0.05, -thick - 0.004, hy - hh, hy + hh, new Color(OP.HANDLE), new Color(OP.HANDLE_TOP), cut, bucket);
         // an unlocked smart lock: a soft accent strip along the leaf's free edge, on both faces (#682)
         if (st.unlocked && atStart === info.hingeAtStart) splitBox(frames, leafTf, lw - 0.022, lw + 0.004, -thick - 0.006, 0.006, S + 0.03, T - 0.03, shade(UNLOCKED, 0.85), shade(UNLOCKED, 1), cut, bucket);
       }
@@ -329,7 +373,7 @@ export function buildOpeningParts(infos: readonly OpeningInfo[], states: Readonl
       for (let k = 0; k < n; k++) {
         const x0 = fw + k * pane + (k ? 0.02 : 0);
         const x1 = fw + (k + 1) * pane - (k < n - 1 ? 0.02 : 0);
-        panel(glass, tf, x0, x1, mid, S + 0.03, T - fw, GLASS, cut, bucket);
+        panel(glass, tf, x0, x1, mid, S + 0.03, T - fw, OP.GLASS, cut, bucket);
       }
     } else {
       const fw = 0.06;
@@ -358,7 +402,7 @@ export function buildOpeningParts(infos: readonly OpeningInfo[], states: Readonl
       for (const sash of sashes) {
         const ajar = sash.open > 0.02 || sash.tilt > 0.02;
         const alert = markClosed ? !!st.sensed && !ajar : ajar;
-        const sashC = alert ? shade(OPEN_WARM, 0.75) : new Color(SASH);
+        const sashC = alert ? shade(OPEN_WARM, 0.75) : new Color(OP.SASH);
         const sashTop = alert ? shade(OPEN_WARM, 0.95) : frameTop;
         const sx0 = sash.x0;
         const sx1 = sash.x1;
@@ -383,7 +427,7 @@ export function buildOpeningParts(infos: readonly OpeningInfo[], states: Readonl
         splitBox(frames, sashTf, sashW - sw, sashW, n0, n1, sy0, sy1, sashC, sashTop, sashCut, bucket);
         splitBox(frames, sashTf, sw, sashW - sw, n0, n1, sy0, sy0 + sw, sashC, sashTop, sashCut, bucket);
         splitBox(frames, sashTf, sw, sashW - sw, n0, n1, sy1 - sw, sy1, sashC, sashTop, sashCut, bucket);
-        panel(glass, sashTf, sw, sashW - sw, (n0 + n1) / 2, sy0 + sw, sy1 - sw, alert ? shade(OPEN_WARM, 0.16) : GLASS, sashCut, bucket);
+        panel(glass, sashTf, sw, sashW - sw, (n0 + n1) / 2, sy0 + sw, sy1 - sw, alert ? shade(OPEN_WARM, 0.16) : OP.GLASS, sashCut, bucket);
         // a terrace door with an unlocked smart lock: the main sash's free edge glows like a door leaf's (#682)
         if (st.unlocked && sash.atStart === info.hingeAtStart) splitBox(frames, sashTf, sashW - 0.022, sashW + 0.004, n0 - 0.006, n1 + 0.006, sy0 + 0.02, sy1 - 0.02, shade(UNLOCKED, 0.85), shade(UNLOCKED, 1), sashCut, bucket);
         if (openingStyle(info.opening, info.exterior) === "bars") {
@@ -395,16 +439,31 @@ export function buildOpeningParts(infos: readonly OpeningInfo[], states: Readonl
         }
       }
     }
-    // blind on the outside: box above the opening, slats down to the closed fraction (an up-and-over door's cover is
-    // the door itself)
-    if (st.cover !== null && !(info.opening.type === "garage" && openingStyle(info.opening, info.exterior) === "up_and_over")) {
-      const out = -info.faceOut;
-      const boxTop = T + 0.2;
-      splitBox(frames, tf, -0.05, W + 0.05, out - 0.15, out, T, boxTop, new Color(BLIND_BOX), frameTop, cut, bucket);
+    // a venetian blind shows its slats while they stand open (they turn with its tilt); shut it is one closed panel
+    const slatsOpen = typeof st.slats === "number" && st.slats > SLATS_SHUT ? st.slats : null;
+    if (st.cover !== null && blindInside(info.opening)) {
+      // a roller shade inside the room: a slim cassette on the wall above the opening, the cloth runs down in front
+      // of the reveal onto the window board, a bar along its lower edge; plain cloth, no slat stripes
+      const face = info.faceRoom;
+      splitBox(frames, tf, -0.04, W + 0.04, face, face + 0.07, T, T + 0.09, new Color(OP.BLIND_BOX), frameTop, cut, bucket);
       const closed = Math.min(1, Math.max(0, st.cover));
       if (closed > 0.01) {
         const bottom = T - closed * (T - S);
-        panel(blinds, tf, 0, W, out - 0.07, bottom, T, new Color(0xffffff), cut, bucket, 0.045);
+        if (slatsOpen !== null) slatStrips(blinds, tf, 0, W, face + 0.04, bottom, T, slatsOpen, new Color(0xffffff), cut, bucket, -1);
+        else panel(blinds, tf, -0.02, W + 0.02, face + 0.03, bottom, T, new Color(0xffffff), cut, bucket);
+        splitBox(frames, tf, -0.02, W + 0.02, face + 0.02, face + 0.045, bottom, bottom + 0.025, new Color(OP.BLIND_BOX), frameTop, cut, bucket);
+      }
+    } else if (st.cover !== null && !(info.opening.type === "garage" && openingStyle(info.opening, info.exterior) === "up_and_over")) {
+      // blind on the outside: box above the opening, slats down to the closed fraction (an up-and-over door's cover
+      // is the door itself)
+      const out = -info.faceOut;
+      const boxTop = T + 0.2;
+      splitBox(frames, tf, -0.05, W + 0.05, out - 0.15, out, T, boxTop, new Color(OP.BLIND_BOX), frameTop, cut, bucket);
+      const closed = Math.min(1, Math.max(0, st.cover));
+      if (closed > 0.01) {
+        const bottom = T - closed * (T - S);
+        if (slatsOpen !== null && info.opening.type !== "garage") slatStrips(blinds, tf, 0, W, out - 0.07, bottom, T, slatsOpen, new Color(0xffffff), cut, bucket);
+        else panel(blinds, tf, 0, W, out - 0.07, bottom, T, new Color(0xffffff), cut, bucket, 0.045);
       }
     }
     frameTris.push({ id: info.opening.id, start: fStart, end: frames.count });

@@ -87,6 +87,9 @@ START_VIEW_SCHEMA = vol.Schema(
     extra=vol.ALLOW_EXTRA,
 )
 
+# a colour as "#rrggbb" (wall colours, the facade colour: #437)
+_HEX_COLOR = vol.All(str, vol.Match(r"^#[0-9a-fA-F]{6}$"))
+
 ROOM_SCHEMA = vol.Schema(
     {
         # room climate read from chosen sensors (None = automatic, "none" = no value)
@@ -134,6 +137,9 @@ ROOM_SCHEMA = vol.Schema(
         ),
         # ceiling height of the room (None = the floor height)
         vol.Optional("ceiling_height"): vol.Any(None, vol.All(vol.Coerce(float), vol.Range(min=1, max=30))),
+        # colour of the room's side of each wall ("#rrggbb", None = wall_color) and of all its walls (#437)
+        vol.Optional("wall_colors"): vol.Any(None, vol.All([vol.Any(None, _HEX_COLOR)], vol.Length(max=MAX_POINTS))),
+        vol.Optional("wall_color"): vol.Any(None, _HEX_COLOR),
         # thickness of the wall on each edge in m (None = the building's exterior / interior thickness)
         vol.Optional("wall_thickness"): vol.All(
             [vol.Any(None, vol.All(vol.Coerce(float), vol.Range(min=0.02, max=1.5)))],
@@ -216,6 +222,12 @@ OPENING_SCHEMA = vol.Schema(
         vol.Optional("position", default=None): vol.Any(None, vol.All(str, vol.Length(max=255))),
         # the position sensor counts the other way round (0 = open)
         vol.Optional("position_inverted", default=False): bool,
+        # a venetian blind whose cover reports its slats the other way round (0 = open): turned in 3D and the sliders
+        vol.Optional("slat_invert"): vol.Any(None, bool),
+        # where the blind sits: outside as a roller shutter (None, "outside") or inside the room as a roller shade
+        # ("inside"). An open string on purpose: only "inside" counts, anything else is outside, so no closed set of
+        # choices (and no PLAN_VERSION bump) for an optional key an older release keeps as it is
+        vol.Optional("blind_side"): vol.Any(None, vol.All(str, vol.Length(max=16))),
         # windows: a sensor with the sash's tilt angle (degrees), the angle that counts as fully tilted,
         # an offset the sensor reports when closed, and the other sign
         vol.Optional("tilt_angle", default=None): _ENTITY_REF,
@@ -1156,6 +1168,60 @@ SETTINGS_SCHEMA = vol.Schema(
                     vol.Optional("notes"): vol.Any(None, vol.All(str, vol.Length(max=255))),
                 },
                 extra=vol.ALLOW_EXTRA,
+            ),
+        ),
+        # the outside of the house in the Homely styles and Realistic (#437)
+        vol.Optional("facade_color"): vol.Any(None, _HEX_COLOR),
+        # the house's style plan (#440): a style per time of day for the screens set to "house", switched by the sun or
+        # the clock; a helper entity (input_select / input_text) naming a style wins (ported from NeonPlan 3D 3.1, MIT)
+        vol.Optional("style_day"): vol.Any(None, vol.All(str, vol.Length(max=64))),
+        vol.Optional("style_evening"): vol.Any(None, vol.All(str, vol.Length(max=64))),
+        vol.Optional("style_night"): vol.Any(None, vol.All(str, vol.Length(max=64))),
+        vol.Optional("style_switch"): vol.Any(None, vol.In(["sun", "time"])),
+        vol.Optional("style_morning_at"): _TIME,
+        vol.Optional("style_evening_at"): _TIME,
+        vol.Optional("style_night_at"): _TIME,
+        vol.Optional("style_entity"): vol.Any(None, vol.All(str, vol.Length(max=255))),
+        # own styles (#441): up to 40, ids `my_*`; a style's settings (palette or natural materials, ao, dim, floors,
+        # cut tops, background) are read loosely and clamped by the frontend, so a newer version may add keys (no
+        # PLAN_VERSION bump)
+        vol.Optional("styles_custom"): vol.Any(
+            None,
+            vol.All(
+                [
+                    vol.Schema(
+                        {
+                            vol.Required("id"): vol.All(str, vol.Match(r"^my_[A-Za-z0-9]{1,24}$")),
+                            vol.Required("name"): vol.All(str, vol.Length(min=1, max=40)),
+                            vol.Optional("base"): vol.All(str, vol.Length(max=16)),
+                            vol.Optional("palette"): vol.Any(
+                                None,
+                                vol.Schema(
+                                    {
+                                        vol.Optional("line"): vol.All(str, vol.Length(max=16)),
+                                        vol.Optional("dark"): vol.All(str, vol.Length(max=16)),
+                                        vol.Optional("light"): vol.All(str, vol.Length(max=16)),
+                                        vol.Optional("hue"): vol.Coerce(float),
+                                        vol.Optional("lift"): vol.Coerce(float),
+                                        vol.Optional("contrast"): vol.Coerce(float),
+                                    },
+                                    extra=vol.ALLOW_EXTRA,
+                                ),
+                            ),
+                            vol.Optional("natural"): vol.Any(None, bool),
+                            vol.Optional("signal"): vol.Any(None, bool),
+                            vol.Optional("shadows"): vol.Any(None, bool),
+                            vol.Optional("cutDark"): vol.Any(None, bool),
+                            vol.Optional("sun"): vol.Any(None, vol.Coerce(float)),
+                            vol.Optional("ao"): vol.Any(None, vol.Coerce(float)),
+                            vol.Optional("dim"): vol.Any(None, vol.Coerce(float)),
+                            vol.Optional("floors"): vol.Any(None, vol.Coerce(float)),
+                            vol.Optional("bg"): vol.Any(None, [vol.All(str, vol.Length(max=16))]),
+                        },
+                        extra=vol.ALLOW_EXTRA,
+                    )
+                ],
+                vol.Length(max=40),
             ),
         ),
         # the background behind the 3D house (None = the look's own sky): a colour, a gradient or a picture

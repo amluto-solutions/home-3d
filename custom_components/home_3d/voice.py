@@ -25,17 +25,18 @@ from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers import device_registry as dr
 from homeassistant.helpers import entity_registry as er
 from homeassistant.helpers import intent
-from homeassistant.helpers.dispatcher import async_dispatcher_connect
+from homeassistant.helpers.dispatcher import async_dispatcher_connect, async_dispatcher_send
 from homeassistant.helpers.storage import Store
 import voluptuous as vol
 
-from .const import DATA_ASK, DATA_VOICE, DOMAIN, STORAGE_KEY_VOICE
+from .const import DATA_ASK, DATA_VOICE, DOMAIN, SIGNAL_STYLE, STORAGE_KEY_VOICE
 from .locate.answers import Located, async_locate
 from .locate.service import DATA_LOCATE, SIGNAL_LOCATE_DEVICES
 
 _LOGGER = logging.getLogger(__name__)
 
 SERVICE_ASK = "ask"
+SERVICE_STYLE = "set_style"
 INTENT_ASK = "Home3DAsk"
 # a view answers within a moment; a voice satellite waits for Assist, so the wait stays short
 ANSWER_TIMEOUT = 6.0
@@ -50,6 +51,35 @@ ASK_SCHEMA = vol.Schema(
         vol.Optional("speak", default=False): cv.boolean,
     }
 )
+
+# a style for the open screens (#442): a style id or name ("cozy", "Cozy evening"); "reset" or empty puts the
+# screens back to their own setting; `screens` are screen names (empty: every open view), `minutes` how long
+# (empty: until a style is chosen anew)
+STYLE_SCHEMA = vol.Schema(
+    {
+        vol.Required("style"): vol.All(cv.string, vol.Length(max=60)),
+        vol.Optional("screens", default=[]): vol.All(cv.ensure_list, [vol.All(cv.string, vol.Length(max=60))]),
+        vol.Optional("minutes"): vol.Any(None, vol.All(vol.Coerce(int), vol.Range(min=1, max=10080))),
+    }
+)
+
+
+def style_message(data: dict[str, Any]) -> dict[str, Any]:
+    """The message the open views get for the service `set_style`."""
+    return {
+        "id": uuid.uuid4().hex[:12],
+        "style": data["style"].strip(),
+        "screens": [s.strip() for s in data["screens"] if s.strip()],
+        "minutes": data.get("minutes"),
+    }
+
+
+def style_wanted(screen: str | None, message: dict[str, Any]) -> bool:
+    """Whether a view with this screen name ("": none) takes the style: the screens named include its name (the
+    server filters, the same way as for sentences), or none is named."""
+    named = {_screen_key(s) for s in message.get("screens", [])}
+    return not named or _screen_key(screen) in named
+
 
 # what Assist says when no view answers, by the language of Home Assistant
 _NO_SCREEN = {
@@ -617,6 +647,12 @@ async def async_setup_voice(hass: HomeAssistant) -> None:
     )
     intent.async_register(hass, AskIntentHandler(broker))
 
+    async def handle_style(call: ServiceCall) -> None:
+        # the open views that asked for styles (a frontend without the flag never gets one) filter by screen name
+        async_dispatcher_send(hass, SIGNAL_STYLE, style_message(call.data))
+
+    hass.services.async_register(DOMAIN, SERVICE_STYLE, handle_style, schema=STYLE_SCHEMA)
+
     # the sentence files are written only when an admin picks them in the voice settings (never on setup)
     settings = VoiceSettings(hass)
     await settings.async_load()
@@ -630,6 +666,7 @@ async def async_setup_voice(hass: HomeAssistant) -> None:
 def async_unload_voice(hass: HomeAssistant) -> None:
     """Service and intent go with the integration."""
     hass.services.async_remove(DOMAIN, SERVICE_ASK)
+    hass.services.async_remove(DOMAIN, SERVICE_STYLE)
     intent.async_remove(hass, INTENT_ASK)
     hass.data.pop(DATA_ASK, None)
     settings: VoiceSettings | None = hass.data.pop(DATA_VOICE, None)

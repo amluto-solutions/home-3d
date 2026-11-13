@@ -13,7 +13,7 @@ import { extensionAnchor } from "./settings/extension-anchor.ts";
 import { loadLocate } from "./load-locate.ts";
 import { loadView, readyView } from "./load-view.ts";
 import { preload3d } from "./load3d.ts";
-import { loadFind, loadHomeSwitcher, loadRoomPanel, loadRoomsPicker, loadViewPanel } from "./load-parts.ts";
+import { loadFind, loadHomeSwitcher, loadRoomPanel, loadRoomsPicker, loadStylesDialog, loadViewPanel } from "./load-parts.ts";
 import { need } from "./lazy-part.ts";
 import { setTimeFormat } from "./time-format.ts";
 import { formatDateTime, timeStyleOf } from "./time-text.ts";
@@ -28,7 +28,9 @@ import type { ViewContext } from "./settings/view-settings.ts";
 import type { HeatMode } from "./heatmap.ts";
 import { lookOf, type Look } from "./themes.ts";
 import { contrastChrome, lightChrome } from "./scheme.ts";
-import { accentVars, shownAccent, shownLook } from "./ha-theme.ts";
+import { accentVars, shownAccent, shownLook, shownStyle } from "./ha-theme.ts";
+import type { CustomStyle } from "./looks.ts";
+import type { StylePlan } from "./looks.ts";
 import { keepInRoom, snapToWall } from "./geometry/snap.ts";
 import { furnitureName } from "./furniture-names.ts";
 import { confirmEntities, defaultHeight, entityName, kindOf } from "./devices.ts";
@@ -113,6 +115,7 @@ export class Floorplan3dPanel extends LitElement {
     panel: { attribute: false },
     _mode: { state: true },
     _viewOpen: { state: true },
+    _stylesOpen: { state: true },
     _extFocus: { state: true },
     _editorReady: { state: true },
     _editorError: { state: true },
@@ -191,6 +194,8 @@ export class Floorplan3dPanel extends LitElement {
   private declare _mode: Mode;
   /** The View panel on the 3D view is open (#247): one panel for the look and what the 3D shows. */
   private declare _viewOpen: boolean;
+  /** The styles dialog (#441) is open over the 3D view. */
+  private declare _stylesOpen: boolean;
   /** The card of the Extensions tab to scroll to and light up (a Settings search hit, #302); null: none. */
   private declare _extFocus: string | null;
   /** The editor bundle is loaded (it is fetched the first time the editor opens). */
@@ -299,6 +304,7 @@ export class Floorplan3dPanel extends LitElement {
     this.narrow = false;
     this._mode = "view";
     this._viewOpen = false;
+    this._stylesOpen = false;
     this._extFocus = null;
     this._editorReady = !!customElements.get("fp3d-editor");
     this._editorError = null;
@@ -569,6 +575,7 @@ export class Floorplan3dPanel extends LitElement {
     // each page is an entry of the history (#322): what is open over this one stays in its entry, Back opens it again
     if (how !== "none") navPage(this.pageNow(mode), how === "push");
     this._viewOpen = false;
+    this.setStylesOpen(false);
     this._roomsOpen = false;
     this._findOpen = false;
     if (mode === "view") void this.data.flush();
@@ -726,6 +733,13 @@ export class Floorplan3dPanel extends LitElement {
   private setViewOpen(open: boolean, refocus = false): void {
     this._viewOpen = open;
     if (!open && refocus) void this.updateComplete.then(() => this.renderRoot?.querySelector<HTMLElement>(".fp3d-view-btn")?.focus());
+  }
+
+  /** Opens or closes the styles dialog (#441); closing puts the screen's own style back in the house. */
+  private setStylesOpen(open: boolean): void {
+    if (open === this._stylesOpen) return;
+    this._stylesOpen = open;
+    if (!open) (this.renderRoot?.querySelector("fp3d-view3d") as (HTMLElement & { previewStyle?(s: unknown): void }) | null)?.previewStyle?.(null);
   }
 
   /** Some device of the home is a camera: the Cameras button (the camera wall, #266) is there. */
@@ -1011,8 +1025,9 @@ export class Floorplan3dPanel extends LitElement {
     const lang = uiLanguage(this.hass);
     if (this.getAttribute("lang") !== lang) this.setAttribute("lang", lang);
     // the chrome goes light with the Day look (#85); Settings, Extensions and the editor follow it too (#263)
-    this.toggleAttribute("light", lightChrome(shownLook(this._theme, this.hass)));
-    this.toggleAttribute("contrast", contrastChrome(shownLook(this._theme, this.hass)));
+    const chromeLook = shownLook(this._theme, this.hass, this.data.building?.settings as StylePlan | undefined);
+    this.toggleAttribute("light", lightChrome(chromeLook));
+    this.toggleAttribute("contrast", contrastChrome(chromeLook));
     // lab: the locating recorder box for admins (feasibility test, not a feature yet)
     if (!this.locateLab && this.hass?.user?.is_admin && this.data.building && labOn()) {
       this.locateLab = mountLocateLab(() => ({ hass: this.hass, building: this.data.building }));
@@ -1035,7 +1050,8 @@ export class Floorplan3dPanel extends LitElement {
   private readonly onKey = (e: KeyboardEvent) => {
     if (e.key !== "Escape" || this._mode !== "view") return;
     // Esc first closes the View panel (focus back on its button, #247), then leaves the time travel, then goes up a level
-    if (this._viewOpen) this.setViewOpen(false, true);
+    if (this._stylesOpen) this.setStylesOpen(false);
+    else if (this._viewOpen) this.setViewOpen(false, true);
     else if (this.tt.active) this.tt.stop();
     else this.back();
   };
@@ -1736,9 +1752,23 @@ export class Floorplan3dPanel extends LitElement {
               .hass=${this.rawHass}
               .context=${this.viewContext(b)}
               @view-change=${this.onViewChange}
+              @styles-open=${() => (this.setViewOpen(false), (this._stylesOpen = true))}
               @view-close=${(e: CustomEvent<{ outside?: boolean } | null>) => this.setViewOpen(false, !e.detail?.outside)}
               >${this._tablet ? planView : nothing}</fp3d-view-panel
             >`)
+          : nothing}
+        ${this._stylesOpen && !this._clean && this._mode === "view"
+          ? (need(loadStylesDialog),
+            html`<fp3d-styles-dialog
+              .hass=${this.rawHass}
+              .styles=${b.settings.styles_custom}
+              .canEdit=${this.canEdit}
+              .current=${shownStyle(this._theme, this.hass, b.settings as StylePlan | undefined)}
+              @view-change=${this.onViewChange}
+              @styles-preview=${(e: CustomEvent<{ style: unknown }>) => (this.view3d() as (HTMLElement & { previewStyle?(s: unknown): void }) | null)?.previewStyle?.(e.detail.style)}
+              @styles-change=${(e: CustomEvent<{ styles: CustomStyle[] }>) => this.editPlan({ ...b, settings: { ...b.settings, styles_custom: e.detail.styles.length ? e.detail.styles : null } }, "styles_custom")}
+              @styles-close=${() => this.setStylesOpen(false)}
+            ></fp3d-styles-dialog>`)
           : nothing}
         ${this._furnish
           ? html`<div class="fp3d-furnish-bar">
@@ -2133,8 +2163,22 @@ export class Floorplan3dPanel extends LitElement {
         scrollbar-width: none;
         box-shadow: none;
       }
-      .fp3d-floors:hover {
-        scrollbar-width: thin;
+      /* a desktop keeps the thin scrollbar's room all the time (an invisible thumb) and only colours it on hover, so the
+         row does not grow and the 3D view below does not jump (#451); touch screens keep their overlay scrollbars */
+      @media (hover: hover) and (pointer: fine) {
+        .fp3d-floors {
+          scrollbar-width: thin;
+          scrollbar-color: transparent transparent;
+          padding-bottom: 3px;
+        }
+        .fp3d-floors:hover {
+          scrollbar-color: color-mix(in srgb, var(--fp3d-text) 35%, transparent) transparent;
+        }
+      }
+      @media not all and (hover: hover) and (pointer: fine) {
+        .fp3d-floors:hover {
+          scrollbar-width: thin;
+        }
       }
       /* more chips past an edge: that edge fades out; the chosen chip scrolls clear of the fade (#259) */
       .fp3d-floors {

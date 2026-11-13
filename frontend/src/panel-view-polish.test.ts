@@ -134,20 +134,23 @@ test("a wall tablet's View panel offers only what the 3D shows (and 3D or 2D, sl
   assert.match(out, /<span class="fp3d-bar-word">View<\/span> <span class="fp3d-caret"/, "the chip is called View");
 });
 
-test("Appearance is one drop-down: Automatic (each saying what it shows now) and Fixed (#247)", () => {
+test("Appearance is one drop-down: Automatic (each saying what it shows now), then the styles by group (#247, #439)", () => {
   const sunUp = { themes: { darkMode: true }, states: { "sun.sun": { state: "above_horizon" } } } as never;
-  const groups = optionGroups(appearanceOptions({ hass: sunUp }));
+  const groups = optionGroups(appearanceOptions({ hass: sunUp, building: null }));
   assert.deepEqual(
     groups.map((x) => [x.group, x.options.map((o) => o.value)]),
     [
-      ["theme_group_auto", ["theme", "auto"]],
-      ["theme_group_fixed", ["neon", "blueprint", "day", "realistic"]],
+      ["style_group_auto", ["theme", "auto", "house"]],
+      ["style_group_neon", ["neon", "blueprint", "day", "focus", "synthwave"]],
+      ["style_group_homely", ["realistic", "cozy", "evening", "winter"]],
+      ["style_group_designed", ["model", "pastel", "warm"]],
     ],
   );
-  assert.deepEqual(groups[0].options.map((o) => optionText(o, t)), ["Follow Home Assistant (now Neon)", "Follow the sun (now Day)"]);
-  assert.deepEqual(groups[1].options.map((o) => optionText(o, t)), ["Neon", "High contrast", "Day", "Realistic"]);
-  assert.equal(en.theme_group_auto, "Automatic");
-  assert.equal(en.theme_group_fixed, "Fixed");
+  // the house plan shows Neon until it has styles of its own
+  assert.deepEqual(groups[0].options.map((o) => optionText(o, t)), ["Follow Home Assistant (now Neon)", "Follow the sun (now Day)", "Follow the house's style plan (now Neon)"]);
+  assert.deepEqual(groups[1].options.map((o) => optionText(o, t)), ["Neon", "High contrast", "Day", "Focus", "Synthwave"]);
+  assert.deepEqual(groups[2].options.map((o) => optionText(o, t)), ["Realistic", "Cozy", "Cozy evening", "Winter evening"]);
+  assert.equal(en.style_group_auto, "Automatic");
   // the Settings page's Appearance row is the same drop-down
   const theme = settingById("theme")!;
   assert.equal(theme.control.kind, "select");

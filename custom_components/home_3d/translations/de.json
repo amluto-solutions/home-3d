@@ -28,6 +28,24 @@
           "description": "Die Ansicht spricht ihre Antwort mit der Sprachausgabe von Assist (aus: sie zeigt sie nur)."
         }
       }
+    },
+    "set_style": {
+      "name": "Stil setzen",
+      "description": "Zeigt einen Stil auf den offenen Home-3D-Bildschirmen, für einige Minuten oder bis für den Bildschirm neu ein Stil gewählt wird. „reset“ setzt die Bildschirme auf ihre eigene Einstellung zurück.",
+      "fields": {
+        "style": {
+          "name": "Stil",
+          "description": "Eine Stil-ID oder ein Name, zum Beispiel cozy, evening oder realistic; reset (oder leer) setzt die Bildschirme auf ihre eigene Einstellung zurück."
+        },
+        "screens": {
+          "name": "Bildschirme",
+          "description": "Nur die Ansichten mit diesen Bildschirmnamen ändern sich (in den Einstellungen der Ansicht oder der Karten-Option screen). Leer: jede offene Ansicht."
+        },
+        "minutes": {
+          "name": "Minuten",
+          "description": "Wie lange der Stil bleibt, danach geht der Bildschirm auf seine eigene Einstellung zurück. Leer: bis ein Stil neu gewählt wird."
+        }
+      }
     }
   },
   "options": {

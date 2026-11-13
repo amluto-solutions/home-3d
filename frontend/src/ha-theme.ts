@@ -2,16 +2,47 @@
 // a light theme, unless the card or the panel sets a look itself. Pure helpers, no three.js and no Lit, so the main
 // bundle, the 3D view and the 2D view can all use them.
 
+import { baseOf, resolveStyle, type StylePlan } from "./looks.ts";
 import type { Look, Theme } from "./themes.ts";
 import type { HomeAssistant } from "./types.ts";
 
 export type { Look } from "./themes.ts";
 
-/** The look a device shows for a chosen look. */
-export function shownLook(look: Look, hass: HomeAssistant | null | undefined): Theme {
-  if (look === "theme") return hass?.themes?.darkMode === false ? "day" : "neon";
-  if (look === "auto") return hass?.states["sun.sun"]?.state === "above_horizon" ? "day" : "neon";
-  return look;
+/** A card's own style settings beside its `theme` (#439): evening and night styles, a helper entity, localised names. */
+export interface CardStyle {
+  evening?: string | null;
+  night?: string | null;
+  entity?: string | null;
+  names?: Record<string, string[]>;
+  /** A style set from outside for this screen (an action, a voice command, #442): it wins over everything else. */
+  override?: string | null;
+}
+
+/**
+ * The style a device shows for a chosen look (#435): "theme" by HA's theme (Day under a light one, else Neon), "auto" by
+ * the sun (Day while it is up, else Neon), a style as it is, "house" by the house's style plan (the sun, the clock or its helper entity). An own style the plan no longer has follows HA's theme.
+ */
+export function shownStyle(look: Look, hass: HomeAssistant | null | undefined, plan?: StylePlan | null, now: Date = new Date(), card?: CardStyle | null): string {
+  const sun = hass?.states["sun.sun"]?.state;
+  // a helper entity of the card's own names the style; the plan's one only for the screens that follow the plan
+  const entity = card?.entity || (look === "house" ? plan?.style_entity : null);
+  return resolveStyle({
+    choice: look,
+    evening: card?.evening,
+    night: card?.night,
+    plan,
+    entityState: entity ? (hass?.states[entity]?.state ?? null) : null,
+    names: card?.names,
+    override: card?.override,
+    now,
+    sunUp: sun === "above_horizon" ? true : sun === "below_horizon" ? false : null,
+    darkMode: hass?.themes?.darkMode ?? null,
+  });
+}
+
+/** The classic look a device shows for a chosen look: the base under its style (a palette or homely style's chrome). */
+export function shownLook(look: Look, hass: HomeAssistant | null | undefined, plan?: StylePlan | null, card?: CardStyle | null): Theme {
+  return baseOf(shownStyle(look, hass, plan, new Date(), card));
 }
 
 /**
@@ -20,7 +51,7 @@ export function shownLook(look: Look, hass: HomeAssistant | null | undefined): T
  */
 export function followLook(current: Look, follow: "theme" | "auto", on: boolean, hass: HomeAssistant | null | undefined): Look {
   if (on) return follow;
-  return current === follow ? shownLook(current, hass) : current;
+  return current === follow ? (shownStyle(current, hass) as Look) : current;
 }
 
 /** A CSS colour as "#rrggbb" (lower case): "#rgb", "#rrggbb" or "rgb(r, g, b)"; null for anything else. */

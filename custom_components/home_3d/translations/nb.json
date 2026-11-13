@@ -28,6 +28,24 @@
           "description": "Visningen sier svaret sitt med Assists tekst-til-tale (av: den viser det bare)."
         }
       }
+    },
+    "set_style": {
+      "name": "Sett stilen",
+      "description": "Viser en stil på de åpne Home 3D-skjermene i noen minutter eller til det velges en ny stil for skjermen. «reset» setter skjermene tilbake til sin egen innstilling.",
+      "fields": {
+        "style": {
+          "name": "Stil",
+          "description": "En stil-id eller et stilnavn, for eksempel cozy, evening eller realistic; reset (eller tom) setter skjermene tilbake til sin egen innstilling."
+        },
+        "screens": {
+          "name": "Skjermer",
+          "description": "Bare visninger med disse skjermnavnene endres (satt i visningens innstillinger eller kortets valg screen). Tom: alle åpne visninger."
+        },
+        "minutes": {
+          "name": "Minutter",
+          "description": "Hvor lenge stilen blir, deretter går skjermen tilbake til sin egen innstilling. Tom: til det velges en ny stil."
+        }
+      }
     }
   },
   "options": {

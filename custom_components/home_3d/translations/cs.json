@@ -28,6 +28,24 @@
           "description": "Zobrazení svou odpověď vysloví pomocí převodu textu na řeč služby Assist (vypnuto: pouze ji zobrazí)."
         }
       }
+    },
+    "set_style": {
+      "name": "Nastavit styl",
+      "description": "Zobrazí styl na otevřených obrazovkách Home 3D, na několik minut nebo dokud se pro obrazovku znovu nezvolí styl. „reset“ vrátí obrazovky na jejich vlastní nastavení.",
+      "fields": {
+        "style": {
+          "name": "Styl",
+          "description": "ID nebo název stylu, například cozy, evening nebo realistic; reset (nebo prázdné) vrátí obrazovky na jejich vlastní nastavení."
+        },
+        "screens": {
+          "name": "Obrazovky",
+          "description": "Změní se jen pohledy s těmito názvy obrazovek (nastavenými v nastavení pohledu nebo v možnosti screen karty). Prázdné: všechny otevřené pohledy."
+        },
+        "minutes": {
+          "name": "Minuty",
+          "description": "Jak dlouho styl zůstane, pak se obrazovka vrátí na své nastavení. Prázdné: dokud se znovu nezvolí styl."
+        }
+      }
     }
   },
   "options": {

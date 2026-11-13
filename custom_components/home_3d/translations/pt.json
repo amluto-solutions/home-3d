@@ -28,6 +28,24 @@
           "description": "A vista diz a resposta com o texto-para-voz do Assist (desligado: só a mostra)."
         }
       }
+    },
+    "set_style": {
+      "name": "Definir o estilo",
+      "description": "Mostra um estilo nos ecrãs Home 3D abertos, durante alguns minutos ou até ser escolhido de novo um estilo para o ecrã. «reset» repõe os ecrãs na sua própria definição.",
+      "fields": {
+        "style": {
+          "name": "Estilo",
+          "description": "Um id ou nome de estilo, por exemplo cozy, evening ou realistic; reset (ou vazio) repõe os ecrãs na sua própria definição."
+        },
+        "screens": {
+          "name": "Ecrãs",
+          "description": "Só mudam as vistas com estes nomes de ecrã (definidos nas definições da vista ou na opção screen do cartão). Vazio: todas as vistas abertas."
+        },
+        "minutes": {
+          "name": "Minutos",
+          "description": "Quanto tempo o estilo fica; depois o ecrã volta à sua própria definição. Vazio: até ser escolhido de novo um estilo."
+        }
+      }
     }
   },
   "options": {

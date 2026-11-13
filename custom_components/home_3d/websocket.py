@@ -29,6 +29,7 @@ from .const import (
     SIGNAL_BUILDING_UPDATED,
     SIGNAL_HOMES_UPDATED,
     SIGNAL_PETS_UPDATED,
+    SIGNAL_STYLE,
 )
 from .custom_items import not_reserved
 from .editors import Editors, EditorsError, action_owner, can_edit, performed_actions
@@ -53,7 +54,7 @@ from .sample import SAMPLE_NAME, load_sample
 from .schema import BUILDING_SCHEMA, IMAGE_DATA
 from .storage import FloorplanData, Home, HomesError, PlanReadOnly, RevisionConflict, check_plan
 from .timetravel import ws_timetravel_history
-from .voice import SENTENCE_MODES, AskBroker, VoiceSettings, subscribe_view
+from .voice import SENTENCE_MODES, AskBroker, VoiceSettings, style_wanted, subscribe_view
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -1109,6 +1110,9 @@ async def _async_restore_backup(
         vol.Required("type"): "home_3d/voice/subscribe",
         # the view's screen name ("": none): a sentence for one screen goes only to the views of that name (#366)
         vol.Optional("screen"): vol.All(str, vol.Length(max=60)),
+        # asks for styles set by the action `home_3d.set_style` (#442): without it a view never gets one, so a
+        # frontend that does not know them cannot take a style for a sentence
+        vol.Optional("style", default=False): bool,
     }
 )
 @callback
@@ -1125,9 +1129,25 @@ def ws_voice_subscribe(hass: HomeAssistant, connection: websocket_api.ActiveConn
     def forward(ask: dict[str, Any]) -> None:
         connection.send_message(websocket_api.event_message(msg["id"], ask))
 
-    connection.subscriptions[msg["id"]] = subscribe_view(
-        hass, forward, msg.get("screen"), bool(connection.user and connection.user.is_admin)
-    )
+    stop = subscribe_view(hass, forward, msg.get("screen"), bool(connection.user and connection.user.is_admin))
+    if msg["style"]:
+        screen = msg.get("screen")
+
+        @callback
+        def forward_style(style: dict[str, Any]) -> None:
+            if style_wanted(screen, style):
+                connection.send_message(websocket_api.event_message(msg["id"], {"style": style}))
+
+        stop_style = async_dispatcher_connect(hass, SIGNAL_STYLE, forward_style)
+
+        @callback
+        def stop_both() -> None:
+            stop()
+            stop_style()
+
+        connection.subscriptions[msg["id"]] = stop_both
+    else:
+        connection.subscriptions[msg["id"]] = stop
     connection.send_result(msg["id"])
 
 

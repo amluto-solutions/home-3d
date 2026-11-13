@@ -4,7 +4,7 @@
 import { cssUrl } from "../css-url.ts";
 import { defineElement } from "../define.ts";
 import { css, html, LitElement, nothing } from "lit";
-import { type CarState, coverControls, coverTiltButtons, entityName, isUnavailable, kindOf } from "../devices.ts";
+import { type CarState, coverControls, coverTiltButtons, entityName, isUnavailable, kindOf, slatTilt } from "../devices.ts";
 import { askConfirm } from "../ask.ts";
 import { callServiceSafe } from "../failure.ts";
 import "./ask-dialog.ts";
@@ -34,12 +34,14 @@ export { coverPositionable, lightAbilities };
 /**
  * What the big cover button does (#251), from coverControls: open or close for covers that can, else the slats of a
  * tilt-only blind (by its tilt position), else position 0 or 100; null when the cover can do none of those (no button).
+ * `slatInvert`: the window turns the slats round ("Invert slats", the cover reports 0 for open slats, #453): a
+ * tilt-only blind then reads and sends its tilt the other way.
  */
-export function coverToggle(st: HassEntity): { service: string; data?: Record<string, unknown>; open: boolean } | null {
+export function coverToggle(st: HassEntity, slatInvert = false): { service: string; data?: Record<string, unknown>; open: boolean } | null {
   const c = coverControls(st);
   const num = (v: unknown) => (typeof v === "number" ? v : null);
   const pos = num(st.attributes.current_position);
-  const tilt = num(st.attributes.current_tilt_position);
+  const tilt = slatTilt(st, slatInvert);
   const closedState = st.state === "closed";
   if (c.open || c.close) {
     const want = pos !== null ? pos < 50 : closedState;
@@ -50,7 +52,8 @@ export function coverToggle(st: HassEntity): { service: string; data?: Record<st
     const want = tilt !== null ? tilt < 50 : closedState;
     return (want ? c.tiltOpen : !c.tiltClose) ? { service: "open_cover_tilt", open: true } : { service: "close_cover_tilt", open: false };
   }
-  if (c.tiltPosition) return tilt! < 50 ? { service: "set_cover_tilt_position", data: { tilt_position: 100 }, open: true } : { service: "set_cover_tilt_position", data: { tilt_position: 0 }, open: false };
+  const raw = (shown: number) => (slatInvert ? 100 - shown : shown);
+  if (c.tiltPosition) return tilt! < 50 ? { service: "set_cover_tilt_position", data: { tilt_position: raw(100) }, open: true } : { service: "set_cover_tilt_position", data: { tilt_position: raw(0) }, open: false };
   return null;
 }
 
@@ -63,6 +66,7 @@ export class Fp3dQuickMenu extends LitElement {
     confirmSwitch: { type: Boolean },
     doorLock: { type: Boolean },
     noLook: { type: Boolean },
+    slatInvert: { type: Boolean },
     low: { type: Boolean, reflect: true },
     _tick: { state: true },
   };
@@ -80,6 +84,8 @@ export class Fp3dQuickMenu extends LitElement {
   /** The camera cockpit is unlocked (otherwise the look-through button shows a lock). */
   /** The 2D plan (#41) has no camera to look through: the button stays away. */
   declare noLook: boolean;
+  /** The window of this blind turns its slats' tilt round ("Invert slats", #453): shown and sent the other way. */
+  declare slatInvert: boolean;
   /** Tablet level: no blur behind the menu. */
   declare low: boolean;
   /** Bumped every few seconds while a camera menu is open, so its snapshot refreshes. */
@@ -192,7 +198,7 @@ export class Fp3dQuickMenu extends LitElement {
     const moving = st.state === "opening" || st.state === "closing";
     const setPos = coverPositionable(st);
     const c = coverControls(st);
-    const toggle = coverToggle(st);
+    const toggle = coverToggle(st, this.slatInvert);
     // like the colour ring of lights: open and close, positions in between and stop around the blind
     const slot = (label: string, aria: string, action: () => void, active = false) =>
       html`<button class="qm-swatch qm-slot ${active ? "qm-slot-on" : ""}" aria-label=${aria} @click=${action}>${label}</button>`;
@@ -238,7 +244,8 @@ export class Fp3dQuickMenu extends LitElement {
   /** Slats of a venetian blind or a Raffstore: a tilt slider when the cover sets a tilt position, else open/close tilt buttons. */
   private renderTilt(st: HassEntity) {
     const features = ((st.attributes.supported_features as number) ?? 0) | 0;
-    const tilt = typeof st.attributes.current_tilt_position === "number" ? (st.attributes.current_tilt_position as number) : null;
+    const tilt = slatTilt(st, this.slatInvert);
+    const raw = (shown: number) => (this.slatInvert ? 100 - shown : shown);
     if (features & COVER_SET_TILT && tilt !== null)
       return html`<label class="qm-tilt"
         ><span>${this.t("cover_tilt")} · ${tilt} %</span>
@@ -249,7 +256,7 @@ export class Fp3dQuickMenu extends LitElement {
           max="100"
           .value=${String(tilt)}
           aria-label=${this.t("cover_tilt")}
-          @change=${(e: Event) => this.call("cover", "set_cover_tilt_position", { tilt_position: Number((e.target as HTMLInputElement).value) })}
+          @change=${(e: Event) => this.call("cover", "set_cover_tilt_position", { tilt_position: raw(Number((e.target as HTMLInputElement).value)) })}
       /></label>`;
     if (coverTiltButtons(st))
       return html`<div class="qm-tilt-buttons">

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { contrast, DARK, LIGHT, lightChrome } from "./scheme.ts";
+import { contrast, contrastChrome, DARK, LIGHT, lightChrome } from "./scheme.ts";
 
 test("contrast ratios follow WCAG: black on white 21, a colour on itself 1", () => {
   assert.equal(Math.round(contrast("#000000", "#ffffff") * 10) / 10, 21);
@@ -14,6 +14,12 @@ test("only the Day look gets light viewer chrome; neon, high contrast and realis
   assert.equal(lightChrome("neon"), false);
   assert.equal(lightChrome("blueprint"), false);
   assert.equal(lightChrome("realistic"), false);
+});
+
+test("styles take the chrome of the look they are built on: light on Day, dark on Neon and Realistic (#435)", () => {
+  for (const id of ["cozy", "model", "pastel", "warm"]) assert.equal(lightChrome(id), true, id);
+  for (const id of ["evening", "winter", "focus", "synthwave", "realistic", "nonsense"]) assert.equal(lightChrome(id), false, id);
+  assert.equal(contrastChrome("cozy"), false);
 });
 
 for (const [name, s] of [
@@ -30,7 +36,7 @@ for (const [name, s] of [
 }
 
 // ---- High contrast chrome and room labels in every look (#216) ----
-import { contrastChrome, HIGH } from "./scheme.ts";
+import { HIGH } from "./scheme.ts";
 
 test("only the High contrast look (stored as blueprint) gets the high contrast chrome (#216)", () => {
   assert.equal(contrastChrome("blueprint"), true);

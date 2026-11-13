@@ -1,6 +1,7 @@
 // Spoken commands: which room, floor or the whole house a sentence names ("show the living room", "go to the
 // first floor", "show the kitchen"). Matched on the plan's own names, so no sentences have to be taught to anyone.
 
+import { styleFromText } from "../looks.ts";
 import { zonesOf, type Building, type Room } from "../model.ts";
 
 export type Place = { kind: "room"; floorId: string; roomId: string; name: string } | { kind: "floor"; floorId: string; name: string } | { kind: "house"; name: string };
@@ -100,4 +101,27 @@ export function showCommand(sentence: string, building: Building, alias?: RoomAl
   for (const n of names) if (n) rest = rest.replace(` ${normalize(n)} `, " ");
   if (place.kind === "house") rest = rest.replace(HOUSE, " ");
   return rest.split(" ").every((w) => !w || FILLER.has(w) || (ambiguous && SHOW_AMBIGUOUS.test(w))) ? place : null;
+}
+
+/** The words that make a sentence one about the style ("style cozy", "Stil Wohnlich"). */
+const STYLE_WORD = /\b(style|look|theme|design|stil|farbstil|ansicht|optik)\b/;
+/** Little words around a style's name ("please switch the style to cozy"); the name must be all that is left. */
+const STYLE_FILLER = /\b(home 3d|home three d|house|haus|please|bitte|set|switch|change|show|use|to|the|on|mode|stelle|stell|schalte|mach|setze|zeige|auf|zu|um|in|den|die|das|an|ein|als|modus)\b/g;
+/** Words that ask to go back to the screen's own style. */
+const STYLE_BACK = /^(reset|default|back|normal|standard|auto|zuruck|zurucksetzen)$/;
+
+/**
+ * A spoken style change: "style cozy", "switch the look to winter evening", "Stil Wohnlich", "reset the style". `id` is the
+ * style named (`null`: back to the screen's own style). Null when the sentence is no style sentence: it has no style
+ * word, or what is left after the little words names no style as a whole ("the light look" stays a light). `names`:
+ * localised names per style id.
+ */
+export function styleCommand(sentence: string, names: Record<string, string[]> = {}): { id: string | null } | null {
+  const text = normalize(sentence);
+  if (!STYLE_WORD.test(text)) return null;
+  const rest = text.replace(STYLE_WORD, " ").replace(STYLE_FILLER, " ").replace(/\s+/g, " ").trim();
+  if (!rest) return null;
+  if (STYLE_BACK.test(rest)) return { id: null };
+  const id = styleFromText(rest, names);
+  return id ? { id } : null;
 }

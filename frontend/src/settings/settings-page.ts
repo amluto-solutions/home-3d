@@ -6,6 +6,7 @@
 // or the editor it was opened from. Under 760 px the menu is a list that drills into a section. It is a bundle of its own (home-3d-settings.js), loaded when someone
 // opens the Settings tab; it brings no texts table of its own beyond its few new texts (the panel lends `t`).
 
+import { setCustomStyles } from "../looks.ts";
 import { defineElement } from "../define.ts";
 import { css, html, LitElement, nothing, type PropertyValues } from "lit";
 import { need, once } from "../lazy-part.ts";
@@ -217,6 +218,8 @@ export class SettingsPage extends LitElement {
   }
 
   protected willUpdate(changed: PropertyValues): void {
+    // the plan's own styles name the choices of the style lists (#441); this bundle has its own copy of looks.ts
+    if (changed.has("building")) setCustomStyles(this.building?.settings?.styles_custom);
     if ((changed.has("section") || changed.has("focusId")) && (this.section || this.focusId)) {
       // a link to a row that moved (Quality to Appearance, the people rows out of Advanced, #248) opens the row's section
       const row = this.focusId ? settingById(this.focusId) : undefined;

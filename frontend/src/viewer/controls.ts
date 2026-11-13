@@ -61,6 +61,18 @@ const MAX_PHI = 1.35;
 const KEY_TURN = Math.PI / 16;
 const KEY_ZOOM = 0.85;
 const KEY_MOVE = 0.1;
+/** The 3D view's vertical field of view (degrees). */
+export const BASE_FOV = 38;
+
+/**
+ * The vertical field of view (degrees) for looking through a camera whose horizontal field is `fov` degrees
+ * (null: a wall camera 90, a dome 100; a 360 lens counts as unset). Clamped to 50..110 across, 38..85 up and down.
+ */
+export function lookFov(fov: number | null | undefined, ceiling: boolean, aspect: number): number {
+  const across = Math.min(110, Math.max(50, fov && fov < 360 ? fov : ceiling ? 100 : 90)) * (Math.PI / 180);
+  return Math.min(85, Math.max(BASE_FOV, (2 * Math.atan(Math.tan(across / 2) / aspect)) / (Math.PI / 180)));
+}
+
 /** One press of the on-screen turn buttons (#307): 15 degrees. */
 export const NAV_TURN = Math.PI / 12;
 
@@ -381,7 +393,7 @@ export class OrbitControls {
     this.cancelDragFrame();
     const p = this.pendingDrag;
     this.pendingDrag = null;
-    if (p && this.grabbing) this.events.drag?.(...p);
+    if (p && this.grabbing && this.events.drag) this.events.drag(...p);
   }
 
   private cancelDragFrame(): void {

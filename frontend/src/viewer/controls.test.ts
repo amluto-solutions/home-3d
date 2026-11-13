@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { Vector3 } from "three";
-import { keyView, stale } from "./controls.ts";
+import { BASE_FOV, keyView, lookFov, OrbitControls, stale } from "./controls.ts";
 
 test("input that waited out a busy moment is dropped, not replayed (#712)", () => {
   assert.equal(stale({ timeStamp: 1000 }, 1100), false);
@@ -234,4 +234,43 @@ test("the turn buttons orbit the view 15 degrees a press, round the same target 
   assert.ok(Math.abs(c.goal.theta + Math.PI / 12) < 1e-9);
   assert.deepEqual([c.goal.target.x, c.goal.target.y, c.goal.target.z], [5, 1, 5]);
   assert.equal(c.goal.radius, 16);
+});
+
+test("looking through a camera: a wall camera is about 90 degrees across, a dome wider, and back to 38 (#448)", () => {
+  const wide = 16 / 9;
+  const wall = lookFov(null, false, wide);
+  // 90 degrees across on a 16:9 view is 2 atan(1 / 1.78) = 58.7 up and down
+  assert.ok(Math.abs(wall - 58.7) < 0.2, `wall ${wall}`);
+  assert.ok(lookFov(null, true, wide) > wall, "a dome sees wider");
+  // the camera's own field counts; a 360 lens counts as unset
+  assert.ok(lookFov(60, false, wide) < wall);
+  assert.equal(lookFov(360, false, wide), wall);
+  // never narrower than the view itself, never wider than 85
+  assert.equal(lookFov(50, false, 4), BASE_FOV);
+  assert.equal(lookFov(110, true, 0.3), 85);
+  assert.equal(BASE_FOV, 38);
+});
+
+test("a saved flight keeps its angle under the 3D lock, an ordinary one does not (#448)", () => {
+  const g = globalThis as { matchMedia?: unknown };
+  const had = g.matchMedia;
+  g.matchMedia = () => ({ matches: true });
+  try {
+    const mk = () => {
+      const c = Object.create(OrbitControls.prototype) as OrbitControls;
+      c.view = { target: new Vector3(), radius: 5, theta: 0.2, phi: 0.5 };
+      c.angleLock = true;
+      (c as unknown as { events: unknown }).events = { change() {} };
+      return c;
+    };
+    const a = mk();
+    a.flyTo({ theta: 1, phi: 1.2, radius: 3 }, 0);
+    assert.equal(a.view.theta, 0.2);
+    const b = mk();
+    b.flyTo({ theta: 1, phi: 1.2, radius: 3 }, 0, true);
+    assert.equal(b.view.theta, 1);
+    assert.equal(b.view.phi, 1.2);
+  } finally {
+    g.matchMedia = had;
+  }
 });

@@ -28,6 +28,24 @@
           "description": "La vista dice su respuesta con la conversión de texto a voz de Assist (desactivado: solo la muestra)."
         }
       }
+    },
+    "set_style": {
+      "name": "Establecer el estilo",
+      "description": "Muestra un estilo en las pantallas de Home 3D abiertas, durante unos minutos o hasta que se elija de nuevo un estilo para la pantalla. «reset» devuelve las pantallas a su propio ajuste.",
+      "fields": {
+        "style": {
+          "name": "Estilo",
+          "description": "Un id o nombre de estilo, por ejemplo cozy, evening o realistic; reset (o vacío) devuelve las pantallas a su propio ajuste."
+        },
+        "screens": {
+          "name": "Pantallas",
+          "description": "Solo cambian las vistas con estos nombres de pantalla (definidos en los ajustes de la vista o en la opción screen de la tarjeta). Vacío: todas las vistas abiertas."
+        },
+        "minutes": {
+          "name": "Minutos",
+          "description": "Cuánto dura el estilo; luego la pantalla vuelve a su propio ajuste. Vacío: hasta que se elija de nuevo un estilo."
+        }
+      }
     }
   },
   "options": {

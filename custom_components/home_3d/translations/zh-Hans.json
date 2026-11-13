@@ -28,6 +28,24 @@
           "description": "视图使用 Assist 的文字转语音朗读回答（关闭：仅显示）。"
         }
       }
+    },
+    "set_style": {
+      "name": "设置样式",
+      "description": "在已打开的 Home 3D 屏幕上显示某个样式，持续几分钟，或直到为该屏幕重新选择样式。“reset”会让屏幕恢复为各自的设置。",
+      "fields": {
+        "style": {
+          "name": "样式",
+          "description": "样式 ID 或名称，例如 cozy、evening 或 realistic；reset（或留空）会让屏幕恢复为各自的设置。"
+        },
+        "screens": {
+          "name": "屏幕",
+          "description": "只有使用这些屏幕名称的视图会改变（在视图设置或卡片的 screen 选项中设定）。留空：所有已打开的视图。"
+        },
+        "minutes": {
+          "name": "分钟",
+          "description": "样式保留多久，之后屏幕恢复为自己的设置。留空：直到重新选择样式。"
+        }
+      }
     }
   },
   "options": {

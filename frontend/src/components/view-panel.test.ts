@@ -68,7 +68,7 @@ test("wide screens: Appearance, What the 3D shows, Device icons and Clock, then 
     assert.ok(i >= at, `${text} after the one before`);
     at = i;
   }
-  assert.ok(out.includes(`<optgroup label=Automatic>`) && out.includes(`<optgroup label=Fixed>`));
+  assert.ok(out.includes(`<optgroup label=Automatic>`) && out.includes(`<optgroup label=Neon and classic>`));
   assert.ok(out.includes("Follow Home Assistant (now Neon)"));
   assert.ok(out.includes("Important: devices with no 3D model"));
   for (const label of ["Show room climate as", "Keep the roof on when zooming in", "Motion trail (last 30 minutes)", "Weather outside", "Display what", "11 object types selected"]) assert.ok(out.includes(label), label);

@@ -7,6 +7,7 @@ import type { LampModel } from "./viewer/viewer3d.ts";
 import type { ItemActions } from "./item-actions.ts";
 import type { RoleColours } from "./colour-roles.ts";
 import type { SeasonRule } from "./seasons.ts";
+import type { CustomStyle } from "./looks.ts";
 import type { RoleMaterials } from "./role-materials.ts";
 
 export type Vec2 = [number, number];
@@ -87,6 +88,10 @@ export interface Room {
    * thickness. A wall two rooms share takes the thicker of their settings (D149).
    */
   wall_thickness?: (number | null)[];
+  /** Colour of the room's side of each wall ("#rrggbb", aligned with the points; null = `wall_color`), shown in the Homely styles and Realistic (#437). */
+  wall_colors?: (string | null)[] | null;
+  /** Colour of every wall of the room on its own side, unless the wall has its own (null = the style's own wall colour). */
+  wall_color?: string | null;
   /**
    * Split points on each edge (index = edge): distances in metres from points[i] where the wall is cut
    * into parts of their own (each with its own height), e.g. a 2.5 m wall next to a 1.7 m one in line.
@@ -145,6 +150,10 @@ export interface Opening {
   position?: string | null;
   /** The position sensor counts the other way round (0 = open). */
   position_inverted?: boolean;
+  /** Where the blind sits: outside as a roller shutter (null, the default) or inside the room as a roller shade. */
+  blind_side?: "inside" | "outside" | null;
+  /** The blind's slats report their tilt the other way round (0 = open): turned in 3D and in the sliders. */
+  slat_invert?: boolean | null;
   /** Windows: a sensor with the sash's tilt angle (degrees); the sash tilts in 3D as far as it reports. */
   tilt_angle?: EntityRef;
   /** Angle that counts as fully tilted (default 15°), an offset the sensor reports when closed, and the other sign. */
@@ -860,6 +869,23 @@ export interface EffectSettings {
 }
 
 export interface BuildingSettings {
+  /** The outside of the house in the Homely styles and Realistic ("#rrggbb", null = like the walls, #437). */
+  facade_color?: string | null;
+  /**
+   * The house's style plan (#440, from NeonPlan 3D 3.1, MIT): the styles a screen set to "house" shows by day, in the
+   * evening and at night, switched by the sun or by the clock (`style_*_at`, "HH:MM"). A helper entity (an input_select
+   * or input_text) whose state names a style wins while it does. Empty: Neon.
+   */
+  style_day?: string | null;
+  style_evening?: string | null;
+  style_night?: string | null;
+  style_switch?: "sun" | "time" | null;
+  style_morning_at?: string | null;
+  style_evening_at?: string | null;
+  style_night_at?: string | null;
+  style_entity?: string | null;
+  /** Own styles (#441, ported from NeonPlan 3D 3.1, MIT): up to 40, ids `my_*`; every style list and a spoken name resolve them (looks.ts cleans what is read). */
+  styles_custom?: CustomStyle[] | null;
   /** The background behind the 3D house (null: the look's own sky): a colour, a gradient or a picture. */
   backdrop?: { kind?: "color" | "gradient" | "image" | null; color?: string | null; color2?: string | null; image?: string | null; dim?: number | null } | null;
   /**
@@ -1415,7 +1441,7 @@ export interface PresenceLink {
  * version (custom_components/home_3d/migrations.py) before anyone sees it; the frontend never changes the version of a
  * plan it was given, so a plan it saves is migrated again where needed (an older backend keeps a version-1 plan).
  */
-export const PLAN_VERSION = 3;
+export const PLAN_VERSION = 4;
 
 /** Whether `version` is one of a plan this frontend reads (1 up to PLAN_VERSION). */
 export function knownPlanVersion(version: unknown): version is number {

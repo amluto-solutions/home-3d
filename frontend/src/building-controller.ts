@@ -5,6 +5,7 @@ import { fetchBuilding, fetchVersion, listPacks, saveBuilding, subscribeBuilding
 import { normalizeBuilding, type Building } from "./model.ts";
 import { freshReload, refreshBundles } from "./fresh-reload.ts";
 import { saveAutomaticOpeningLinks } from "./opening-links.ts";
+import { setCustomStyles } from "./looks.ts";
 import { recipeHashes, setPacks, setPlanRecipes, type FurniturePack, type PlanRecipe } from "./packs.ts";
 import type { HomeAssistant } from "./types.ts";
 
@@ -314,9 +315,17 @@ export class BuildingController implements ReactiveController {
    * pause, or on its way, may never reach the backend, so it is kept as a draft first (removed once it is saved), then
    * saved at once. */
   private readonly onHide = (e: Event) => {
+    if (e.type === "visibilitychange" && globalThis.document?.visibilityState === "visible") return this.onVisible();
     if (e.type === "visibilitychange" && globalThis.document?.visibilityState !== "hidden") return;
     this.keepUnsent();
   };
+
+  /** The page is back in sight (#450): a phone that kept its socket open may have missed saves made meanwhile, so the
+   * plan is asked for again, as after a reconnect. Not while an edit waits or is on its way: that one wins. */
+  private onVisible(): void {
+    if (!this.hass || !this.connected || this.pending || this.saving) return;
+    void this.caughtUp();
+  }
 
   /** Keep the edit waiting or on its way as a draft of its home and save it now (#378). */
   keepUnsent(): void {
@@ -361,6 +370,7 @@ export class BuildingController implements ReactiveController {
   edit(building: Building): void {
     this.building = building;
     setPlanRecipes(building.recipes);
+    setCustomStyles(building.settings?.styles_custom);
     this.pending = building;
     // the home on screen is the one this edit was made on (#150)
     this.pendingHome = this.shown;
@@ -587,7 +597,10 @@ export class BuildingController implements ReactiveController {
         if (home === this.shown) {
           if (recipes) {
             if (this.building && this.building !== building) adoptRecipes(this.building, recipes, bases);
-            if (this.building) setPlanRecipes(this.building.recipes);
+            if (this.building) {
+              setPlanRecipes(this.building.recipes);
+              setCustomStyles(this.building.settings?.styles_custom);
+            }
             this.recipeBases = recipeHashes(recipes);
           }
           // the own revisions long past are let go of; the rest go when their event comes (#378)
@@ -642,6 +655,7 @@ export class BuildingController implements ReactiveController {
       changes = all;
       this.building = building;
       setPlanRecipes(building.recipes);
+      setCustomStyles(building.settings?.styles_custom);
       this.host.requestUpdate();
     }
   }
@@ -831,6 +845,7 @@ export class BuildingController implements ReactiveController {
     if (!plan) return;
     this.building = normalizeBuilding(res.building);
     setPlanRecipes(this.building.recipes);
+    setCustomStyles(this.building.settings?.styles_custom);
     this.recipeBases = recipeHashes(this.building.recipes);
     this.revision = res.revision;
   }

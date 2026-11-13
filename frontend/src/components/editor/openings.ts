@@ -2,7 +2,7 @@
 // room's openings list and the opening form.
 
 import { html, nothing, svg } from "lit";
-import { entityName, openingEntities, windowPosition } from "../../devices.ts";
+import { entityName, openingEntities, slatTilt, windowPosition } from "../../devices.ts";
 import { snapOnWall, snapTolerance, wallGuides, type Span } from "../../geometry/snap-guides.ts";
 import { isPulseDrive } from "../../devices.ts";
 import { sidelightLayout } from "../../model.ts";
@@ -484,6 +484,30 @@ export class OpeningsPart {
     return this.t("sill_board_auto_of", { what: this.t(!auto ? "sill_board_none" : exterior ? "sill_board_both" : "sill_board_inside") });
   }
 
+  /**
+   * Where a window's or door's blind sits (outside as a roller shutter, inside the room as a roller shade), and
+   * "Invert slats" once its cover reports a slat tilt (a venetian blind or Raffstore) or the option is already on (#453).
+   */
+  renderBlindFields(this: Fp3dEditor, o: Opening, cover: string | null) {
+    const admin = this.isEditor;
+    const slats = !!o.slat_invert || (!!cover && slatTilt(this.hass?.states[cover]) !== null);
+    // the blind found by itself is written down with the option, so the sliders know whose slats are turned round
+    const setInvert = (on: boolean) => this.updateOpening(on ? { slat_invert: true, ...(cover && !o.cover ? { cover } : {}) } : { slat_invert: null });
+    return html`<label class="fp3d-field fp3d-wide"
+        >${this.t("blind_sits")}
+        <select ?disabled=${!admin} @change=${(e: Event) => this.updateOpening({ blind_side: (e.target as HTMLSelectElement).value === "inside" ? "inside" : null })}>
+          <option value="outside" ?selected=${o.blind_side !== "inside"}>${this.t("blind_side_outside")}</option>
+          <option value="inside" ?selected=${o.blind_side === "inside"}>${this.t("blind_side_inside")}</option>
+        </select></label
+      >
+      ${slats
+        ? html`<label class="fp3d-check fp3d-wide" title=${this.t("slats_invert_hint")}
+            ><input type="checkbox" ?disabled=${!admin} .checked=${!!o.slat_invert} @change=${(ev: Event) => setInvert((ev.target as HTMLInputElement).checked)} />
+            ${this.t("slats_invert")}</label
+          >`
+        : nothing}`;
+  }
+
   renderOpeningForm(this: Fp3dEditor, o: Opening) {
     const admin = this.isEditor;
     const window = o.type === "window";
@@ -633,6 +657,7 @@ export class OpeningsPart {
                     ${this.t("cover_position_invert")}</label
                   >`
                 : nothing}
+              ${garage || isPulseDrive(o.cover) ? nothing : this.renderBlindFields(o, o.cover || autoPick("cover"))}
               <label class="fp3d-check fp3d-wide" title=${this.t("cover_confirm_hint")}
                 ><input type="checkbox" ?disabled=${!admin} .checked=${!!o.confirm} @change=${(ev: Event) => this.updateOpening({ confirm: (ev.target as HTMLInputElement).checked })} />
                 ${this.t("device_confirm")}</label

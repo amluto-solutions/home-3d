@@ -281,7 +281,8 @@ export class Fp3dViewPanel extends LitElement {
     const rows = section.rows.map((r) => [r, viewSetting(r.id)] as const);
     if (section.id === "look") {
       const [theme, accent] = rows.map(([, s]) => s);
-      return html`<div class="vp-line">${theme ? this.renderSelect(theme, this.t("theme")) : nothing}${accent ? this.renderAccent(accent) : nothing}</div>`;
+      return html`<div class="vp-line">${theme ? this.renderSelect(theme, this.t("theme")) : nothing}${accent ? this.renderAccent(accent) : nothing}</div>
+        <button type="button" class="vp-link" @click=${() => this.emit("styles-open")}>${this.t("styles_open")} ›</button>`;
     }
     if (section.id === "markers") {
       const [markers, size] = rows.map(([, s]) => s);

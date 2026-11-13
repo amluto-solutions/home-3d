@@ -28,6 +28,24 @@
           "description": "A nézet az Assist szövegfelolvasásával mondja el a válaszát (ki: csak megjeleníti)."
         }
       }
+    },
+    "set_style": {
+      "name": "Stílus beállítása",
+      "description": "Egy stílust mutat a megnyitott Home 3D-képernyőkön néhány percig, vagy amíg a képernyőhöz újra stílust nem választanak. A „reset” visszaállítja a képernyőket a saját beállításukra.",
+      "fields": {
+        "style": {
+          "name": "Stílus",
+          "description": "Egy stílus azonosítója vagy neve, például cozy, evening vagy realistic; a reset (vagy üres) visszaállítja a képernyőket a saját beállításukra."
+        },
+        "screens": {
+          "name": "Képernyők",
+          "description": "Csak az ilyen nevű képernyők nézetei változnak (a nézet beállításaiban vagy a kártya screen opciójában megadva). Üres: minden megnyitott nézet."
+        },
+        "minutes": {
+          "name": "Percek",
+          "description": "Meddig marad a stílus, utána a képernyő visszatér a saját beállítására. Üres: amíg újra stílust nem választanak."
+        }
+      }
     }
   },
   "options": {

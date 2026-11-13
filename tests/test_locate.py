@@ -14,6 +14,7 @@ from homeassistant.setup import async_setup_component
 from pytest_homeassistant_custom_component.common import MockConfigEntry, async_mock_service
 
 from custom_components.home_3d.const import DOMAIN
+from custom_components.home_3d.locate.answers import _away
 from custom_components.home_3d.locate.engine import Fingerprints
 from custom_components.home_3d.locate.plan import plan_doors, plan_rooms
 from custom_components.home_3d.locate.service import DATA_LOCATE, SIGNAL_LOCATE, LocateService
@@ -901,3 +902,20 @@ async def test_the_pool_is_built_once_per_estimate_and_capped(hass: HomeAssistan
     _hear_everyone(service, ids, spots, rng, now)
     service._estimate(now)
     assert builds == 1
+
+
+async def test_a_zone_of_their_own_at_the_house_counts_as_home(hass: HomeAssistant) -> None:
+    """A person in a zone that touches zone.home (a "Garden") is home; one in a far zone or not_home is away (#445)."""
+    hass.states.async_set("zone.home", "0", {"latitude": 52.5, "longitude": 13.4, "radius": 100})
+    hass.states.async_set(
+        "zone.garden", "1", {"friendly_name": "Garden", "latitude": 52.5003, "longitude": 13.4002, "radius": 15}
+    )
+    hass.states.async_set(
+        "zone.work", "0", {"friendly_name": "Work", "latitude": 52.6, "longitude": 13.5, "radius": 100}
+    )
+    assert not _away(hass, "home")
+    assert not _away(hass, "unknown")
+    assert not _away(hass, "Garden")
+    assert _away(hass, "Work")
+    assert _away(hass, "not_home")
+    assert _away(hass, "Nowhere")

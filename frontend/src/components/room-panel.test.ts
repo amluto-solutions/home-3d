@@ -201,3 +201,11 @@ test("a roller shutter announcing tilt (KNX) gets no slats buttons, and no posit
   el.hass.states["cover.sample_shutter"] = { entity_id: "cover.sample_shutter", state: "open", attributes: { supported_features: 1 | 2 | 4 | 16 | 32, device_class: "shutter" } };
   assert.deepEqual(has(flat(el.coverRow(el.hass.states["cover.sample_shutter"]))), { open: true, close: true, stop: false, position: false, tiltOpen: false, tiltClose: false, tiltSlider: false });
 });
+
+test("the room panel's slats slider turns the tilt round for a window set to \"Invert slats\" (#453)", () => {
+  const el = panel(false);
+  el.hass.states["cover.sample_blind"] = { entity_id: "cover.sample_blind", state: "open", attributes: { friendly_name: "Blind", supported_features: 128, device_class: "blind", current_tilt_position: 30 } };
+  assert.match(flat(el.coverRow(el.hass.states["cover.sample_blind"])), /\.value=\u000130\u0002/);
+  el.building = { floors: [{ openings: [{ id: "w", cover: "cover.sample_blind", slat_invert: true }] }] };
+  assert.match(flat(el.coverRow(el.hass.states["cover.sample_blind"])), /\.value=\u000170\u0002/);
+});

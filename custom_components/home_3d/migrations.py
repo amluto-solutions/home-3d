@@ -161,8 +161,17 @@ def pet_spots(plan: dict[str, Any]) -> dict[str, Any]:
     return {**plan, "settings": {**settings, "pets": {**pets, "list": moved}}}
 
 
+# ---------------------------------------------------------------------------- 3 -> 4: the house's style plan
+
+
+def style_plan(plan: dict[str, Any]) -> dict[str, Any]:
+    """Version 3 -> 4: changes nothing. The house's style plan (#440: `style_switch` "sun" or "time" and the styles and
+    times beside it) is a new choice a plan can hold; the bump makes an older Home 3D open such a plan read-only."""
+    return plan
+
+
 # MIGRATIONS[n - 1] turns a plan of version n into one of version n + 1
-MIGRATIONS: tuple[Callable[[dict[str, Any]], dict[str, Any]], ...] = (lights_to_lamps, pet_spots)
+MIGRATIONS: tuple[Callable[[dict[str, Any]], dict[str, Any]], ...] = (lights_to_lamps, pet_spots, style_plan)
 assert len(MIGRATIONS) == PLAN_VERSION - 1, "every plan version but the first has its migration"
 
 

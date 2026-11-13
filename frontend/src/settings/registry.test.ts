@@ -297,7 +297,7 @@ test("Screen and controls holds the old View menu's Controls row and FPS, Appear
     screen.map((s) => s.id).filter((id) => id !== "director_here" && id !== "reset_device"),
     // the floor bar's wrap switch went with the room chips (#249, Rooms picker option B); the floor pictures panel's
     // switch came (#250)
-    ["stats", "controls", "keep_view", "angle_lock", "floor_pictures"],
+    ["stats", "controls", "keep_view", "angle_lock", "floor_pictures", "tap_in_room"],
   );
   // Quality sits on Appearance, as drawn (#248)
   assert.equal(settingById("quality")!.section, "look");
@@ -395,4 +395,30 @@ test("the two device switches are named after their feature, not after being swi
   assert.equal(en.director_here, "Live director on this screen");
   assert.equal(en.voice_here, "Voice button on this screen");
   for (const v of Object.values(en)) assert.ok(!/Switch on on this/.test(v), "no label of that old kind is left");
+});
+
+test("the house's style plan is one card beside the facade: styles, switch, times and the helper entity (#440)", () => {
+  const e = env();
+  const row = (id: string) => settingById(id)!;
+  for (const id of ["style_day", "style_evening", "style_night", "style_switch", "style_morning_at", "style_evening_at", "style_night_at", "style_entity"]) {
+    assert.equal(row(id).card, "style_plan", id);
+    assert.equal(row(id).section, "scene", id);
+    assert.equal(row(id).scope, "house", id);
+  }
+  const cards = SECTIONS.find((s) => s.id === "scene")!.cards.map((c) => c.id);
+  assert.ok(cards.indexOf("style_plan") === cards.indexOf("facade") + 1);
+  // by the sun the evening time is not asked; by the clock it is
+  assert.equal(shown(row("style_evening_at"), e), false);
+  const clock = { ...e, building: { ...e.building!, settings: { ...e.building!.settings, style_switch: "time" as const } } };
+  assert.equal(shown(row("style_evening_at"), clock), true);
+  // defaults read as the plan's defaults and a default time is stored as nothing
+  assert.equal(row("style_night_at").read(e), "23:00");
+  assert.equal(row("style_switch").read(e), "sun");
+  const written = row("style_night_at").write!(e, "22:30") as Building;
+  assert.equal(written.settings.style_night_at, "22:30");
+  assert.equal((row("style_night_at").write!(e, "23:00") as Building).settings.style_night_at, null);
+  assert.equal((row("style_switch").write!(e, "time") as Building).settings.style_switch, "time");
+  assert.equal((row("style_evening").write!(e, "") as Building).settings.style_evening, null);
+  const entity = row("style_entity").control;
+  assert.ok(entity.kind === "entity" && entity.filter("input_select.sample_style", e) && !entity.filter("light.sample_lounge", e));
 });

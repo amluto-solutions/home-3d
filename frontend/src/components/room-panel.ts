@@ -3,7 +3,7 @@
 
 import { defineElement } from "../define.ts";
 import { css, html, LitElement, nothing, type TemplateResult } from "lit";
-import { areaEntities, coverControls, entityName, groupByDevice, isUnavailable, kindOf, roomClimateSensors, roomClimateValue, roomPanelEntities, fromCelsius, tempUnit, type DeviceKind } from "../devices.ts";
+import { areaEntities, coverControls, slatTilt, slatsInverted, entityName, groupByDevice, isUnavailable, kindOf, roomClimateSensors, roomClimateValue, roomPanelEntities, fromCelsius, tempUnit, type DeviceKind } from "../devices.ts";
 import { askConfirm } from "../ask.ts";
 import { callServiceSafe } from "../failure.ts";
 import { confirmGroup } from "../confirm-group.ts";
@@ -497,7 +497,9 @@ export class Fp3dRoomPanel extends LitElement {
     const na = isUnavailable(st);
     const button = (label: I18nKey, service: string, ask = false) =>
       html`<button class="fp3d-btn fp3d-rp-small" ?disabled=${na} @click=${async () => (!ask || (await this.askFor(id))) && this.call("cover", service, { entity_id: id })}>${this.t(label)}</button>`;
-    const slider = (label: I18nKey, value: number, service: string, key: string) =>
+    // "Invert slats" on the blind's window (#453): its slats' tilt is shown and sent the other way round
+    const inv = slatsInverted(this.building, id);
+    const slider = (label: I18nKey, value: number, service: string, key: string, turn: (v: number) => number = (v) => v) =>
       html`<label class="fp3d-rp-slider"
         ><span>${this.t(label)}</span>
         <input
@@ -506,7 +508,7 @@ export class Fp3dRoomPanel extends LitElement {
           max="100"
           ?disabled=${na}
           .value=${String(value)}
-          @change=${(e: Event) => this.call("cover", service, { entity_id: id, [key]: Number((e.target as HTMLInputElement).value) })}
+          @change=${(e: Event) => this.call("cover", service, { entity_id: id, [key]: turn(Number((e.target as HTMLInputElement).value)) })}
       /></label>`;
     return html`<div class="fp3d-rp-row">
       <span class="fp3d-rp-icon">${icon("cover")}</span>
@@ -521,7 +523,7 @@ export class Fp3dRoomPanel extends LitElement {
             ${c.tiltOpen ? button("cover_tilt_open", "open_cover_tilt") : nothing}${c.tiltStop ? button("cover_stop", "stop_cover_tilt") : nothing}${c.tiltClose ? button("cover_tilt_close", "close_cover_tilt") : nothing}
           </div>`
         : nothing}
-      ${c.tiltPosition ? slider("cover_tilt", a.current_tilt_position as number, "set_cover_tilt_position", "tilt_position") : nothing}
+      ${c.tiltPosition ? slider("cover_tilt", slatTilt(st, inv) ?? 0, "set_cover_tilt_position", "tilt_position", (v) => (inv ? 100 - v : v)) : nothing}
     </div>`;
   }
 

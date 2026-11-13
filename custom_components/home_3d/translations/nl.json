@@ -28,6 +28,24 @@
           "description": "De weergave spreekt het antwoord uit met de tekst-naar-spraak van Assist (uit: het toont het alleen)."
         }
       }
+    },
+    "set_style": {
+      "name": "Stijl instellen",
+      "description": "Toont een stijl op de geopende Home 3D-schermen, enkele minuten of tot er opnieuw een stijl voor het scherm wordt gekozen. \"reset\" zet de schermen terug op hun eigen instelling.",
+      "fields": {
+        "style": {
+          "name": "Stijl",
+          "description": "Een stijl-id of -naam, bijvoorbeeld cozy, evening of realistic; reset (of leeg) zet de schermen terug op hun eigen instelling."
+        },
+        "screens": {
+          "name": "Schermen",
+          "description": "Alleen de weergaven met deze schermnamen veranderen (ingesteld in de weergave-instellingen of de optie screen van de kaart). Leeg: alle geopende weergaven."
+        },
+        "minutes": {
+          "name": "Minuten",
+          "description": "Hoe lang de stijl blijft; daarna gaat het scherm terug naar zijn eigen instelling. Leeg: tot er opnieuw een stijl wordt gekozen."
+        }
+      }
     }
   },
   "options": {

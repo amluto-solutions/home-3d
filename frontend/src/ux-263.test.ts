@@ -10,8 +10,10 @@ const src = (p: string) => readFileSync(new URL(p, import.meta.url), "utf8");
 
 test("the panel's light and high contrast schemes apply on every page, not only the 3D view (#263)", () => {
   const panel = src("./panel.ts");
-  assert.match(panel, /this\.toggleAttribute\("light", lightChrome\(shownLook\(this\._theme, this\.hass\)\)\)/);
-  assert.match(panel, /this\.toggleAttribute\("contrast", contrastChrome\(shownLook\(this\._theme, this\.hass\)\)\)/);
+  // the house's style plan (#440) is part of what the look shows
+  assert.match(panel, /const chromeLook = shownLook\(this\._theme, this\.hass, this\.data\.building\?\.settings as StylePlan \| undefined\)/);
+  assert.match(panel, /this\.toggleAttribute\("light", lightChrome\(chromeLook\)\)/);
+  assert.match(panel, /this\.toggleAttribute\("contrast", contrastChrome\(chromeLook\)\)/);
 });
 
 test("the ask dialog takes the look of the part that asked, found along the focus (#263)", async () => {

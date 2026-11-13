@@ -28,6 +28,24 @@
           "description": "Vizualizarea își rostește răspunsul cu text-to-speech de la Assist (dezactivat: doar îl afișează)."
         }
       }
+    },
+    "set_style": {
+      "name": "Setează stilul",
+      "description": "Arată un stil pe ecranele Home 3D deschise, câteva minute sau până când se alege din nou un stil pentru ecran. „reset” pune ecranele înapoi pe setarea lor proprie.",
+      "fields": {
+        "style": {
+          "name": "Stil",
+          "description": "Un id sau un nume de stil, de exemplu cozy, evening sau realistic; reset (sau gol) pune ecranele înapoi pe setarea lor proprie."
+        },
+        "screens": {
+          "name": "Ecrane",
+          "description": "Se schimbă doar vizualizările cu aceste nume de ecran (setate în setările vizualizării sau în opțiunea screen a cardului). Gol: toate vizualizările deschise."
+        },
+        "minutes": {
+          "name": "Minute",
+          "description": "Cât rămâne stilul, apoi ecranul revine la setarea sa proprie. Gol: până când se alege din nou un stil."
+        }
+      }
     }
   },
   "options": {

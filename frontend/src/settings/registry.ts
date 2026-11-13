@@ -22,6 +22,7 @@ import { formatImperial, lengthUnit, parseLength, unitLabel, type LengthUnit } f
 // this device's look and screen rows live with the View panel's list (#247), which the panel loads without this file
 import { deviceSwitch, LOOK, SCREEN } from "./view-settings.ts";
 import { LANGUAGE } from "./language.ts";
+import { styleById, styleChoices } from "../looks.ts";
 
 export { deviceChoice, deviceSwitch } from "./view-settings.ts";
 
@@ -232,6 +233,8 @@ export const SECTIONS: Section[] = [
       { id: "sun", title: "st_card_sun" },
       { id: "weather", title: "st_card_weather" },
       { id: "backdrop", title: "st_card_backdrop" },
+      { id: "facade", title: "st_card_facade" },
+      { id: "style_plan", title: "st_card_style_plan" },
     ],
   },
   {
@@ -852,7 +855,94 @@ const backdropColour = (id: string, key: "color" | "color2", label: TextKey, fal
   write: (env, v) => withPart(env.building!, "backdrop", { [key]: v }),
 });
 
+/** The styles of the house's plan (#440): the built-in and own ones by group; evening and night may repeat the one before. */
+function planStyleOptions(same: boolean): Option[] {
+  const out: Option[] = same ? [{ value: "", label: "st_style_same" }] : [];
+  for (const { group, values } of styleChoices()) {
+    for (const value of values) {
+      const own = styleById(value);
+      out.push(own?.group === "custom" ? { value, label: own.name ?? value, raw: true, group: "style_group_custom" } : { value, label: `style_${value}`, group: `style_group_${group}` });
+    }
+  }
+  return out;
+}
+
+type PlanStyleKey = "style_day" | "style_evening" | "style_night";
+const planStyle = (key: PlanStyleKey, label: TextKey, same: boolean, keywords: string[]): Setting<string> => ({
+  id: key,
+  section: "scene",
+  card: "style_plan",
+  scope: "house",
+  permission: "editor",
+  label,
+  hint: key === "style_day" ? "st_style_plan_hint" : undefined,
+  keywords: ["style", "house", "plan", "look", ...keywords],
+  control: { kind: "select", options: () => planStyleOptions(same) },
+  default: same ? "" : "neon",
+  read: (env) => settingsOf(env)[key] || (same ? "" : "neon"),
+  write: (env, v) => withSettings(env.building!, { [key]: v || null }),
+});
+
+type PlanTimeKey = "style_morning_at" | "style_evening_at" | "style_night_at";
+const planTime = (key: PlanTimeKey, label: TextKey, def: string, visible: (env: SettingsEnv) => boolean): Setting<string | null> => ({
+  id: key,
+  section: "scene",
+  card: "style_plan",
+  scope: "house",
+  permission: "editor",
+  label,
+  keywords: ["style", "house", "plan", "time", "clock", "morning", "evening", "night"],
+  control: { kind: "time" },
+  default: def,
+  visible,
+  read: (env) => settingsOf(env)[key] || def,
+  write: (env, v) => withSettings(env.building!, { [key]: v && v !== def ? v : null }),
+});
+
+const planByClock = (env: SettingsEnv): boolean => settingsOf(env).style_switch === "time";
+
 const SCENE: Setting[] = [
+  planStyle("style_day", "st_style_day", false, ["day", "sun"]),
+  planStyle("style_evening", "st_style_evening", true, ["evening", "sunset"]),
+  planStyle("style_night", "st_style_night", true, ["night", "dark"]),
+  {
+    id: "style_switch",
+    section: "scene",
+    card: "style_plan",
+    scope: "house",
+    permission: "editor",
+    label: "st_style_switch",
+    hint: "st_style_switch_hint",
+    keywords: ["style", "house", "plan", "sun", "clock", "time", "switch"],
+    control: {
+      kind: "segment",
+      options: [
+        { value: "sun", label: "st_style_switch_sun" },
+        { value: "time", label: "st_style_switch_time" },
+      ],
+    },
+    default: "sun",
+    read: (env) => settingsOf(env).style_switch ?? "sun",
+    write: (env, v) => withSettings(env.building!, { style_switch: v === "time" ? "time" : null }),
+  } as Setting<string>,
+  planTime("style_morning_at", "st_style_morning_at", "07:00", () => true),
+  planTime("style_evening_at", "st_style_evening_at", "18:00", planByClock),
+  planTime("style_night_at", "st_style_night_at", "23:00", () => true),
+  houseEntity("style_entity", "scene", "style_plan", "style_entity", "st_style_entity", "st_style_entity_hint", (id) => id.startsWith("input_select.") || id.startsWith("input_text."), undefined, ["style", "helper", "input_select", "input_text", "scene", "mode"]),
+  {
+    id: "facade_color",
+    section: "scene",
+    card: "facade",
+    scope: "house",
+    permission: "editor",
+    label: "st_facade_color",
+    hint: "st_facade_color_hint",
+    keywords: ["facade", "outside", "walls", "colour", "color", "paint"],
+    control: { kind: "colour", fallback: "#d9d3c9" },
+    default: null,
+    read: (env) => settingsOf(env).facade_color ?? null,
+    write: (env, v) => withSettings(env.building!, { facade_color: v || null }),
+  } as Setting<string | null>,
   houseSwitch("sun_shadow", "scene", "sun", "sun_shadow", true, "sun_shadow", "st_sun_shadow_hint", ["sun", "arc", "shadow"]),
   houseSwitch("sun_patches", "scene", "sun", "sun_patches", true, "sun_patches", "st_sun_patches_hint", ["sun", "floor", "light"]),
   houseEntity("weather_entity", "scene", "weather", "weather_entity", "weather_entity", "weather_entity_hint", (id) => id.startsWith("weather."), (env) => (env.hass ? weatherEntity(env.hass, null) : undefined), ["forecast", "rain", "snow"]),

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { followLook, shownAccent, shownLook, textOn, themeAccent } from "./ha-theme.ts";
+import { followLook, shownAccent, shownLook, shownStyle, textOn, themeAccent } from "./ha-theme.ts";
 import { lookOf } from "./themes.ts";
 import type { HomeAssistant } from "./types.ts";
 
@@ -70,4 +70,61 @@ test("turning 'Follow Home Assistant' on follows the theme; off keeps the look i
   assert.equal(followLook("auto", "auto", false, hass(true, "above_horizon")), "day");
   // switching one follow off leaves another follow alone
   assert.equal(followLook("auto", "theme", false, hass(false)), "auto");
+});
+
+test("a style shows its own id and the chrome of its base look; the house plan follows the sun and its helper (#435)", async () => {
+  const { shownStyle } = await import("./ha-theme.ts");
+  const h = (sun: string, extra: Record<string, unknown> = {}) =>
+    ({ themes: { darkMode: true, theme: "default" }, states: { "sun.sun": { state: sun }, ...extra } }) as unknown as HomeAssistant;
+  assert.equal(shownStyle("cozy", h("above_horizon")), "cozy");
+  assert.equal(shownLook("cozy", h("above_horizon")), "day");
+  assert.equal(shownLook("evening", h("below_horizon")), "neon");
+  assert.equal(shownLook("realistic", h("below_horizon")), "realistic");
+  const plan = { style_day: "cozy", style_evening: "evening", style_entity: "input_select.sample_house_style" };
+  const noon = new Date(2026, 10, 12, 12);
+  const evening = new Date(2026, 10, 12, 19);
+  const helper = { "input_select.sample_house_style": { state: "Pastel" } };
+  assert.equal(shownStyle("house", h("above_horizon"), plan, noon), "cozy");
+  assert.equal(shownStyle("house", h("below_horizon"), plan, evening), "evening");
+  assert.equal(shownStyle("house", h("above_horizon", helper), plan, noon), "pastel");
+  // the helper names the style of the screens that follow the plan only
+  assert.equal(shownStyle("warm", h("above_horizon", helper), plan, noon), "warm");
+  // an own style the plan doesn't have follows HA's theme
+  assert.equal(shownStyle("my_gone", h("above_horizon")), "neon");
+  // switching a follow off keeps the style it showed
+  assert.equal(followLook("auto", "auto", false, h("above_horizon")), "day");
+});
+
+// #439: a style per device and per card (day, evening, night); ported from NeonPlan 3D 3.1 (MIT, (c) 2026 Mastershort)
+test("a card's theme is a style id; theme_evening and theme_night switch it at sunset and at night", () => {
+  const card = { evening: "evening", night: "focus" };
+  const day = (h: number) => new Date(2026, 10, 12, h, 0);
+  const sun = (state: string) => hass(true, state);
+  assert.equal(shownStyle(lookOf("cozy"), sun("above_horizon"), null, day(14), card), "cozy");
+  assert.equal(shownStyle(lookOf("cozy"), sun("below_horizon"), null, day(19), card), "evening");
+  assert.equal(shownStyle(lookOf("cozy"), sun("below_horizon"), null, day(23), card), "focus");
+  // no evening or night style: the day style stays all day
+  assert.equal(shownStyle(lookOf("cozy"), sun("below_horizon"), null, day(19)), "cozy");
+  // a style the version doesn't know is dropped
+  assert.equal(shownStyle(lookOf("cozy"), sun("below_horizon"), null, day(19), { evening: "nonsense" }), "cozy");
+  // the light styles give the light chrome
+  assert.equal(shownLook(lookOf("model"), hass(true)), "day");
+  assert.equal(shownLook(lookOf("cozy"), sun("above_horizon"), null, { evening: "evening" }), "day");
+});
+
+test("a card's helper entity names the style; the plan's helper only counts for the house look", () => {
+  const h = { states: { "sun.sun": { state: "above_horizon" }, "input_select.card": { state: "Winter" }, "input_select.house": { state: "pastel" } } } as unknown as HomeAssistant;
+  const plan = { style_entity: "input_select.house" };
+  assert.equal(shownStyle(lookOf("neon"), h, plan, new Date(), { entity: "input_select.card" }), "winter");
+  assert.equal(shownStyle(lookOf("neon"), h, plan), "neon");
+  assert.equal(shownStyle(lookOf("house"), h, plan), "pastel");
+  // a localised name matches when names are given
+  const named = { states: { "input_select.card": { state: "Wohnlich" } } } as unknown as HomeAssistant;
+  assert.equal(shownStyle(lookOf("neon"), named, null, new Date(), { entity: "input_select.card", names: { cozy: ["Wohnlich"] } }), "cozy");
+});
+
+test("a device's pick is any style id and persists as such", () => {
+  for (const id of ["cozy", "winter", "pastel", "realistic", "house"]) assert.equal(lookOf(id), id);
+  assert.equal(lookOf("my_ab12"), "my_ab12");
+  assert.equal(lookOf("nonsense"), "theme");
 });

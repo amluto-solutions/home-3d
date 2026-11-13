@@ -25,3 +25,5 @@ export const loadWeatherTile = once(() => import("./components/weather-tile.ts")
 export const loadWeatherForecast = once(() => import("./components/weather-forecast.ts"));
 /** The shared colour field (<fp3d-colour-field>, #403): the View panel's accent and the card editor's; loaded with either. */
 export const loadColourField = once(() => import("./components/colour-field.ts"));
+/** The styles dialog (<fp3d-styles-dialog>, #441): every style as a tile, the house in the chosen one, own styles; loaded when the View panel's Styles button is pressed. */
+export const loadStylesDialog = once(() => import("./components/styles-dialog.ts"));

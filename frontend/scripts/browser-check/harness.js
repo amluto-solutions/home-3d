@@ -509,7 +509,8 @@ const check = {
   async looks() {
     const view = panel.shadowRoot.querySelector("fp3d-view3d");
     const first = panel._theme;
-    for (const look of ["day", "realistic", "blueprint", first]) {
+    // and a homely style and a palette (#436): natural materials build the house once, a palette is shader numbers
+    for (const look of ["day", "realistic", "blueprint", "cozy", "synthwave", first]) {
       panel._theme = look;
       await panel.updateComplete;
       await view.updateComplete;

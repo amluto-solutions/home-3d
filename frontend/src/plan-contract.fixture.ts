@@ -18,7 +18,7 @@ export type Complete<T> = T extends readonly (infer U)[]
 
 // the recipe copies are checked by the pack format's own tests (packs.md); here the plan only has the field
 export const PLAN_CONTRACT = {
-  "version": 3,
+  "version": 4,
   "floors": [
     {
       "id": "text",
@@ -98,6 +98,10 @@ export const PLAN_CONTRACT = {
           "wall_thickness": [
             0.39
           ],
+          "wall_colors": [
+            "#c0392b"
+          ],
+          "wall_color": "#d9c7a3",
           "wall_heights": [
             5.0,
             [
@@ -140,6 +144,8 @@ export const PLAN_CONTRACT = {
           "tilt2": "text",
           "position": "text",
           "position_inverted": true,
+          "blind_side": "inside",
+          "slat_invert": true,
           "tilt_angle": "text",
           "tilt_max": 23.25,
           "tilt_offset": -180.0,
@@ -795,6 +801,16 @@ export const PLAN_CONTRACT = {
       "bin_days": 15,
       "notes": "todo.sample_notes"
     },
+    "facade_color": "#d9c7a3",
+    "style_day": "cozy",
+    "style_evening": "evening",
+    "style_night": "focus",
+    "style_switch": "time",
+    "style_morning_at": "07:30",
+    "style_evening_at": "18:00",
+    "style_night_at": "23:00",
+    "style_entity": "input_select.sample_style",
+    "styles_custom": [{id: "my_sample", "name": "text", "base": "day", "palette": {"line": "#445566", "dark": "#112233", "light": "#778899", "hue": 0.225, "lift": 0.225, "contrast": 0.225}, "natural": true, "signal": true, "sun": 0.225, "ao": 0.225, "shadows": true, "floors": 0.225, "cutDark": true, "dim": 0.225, "bg": ["#112233", "#445566"]}],
     "backdrop": {
       "kind": "color",
       "color": "text",

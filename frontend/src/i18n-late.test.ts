@@ -53,6 +53,6 @@ test("a key built from a prefix in code every page loads stays in the main table
 
 test("the two tables hold every key once", () => {
   const table = englishTable() as Record<string, string>;
-  assert.equal(Object.keys(table).length, 1142 + Object.keys(lateEnglish).length);
+  assert.equal(Object.keys(table).length, 1213 + Object.keys(lateEnglish).length);
   assert.ok(table.no_building_admin);
 });

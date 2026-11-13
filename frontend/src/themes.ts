@@ -1,15 +1,24 @@
-// Looks of the 3D view, shared by the main bundle (settings, stage background) and the 3D bundle.
+// Looks of the 3D view, shared by the main bundle (settings, stage background) and the 3D bundle. A Theme is one of the
+// classic looks the shader knows; the styles on top of them live in looks.ts.
+
+import { isOwnStyleId, STYLE_IDS, type StyleId } from "./looks.ts";
 
 export type Theme = "neon" | "blueprint" | "day" | "realistic";
 
 export const THEMES: Theme[] = ["neon", "blueprint", "day", "realistic"];
 
-/** A look as a card or the panel stores it: a fixed look, "auto" (by the sun) or "theme" (by the HA theme, #38). */
-export type Look = Theme | "auto" | "theme";
+/**
+ * A look as a card or the panel stores it: a style (looks.ts, the classic looks among them), an own style (`my_*`),
+ * "auto" (by the sun), "theme" (by the HA theme, #38) or "house" (the house's style plan, #435).
+ */
+export type Look = Theme | StyleId | "auto" | "theme" | "house" | `my_${string}`;
 
-/** A look as stored by a card or the panel: one this version knows; none (or an unknown one) follows the HA theme. */
+/**
+ * A look as stored by a card or the panel: one this version knows; none (or an unknown one) follows the HA theme. An own
+ * style's id is kept before the plan that holds it has loaded (it may be one); resolving it falls back if it isn't.
+ */
 export function lookOf(value: string | null | undefined): Look {
-  return value === "auto" || value === "theme" || THEMES.includes(value as Theme) ? (value as Look) : "theme";
+  return value === "auto" || value === "theme" || value === "house" || STYLE_IDS.includes(value as StyleId) || isOwnStyleId(value) ? (value as Look) : "theme";
 }
 
 /** Background of the 3D stage per look (sky in the middle, ground at the edges), night and day. */

@@ -11,7 +11,8 @@ import { fitParts } from "../pack-scale.ts";
 import { rackLayout, rackMarks, readRackFrame, type RackLayout } from "../rack-frame.ts";
 import { rackContents, rackLedSpot } from "../rack.ts";
 import { COLOUR_ROLES, drawnColours, roleColour, type RoleColours } from "../colour-roles.ts";
-import { ROLE_NEON } from "../look-surface.ts";
+import { ROLE_NATURAL, ROLE_NEON } from "../look-surface.ts";
+import { palette, paletteKey } from "./palette.ts";
 import { materialId, roleMaterial, type RoleMaterials } from "../role-materials.ts";
 import { binColors, binShape, householdCountry, mailboxShape, type BinShape, type MailboxShape } from "../household.ts";
 import type { Floor } from "../model.ts";
@@ -19,8 +20,8 @@ import { ALWAYS, DEG, EDGE_TOP, GeoBuffer, LineBuffer, pushLoft, pushLyingCyl, p
 import { latheRings, roundedBoxRings, sphereRings } from "./rings.ts";
 import { shellTriangles, type ShellDetail, type V3 } from "./shell.ts";
 
-/** The theme's colour per role (and a lighter top for some); the looks map them in the shaders (look-surface.ts). */
-const THEME = ROLE_NEON;
+/** The theme's colour per role (and a lighter top for some); the looks map them in the shaders (look-surface.ts); the homely styles build with natural ones (#436). */
+const THEME = palette(ROLE_NEON, ROLE_NATURAL);
 
 type Palette = Record<keyof typeof THEME, number>;
 
@@ -472,7 +473,7 @@ export function setLightLook(on: boolean): void {
  * only reused under the same). `other`: the one of the other looks (neon against the light ones).
  */
 export function furnitureLook(other = false): string {
-  return `${lightLook !== other ? "light" : "dark"}|${householdCountry()}`;
+  return `${lightLook !== other ? "light" : "dark"}|${householdCountry()}${paletteKey()}`;
 }
 
 /**

@@ -6,6 +6,7 @@
 // segment, always with `primaryText` on it. Blue fails as text on the dark scene, so it never colours text. Neither
 // colours alerts, heat maps, device states or colours users pick: those keep warm, danger, warning and success.
 
+import { baseOf } from "./looks.ts";
 import type { Theme } from "./themes.ts";
 
 export interface Scheme {
@@ -107,14 +108,17 @@ export const HIGH: Scheme = {
   colorScheme: "dark",
 };
 
-/** The viewer's chrome turns light with the Day look only; the other looks sit on dark skies. */
-export function lightChrome(theme: Theme): boolean {
-  return theme === "day";
+/**
+ * The viewer's chrome turns light with the Day look only, and with every style built on it (#435: Cozy, Model, Pastel,
+ * Warm); the other looks sit on dark skies. Takes a classic look or a style id.
+ */
+export function lightChrome(theme: Theme | string): boolean {
+  return baseOf(theme) === "day";
 }
 
-/** The viewer's chrome turns high contrast with the High contrast look (stored as "blueprint"). */
-export function contrastChrome(theme: Theme): boolean {
-  return theme === "blueprint";
+/** The viewer's chrome turns high contrast with the High contrast look (stored as "blueprint") and styles built on it. */
+export function contrastChrome(theme: Theme | string): boolean {
+  return baseOf(theme) === "blueprint";
 }
 
 const linear = (c: number) => {

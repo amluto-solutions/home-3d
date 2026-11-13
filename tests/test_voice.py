@@ -12,6 +12,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers import area_registry as ar
 from homeassistant.helpers import device_registry as dr
 from homeassistant.helpers import intent
+import pytest
 
 from custom_components.home_3d.const import DOMAIN
 from custom_components.home_3d.voice import remove_sentences, sentences_of, sentences_yaml, write_sentences
@@ -519,3 +520,75 @@ def test_the_names_locating_knows_are_sentences(tmp_path: Path) -> None:
     # names changed: the file is ours, so it is rewritten
     _, kept, changed = write_sentences(tmp_path, "distinct", hashes, ["Sam"])
     assert kept == [] and changed and "Alexs iPhone" not in en.read_text(encoding="utf-8")
+
+
+async def _style_view(hass_ws_client, hass: HomeAssistant, screen: Any = "", style: bool = True):
+    """An open view that asks for styles (`style`), as a frontend with the flag does."""
+    client = await hass_ws_client(hass)
+    msg: dict[str, Any] = {"id": 1, "type": "home_3d/voice/subscribe", "screen": screen}
+    if style:
+        msg["style"] = True
+    await client.send_json(msg)
+    assert (await client.receive_json())["success"]
+    return client
+
+
+async def test_set_style_schema(hass: HomeAssistant) -> None:
+    """The action takes a style, optional screens (a single name too) and minutes; nothing else (#442)."""
+    import voluptuous as vol
+
+    from custom_components.home_3d.voice import STYLE_SCHEMA, style_message
+
+    data = STYLE_SCHEMA({"style": "cozy", "minutes": "30", "screens": "Hall"})
+    assert data == {"style": "cozy", "screens": ["Hall"], "minutes": 30}
+    assert STYLE_SCHEMA({"style": "reset"}) == {"style": "reset", "screens": []}
+    assert STYLE_SCHEMA({"style": "", "minutes": None})["minutes"] is None
+    for bad in (
+        {},
+        {"style": "cozy", "minutes": 0},
+        {"style": "cozy", "minutes": 10081},
+        {"style": "x" * 61},
+        {"style": "cozy", "x": 1},
+    ):
+        with pytest.raises(vol.Invalid):
+            STYLE_SCHEMA(bad)
+    message = style_message(STYLE_SCHEMA({"style": " cozy ", "screens": ["Hall", " "]}))
+    assert (message["style"], message["screens"], message["minutes"]) == ("cozy", ["Hall"], None)
+
+
+async def test_set_style_reaches_only_the_screens_named_and_only_views_that_asked(
+    hass: HomeAssistant, hass_ws_client
+) -> None:
+    await _setup(hass)
+    hall = await _style_view(hass_ws_client, hass, "Hall")
+    kitchen = await _style_view(hass_ws_client, hass, "Kitchen")
+    unnamed = await _style_view(hass_ws_client, hass, "")
+    older = await _style_view(hass_ws_client, hass, "Hall", style=False)
+    await hass.services.async_call(
+        DOMAIN, "set_style", {"style": "cozy", "screens": ["hall"], "minutes": 30}, blocking=True
+    )
+    event = (await hall.receive_json())["event"]
+    assert event["style"]["style"] == "cozy"
+    assert event["style"]["screens"] == ["hall"]
+    assert event["style"]["minutes"] == 30
+    # every view: the screens left out
+    await hass.services.async_call(DOMAIN, "set_style", {"style": "reset"}, blocking=True)
+    for view in (kitchen, unnamed):
+        # the first thing these views get is the style for every screen, not the one for the hall
+        assert (await view.receive_json())["event"]["style"]["style"] == "reset"
+    assert (await hall.receive_json())["event"]["style"]["style"] == "reset"
+    # a view without the flag never gets a style event (an older frontend would read it as a sentence)
+    with pytest.raises(TimeoutError):
+        await asyncio.wait_for(older.receive_json(), 0.2)
+
+
+async def test_style_flag_is_off_by_default_and_a_sentence_still_arrives(hass: HomeAssistant, hass_ws_client) -> None:
+    await _setup(hass)
+    plain = await _view(hass_ws_client, hass, "")
+    await hass.services.async_call(DOMAIN, "set_style", {"style": "cozy"}, blocking=True)
+    task = _ask_service(hass, "Show the kitchen")
+    ask = (await plain.receive_json())["event"]
+    assert ask["text"] == "Show the kitchen"
+    assert "style" not in ask
+    await _reply(plain, ask, "Showing the kitchen.", True)
+    await asyncio.wait_for(task, 5)

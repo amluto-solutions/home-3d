@@ -92,6 +92,72 @@ view: 2d
 controls: [view]
 ```
 
+## Looks and styles
+
+A style is the whole look of the 3D view and the plan: colours, materials, lighting and background. Each screen can use a different one. The styles come in groups:
+
+- **Neon and classic:** Neon (the default), High contrast, Day, Focus and Synthwave. Focus and Synthwave recolour the house with a palette.
+- **Homely:** Realistic, Cozy, Cozy evening and Winter evening. Cozy and the two evening styles build the house once in natural materials: wood and tile floors, light walls, white window frames, a grey roof, darker wall feet and soft shadows. The evening styles also dim the light.
+- **Designed:** Architectural model, Pastel and Wood and paper.
+- **Own styles:** the ones you make (see below).
+
+Switching style does not reload the 3D view, and two cards on one dashboard can each keep their own style.
+
+### Wall and facade colours
+
+In the editor, a room's **Walls** fold sets one colour for all its walls. Each wall's own settings can override it for the room's side of that wall, so a wall between two rooms shows each room's colour. **Facade colour** in the Settings page colours the outside of the walls. Wall colours show in the Homely styles and in Realistic. Neon and the other classic styles ignore them. The first time you colour a wall, the 3D view beside the plan switches to Cozy so you can see the result, and tells you so.
+
+### Own styles
+
+Open **Styles** in the View panel. The dialog shows a tile for every style, with the house drawn large in the style you point at. An editor can choose **Make an own style from it** to copy a style and change it: a colour palette or natural materials, darker wall feet, soft shadows, evening dimming, floor structure, dark cut wall tops and the background. A plan keeps up to 40 own styles. They appear in every style list, and you can name them in `home_3d.set_style` and by voice.
+
+### Choosing a style per device or card
+
+The **Appearance** setting of a device lists **Automatic** (follow Home Assistant's theme, follow the sun, or follow the house's style plan), then the styles by group. A wall tablet can show Cozy while a desktop shows Neon.
+
+On a dashboard card, set the style in the card editor or in YAML:
+
+```yaml
+type: custom:home-3d-card
+theme: cozy              # a style id: neon, blueprint, day, realistic, focus, synthwave, cozy,
+                         # evening, winter, model, pastel, warm, or one of your own (my_...)
+theme_evening: evening   # optional: the style from sunset on
+theme_night: focus       # optional: the style at night
+style_entity: input_select.sample_style   # optional, see below
+```
+
+`theme` also takes `auto` (Day while the sun is up, Neon after) and `house` (the house's style plan). Without `theme`, the card follows the Home Assistant theme. With `theme_evening` or `theme_night` set, `theme` is the day style. `style_entity` names an `input_select` or `input_text` whose state is a style id or name; while it names a style, it wins over the card's own choice.
+
+### The house's style plan
+
+**Settings → House plan style** holds one style for the day, one for the evening and one for the night. Every screen set to **Follow the house's style plan** uses it. Choose how it switches: by the sun (day while the sun is up, evening after sunset, night from the night time) or by the clock (three times you enter). An optional helper entity (an `input_select` or `input_text` that names a style, for example `cozy`) wins over the plan while it names a style. A device or card that has its own choice keeps it. The plan format is now version 4: an older Home 3D opens such a plan read-only.
+
+### Changing the style from an automation
+
+The action `home_3d.set_style` shows a style on the named screens, then ends:
+
+```yaml
+action: home_3d.set_style
+data:
+  style: evening
+  screens: ["Hallway tablet"]   # names set in the view's settings; leave out for every open screen
+  minutes: 30                   # leave out to keep it until a style is chosen on that screen
+```
+
+Use `style: reset` to put the screens back to their own setting at once. A style chosen on a screen afterwards, in the device setting or on a card, ends one set this way.
+
+### Voice
+
+With the card's voice option on, say a sentence with a style word and a style: "style cozy", "switch the look to winter evening", "set style to realistic". "Reset the style" goes back to the screen's own style. The style names of your language work too (for example "Stil Wohnlich" in German).
+
+### Windows and blinds
+
+A cover that reports a slat tilt (a venetian blind) shows single slats in 3D. They turn with `current_tilt_position`, lie level when open and look like a shut shutter when closed, and the sunlight in the room follows them. If your integration reports the slats the other way round, tick **Invert slats (0 = open)** in the window's form. The 3D view, the quick menu, the room panel and the value sent all turn round. For a roller shade that hangs inside the room, set **Blind sits** to **Inside the room**; the cassette and cloth then sit on the room's side of the wall.
+
+### Wall tablets: switch devices only in the opened room
+
+Under **Settings → Screen and controls**, **Switch devices only in the opened room** helps on a wall tablet, where a stray touch can switch the wrong thing. With a room open, a tap on a device of another room opens that room and switches nothing. A tap on a device inside the opened room works as usual, and so does any tap when no room is open. The setting is per device and off by default.
+
 ## Privacy
 
 The plan, its pictures and the furniture packs are stored in Home Assistant's `.storage`, and the frontend only talks

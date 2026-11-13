@@ -14,6 +14,13 @@ test("realistic is a look beside neon, chosen per card and in the panel", () => 
   assert.equal(lookOf(undefined), "theme");
 });
 
+test("every style, the house plan and an own style's id are kept; anything else still follows the HA theme (#435)", () => {
+  for (const id of ["cozy", "evening", "winter", "focus", "synthwave", "model", "pastel", "warm", "blueprint", "day"]) assert.equal(lookOf(id), id);
+  assert.equal(lookOf("house"), "house");
+  assert.equal(lookOf("my_ab12cd"), "my_ab12cd");
+  for (const v of ["my_", "my-pink", "synth ", "Cozy", "neonplan", "{}"]) assert.equal(lookOf(v), "theme", v);
+});
+
 test("the HA-theme choice says which looks it switches between, not a light/dark scheme it only half applies (#85)", async () => {
   const { translate } = await import("./i18n.ts");
   const en = translate({ language: "en" } as never, "theme_theme");

@@ -25,6 +25,58 @@ export const ROLE_NEON = {
   paint: 0x2a4a78,
 };
 
+/**
+ * The role colours the homely styles build with (#436, from NeonPlan 3D 3.1, MIT, (c) 2026 Mastershort): light bodies,
+ * blue-grey fabric, wood, white, metal, glass, green plants. Real colours: the styles' shader only shades them.
+ */
+export const ROLE_NATURAL: typeof ROLE_NEON = {
+  body: 0xe8e3db,
+  bodyTop: 0xf2efe9,
+  fabric: 0x8e97a5,
+  fabricTop: 0xa4acb9,
+  cushion: 0xb4bbc5,
+  wood: 0xa67a52,
+  woodTop: 0xbd9067,
+  white: 0xedebe7,
+  whiteTop: 0xf8f7f4,
+  metal: 0x9da3ab,
+  dark: 0x40454d,
+  glass: 0xa9cfe0,
+  plant: 0x4b8a49,
+  plantTop: 0x66a861,
+  pot: 0xcdbfae,
+  accent: 0x2b8fb3,
+  paint: 0x7f93ad,
+};
+
+/** Hex "#rrggbb" to 0–1 channels (black for anything else). */
+const rgbOf = (h: string): [number, number, number] => {
+  const n = parseInt(h.replace("#", ""), 16) || 0;
+  return [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255];
+};
+
+/**
+ * A neon surface colour (0–1, linear as the shader sees it) in a palette style (#436): spread between the palette's dark
+ * and light by its brightness (on a perceptual scale, so the dark neon tones still spread apart), with some of its
+ * hue. The shader's mapping (viewer/theme.ts), before the style's light; signal colours stay when the style keeps them.
+ */
+export function paletteSurface(p: { dark: string; light: string; hue: number; lift: number; contrast: number }, c: [number, number, number], signal = true): [number, number, number] {
+  if (signal && isSignal(c)) return c;
+  const mx = Math.max(...c);
+  const t = Math.min(1, Math.max(0, p.lift + Math.sqrt(Math.max(0, lumaOf(c))) * p.contrast * PALETTE_SPREAD));
+  const dark = rgbOf(p.dark).map(srgbToLinear);
+  const light = rgbOf(p.light).map(srgbToLinear);
+  return dark.map((d, i) => {
+    const g = d + (light[i] - d) * t;
+    return g * (1 - p.hue) + g * (c[i] / Math.max(mx, 0.001)) * p.hue;
+  }) as [number, number, number];
+}
+
+/** How far a palette's contrast spreads the neon brightness (its square root, 0–0.3 for the house's surfaces). */
+export const PALETTE_SPREAD = 0.5;
+
+const srgbToLinear = (v: number) => (v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4));
+
 /** The Day look's surface mapping (#86). */
 export const DAY = { base: 0.22, gain: 5.8, max: 0.97, hue: 0.12 };
 

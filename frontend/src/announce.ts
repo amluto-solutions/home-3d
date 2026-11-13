@@ -3,6 +3,8 @@
 // and offline warnings stay role="alert" where they show. Every bundle's copy of this module shares the one region
 // through globalThis.
 
+import { styleById } from "./looks.ts";
+
 /** The part of a document the announcer needs (a fake one in tests). */
 export interface AnnounceDoc {
   createElement(tag: string): HTMLElement;
@@ -69,12 +71,14 @@ export function viewChange(seen: ViewSpot | null, now: ViewSpot): "home" | "floo
   return seen.floor !== now.floor ? "floor" : null;
 }
 
-type Texts = (key: "announce_look" | "announce_follow_ha_off" | "announce_follow_sun_off" | `theme_${string}`, vars?: Record<string, string>) => string;
+type Texts = (key: "announce_look" | "announce_follow_ha_off" | "announce_follow_sun_off" | "style_house" | `theme_${string}` | `style_${string}`, vars?: Record<string, string>) => string;
 
 /** The announcement for a look picked in the view menu; picking one turns a follow switch off without a word on
  * screen, so that is said too (F81). */
 export function lookAnnouncement(before: string, after: string, t: Texts): string {
-  const said = [t("announce_look", { look: t(`theme_${after}`) })];
+  // the follow choices and the house plan have their own texts; a style is named by its id's text, an own one by its name
+  const name = after === "theme" || after === "auto" ? t(`theme_${after}`) : after === "house" ? t("style_house") : (styleById(after)?.name ?? t(`style_${after}`));
+  const said = [t("announce_look", { look: name })];
   if (before !== after && before === "theme") said.push(t("announce_follow_ha_off"));
   if (before !== after && before === "auto") said.push(t("announce_follow_sun_off"));
   return said.join(". ");

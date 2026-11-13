@@ -3,6 +3,7 @@
 
 import { BufferGeometry, Color, Float32BufferAttribute, ShapeUtils, Vector2 } from "three";
 import type { Vec2 } from "../model.ts";
+import { WALL_TINT } from "./palette.ts";
 
 /** Line colours are added on top of the scene, so they are pre-scaled to their intended strength. */
 export const EDGE_TOP = shade(0x37e0ff, 0.95);
@@ -478,7 +479,17 @@ export function pushPrism(
   y1: number | ((x: number, z: number) => number),
   side: number,
   top: number,
-  opts: { aoFrom?: number; fold?: number; topFold?: number; bottom?: boolean; topFace?: boolean; holes?: Vec2[][]; skipSide?: (a: Vec2, b: Vec2) => boolean } = {},
+  opts: {
+    aoFrom?: number;
+    fold?: number;
+    topFold?: number;
+    bottom?: boolean;
+    topFace?: boolean;
+    holes?: Vec2[][];
+    skipSide?: (a: Vec2, b: Vec2) => boolean;
+    /** An own colour for one side (a wall colour, #437): given the side's corners and its outward unit normal in the plan. */
+    sideColor?: (a: Vec2, b: Vec2, nx: number, nz: number) => number | null;
+  } = {},
 ): void {
   // a top that follows a height function (a wall ending under a roof slope): planar for a wall piece
   // within one roof plane, so the top quad and the vertical sides stay flat
@@ -511,22 +522,29 @@ export function pushPrism(
       buf.tri([a[0], y0, a[1]], [b[0], y0, b[1]], [c[0], y0, c[1]], botC, botC, botC, undefined, fold);
     }
   }
-  for (const ring of [poly, ...holes]) for (let i = 0; i < ring.length; i++) {
-    const a = ring[i];
-    const b = ring[(i + 1) % ring.length];
-    const dx = b[0] - a[0];
-    const dz = b[1] - a[1];
-    const l = Math.hypot(dx, dz);
-    if (l < 1e-6 || opts.skipSide?.(a, b)) continue;
-    const facing = ((dz / l) * LIGHT[0] - (dx / l) * LIGHT[1] + 1) / 2;
-    const dir = 0.8 + 0.28 * facing;
-    const ya = topY(a);
-    const yb = topY(b);
-    const lo = shade(side, k(y0) * dir);
-    const hiA = shade(side, k(ya) * dir);
-    const hiB = shade(side, k(yb) * dir);
-    buf.tri([a[0], y0, a[1]], [a[0], ya, a[1]], [b[0], yb, b[1]], lo, hiA, hiB, undefined, fold);
-    buf.tri([a[0], y0, a[1]], [b[0], yb, b[1]], [b[0], y0, b[1]], lo, hiB, lo, undefined, fold);
+  for (const ring of [poly, ...holes]) {
+    // the outward side of a counter-clockwise ring (x, z) lies at (dz, -dx); a clockwise one (a hole) the other way
+    const ccw = !opts.sideColor || ringArea(ring) > 0;
+    for (let i = 0; i < ring.length; i++) {
+      const a = ring[i];
+      const b = ring[(i + 1) % ring.length];
+      const dx = b[0] - a[0];
+      const dz = b[1] - a[1];
+      const l = Math.hypot(dx, dz);
+      if (l < 1e-6 || opts.skipSide?.(a, b)) continue;
+      const facing = ((dz / l) * LIGHT[0] - (dx / l) * LIGHT[1] + 1) / 2;
+      const dir = 0.8 + 0.28 * facing;
+      const ya = topY(a);
+      const yb = topY(b);
+      const own = opts.sideColor ? opts.sideColor(a, b, (ccw ? dz : -dz) / l, (ccw ? -dx : dx) / l) : null;
+      const col = own ?? side;
+      const lo = shade(col, k(y0) * dir);
+      const hiA = shade(col, k(ya) * dir);
+      const hiB = shade(col, k(yb) * dir);
+      if (own !== null) for (const c of [lo, hiA, hiB]) c.setRGB(c.r + WALL_TINT, c.g + WALL_TINT, c.b + WALL_TINT);
+      buf.tri([a[0], y0, a[1]], [a[0], ya, a[1]], [b[0], yb, b[1]], lo, hiA, hiB, undefined, fold);
+      buf.tri([a[0], y0, a[1]], [b[0], yb, b[1]], [b[0], y0, b[1]], lo, hiB, lo, undefined, fold);
+    }
   }
 }
 

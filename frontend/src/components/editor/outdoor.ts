@@ -11,6 +11,36 @@ import { thinArea, THIN_HIT_PX } from "./outdoor-find.ts";
 import { chosenPoint, pointKeys, renderMids } from "./points.ts";
 import type { Fp3dEditor } from "../editor.ts";
 
+/** The length of each edge of a selected outdoor area, outside it, as a room shows them (an open run has no closing edge). */
+function outdoorDims(ed: Fp3dEditor, pts: readonly Vec2[], open: boolean) {
+  const n = pts.length;
+  const [cx, cy] = ed.toScreen(centroid([...pts]));
+  return pts.map((p, i) => {
+    if (open && i === n - 1) return nothing;
+    const q = pts[(i + 1) % n];
+    const [ax, ay] = ed.toScreen(p);
+    const [bx, by] = ed.toScreen(q);
+    const screenLen = Math.hypot(bx - ax, by - ay);
+    if (screenLen <= 50) return nothing;
+    const mx = (ax + bx) / 2;
+    const my = (ay + by) / 2;
+    let nx = -(by - ay);
+    let ny = bx - ax;
+    const nl = Math.hypot(nx, ny) || 1;
+    nx /= nl;
+    ny /= nl;
+    if (nx * (mx - cx) + ny * (my - cy) < 0) {
+      nx = -nx;
+      ny = -ny;
+    }
+    const len = ed.m(Math.hypot(q[0] - p[0], q[1] - p[1]), 2);
+    // on an upright edge the text starts beside the "+" instead of centred over it
+    return Math.abs(nx) > Math.abs(ny)
+      ? svg`<text class="fp3d-dim" style="text-anchor:${nx > 0 ? "start" : "end"}" x=${mx + nx * 13} y=${my + ny * 13 + 4}>${len}</text>`
+      : svg`<text class="fp3d-dim" x=${mx + nx * 16} y=${my + ny * 16 + 4}>${len}</text>`;
+  });
+}
+
 /** OutdoorPart: methods of `Fp3dEditor`, copied onto its prototype by editor.ts (see parts.ts). */
 export class OutdoorPart {
   addOutdoor(this: Fp3dEditor, points: Vec2[]): void {
@@ -90,11 +120,12 @@ export class OutdoorPart {
     }
     // a "+" on every edge adds a point (#395); the points take the keyboard: Tab, the arrows, Delete
     const sel = chosenPoint(this);
-    return svg`${renderMids(this, "data-out-mid", a.id, a.points, !!a.open)}${a.points.map((p, i) => {
+    return svg`${renderMids(this, "data-out-mid", a.id, a.points, !!a.open)}${outdoorDims(this, a.points, !!a.open)}${a.points.map((p, i) => {
       const [x, y] = this.toScreen(p);
       const keys = pointKeys(this, { kind: "out", id: a.id, index: i }, a.points.length);
       const on = sel?.kind === "out" && sel.index === i;
-      return svg`<g class=${on ? "fp3d-vertex fp3d-vertex-sel" : "fp3d-vertex"} data-out-vertex=${`${a.id}:${i}`} tabindex="0" role="button" aria-label=${keys.label} @focus=${keys.focus}><circle cx=${x} cy=${y} r="16" class="fp3d-hit" /><circle cx=${x} cy=${y} r="6" /></g>`;
+      return svg`<g class=${on ? "fp3d-vertex fp3d-vertex-sel" : "fp3d-vertex"} data-out-vertex=${`${a.id}:${i}`} tabindex="0" role="button" aria-label=${keys.label} @focus=${keys.focus}><circle cx=${x} cy=${y} r="16" class="fp3d-hit" /><circle cx=${x} cy=${y} r="6" /></g>
+        <text class="fp3d-vertex-no" x=${x + 9} y=${y - 9}>${i + 1}</text>`;
     })}`;
   }
 

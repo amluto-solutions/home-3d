@@ -13,7 +13,8 @@ const hass = (darkMode: boolean) => ({ language: "en", themes: { darkMode, theme
 /** A view with a stand-in 3D viewer that records the looks it is given. */
 function view(theme: string, h: HomeAssistant) {
   const looks: string[] = [];
-  const viewer = new Proxy({} as Record<string, unknown>, { get: (_, key) => (key === "setTheme" ? (t: string) => looks.push(t) : () => undefined) });
+  // the view hands the viewer a style (#436): its id is recorded
+  const viewer = new Proxy({} as Record<string, unknown>, { get: (_, key) => (key === "setStyle" ? (s: { id: string }) => looks.push(s.id) : key === "setTheme" ? (t: string) => looks.push(t) : () => undefined) });
   const el = new Fp3dView3d() as unknown as Record<string, unknown> & { updated(c: Map<string, unknown>): void };
   Object.assign(el, { viewer, theme, hass: h, shownPacks: packsVersion() });
   return { el, looks };
@@ -38,6 +39,17 @@ test("the view's chrome turns light with the Day look and dark again with Neon (
   el.theme = "day";
   el.updated(new Map([["theme", "neon"]]));
   assert.equal(host.hasAttribute("light"), true);
+});
+
+test("a stored style id reaches the 3D viewer as that style, with the chrome of its base look (#436)", () => {
+  const { el, looks } = view("cozy", hass(true));
+  el.updated(new Map([["theme", "neon"]]));
+  assert.equal(looks.at(-1), "cozy");
+  assert.equal((el as unknown as HTMLElement).hasAttribute("light"), true);
+  el.theme = "evening";
+  el.updated(new Map([["theme", "cozy"]]));
+  assert.equal(looks.at(-1), "evening");
+  assert.equal((el as unknown as HTMLElement).hasAttribute("light"), false);
 });
 
 test("a look chosen by hand is not touched by a change of HA theme (#85)", () => {

@@ -86,3 +86,9 @@ A plan Home 3D stores carries a `version` (`PLAN_VERSION` in `custom_components/
 
 So **bump `PLAN_VERSION` whenever the stored plan can hold a value an older release would not read**, even when nothing needs migrating. Add a step to `MIGRATIONS` (it can return the plan unchanged), and add an entry for the new version to `tests/fixtures/plan-choices.json` (`tests/test_plan_choices.py` fails until you do). Never change an entry for a version that was released. New optional keys in objects that allow other keys (most of them) need no bump: an older release keeps them as they are.
 
+### Plan versions
+
+- **4**: the house's style plan (`settings.style_day`, `style_evening`, `style_night`, `style_switch` = `"sun"` or `"time"`, `style_morning_at`, `style_evening_at`, `style_night_at` as `HH:MM`, `style_entity`). `style_switch` is a new choice, so the version went up; the 3 -> 4 step changes nothing. A Home 3D that reads versions up to 3 shows a version-4 plan read-only.
+- Own styles (`settings.styles_custom`, #441): a list of up to 40 dicts, each with `id` (`my_` and letters or digits), `name` and the settings of a style (`base`, `palette`, `natural`, `ao`, `dim`, `floors`, `cutDark`, `bg`, `signal`, `shadows`, `sun`). It is an optional list of loose dicts, so the version stays 4; the frontend clamps every value it reads and drops what it does not know.
+- Wall and facade colours (#437): a room's optional `wall_color` (all its walls) and `wall_colors` (one per wall, `null` = `wall_color`), and the setting `facade_color`, all `"#rrggbb"`. Optional keys, so the version stays 4.
+- Covers (#453): a window or door's optional `blind_side` (`"inside"` puts the cassette and cloth on the room's side; absent or `"outside"` is the default) and `slat_invert` (`true`: a venetian blind's slats count the other way round, 0 = open). Optional keys, so the version stays 4.

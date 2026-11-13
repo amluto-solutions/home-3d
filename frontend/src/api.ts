@@ -4,6 +4,7 @@ import type { EditorUser } from "./editors.ts";
 import type { Building } from "./model.ts";
 import type { PackPreview, PackUpdateSettings, PackUpdateStatus } from "./pack-updates.ts";
 import type { FurniturePack, PackItem, PackOrigin, PlanRecipe } from "./packs.ts";
+import type { ScreenStyle } from "./style-override.ts";
 import type { HomeAssistant } from "./types.ts";
 import { checkFits } from "./ws-size.ts";
 
@@ -86,9 +87,21 @@ export interface Ask {
   admins_only?: boolean;
 }
 
+export type { ScreenStyle } from "./style-override.ts";
+
 /** `screen`: the view's screen name ("" none): a sentence for one screen reaches only the views of that name (#366). */
-export function subscribeAsk(hass: HomeAssistant, screen: string, callback: (ask: Ask) => void): Promise<() => Promise<void>> {
-  return hass.connection.subscribeMessage<Ask>(callback, { type: "home_3d/voice/subscribe", screen });
+export function subscribeAsk(hass: HomeAssistant, screen: string, callback: (ask: Ask) => void, onStyle?: (style: ScreenStyle) => void): Promise<() => Promise<void>> {
+  const subscribe = (styles: boolean) =>
+    hass.connection.subscribeMessage<Ask | { style: ScreenStyle }>(
+      (ev) => {
+        // a style (the action `home_3d.set_style`) comes only to a view that asked for them, and never as a sentence
+        if ("style" in ev && typeof ev.style === "object") onStyle?.(ev.style);
+        else if (typeof (ev as Ask).text === "string") callback(ev as Ask);
+      },
+      { type: "home_3d/voice/subscribe", screen, ...(styles ? { style: true } : {}) },
+    );
+  // a backend older than this page (not restarted after an update) knows no style channel: without it, then
+  return onStyle ? subscribe(true).catch(() => subscribe(false)) : subscribe(false);
 }
 
 /** The view's answer; `taken` is false when another view understood first (or the asker waits no longer). */

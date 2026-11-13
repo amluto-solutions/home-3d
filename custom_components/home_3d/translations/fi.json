@@ -28,6 +28,24 @@
           "description": "Näkymä lausuu vastauksensa Assistin puheentuotolla (pois: se vain näyttää sen)."
         }
       }
+    },
+    "set_style": {
+      "name": "Aseta tyyli",
+      "description": "Näyttää tyylin avoimilla Home 3D -näytöillä muutaman minuutin ajan tai kunnes näytölle valitaan uusi tyyli. ”reset” palauttaa näytöt omiin asetuksiinsa.",
+      "fields": {
+        "style": {
+          "name": "Tyyli",
+          "description": "Tyylin tunnus tai nimi, esimerkiksi cozy, evening tai realistic; reset (tai tyhjä) palauttaa näytöt omiin asetuksiinsa."
+        },
+        "screens": {
+          "name": "Näytöt",
+          "description": "Vain näkymät, joilla on nämä näyttönimet, muuttuvat (asetettu näkymän asetuksissa tai kortin valinnassa screen). Tyhjä: kaikki avoimet näkymät."
+        },
+        "minutes": {
+          "name": "Minuutit",
+          "description": "Kuinka kauan tyyli pysyy, sitten näyttö palaa omaan asetukseensa. Tyhjä: kunnes valitaan uusi tyyli."
+        }
+      }
     }
   },
   "options": {

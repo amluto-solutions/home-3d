@@ -68,6 +68,30 @@ def test_inverted_contact_and_plant_card_offsets() -> None:
     assert (moved["plant_right"], moved["plant_up"]) == (1.5, -2.0)
 
 
+def test_wall_colours_and_facade_colour() -> None:
+    """Wall colours per side and per room, and the facade colour (#437): "#rrggbb" or None."""
+    assert "wall_color" not in ROOM_SCHEMA(ROOM)
+    assert "wall_colors" not in ROOM_SCHEMA(ROOM)
+    room = ROOM_SCHEMA({**ROOM, "wall_color": "#C0392B", "wall_colors": ["#00ff00", None, "#112233"]})
+    assert room["wall_color"] == "#C0392B"
+    assert room["wall_colors"] == ["#00ff00", None, "#112233"]
+    assert ROOM_SCHEMA({**ROOM, "wall_color": None, "wall_colors": None})["wall_color"] is None
+    for bad in (
+        {"wall_color": "red"},
+        {"wall_color": "#fff"},
+        {"wall_colors": ["#12345g"]},
+        {"wall_colors": ["#000000"] * 300},
+    ):
+        with pytest.raises(vol.Invalid):
+            ROOM_SCHEMA({**ROOM, **bad})
+    base = {"wall_exterior": 0.3, "wall_interior": 0.1, "grid": 0.05}
+    assert "facade_color" not in SETTINGS_SCHEMA(base)
+    assert SETTINGS_SCHEMA({**base, "facade_color": "#d9c7a3"})["facade_color"] == "#d9c7a3"
+    assert SETTINGS_SCHEMA({**base, "facade_color": None})["facade_color"] is None
+    with pytest.raises(vol.Invalid):
+        SETTINGS_SCHEMA({**base, "facade_color": "beige"})
+
+
 def test_room_ceiling_height() -> None:
     """A room may have a ceiling of its own (#30); none keeps the floor height."""
     assert "ceiling_height" not in ROOM_SCHEMA(ROOM)

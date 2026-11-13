@@ -28,6 +28,24 @@
           "description": "The view speaks its answer with Assist's text-to-speech (off: it only shows it)."
         }
       }
+    },
+    "set_style": {
+      "name": "Set the style",
+      "description": "Shows a style on the open Home 3D screens, for some minutes or until a style is chosen anew for the screen. Use \"reset\" to put the screens back to their own setting.",
+      "fields": {
+        "style": {
+          "name": "Style",
+          "description": "A style id or name, for example cozy, evening or realistic; reset (or empty) puts the screens back to their own setting."
+        },
+        "screens": {
+          "name": "Screens",
+          "description": "Only the views with these screen names change (set in the view's settings or the card's option screen). Empty: every open view."
+        },
+        "minutes": {
+          "name": "Minutes",
+          "description": "How long the style stays, then the screen goes back to its own setting. Empty: until a style is chosen anew."
+        }
+      }
     }
   },
   "options": {

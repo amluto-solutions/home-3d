@@ -1,17 +1,20 @@
 // Builds the bundles into custom_components/home_3d/frontend and checks the size budgets.
-// `node build.mjs --report` also lists the 15 biggest inputs of each bundle (#179), so growth is put down to a module.
+// `node build.mjs --report` also lists the 15 biggest inputs of each bundle (#179), so growth is put down to a module;
+// `--report=60` lists 60 (#434).
 
 import { build, context } from "esbuild";
 import { createHash } from "node:crypto";
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { gzipSync } from "node:zlib";
-import { shrinkThreeShaders } from "./src/glsl-shrink.ts";
+import { shrinkGlslTemplates, shrinkThreeShaders } from "./src/glsl-shrink.ts";
 import { borrowEnglish, lateTextsChunk } from "./src/borrow-english.ts";
 import { shrinkCssTemplates } from "./src/css-shrink.ts";
 
 const out = "../custom_components/home_3d/frontend";
 const watch = process.argv.includes("--watch");
-const report = process.argv.includes("--report");
+const reportArg = process.argv.find((a) => a === "--report" || a.startsWith("--report="));
+const report = Boolean(reportArg);
+const reportCount = Number(reportArg?.split("=")[1]) || 15;
 
 // three.js keeps its shaders as readable text (indented, with comments): about 117 KB of the 3D bundle. They are
 // shrunk as they are bundled (#179, src/glsl-shrink.ts); the shaders compile the same.
@@ -19,6 +22,14 @@ const shrinkShaders = {
   name: "shrink-three-shaders",
   setup(b) {
     b.onLoad({ filter: /[\\/]three[\\/]build[\\/]three\.module\.js$/ }, (args) => ({ contents: shrinkThreeShaders(readFileSync(args.path, "utf8")).code, loader: "js" }));
+  },
+};
+
+// the 3D view's own shader patches (src/viewer, template literals) shrink the same way as they are bundled (#434)
+const shrinkViewerShaders = {
+  name: "shrink-viewer-shaders",
+  setup(b) {
+    b.onLoad({ filter: /src.viewer.[\w-]+[.]ts$/ }, (args) => ({ contents: shrinkGlslTemplates(readFileSync(args.path, "utf8")), loader: "ts" }));
   },
 };
 
@@ -34,7 +45,7 @@ const common = {
   logLevel: "info",
   metafile: true,
   // every bundle but the main one loads from the main bundle, which holds the English table: they borrow it (#196)
-  plugins: [shrinkShaders, borrowEnglish],
+  plugins: [shrinkShaders, shrinkViewerShaders, borrowEnglish],
 };
 
 const viewerConfig = { ...common, entryPoints: ["src/viewer/viewer3d.ts"], outfile: `${out}/home-3d-3d.js` };
@@ -222,6 +233,7 @@ function copyFonts() {
 // run 6 (#337): pet routines and poses in the fun bundle: 40 -> 42 KB.
 // #323: today's cost from existing rate sensors (home-3d-energy-rates-<hash>.js, 2.2 KB) loads only for a plan with cost sensors. A new budget.
 // #336: the Library's Browse tab (home-3d-editor-pack-browser-<hash>.js, 15.5 KB) is a lazy chunk of its own, loaded when an editor opens the tab. A new budget.
+// 13 Nov 2026 (#440): the house plan style card (eight rows, their texts and search words) takes the settings first open to 103.6 KB: budget 102 -> 106 KB, and the search words (10.3 KB) 10 -> 11 KB. Neither is on the first paint; the 4x speed numbers are unchanged.
 // run 6 (#318 #332): Settings has its own copy of the multi-select (separate entry), and the time format row tips settings first open over 95 KB.
 // run 6 (#252 #327 #338): curved shells, the icon field and show-when rules land together in the item forms (editor-only): items 68 -> 72 KB.
 // #357: the main bundle is home-3d-app.js now (its budgets moved with it, unchanged), and home-3d.js is the start file
@@ -234,7 +246,16 @@ function copyFonts() {
 // #398: the floating toolbar over the selected item in the plan (home-3d-editor-item-bar-view-<hash>.js) is a lazy chunk of its own, loaded the first time one item is chosen. A new budget.
 // #403: the shared colour field is a lazy chunk in the main bundle (the View panel's accent, the card editor's) and in
 // Settings (its first open has no room for it); the editor carries its own copy in its first open. New budgets.
-const BUDGET = { "home-3d-colour-field.js": 6 * 1024, "home-3d-settings-colour-field.js": 6 * 1024, "home-3d-editor-item-bar-view.js": 8 * 1024, "home-3d-editor-backup-send.js": 4 * 1024, "home-3d-editor-vacuum-panel.js": 13 * 1024, "home-3d-vacuum-maps.js": 8 * 1024, "home-3d-editor-pet-panel.js": 11 * 1024, "home-3d-i18n-register-late.js": 130 * 1024, "home-3d-energy-rates.js": 4 * 1024, "home-3d-editor-pack-browser.js": 18 * 1024, "home-3d-weather-tile.js": 6 * 1024, "home-3d-weather-forecast.js": 8 * 1024, "home-3d-float-window.js": 8 * 1024, "home-3d-find.js": 8 * 1024, "home-3d-settings-extensions-index.js": 4 * 1024, "home-3d-multi-select.js": 8 * 1024, "home-3d-settings-multi-select.js": 9 * 1024, "home-3d-view-nav.js": 3 * 1024, "home-3d-quick-menu.js": 20 * 1024, "home-3d-settings-search-words.js": 10 * 1024, "home-3d-editor-season-dates.js": 13 * 1024, "home-3d-settings-homes.js": 14 * 1024, "home-3d-device-popup.js": 16 * 1024, "home-3d-editor-item-picker.js": 14 * 1024, "home-3d-editor-icon-picker.js": 8 * 1024, "home-3d-editor-phone-bar.js": 12 * 1024, "home-3d-editor-tool-panel.js": 16 * 1024, "home-3d-rooms-picker.js": 8 * 1024, "home-3d-view-panel.js": 28 * 1024, "home-3d-room-panel.js": 33 * 1024, "home-3d-home-switcher.js": 12 * 1024, "home-3d-editor-lazy-parts.js": 94 * 1024, "home-3d-settings-pickers.js": 12 * 1024, "home-3d-settings-reset.js": 4 * 1024, "home-3d.js": 2 * 1024, "home-3d-app.js": 145 * 1024, "home-3d-view3d.js": 335 * 1024, "home-3d-walk.js": 16 * 1024, "home-3d-listedit.js": 12 * 1024, "home-3d-fun.js": 44 * 1024, "home-3d-voice.js": 40 * 1024, "home-3d-locate.js": 48 * 1024, "home-3d-timetravel.js": 105 * 1024, "home-3d-3d.js": 900 * 1024, "home-3d-editor.js": 860 * 1024, "home-3d-card-editor.js": 40 * 1024, "home-3d-items.js": 75 * 1024, "home-3d-align.js": 12 * 1024, "home-3d-2d.js": 74 * 1024, "home-3d-settings.js": 95 * 1024 };
+// 2026-11-13 #434: the 3D bundle 900 -> 920 KB for the styles of NeonPlan 3D 3.1 (palettes, homely materials, wall colours;
+// upstream's 3D bundle grew 18.6 KB from 3.0.6 to 3.1.2). It was 898.6 KB at 1.4.1 and the other run 14 wave-1 branches
+// take it to about 899.6 KB. Trimmed first: our own shader templates in src/viewer shrink as they are bundled
+// (shrinkViewerShaders, -4.3 KB). three.js (538 KB of it) is what the renderer needs, and viewer3d.ts is one module; the
+// styles' tables are too small (about 3 KB) to pay for a lazy chunk and its round trip. Gzip stays under its 280 KB budget.
+// 2026-11-13 #441: the styles dialog (home-3d-styles-dialog-<hash>.js: a tile per style, the editor of an own style) is a lazy chunk of the main bundle
+// of its own, loaded when the View panel's Styles button is pressed. A new budget, not a raised one.
+// 2026-11-13 #441 polish: the dialog takes the panel's own controls (segmented choice, switches, slider and button styles, about 3 KB of
+// CSS) so it matches the View panel: budget 12 -> 16 KB. It is a lazy chunk, loaded on the button press only; the 4x speed numbers do not change.
+const BUDGET = { "home-3d-styles-dialog.js": 16 * 1024, "home-3d-colour-field.js": 6 * 1024, "home-3d-settings-colour-field.js": 6 * 1024, "home-3d-editor-item-bar-view.js": 8 * 1024, "home-3d-editor-backup-send.js": 4 * 1024, "home-3d-editor-vacuum-panel.js": 13 * 1024, "home-3d-vacuum-maps.js": 8 * 1024, "home-3d-editor-pet-panel.js": 11 * 1024, "home-3d-i18n-register-late.js": 130 * 1024, "home-3d-energy-rates.js": 4 * 1024, "home-3d-editor-pack-browser.js": 18 * 1024, "home-3d-weather-tile.js": 6 * 1024, "home-3d-weather-forecast.js": 8 * 1024, "home-3d-float-window.js": 8 * 1024, "home-3d-find.js": 8 * 1024, "home-3d-settings-extensions-index.js": 4 * 1024, "home-3d-multi-select.js": 8 * 1024, "home-3d-settings-multi-select.js": 9 * 1024, "home-3d-view-nav.js": 3 * 1024, "home-3d-quick-menu.js": 20 * 1024, "home-3d-settings-search-words.js": 11 * 1024, "home-3d-editor-season-dates.js": 13 * 1024, "home-3d-settings-homes.js": 14 * 1024, "home-3d-device-popup.js": 16 * 1024, "home-3d-editor-item-picker.js": 14 * 1024, "home-3d-editor-icon-picker.js": 8 * 1024, "home-3d-editor-phone-bar.js": 12 * 1024, "home-3d-editor-tool-panel.js": 16 * 1024, "home-3d-rooms-picker.js": 8 * 1024, "home-3d-view-panel.js": 28 * 1024, "home-3d-room-panel.js": 33 * 1024, "home-3d-home-switcher.js": 12 * 1024, "home-3d-editor-lazy-parts.js": 94 * 1024, "home-3d-settings-pickers.js": 12 * 1024, "home-3d-settings-reset.js": 4 * 1024, "home-3d.js": 2 * 1024, "home-3d-app.js": 145 * 1024, "home-3d-view3d.js": 335 * 1024, "home-3d-walk.js": 16 * 1024, "home-3d-listedit.js": 12 * 1024, "home-3d-fun.js": 44 * 1024, "home-3d-voice.js": 40 * 1024, "home-3d-locate.js": 48 * 1024, "home-3d-timetravel.js": 105 * 1024, "home-3d-3d.js": 920 * 1024, "home-3d-editor.js": 860 * 1024, "home-3d-card-editor.js": 40 * 1024, "home-3d-items.js": 75 * 1024, "home-3d-align.js": 12 * 1024, "home-3d-2d.js": 74 * 1024, "home-3d-settings.js": 95 * 1024 };
 const GZIP_BUDGET = { "home-3d-app.js": 45 * 1024, "home-3d-view3d.js": 100 * 1024, "home-3d-3d.js": 280 * 1024 };
 
 // What is loaded before something shows, raw and as sent (gzip), with everything those files import (#179): a module
@@ -246,7 +267,8 @@ const PATHS = {
   // #245: the editor's entry and its shared chunks, under the editor's old budget (the lazy chunks have their own)
   "editor first open": { files: ["home-3d-editor.js"], raw: 1000 * 1024 }, // run 12 (#406-#422, set 7 Nov 2026): 1000 KB, items 75 KB; speed checked at 4x. Before: run 7 (#363 #378 #382 #383 #384): 869.4 KB; owner: speed over size, editor open time checked live
   // #245: the Settings page split the same way, under its old 95 KB
-  "settings first open": { files: ["home-3d-settings.js"], raw: 98 * 1024 },
+  // 2026-11-13 #435: 98 -> 102 KB: the style registry (looks.ts, 3.5 KB) comes with ha-theme.ts's shownLook (View settings)
+  "settings first open": { files: ["home-3d-settings.js"], raw: 106 * 1024 },
 };
 
 /** The file a budget name stands for: a chunk's is found by its name without the hash. */
@@ -399,8 +421,8 @@ if (watch) {
       const file = shippedFile(name);
       const meta = metafiles.find((m) => Object.keys(m.outputs).some((o) => o.endsWith(`/${file}`)));
       if (!meta) continue;
-      console.log(`\n${file}, the 15 biggest inputs:`);
-      for (const [path, bytes] of topInputs(meta, file)) console.log(`  ${kb(bytes).padStart(9)}  ${path}`);
+      console.log(`\n${file}, the ${reportCount} biggest inputs:`);
+      for (const [path, bytes] of topInputs(meta, file, reportCount)) console.log(`  ${kb(bytes).padStart(9)}  ${path}`);
     }
   }
   if (over) process.exit(1);

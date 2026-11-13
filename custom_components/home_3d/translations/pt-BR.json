@@ -28,6 +28,24 @@
           "description": "A visualização fala a resposta com o texto para fala do Assist (desligado: só a exibe)."
         }
       }
+    },
+    "set_style": {
+      "name": "Definir o estilo",
+      "description": "Mostra um estilo nas telas do Home 3D abertas, por alguns minutos ou até que um estilo seja escolhido de novo para a tela. \"reset\" devolve as telas à sua própria configuração.",
+      "fields": {
+        "style": {
+          "name": "Estilo",
+          "description": "Um id ou nome de estilo, por exemplo cozy, evening ou realistic; reset (ou vazio) devolve as telas à sua própria configuração."
+        },
+        "screens": {
+          "name": "Telas",
+          "description": "Só mudam as visões com estes nomes de tela (definidos nas configurações da visão ou na opção screen do cartão). Vazio: todas as visões abertas."
+        },
+        "minutes": {
+          "name": "Minutos",
+          "description": "Por quanto tempo o estilo fica; depois a tela volta à sua própria configuração. Vazio: até que um estilo seja escolhido de novo."
+        }
+      }
     }
   },
   "options": {

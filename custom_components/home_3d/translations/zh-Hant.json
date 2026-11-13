@@ -28,6 +28,24 @@
           "description": "檢視使用 Assist 的文字轉語音朗讀回答（關閉：僅顯示）。"
         }
       }
+    },
+    "set_style": {
+      "name": "設定樣式",
+      "description": "在已開啟的 Home 3D 螢幕上顯示某個樣式，持續幾分鐘，或直到為該螢幕重新選擇樣式。「reset」會讓螢幕恢復為各自的設定。",
+      "fields": {
+        "style": {
+          "name": "樣式",
+          "description": "樣式 ID 或名稱，例如 cozy、evening 或 realistic；reset（或留空）會讓螢幕恢復為各自的設定。"
+        },
+        "screens": {
+          "name": "螢幕",
+          "description": "只有使用這些螢幕名稱的檢視會改變（在檢視設定或卡片的 screen 選項中設定）。留空：所有已開啟的檢視。"
+        },
+        "minutes": {
+          "name": "分鐘",
+          "description": "樣式保留多久，之後螢幕恢復為自己的設定。留空：直到重新選擇樣式。"
+        }
+      }
     }
   },
   "options": {

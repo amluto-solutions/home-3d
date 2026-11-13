@@ -73,6 +73,8 @@ export class PointerPart {
     else if (d.kind === "outdoor") target = ["outdoor", d.id];
     if (!target || !this.isFixedItem(...target)) return;
     if ("moved" in d && d.moved && "base" in d) this.restoreLive(d.base);
+    // a device is chosen when its press ends: a fixed one never got there and could not be chosen at all (#449)
+    if (target[0] === "device" && this._deviceId !== target[1]) this.selectItem("device", target[1]);
     this.drag = { kind: "pan", last: local };
     this.fixedPan = true;
   }

@@ -54,9 +54,17 @@ export interface CardConfig {
   buttons?: { label: string; icon?: string; action: "navigate" | "more_info" | "service" | "fire_dom_event"; target?: string; data?: Record<string, unknown> }[];
   /** Heatmap of the rooms: none | temperature | humidity | co2. */
   heatmap?: "none" | "temperature" | "humidity" | "co2";
-  /** Look: neon | blueprint | day. */
-  /** The look; "auto" shows Day while the sun is up and Neon at night; "theme" (the default) follows the HA theme. */
-  theme?: "theme" | "neon" | "blueprint" | "day" | "realistic" | "auto";
+  /**
+   * The look (#439): a style id (neon, blueprint, day, realistic, focus, synthwave, cozy, evening, winter, model, pastel,
+   * warm, or an own `my_*` one), "auto" (Day while the sun is up, Neon at night), "house" (the house's style plan) or
+   * "theme" (the default: follows the HA theme). With `theme_evening` / `theme_night` it is the day style.
+   */
+  theme?: string;
+  /** The style from sunset (or the plan's evening time) on, and the one at night; empty keeps the day style. */
+  theme_evening?: string;
+  theme_night?: string;
+  /** An input_select or input_text whose state names a style (id or name): it wins while it names one. */
+  style_entity?: string;
   /** Date and time in a corner of the view (default off). */
   clock?: ClockPos;
   /** Accent colour for the neon look and the card's chips ("#rrggbb"); leave out for the stock cyan. */

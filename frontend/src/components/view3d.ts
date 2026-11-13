@@ -17,6 +17,7 @@ import { carState, type CarState, heatSensorOn, roomClimateValue,
   lightGlow,
   openingEntities,
   openingState,
+  slatsInverted,
   TOGGLE_KINDS,
   type FurnitureLinks,
   type OpeningEntities, awningStates, confirmEntities, fridgeDoors, hasScreen, isMediaFurniture, isTvItemType, pictureRuleMatches,
@@ -125,7 +126,9 @@ const GRID_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" s
 /** The grid connection during a power outage: the bolt crossed out (#214). */
 const GRID_OFF_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/><path d="M3 3l18 18"/></svg>';
 import { STAGE, type Look, type Theme } from "../themes.ts";
-import { shownLook } from "../ha-theme.ts";
+import { shownLook, shownStyle, type CardStyle } from "../ha-theme.ts";
+import { allStyles, setCustomStyles, styleById, type StyleDef, type StylePlan } from "../looks.ts";
+import { keepOverride, liveOverride, overrideFor, readOverride, styleIsForScreen, type ScreenStyle, type StyleOverride } from "../style-override.ts";
 import { contrastChrome, lightChrome } from "../scheme.ts";
 import { HEAT_SCALES, heatColor, heatGradient, roomValues, type HeatMode } from "../heatmap.ts";
 import { furnitureName } from "../furniture-names.ts";
@@ -140,6 +143,8 @@ import { formatNumber, translate, type I18nKey } from "../i18n.ts";
 import { timeStyleOf } from "../time-text.ts";
 import { holdTarget } from "../hold.ts";
 import { popupKind, popupPosition } from "../device-popup-model.ts";
+import { floorPictureKey } from "../floor-sig.ts";
+import { buildWhere, elsewhere, tapInRoomOn, type Where, type WhereIndex, type WhereInput } from "../tap-room.ts";
 import { loadDevicePopup, loadFind, loadQuickMenu, loadViewNav, loadWeatherTile } from "../load-parts.ts";
 import { need } from "../lazy-part.ts";
 import { energyRole, getPacks, getPlanRecipes, isPackCooktop, isPackHeater, isPackType, isRobotVacuum, isThermostatItem, mountBase, packAmbilight, packItem, packRobotCentre, packItemName, packMotion, packsVersion } from "../packs.ts";
@@ -299,6 +304,9 @@ export class Fp3dView3d extends LitElement {
     markerNames: { attribute: false },
     heatMode: { attribute: false },
     theme: { attribute: false },
+    themeEvening: { attribute: false },
+    themeNight: { attribute: false },
+    styleEntity: { attribute: false },
     clock: { attribute: false },
     clockLook: { attribute: false },
     clockWeather: { attribute: false },
@@ -409,6 +417,7 @@ export class Fp3dView3d extends LitElement {
     _sceneFired: { state: true },
     replay: { attribute: false },
     _info: { state: true },
+    _styleOverride: { state: true },
   };
 
   /**
@@ -467,6 +476,15 @@ export class Fp3dView3d extends LitElement {
   declare packs: unknown;
   /** The look; "auto" is Day while the sun is up and Neon at night (D623), "theme" follows the HA theme (#38). */
   declare theme: Look;
+  /** The card's own evening and night styles (with `theme` as its day style) and a helper entity that names the style (#439). */
+  declare themeEvening: string | null;
+  declare themeNight: string | null;
+  declare styleEntity: string | null;
+  /** A style set from outside for this device (the action `home_3d.set_style`, a spoken style), until a time (#442). */
+  private declare _styleOverride: StyleOverride | null;
+  /** The styles dialog's try-out (#441), shown instead of the chosen style while it is open. */
+  private _stylePreview: StyleDef | null = null;
+  private styleTimer: ReturnType<typeof setTimeout> | undefined;
   /** Date and time in a corner of the view (D631); null or "off": none. */
   declare clock: ClockPos | null;
   /** What the clock looks like (#232); the default is digits with the date. */
@@ -559,6 +577,8 @@ export class Fp3dView3d extends LitElement {
   private holoFolded = new Set<number>();
   /** Media cards folded by the user, by player (positions shift as players start and stop). */
   private mediaFolded = new Set<string>();
+  /** Module cards that show their minor values also on a narrow card or the tablet level (this device, #452). */
+  private moduleFull = new Set<string>(readModuleFull());
   /** TV cards hidden on this device (#281); a click on the TV brings its card back. */
   private tvHidden = readTvHidden();
   /** A module card just opened from its marker (it lights up for a moment). */
@@ -591,7 +611,8 @@ export class Fp3dView3d extends LitElement {
   private declare _popup: { entity: string; x: number; y: number; hover?: boolean } | null;
   private popupTimer: ReturnType<typeof setTimeout> | undefined;
   /** Looking through a camera: its live picture lies over the 3D view; `back` is the view to return to. */
-  private declare _through: { entity: string; back: ReturnType<FloorplanViewer["getView"]> } | null;
+  /** Looking through a camera: which one, the view to go back to, and whether the flight there has arrived. */
+  private declare _through: { entity: string; back: ReturnType<FloorplanViewer["getView"]>; ready?: boolean } | null;
   /** Camera wall: the camera shown big (null: all tiles). */
   private declare _wallBig: string | null;
   /** The edge of the view the camera wall is docked to (#266), kept per device. */
@@ -859,6 +880,10 @@ export class Fp3dView3d extends LitElement {
     this.pinSize = "normal";
     this.heatMode = "none";
     this.theme = "neon";
+    this.themeEvening = null;
+    this.themeNight = null;
+    this.styleEntity = null;
+    this._styleOverride = readOverride(Date.now());
     this.clock = null;
     this.clockLook = null;
     this.clockWeather = true;
@@ -984,6 +1009,7 @@ export class Fp3dView3d extends LitElement {
     }
     document.addEventListener("visibilitychange", this.onVisible);
     this.watchAsk();
+    this.endStyleAt(this._styleOverride);
   }
 
   /** Listens to the sentences Assist and the service `home_3d.ask` hand to the views (once the connection is there). */
@@ -991,11 +1017,41 @@ export class Fp3dView3d extends LitElement {
     const hass = this.hass;
     if (this.unsubAsk || !hass?.connection || !this.isConnected) return;
     this.askScreen = (this.screen ?? "").trim();
-    this.unsubAsk = subscribeAsk(hass, this.askScreen, (ask) => void this.onAsk(ask)).catch(() => {
+    this.unsubAsk = subscribeAsk(hass, this.askScreen, (ask) => void this.onAsk(ask), (st) => this.onStyle(st)).catch(() => {
       // a replay or an older backend: nothing to listen to
       this.unsubAsk = null;
       return async () => {};
     });
+  }
+
+  /** Names per style id for matching a word to a style: the localised ones and an own style's name. */
+  private styleNames(): Record<string, string[]> {
+    const names: Record<string, string[]> = {};
+    for (const s of allStyles()) names[s.id] = [s.name ?? translate(this.hass, `style_${s.id}` as I18nKey)];
+    return names;
+  }
+
+  /** Keeps a style set from outside for this device ("" or "reset": back to the setting); a word naming no style changes nothing. */
+  private setStyleOverride(style: string, minutes: number | null): string | null {
+    const next = overrideFor(style, minutes, Date.now(), this.styleNames());
+    if (next === undefined) return null;
+    this._styleOverride = next;
+    keepOverride(next);
+    this.endStyleAt(next);
+    return next?.style ?? "";
+  }
+
+  /** The style set from outside ends when its time is up, with no other change to wake the view. */
+  private endStyleAt(o: StyleOverride | null): void {
+    clearTimeout(this.styleTimer);
+    this.styleTimer = undefined;
+    if (o?.until) this.styleTimer = setTimeout(() => this.setStyleOverride("reset", null), Math.min(o.until - Date.now(), 2 ** 31 - 1) + 50);
+  }
+
+  /** The action `home_3d.set_style` for the open screens: this view when it is named, or when none is. */
+  private onStyle(st: ScreenStyle): void {
+    if (this.replay || !styleIsForScreen(st.screens, this.screen)) return;
+    this.setStyleOverride(st.style, st.minutes ?? null);
   }
 
   private unwatchAsk(): void {
@@ -1045,6 +1101,8 @@ export class Fp3dView3d extends LitElement {
     this.unlistenReplay?.();
     this.unlistenReplay = null;
     this.unwatchAsk();
+    clearTimeout(this.styleTimer);
+    this.styleTimer = undefined;
     clearInterval(this.clockTimer);
     this.clockTimer = undefined;
     clearTimeout(this.showTimer);
@@ -1171,7 +1229,7 @@ export class Fp3dView3d extends LitElement {
       this.viewer.setAngleLock(this.angleLock);
       this.viewer.setWindowSpill(this.windowSpill);
       this.viewer.setSunHeight(this.sunHeight);
-      this.viewer.setTheme(this.effectiveTheme());
+      this.viewer.setStyle(this.effectiveStyle());
       this.viewer.setDescription((this.sceneLabel = translate(this.hass, flat ? "sr_plan" : "sr_scene")));
       this.viewer.setAccent(this.accent ?? null);
       this.viewer.setFurnishMode(this.furnish);
@@ -1325,6 +1383,8 @@ export class Fp3dView3d extends LitElement {
     if (changed.has("building")) {
       setTerrain(this.building ?? null);
       setCameraSensors(this.building);
+      // the plan's own styles resolve by id and by name from here on (#441)
+      setCustomStyles(this.building?.settings?.styles_custom);
     }
     // waste bins start from the colours usual in the Home Assistant's country
     if (changed.has("hass") && this.hass) setHouseholdCountry(hassCountry(this.hass));
@@ -1352,7 +1412,7 @@ export class Fp3dView3d extends LitElement {
     // the camera wall as a free window (#314): its place and size are put on the element after each render
     this.wallWin?.attach(this.renderRoot.querySelector<HTMLElement>(".fp3d-wall"));
     // the chrome goes light with the Day look (#85): the shared tokens read the attribute, nested parts inherit it
-    if (changed.has("hass") || changed.has("theme")) {
+    if (changed.has("hass") || changed.has("theme") || changed.has("themeEvening") || changed.has("themeNight") || changed.has("styleEntity") || changed.has("_styleOverride")) {
       this.toggleAttribute("light", lightChrome(this.effectiveTheme()));
       this.toggleAttribute("contrast", contrastChrome(this.effectiveTheme()));
     }
@@ -1369,6 +1429,8 @@ export class Fp3dView3d extends LitElement {
       if (this.floorId === this.throughFloor) this.throughFloor = null;
       else this._through = null;
     }
+    // however the look through a camera ended, the view gets its own field of view back
+    if (changed.has("_through") && !this._through && changed.get("_through")) v.endLook();
     // new packs, parked cars and the plan itself each rebuild the scene: handed over together (a home switch brings
     // all three), it is built once (#131)
     let startChanged = false;
@@ -1387,6 +1449,8 @@ export class Fp3dView3d extends LitElement {
         packsNew = true;
       }
       if (changed.has("building") && this.building) {
+        // an own style changed (#441): setStyle ignores one that looks the same
+        v.setStyle(this.effectiveStyle());
         // a new start view (just remembered in the editor) shows right away in the house view
         const start = JSON.stringify(this.startViewOf());
         startChanged = this.shownStartView !== undefined && this.shownStartView !== start;
@@ -1433,14 +1497,17 @@ export class Fp3dView3d extends LitElement {
     if (changed.has("floorStack")) v.setFloorStack(this.floorStack);
     // a look that follows HA's theme or the sun changes with hass alone (#85: a theme switch moves no watched entity,
     // so waiting for syncDevices left the scene neon under a Day sky); setTheme ignores a look it already shows
-    if (changed.has("hass") && !changed.has("theme") && (this.theme === "theme" || this.theme === "auto")) {
+    if (changed.has("hass") && !changed.has("theme") && this.followsClock()) {
       const look = this.effectiveTheme();
-      v.setTheme(look);
+      v.setStyle(this.effectiveStyle());
       // the floor pictures beside the view are drawn in the look too
-      if (look !== shownLook(this.theme, changed.get("hass") as HomeAssistant | undefined)) this.scheduleThumbs();
+      if (look !== shownLook(this.theme, changed.get("hass") as HomeAssistant | undefined, this.building?.settings as StylePlan | undefined, this.cardStyle())) this.scheduleThumbs();
     }
-    if (changed.has("theme")) {
-      v.setTheme(this.effectiveTheme());
+    // the newest setting wins: a style chosen anew for this screen (device, card) ends one set by voice or an action (#442)
+    const restyled = (["theme", "themeEvening", "themeNight"] as const).some((k) => changed.has(k) && changed.get(k) !== undefined);
+    if (restyled && this._styleOverride) this.setStyleOverride("reset", null);
+    if (changed.has("theme") || changed.has("themeEvening") || changed.has("themeNight") || changed.has("styleEntity") || changed.has("_styleOverride")) {
+      v.setStyle(this.effectiveStyle());
       // the realistic look's sky and the fog colour follow at once
       if (!changed.has("hass")) this.syncDevices(true);
     }
@@ -1616,8 +1683,12 @@ export class Fp3dView3d extends LitElement {
     const hiddenItems = this.hiddenItemSet(b);
     v.setHiddenItems(hiddenItems);
     const linkedContacts = this.doorPins || this.furnish ? undefined : linkedContactIds(this.openingLinks?.values() ?? []);
+    const placed = [...deviceMarkers, ...furniture.markers, ...this.lockMarkers(hass, b)];
+    // where a tap can reach (#454): built when a tap needs it
+    this.whereInput = { building: b, markers: placed, furnitureTargets: furniture.targets, openingTargets: this.openingTargets() };
+    this.whereCache = null;
     v.setDevices([
-      ...[...deviceMarkers, ...furniture.markers, ...this.lockMarkers(hass, b)].filter((m) => !this.markerHidden(m, hiddenItems, linkedContacts)).map((m) => {
+      ...placed.filter((m) => !this.markerHidden(m, hiddenItems, linkedContacts)).map((m) => {
         // "without watts" drops the power badge (a plug shows only on / off)
         // below an item's own "running from" watts the standby draw is no badge either (#645)
         const power = m.show === "no_power" || ("energyDevice" in m && m.energyDevice) || ("standby" in m && m.standby) ? null : (byDevice.get(m.id) ?? null);
@@ -1692,7 +1763,7 @@ export class Fp3dView3d extends LitElement {
     const fridgeWait = !this.replay ? nextFridgeCheck(b.floors.flatMap((f) => f.furniture), hass) : null;
     if (fridgeWait !== null) this.fridgeTimer = setTimeout(() => this.syncDevices(true), fridgeWait + 500);
     // the floor pictures follow lamps and blinds (not sensors), at most every few seconds
-    const lampSig = [...deviceMarkers, ...furniture.markers].map((m) => `${m.id}:${m.glow ? `${m.glow.level.toFixed(1)}/${m.glow.color.map((c) => c.toFixed(1)).join("/")}` : 0}`).join(";") + "|" + [...openingStates].map(([id, o]) => `${id}:${o.open}:${o.cover === null ? "-" : o.cover.toFixed(1)}`).join(";");
+    const lampSig = floorPictureKey([...deviceMarkers, ...furniture.markers], openingStates);
     if (lampSig !== this.thumbSig) {
       const first = this.thumbSig === "";
       this.thumbSig = lampSig;
@@ -2088,7 +2159,7 @@ export class Fp3dView3d extends LitElement {
     const letter = (k: I18nKey) => translate(hass, k).charAt(0).toUpperCase();
     v.setSunPath(this.sunPathToday(hass), [letter("compass_n"), letter("compass_e"), letter("compass_s"), letter("compass_w")], timeStyleOf(hass));
     // the automatic look follows the sun, the theme look this device's HA theme (setTheme ignores a look it already shows)
-    if (this.theme === "auto" || this.theme === "theme") v.setTheme(this.effectiveTheme());
+    if (this.followsClock()) v.setStyle(this.effectiveStyle());
     // the weather outside: clouds darken the sky, rain, snow and fog fall over the plot
     const raw = this.weather && !this.dimmed ? weatherState(hass, weatherEntity(hass, this.weatherEntityId ?? b.settings.weather_entity), b.settings.rain_entity) : null;
     const weather = raw ? limitEffects(raw, b.settings.weather_effects) : null;
@@ -2802,8 +2873,20 @@ export class Fp3dView3d extends LitElement {
       this.requestUpdate();
     };
     const styled = (color?: string) => (color ? `color:${color}` : "");
-    // the tablet level and narrow screens leave the minor parts out
-    const compact = this._low || this.clientWidth < 600;
+    // the tablet level and narrow screens leave the minor parts out, unless asked for with "more" on the card (#452)
+    const narrow = this._low || this.clientWidth < 600;
+    const compact = narrow && !this.moduleFull.has(m.id);
+    const minors = narrow && [...(m.rows ?? []), ...(m.cells ?? []), ...(m.chain?.items ?? []), ...(m.spark ? [m.spark] : [])].some((x) => x.minor);
+    const more = () => {
+      if (this.moduleFull.has(m.id)) this.moduleFull.delete(m.id);
+      else this.moduleFull.add(m.id);
+      try {
+        localStorage.setItem(MODULE_FULL_KEY, JSON.stringify([...this.moduleFull]));
+      } catch {
+        // private window: for this page only
+      }
+      this.requestUpdate();
+    };
     const rows = majorOnly(m.rows, compact);
     const cells = majorOnly(m.cells, compact);
     const chain = m.chain ? majorOnly(m.chain.items, compact) : [];
@@ -2854,6 +2937,7 @@ export class Fp3dView3d extends LitElement {
                 )}
               </div>`
             : nothing}
+          ${open && minors ? html`<button class="fp3d-holo-minor-btn" @click=${more}>${translate(this.hass, compact ? "holo_more" : "holo_less")}</button>` : nothing}
           ${open && !this.ro && m.buttons?.length
             ? html`<div class="fp3d-holo-media-controls fp3d-holo-car-controls">${m.buttons.map((bt) => html`<button class=${bt.on ? "fp3d-holo-on" : ""} title=${bt.title ?? ""} @click=${() => bt.onTap()}>${bt.label}</button>`)}</div>`
             : nothing}
@@ -4770,6 +4854,8 @@ export class Fp3dView3d extends LitElement {
     const st = this.hass?.states[entityId];
     if (this.ro) return false;
     if (phase === "start") {
+      // a device of another room is not swiped either (#454): a tap opens its room
+      if (this.elsewhere(entityId)) return false;
       // devices that ask before switching are not moved by a swipe (it turns the view instead)
       if (!st || isUnavailable(st) || this.confirmSet.has(entityId)) return false;
       const kind = kindOf(entityId);
@@ -5548,6 +5634,15 @@ export class Fp3dView3d extends LitElement {
    */
   private async handleSentence(hass: HomeAssistant, b: Building, v: Awaited<ReturnType<typeof loadVoice>>, text: string, speak: boolean): Promise<string | null> {
     const say = (phase: "wait" | "listen" | "done" | "error", t: string) => this.sayVoice(phase, t);
+    // "style cozy", "reset the style": this view's style (#442)
+    const styled = this.replay ? null : v.styleCommand(text, this.styleNames());
+    const id = styled ? this.setStyleOverride(styled.id ?? "reset", null) : null;
+    if (styled && id !== null) {
+      const said = id ? translate(hass, "style_set", { name: styleById(id)?.name ?? translate(hass, `style_${id}` as I18nKey) }) : translate(hass, "style_reset");
+      say("done", `“${text}” – ${said}`);
+      if (speak) void v.speak(hass, said, voicePipeline());
+      return said;
+    }
     const { devices, items } = this.spokenDevices(hass, b, v.SYNONYMS);
     const place = v.showTarget(text, b, devices, (r) => (r.area_id ? hass.areas?.[r.area_id]?.name : null));
     if (place) {
@@ -6245,8 +6340,8 @@ export class Fp3dView3d extends LitElement {
     const floorId = b.floors.find((f) => f.placements.some((p) => p.entity_id === entityId))?.id;
     if (!floorId) return;
     this._menu = null;
-    if (!this._through) this._through = { entity: entityId, back: v.getView() };
-    else this._through = { ...this._through, entity: entityId };
+    if (!this._through) this._through = { entity: entityId, back: v.getView(), ready: false };
+    else this._through = { ...this._through, entity: entityId, ready: false };
     this.watchCameras(true);
     // another floor first opens (its own flight must not win over ours)
     const wait = this.floorId === floorId ? 0 : 300;
@@ -6257,6 +6352,10 @@ export class Fp3dView3d extends LitElement {
     setTimeout(() => {
       if (this._through?.entity === entityId && !this.viewer?.lookThrough(entityId)) this._through = null;
     }, wait);
+    // the picture comes when the flight has arrived, also when it was loaded before
+    setTimeout(() => {
+      if (this._through?.entity === entityId) this._through = { ...this._through, ready: true };
+    }, wait + 950);
   }
 
   private endThrough(): void {
@@ -6265,6 +6364,7 @@ export class Fp3dView3d extends LitElement {
     this._through = null;
     // the stream player goes with the look (the camera wall makes its own when it opens)
     if (this.live?.id === t.entity) this.live = null;
+    this.viewer?.endLook();
     this.viewer?.flyTo(t.back);
     if (this.throughWall) {
       this.throughWall = false;
@@ -6412,7 +6512,7 @@ export class Fp3dView3d extends LitElement {
     // the live stream when it is switched on (D589), the still until the player is there or when it fails
     const stream = this.building?.settings.director?.live ? this.liveFor(t.entity) : null;
     return html`<div class="fp3d-through" style="--fp3d-blend:${this._blend}">
-      ${stream ? html`<div class="fp3d-through-img fp3d-through-live">${stream}</div>` : src ? html`<img class="fp3d-through-img" src=${src} alt="" />` : nothing}
+      ${!t.ready ? nothing : stream ? html`<div class="fp3d-through-img fp3d-through-live">${stream}</div>` : src ? html`<img class="fp3d-through-img" src=${src} alt="" />` : nothing}
       <div class="fp3d-through-bar">
         <span class="fp3d-through-name">${entityName(this.hass, t.entity)}</span>
         <span class="fp3d-still">${stream ? "● Live" : translate(this.hass, "camera_still", { s: this._low ? 10 : 5 })}</span>
@@ -6546,6 +6646,7 @@ export class Fp3dView3d extends LitElement {
         ?doorLock=${!!m.doorLock}
         .presets=${this.building?.settings.media_presets ?? []}
         ?confirmSwitch=${this.confirmSet.has(m.entity)}
+        ?slatInvert=${slatsInverted(this.building, m.entity)}
         ?noLook=${this.plan2d}
         @close=${() => (this._menu = null)}
         @camera-look=${(e: CustomEvent<{ entity: string }>) => this.lookThrough(e.detail.entity)}
@@ -6613,6 +6714,9 @@ export class Fp3dView3d extends LitElement {
 
   /** A tap on a device or item: its own tap / double-tap action (#6), else what it does by its kind. */
   private onDeviceTap(entityId: string, x = 0, y = 0): void {
+    // "switch devices only in the opened room" (#454): a device of another room opens that room and switches nothing
+    const other = this.elsewhere(entityId);
+    if (other) return void this.fire("room-tap", { floorId: other.floorId, roomId: other.roomId });
     // a click on a TV whose card is hidden brings the card back (#281)
     if (this.tvHidden.has(entityId)) return this.showTvCard(entityId);
     const owner = this.ro ? undefined : this.actionOwners.get(entityId);
@@ -6628,6 +6732,16 @@ export class Fp3dView3d extends LitElement {
       },
       () => double && this.runOwnAction(double, owner, x, y),
     );
+  }
+
+  private whereInput: WhereInput | null = null;
+  private whereCache: WhereIndex | null = null;
+
+  /** Where a tap on this device goes instead (#454): its room, when this device keeps the setting on and it lies elsewhere. */
+  private elsewhere(entityId: string): Where | null {
+    if (this.furnish || !this.roomId || !tapInRoomOn() || !this.whereInput) return null;
+    this.whereCache ??= buildWhere(this.whereInput);
+    return elsewhere(this.whereCache, entityId, this.roomId, true);
   }
 
   /** Run an own action; one that asks first asks in the app's own dialog. */
@@ -6771,7 +6885,38 @@ export class Fp3dView3d extends LitElement {
 
   /** The look shown: the chosen one, by the sun for "auto" (Day above the horizon, Neon below), by the HA theme for "theme". */
   private effectiveTheme(): Theme {
-    return shownLook(this.theme, this.hass);
+    return this.effectiveStyle().base;
+  }
+
+  /** The style shown (#436): the chosen one, or the one the sun, the HA theme or the house's plan gives now. */
+  private effectiveStyle(): StyleDef {
+    if (this._stylePreview) return this._stylePreview;
+    return styleById(shownStyle(this.theme, this.hass, this.building?.settings as StylePlan | undefined, new Date(), this.cardStyle())) ?? styleById("neon")!;
+  }
+
+  /**
+   * The styles dialog's try-out (#441): shows a style (a built-in one, an own one or a draft not yet saved) in the house
+   * for as long as the dialog is open; null puts the style of the screen back. Never stored.
+   */
+  previewStyle(style: StyleDef | null): void {
+    this._stylePreview = style;
+    this.viewer?.setStyle(this.effectiveStyle());
+    if (this.viewer) this.syncDevices(true);
+  }
+
+  /** The card's evening and night styles and helper entity (#439), with the names a helper's state may use. */
+  private cardStyle(): CardStyle | null {
+    const override = liveOverride(this._styleOverride, Date.now());
+    if (!this.themeEvening && !this.themeNight && !this.styleEntity && !override) return null;
+    const names: Record<string, string[]> = {};
+    // the entity's state is matched against localised names only while one is set
+    if (this.styleEntity) for (const s of allStyles()) names[s.id] = [s.name ?? translate(this.hass, `style_${s.id}` as I18nKey)];
+    return { evening: this.themeEvening, night: this.themeNight, entity: this.styleEntity, names, override };
+  }
+
+  /** Whether the style shown changes with hass alone: it follows the HA theme, the sun or the house plan, or the card names evening and night styles or a helper. */
+  private followsClock(): boolean {
+    return this.theme === "auto" || this.theme === "theme" || this.theme === "house" || !!this.themeEvening || !!this.themeNight || !!this.styleEntity;
   }
 
   /** The start view: the card's own, else the one remembered in the editor. */
@@ -6917,6 +7062,9 @@ export class Fp3dView3d extends LitElement {
   private skyColor(): [number, number, number] {
     // the realistic look's fog takes the horizon's colour
     if (this.effectiveTheme() === "realistic" && this._realSky) return this._realSky.horizon;
+    // a style's own stage: the fog takes the colour of its gradient's top
+    const bg = this.effectiveStyle().bg?.[0];
+    if (bg && /^#[0-9a-f]{6}$/i.test(bg)) return [1, 3, 5].map((i) => parseInt(bg.slice(i, i + 2), 16)) as [number, number, number];
     const stage = STAGE[this.effectiveTheme()] ?? STAGE.neon;
     const sky = this._sky;
     return stage.night[0].map((v, i) => Math.round(v + (stage.day[0][i] - v) * sky)) as [number, number, number];
@@ -6949,7 +7097,8 @@ export class Fp3dView3d extends LitElement {
     // an own background (colour, gradient, picture) replaces the look's sky
     const real = this.effectiveTheme() === "realistic" ? this._realSky : null;
     const rgb = (c: readonly number[]) => `rgb(${c.join(",")})`;
-    const own = backdropCss(this.building?.settings.backdrop) ?? (real ? `linear-gradient(180deg, ${rgb(real.top)} 0%, ${rgb(real.horizon)} 62%, ${rgb(real.ground)} 100%)` : null);
+    const bg = this.effectiveStyle().bg;
+    const own = backdropCss(this.building?.settings.backdrop) ?? (real ? `linear-gradient(180deg, ${rgb(real.top)} 0%, ${rgb(real.horizon)} 62%, ${rgb(real.ground)} 100%)` : bg ? `linear-gradient(180deg, ${bg[0]} 0%, ${bg[1]} 100%)` : null);
     const pinK = this.pinSize === "small" ? 0.8 : this.pinSize === "large" ? 1.25 : 1;
     const style = `--fp3d-pin-k:${pinK};--fp3d-sky:${mix(stage.night[0], stage.day[0])};--fp3d-ground:${mix(stage.night[1], stage.day[1])}${own ? `;background:${own}` : ""}`;
     return html`<div
@@ -9204,6 +9353,18 @@ export class Fp3dView3d extends LitElement {
         padding-top: 6px;
         border-top: 1px solid rgba(160, 240, 255, 0.22);
       }
+      .fp3d-holo-minor-btn {
+        display: block;
+        margin: 6px 0 0 auto;
+        padding: 2px 9px;
+        border: 1px solid rgba(160, 240, 255, 0.4);
+        border-radius: 9px;
+        background: transparent;
+        color: #aee9ff;
+        font: 600 11px var(--fp3d-font);
+        cursor: pointer;
+        pointer-events: auto;
+      }
       .fp3d-holo-more-row {
         display: flex;
         justify-content: space-between;
@@ -9839,4 +10000,16 @@ function markerHeight(f: Furniture): number {
   // wall TV and wall cabinet: above the item (their height above the floor comes from mountBase)
   if (f.type === "tv_wall" || f.type === "kitchen_wall") return f.h + 0.25;
   return f.h + 0.35;
+}
+
+/** Module cards that show their minor values on a narrow card (a list of module ids, kept on this device). */
+const MODULE_FULL_KEY = "home3d.module_full";
+
+function readModuleFull(): string[] {
+  try {
+    const raw = JSON.parse(localStorage.getItem(MODULE_FULL_KEY) ?? "[]");
+    return Array.isArray(raw) ? raw.filter((x): x is string => typeof x === "string") : [];
+  } catch {
+    return [];
+  }
 }

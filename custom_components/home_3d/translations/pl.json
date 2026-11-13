@@ -28,6 +28,24 @@
           "description": "Widok wypowiada odpowiedź za pomocą syntezatora mowy Assist (wyłączone: tylko ją wyświetla)."
         }
       }
+    },
+    "set_style": {
+      "name": "Ustaw styl",
+      "description": "Pokazuje styl na otwartych ekranach Home 3D, przez kilka minut lub do ponownego wyboru stylu dla ekranu. „reset” przywraca ekranom ich własne ustawienie.",
+      "fields": {
+        "style": {
+          "name": "Styl",
+          "description": "Identyfikator lub nazwa stylu, na przykład cozy, evening lub realistic; reset (lub puste) przywraca ekranom ich własne ustawienie."
+        },
+        "screens": {
+          "name": "Ekrany",
+          "description": "Zmieniają się tylko widoki o tych nazwach ekranów (ustawionych w ustawieniach widoku lub w opcji screen karty). Puste: wszystkie otwarte widoki."
+        },
+        "minutes": {
+          "name": "Minuty",
+          "description": "Jak długo styl pozostaje, potem ekran wraca do własnego ustawienia. Puste: do ponownego wyboru stylu."
+        }
+      }
     }
   },
   "options": {

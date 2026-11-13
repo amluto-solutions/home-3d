@@ -92,3 +92,16 @@ test("the ring on a tilt-only blind has no open, close or stop slot it cannot do
   assert.match(html, /aria-label=\u0001Slats open\u0002/, "the big button is the slats toggle");
   assert.match(html, /Slats open/);
 });
+
+test("\"Invert slats\" turns the tilt round in the quick menu: shown, toggled and sent the other way (#453)", () => {
+  // the cover reports 10, its integration means 0 = open: the slats stand 90 % open
+  assert.deepEqual(coverToggle(cover(TPOS, { current_tilt_position: 10 }), true), { service: "set_cover_tilt_position", data: { tilt_position: 100 }, open: false });
+  assert.deepEqual(coverToggle(cover(TPOS, { current_tilt_position: 90 }), true), { service: "set_cover_tilt_position", data: { tilt_position: 0 }, open: true });
+  const st = cover(TPOS | OPEN | CLOSE, { current_position: 40, current_tilt_position: 10 });
+  const el = menu(st);
+  el.slatInvert = true;
+  const html = flat(el.renderCover(st));
+  assert.match(html, /\.value=\u000190\u0002/, "the slider stands at the turned value");
+  // without the option it shows what the cover reports
+  assert.match(flat(menu(st).renderCover(st)), /\.value=\u000110\u0002/);
+});

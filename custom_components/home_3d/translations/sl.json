@@ -28,6 +28,24 @@
           "description": "Pogled svoj odgovor izgovori s pretvorbo besedila v govor v Assistu (izklopljeno: samo prikaže odgovor)."
         }
       }
+    },
+    "set_style": {
+      "name": "Nastavi slog",
+      "description": "Prikaže slog na odprtih zaslonih Home 3D za nekaj minut ali dokler se za zaslon ponovno ne izbere slog. »reset« vrne zaslone na njihovo lastno nastavitev.",
+      "fields": {
+        "style": {
+          "name": "Slog",
+          "description": "ID ali ime sloga, na primer cozy, evening ali realistic; reset (ali prazno) vrne zaslone na njihovo lastno nastavitev."
+        },
+        "screens": {
+          "name": "Zasloni",
+          "description": "Spremenijo se samo pogledi s temi imeni zaslonov (nastavljenimi v nastavitvah pogleda ali v možnosti screen kartice). Prazno: vsi odprti pogledi."
+        },
+        "minutes": {
+          "name": "Minute",
+          "description": "Kako dolgo slog ostane, nato se zaslon vrne na svojo nastavitev. Prazno: dokler se ponovno ne izbere slog."
+        }
+      }
     }
   },
   "options": {

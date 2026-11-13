@@ -10,7 +10,7 @@ STORAGE_MINOR_VERSION = 2
 # the format of a plan (#165): its `version`; an older plan is brought up to this one by the steps in migrations.py.
 # One up (with a step) whenever the stored plan can hold a value an older Home 3D would not read, a new choice of a
 # field too (#379): tests/fixtures/plan-choices.json keeps the choices of each version
-PLAN_VERSION = 3
+PLAN_VERSION = 4
 # the websocket protocol (#166): one up whenever a command or a field of one is added, changed or removed, so the
 # frontend can tell what the backend it talks to understands (building/get and version send it). The commands are
 # listed in tests/fixtures/contract/websocket.json, which tests/test_contract.py keeps in step and the frontend
@@ -71,6 +71,8 @@ SIGNAL_PETS_UPDATED = f"{DOMAIN}_pets_updated"
 DATA_PETS = f"{DOMAIN}_pets"
 # the hass.data key of the broker that hands sentences to the open views (see voice.py)
 DATA_ASK = f"{DOMAIN}_ask"
+# a style for the open views (the service `set_style`): the screens named, or every one (#442)
+SIGNAL_STYLE = f"{DOMAIN}_style"
 # the voice settings (which sentences Assist hands to Home 3D), kept in .storage
 DATA_VOICE = f"{DOMAIN}_voice"
 STORAGE_KEY_VOICE = f"{DOMAIN}.voice"

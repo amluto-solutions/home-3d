@@ -28,6 +28,24 @@
           "description": "La vue énonce sa réponse avec la synthèse vocale d'Assist (désactivé : elle se contente de l'afficher)."
         }
       }
+    },
+    "set_style": {
+      "name": "Définir le style",
+      "description": "Affiche un style sur les écrans Home 3D ouverts, pendant quelques minutes ou jusqu'à ce qu'un style soit de nouveau choisi pour l'écran. « reset » remet les écrans sur leur propre réglage.",
+      "fields": {
+        "style": {
+          "name": "Style",
+          "description": "Un id ou un nom de style, par exemple cozy, evening ou realistic ; reset (ou vide) remet les écrans sur leur propre réglage."
+        },
+        "screens": {
+          "name": "Écrans",
+          "description": "Seules les vues portant ces noms d'écran changent (réglés dans les réglages de la vue ou dans l'option screen de la carte). Vide : toutes les vues ouvertes."
+        },
+        "minutes": {
+          "name": "Minutes",
+          "description": "Durée du style, puis l'écran revient à son propre réglage. Vide : jusqu'à ce qu'un style soit de nouveau choisi."
+        }
+      }
     }
   },
   "options": {

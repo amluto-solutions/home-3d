@@ -84,7 +84,7 @@ function linked(): Building {
   b.floors = [f];
   Object.assign(b.settings, {
     director: { doorbell: true, doorbell_entity: "binary_sensor.bell", doorbell_camera: "camera.door", triggers: [{ entity: "binary_sensor.gar", camera: "camera.gar" }] },
-    weather_entity: "weather.home", rain_entity: e("rain"), outage_entity: "binary_sensor.outage",
+    weather_entity: "weather.home", rain_entity: e("rain"), outage_entity: "binary_sensor.outage", style_entity: "input_select.house_style",
     alert_snoozed: [{ kind: "window", entity: "binary_sensor.w", at: 1 }], alert_ignored: [{ kind: "window", entity: "binary_sensor.w2" }],
     buttons: [{ id: "b", label: "Go", action: "service", target: "script.go", data: { entity_id: "script.go" } }, { id: "n", label: "Nav", action: "navigate", target: "/lovelace/x" }],
     favorites: ["scene.evening", "script.go"], unplaced_hidden: [e("u1")], household: { notes: "sensor.notes" },

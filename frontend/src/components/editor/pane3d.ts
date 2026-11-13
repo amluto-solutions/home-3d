@@ -13,6 +13,7 @@ import { furnitureName } from "../../furniture-names.ts";
 import { mountBase } from "../../packs.ts";
 import { MAX_MOUNT_Y, round } from "./helpers.ts";
 import { EDITOR_SYNC_MS } from "../../viewer/pace.ts";
+import { hasWallColours } from "../../viewer/palette.ts";
 import type { PlanChange } from "../../building-controller.ts";
 import type { Fp3dEditor } from "../editor.ts";
 
@@ -289,7 +290,7 @@ export class Pane3dPart {
         .keepRoof=${this._tool === "roof" || this._tool === "energy"}
         .markerMode=${"important"}
         .heatMode=${"none"}
-        .theme=${"neon"}
+        .theme=${hasWallColours(this._doc3d) ? "cozy" : "neon"}
         .packs=${this.packs}
         .showEnergy=${false}
         .holograms=${this._tool === "energy" ? true : null}

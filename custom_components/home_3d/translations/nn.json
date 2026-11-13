@@ -28,6 +28,24 @@
           "description": "Visinga seier svaret sitt med Assists tekst-til-tale (av: ho viser det berre)."
         }
       }
+    },
+    "set_style": {
+      "name": "Set stilen",
+      "description": "Viser ein stil på dei opne Home 3D-skjermane i nokre minutt eller til det vert valt ein ny stil for skjermen. «reset» set skjermane tilbake til si eiga innstilling.",
+      "fields": {
+        "style": {
+          "name": "Stil",
+          "description": "Ein stil-id eller eit stilnamn, til dømes cozy, evening eller realistic; reset (eller tom) set skjermane tilbake til si eiga innstilling."
+        },
+        "screens": {
+          "name": "Skjermar",
+          "description": "Berre visingar med desse skjermnamna vert endra (sett i innstillingane til visinga eller i kortvalet screen). Tom: alle opne visingar."
+        },
+        "minutes": {
+          "name": "Minutt",
+          "description": "Kor lenge stilen blir, deretter går skjermen tilbake til si eiga innstilling. Tom: til det vert valt ein ny stil."
+        }
+      }
     }
   },
   "options": {

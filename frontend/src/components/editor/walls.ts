@@ -7,6 +7,9 @@ import { generateWalls, type Wall } from "../../geometry/walls.ts";
 import { wallSummary } from "../../geometry/room-walls.ts";
 import { isFixed, uid, type Floor, type Room, type Vec2 } from "../../model.ts";
 import { round } from "./helpers.ts";
+import { colourField } from "../../colour-field-tag.ts";
+import { colourReset } from "../../colour-reset.ts";
+import { hasWallColours } from "../../viewer/palette.ts";
 import { setSideFold, sideFoldOpen } from "./item-sections.ts";
 import type { Fp3dEditor } from "../editor.ts";
 
@@ -245,15 +248,16 @@ export class WallsPart {
           <button class="fp3d-btn fp3d-wv-open" title=${this.t("wall_view_open")} @click=${() => this.openRoomWalls(room)}>${this.t("wall_view_room")}</button>
           ${this.infoButton("room_wall_hint", this.t("walls_section", { n: sum.walls }))}
         </div>
+        ${this.wallColourRow(this.t("wall_colour_all"), room.wall_color ?? null, (hex) => this.setWallColour(room, null, hex))}
         ${room.points.map((_, i) => this.renderWallRow(room, i))}`,
     );
   }
 
-  /** How many settings of its own one wall of a room has (height, slope, thickness, split points). */
+  /** How many settings of its own one wall of a room has (height, slope, thickness, split points, colour). */
   wallOwnSettings(this: Fp3dEditor, room: Room, i: number): number {
     const h = room.wall_heights?.[i] ?? null;
     const height = Array.isArray(h) ? h.some((x) => x !== null) : h !== null;
-    return (height ? 1 : 0) + (room.wall_slopes?.[i] ? 1 : 0) + (room.wall_thickness?.[i] != null ? 1 : 0) + (room.wall_splits?.[i]?.length ? 1 : 0);
+    return (height ? 1 : 0) + (room.wall_slopes?.[i] ? 1 : 0) + (room.wall_thickness?.[i] != null ? 1 : 0) + (room.wall_splits?.[i]?.length ? 1 : 0) + (room.wall_colors?.[i] ? 1 : 0);
   }
 
   /** What a closed wall row says (#416): its length and height ("4 m · 2.5 m high"), sloping, no wall or its parts. */
@@ -356,8 +360,41 @@ export class WallsPart {
               ${this.isEditor && room.wall_thickness?.[i] != null ? html`<button class="fp3d-btn" @click=${() => setThick(null)}>${this.t("wall_thickness_reset")}</button>` : nothing}</span
             >
             <button class="fp3d-btn" title=${this.t("wall_view_open")} @click=${() => this.openWallView(room.id, i)}>${this.t("wall_view")}</button>
-          </div>`
+          </div>
+          ${this.wallColourRow(this.t("wall_colour_side"), room.wall_colors?.[i] ?? null, (hex) => this.setWallColour(room, i, hex), room.wall_color ?? null)}`
         : nothing}`;
+  }
+
+  /**
+   * A wall colour row (#438, from NeonPlan 3D 3.1, MIT, Mastershort): the shared colour field and a reset. `base` is the
+   * colour the wall has without its own (the room's colour). Wall colours show in the Homely styles and Realistic.
+   */
+  wallColourRow(this: Fp3dEditor, label: string, own: string | null, set: (hex: string | null) => void, base: string | null = null) {
+    const t = (k: Parameters<Parameters<typeof colourField>[0]["t"]>[0], v: { label: string }) => this.t(k, v);
+    return html`<div class="fp3d-field fp3d-wall-colour" title=${this.t("wall_colour_hint")}><span>${label}</span><span class="fp3d-colour-row">${colourField({ value: own, base, label, t, disabled: !this.isEditor, clearable: true, onChange: set })}${colourReset({ value: own, fallback: null, label: this.t("colour_reset"), disabled: !this.isEditor, onReset: () => set(null) })}</span></div>`;
+  }
+
+  /**
+   * Sets the colour of one wall of a room (`i`), or of all its walls (null: the room's colour, and the walls' own go).
+   * The first colour of a home switches the 3D pane to a Homely style, where it shows (pane3d.ts), and says so.
+   */
+  setWallColour(this: Fp3dEditor, room: Room, i: number | null, hex: string | null): void {
+    if (hex && !hasWallColours(this._doc)) this._notice = this.t("wall_colors_shown");
+    this.change((_, f) => {
+      const r = f.rooms.find((x) => x.id === room.id);
+      if (!r) return;
+      if (i === null) {
+        if (hex) r.wall_color = hex;
+        else delete r.wall_color;
+        delete r.wall_colors;
+        return;
+      }
+      const list = (r.wall_colors ?? []).slice(0, r.points.length);
+      while (list.length < r.points.length) list.push(null);
+      list[i] = hex;
+      if (list.some(Boolean)) r.wall_colors = list;
+      else delete r.wall_colors;
+    });
   }
 
   setWallsOpen(this: Fp3dEditor, open: boolean): void {

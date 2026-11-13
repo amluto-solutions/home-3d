@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { emptyBuilding, newFloor, ROOF_SHAPES, type Room, type RoofSection } from "./model.ts";
-import { onSection, sectionTurn, turnPoint, turnSectionAbout, coversIn, cutHole, cutUnder, dormerHole, dormerHoles, dormerParent, floorOutline, lineOutside, sectionCovers, sectionEnds, sectionUV, wingJunction, wingSection, offsetPolygon, polygonBox, proposeDormer, ridgeHeight, roofRider, roofSectionsFromRooms, roofUnderAt, sectionFrame, sectionGeometry, sectionHeightAt, sectionOverhang, sectionPolygon, sectionProfile, wallTopUnder } from "./roof-sections.ts";
+import { onSection, sectionTurn, turnPoint, turnSectionAbout, coversIn, crossAsWing, cutHole, cutUnder, dormerHole, dormerHoles, dormerParent, sectionsCut, turnedDormer, floorOutline, lineOutside, sectionCovers, sectionEnds, sectionUV, wingJunction, wingSection, offsetPolygon, polygonBox, proposeDormer, ridgeHeight, roofRider, roofSectionsFromRooms, roofUnderAt, sectionFrame, sectionGeometry, sectionHeightAt, sectionOverhang, sectionPolygon, sectionProfile, wallTopUnder } from "./roof-sections.ts";
 import { buildRoof } from "./viewer/roof.ts";
 
 const near = (a: number, b: number, eps = 1e-6) => assert.ok(Math.abs(a - b) < eps, `${a} != ${b}`);
@@ -416,4 +416,84 @@ test("turning a roof takes its dormer along: both turn about the roof's point an
   const back = turnSectionAbout(turnSectionAbout(parent, 200, p), -200, p);
   assert.equal(back.rotation, 0);
   for (const k of ["x0", "z0", "x1", "z1"] as const) near(back[k], parent[k]);
+});
+
+// Ported from NeonPlan 3D 3.0.5 / 3.1.1 / 3.1.2 (MIT, (c) 2026 Mastershort), adapted to our roof code (#446)
+
+test("a cross gable at an angle on a bigger roof is cut by that roof like a wing, not given a dormer's hole (#446)", () => {
+  const main = section({ x1: 14, z1: 10 });
+  // a gable turned 35° standing on the main roof's slope (a bay's roof at an angle)
+  const bay = section({ id: "b", x0: 3.5, z0: 6, x1: 6, z1: 11, axis: "z", eave_a: 5.5, eave_b: 5.5, base: 5.4, rotation: 35, pivot: [4.75, 8.5] });
+  assert.equal(dormerParent([main, bay], bay), main);
+  assert.equal(turnedDormer([main, bay], bay), true);
+  assert.equal(sectionsCut([main, bay], main, bay), true);
+  // square to the ridge (0° or 90°) it stays a dormer with its hole
+  const square = { ...bay, rotation: 90 };
+  assert.equal(turnedDormer([main, square], square), false);
+  assert.equal(sectionsCut([main, square], main, square), false);
+  // a dormer turned along with its turned roof is still a dormer (#634)
+  const tp = section({ x1: 14, z1: 10, rotation: 25, pivot: [7, 5] });
+  const td = proposeDormer(tp, "a", "d1");
+  assert.equal(turnedDormer([tp, td], td), false);
+});
+
+test("a wall face a few millimetres outside its roof ends under that roof, not under a lower roof below (#446)", () => {
+  // the house roof starts at x = 1.113; the garage roof runs under it and beyond, its ridge 0.42 m above the top floor
+  const main = section({ id: "main", axis: "z", x0: 1.113, z0: 0, x1: 9, z1: 10, eave_a: 5.18, eave_b: 5.18, pitch_a: 25, pitch_b: 25, base: 5.18 });
+  const garage = section({ id: "garage", axis: "x", x0: -0.075, z0: 2, x1: 1.615, z1: 8, eave_a: 1.661, eave_b: 1.661, pitch_a: 26.57, pitch_b: 26.57, base: 1.661 });
+  const b = { settings: { roof: { type: "custom" as const, pitch: 25, overhang: 0, sections: [main, garage] } } };
+  const level = 2.74;
+  const inside = roofUnderAt(b, 1.2, 5, level)!;
+  // 6 mm outside the house roof: its edge counts (the eave, 5.18 m less the roof's thickness)
+  near(roofUnderAt(b, 1.107, 5, level)!, 5.18 - 0.14);
+  assert.ok(inside > 5, `under the house roof ${inside}`);
+  // well outside: the garage roof alone, as before
+  assert.ok(roofUnderAt(b, 0.9, 5, level)! < 3.1);
+  // beside a roof with nothing else above: still no roof at all
+  assert.equal(roofUnderAt({ settings: { roof: { ...b.settings.roof, sections: [main] } } }, 1.107, 5, level), null);
+  // a free-shaped flat roof keeps its exact outline: nothing beside it counts
+  const shaped = section({ id: "flat", shape: "flat", x0: 1.113, z0: 0, x1: 9, z1: 10, eave_a: 5.18, eave_b: 5.18, base: 5.18, points: [[1.113, 0], [9, 0], [9, 10], [1.113, 10]] });
+  assert.ok(roofUnderAt({ settings: { roof: { ...b.settings.roof, sections: [shaped, garage] } } }, 1.107, 5, level)! < 3.1);
+});
+
+test("a cross gable as high as a roof with a hipped end meets it like a wing, nothing of either stays under the other (#446)", () => {
+  // the main roof runs along z with a hip at its z0 end; the cross gable runs along x into it, as wide and as high,
+  // flush with the hipped end: its slope on that side lies in the hip's plane
+  const b = emptyBuilding();
+  b.floors = [{ ...newFloor("gf", "Ground", 0), height: 2.75, rooms: [rect("main", 4, -2, 13, 12), rect("wing", 2, -2, 4, 7.3)] }];
+  const main = section({ id: "main", x0: 4, z0: -2, x1: 13, z1: 12, axis: "z", eave_a: 2.75, eave_b: 2.75, pitch_a: 40, pitch_b: 40, base: 2.75, end_u0: "hip", end_u1: "gable" });
+  const wing = section({ id: "wing", x0: 2, z0: -2, x1: 8.5, z1: 7, axis: "x", eave_a: 2.75, eave_b: 2.75, pitch_a: 40, pitch_b: 40, base: 2.75, overhang: 0, dormer: true });
+  const sections = [main, wing];
+  assert.equal(dormerParent(sections, wing), main);
+  assert.ok(crossAsWing(sections, wing), "as high as its roof: cut like a wing");
+  assert.ok(sectionsCut(sections, main, wing));
+  // a real dormer, lower than the ridge, still opens a hole in the slope
+  const low = section({ id: "low", x0: 4, z0: 6, x1: 6, z1: 8, axis: "x", eave_a: 4, eave_b: 4, pitch_a: 35, pitch_b: 35, base: 2.75, dormer: true });
+  assert.ok(!crossAsWing([main, low], low));
+  assert.ok(!sectionsCut([main, low], main, low));
+  b.settings.roof = { type: "custom", pitch: 40, overhang: 0, sections };
+  const height = (s: RoofSection, x: number, z: number) => {
+    const fr = sectionFrame(s);
+    const [u, v] = sectionUV(s, x, z);
+    if (u < fr.u0 || u > fr.u1 || v < 0 || v > fr.w) return null;
+    return sectionHeightAt(sectionGeometry(s, { u0: 0, u1: 0, a: 0, b: 0 }), u, v);
+  };
+  const [part] = buildRoof(b);
+  const p = part.solid.p;
+  const c = part.solid.c;
+  // the top faces (the lighter colour) where both roofs are: none lies under the higher of the two
+  const topShade = Math.max(...c.filter((_, i) => i % 3 === 0));
+  let both = 0;
+  for (let t = 0; t + 8 < p.length; t += 9) {
+    if (c[t] < topShade - 1e-6) continue;
+    const x = (p[t] + p[t + 3] + p[t + 6]) / 3;
+    const y = (p[t + 1] + p[t + 4] + p[t + 7]) / 3 + part.floor.elevation;
+    const z = (p[t + 2] + p[t + 5] + p[t + 8]) / 3;
+    const hm = height(main, x, z);
+    const hw = height(wing, x, z);
+    if (hm === null || hw === null || (Math.abs(y - hm) > 0.2 && Math.abs(y - hw) > 0.2)) continue;
+    both++;
+    assert.ok(y >= Math.max(hm, hw) - 0.05, `a face at (${x.toFixed(2)}, ${z.toFixed(2)}) stands ${(Math.max(hm, hw) - y).toFixed(2)} m under the other roof`);
+  }
+  assert.ok(both >= 4, `faces where both roofs are: ${both}`);
 });

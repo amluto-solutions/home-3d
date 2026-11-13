@@ -17,8 +17,9 @@ import { fitBar, type BarItem } from "./card-fit.ts";
 import { preload3d } from "./load3d.ts";
 import { nightActive } from "./kiosk.ts";
 import { lookOf } from "./themes.ts";
+import { allStyles, type StylePlan } from "./looks.ts";
 import { contrastChrome, lightChrome } from "./scheme.ts";
-import { accentVars, shownAccent, shownLook } from "./ha-theme.ts";
+import { accentVars, shownAccent, shownLook, type CardStyle } from "./ha-theme.ts";
 import { loadCardEditor } from "./load-card-editor.ts";
 import type { WallMode } from "./viewer/viewer3d.ts";
 import { TimeTravel } from "./load-timetravel.ts";
@@ -395,10 +396,20 @@ clearTimeout(this.cleanTimer);
   /** The plan the open room was last checked against. */
   private seenBuilding: Building | null = null;
 
+  /** The card's own evening and night styles and helper entity (#439); a value this version doesn't know counts as none. */
+  private cardStyle(): CardStyle {
+    const c = this._config;
+    const known = (v: string | undefined) => (v && lookOf(v) !== "theme" ? v : null);
+    const names: Record<string, string[]> = {};
+    if (c?.style_entity) for (const st of allStyles()) names[st.id] = [st.name ?? translate(this.hass, `style_${st.id}` as I18nKey)];
+    return { evening: known(c?.theme_evening), night: known(c?.theme_night), entity: c?.style_entity || null, names };
+  }
+
   protected updated(): void {
     // the card's chrome goes light with the Day look (#85)
-    this.toggleAttribute("light", lightChrome(shownLook(lookOf(this._config?.theme), this.hass)));
-    this.toggleAttribute("contrast", contrastChrome(shownLook(lookOf(this._config?.theme), this.hass)));
+    const look = shownLook(lookOf(this._config?.theme), this.hass, this.data.building?.settings as StylePlan | undefined, this.cardStyle());
+    this.toggleAttribute("light", lightChrome(look));
+    this.toggleAttribute("contrast", contrastChrome(look));
     // the language its texts are in (#196)
     const lang = uiLanguage(this.hass);
     if (this.getAttribute("lang") !== lang) this.setAttribute("lang", lang);
@@ -520,6 +531,9 @@ clearTimeout(this.cleanTimer);
               .buttons=${this._config?.buttons?.map((b, i) => ({ id: `card_${i}`, ...b })) ?? null}
               .heatMode=${heat}
               .theme=${lookOf(this._config?.theme)}
+              .themeEvening=${lookOf(this._config?.theme_evening) === "theme" ? null : (this._config?.theme_evening ?? null)}
+              .themeNight=${lookOf(this._config?.theme_night) === "theme" ? null : (this._config?.theme_night ?? null)}
+              .styleEntity=${this._config?.style_entity || null}
               .clock=${this._config?.clock ?? null}
               .accent=${accent}
               .showEnergy=${this._config?.energy ?? true}

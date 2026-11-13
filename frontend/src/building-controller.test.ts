@@ -193,3 +193,66 @@ test("a save sends the recipe hashes it started from and takes the server's newe
   c.hostDisconnected();
   setPlanRecipes(undefined);
 });
+
+test("a page that becomes visible again reloads the plan, unless an edit is waiting (#450)", async () => {
+  const gets: number[] = [];
+  const saves: number[] = [];
+  let revision = 3;
+  const host = { addController() {}, removeController() {}, requestUpdate() {}, updateComplete: Promise.resolve(true) };
+  const c = new BuildingController(host);
+  const hass = {
+    user: { is_admin: true },
+    callWS: async (msg: { type: string }) => {
+      if (msg.type === "home_3d/building/get") {
+        gets.push(revision);
+        return { building: plan([chairAt("a")]), revision, can_edit: true };
+      }
+      if (msg.type === "home_3d/packs/list") return { packs: [] };
+      if (msg.type === "home_3d/building/save") {
+        saves.push(1);
+        return { revision: ++revision, recipes: {} };
+      }
+      throw new Error(`unexpected ${msg.type}`);
+    },
+    connection: { subscribeMessage: async () => async () => undefined },
+  } as unknown as HomeAssistant;
+  const listeners = new Map<string, (e: Event) => void>();
+  const doc = {
+    visibilityState: "hidden",
+    addEventListener: (type: string, fn: (e: Event) => void) => listeners.set(type, fn),
+    removeEventListener: (type: string) => listeners.delete(type),
+  };
+  const saved = Object.getOwnPropertyDescriptor(globalThis, "document");
+  Object.defineProperty(globalThis, "document", { value: doc, configurable: true, writable: true });
+  try {
+    c.setHass(hass);
+    c.hostConnected();
+    await new Promise((r) => setTimeout(r, 0));
+    const loaded = gets.length;
+    const fire = async (state: string) => {
+      doc.visibilityState = state;
+      listeners.get("visibilitychange")?.({ type: "visibilitychange" } as never);
+      await new Promise((r) => setTimeout(r, 0));
+    };
+    // hidden: nothing is loaded
+    await fire("hidden");
+    assert.equal(gets.length, loaded);
+    // visible with nothing pending: the plan is loaded again (the revision moved elsewhere meanwhile)
+    revision = 7;
+    await fire("visible");
+    assert.equal(gets.length, loaded + 1);
+    assert.equal(gets[gets.length - 1], 7);
+    // visible while an edit waits for its pause: no load
+    const edited = structuredClone(c.building!);
+    edited.floors[0].furniture[0].x = 2;
+    c.edit(edited);
+    await fire("visible");
+    assert.equal(gets.length, loaded + 1);
+    await c.flush();
+    assert.equal(saves.length, 1);
+  } finally {
+    c.hostDisconnected();
+    if (saved) Object.defineProperty(globalThis, "document", saved);
+    else delete (globalThis as { document?: unknown }).document;
+  }
+});

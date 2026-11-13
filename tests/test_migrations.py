@@ -356,3 +356,38 @@ def test_a_plan_from_before_existing_rate_sensors_needs_no_migration() -> None:
     assert loaded["energy"]["rates_from"] == "here"
     # a version-1 plan gets the same on its way up
     assert BUILDING_SCHEMA(_plan("v1-lights.json"))["energy"]["rates_from"] == "here"
+
+
+def test_a_plan_with_a_house_style_plan_is_version_four_and_an_older_home_3d_opens_it_read_only(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """#440: `style_switch` ("sun" or "time") is a new choice, so plan version 4. The 3 -> 4 step changes nothing, the
+    keys are kept as they are, and a Home 3D that reads versions up to 3 shows such a plan read-only instead of
+    repairing it (docs/plan-format.md)."""
+    assert PLAN_VERSION == 4
+    style = {
+        "style_day": "cozy",
+        "style_evening": "evening",
+        "style_night": "focus",
+        "style_switch": "time",
+        "style_morning_at": "07:30",
+        "style_evening_at": "18:00",
+        "style_night_at": "23:00",
+        "style_entity": "input_select.sample_style",
+    }
+    older = {**copy.deepcopy(BUILDING), "version": 3}
+    older["settings"] = {**older.get("settings", {}), **style}
+    migrated = migrate_plan(older)
+    assert migrated["version"] == 4 and migrated["settings"] == older["settings"]
+    assert older["version"] == 3, "the stored plan is left as it was"
+    assert BUILDING_SCHEMA(older)["settings"]["style_switch"] == "time"
+    assert migrate_plan(migrated) is migrated, "idempotent"
+    with pytest.raises(vol.Invalid):
+        BUILDING_SCHEMA({**older, "settings": {**older["settings"], "style_switch": "moon"}})
+    with pytest.raises(vol.Invalid):
+        BUILDING_SCHEMA({**older, "settings": {**older["settings"], "style_night_at": "25:00"}})
+
+    # the release before this one reads versions up to 3: a version-4 plan is refused, never repaired
+    monkeypatch.setattr("custom_components.home_3d.migrations.PLAN_VERSION", 3)
+    with pytest.raises(PlanTooNew, match=r"made by a newer Home 3D"):
+        migrate_plan(migrated)

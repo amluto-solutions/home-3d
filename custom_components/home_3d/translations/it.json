@@ -28,6 +28,24 @@
           "description": "La vista pronuncia la risposta con la sintesi vocale di Assist (disattivato: la mostra soltanto)."
         }
       }
+    },
+    "set_style": {
+      "name": "Imposta lo stile",
+      "description": "Mostra uno stile sugli schermi Home 3D aperti, per alcuni minuti o finché non viene scelto di nuovo uno stile per lo schermo. «reset» riporta gli schermi alla loro impostazione.",
+      "fields": {
+        "style": {
+          "name": "Stile",
+          "description": "Un id o nome di stile, per esempio cozy, evening o realistic; reset (o vuoto) riporta gli schermi alla loro impostazione."
+        },
+        "screens": {
+          "name": "Schermi",
+          "description": "Cambiano solo le viste con questi nomi di schermo (impostati nelle impostazioni della vista o nell'opzione screen della scheda). Vuoto: tutte le viste aperte."
+        },
+        "minutes": {
+          "name": "Minuti",
+          "description": "Per quanto tempo resta lo stile, poi lo schermo torna alla sua impostazione. Vuoto: finché non viene scelto di nuovo uno stile."
+        }
+      }
     }
   },
   "options": {

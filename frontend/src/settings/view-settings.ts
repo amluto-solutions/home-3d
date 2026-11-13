@@ -5,7 +5,9 @@
 // texts table: labels are text keys.
 
 import { ACCENT_DEFAULT } from "../colour-reset.ts";
-import { shownLook } from "../ha-theme.ts";
+import { shownStyle } from "../ha-theme.ts";
+import { STYLE_IDS, styleById, styleChoices, type StyleId, type StylePlan } from "../looks.ts";
+import { lookOf, type Look } from "../themes.ts";
 import { DISPLAY_HIDDEN_KEY, hiddenText, OBJECT_TYPES, parseHidden, SHOW_FURNITURE_KEY } from "../display-pref.ts";
 import { parsePinZoom, PLAN_PIN_ZOOM_DEFAULT, PLAN_PIN_ZOOM_KEY, PLAN_PIN_ZOOM_MAX } from "../plan-pins.ts";
 import type { Option, SectionId, Setting, SettingsEnv, TextKey } from "./registry.ts";
@@ -59,13 +61,27 @@ export function deviceChoice(id: string, section: SectionId, card: string, key: 
 const opts = (pairs: [string, TextKey][]): Option[] => pairs.map(([value, label]) => ({ value, label }));
 
 /**
- * Appearance as one grouped drop-down (#247): Automatic (follow Home Assistant's theme, follow the sun, each naming the
- * look it shows now) and Fixed (the four looks). The stored values are the old ones ("theme", "auto", "neon" …).
+ * Appearance as one grouped drop-down (#247, #439): Automatic (follow Home Assistant's theme, follow the sun, the house's
+ * plan, each naming the style it shows now), then the styles by group: neon, homely, designed and the plan's own ones.
+ * The stored values are style ids or the old ones ("theme", "auto" …).
  */
-export function appearanceOptions(env: Pick<SettingsEnv, "hass">): Option[] {
-  const auto = (value: "theme" | "auto", label: TextKey): Option => ({ value, label, group: "theme_group_auto", now: `theme_${shownLook(value, env.hass)}` });
-  const fixed = (value: string): Option => ({ value, label: `theme_${value}`, group: "theme_group_fixed" });
-  return [auto("theme", "follow_ha"), auto("auto", "follow_sun"), ...["neon", "blueprint", "day", "realistic"].map(fixed)];
+export function appearanceOptions(env: Pick<SettingsEnv, "hass" | "building">): Option[] {
+  const plan = env.building?.settings as StylePlan | undefined;
+  const now = (value: string): TextKey | undefined => {
+    const id = shownStyle(value as Look, env.hass, plan);
+    return STYLE_IDS.includes(id as StyleId) ? `style_${id}` : undefined;
+  };
+  const out: Option[] = [];
+  for (const { group, values } of styleChoices({ theme: true, auto: true, house: true })) {
+    for (const value of values) {
+      if (group === "auto") out.push({ value, label: value === "theme" ? "follow_ha" : value === "auto" ? "follow_sun" : "style_house", group: "style_group_auto", now: now(value) });
+      else {
+        const own = styleById(value);
+        out.push(own?.group === "custom" ? { value, label: own.name ?? value, raw: true, group: "style_group_custom" } : { value, label: `style_${value}`, group: `style_group_${group}` });
+      }
+    }
+  }
+  return out;
 }
 
 /** What a choice reads: its label, and the look it shows now for a "follow" choice. */
@@ -89,7 +105,9 @@ export function optionGroups(options: Option[]): { group: TextKey | null; option
 /** This device's Appearance (with the clock) and what its 3D view shows (the View panel shows the quick ones, #247; two Settings pages since #248). */
 export const LOOK: Setting[] = [
   {
-    ...deviceChoice("theme", "look", "look", "theme", ["theme", "neon", "blueprint", "day", "realistic", "auto"], "theme", "theme", [], "theme_hint", ["dark", "light", "day", "night", "neon", "theme", "colour scheme", "sun", "automatic"], "select"),
+    ...deviceChoice("theme", "look", "look", "theme", [], "theme", "theme", [], "theme_hint", ["dark", "light", "day", "night", "evening", "style", "cozy", "homely", "neon", "theme", "colour scheme", "sun", "automatic"], "select"),
+    // any style id (or an own one) is a valid pick: lookOf drops what this version doesn't know
+    read: (env) => lookOf(env.prefs.get("theme")),
     control: { kind: "select", options: appearanceOptions },
   },
   {
@@ -193,6 +211,8 @@ export const SCREEN: Setting[] = [
   deviceSwitch("angle_lock", "screen", "controls", "angle_lock", false, "angle_lock", "angle_lock_hint", ["lock", "turn", "rotate", "angle"]),
   // #250: the floor pictures beside the 3D view, a second floor picker; off by default, as the floor bar picks the floor
   deviceSwitch("floor_pictures", "screen", "controls", "floor_pictures", false, "st_floor_pictures", "st_floor_pictures_hint", ["floor", "pictures", "thumbnails"]),
+  // #454: for wall tablets: a tap on a device of another room opens that room instead of switching it
+  deviceSwitch("tap_in_room", "screen", "controls", "tap_in_room", false, "st_tap_in_room", "st_tap_in_room_hint"),
 ];
 
 // ---------------------------------------------------------------------------------------------------- the View panel

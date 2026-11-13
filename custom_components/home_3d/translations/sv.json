@@ -28,6 +28,24 @@
           "description": "Vyn säger sitt svar med Assists text-till-tal (av: den visar det bara)."
         }
       }
+    },
+    "set_style": {
+      "name": "Ställ in stilen",
+      "description": "Visar en stil på de öppna Home 3D-skärmarna i några minuter eller tills en ny stil väljs för skärmen. ”reset” sätter tillbaka skärmarna till sin egen inställning.",
+      "fields": {
+        "style": {
+          "name": "Stil",
+          "description": "Ett stil-id eller ett stilnamn, till exempel cozy, evening eller realistic; reset (eller tom) sätter tillbaka skärmarna till sin egen inställning."
+        },
+        "screens": {
+          "name": "Skärmar",
+          "description": "Bara vyer med dessa skärmnamn ändras (inställda i vyns inställningar eller kortets alternativ screen). Tom: alla öppna vyer."
+        },
+        "minutes": {
+          "name": "Minuter",
+          "description": "Hur länge stilen blir, sedan går skärmen tillbaka till sin egen inställning. Tom: tills en ny stil väljs."
+        }
+      }
     }
   },
   "options": {

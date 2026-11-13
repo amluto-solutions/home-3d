@@ -66,3 +66,22 @@ test("room names in other scripts and with undecomposable letters can be address
   assert.equal(findPlace("show lazienka", b)?.name, "Łazienka");
   assert.equal(findPlace("リビング を 表示", b)?.name, "リビング");
 });
+
+test("a style sentence names a style as a whole, or asks for the screen's own style back", async () => {
+  const { styleCommand } = await import("./commands.ts");
+  const names = { evening: ["Wohnlich Abend"], warm: ["Holz und Papier"] };
+  assert.deepEqual(styleCommand("Style cozy"), { id: "cozy" });
+  assert.deepEqual(styleCommand("please switch the look to winter", names), { id: "winter" });
+  assert.deepEqual(styleCommand("Set style to realistic"), { id: "realistic" });
+  assert.deepEqual(styleCommand("Home 3D style Pastel"), { id: "pastel" });
+  assert.deepEqual(styleCommand("Stil Wohnlich Abend", names), { id: "evening" });
+  assert.deepEqual(styleCommand("stelle den Stil auf Holz und Papier", names), { id: "warm" });
+  assert.deepEqual(styleCommand("reset the style"), { id: null });
+  assert.deepEqual(styleCommand("Stil zurück"), { id: null });
+  // not a style sentence
+  assert.equal(styleCommand("turn on the light"), null);
+  assert.equal(styleCommand("show the living room"), null);
+  assert.equal(styleCommand("the red look"), null);
+  assert.equal(styleCommand("style"), null);
+  assert.equal(styleCommand("style of the kitchen"), null);
+});

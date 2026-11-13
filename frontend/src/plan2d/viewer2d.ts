@@ -15,6 +15,7 @@ import { lowEndDevice } from "../viewer/pace.ts";
 import { clearLabels, roomRank, type LabelBox } from "../viewer/label-clear.ts";
 import type { DeviceMarker, FlowPiece, ScreenState, Theme, ViewerOptions } from "../viewer/viewer3d.ts";
 import type { ViewerSurface } from "../viewer-surface.ts";
+import type { StyleDef } from "../looks.ts";
 import { Gestures } from "./gestures.ts";
 import { anchorSpots, rackDraw, rackOfPick, fitInside, roomFocusView, floorPictures, flowLines, planBounds, planItems, planMarkers, planOpenings, shownFloor, zoomView, type PlanOpening, type PlanView } from "./scene.ts";
 
@@ -249,6 +250,11 @@ export class Plan2dViewer implements ViewerSurface {
     this.root.dataset.theme = theme;
   }
 
+  /** A style (#436): the flat plan draws the classic look under it. */
+  setStyle(style: StyleDef): void {
+    this.setTheme(style.base);
+  }
+
   setAccent(hex: string | null): void {
     if (hex && /^#[0-9a-f]{6}$/i.test(hex)) this.root.style.setProperty("--fp3d-accent", hex);
     else this.root.style.removeProperty("--fp3d-accent");
@@ -307,6 +313,9 @@ export class Plan2dViewer implements ViewerSurface {
   floorThumbnails(width = 200, height = 150): { floorId: string; url: string }[] {
     return this.building ? floorPictures(this.building, width, height) : [];
   }
+
+  /** Nothing to end: the plan has no look through a camera. */
+  endLook(): void {}
 
   /** No camera to look through in the plan. */
   lookThrough(): boolean {

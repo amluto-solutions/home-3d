@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { emptyBuilding, newFloor, type Room, type Vec2 } from "../model.ts";
 import { flightA, flightB, twoFloors } from "../geometry/stair-fixture.ts";
+import { petMap } from "../fun/pets.ts";
 import { FloorMap, stairSpot, WalkCamera, type Obstacle } from "./walk.ts";
 
 function rect(id: string, x0: number, z0: number, x1: number, z1: number): Room {
@@ -217,4 +218,30 @@ test("a stair drawn as two flights is climbed round the corner and switches floo
   assert.equal(alone.w.map.floor.id, "ground");
   assert.equal(alone.w.lift, 0);
   alone.walk.dispose();
+});
+
+test("pets stay indoors: only doors between two rooms are ways, never round the outside of the house (#444)", () => {
+  const door = (id: string, room: string, edge: number, offset: number, type: "door" | "garage" | "window" = "door") => ({ id, room_id: room, edge, offset, width: 0.9, type, sill: 0, height: 2.1, hinge: "left" as const, leaves: 1 as const, swing: "in" as const, cover: null, contact: null, contact2: null, tilt: null });
+  const rooms = [rect("a", 0, 0, 4, 5), rect("b", 4, 0, 8, 5)];
+  const outside = [door("front", "a", 0, 2), door("gate", "b", 0, 2, "garage"), door("french", "b", 2, 2, "window")];
+  const apart = { ...newFloor("f", "EG", 0), rooms, openings: outside };
+  const plan = { ...emptyBuilding(), floors: [apart] };
+  const from: Vec2 = [1, 3];
+  const to: Vec2 = [7, 3];
+  assert.ok(new FloorMap(plan, apart).path(from, to));
+  assert.equal(petMap(FloorMap, plan, apart, new Set(), []).path(from, to), null);
+  const joined = { ...apart, openings: [...outside, door("inner", "a", 1, 2.5)] };
+  const way = petMap(FloorMap, { ...plan, floors: [joined] }, joined, new Set(), []).path(from, to);
+  assert.ok(way && way.every((p) => p[1] > 0.3 && p[1] < 4.7), "through the house");
+  assert.equal(petMap(FloorMap, { ...plan, floors: [joined] }, joined, new Set(["inner"]), []).path(from, to), null);
+});
+
+test("upstairs, a door between rooms drawn a wall's width apart is a way, not a door into the air (#444)", () => {
+  const door = { id: "d", room_id: "a", edge: 1, offset: 2.5, width: 0.8, type: "door" as const, sill: 0, height: 2.1, hinge: "left" as const, leaves: 1 as const, swing: "in" as const, cover: null, contact: null, contact2: null, tilt: null };
+  const up = { ...newFloor("og", "OG", 2.75), rooms: [rect("a", 0, 0, 4, 5), { ...rect("b", 4.12, 0, 8, 5), wall_heights: [null, null, null, 0] }], openings: [door] };
+  const map = new FloorMap({ ...emptyBuilding(), floors: [up] }, up);
+  assert.equal(map.doors.length, 1);
+  assert.ok(map.path([1, 2.5], [7, 2.5]), "from room to room");
+  const alone = { ...up, rooms: [rect("a", 0, 0, 4, 5)] };
+  assert.equal(new FloorMap({ ...emptyBuilding(), floors: [alone] }, alone).doors.length, 0);
 });
