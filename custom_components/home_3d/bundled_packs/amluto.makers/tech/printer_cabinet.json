@@ -60,7 +60,12 @@
       "y": 0.0364,
       "h": 0.4545,
       "color": "body",
-      "round": 0.05
+      "round": 0.05,
+      "bind": {
+        "slot": "door",
+        "kind": "open",
+        "hinge": "left"
+      }
     },
     {
       "shape": "rbox",
@@ -71,7 +76,12 @@
       "y": 0.0364,
       "h": 0.4545,
       "color": "body",
-      "round": 0.05
+      "round": 0.05,
+      "bind": {
+        "slot": "door",
+        "kind": "open",
+        "hinge": "right"
+      }
     },
     {
       "shape": "box",
@@ -81,7 +91,12 @@
       "d": 0.0067,
       "y": 0.2545,
       "h": 0.1091,
-      "color": "metal"
+      "color": "metal",
+      "bind": {
+        "slot": "door",
+        "kind": "open",
+        "hinge": "left"
+      }
     },
     {
       "shape": "box",
@@ -91,7 +106,12 @@
       "d": 0.0067,
       "y": 0.2545,
       "h": 0.1091,
-      "color": "metal"
+      "color": "metal",
+      "bind": {
+        "slot": "door",
+        "kind": "open",
+        "hinge": "right"
+      }
     }
   ],
   "symbol": [
@@ -108,6 +128,15 @@
       "z": 0,
       "w": 0.8,
       "d": 0.8
+    }
+  ],
+  "slots": [
+    {
+      "id": "door",
+      "kind": "contact",
+      "name": {
+        "en": "Doors"
+      }
     }
   ]
 }

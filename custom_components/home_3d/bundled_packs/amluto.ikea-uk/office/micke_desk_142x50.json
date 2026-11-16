@@ -29,6 +29,26 @@
     "en": "142x50"
   },
   "ikea": "MICKE",
+  "slots": [
+    {
+      "id": "drawer_1",
+      "kind": "drawer",
+      "name": {
+        "en": "Left drawer"
+      }
+    },
+    {
+      "id": "drawer_2",
+      "kind": "drawer",
+      "name": {
+        "en": "Right drawer"
+      }
+    },
+    {
+      "id": "door",
+      "kind": "contact"
+    }
+  ],
   "parts": [
     {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.9667, "h": 0.0333, "color": "white", "fix": "h"},
     {"shape": "box", "x": -0.4937, "z": 0.0, "w": 0.0127, "d": 1, "y": 0, "h": 0.9667, "color": "white", "fix": "w"},
@@ -36,12 +56,29 @@
     {"shape": "box", "x": 0.4937, "z": 0.0, "w": 0.0127, "d": 1, "y": 0, "h": 0.9667, "color": "white", "fix": "w"},
     {"shape": "box", "x": 0.2599, "z": 0.0, "w": 0.0127, "d": 1, "y": 0, "h": 0.9667, "color": "white", "fix": "w"},
     {"shape": "box", "x": 0.3768, "z": 0.0, "w": 0.2211, "d": 0.96, "y": 0.0667, "h": 0.024, "color": "white", "fix": "h"},
-    {"shape": "box", "x": 0.3768, "z": 0.48, "w": 0.2183, "d": 0.036, "y": 0.0667, "h": 0.5333, "color": "white"},
-    {"shape": "box", "x": 0.3768, "z": 0.5, "w": 0.0704, "d": 0.008, "y": 0.5067, "h": 0.016, "color": "dark", "fix": "wdh"},
+    {"shape": "box", "x": 0.3768, "z": 0.48, "w": 0.2183, "d": 0.036, "y": 0.0667, "h": 0.5333, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}},
+    {"shape": "box", "x": 0.3768, "z": 0.5, "w": 0.0704, "d": 0.008, "y": 0.5067, "h": 0.016, "color": "dark", "fix": "wdh", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}},
     {"shape": "box", "x": 0.3768, "z": 0.0, "w": 0.2211, "d": 0.96, "y": 0.6267, "h": 0.024, "color": "white"},
-    {"shape": "box", "x": 0.3768, "z": 0.48, "w": 0.2183, "d": 0.036, "y": 0.84, "h": 0.12, "color": "white"},
-    {"shape": "box", "x": 0.3768, "z": 0.5, "w": 0.0704, "d": 0.008, "y": 0.8933, "h": 0.016, "color": "dark", "fix": "wdh"},
-    {"shape": "box", "x": -0.1056, "z": 0.48, "w": 0.4225, "d": 0.036, "y": 0.84, "h": 0.12, "color": "white"},
-    {"shape": "box", "x": -0.1056, "z": 0.5, "w": 0.0704, "d": 0.008, "y": 0.8933, "h": 0.016, "color": "dark", "fix": "wdh"}
+    {"shape": "box", "x": 0.3768, "z": 0.48, "w": 0.2183, "d": 0.036, "y": 0.84, "h": 0.12, "color": "white", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": 0.3768, "z": 0.5, "w": 0.0704, "d": 0.008, "y": 0.8933, "h": 0.016, "color": "dark", "fix": "wdh", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": -0.1056, "z": 0.48, "w": 0.4225, "d": 0.036, "y": 0.84, "h": 0.12, "color": "white", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "box", "x": -0.1056, "z": 0.5, "w": 0.0704, "d": 0.008, "y": 0.8933, "h": 0.016, "color": "dark", "fix": "wdh", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "box", "x": 0.3768, "z": 0.0924, "w": 0.1901, "d": 0.7352, "y": 0.852, "h": 0.016, "color": "white", "fix": "h", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": 0.286, "z": 0.0924, "w": 0.0085, "d": 0.7352, "y": 0.852, "h": 0.0744, "color": "white", "fix": "w", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": 0.4676, "z": 0.0924, "w": 0.0085, "d": 0.7352, "y": 0.852, "h": 0.0744, "color": "white", "fix": "w", "bind": {"slot": "drawer_2", "kind": "slide"}}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": -0.4937, "z": 0.0, "w": 0.0127, "d": 1},
+    {"shape": "rect", "x": 0.0, "z": -0.48, "w": 0.9746, "d": 0.036},
+    {"shape": "rect", "x": 0.4937, "z": 0.0, "w": 0.0127, "d": 1},
+    {"shape": "rect", "x": 0.2599, "z": 0.0, "w": 0.0127, "d": 1},
+    {"shape": "rect", "x": 0.3768, "z": 0.0, "w": 0.2211, "d": 0.96},
+    {"shape": "rect", "x": 0.3768, "z": 0.48, "w": 0.2183, "d": 0.036},
+    {"shape": "rect", "x": 0.3768, "z": 0.5, "w": 0.0704, "d": 0.008},
+    {"shape": "rect", "x": 0.3768, "z": 0.0, "w": 0.2211, "d": 0.96},
+    {"shape": "rect", "x": 0.3768, "z": 0.48, "w": 0.2183, "d": 0.036},
+    {"shape": "rect", "x": 0.3768, "z": 0.5, "w": 0.0704, "d": 0.008},
+    {"shape": "rect", "x": -0.1056, "z": 0.48, "w": 0.4225, "d": 0.036},
+    {"shape": "rect", "x": -0.1056, "z": 0.5, "w": 0.0704, "d": 0.008}
   ]
 }

@@ -1,0 +1,134 @@
+{
+ "amluto.ikea-uk/appliance/tillreda_microwave_oven": {
+  "fields": "72fdef1b1d0435e7",
+  "look": "bffd17f117ca53e6",
+  "parts": 10,
+  "symbol": null
+ },
+ "amluto.ikea-uk/appliance/tvattad_integrated_washer_dryer": {
+  "fields": "c130f2d399744756",
+  "look": "bee7e02d19d0f191",
+  "parts": 4,
+  "symbol": null
+ },
+ "amluto.ikea-uk/appliance/uddarp_washing_machine_7kg": {
+  "fields": "c565c7b9e0af0f73",
+  "look": "7f5df0d550286675",
+  "parts": 12,
+  "symbol": null
+ },
+ "amluto.ikea-uk/appliance/uddarp_washing_machine_8kg": {
+  "fields": "795ae860dc07ff1f",
+  "look": "48af22e4ffcfc7e8",
+  "parts": 12,
+  "symbol": null
+ },
+ "amluto.ikea-uk/bed/brimnes_day_bed_2_drawers": {
+  "fields": "3a2d34e3d8b62255",
+  "look": "3685d181f854c274",
+  "parts": 10,
+  "symbol": null
+ },
+ "amluto.ikea-uk/bed/hemnes_day_bed_3_drawers": {
+  "fields": "4057057e99ce717f",
+  "look": "d14785b7aa0c40cb",
+  "parts": 27,
+  "symbol": null
+ },
+ "amluto.ikea-uk/kids/smastad_loft_bed_3_drawers": {
+  "fields": "92c96554e605542e",
+  "look": "ab99917d866dc0f5",
+  "parts": 28,
+  "symbol": null
+ },
+ "amluto.ikea-uk/kids/smastad_loft_bed_4_drawers": {
+  "fields": "2811fb3bb1fd8e03",
+  "look": "acbac5b269210693",
+  "parts": 30,
+  "symbol": null
+ },
+ "amluto.ikea-uk/kids/smastad_platsa_bookcase_6dr_60x57x181": {
+  "fields": "a8e0b458dec44cf6",
+  "look": "2e4bd86762768934",
+  "parts": 18,
+  "symbol": null
+ },
+ "amluto.ikea-uk/office/alex_desk_100x48": {
+  "fields": "fd4e36658b6a1a3a",
+  "look": "35ee73cc7c64dfdf",
+  "parts": 7,
+  "symbol": null
+ },
+ "amluto.ikea-uk/office/alex_desk_132x58": {
+  "fields": "16e944cb382be45b",
+  "look": "c8de9552c90c3157",
+  "parts": 7,
+  "symbol": null
+ },
+ "amluto.ikea-uk/office/alex_drawer_unit_36x70": {
+  "fields": "6d485f9e0cad54c2",
+  "look": "989a24ffc3c4a9a9",
+  "parts": 15,
+  "symbol": null
+ },
+ "amluto.ikea-uk/office/alex_drawer_unit_9_drawers": {
+  "fields": "cebabb4d83712743",
+  "look": "23d3874d057d7ee1",
+  "parts": 23,
+  "symbol": null
+ },
+ "amluto.ikea-uk/office/alex_drawer_unit_castors": {
+  "fields": "b7fda5e52fd6f294",
+  "look": "f8cd707574b70853",
+  "parts": 15,
+  "symbol": null
+ },
+ "amluto.ikea-uk/office/elloven_monitor_stand_drawer": {
+  "fields": "ff926492a2df34c1",
+  "look": "0bcac6b0c789d0b1",
+  "parts": 7,
+  "symbol": null
+ },
+ "amluto.ikea-uk/office/helmer_drawer_unit_28x44x65": {
+  "fields": "ee53ad3f95a07186",
+  "look": "cdf07b36ac22b9a2",
+  "parts": 18,
+  "symbol": null
+ },
+ "amluto.ikea-uk/office/lagkapten_alex_desk_120x60": {
+  "fields": "e23d39857a290228",
+  "look": "caf7023ac1786702",
+  "parts": 13,
+  "symbol": null
+ },
+ "amluto.ikea-uk/office/lagkapten_alex_desk_140x60": {
+  "fields": "1534db5d43cd75c8",
+  "look": "7ad2f4e72b8b7a0e",
+  "parts": 13,
+  "symbol": null
+ },
+ "amluto.ikea-uk/office/lagkapten_alex_desk_200x60": {
+  "fields": "d9c5c550d3fd200f",
+  "look": "55317a7fd3ed373a",
+  "parts": 13,
+  "symbol": null
+ },
+ "amluto.ikea-uk/office/micke_desk_105x50": {
+  "fields": "0615fa6b95a5b456",
+  "look": "134aa20f6610c3a2",
+  "parts": 11,
+  "symbol": null
+ },
+ "amluto.ikea-uk/office/micke_desk_142x50": {
+  "fields": "7d1e5848f26555f3",
+  "look": "71439297ab95735c",
+  "parts": 13,
+  "symbol": null
+ },
+ "amluto.ikea-uk/office/trotten_drawer_unit_castors": {
+  "fields": "48232ace33327419",
+  "look": "6b36615c9d1f9910",
+  "parts": 15,
+  "symbol": null
+ }
+}

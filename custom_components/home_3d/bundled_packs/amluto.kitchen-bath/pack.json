@@ -5,7 +5,7 @@
   "name": "Kitchen & bath",
   "publisher": "Amluto Solutions",
   "licence": "MIT",
-  "release": 6,
+  "release": 7,
   "description": "Kitchen units, appliances and bathroom fittings, modelled for Home 3D from simple shapes. Appliances can be linked to a switch and a power sensor. Ships with the app and works offline.",
-  "release_note": "Release 6: kitchen and cabinet doors, drawers and appliance doors move with Home Assistant (live parts, #467) (#468)."
+  "release_note": "Release 7: microwaves, mini oven, air fryers, chest freezers, washing machines and dryers open and turn with Home Assistant (run16 misc)."
 }

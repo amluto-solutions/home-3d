@@ -139,12 +139,16 @@ def test_a_live_cabinet_checks_and_keeps_its_name_size_and_a_top_view(path: Path
     kinds = {p["bind"]["kind"] for p in item["parts"] if "bind" in p}
     assert kinds <= {"open", "slide"}
     for part in item["parts"]:
-        if "bind" in part and part["bind"]["kind"] == "slide":
-            assert part["bind"].get("amount") is None
+        if "bind" in part and part["bind"]["kind"] == "slide" and "to" not in part["bind"]:
+            assert part["bind"].get("amount") is None  # a drawer slides its default; a sliding door (`to`) its own way
     assert re.search(r"[a-z]", item["name"]["en"])
 
 
 @pytest.mark.parametrize("pack", sorted(WHERE))
 def test_the_packs_release_was_bumped_with_a_note(pack: str) -> None:
     meta = json.loads((BUNDLED / pack / "pack.json").read_text(encoding="utf-8"))
-    assert "(#468)" in meta["release_note"] and meta["release_note"].startswith(f"Release {meta['release']}:")
+    # the note names the cabinets ticket (#468) or a later run that made more items live (run 16: misc, ikea, last)
+    note = meta["release_note"]
+    tags = ("(#468)", "(run16 misc)", "(run16 ikea)", "(run16 last)")
+    assert any(tag in note for tag in tags) and note.startswith(f"Release {meta['release']}:")
+    assert len(note) < 200

@@ -2449,6 +2449,8 @@ export interface LiveModel {
   bind: PartBind;
   /** The item's depth (m): a drawer slides a share of it. */
   depth: number;
+  /** The item's width (m): a door that slides to a side moves a share of it. */
+  width: number;
   /** Status lights and glowing parts: drawn white for the viewer to tint; the colour they show with nothing linked. */
   lit: boolean;
   rest: number;
@@ -2484,7 +2486,8 @@ export function pushPackLive(buf: GeoBuffer, lines: LineBuffer, item: PackItem, 
   if (bind.kind === "open") {
     const hinge = bind.hinge ?? "left";
     const [cx, cy] = pivot;
-    pivot = hinge === "left" ? [x0, cy, z1] : hinge === "right" ? [x1, cy, z1] : hinge === "top" ? [cx, y1, z1] : [cx, y0, z1];
+    // a lid (hinge "back") turns about its back edge, at its underside
+    pivot = hinge === "left" ? [x0, cy, z1] : hinge === "right" ? [x1, cy, z1] : hinge === "top" ? [cx, y1, z1] : hinge === "back" ? [cx, y0, z0] : [cx, y0, z1];
   } else if (bind.kind === "level") pivot = [pivot[0], y0, pivot[2]];
   else if (bind.slot === "~fan") {
     // fan blades turn about the middle of the blades (their hub), at their height
@@ -2508,5 +2511,5 @@ export function pushPackLive(buf: GeoBuffer, lines: LineBuffer, item: PackItem, 
   }
   // its own colour: what a status light or a glowing part shows while no entity is linked
   const rest = withColours(new GeoBuffer(), f, () => packColor(parts[0].color, false) ?? 0xffffff, item);
-  return { pivot: [mx * px, py, pz], bind, depth: D, lit, rest, mirrored: mx < 0 };
+  return { pivot: [mx * px, py, pz], bind, depth: D, width: W, lit, rest, mirrored: mx < 0 };
 }

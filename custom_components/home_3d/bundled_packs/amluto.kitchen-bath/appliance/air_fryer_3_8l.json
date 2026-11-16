@@ -9,16 +9,22 @@
   "variant": {"en": "3.8 L"},
   "electric": true,
   "mount": "surface",
+  "slots": [{"id": "basket", "kind": "drawer", "name": {"en": "Basket"}}],
   "parts": [
     {"shape": "cyl", "x": -0.3846, "z": -0.4091, "w": 0.0962, "d": 0.0758, "y": 0, "h": 0.0357, "color": "#25272b", "fix": "wdh"},
     {"shape": "cyl", "x": -0.3846, "z": 0.4091, "w": 0.0962, "d": 0.0758, "y": 0, "h": 0.0357, "color": "#25272b", "fix": "wdh"},
     {"shape": "cyl", "x": 0.3846, "z": -0.4091, "w": 0.0962, "d": 0.0758, "y": 0, "h": 0.0357, "color": "#25272b", "fix": "wdh"},
     {"shape": "cyl", "x": 0.3846, "z": 0.4091, "w": 0.0962, "d": 0.0758, "y": 0, "h": 0.0357, "color": "#25272b", "fix": "wdh"},
     {"shape": "rbox", "x": 0.0, "z": -0.0606, "w": 1, "d": 0.8788, "y": 0.0357, "h": 0.9643, "color": "#25272b", "round": 0.12},
-    {"shape": "rbox", "x": 0.0, "z": 0.4697, "w": 0.8462, "d": 0.0909, "y": 0.1071, "h": 0.58, "color": "#3a3d42", "round": 0.15},
-    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.5, "d": 0.0758, "y": 0.4, "h": 0.1071, "color": "#c4c8cd", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": 0.4697, "w": 0.8462, "d": 0.0909, "y": 0.1071, "h": 0.58, "color": "#3a3d42", "round": 0.15, "bind": {"slot": "basket", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.5, "d": 0.0758, "y": 0.4, "h": 0.1071, "color": "#c4c8cd", "fix": "wdh", "bind": {"slot": "basket", "kind": "slide"}},
     {"shape": "box", "x": 0.0, "z": 0.3788, "w": 0.7308, "d": 0.0303, "y": 0.78, "h": 0.17, "color": "#2a2c30", "fix": "h"},
-    {"shape": "box", "x": 0.0, "z": 0.4091, "w": 0.4, "d": 0.0121, "y": 0.82, "h": 0.0429, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"}
+    {"shape": "box", "x": 0.0, "z": 0.4091, "w": 0.4, "d": 0.0121, "y": 0.82, "h": 0.0429, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4333, "w": 0.7539, "d": 0.0182, "y": 0.15, "h": 0.4943, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": 0.1627, "w": 0.5385, "d": 0.42, "y": 0.2142, "h": 0.0429, "color": "white", "edges": "faint", "bind": {"slot": "basket", "kind": "slide"}},
+    {"shape": "box", "x": -0.2462, "z": 0.1627, "w": 0.0462, "d": 0.42, "y": 0.2571, "h": 0.35, "color": "white", "edges": "faint", "bind": {"slot": "basket", "kind": "slide"}},
+    {"shape": "box", "x": 0.2462, "z": 0.1627, "w": 0.0462, "d": 0.42, "y": 0.2571, "h": 0.35, "color": "white", "edges": "faint", "bind": {"slot": "basket", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": -0.0291, "w": 0.4462, "d": 0.0364, "y": 0.2571, "h": 0.35, "color": "white", "edges": "faint", "bind": {"slot": "basket", "kind": "slide"}}
   ],
   "symbol": [
     {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1, "fill": true}

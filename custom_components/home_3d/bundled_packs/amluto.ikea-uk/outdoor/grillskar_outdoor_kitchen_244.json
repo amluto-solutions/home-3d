@@ -28,19 +28,42 @@
   },
   "ikea": "GRILLSKÄR",
   "surface": true,
+  "slots": [
+    {
+      "id": "left_doors",
+      "kind": "contact",
+      "name": {
+        "en": "Left cabinet doors"
+      }
+    },
+    {
+      "id": "barbecue_doors",
+      "kind": "contact",
+      "name": {
+        "en": "Barbecue doors"
+      }
+    },
+    {
+      "id": "right_doors",
+      "kind": "contact",
+      "name": {
+        "en": "Right cabinet doors"
+      }
+    }
+  ],
   "parts": [
     {"shape": "box", "x": -0.3238, "z": 0.0, "w": 0.3525, "d": 1, "y": 0.0328, "h": 0.7213, "color": "metal"},
     {"shape": "box", "x": -0.3238, "z": 0.0, "w": 0.3525, "d": 1, "y": 0.7377, "h": 0.0164, "color": "metal", "fix": "h"},
-    {"shape": "box", "x": -0.4119, "z": 0.4836, "w": 0.168, "d": 0.0197, "y": 0.0656, "h": 0.6557, "color": "dark", "fix": "d"},
-    {"shape": "box", "x": -0.2357, "z": 0.4836, "w": 0.168, "d": 0.0197, "y": 0.0656, "h": 0.6557, "color": "dark", "fix": "d"},
-    {"shape": "box", "x": -0.3402, "z": 0.5, "w": 0.0049, "d": 0.0361, "y": 0.5574, "h": 0.1639, "color": "metal", "fix": "wdh"},
-    {"shape": "box", "x": -0.3074, "z": 0.5, "w": 0.0049, "d": 0.0361, "y": 0.5574, "h": 0.1639, "color": "metal", "fix": "wdh"},
+    {"shape": "box", "x": -0.4119, "z": 0.4836, "w": 0.168, "d": 0.0197, "y": 0.0656, "h": 0.6557, "color": "dark", "fix": "d", "bind": {"slot": "left_doors", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": -0.2357, "z": 0.4836, "w": 0.168, "d": 0.0197, "y": 0.0656, "h": 0.6557, "color": "dark", "fix": "d", "bind": {"slot": "left_doors", "kind": "open", "hinge": "right"}},
+    {"shape": "box", "x": -0.3402, "z": 0.5, "w": 0.0049, "d": 0.0361, "y": 0.5574, "h": 0.1639, "color": "metal", "fix": "wdh", "bind": {"slot": "left_doors", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": -0.3074, "z": 0.5, "w": 0.0049, "d": 0.0361, "y": 0.5574, "h": 0.1639, "color": "metal", "fix": "wdh", "bind": {"slot": "left_doors", "kind": "open", "hinge": "right"}},
     {"shape": "box", "x": -0.3238, "z": 0.0492, "w": 0.1721, "d": 0.5902, "y": 0.7541, "h": 0.0025, "color": "#8b9198", "fix": "h"},
     {"shape": "cyl", "x": -0.3238, "z": -0.3852, "w": 0.0164, "d": 0.0656, "y": 0.7541, "h": 0.2459, "color": "metal", "fix": "wdh"},
     {"shape": "box", "x": -0.3238, "z": -0.2705, "w": 0.0102, "d": 0.2459, "y": 0.9754, "h": 0.0205, "color": "metal", "fix": "wdh"},
     {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.2951, "d": 1, "y": 0.0328, "h": 0.7213, "color": "metal"},
-    {"shape": "box", "x": -0.0738, "z": 0.4836, "w": 0.1393, "d": 0.0197, "y": 0.0656, "h": 0.4754, "color": "dark", "fix": "d"},
-    {"shape": "box", "x": 0.0738, "z": 0.4836, "w": 0.1393, "d": 0.0197, "y": 0.0656, "h": 0.4754, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": -0.0738, "z": 0.4836, "w": 0.1393, "d": 0.0197, "y": 0.0656, "h": 0.4754, "color": "dark", "fix": "d", "bind": {"slot": "barbecue_doors", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": 0.0738, "z": 0.4836, "w": 0.1393, "d": 0.0197, "y": 0.0656, "h": 0.4754, "color": "dark", "fix": "d", "bind": {"slot": "barbecue_doors", "kind": "open", "hinge": "right"}},
     {"shape": "box", "x": 0.0, "z": 0.4836, "w": 0.2787, "d": 0.0197, "y": 0.5902, "h": 0.0984, "color": "metal", "fix": "d"},
     {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.177, "d": 0.0361, "y": 0.5689, "h": 0.0098, "color": "metal", "fix": "wdh"},
     {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.2951, "d": 1, "y": 0.7541, "h": 0.0164, "color": "metal", "fix": "h"},
@@ -52,9 +75,9 @@
     {"shape": "cyl", "x": 0.0, "z": 0.3934, "w": 0.177, "d": 0.041, "y": 0.8197, "h": 0.0205, "color": "metal", "axis": "x"},
     {"shape": "box", "x": 0.3238, "z": 0.0, "w": 0.3525, "d": 1, "y": 0.0328, "h": 0.7213, "color": "metal"},
     {"shape": "box", "x": 0.3238, "z": 0.0, "w": 0.3525, "d": 1, "y": 0.7377, "h": 0.0164, "color": "metal", "fix": "h"},
-    {"shape": "box", "x": 0.2357, "z": 0.4836, "w": 0.168, "d": 0.0197, "y": 0.0656, "h": 0.6557, "color": "dark", "fix": "d"},
-    {"shape": "box", "x": 0.4119, "z": 0.4836, "w": 0.168, "d": 0.0197, "y": 0.0656, "h": 0.6557, "color": "dark", "fix": "d"},
-    {"shape": "box", "x": 0.3074, "z": 0.5, "w": 0.0049, "d": 0.0361, "y": 0.5574, "h": 0.1639, "color": "metal", "fix": "wdh"},
-    {"shape": "box", "x": 0.3402, "z": 0.5, "w": 0.0049, "d": 0.0361, "y": 0.5574, "h": 0.1639, "color": "metal", "fix": "wdh"}
+    {"shape": "box", "x": 0.2357, "z": 0.4836, "w": 0.168, "d": 0.0197, "y": 0.0656, "h": 0.6557, "color": "dark", "fix": "d", "bind": {"slot": "right_doors", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": 0.4119, "z": 0.4836, "w": 0.168, "d": 0.0197, "y": 0.0656, "h": 0.6557, "color": "dark", "fix": "d", "bind": {"slot": "right_doors", "kind": "open", "hinge": "right"}},
+    {"shape": "box", "x": 0.3074, "z": 0.5, "w": 0.0049, "d": 0.0361, "y": 0.5574, "h": 0.1639, "color": "metal", "fix": "wdh", "bind": {"slot": "right_doors", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": 0.3402, "z": 0.5, "w": 0.0049, "d": 0.0361, "y": 0.5574, "h": 0.1639, "color": "metal", "fix": "wdh", "bind": {"slot": "right_doors", "kind": "open", "hinge": "right"}}
   ]
 }

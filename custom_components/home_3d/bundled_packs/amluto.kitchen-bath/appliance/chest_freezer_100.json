@@ -8,14 +8,16 @@
   "family": "chest_freezer",
   "variant": {"en": "100 l"},
   "electric": true,
+  "slots": [{"id": "lid", "kind": "contact", "name": {"en": "Lid"}}],
   "parts": [
     {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.8929, "d": 0.8929, "y": 0.0, "h": 0.0235, "color": "dark", "fix": "h"},
     {"shape": "rbox", "x": 0.0, "z": -0.0134, "w": 1.0, "d": 0.9732, "y": 0.0235, "h": 0.8941, "color": "white", "round": 0.06},
-    {"shape": "rbox", "x": 0.0, "z": -0.008, "w": 1.0, "d": 0.9839, "y": 0.9176, "h": 0.0824, "color": "white", "round": 0.15, "fix": "h"},
-    {"shape": "box", "x": 0.0, "z": -0.0098, "w": 1.0, "d": 0.9804, "y": 0.9141, "h": 0.0047, "color": "dark", "fix": "h"},
-    {"shape": "box", "x": 0.0, "z": 0.492, "w": 0.3571, "d": 0.0161, "y": 0.9235, "h": 0.0353, "color": "metal", "fix": "wdh"},
+    {"shape": "rbox", "x": 0.0, "z": -0.008, "w": 1.0, "d": 0.9839, "y": 0.9176, "h": 0.0824, "color": "white", "round": 0.15, "fix": "h", "bind": {"slot": "lid", "kind": "open", "hinge": "back", "amount": 75}},
+    {"shape": "box", "x": 0.0, "z": -0.0098, "w": 1.0, "d": 0.9804, "y": 0.9141, "h": 0.0047, "color": "dark", "fix": "h", "bind": {"slot": "lid", "kind": "open", "hinge": "back", "amount": 75}},
+    {"shape": "box", "x": 0.0, "z": 0.492, "w": 0.3571, "d": 0.0161, "y": 0.9235, "h": 0.0353, "color": "metal", "fix": "wdh", "bind": {"slot": "lid", "kind": "open", "hinge": "back", "amount": 75}},
     {"shape": "box", "x": -0.3036, "z": 0.4723, "w": 0.1786, "d": 0.0018, "y": 0.7647, "h": 0.0353, "color": "#7fe3ff", "edges": "faint", "fix": "wdh"},
-    {"shape": "box", "x": 0.0, "z": 0.4732, "w": 0.8929, "d": 0.0036, "y": 0.0471, "h": 0.0824, "color": "dark"}
+    {"shape": "box", "x": 0.0, "z": 0.4732, "w": 0.8929, "d": 0.0036, "y": 0.0471, "h": 0.0824, "color": "dark"},
+    {"shape": "box", "x": 0.0, "z": -0.008, "w": 0.7857, "d": 0.7696, "y": 0.9188, "h": 0.0047, "color": "dark"}
   ],
   "symbol": [
     {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},

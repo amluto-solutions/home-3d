@@ -1,5 +1,6 @@
 // Our wardrobes, chests of drawers, bedside tables, sideboards, TV benches and hall and bathroom cabinets are live
-// (#468, tools/live_cabinets.py): doors and drawers are parts of their own. Closed, such an item must look as it did:
+// (#468, tools/live_cabinets.py; run 16 adds desks, drawer units, washing machines and more, tools/live_ikea_more.py):
+// doors and drawers are parts of their own. Closed, such an item must look as it did:
 // every triangle of the whole item (all parts drawn in one model) is in the viewer's drawing of it (the static part
 // plus the live parts at rest), at the same place and in the same colours. This is also what keeps the live parts'
 // shading honest (they are drawn about their pivot, #468 `lift`).
@@ -19,7 +20,7 @@ const BUNDLED = fileURLToPath(new URL("../../custom_components/home_3d/bundled_p
 // the groups of the bundled packs our live cabinets are in (the kitchen's are the kitchen ticket's)
 const WHERE: Record<string, string[] | null> = {
   "amluto.bedroom": ["bed", "storage"],
-  "amluto.ikea-uk": ["storage", "bed", "bath", "media", "kids"],
+  "amluto.ikea-uk": ["storage", "bed", "bath", "media", "kids", "office", "appliance"],
   "amluto.kitchen-bath": ["bath"],
 };
 

@@ -5,7 +5,7 @@
   "name": "IKEA UK range",
   "publisher": "Amluto Solutions",
   "licence": "MIT",
-  "release": 8,
+  "release": 10,
   "description": "IKEA UK bestsellers in their sizes, modelled for Home 3D from simple shapes. Search by the readable name or the IKEA name. Not made or endorsed by IKEA.",
-  "release_note": "Release 8: kitchen and cabinet doors, drawers and appliance doors move with Home Assistant (live parts, #467) (#468)."
+  "release_note": "Release 10: IKEA desks (MICKE too), drawer units, beds, washers, microwave, sliding wardrobe and TV bench doors move with Home Assistant (run16 last) (run16 misc)."
 }

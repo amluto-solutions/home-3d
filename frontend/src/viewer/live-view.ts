@@ -188,6 +188,7 @@ function pose(p: Pick<LivePart, "mesh" | "mat" | "model" | "value">, now: number
   if (Number.isNaN(p.value)) {
     if (b.kind !== "spin") m.rotation.set(0, 0, 0);
     m.position.z = 0;
+    m.position.x = 0;
     m.scale.y = 1;
     p.mat?.color.setHex(rest);
     return;
@@ -201,13 +202,17 @@ function pose(p: Pick<LivePart, "mesh" | "mat" | "model" | "value">, now: number
       const hinge = b.hinge ?? "left";
       if (hinge === "left") m.rotation.set(0, -a * side, 0);
       else if (hinge === "right") m.rotation.set(0, a * side, 0);
-      else if (hinge === "top") m.rotation.set(-a, 0, 0);
+      else if (hinge === "top" || hinge === "back") m.rotation.set(-a, 0, 0);
       else m.rotation.set(a, 0, 0);
       break;
     }
-    case "slide":
-      m.position.z = Math.max(0, Math.min(1, v)) * (b.amount ?? 0.45) * p.model.depth;
+    case "slide": {
+      const run = Math.max(0, Math.min(1, v)) * (b.amount ?? 0.45);
+      // out to the front, or sideways (a sliding door): left and right as the recipe says, turned round for a mirrored item
+      if (b.to) m.position.x = run * p.model.width * (b.to === "left" ? -1 : 1) * side;
+      else m.position.z = run * p.model.depth;
       break;
+    }
     case "level":
       m.scale.y = Math.max(0.02, Math.min(1, v));
       break;

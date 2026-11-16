@@ -96,7 +96,8 @@ MAX_PARTS = 60
 # live parts (#466, frontend/src/live-parts.ts reads the same lists, a test compares them): what a bound part does,
 # the edge a door turns about, what a slot is, and how many slots an item may have
 BIND_KINDS = ["open", "slide", "spin", "level", "blink", "glow"]
-BIND_HINGES = ["left", "right", "top", "bottom"]
+BIND_HINGES = ["left", "right", "top", "bottom", "back"]
+BIND_SIDES = ["left", "right"]
 SLOT_KINDS = ["contact", "drawer", "fan", "level", "progress", "status", "power", "glow"]
 MAX_SLOTS = 8
 # a slot id, as the plan stores it in furniture "binds" (schema.py)
@@ -229,15 +230,18 @@ _PART_FIELDS = vol.Schema(
         # fan blades (#1084): turn while the item's fan runs, about the upright ("y") or the front axis ("z")
         vol.Optional("spin"): vol.In(["y", "z"]),
         # a live part (#466): moves or lights with the entity linked to one of the item's slots - a door opens
-        # ("open", about `hinge` by `amount` degrees), a drawer slides out ("slide", `amount` of the depth), a drum
-        # turns ("spin", about `axis`, `amount` turns a minute), a tank fills ("level"), a status light shows ok, off
-        # or a fault ("blink"), a part glows while on ("glow")
+        # ("open", about `hinge` by `amount` degrees; a lid hinges at the "back"), a drawer slides out ("slide",
+        # `amount` of the depth; `to` a side: a sliding door, `amount` of the width), a drum turns ("spin", about
+        # `axis`, `amount` turns a minute), a tank fills ("level"), a status light shows ok, off or a fault
+        # ("blink"), a part glows while on ("glow")
         vol.Optional("bind"): vol.Schema(
             {
                 vol.Required("slot"): vol.All(str, vol.Match(SLOT_ID)),
                 vol.Required("kind"): vol.In(BIND_KINDS),
                 vol.Optional("hinge"): vol.In(BIND_HINGES),
                 vol.Optional("axis"): vol.In(["x", "y", "z"]),
+                # a part that slides sideways (a sliding door): the way it goes, seen from the front
+                vol.Optional("to"): vol.In(BIND_SIDES),
                 vol.Optional("amount"): vol.All(vol.Coerce(float), vol.Range(min=0, max=180)),
             }
         ),
@@ -257,8 +261,13 @@ def _bind_fields(part: dict[str, Any]) -> dict[str, Any]:
         raise vol.Invalid('only a part that opens ("open") has a hinge', path=["bind", "hinge"])
     if "axis" in bind and bind["kind"] != "spin":
         raise vol.Invalid('only a part that turns ("spin") has an axis', path=["bind", "axis"])
+    if "to" in bind and bind["kind"] != "slide":
+        raise vol.Invalid('only a part that slides ("slide") goes to a side', path=["bind", "to"])
     if bind["kind"] == "slide" and bind.get("amount", 0) > 1:
-        raise vol.Invalid("a drawer slides out at most the item's depth (amount up to 1)", path=["bind", "amount"])
+        raise vol.Invalid(
+            "a drawer slides out at most the item's depth, a sliding door at most its width (amount up to 1)",
+            path=["bind", "amount"],
+        )
     return part
 
 

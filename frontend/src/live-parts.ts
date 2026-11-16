@@ -34,11 +34,13 @@ export const SLOT_DOMAINS: Record<SlotKind, readonly string[]> = {
 export interface PartBind {
   slot: string;
   kind: BindKind;
-  /** "open": the edge it turns about (default left, seen from the front). */
-  hinge?: "left" | "right" | "top" | "bottom";
+  /** "open": the edge it turns about (default left, seen from the front); "back": a lid hinged along its back edge. */
+  hinge?: "left" | "right" | "top" | "bottom" | "back";
+  /** "slide": the way it slides, "left" or "right" seen from the front (a sliding door); without it, out to the front. */
+  to?: "left" | "right";
   /** "spin": the axis it turns about (default upright, y). */
   axis?: "x" | "y" | "z";
-  /** "open": degrees (default 95); "slide": a share of the item's depth (default 0.45); "spin": turns a minute at full (default 60). */
+  /** "open": degrees (default 95); "slide": a share of the item's depth, or of its width when it slides `to` a side (default 0.45); "spin": turns a minute at full (default 60). */
   amount?: number;
 }
 
@@ -82,7 +84,7 @@ export function liveGroups<P extends { bind?: PartBind; spin?: "y" | "z" }>(part
 }
 
 export function liveKey(b: PartBind): string {
-  return `${b.slot}|${b.kind}|${b.hinge ?? ""}|${b.axis ?? ""}|${b.amount ?? ""}`;
+  return `${b.slot}|${b.kind}|${b.hinge ?? ""}|${b.axis ?? ""}|${b.amount ?? ""}|${b.to ?? ""}`;
 }
 
 /** An item with parts that move or light with Home Assistant (bound parts or fan blades). */

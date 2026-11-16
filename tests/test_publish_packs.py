@@ -198,15 +198,17 @@ def test_the_real_bundled_packs_publish(tmp_path: Path) -> None:
     publish_packs.publish(tmp_path, BUNDLED)
 
     published = {p.name for p in tmp_path.iterdir() if (p / "pack.json").exists()}
-    assert {"amluto.makers", "amluto.decor", "amluto.household"} <= published
+    assert {"amluto.decor", "amluto.household"} <= published
     assert "amluto.core" not in published
     # the packs whose items name their parts (`role_names`, #411) are held back until older versions read it (#424)
     assert not {"amluto.living", "amluto.office", "amluto.devices"} & published
     # so are the packs with live parts (slots, bind, #466): the cabinets of Bedroom & kids, the IKEA UK range and
-    # Kitchen & bath have doors and drawers that open (#468); they go out once older versions read the fields
-    assert not {"amluto.bedroom", "amluto.ikea-uk", "amluto.kitchen-bath"} & published
+    # Kitchen & bath have doors and drawers that open (#468), and so do the desk drawer units of Office and the
+    # printer cabinet of Makers (run 16); they go out once older versions read the fields
+    assert not {"amluto.bedroom", "amluto.ikea-uk", "amluto.kitchen-bath", "amluto.office", "amluto.makers"} & published
     readme = (tmp_path / "README.md").read_text(encoding="utf-8")
-    assert "tree/main/amluto.makers" in readme
+    assert "tree/main/amluto.decor" in readme
+    assert "tree/main/amluto.makers" not in readme
     assert "tree/main/amluto.living" not in readme
     assert "tree/main/amluto.bedroom" not in readme
     assert "tree/main/amluto.ikea-uk" not in readme

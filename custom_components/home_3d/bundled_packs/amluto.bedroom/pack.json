@@ -5,7 +5,7 @@
   "name": "Bedroom & kids",
   "publisher": "Amluto Solutions",
   "licence": "MIT",
-  "release": 4,
+  "release": 5,
   "description": "Beds, kids' furniture and storage for bedrooms and nurseries, modelled for Home 3D from simple shapes. Ships with the app and works offline.",
-  "release_note": "Release 4: the doors and drawers of our wardrobes, chests of drawers, bedside tables, sideboards, TV benches and hall and bathroom cabinets open and slide with their contacts (#468)."
+  "release_note": "Release 5: tool chest drawers and lids move with Home Assistant (run16 misc)."
 }

@@ -2,6 +2,14 @@
 
 All notable changes to Home 3D.
 
+## Home 3D 1.6.2 (16 November 2026)
+
+More of our own furniture moves with Home Assistant: 53 more items are live (doors, drawers, lids, baskets, drums). Sizes, tags and the closed look are unchanged. The packs are still held back from the packs repository until older versions read live parts (`tools/publish_packs.py`).
+
+- Packs: more of our own items are live (run 16). Microwaves, the mini oven and the air fryer oven open their doors, the air fryers slide out their baskets, chest freezers lift their lids, washing machines and tumble dryers open their doors and turn their drums while they run, the two sliding doors of a wardrobe and a TV bench slide past each other, and the doors of the outdoor kitchen units and the printer cabinet swing. The tool chests slide their drawers and lift their lids, and the desk drawer units slide out. New in the pack format: `"hinge": "back"` for a lid and `"to": "left"|"right"` for a door that slides to a side (docs/packs.md, "Live parts"). Closed, every item looks as before. Office and Makers now hold live parts, so, like the other live packs, they stay out of the public packs repository until older versions read them.
+- Packs: more IKEA UK items move with Home Assistant (live parts, `tools/live_ikea_more.py`): the drawers of desks with a drawer, drawer units (36x70, 9 drawers, on castors), the monitor stand, desks with two drawer units, loft beds, day-beds and a bookcase slide out; the washing machines and the integrated washer-dryer open their door and turn a drum while they run; the microwave's door opens. The closed look is unchanged. IKEA UK range release 9.
+- Packs: the two MICKE desks (105x50 and 142x50) are live too (run16 last, `tools/live_ikea_more.py`): the drawer unit's drawer slides out of a box, its door opens, and the 142 cm desk's second drawer slides out. The SMASTAD loft beds with storage and with 2 shelves have open shelf boards and no drawer or door, and the open BESTA and LACK TV benches have no door or drawer either, so they stay as they are. The closed look is unchanged. IKEA UK range release 10.
+
 ## Home 3D 1.6.1 (16 November 2026)
 
 - Packs: the release notes of Kitchen & bath and IKEA UK range name both live-parts tickets (#467, #468). 1.6.0 shipped a note one test did not accept, so the public repository's CI failed on that release. No other change.

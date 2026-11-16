@@ -25,10 +25,29 @@
   ],
   "ikea": "TVÄTTAD",
   "electric": true,
+  "slots": [
+    {
+      "id": "door",
+      "kind": "contact"
+    },
+    {
+      "id": "running",
+      "kind": "power"
+    }
+  ],
   "parts": [
     {"shape": "box", "x": 0.0, "z": -0.0172, "w": 0.9933, "d": 0.8276, "y": 0, "h": 0.0909, "color": "dark", "fix": "h"},
     {"shape": "box", "x": 0.0, "z": -0.0172, "w": 0.9833, "d": 0.9655, "y": 0.0909, "h": 0.9091, "color": "metal"},
-    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9933, "d": 0.031, "y": 0.0909, "h": 0.9045, "color": "body", "fix": "d"},
-    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.5333, "d": 0.0379, "y": 0.9023, "h": 0.0136, "color": "metal", "fix": "wdh"}
+    {"shape": "box", "x": 0.0, "z": 0.4845, "w": 0.9933, "d": 0.031, "y": 0.0909, "h": 0.9045, "color": "body", "fix": "d", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.5333, "d": 0.0379, "y": 0.9023, "h": 0.0136, "color": "metal", "fix": "wdh", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "cyl", "x": 0.0, "z": 0.4707, "w": 0.6667, "d": 0.0103, "y": 0.2727, "h": 0.4545, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.4789, "w": 0.6, "d": 0.006, "y": 0.4858, "h": 0.0284, "color": "metal", "fix": "wdh", "bind": {"slot": "running", "kind": "spin", "axis": "z", "amount": 45}},
+    {"shape": "box", "x": 0.0, "z": 0.4789, "w": 0.0417, "d": 0.006, "y": 0.2955, "h": 0.4091, "color": "metal", "fix": "wdh", "bind": {"slot": "running", "kind": "spin", "axis": "z", "amount": 45}}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": -0.0172, "w": 0.9933, "d": 0.8276},
+    {"shape": "rect", "x": 0.0, "z": -0.0172, "w": 0.9833, "d": 0.9655},
+    {"shape": "rect", "x": 0.0, "z": 0.4845, "w": 0.9933, "d": 0.031},
+    {"shape": "rect", "x": 0.0, "z": 0.5, "w": 0.5333, "d": 0.0379}
   ]
 }

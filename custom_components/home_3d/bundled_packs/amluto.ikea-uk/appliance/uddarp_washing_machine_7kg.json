@@ -29,18 +29,44 @@
   },
   "ikea": "UDDARP",
   "electric": true,
+  "slots": [
+    {
+      "id": "door",
+      "kind": "contact"
+    },
+    {
+      "id": "running",
+      "kind": "power"
+    }
+  ],
   "parts": [
     {"shape": "rbox", "x": 0.0, "z": 0.0, "w": 1, "d": 1, "y": 0.0175, "h": 0.9825, "color": "white", "round": 0.05},
     {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.9664, "d": 0.0105, "y": 0.8596, "h": 0.117, "color": "white", "fix": "dh"},
     {"shape": "box", "x": -0.3193, "z": 0.5, "w": 0.2857, "d": 0.0105, "y": 0.8772, "h": 0.0819, "color": "#dfe3e6", "fix": "wdh"},
     {"shape": "box", "x": 0.2017, "z": 0.5, "w": 0.2353, "d": 0.007, "y": 0.8947, "h": 0.0468, "color": "dark", "fix": "wdh"},
     {"shape": "cyl", "x": 0.4034, "z": 0.5, "w": 0.1008, "d": 0.035, "y": 0.883, "h": 0.0702, "color": "#c9ced4", "axis": "z", "fix": "wdh"},
-    {"shape": "cyl", "x": 0.0, "z": 0.5, "w": 0.7731, "d": 0.0699, "y": 0.2573, "h": 0.538, "color": "#c9ced4", "axis": "z", "fix": "wdh"},
-    {"shape": "cyl", "x": 0.0, "z": 0.5, "w": 0.6387, "d": 0.0524, "y": 0.3041, "h": 0.4444, "color": "glass", "axis": "z", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.5, "w": 0.7731, "d": 0.0699, "y": 0.2573, "h": 0.538, "color": "#c9ced4", "axis": "z", "fix": "wdh", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "cyl", "x": 0.0, "z": 0.5, "w": 0.6387, "d": 0.0524, "y": 0.3041, "h": 0.4444, "color": "glass", "axis": "z", "fix": "wdh", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
     {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.9328, "d": 0.007, "y": 0.0175, "h": 0.0936, "color": "#eceff1", "fix": "dh"},
     {"shape": "cyl", "x": -0.416, "z": -0.4126, "w": 0.0588, "d": 0.0612, "y": 0, "h": 0.0175, "color": "dark", "fix": "wdh"},
     {"shape": "cyl", "x": -0.416, "z": 0.4126, "w": 0.0588, "d": 0.0612, "y": 0, "h": 0.0175, "color": "dark", "fix": "wdh"},
     {"shape": "cyl", "x": 0.416, "z": -0.4126, "w": 0.0588, "d": 0.0612, "y": 0, "h": 0.0175, "color": "dark", "fix": "wdh"},
-    {"shape": "cyl", "x": 0.416, "z": 0.4126, "w": 0.0588, "d": 0.0612, "y": 0, "h": 0.0175, "color": "dark", "fix": "wdh"}
+    {"shape": "cyl", "x": 0.416, "z": 0.4126, "w": 0.0588, "d": 0.0612, "y": 0, "h": 0.0175, "color": "dark", "fix": "wdh"},
+    {"shape": "cyl", "x": 0.0, "z": 0.5, "w": 0.6387, "d": 0.014, "y": 0.3041, "h": 0.4444, "color": "dark", "axis": "z", "fix": "wdh"},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.5748, "d": 0.0245, "y": 0.5117, "h": 0.0292, "color": "metal", "fix": "wdh", "bind": {"slot": "running", "kind": "spin", "axis": "z", "amount": 45}},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.042, "d": 0.0245, "y": 0.3263, "h": 0.4, "color": "metal", "fix": "wdh", "bind": {"slot": "running", "kind": "spin", "axis": "z", "amount": 45}}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.5, "w": 0.9664, "d": 0.0105},
+    {"shape": "rect", "x": -0.3193, "z": 0.5, "w": 0.2857, "d": 0.0105},
+    {"shape": "rect", "x": 0.2017, "z": 0.5, "w": 0.2353, "d": 0.007},
+    {"shape": "rect", "x": 0.4034, "z": 0.5, "w": 0.1008, "d": 0.035},
+    {"shape": "rect", "x": 0.0, "z": 0.5, "w": 0.7731, "d": 0.0699},
+    {"shape": "rect", "x": 0.0, "z": 0.5, "w": 0.6387, "d": 0.0524},
+    {"shape": "rect", "x": 0.0, "z": 0.5, "w": 0.9328, "d": 0.007},
+    {"shape": "circle", "x": -0.416, "z": -0.4126, "r": 0.0306},
+    {"shape": "circle", "x": -0.416, "z": 0.4126, "r": 0.0306},
+    {"shape": "circle", "x": 0.416, "z": -0.4126, "r": 0.0306},
+    {"shape": "circle", "x": 0.416, "z": 0.4126, "r": 0.0306}
   ]
 }

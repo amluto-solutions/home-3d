@@ -1,0 +1,521 @@
+{
+ "amluto.bedroom/storage/tool_chest": {
+  "fields": "820a547820090be8",
+  "look": "76830d444e04019b",
+  "parts": 36,
+  "symbol": [
+   {
+    "d": 1,
+    "shape": "rect",
+    "w": 1,
+    "x": 0,
+    "z": 0
+   },
+   {
+    "shape": "line",
+    "x1": -0.5,
+    "x2": 0.5,
+    "z1": 0.45,
+    "z2": 0.45
+   }
+  ]
+ },
+ "amluto.bedroom/storage/tool_chest_roller_cabinet": {
+  "fields": "d9f74f5fc8135fdb",
+  "look": "ed38d03f3956f7b7",
+  "parts": 25,
+  "symbol": [
+   {
+    "d": 1,
+    "shape": "rect",
+    "w": 1,
+    "x": 0,
+    "z": 0
+   },
+   {
+    "shape": "line",
+    "x1": -0.5,
+    "x2": 0.5,
+    "z1": 0.45,
+    "z2": 0.45
+   }
+  ]
+ },
+ "amluto.bedroom/storage/tool_chest_top_box": {
+  "fields": "d39a9975bf17b699",
+  "look": "b097f643a6911159",
+  "parts": 11,
+  "symbol": [
+   {
+    "d": 1,
+    "shape": "rect",
+    "w": 1,
+    "x": 0,
+    "z": 0
+   },
+   {
+    "shape": "line",
+    "x1": -0.5,
+    "x2": 0.5,
+    "z1": 0.45,
+    "z2": 0.45
+   }
+  ]
+ },
+ "amluto.ikea-uk/media/stockholm_tv_bench": {
+  "fields": "79afa6d440b8de94",
+  "look": "eeeda2f2ac616b4d",
+  "parts": 13,
+  "symbol": null
+ },
+ "amluto.ikea-uk/outdoor/grillskar_outdoor_kitchen_244": {
+  "fields": "04ce9990956d262f",
+  "look": "25369285b40209fd",
+  "parts": 27,
+  "symbol": null
+ },
+ "amluto.ikea-uk/outdoor/grillskar_sink_unit_cabinet_172": {
+  "fields": "8708e8a739bee983",
+  "look": "4816a3682b277c59",
+  "parts": 15,
+  "symbol": null
+ },
+ "amluto.ikea-uk/storage/kleppstad_wardrobe_sliding": {
+  "fields": "eaba44017f8528f1",
+  "look": "3370e5b07f7cac84",
+  "parts": 10,
+  "symbol": null
+ },
+ "amluto.kitchen-bath/appliance/air_fryer": {
+  "fields": "0d38438384ce55c3",
+  "look": "8f99e78cb6fb0c95",
+  "parts": 10,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/air_fryer_3_8l": {
+  "fields": "92ad2691508b5bb2",
+  "look": "be5bd75cb183da25",
+  "parts": 9,
+  "symbol": [
+   {
+    "d": 1,
+    "fill": true,
+    "shape": "rect",
+    "w": 1,
+    "x": 0,
+    "z": 0
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/air_fryer_double_stack": {
+  "fields": "dfda7834760d2b26",
+  "look": "b309a176c9fdc22f",
+  "parts": 11,
+  "symbol": [
+   {
+    "d": 1,
+    "fill": true,
+    "shape": "rect",
+    "w": 1,
+    "x": 0,
+    "z": 0
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/air_fryer_dual": {
+  "fields": "2f5180715174f954",
+  "look": "fecad8c8e4dea11f",
+  "parts": 13,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/air_fryer_dual_xl": {
+  "fields": "00238fa0cacfdf22",
+  "look": "b0275bddcaaae87c",
+  "parts": 11,
+  "symbol": [
+   {
+    "d": 1,
+    "fill": true,
+    "shape": "rect",
+    "w": 1,
+    "x": 0,
+    "z": 0
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/air_fryer_oven": {
+  "fields": "f76151c138130bc9",
+  "look": "72a835ac7440aa30",
+  "parts": 10,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/built_in_microwave": {
+  "fields": "03168a50838fd9e5",
+  "look": "105f60f1f38163cc",
+  "parts": 6,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   },
+   {
+    "shape": "line",
+    "x1": 0.2647,
+    "x2": 0.2647,
+    "z1": -0.45,
+    "z2": 0.5
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/chest_freezer_100": {
+  "fields": "3b22594d49681502",
+  "look": "c86406e2a7f8909d",
+  "parts": 7,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   },
+   {
+    "shape": "line",
+    "x1": -0.5,
+    "x2": 0.5,
+    "z1": -0.5,
+    "z2": 0.5
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/chest_freezer_200": {
+  "fields": "afac4363391cafff",
+  "look": "42ac20baffda954a",
+  "parts": 7,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   },
+   {
+    "shape": "line",
+    "x1": -0.5,
+    "x2": 0.5,
+    "z1": -0.5,
+    "z2": 0.5
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/chest_freezer_300": {
+  "fields": "544e34aa83a74cd9",
+  "look": "0a1e6bbe5ac04926",
+  "parts": 7,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   },
+   {
+    "shape": "line",
+    "x1": -0.5,
+    "x2": 0.5,
+    "z1": -0.5,
+    "z2": 0.5
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/microwave_20l": {
+  "fields": "213fe16c37b21aeb",
+  "look": "75abaf9be2b0820f",
+  "parts": 10,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   },
+   {
+    "shape": "line",
+    "x1": 0.2333,
+    "x2": 0.2333,
+    "z1": -0.4429,
+    "z2": 0.5
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/microwave_25l": {
+  "fields": "a1a07d8b2b69b799",
+  "look": "34119c82c9e05086",
+  "parts": 10,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   },
+   {
+    "shape": "line",
+    "x1": 0.2647,
+    "x2": 0.2647,
+    "z1": -0.4524,
+    "z2": 0.5
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/microwave_25l_black": {
+  "fields": "e72f5c7e7aa73dc8",
+  "look": "380d5c95d788bf3e",
+  "parts": 10,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   },
+   {
+    "shape": "line",
+    "x1": 0.25,
+    "x2": 0.25,
+    "z1": -0.4474,
+    "z2": 0.5
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/mini_oven_20l": {
+  "fields": "1723e6856a03536c",
+  "look": "4b37dee3a978de0b",
+  "parts": 10,
+  "symbol": [
+   {
+    "d": 1,
+    "fill": true,
+    "shape": "rect",
+    "w": 1,
+    "x": 0,
+    "z": 0
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/tumble_dryer": {
+  "fields": "f69d0dec622a2ebd",
+  "look": "abc3f53525bfb54a",
+  "parts": 13,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   },
+   {
+    "r": 0.3,
+    "shape": "circle",
+    "x": 0.0,
+    "z": 0.1667
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/tumble_dryer_graphite": {
+  "fields": "3a5c650854dfaa63",
+  "look": "f70dfb95056d3cab",
+  "parts": 13,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   },
+   {
+    "r": 0.3,
+    "shape": "circle",
+    "x": 0.0,
+    "z": 0.1667
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/tumble_dryer_stacked": {
+  "fields": "a230b8c94d172d92",
+  "look": "3442465bc1111dca",
+  "parts": 9,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   },
+   {
+    "r": 0.3,
+    "shape": "circle",
+    "x": 0.0,
+    "z": 0.1667
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/washing_machine": {
+  "fields": "1cf1e105802a94f4",
+  "look": "ad87d31a98a121ee",
+  "parts": 13,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   },
+   {
+    "r": 0.2667,
+    "shape": "circle",
+    "x": 0.0,
+    "z": 0.1667
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/washing_machine_graphite": {
+  "fields": "12e16c11d149ae52",
+  "look": "d6da6a644796d5b4",
+  "parts": 13,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   },
+   {
+    "r": 0.2667,
+    "shape": "circle",
+    "x": 0.0,
+    "z": 0.1667
+   }
+  ]
+ },
+ "amluto.kitchen-bath/appliance/washing_machine_integrated": {
+  "fields": "60c1ce473045d0a3",
+  "look": "a181a533e4be7faa",
+  "parts": 8,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   },
+   {
+    "r": 0.3571,
+    "shape": "circle",
+    "x": 0.0,
+    "z": 0.0
+   }
+  ]
+ },
+ "amluto.makers/tech/printer_cabinet": {
+  "fields": "35323cac040e4553",
+  "look": "f05574bdb515ec0d",
+  "parts": 6,
+  "symbol": [
+   {
+    "d": 1,
+    "shape": "rect",
+    "w": 1,
+    "x": 0,
+    "z": 0
+   },
+   {
+    "d": 0.8,
+    "shape": "rect",
+    "w": 0.8,
+    "x": 0,
+    "z": 0
+   }
+  ]
+ },
+ "amluto.office/office/desk_drawers_2": {
+  "fields": "c758d646ea08d3e0",
+  "look": "bddf8322dfd4b17e",
+  "parts": 14,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   }
+  ]
+ },
+ "amluto.office/office/desk_drawers_3": {
+  "fields": "5b344fddd8e622bd",
+  "look": "db0b58eb63c72ef5",
+  "parts": 16,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   }
+  ]
+ },
+ "amluto.office/office/desk_drawers_desk_high": {
+  "fields": "9ea0bb9861aa6907",
+  "look": "3245bfe04afc0606",
+  "parts": 11,
+  "symbol": [
+   {
+    "d": 1.0,
+    "shape": "rect",
+    "w": 1.0,
+    "x": 0.0,
+    "z": 0.0
+   }
+  ]
+ }
+}

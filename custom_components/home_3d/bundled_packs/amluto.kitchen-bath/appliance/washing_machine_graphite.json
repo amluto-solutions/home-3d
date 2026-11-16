@@ -8,6 +8,7 @@
   "family": "washing_machine",
   "variant": {"en": "Graphite"},
   "electric": true,
+  "slots": [{"id": "door", "kind": "contact", "name": {"en": "Door"}}, {"id": "running", "kind": "power", "name": {"en": "Running (power or switch)"}}],
   "parts": [
     {"shape": "cyl", "x": -0.4167, "z": -0.4167, "w": 0.0583, "d": 0.0583, "y": 0.0, "h": 0.0176, "color": "dark", "fix": "wdh"},
     {"shape": "cyl", "x": -0.4167, "z": 0.3833, "w": 0.0583, "d": 0.0583, "y": 0.0, "h": 0.0176, "color": "dark", "fix": "wdh"},
@@ -18,10 +19,14 @@
     {"shape": "cyl", "x": 0.3, "z": 0.4833, "w": 0.1, "d": 0.02, "y": 0.8824, "h": 0.0706, "color": "metal", "axis": "z"},
     {"shape": "box", "x": 0.0167, "z": 0.4833, "w": 0.2333, "d": 0.0017, "y": 0.9, "h": 0.0471, "color": "#7fe3ff", "edges": "faint"},
     {"shape": "box", "x": -0.3083, "z": 0.485, "w": 0.2833, "d": 0.01, "y": 0.8824, "h": 0.0824, "color": "white"},
-    {"shape": "cyl", "x": 0.0, "z": 0.465, "w": 0.6333, "d": 0.03, "y": 0.2558, "h": 0.4471, "color": "#3a3d42", "axis": "z"},
-    {"shape": "cyl", "x": 0.0, "z": 0.4742, "w": 0.5333, "d": 0.0317, "y": 0.2911, "h": 0.3765, "color": "dark", "axis": "z"},
-    {"shape": "cyl", "x": 0.0, "z": 0.4833, "w": 0.4267, "d": 0.0333, "y": 0.3288, "h": 0.3012, "color": "glass", "axis": "z"},
-    {"shape": "box", "x": -0.35, "z": 0.4667, "w": 0.1667, "d": 0.0033, "y": 0.0529, "h": 0.0824, "color": "#2a2c30"}
+    {"shape": "cyl", "x": 0.0, "z": 0.465, "w": 0.6333, "d": 0.03, "y": 0.2558, "h": 0.4471, "color": "#3a3d42", "axis": "z", "bind": {"slot": "door", "kind": "open", "hinge": "left"}},
+    {"shape": "cyl", "x": 0.0, "z": 0.4742, "w": 0.5333, "d": 0.0317, "y": 0.2911, "h": 0.3765, "color": "dark", "axis": "z", "bind": {"slot": "door", "kind": "open", "hinge": "left"}},
+    {"shape": "cyl", "x": 0.0, "z": 0.4833, "w": 0.4267, "d": 0.0333, "y": 0.3288, "h": 0.3012, "color": "glass", "axis": "z", "bind": {"slot": "door", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": -0.35, "z": 0.4667, "w": 0.1667, "d": 0.0033, "y": 0.0529, "h": 0.0824, "color": "#2a2c30"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4679, "w": 0.5953, "d": 0.0025, "y": 0.2692, "h": 0.4202, "color": "metal", "axis": "z", "edges": "faint"},
+    {"shape": "cyl", "x": 0.0, "z": 0.4704, "w": 0.532, "d": 0.0025, "y": 0.2916, "h": 0.3755, "color": "dark", "axis": "z", "edges": "faint", "bind": {"slot": "running", "kind": "spin", "axis": "z", "amount": 45}},
+    {"shape": "box", "x": 0.0, "z": 0.4729, "w": 0.4788, "d": 0.0025, "y": 0.4652, "h": 0.0282, "color": "metal", "edges": "faint", "bind": {"slot": "running", "kind": "spin", "axis": "z", "amount": 45}},
+    {"shape": "box", "x": 0.0, "z": 0.4729, "w": 0.04, "d": 0.0025, "y": 0.4794, "h": 0.1502, "color": "metal", "edges": "faint", "bind": {"slot": "running", "kind": "spin", "axis": "z", "amount": 45}}
   ],
   "symbol": [
     {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},

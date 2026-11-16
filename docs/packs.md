@@ -567,8 +567,8 @@ drawer slides out by 45 % of the unit's depth and the light turns red while the 
 
 | `kind` | The part … | `amount` (optional) | Other fields |
 | --- | --- | --- | --- |
-| `open` | turns about an edge of the parts it moves with, at their front | degrees, 0 to 180 (default 95) | `hinge`: `left` (default), `right`, `top` or `bottom` |
-| `slide` | slides out to the front | a share of the item's depth, 0 to 1 (default 0.45) | |
+| `open` | turns about an edge of the parts it moves with, at their front | degrees, 0 to 180 (default 95) | `hinge`: `left` (default), `right`, `top`, `bottom` or `back` (a lid that lifts at the front) |
+| `slide` | slides out to the front, or sideways | a share of the item's depth (of its width with `to`), 0 to 1 (default 0.45) | `to`: `left` or `right` (a sliding door) |
 | `spin` | turns about the middle of its parts while its entity is on or running | turns a minute at full speed, 0 to 180 (default 60) | `axis`: `y` (default, upright), `x` or `z` |
 | `level` | fills from its bottom up to the entity's share (a percent, or 0 to 1) | | |
 | `blink` | is a status light: green while on or fine, grey while off, red and pulsing for a fault, a problem or unavailable | | |
@@ -581,6 +581,10 @@ everywhere in a recipe; a mirrored item hinges on the other side by itself. Typi
 - An oven, a dishwasher or a drop-down flap folds down: `"hinge": "bottom"`, `"amount": 90`. A wall cabinet's lift-up
   door: `"hinge": "top"`.
 - A drawer: `{ "slot": "drawer", "kind": "slide" }`; a deep pan drawer `"amount": 0.6`.
+- A lid hinged along its back edge (a chest freezer): `{ "slot": "lid", "kind": "open", "hinge": "back", "amount": 70 }`.
+- A sliding door: `{ "slot": "door", "kind": "slide", "to": "right", "amount": 0.4 }` slides 40 % of the item's width to the
+  right (seen from the front). Give each door its own `to` (or `amount`), so each moves as a model of its own; a door in
+  front of another one slides past it.
 - Two doors that open together: the same `bind` on both would turn them about one edge, so give each door its own
   `bind` with its own hinge on the same slot (`{ "slot": "doors", "kind": "open", "hinge": "left" }` and
   `"hinge": "right"`). To open them apart, give each its own slot (`door_left`, `door_right`).
@@ -639,6 +643,13 @@ binds each door and drawer front, with its handles, to a slot and adds what an o
   recess and not a flat face. A cabinet without side panels gets no drawer boxes (they would show from the side).
 - The closed item is unchanged: parts added inside stay hidden behind the fronts, and an item without a `symbol` gets one
   drawn from its old parts (the top view shows the parts seen from above, and the new ones are inside).
+
+`tools/live_ikea_more.py` does the same for the IKEA UK items that `live_cabinets.py` does not read: desks and drawer
+units (a drawer unit with more than 8 drawers lets its lowest drawers share a slot, as a slot is one drawer contact),
+day-beds, loft beds (their drawers have no side panels, so the fronts slide alone and shorter), the washing machines and
+washer-dryer (`door` and `running` slots; paddles in a dark drum opening turn while the machine runs) and the microwave
+oven. The MICKE desks get a drawer unit with a drawer in a box and a door, and a second drawer under the top on the wide desk.
+It reads each item from a list, not by guessing, and a second run changes nothing.
 
 #### Older Home 3D versions
 
