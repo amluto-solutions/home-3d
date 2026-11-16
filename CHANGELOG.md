@@ -2,6 +2,10 @@
 
 All notable changes to Home 3D.
 
+## Home 3D 1.6.1 (16 November 2026)
+
+- Packs: the release notes of Kitchen & bath and IKEA UK range name both live-parts tickets (#467, #468). 1.6.0 shipped a note one test did not accept, so the public repository's CI failed on that release. No other change.
+
 ## Home 3D 1.6.0 (16 November 2026)
 
 Furniture that moves with Home Assistant, your house in its neighbourhood from OpenStreetMap, a zoom style, and a round of NeonPlan 3D 3.2.0 - 3.4.1 ports (MIT, Mastershort) with their fixes. Plan format 5: version 1.5 and older open a plan saved by 1.6 read-only.

@@ -7,5 +7,5 @@
   "licence": "MIT",
   "release": 8,
   "description": "IKEA UK bestsellers in their sizes, modelled for Home 3D from simple shapes. Search by the readable name or the IKEA name. Not made or endorsed by IKEA.",
-  "release_note": "Release 8: kitchen and cabinet doors, drawers and appliance doors move with Home Assistant (live parts, #467, #468)."
+  "release_note": "Release 8: kitchen and cabinet doors, drawers and appliance doors move with Home Assistant (live parts, #467) (#468)."
 }

@@ -7,5 +7,5 @@
   "licence": "MIT",
   "release": 6,
   "description": "Kitchen units, appliances and bathroom fittings, modelled for Home 3D from simple shapes. Appliances can be linked to a switch and a power sensor. Ships with the app and works offline.",
-  "release_note": "Release 6: kitchen and cabinet doors, drawers and appliance doors move with Home Assistant (live parts, #467, #468)."
+  "release_note": "Release 6: kitchen and cabinet doors, drawers and appliance doors move with Home Assistant (live parts, #467) (#468)."
 }
