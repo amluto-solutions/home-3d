@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { applianceIdle, binColors, binDue, binGlows, binNext, binOut, binOutToggleable, binKerb, binPlace, binTagsShown, FinishedMemory, fridgeOpenTooLong, groupTags, householdEntities, isFinishedState, mailboxBase, mailboxPost, nextFridgeCheck, pickupsOf, plantThirsty, remainingMinutes, remainingText, sensorDays, serviceDue, servicesDue, wasteCalendars, wasteColors, wasteMatches, type HouseholdTag } from "./household.ts";
+import { applianceIdle, calendarItems, dayEventsOf, fetchDayEvents, householdCalendars, binColors, binDue, binGlows, binNext, binOut, binOutToggleable, binKerb, binPlace, binTagsShown, FinishedMemory, fridgeOpenTooLong, groupTags, householdEntities, isFinishedState, mailboxBase, mailboxPost, nextFridgeCheck, pickupsOf, plantThirsty, remainingMinutes, remainingText, sensorDays, serviceDue, servicesDue, wasteCalendars, wasteColors, wasteMatches, type HouseholdTag } from "./household.ts";
 import type { Furniture } from "./model.ts";
 import type { HassEntity, HomeAssistant } from "./types.ts";
 
@@ -344,4 +344,77 @@ test("a pack bin is recognised, so the editor can say where the kerb spot and th
   assert.equal(isPackBin(packType("hh", "broom")), false);
   assert.equal(isPackBin("waste_bin"), false);
   setPacks([]);
+});
+
+test("calendar entries in Today in the household (#457)", () => {
+  const now = new Date(2026, 10, 13, 13, 50);
+  const at = (h: number, m = 0) => ({ dateTime: new Date(2026, 10, 13, h, m).toISOString() });
+  const events = dayEventsOf(
+    [
+      { summary: "Dentist", start: at(14, 30), end: at(15) },
+      { summary: "Breakfast", start: at(8), end: at(9) },
+      { summary: "Birthday", start: { date: "2026-11-13" }, end: { date: "2026-11-14" } },
+      { summary: "Holiday", start: { date: "2026-11-10" }, end: { date: "2026-11-13" } },
+      { summary: "Yoga", start: at(19), end: at(20) },
+      { summary: "  " },
+    ],
+    "calendar.family",
+  );
+  // all-day first, then by time; an entry that has ended and yesterday's holiday are gone
+  const items = calendarItems(events, now, "en-GB");
+  assert.deepEqual(items.map((i) => i.text), ["Birthday", "14:30 Dentist", "19:00 Yoga"]);
+  assert.ok(items.every((i) => i.entity === "calendar.family" && i.icon === "calendar-clock"));
+  // amber: starting within the hour (40 minutes away), not 5 hours away and not an all-day entry
+  assert.equal(items.find((i) => i.text.includes("Dentist"))?.hot, true);
+  assert.equal(items.find((i) => i.text.includes("Yoga"))?.hot, undefined);
+  assert.equal(items.find((i) => i.text === "Birthday")?.hot, undefined);
+  // the same entry in two calendars is one line; at most `max` lines
+  const twice = [...events, ...dayEventsOf([{ summary: "Yoga", start: at(19) }], "calendar.other")];
+  assert.equal(calendarItems(twice, now, "en-GB").length, 3);
+  assert.equal(calendarItems(events, now, "en-GB", 2).length, 2);
+});
+
+test("an entry glows amber from one hour before its start and while it runs, not before, not after", () => {
+  const at = (h: number, m = 0) => new Date(2026, 10, 13, h, m);
+  const ev = dayEventsOf([{ summary: "Call", start: { dateTime: at(15).toISOString() }, end: { dateTime: at(16).toISOString() } }], "calendar.work");
+  const hot = (now: Date) => calendarItems(ev, now, "en-GB")[0]?.hot === true;
+  assert.equal(hot(at(13, 59)), false);
+  assert.equal(hot(at(14)), true); // exactly one hour before
+  assert.equal(hot(at(15, 30)), true); // running
+  assert.equal(calendarItems(ev, at(16), "en-GB").length, 0); // over
+});
+
+test("an all-day entry that began earlier and runs into today shows without a time; one that ended yesterday does not", () => {
+  const now = new Date(2026, 10, 13, 9);
+  const ev = dayEventsOf(
+    [
+      { summary: "Trip", start: { date: "2026-11-11" }, end: { date: "2026-11-15" } },
+      { summary: "Over", start: { date: "2026-11-11" }, end: { date: "2026-11-13" } },
+      { summary: "Tomorrow", start: { date: "2026-11-14" }, end: { date: "2026-11-15" } },
+    ],
+    "calendar.family",
+  );
+  assert.deepEqual(calendarItems(ev, now, "en-GB").map((i) => i.text), ["Trip"]);
+});
+
+test("the household calendars: only calendar.* entities, once each, at most ten", () => {
+  assert.deepEqual(householdCalendars(["calendar.a", "calendar.a", "sensor.x", 3, "calendar.b"]), ["calendar.a", "calendar.b"]);
+  assert.deepEqual(householdCalendars(null), []);
+  assert.equal(householdCalendars(Array.from({ length: 14 }, (_, i) => `calendar.c${i}`)).length, 10);
+});
+
+test("today's entries are read through Home Assistant's calendar API, one fetch per calendar; a failing calendar is left out", async () => {
+  const now = new Date(2026, 10, 13, 9);
+  const paths: string[] = [];
+  const hass = {
+    callApi: async (method: string, path: string) => {
+      paths.push(`${method} ${path.split("?")[0]}`);
+      if (path.startsWith("calendars/calendar.bad")) throw new Error("nope");
+      return [{ summary: "Dentist", start: { dateTime: new Date(2026, 10, 13, 14).toISOString() } }];
+    },
+  } as unknown as HomeAssistant;
+  const out = await fetchDayEvents(hass, ["calendar.family", "calendar.bad"], now);
+  assert.deepEqual(paths.sort(), ["GET calendars/calendar.bad", "GET calendars/calendar.family"]);
+  assert.deepEqual(out.map((e) => e.summary), ["Dentist"]);
+  assert.deepEqual(await fetchDayEvents({} as HomeAssistant, ["calendar.family"], now), []);
 });

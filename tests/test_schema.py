@@ -11,6 +11,7 @@ import voluptuous as vol
 from custom_components.home_3d.schema import (
     BUILDING_SCHEMA,
     ENERGY_SCHEMA,
+    FREE_WALL_SCHEMA,
     FURNITURE_SCHEMA,
     HOLOGRAM_SCHEMA,
     MATERIALS,
@@ -195,6 +196,55 @@ def test_pool_depth_rim_and_port_depth() -> None:
     assert POOL_PORT_SCHEMA({"id": "i", "kind": "inlet", "x": 1, "z": 0, "depth": 0.3})["depth"] == 0.3
 
 
+def test_neon_sign_fields_are_kept_and_checked() -> None:
+    """A neon sign keeps its text, colour and font; plans without them load as they were; wrong values are refused."""
+    base = {
+        "id": "n1",
+        "type": "neon_sign",
+        "x": 1,
+        "z": 1,
+        "rotation": 0,
+        "w": 0.9,
+        "d": 0.03,
+        "h": 0.32,
+        "variant": None,
+    }
+    out = FURNITURE_SCHEMA({**base, "sign_text": "Home|Sweet Home", "sign_color": "#ff3fb4", "sign_font": "block"})
+    assert out["sign_text"] == "Home|Sweet Home" and out["sign_color"] == "#ff3fb4" and out["sign_font"] == "block"
+    plain = FURNITURE_SCHEMA(base)
+    assert "sign_text" not in plain and "sign_color" not in plain and "sign_font" not in plain
+    assert FURNITURE_SCHEMA({**base, "sign_text": None, "sign_color": None, "sign_font": None})["sign_text"] is None
+    # a font of a newer version is kept as it is (the frontend shows the script font for a name it does not know)
+    assert FURNITURE_SCHEMA({**base, "sign_font": "neon2"})["sign_font"] == "neon2"
+    for bad in ({"sign_text": "x" * 81}, {"sign_color": "pink"}, {"sign_font": "x" * 17}, {"sign_text": 5}):
+        with pytest.raises(vol.Invalid):
+            FURNITURE_SCHEMA({**base, **bad})
+
+
+def test_live_part_binds_are_kept_and_checked() -> None:
+    """A pack item keeps the entity of each live-part slot (#466); an older plan without binds loads unchanged."""
+    base = {
+        "id": "k1",
+        "type": "pack:test.kitchen:oven",
+        "x": 1,
+        "z": 1,
+        "rotation": 0,
+        "w": 0.6,
+        "d": 0.6,
+        "h": 0.9,
+        "variant": None,
+    }
+    assert "binds" not in FURNITURE_SCHEMA(base)
+    out = FURNITURE_SCHEMA(
+        {**base, "binds": {"door": "binary_sensor.sample_oven_door", "status": "sensor.sample_oven"}}
+    )
+    assert out["binds"] == {"door": "binary_sensor.sample_oven_door", "status": "sensor.sample_oven"}
+    assert FURNITURE_SCHEMA({**base, "binds": None})["binds"] is None
+    for bad in ({"Door": "x"}, {"door": 5}, {f"s{n}": "x" for n in range(17)}, {"door": "x" * 256}):
+        with pytest.raises(vol.Invalid):
+            FURNITURE_SCHEMA({**base, "binds": bad})
+
+
 def test_household_fields_are_kept_and_checked() -> None:
     """A waste bin keeps its kind, colours and calendar; a mailbox its door; wrong values are refused."""
     base = {
@@ -305,6 +355,35 @@ def test_household_tag_settings_are_optional() -> None:
         SETTINGS_SCHEMA({**base, "household": {"bin_days": 100}})
 
 
+def test_household_calendars_are_optional_and_limited() -> None:
+    """The calendars of "Today in the household" (#457): missing in old plans, kept when set, ten at most."""
+    base = {"wall_exterior": 0.3, "wall_interior": 0.12, "grid": 0.05}
+    assert "calendars" not in SETTINGS_SCHEMA({**base, "household": {"bin_from": 14}})["household"]
+    out = SETTINGS_SCHEMA({**base, "household": {"calendars": ["calendar.family", "calendar.work"]}})["household"]
+    assert out["calendars"] == ["calendar.family", "calendar.work"]
+    assert SETTINGS_SCHEMA({**base, "household": {"calendars": None}})["household"]["calendars"] is None
+    with pytest.raises(vol.Invalid):
+        SETTINGS_SCHEMA({**base, "household": {"calendars": [f"calendar.c{i}" for i in range(11)]}})
+
+
+def test_room_name_offset_and_name_size_are_optional() -> None:
+    """A room's name moved from its middle and the size of the names in 3D (#458): older plans have neither."""
+    room = {**ROOM, "floor_material": "tiles"}
+    assert "label_offset" not in ROOM_SCHEMA(room)
+    assert ROOM_SCHEMA({**room, "label_offset": [1.5, -0.5]})["label_offset"] == [1.5, -0.5]
+    assert ROOM_SCHEMA({**room, "label_offset": None})["label_offset"] is None
+    for bad in ([1], [1, 2, 3], [500, 0], ["a", 1]):
+        with pytest.raises(vol.Invalid):
+            ROOM_SCHEMA({**room, "label_offset": bad})
+    base = {"wall_exterior": 0.3, "wall_interior": 0.12, "grid": 0.05}
+    assert "label_scale" not in SETTINGS_SCHEMA(base)
+    assert SETTINGS_SCHEMA({**base, "label_scale": 1.5})["label_scale"] == 1.5
+    assert SETTINGS_SCHEMA({**base, "label_scale": None})["label_scale"] is None
+    for bad in (0.1, 3):
+        with pytest.raises(vol.Invalid):
+            SETTINGS_SCHEMA({**base, "label_scale": bad})
+
+
 def test_outdoor_area_keeps_its_name_and_area() -> None:
     """An outdoor area acting as a room (#100) keeps its name and Home Assistant area; without them both are None."""
     base = {"id": "g1", "type": "lawn", "points": [[0, 0], [4, 0], [4, 3]]}
@@ -344,6 +423,16 @@ def test_sloping_walls_keep_two_heights_per_edge() -> None:
     assert ROOM_SCHEMA(room)["wall_slopes"] == [[1.0, 2.6], None, None]
     with pytest.raises(vol.Invalid):
         ROOM_SCHEMA({**ROOM, "wall_slopes": [[1.0]]})
+
+
+def test_free_wall_keeps_its_colour() -> None:
+    """A wall drawn on its own has a colour of its own (#460); without one it stays as it was."""
+    wall = {"id": "w1", "a": [0, 0], "b": [2, 0]}
+    assert "color" not in FREE_WALL_SCHEMA(wall)
+    assert FREE_WALL_SCHEMA({**wall, "color": "#c27b5a"})["color"] == "#c27b5a"
+    assert FREE_WALL_SCHEMA({**wall, "color": None})["color"] is None
+    with pytest.raises(vol.Invalid):
+        FREE_WALL_SCHEMA({**wall, "color": "x" * 40})
 
 
 def test_live_director_triggers_and_live_picture() -> None:

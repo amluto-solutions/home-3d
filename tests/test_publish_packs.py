@@ -198,15 +198,19 @@ def test_the_real_bundled_packs_publish(tmp_path: Path) -> None:
     publish_packs.publish(tmp_path, BUNDLED)
 
     published = {p.name for p in tmp_path.iterdir() if (p / "pack.json").exists()}
-    assert {"amluto.bedroom", "amluto.ikea-uk", "amluto.makers", "amluto.kitchen-bath"} <= published
+    assert {"amluto.makers", "amluto.decor", "amluto.household"} <= published
     assert "amluto.core" not in published
     # the packs whose items name their parts (`role_names`, #411) are held back until older versions read it (#424)
     assert not {"amluto.living", "amluto.office", "amluto.devices"} & published
+    # so are the packs with live parts (slots, bind, #466): the cabinets of Bedroom & kids, the IKEA UK range and
+    # Kitchen & bath have doors and drawers that open (#468); they go out once older versions read the fields
+    assert not {"amluto.bedroom", "amluto.ikea-uk", "amluto.kitchen-bath"} & published
     readme = (tmp_path / "README.md").read_text(encoding="utf-8")
-    assert "tree/main/amluto.bedroom" in readme
-    assert "tree/main/amluto.ikea-uk" in readme
     assert "tree/main/amluto.makers" in readme
     assert "tree/main/amluto.living" not in readme
+    assert "tree/main/amluto.bedroom" not in readme
+    assert "tree/main/amluto.ikea-uk" not in readme
+    assert "tree/main/amluto.kitchen-bath" not in readme
     assert "amluto-solutions/home-3d-packs" in readme
 
 
@@ -224,6 +228,17 @@ def test_a_pack_with_a_field_older_versions_refuse_is_held_back(tmp_path: Path) 
 
     assert not (target / "test.named").exists()
     assert "test.named" not in (target / "README.md").read_text(encoding="utf-8")
+
+
+def test_a_pack_with_live_parts_is_held_back() -> None:
+    """Slots, bound parts and fan blades (#466, #1084) came in 1.6.0: older versions refuse them."""
+    plain = {"items": [CHAIR]}
+    assert publish_packs.held_back(plain) == []
+    blades = {"items": [{**CHAIR, "parts": [{**CHAIR["parts"][0], "spin": "y"}]}]}
+    assert publish_packs.held_back(blades) == ["spin"]
+    door = {**CHAIR["parts"][0], "bind": {"slot": "door", "kind": "open"}}
+    live = {"items": [{**CHAIR, "slots": [{"id": "door", "kind": "contact"}], "parts": [door]}]}
+    assert publish_packs.held_back(live) == ["bind", "slots"]
 
 
 def test_a_retired_pack_folder_is_replaced_by_a_readme_pointing_at_its_successors(tmp_path: Path) -> None:

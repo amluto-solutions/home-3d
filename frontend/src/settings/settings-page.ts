@@ -56,6 +56,8 @@ const loadTimeField = once(() => import("./pickers.ts"));
 const loadEntityPicker = loadTimeField;
 // the Homes page is a chunk of its own too (#296), loaded when it is first drawn
 const loadHomes = once(() => import("./homes.ts"));
+// the neighbourhood map's card (#464) is a chunk of its own too
+const loadSurroundings = once(() => import("./surroundings-card.ts"));
 const loadMultiSelect = once(() => import("../components/multi-select.ts"));
 // the shared colour field (#403): Settings' first open has no room for it
 const loadColourField = once(() => import("../components/colour-field.ts"));
@@ -592,7 +594,7 @@ export class SettingsPage extends LitElement {
     // the start view's two buttons and its state line go under the label, so the label keeps its width (#246)
     // a segment of three or more choices and a select with long choices go under their label too, so the hint keeps its width (#256)
     const c = s.control;
-    const wide = (c.kind === "select" && c.options(this.env).some((o) => this.label(o).length > 24)) || (c.kind === "segment" && this.options(c).length > 2) || c.kind === "embed" || c.kind === "homes" || c.kind === "list" || c.kind === "checks" || c.kind === "entity" || (c.kind === "action" && c.action === "start_view");
+    const wide = (c.kind === "select" && c.options(this.env).some((o) => this.label(o).length > 24)) || (c.kind === "segment" && this.options(c).length > 2) || c.kind === "embed" || c.kind === "homes" || c.kind === "surroundings" || c.kind === "list" || c.kind === "checks" || c.kind === "entity" || (c.kind === "action" && c.action === "start_view");
     const rule = showRule ? this.rule(s, hit, page) : null;
     const more = planUnit(this.env) === "imperial" && s.hintImperial;
     return html`<div
@@ -715,24 +717,26 @@ export class SettingsPage extends LitElement {
         </span>`;
       case "range":
         return html`<span class="st-num">
+          ${c.ends ? html`<i>${this.tr(c.ends[0])}</i>` : nothing}
           <input type="range" min=${c.min} max=${c.max} step=${c.step} .value=${String(value ?? s.default)} aria-label=${aria} ?disabled=${disabled} @change=${(e: Event) => this.write(s as Setting<number>, Number((e.target as HTMLInputElement).value))} />
-          <i>${String(value ?? s.default)}</i>
+          <i>${c.ends ? this.tr(c.ends[1]) : String(value ?? s.default)}</i>
         </span>`;
       case "checks": {
         // the same searchable multi-select as the View panel (#332); a long list reads "6 object types selected"
         need(loadMultiSelect);
         const on = (value as string[] | null) ?? [];
+        const opts = this.options(c);
         return html`<fp3d-multi-select
           class="st-multi"
-          .options=${c.options.map((o) => ({ id: o.value, label: this.label(o) }))}
+          .options=${opts.map((o) => ({ id: o.value, label: this.label(o) }))}
           .value=${on}
           .label=${aria}
           .disabled=${disabled}
-          .summary=${c.options.length > 6 ? this.tr(on.length === 1 ? "display_count_one" : "display_count", { n: on.length }) : ""}
+          .summary=${opts.length > 6 ? this.tr(on.length === 1 ? "display_count_one" : "display_count", { n: on.length }) : ""}
           .searchLabel=${this.tr("multi_search")}
           .emptyText=${this.tr("multi_none")}
           .removeLabel=${this.tr("multi_remove")}
-          @change=${(e: CustomEvent<{ value: string[] }>) => this.write(s as Setting<string[]>, c.options.map((x) => x.value).filter((v) => e.detail.value.includes(v)))}
+          @change=${(e: CustomEvent<{ value: string[] }>) => this.write(s as Setting<string[]>, opts.map((x) => x.value).filter((v) => e.detail.value.includes(v)))}
         ></fp3d-multi-select>`;
       }
       case "action":
@@ -745,6 +749,10 @@ export class SettingsPage extends LitElement {
         if (disabled) return html`<p class="st-sub">${icon("lock", true)}</p>`;
         need(loadHomes);
         return html`<fp3d-homes-page .hass=${this.hass} .home=${this.homeId} .t=${this.t}></fp3d-homes-page>`;
+      case "surroundings":
+        if (disabled) return html`<p class="st-sub">${icon("lock", true)}</p>`;
+        need(loadSurroundings);
+        return html`<fp3d-surround-settings .hass=${this.hass} .building=${this.building} .t=${this.t}></fp3d-surround-settings>`;
       case "note":
         return nothing;
       case "info":

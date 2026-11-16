@@ -32,6 +32,12 @@
   },
   "ikea": "BESTÅ",
   "surface": true,
+  "slots": [
+    {
+      "id": "door",
+      "kind": "contact"
+    }
+  ],
   "parts": [
     {"shape": "box", "x": -0.4933, "z": -0.0238, "w": 0.0133, "d": 0.9524, "y": 0.1351, "h": 0.8649, "color": "white", "fix": "w"},
     {"shape": "box", "x": 0.4933, "z": -0.0238, "w": 0.0133, "d": 0.9524, "y": 0.1351, "h": 0.8649, "color": "white", "fix": "w"},
@@ -43,7 +49,7 @@
     {"shape": "cyl", "x": 0.4542, "z": -0.369, "w": 0.025, "d": 0.0714, "y": 0, "h": 0.1351, "color": "metal", "fix": "wdh"},
     {"shape": "cyl", "x": 0.4542, "z": 0.369, "w": 0.025, "d": 0.0714, "y": 0, "h": 0.1351, "color": "metal", "fix": "wdh"},
     {"shape": "box", "x": 0.0, "z": -0.0238, "w": 0.0133, "d": 0.9286, "y": 0.1568, "h": 0.8216, "color": "white"},
-    {"shape": "box", "x": -0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.1378, "h": 0.8595, "color": "white"},
-    {"shape": "box", "x": 0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.1378, "h": 0.8595, "color": "white"}
+    {"shape": "box", "x": -0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.1378, "h": 0.8595, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": 0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.1378, "h": 0.8595, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}}
   ]
 }

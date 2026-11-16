@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { emptyBuilding, lockAlong, gangEntities, gangPlateWidth, gangsOf, floorElevation, newFloor, outdoorZones, zonesOf, openingPreset, openingStyle, normalizeBuilding, outdoorDrop, outdoorGround, resizeFurniture, roomTiles, sidelightLayout, spotGrid, surfaceHeight, syncCameraLooks, type Furniture } from "./model.ts";
+import { emptyBuilding, labelPoint, labelScale, lockAlong, gangEntities, gangPlateWidth, gangsOf, floorElevation, newFloor, outdoorZones, zonesOf, openingPreset, openingStyle, normalizeBuilding, outdoorDrop, outdoorGround, resizeFurniture, roomTiles, sidelightLayout, spotGrid, surfaceHeight, syncCameraLooks, type Furniture } from "./model.ts";
 
 test("a sidelight sits opposite the hinge, on the hinge side when asked, and keeps the leaf at least half a metre", () => {
   const none = {};
@@ -310,4 +310,25 @@ test("stair option edits: choices exclude each other and stay inside what the 3D
   assert.deepEqual(stairOptionPatch(stair({ stair_landing: 3, stair_top: 0.5 }), { stair_landing: 9 }), { stair_landing: 9, stair_turn: null });
   // a stair too short for a turn keeps no turn
   assert.deepEqual(stairOptionPatch(stair({ d: 1.2 }), { stair_turn: "left" }), { stair_turn: null });
+});
+
+test("a room's name stands in its middle, moved by its own offset (#458)", () => {
+  const room = { points: [[0, 0], [4, 0], [4, 2], [0, 2]] as [number, number][] };
+  assert.deepEqual(labelPoint(room), [2, 1]);
+  assert.deepEqual(labelPoint({ ...room, label_offset: null }), [2, 1]);
+  assert.deepEqual(labelPoint({ ...room, label_offset: [1, -0.5] }), [3, 0.5]);
+  // an offset moves along with the room
+  assert.deepEqual(labelPoint({ points: room.points.map(([x, z]) => [x + 10, z] as [number, number]), label_offset: [1, -0.5] }), [13, 0.5]);
+  // nonsense in the stored offset leaves the name in the middle
+  assert.deepEqual(labelPoint({ ...room, label_offset: [Number.NaN, 1] }), [2, 1]);
+});
+
+test("the size of the room names in 3D is 1 unless set, between half and double (#458)", () => {
+  assert.equal(labelScale(undefined), 1);
+  assert.equal(labelScale({}), 1);
+  assert.equal(labelScale({ label_scale: null }), 1);
+  assert.equal(labelScale({ label_scale: 1.5 }), 1.5);
+  assert.equal(labelScale({ label_scale: 9 }), 2);
+  assert.equal(labelScale({ label_scale: 0.1 }), 0.5);
+  assert.equal(labelScale({ label_scale: Number.NaN }), 1);
 });

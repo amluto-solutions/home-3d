@@ -27,6 +27,8 @@ export const loadIconPicker = once(() => import("./icon-picker.ts"));
 export const loadPackBrowser = once(() => import("../pack-browser.ts"));
 /** A pet's panel (#337: its routine and triggers): a chunk of its own, as only an open pet draws it. */
 export const loadPetPanel = once(() => import("../pet-panel.ts"));
+/** "Start with the map" (#465): the note on an empty ground floor, a chunk of its own, drawn only for an admin there. */
+export const loadMapStart = once(() => import("../map-start.ts"));
 /** Robot vacuum maps (#350): the floor's section and the alignment over the plan, a chunk of their own. */
 export const loadVacuumPanel = once(() => import("../vacuum-panel.ts"));
 /** The phone editor's bottom bar and More (#250): a chunk of its own, as only phone-wide screens draw it. */

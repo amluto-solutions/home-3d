@@ -71,19 +71,22 @@ const shrinkEditorCss = {
     b.onLoad({ filter: /src.components.editor.styles.[a-z0-9-]+[.]ts$/ }, (args) => ({ contents: shrinkCssTemplates(readFileSync(args.path, "utf8")), loader: "ts" }));
   },
 };
-const editorConfig = (viewerHash, locateHash, itemsHash, alignHash) => ({
+const editorConfig = (viewerHash, locateHash, itemsHash, alignHash, osmHash) => ({
   ...common,
   plugins: [...common.plugins, shrinkEditorCss],
   entryPoints: { "home-3d-editor": "src/components/editor.ts" },
   outdir: out,
   splitting: true,
   chunkNames: "home-3d-editor-[name]-[hash]",
-  define: { __FP3D_VIEWER_HASH__: JSON.stringify(viewerHash), __FP3D_LOCATE_HASH__: JSON.stringify(locateHash), __FP3D_ITEMS_HASH__: JSON.stringify(itemsHash), __FP3D_ALIGN_HASH__: JSON.stringify(alignHash) },
+  define: { __FP3D_VIEWER_HASH__: JSON.stringify(viewerHash), __FP3D_LOCATE_HASH__: JSON.stringify(locateHash), __FP3D_ITEMS_HASH__: JSON.stringify(itemsHash), __FP3D_ALIGN_HASH__: JSON.stringify(alignHash), __FP3D_OSM_HASH__: JSON.stringify(osmHash) },
 });
 // the item editor (#13) only loads when an editor opens it; it draws its live picture with the 3D bundle
 const itemsConfig = (viewerHash) => ({ ...common, entryPoints: ["src/items/entry.ts"], outfile: `${out}/home-3d-items.js`, define: { __FP3D_VIEWER_HASH__: JSON.stringify(viewerHash) } });
 // the align and distribute tools of the multi-selection panel (#235) load when the editor first selects several items
 const alignConfig = { ...common, entryPoints: ["src/align/entry.ts"], outfile: `${out}/home-3d-align.js` };
+// #462: the neighbourhood's map loading (the Overpass query and reading its answer, laying the map under the plan) loads
+// only when an admin taps Load surroundings or Align again (load-osm.ts); the editor, Settings and the main bundle know its hash
+const osmConfig = { ...common, entryPoints: ["src/surround-fetch.ts"], outfile: `${out}/home-3d-osm.js` };
 // the time travel (Pro) only loads when it starts; its texts come from the main bundle
 const timeTravelConfig = { ...common, entryPoints: ["src/timetravel/entry.ts"], outfile: `${out}/home-3d-timetravel.js` };
 // the fun packs (pets …) only load when one is unlocked and switched on; three.js is lent by the 3D bundle
@@ -111,7 +114,7 @@ const shrinkViewCss = {
     b.onLoad({ filter: /src.(?:components.)?[a-z0-9-]+[.]ts$/ }, (args) => ({ contents: shrinkCssTemplates(readFileSync(args.path, "utf8")), loader: "ts" }));
   },
 };
-const settingsConfig = { ...common, plugins: [...common.plugins, shrinkSettingsCss], entryPoints: { "home-3d-settings": "src/settings/entry.ts" }, outdir: out, splitting: true, chunkNames: "home-3d-settings-[name]-[hash]" };
+const settingsConfig = (osmHash) => ({ ...common, plugins: [...common.plugins, shrinkSettingsCss], entryPoints: { "home-3d-settings": "src/settings/entry.ts" }, outdir: out, splitting: true, chunkNames: "home-3d-settings-[name]-[hash]", define: { __FP3D_OSM_HASH__: JSON.stringify(osmHash) } });
 // The main bundle loads the 3D bundle with a hash of its content in the URL, so a new 3D bundle is
 // never taken from the browser cache (the integration version only changes after a restart).
 // the frontend knows its own version, to notice a backend that still runs an older one
@@ -155,6 +158,7 @@ const mainConfig = (hashes) => ({
     __FP3D_LOCATE_HASH__: JSON.stringify(hashes.locate),
     __FP3D_PLAN2D_HASH__: JSON.stringify(hashes.plan2d),
     __FP3D_SETTINGS_HASH__: JSON.stringify(hashes.settings),
+    __FP3D_OSM_HASH__: JSON.stringify(hashes.osm),
     // #245: the editor's shared chunks, fetched together with its entry (load-editor.ts): no second round trip
     __FP3D_EDITOR_CHUNKS__: JSON.stringify(hashes.editorChunks ?? []),
     __FP3D_SETTINGS_CHUNKS__: JSON.stringify(hashes.settingsChunks ?? []),
@@ -163,7 +167,7 @@ const mainConfig = (hashes) => ({
   },
 });
 // the bundles the main bundle loads by hash (the keys of mainConfig's `hashes`)
-const HASHED = ["viewer", "editor", "cardEditor", "timeTravel", "fun", "voice", "locate", "plan2d", "settings"];
+const HASHED = ["viewer", "editor", "cardEditor", "timeTravel", "fun", "voice", "locate", "plan2d", "settings", "osm"];
 const hashOf = (file) => createHash("sha256").update(readFileSync(file)).digest("hex").slice(0, 12);
 
 // Self-hosted fonts (SIL OFL): latin subset of the variable weight axis, shipped with their licences.
@@ -233,6 +237,10 @@ function copyFonts() {
 // run 6 (#337): pet routines and poses in the fun bundle: 40 -> 42 KB.
 // #323: today's cost from existing rate sensors (home-3d-energy-rates-<hash>.js, 2.2 KB) loads only for a plan with cost sensors. A new budget.
 // #336: the Library's Browse tab (home-3d-editor-pack-browser-<hash>.js, 15.5 KB) is a lazy chunk of its own, loaded when an editor opens the tab. A new budget.
+// 16 Nov 2026 (run 15 merge): the zoom style rows (#456), the Surroundings card's registry row and shared modules (#464) and the
+// map start texts (#465) together take the settings first open to 109.5 KB: budget 108 -> 111 KB. It loads only when someone opens Settings,
+// never on a wall tablet or a first paint; the 1x speed checks of each ticket passed.
+// 15 Nov 2026 (#456): the zoom style rows (style, early … late, only the room) with their choices take the settings first open to 107.3 KB: budget 106 -> 108 KB. Not on the first paint; the 4x speed numbers are unchanged.
 // 13 Nov 2026 (#440): the house plan style card (eight rows, their texts and search words) takes the settings first open to 103.6 KB: budget 102 -> 106 KB, and the search words (10.3 KB) 10 -> 11 KB. Neither is on the first paint; the 4x speed numbers are unchanged.
 // run 6 (#318 #332): Settings has its own copy of the multi-select (separate entry), and the time format row tips settings first open over 95 KB.
 // run 6 (#252 #327 #338): curved shells, the icon field and show-when rules land together in the item forms (editor-only): items 68 -> 72 KB.
@@ -255,7 +263,28 @@ function copyFonts() {
 // of its own, loaded when the View panel's Styles button is pressed. A new budget, not a raised one.
 // 2026-11-13 #441 polish: the dialog takes the panel's own controls (segmented choice, switches, slider and button styles, about 3 KB of
 // CSS) so it matches the View panel: budget 12 -> 16 KB. It is a lazy chunk, loaded on the button press only; the 4x speed numbers do not change.
-const BUDGET = { "home-3d-styles-dialog.js": 16 * 1024, "home-3d-colour-field.js": 6 * 1024, "home-3d-settings-colour-field.js": 6 * 1024, "home-3d-editor-item-bar-view.js": 8 * 1024, "home-3d-editor-backup-send.js": 4 * 1024, "home-3d-editor-vacuum-panel.js": 13 * 1024, "home-3d-vacuum-maps.js": 8 * 1024, "home-3d-editor-pet-panel.js": 11 * 1024, "home-3d-i18n-register-late.js": 130 * 1024, "home-3d-energy-rates.js": 4 * 1024, "home-3d-editor-pack-browser.js": 18 * 1024, "home-3d-weather-tile.js": 6 * 1024, "home-3d-weather-forecast.js": 8 * 1024, "home-3d-float-window.js": 8 * 1024, "home-3d-find.js": 8 * 1024, "home-3d-settings-extensions-index.js": 4 * 1024, "home-3d-multi-select.js": 8 * 1024, "home-3d-settings-multi-select.js": 9 * 1024, "home-3d-view-nav.js": 3 * 1024, "home-3d-quick-menu.js": 20 * 1024, "home-3d-settings-search-words.js": 11 * 1024, "home-3d-editor-season-dates.js": 13 * 1024, "home-3d-settings-homes.js": 14 * 1024, "home-3d-device-popup.js": 16 * 1024, "home-3d-editor-item-picker.js": 14 * 1024, "home-3d-editor-icon-picker.js": 8 * 1024, "home-3d-editor-phone-bar.js": 12 * 1024, "home-3d-editor-tool-panel.js": 16 * 1024, "home-3d-rooms-picker.js": 8 * 1024, "home-3d-view-panel.js": 28 * 1024, "home-3d-room-panel.js": 33 * 1024, "home-3d-home-switcher.js": 12 * 1024, "home-3d-editor-lazy-parts.js": 94 * 1024, "home-3d-settings-pickers.js": 12 * 1024, "home-3d-settings-reset.js": 4 * 1024, "home-3d.js": 2 * 1024, "home-3d-app.js": 145 * 1024, "home-3d-view3d.js": 335 * 1024, "home-3d-walk.js": 16 * 1024, "home-3d-listedit.js": 12 * 1024, "home-3d-fun.js": 44 * 1024, "home-3d-voice.js": 40 * 1024, "home-3d-locate.js": 48 * 1024, "home-3d-timetravel.js": 105 * 1024, "home-3d-3d.js": 920 * 1024, "home-3d-editor.js": 860 * 1024, "home-3d-card-editor.js": 40 * 1024, "home-3d-items.js": 75 * 1024, "home-3d-align.js": 12 * 1024, "home-3d-2d.js": 74 * 1024, "home-3d-settings.js": 95 * 1024 };
+// 2026-11-15 #471 (#1077): the dashboard card dialog lists every style (grouped, with the plan's own ones), evening and night styles and the helper entity,
+// so it carries the styles table (looks.ts): home-3d-card-editor.js 40 -> 42 KB. It loads in the card dialog only; the 4x speed numbers do not change.
+// 2026-11-15 #462: the neighbourhood's map loading (home-3d-osm.js: the Overpass query, reading its answer, laying the map
+// under the plan) is a bundle of its own, loaded only when an admin taps Load surroundings or Align again. A new budget:
+// 14 KB, just above its 12.1 KB (5.5 KB gzip). Not on the wall tablet or any first paint.
+// 2026-11-15 #464: Settings > Surroundings. The card (home-3d-settings-surroundings-card.js: radius, Load, align, the small map to hide houses) is a lazy
+// chunk of the Settings bundle with a new budget of 16 KB (14.0 KB), drawn only when the card is shown. Its row in the registry, its control kind and
+// the modules it shares with the page (ws-size, model, i18n-core, which esbuild now splits into chunks) take settings first open from 105.5 to 107.1 KB:
+// budget 106 -> 108 KB. Its 33 English texts (about 2.2 KB) take the late English table (home-3d-i18n-register-late.js, loaded before the editor
+// and Settings, never on a wall tablet) from 129.9 to 132.1 KB: budget 130 -> 134 KB. Nothing here is on a first paint; the 4x speed numbers do not change.
+// 2026-11-16 #465: "Start with the map" (home-3d-editor-map-start.js, 4.1 KB: the note on an empty ground floor of an editor) is a lazy chunk of the
+// editor with a new budget of 6 KB, loaded only for a Home Assistant admin who sees an empty ground floor. "Align to the map" (bg-align.ts, the editor's
+// template section) and the template outline are a few hundred bytes of the editor's first open (918 -> 923 KB, budget 1000). Its 14 English texts
+// (1.2 KB) take the late English table from 132.8 to 134.0 KB, 14 bytes under its budget: budget 134 -> 136 KB (loaded only before the editor and Settings, never on a wall
+// tablet). Nothing here is on a first paint; the 4x speed numbers do not change.
+// 2026-11-15 #463: the read-only 2D plan draws the neighbourhood from the map under the ground floor, as the editor's
+// plan does; it needs which map houses the plan hides (surroundings.ts, with the roof sections' outlines):
+// home-3d-2d.js 74 -> 80 KB (78.2 KB, gzip 29 KB). It loads only when a card is switched to 2D; the 4x numbers stay.
+// 16 Nov 2026 (run 15 merge): the zoom style's second uniform set and colour attribute (#456), the neighbourhood's own mesh, shadows and 2D layers
+// (#463) and the lamp shade fix (#474) take the 3D bundle to 928.2 KB (gzip 277.3 of 280 KB): budget 920 -> 936 KB. Both tickets measured the 4x
+// speed numbers no worse than the base; neither feature costs anything while unused (no zoom style, no map).
+const BUDGET = { "home-3d-settings-surroundings-card.js": 16 * 1024, "home-3d-editor-map-start.js": 6 * 1024, "home-3d-osm.js": 14 * 1024, "home-3d-styles-dialog.js": 16 * 1024, "home-3d-colour-field.js": 6 * 1024, "home-3d-settings-colour-field.js": 6 * 1024, "home-3d-editor-item-bar-view.js": 8 * 1024, "home-3d-editor-backup-send.js": 4 * 1024, "home-3d-editor-vacuum-panel.js": 13 * 1024, "home-3d-vacuum-maps.js": 8 * 1024, "home-3d-editor-pet-panel.js": 11 * 1024, "home-3d-i18n-register-late.js": 136 * 1024, "home-3d-energy-rates.js": 4 * 1024, "home-3d-editor-pack-browser.js": 18 * 1024, "home-3d-weather-tile.js": 6 * 1024, "home-3d-weather-forecast.js": 8 * 1024, "home-3d-float-window.js": 8 * 1024, "home-3d-find.js": 8 * 1024, "home-3d-settings-extensions-index.js": 4 * 1024, "home-3d-multi-select.js": 8 * 1024, "home-3d-settings-multi-select.js": 9 * 1024, "home-3d-view-nav.js": 3 * 1024, "home-3d-quick-menu.js": 20 * 1024, "home-3d-settings-search-words.js": 11 * 1024, "home-3d-editor-season-dates.js": 13 * 1024, "home-3d-settings-homes.js": 14 * 1024, "home-3d-device-popup.js": 16 * 1024, "home-3d-editor-item-picker.js": 14 * 1024, "home-3d-editor-icon-picker.js": 8 * 1024, "home-3d-editor-phone-bar.js": 12 * 1024, "home-3d-editor-tool-panel.js": 16 * 1024, "home-3d-rooms-picker.js": 8 * 1024, "home-3d-view-panel.js": 28 * 1024, "home-3d-room-panel.js": 33 * 1024, "home-3d-home-switcher.js": 12 * 1024, "home-3d-editor-lazy-parts.js": 94 * 1024, "home-3d-settings-pickers.js": 12 * 1024, "home-3d-settings-reset.js": 4 * 1024, "home-3d.js": 2 * 1024, "home-3d-app.js": 145 * 1024, "home-3d-view3d.js": 335 * 1024, "home-3d-walk.js": 16 * 1024, "home-3d-listedit.js": 12 * 1024, "home-3d-fun.js": 44 * 1024, "home-3d-voice.js": 40 * 1024, "home-3d-locate.js": 48 * 1024, "home-3d-timetravel.js": 105 * 1024, "home-3d-3d.js": 936 * 1024, "home-3d-editor.js": 860 * 1024, "home-3d-card-editor.js": 42 * 1024, "home-3d-items.js": 75 * 1024, "home-3d-align.js": 12 * 1024, "home-3d-2d.js": 80 * 1024, "home-3d-settings.js": 95 * 1024 };
 const GZIP_BUDGET = { "home-3d-app.js": 45 * 1024, "home-3d-view3d.js": 100 * 1024, "home-3d-3d.js": 280 * 1024 };
 
 // What is loaded before something shows, raw and as sent (gzip), with everything those files import (#179): a module
@@ -268,7 +297,7 @@ const PATHS = {
   "editor first open": { files: ["home-3d-editor.js"], raw: 1000 * 1024 }, // run 12 (#406-#422, set 7 Nov 2026): 1000 KB, items 75 KB; speed checked at 4x. Before: run 7 (#363 #378 #382 #383 #384): 869.4 KB; owner: speed over size, editor open time checked live
   // #245: the Settings page split the same way, under its old 95 KB
   // 2026-11-13 #435: 98 -> 102 KB: the style registry (looks.ts, 3.5 KB) comes with ha-theme.ts's shownLook (View settings)
-  "settings first open": { files: ["home-3d-settings.js"], raw: 106 * 1024 },
+  "settings first open": { files: ["home-3d-settings.js"], raw: 111 * 1024 },
 };
 
 /** The file a budget name stands for: a chunk's is found by its name without the hash. */
@@ -304,7 +333,7 @@ function topInputs(metafile, file, n = 15) {
 copyFonts();
 if (watch) {
   // in watch mode the hash is not tracked; a dev reload fetches the bundle anyway
-  for (const c of [bootConfig, viewerConfig, itemsConfig("dev"), editorConfig("dev", "dev", "dev", "dev"), alignConfig, cardEditorConfig, timeTravelConfig, funConfig, voiceConfig, locateConfig, plan2dConfig, settingsConfig, mainConfig(Object.fromEntries(HASHED.map((name) => [name, "dev"])))]) await (await context(c)).watch();
+  for (const c of [bootConfig, viewerConfig, itemsConfig("dev"), editorConfig("dev", "dev", "dev", "dev", "dev"), osmConfig, alignConfig, cardEditorConfig, timeTravelConfig, funConfig, voiceConfig, locateConfig, plan2dConfig, settingsConfig("dev"), mainConfig(Object.fromEntries(HASHED.map((name) => [name, "dev"])))]) await (await context(c)).watch();
 } else {
   // the main bundle's chunks of an earlier build go (their names change with their content)
   for (const f of readdirSync(out)) if (CHUNK.test(f)) rmSync(`${out}/${f}`);
@@ -316,13 +345,14 @@ if (watch) {
   const items = itemsConfig(hashOf(viewerConfig.outfile));
   await run(items);
   await run(alignConfig);
-  await run(editorConfig(hashOf(viewerConfig.outfile), hashOf(locateConfig.outfile), hashOf(items.outfile), hashOf(alignConfig.outfile)));
+  await run(osmConfig);
+  await run(editorConfig(hashOf(viewerConfig.outfile), hashOf(locateConfig.outfile), hashOf(items.outfile), hashOf(alignConfig.outfile), hashOf(osmConfig.outfile)));
   await run(cardEditorConfig);
   await run(timeTravelConfig);
   await run(funConfig);
   await run(voiceConfig);
   await run(plan2dConfig);
-  await run(settingsConfig);
+  await run(settingsConfig(hashOf(osmConfig.outfile)));
   await run(bootConfig);
   await run(
     mainConfig({
@@ -335,6 +365,7 @@ if (watch) {
       locate: hashOf(locateConfig.outfile),
       plan2d: hashOf(plan2dConfig.outfile),
       settings: hashOf(SETTINGS),
+      osm: hashOf(osmConfig.outfile),
       settingsChunks: withImports(metafiles, ["home-3d-settings.js"]).filter((f) => f !== "home-3d-settings.js"),
       editorChunks: withImports(metafiles, ["home-3d-editor.js"]).filter((f) => f !== "home-3d-editor.js"),
     }),

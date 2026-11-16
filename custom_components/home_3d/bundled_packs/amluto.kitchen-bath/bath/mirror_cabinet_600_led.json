@@ -11,14 +11,17 @@
   "wall_y": 1.15,
   "light": "wall",
   "electric": true,
+  "slots": [{"id": "door", "kind": "contact"}],
   "parts": [
     {"shape": "box", "x": 0.0, "z": -0.0667, "w": 1.0, "d": 0.8667, "y": 0.0, "h": 1.0, "color": "white"},
-    {"shape": "box", "x": -0.25, "z": 0.42, "w": 0.4933, "d": 0.1067, "y": 0.0571, "h": 0.8857, "color": "white"},
-    {"shape": "box", "x": -0.25, "z": 0.4867, "w": 0.48, "d": 0.0267, "y": 0.0629, "h": 0.8743, "color": "#b9c7cd"},
-    {"shape": "box", "x": 0.25, "z": 0.42, "w": 0.4933, "d": 0.1067, "y": 0.0571, "h": 0.8857, "color": "white"},
-    {"shape": "box", "x": 0.25, "z": 0.4867, "w": 0.48, "d": 0.0267, "y": 0.0629, "h": 0.8743, "color": "#b9c7cd"},
+    {"shape": "box", "x": -0.25, "z": 0.42, "w": 0.4933, "d": 0.1067, "y": 0.0571, "h": 0.8857, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": -0.25, "z": 0.4867, "w": 0.48, "d": 0.0267, "y": 0.0629, "h": 0.8743, "color": "#b9c7cd", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": 0.25, "z": 0.42, "w": 0.4933, "d": 0.1067, "y": 0.0571, "h": 0.8857, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}},
+    {"shape": "box", "x": 0.25, "z": 0.4867, "w": 0.48, "d": 0.0267, "y": 0.0629, "h": 0.8743, "color": "#b9c7cd", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}},
     {"shape": "box", "x": 0.0, "z": 0.4167, "w": 0.9333, "d": 0.1, "y": 0.95, "h": 0.0357, "color": "#fff3d6", "glow": true, "fix": "h"},
-    {"shape": "box", "x": 0.0, "z": 0.4167, "w": 0.9333, "d": 0.1, "y": 0.0143, "h": 0.0357, "color": "#fff3d6", "glow": true, "fix": "h"}
+    {"shape": "box", "x": 0.0, "z": 0.4167, "w": 0.9333, "d": 0.1, "y": 0.0143, "h": 0.0357, "color": "#fff3d6", "glow": true, "fix": "h"},
+    {"shape": "box", "x": -0.25, "z": 0.38, "w": 0.4533, "d": 0.0267, "y": 0.0742, "h": 0.8514, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.25, "z": 0.38, "w": 0.4533, "d": 0.0267, "y": 0.0742, "h": 0.8514, "color": "dark", "fix": "d"}
   ],
   "symbol": [
     {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}

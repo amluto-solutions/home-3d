@@ -208,6 +208,15 @@ export function furnitureSymbol(type: string, w: number, d: number): Part[] | ty
       return [rect(-w / 2, -d / 2, w / 2, -d / 2 + 0.03, "fp3d-sym-fill"), ellipse(0, 0.01, w * 0.4, d * 0.4)];
     case "led_strip":
       return [line(-w / 2, 0, w / 2, 0, "fp3d-sym-strong")];
+    case "neon_sign": {
+      // the plate on the wall and the tube's wave in front of it: a sign is hard to see as a few centimetres of wall
+      const out: Part[] = [rect(-w / 2, -d / 2, w / 2, d / 2, "fp3d-sym-fill")];
+      const n = 8;
+      const x0 = -w * 0.4;
+      const zAt = (i: number) => d / 2 + 0.07 + (i % 2 ? 0.05 : 0);
+      for (let i = 0; i < n; i++) out.push(line(x0 + ((w * 0.8) / n) * i, zAt(i), x0 + ((w * 0.8) / n) * (i + 1), zAt(i + 1), "fp3d-sym-strong"));
+      return out;
+    }
     case "wall_switch":
     case "wall_socket":
       // the frame on the wall and a ring around it: a few centimetres are hard to find in the plan otherwise

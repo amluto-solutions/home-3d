@@ -9,10 +9,12 @@
   "variant": {"en": "500 one door"},
   "mount": "wall",
   "wall_y": 1.15,
+  "slots": [{"id": "door", "kind": "contact"}],
   "parts": [
     {"shape": "box", "x": 0.0, "z": -0.0714, "w": 1.0, "d": 0.8571, "y": 0.0, "h": 1.0, "color": "white"},
-    {"shape": "box", "x": 0.0, "z": 0.4143, "w": 0.992, "d": 0.1143, "y": 0.0, "h": 1.0, "color": "white"},
-    {"shape": "box", "x": 0.0, "z": 0.4857, "w": 0.976, "d": 0.0286, "y": 0.0062, "h": 0.9877, "color": "#b9c7cd"}
+    {"shape": "box", "x": 0.0, "z": 0.4143, "w": 0.992, "d": 0.1143, "y": 0.0, "h": 1.0, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": 0.0, "z": 0.4857, "w": 0.976, "d": 0.0286, "y": 0.0062, "h": 0.9877, "color": "#b9c7cd", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": 0.0, "z": 0.3714, "w": 0.944, "d": 0.0286, "y": 0.0185, "h": 0.9631, "color": "dark", "fix": "d"}
   ],
   "symbol": [
     {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0}

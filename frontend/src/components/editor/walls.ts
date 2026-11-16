@@ -85,6 +85,7 @@ export class WallsPart {
         ${this.len(this.t("wall_thickness"), w.thickness ?? this._doc.settings.wall_interior, (v) => this.updateFreeWall({ thickness: Math.min(1, Math.max(0.02, v)) }), 0.01, 0.02)}
         ${this.len(this.t("wall_height"), w.height ?? this.floor?.height ?? 2.5, (v) => this.updateFreeWall({ height: v >= (this.floor?.height ?? 2.5) - 0.005 ? null : Math.max(0.05, v) }), 0.05, 0.05)}
       </div>
+      ${this.wallColourRow(this.t("wall_colour_free"), w.color ?? null, (hex) => this.setFreeWallColour(hex), null, "wall_colour_free_hint")}
       <p class="fp3d-sub">${this.t("free_wall_hint")}</p>
     </section>`;
   }
@@ -369,9 +370,9 @@ export class WallsPart {
    * A wall colour row (#438, from NeonPlan 3D 3.1, MIT, Mastershort): the shared colour field and a reset. `base` is the
    * colour the wall has without its own (the room's colour). Wall colours show in the Homely styles and Realistic.
    */
-  wallColourRow(this: Fp3dEditor, label: string, own: string | null, set: (hex: string | null) => void, base: string | null = null) {
+  wallColourRow(this: Fp3dEditor, label: string, own: string | null, set: (hex: string | null) => void, base: string | null = null, hint: "wall_colour_hint" | "wall_colour_free_hint" = "wall_colour_hint") {
     const t = (k: Parameters<Parameters<typeof colourField>[0]["t"]>[0], v: { label: string }) => this.t(k, v);
-    return html`<div class="fp3d-field fp3d-wall-colour" title=${this.t("wall_colour_hint")}><span>${label}</span><span class="fp3d-colour-row">${colourField({ value: own, base, label, t, disabled: !this.isEditor, clearable: true, onChange: set })}${colourReset({ value: own, fallback: null, label: this.t("colour_reset"), disabled: !this.isEditor, onReset: () => set(null) })}</span></div>`;
+    return html`<div class="fp3d-field fp3d-wall-colour" title=${this.t(hint)}><span>${label}</span><span class="fp3d-colour-row">${colourField({ value: own, base, label, t, disabled: !this.isEditor, clearable: true, onChange: set })}${colourReset({ value: own, fallback: null, label: this.t("colour_reset"), disabled: !this.isEditor, onReset: () => set(null) })}</span></div>`;
   }
 
   /**
@@ -395,6 +396,12 @@ export class WallsPart {
       if (list.some(Boolean)) r.wall_colors = list;
       else delete r.wall_colors;
     });
+  }
+
+  /** The colour of a wall drawn on its own, both sides (#460); null goes back to the room's wall (the facade outside). */
+  setFreeWallColour(this: Fp3dEditor, hex: string | null): void {
+    if (hex && !hasWallColours(this._doc)) this._notice = this.t("wall_colors_shown");
+    this.updateFreeWall({ color: hex });
   }
 
   setWallsOpen(this: Fp3dEditor, open: boolean): void {

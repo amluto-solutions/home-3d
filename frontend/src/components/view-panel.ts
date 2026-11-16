@@ -200,6 +200,21 @@ export class Fp3dViewPanel extends LitElement {
     </div>`;
   }
 
+  /** A slider with words at its ends (the zoom style's early … late, #456). */
+  private renderRange(s: Setting) {
+    const c = s.control;
+    if (c.kind !== "range") return nothing;
+    const label = this.t(s.label);
+    return html`<label class="vp-row vp-range" title=${s.hint ? this.t(s.hint) : nothing}>
+      <span class="vp-label">${label}</span>
+      <span class="vp-range-in"
+        >${c.ends ? html`<small>${this.t(c.ends[0])}</small>` : nothing}<input type="range" min=${c.min} max=${c.max} step=${c.step} .value=${String(s.read(this.env))} aria-label=${label} @change=${(e: Event) => this.write(s, Number((e.target as HTMLInputElement).value))} />${c.ends
+          ? html`<small>${this.t(c.ends[1])}</small>`
+          : nothing}</span
+      >
+    </label>`;
+  }
+
   private renderSwitch(label: string, on: boolean, toggle: () => void, hint?: string) {
     return html`<button type="button" class="vp-row vp-switch" role="switch" aria-checked=${on} title=${hint ?? nothing} @click=${toggle}>
       <span>${label}</span><i class="vp-sw" aria-hidden="true"></i>
@@ -242,7 +257,7 @@ export class Fp3dViewPanel extends LitElement {
     const hint = s.hint ? this.t(s.hint) : undefined;
     switch (s.control.kind) {
       case "checks":
-        return this.renderDisplay(s, s.control.options, label, hint);
+        return this.renderDisplay(s, typeof s.control.options === "function" ? s.control.options(this.env) : s.control.options, label, hint);
       case "switch":
         return this.renderSwitch(label, !!s.read(this.env), () => this.write(s, !s.read(this.env)), hint);
       case "segment":
@@ -280,8 +295,12 @@ export class Fp3dViewPanel extends LitElement {
   private renderBody(section: ViewSection) {
     const rows = section.rows.map((r) => [r, viewSetting(r.id)] as const);
     if (section.id === "look") {
-      const [theme, accent] = rows.map(([, s]) => s);
+      const [theme, accent, zoom, late] = ["theme", "accent", "zoom_style", "zoom_late"].map((id) => rows.find(([r]) => r.id === id)?.[1]);
+      // the zoom style (#456) under the style; how late and "only the room" while one is chosen
+      const zoomOn = !!zoom && !!zoom.read(this.env);
       return html`<div class="vp-line">${theme ? this.renderSelect(theme, this.t("theme")) : nothing}${accent ? this.renderAccent(accent) : nothing}</div>
+        ${zoom ? html`<div class="vp-row" title=${this.t("zoom_style_hint")}><span class="vp-label">${this.t(zoom.label)}</span>${this.renderSelect(zoom, this.t(zoom.label))}</div>` : nothing}
+        ${zoomOn && late ? this.renderRange(late) : nothing} ${zoomOn ? this.renderRow({ id: "zoom_scope" }) : nothing}
         <button type="button" class="vp-link" @click=${() => this.emit("styles-open")}>${this.t("styles_open")} ›</button>`;
     }
     if (section.id === "markers") {
@@ -501,6 +520,18 @@ export class Fp3dViewPanel extends LitElement {
       .vp-display fp3d-multi-select {
         flex: 1 1 170px;
         min-width: 0;
+      }
+      .vp-range-in {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-left: auto;
+        font-size: 12px;
+        color: var(--fp3d-muted, var(--fp3d-text));
+      }
+      .vp-range-in input {
+        width: 110px;
+        accent-color: var(--fp3d-accent, currentColor);
       }
       .vp-seg-row {
         flex-wrap: wrap;

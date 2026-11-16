@@ -1,0 +1,367 @@
+{
+ "amluto.ikea-uk/appliance/rengora_integrated_dishwasher_60": {
+  "fields": "ebaca210b21db92e",
+  "look": "d4e350f7f9dbeb4a",
+  "parts": 4
+ },
+ "amluto.ikea-uk/kitchen/enhet_base_cabinet_40_drawers": {
+  "fields": "185e63a975172fe6",
+  "look": "6b0807fef2798865",
+  "parts": 11
+ },
+ "amluto.ikea-uk/kitchen/enhet_base_cabinet_60_door": {
+  "fields": "11975f37ba2c276b",
+  "look": "505b0b36484435db",
+  "parts": 7
+ },
+ "amluto.ikea-uk/kitchen/havsen_sink_unit_1_bowl": {
+  "fields": "2df7d951a8d84f56",
+  "look": "0ec72ca13d799d35",
+  "parts": 11
+ },
+ "amluto.ikea-uk/kitchen/havsen_sink_unit_2_bowls": {
+  "fields": "41736810a351de7b",
+  "look": "857b5eeec90e9392",
+  "parts": 15
+ },
+ "amluto.ikea-uk/kitchen/knoxhult_kitchen_120": {
+  "fields": "60bda72542a53af0",
+  "look": "a47a8a2942796f87",
+  "parts": 12
+ },
+ "amluto.ikea-uk/kitchen/knoxhult_kitchen_180": {
+  "fields": "d877f56b4f0e8c3c",
+  "look": "b68da43efcea4688",
+  "parts": 16
+ },
+ "amluto.ikea-uk/kitchen/knoxhult_kitchen_220": {
+  "fields": "568269ed0d9348e9",
+  "look": "c2fea02ae7ca0497",
+  "parts": 23
+ },
+ "amluto.ikea-uk/kitchen/metod_base_cabinet_40": {
+  "fields": "95b53373381ff631",
+  "look": "8ae8e58b281f7c46",
+  "parts": 4
+ },
+ "amluto.ikea-uk/kitchen/metod_base_cabinet_60": {
+  "fields": "63e06fee324548f0",
+  "look": "14e304f7ec68e3d7",
+  "parts": 4
+ },
+ "amluto.ikea-uk/kitchen/metod_base_cabinet_80": {
+  "fields": "4dae85764c57ae55",
+  "look": "b04d7d039c81924e",
+  "parts": 6
+ },
+ "amluto.ikea-uk/kitchen/metod_wall_cabinet_40x80": {
+  "fields": "4ba7d692718c940b",
+  "look": "65b035a0359a2758",
+  "parts": 3
+ },
+ "amluto.ikea-uk/kitchen/metod_wall_cabinet_60x80": {
+  "fields": "c19e8668d3990393",
+  "look": "c3a95da6e14c8271",
+  "parts": 3
+ },
+ "amluto.ikea-uk/kitchen/metod_wall_cabinet_80x40_lift_up": {
+  "fields": "f34437a6888766af",
+  "look": "7e7efd6d2011b68f",
+  "parts": 3
+ },
+ "amluto.ikea-uk/kitchen/metod_wall_cabinet_80x80": {
+  "fields": "c88b76920a366368",
+  "look": "efa779e6beb9195b",
+  "parts": 5
+ },
+ "amluto.kitchen-bath/appliance/american_fridge_freezer": {
+  "fields": "c9ac742b1b015d87",
+  "look": "de9602c37ce7b158",
+  "parts": 8
+ },
+ "amluto.kitchen-bath/appliance/american_fridge_freezer_black": {
+  "fields": "155d65d7a85922be",
+  "look": "11fec49936ad91f3",
+  "parts": 8
+ },
+ "amluto.kitchen-bath/appliance/built_in_double_oven": {
+  "fields": "bffc432059facfdb",
+  "look": "9a2ded8b10ae334d",
+  "parts": 11
+ },
+ "amluto.kitchen-bath/appliance/built_in_single_oven": {
+  "fields": "1e404e672e472ab0",
+  "look": "d1be2c4853649f13",
+  "parts": 8
+ },
+ "amluto.kitchen-bath/appliance/built_under_double_oven": {
+  "fields": "0bd0aa7fce11beab",
+  "look": "ba3099cab93f8a95",
+  "parts": 11
+ },
+ "amluto.kitchen-bath/appliance/french_door_fridge_freezer": {
+  "fields": "8c78936a220f4db4",
+  "look": "8ee8f9a4f29b44db",
+  "parts": 9
+ },
+ "amluto.kitchen-bath/appliance/range_cooker_1000": {
+  "fields": "878d5acecb2ae66f",
+  "look": "cfed7ef32116d578",
+  "parts": 38
+ },
+ "amluto.kitchen-bath/appliance/range_cooker_1000_induction": {
+  "fields": "63278f5c5d31809b",
+  "look": "4b7006453df8cd64",
+  "parts": 30
+ },
+ "amluto.kitchen-bath/appliance/range_cooker_1100": {
+  "fields": "ffb8ac327159a4ff",
+  "look": "0ae2c2e65c7ad0d4",
+  "parts": 42
+ },
+ "amluto.kitchen-bath/appliance/range_cooker_900": {
+  "fields": "d2a54e760e91a4f4",
+  "look": "bc4b10d99aa4465b",
+  "parts": 34
+ },
+ "amluto.kitchen-bath/appliance/under_counter_freezer": {
+  "fields": "891de9efc9d66cda",
+  "look": "66bddae4f1d11978",
+  "parts": 10
+ },
+ "amluto.kitchen-bath/appliance/under_counter_fridge": {
+  "fields": "65d7d98f093bb13d",
+  "look": "ee9b1b9fe7a991fd",
+  "parts": 7
+ },
+ "amluto.kitchen-bath/appliance/under_counter_fridge_black": {
+  "fields": "c6688d6e4c12f029",
+  "look": "b396f563b1441f62",
+  "parts": 7
+ },
+ "amluto.kitchen-bath/appliance/under_counter_fridge_integrated": {
+  "fields": "a6c1ef9dff7a2af4",
+  "look": "591a5d7fd965dcd3",
+  "parts": 8
+ },
+ "amluto.kitchen-bath/kitchen/blind_corner_unit_left": {
+  "fields": "197e2c74352d10ed",
+  "look": "6c670faaa9e4b34a",
+  "parts": 16
+ },
+ "amluto.kitchen-bath/kitchen/blind_corner_unit_right": {
+  "fields": "4b1e2e995ef90923",
+  "look": "d34d4c7e00f9da96",
+  "parts": 16
+ },
+ "amluto.kitchen-bath/kitchen/corner_sink_belfast_left_1200_1200": {
+  "fields": "8d47d8a832a7292b",
+  "look": "e6b765bbd763a53b",
+  "parts": 18
+ },
+ "amluto.kitchen-bath/kitchen/corner_sink_belfast_left_1500_1200": {
+  "fields": "1237b63ff745ea83",
+  "look": "9f0f7d69122c3d93",
+  "parts": 21
+ },
+ "amluto.kitchen-bath/kitchen/corner_sink_belfast_right_1200_1200": {
+  "fields": "91832d0690d5f7c6",
+  "look": "291490d4687420e6",
+  "parts": 18
+ },
+ "amluto.kitchen-bath/kitchen/corner_sink_belfast_right_1500_1200": {
+  "fields": "14b51437a627646f",
+  "look": "0f3a8fda09968977",
+  "parts": 21
+ },
+ "amluto.kitchen-bath/kitchen/corner_sink_inset_left_1000_1000": {
+  "fields": "2a869e34aab079fb",
+  "look": "121dccec8c9fb632",
+  "parts": 20
+ },
+ "amluto.kitchen-bath/kitchen/corner_sink_inset_left_1200_1200": {
+  "fields": "58b8dfdf6727d22f",
+  "look": "296b39a79c2931be",
+  "parts": 20
+ },
+ "amluto.kitchen-bath/kitchen/corner_sink_inset_left_1500_1200": {
+  "fields": "22457b310c316e78",
+  "look": "30ac27339e7409d6",
+  "parts": 23
+ },
+ "amluto.kitchen-bath/kitchen/corner_sink_inset_right_1000_1000": {
+  "fields": "0404171affd1d60b",
+  "look": "d60a3be6f4b9fd07",
+  "parts": 20
+ },
+ "amluto.kitchen-bath/kitchen/corner_sink_inset_right_1200_1200": {
+  "fields": "5c79c98ea3c1a74b",
+  "look": "f2e7d3398c391ffb",
+  "parts": 20
+ },
+ "amluto.kitchen-bath/kitchen/corner_sink_inset_right_1500_1200": {
+  "fields": "f9ba3a032835c7ff",
+  "look": "88aa468b106c1687",
+  "parts": 23
+ },
+ "amluto.kitchen-bath/kitchen/drawer_stack_400": {
+  "fields": "0295d10c9f33d1d3",
+  "look": "25bd6743392d0196",
+  "parts": 21
+ },
+ "amluto.kitchen-bath/kitchen/drawer_stack_500": {
+  "fields": "e3e0056f82de26e9",
+  "look": "8709bd479e35b7fd",
+  "parts": 21
+ },
+ "amluto.kitchen-bath/kitchen/drawer_stack_600": {
+  "fields": "e4c6058e64e0cf10",
+  "look": "02f124831b61fa05",
+  "parts": 21
+ },
+ "amluto.kitchen-bath/kitchen/drawer_stack_600_4": {
+  "fields": "ecb4b1aefff2d211",
+  "look": "2847927dedd5a1d8",
+  "parts": 27
+ },
+ "amluto.kitchen-bath/kitchen/drawer_stack_800": {
+  "fields": "f09f4be00f06cc62",
+  "look": "33ce49456568630e",
+  "parts": 21
+ },
+ "amluto.kitchen-bath/kitchen/larder_unit_1000": {
+  "fields": "5c2977356e8309ff",
+  "look": "23ee87b0440ad7d8",
+  "parts": 26
+ },
+ "amluto.kitchen-bath/kitchen/larder_unit_500": {
+  "fields": "49dafaba3854a714",
+  "look": "6c00615462db6ce5",
+  "parts": 14
+ },
+ "amluto.kitchen-bath/kitchen/larder_unit_600": {
+  "fields": "3bba213635c42959",
+  "look": "7928f628856041b2",
+  "parts": 14
+ },
+ "amluto.kitchen-bath/kitchen/oven_housing_double": {
+  "fields": "11a6b98739ae0690",
+  "look": "b1c6fd829dba2398",
+  "parts": 24
+ },
+ "amluto.kitchen-bath/kitchen/oven_housing_single": {
+  "fields": "ae1a44765757bb1e",
+  "look": "44da4323cc6eb082",
+  "parts": 27
+ },
+ "amluto.kitchen-bath/kitchen/oven_housing_single_microwave": {
+  "fields": "793f79309840ade6",
+  "look": "1bf9a2c935742813",
+  "parts": 30
+ },
+ "amluto.kitchen-bath/kitchen/peninsula_1200": {
+  "fields": "964569745fdd3a01",
+  "look": "0c2aee19e5022a89",
+  "parts": 29
+ },
+ "amluto.kitchen-bath/kitchen/peninsula_1800": {
+  "fields": "4d38b49139f3bb0c",
+  "look": "56fcc66f10a282be",
+  "parts": 41
+ },
+ "amluto.kitchen-bath/kitchen/peninsula_1800_raised": {
+  "fields": "2ae3d4b9ef8b3697",
+  "look": "0d4666ed7f451f01",
+  "parts": 43
+ },
+ "amluto.kitchen-bath/kitchen/peninsula_2400": {
+  "fields": "8cd99e1b5cc32989",
+  "look": "5680451cc725811d",
+  "parts": 53
+ },
+ "amluto.kitchen-bath/kitchen/pull_out_bin_300": {
+  "fields": "330756d780391bcc",
+  "look": "1d711703802f98f1",
+  "parts": 15
+ },
+ "amluto.kitchen-bath/kitchen/pull_out_bin_400": {
+  "fields": "492dcc125d501733",
+  "look": "57c78732c2e34655",
+  "parts": 15
+ },
+ "amluto.kitchen-bath/kitchen/pull_out_bin_600": {
+  "fields": "4d1562c954356507",
+  "look": "4cf0dc94689ec5b4",
+  "parts": 15
+ },
+ "amluto.kitchen-bath/kitchen/pull_out_larder_300": {
+  "fields": "9dca9ac419f4b800",
+  "look": "9c69aa9d36aac76d",
+  "parts": 9
+ },
+ "amluto.kitchen-bath/kitchen/shaker_base_unit_1000": {
+  "fields": "80e08ab9e9cf090a",
+  "look": "9b978030f37b2435",
+  "parts": 27
+ },
+ "amluto.kitchen-bath/kitchen/shaker_base_unit_300": {
+  "fields": "69fe92d90cd35e37",
+  "look": "1bcf58c035a586c9",
+  "parts": 15
+ },
+ "amluto.kitchen-bath/kitchen/shaker_base_unit_400": {
+  "fields": "175f703979ba6dbf",
+  "look": "def460569fe594bd",
+  "parts": 15
+ },
+ "amluto.kitchen-bath/kitchen/shaker_base_unit_500": {
+  "fields": "87aa59aece0e1fe4",
+  "look": "3848b6976d308438",
+  "parts": 15
+ },
+ "amluto.kitchen-bath/kitchen/shaker_base_unit_600": {
+  "fields": "8b28a6e1183457aa",
+  "look": "1bff128182dc8480",
+  "parts": 15
+ },
+ "amluto.kitchen-bath/kitchen/shaker_base_unit_800": {
+  "fields": "58ed4a65e5a7c8db",
+  "look": "97362ca8b1fe0276",
+  "parts": 27
+ },
+ "amluto.kitchen-bath/kitchen/shaker_wall_unit_1000": {
+  "fields": "9dbb3d1c2df6c284",
+  "look": "1408baf58f85c9f4",
+  "parts": 13
+ },
+ "amluto.kitchen-bath/kitchen/shaker_wall_unit_300": {
+  "fields": "f6b2df9e7e12fe38",
+  "look": "780a062a214e530f",
+  "parts": 7
+ },
+ "amluto.kitchen-bath/kitchen/shaker_wall_unit_400": {
+  "fields": "c79c4e189e48f966",
+  "look": "ca050c3923ad2462",
+  "parts": 7
+ },
+ "amluto.kitchen-bath/kitchen/shaker_wall_unit_500": {
+  "fields": "6d34172a36eb6d67",
+  "look": "a2cdd93aaec66bf3",
+  "parts": 7
+ },
+ "amluto.kitchen-bath/kitchen/shaker_wall_unit_600": {
+  "fields": "84a4c1f1dfc58e31",
+  "look": "b8c88cb3c61a0258",
+  "parts": 7
+ },
+ "amluto.kitchen-bath/kitchen/shaker_wall_unit_600_900": {
+  "fields": "ff81b6b8ec60bc62",
+  "look": "019783830215fdd2",
+  "parts": 7
+ },
+ "amluto.kitchen-bath/kitchen/shaker_wall_unit_800": {
+  "fields": "62d2ce57340ac6f3",
+  "look": "2d1dc2e5f1054f84",
+  "parts": 13
+ }
+}

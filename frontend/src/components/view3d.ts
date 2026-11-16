@@ -43,8 +43,9 @@ import { linkedContactIds } from "../opening-links.ts";
 import { effectSettings, itemShade, motionRooms, tempShade } from "../room-effects.ts";
 import { alertEntities, alertKey, alertSources, alertText, alertTint, clearedSnoozes, dismissAlert, findAlerts, HOUSE_ALERTS, isOutage, mayIgnoreAlert, shownAlerts, snoozeKey, type Alert, type AlertSources } from "../alerts.ts";
 import { iconSvg, mdiIcon } from "../icons.ts";
+import { neonSignPicture, signFont, signLight, signLines } from "../neon-sign.ts";
 import { uiIcon } from "../ui-icons.ts";
-import { applianceIdle, binColors, binDue, binNext, binOut, binOutToggleable, binPlace, binTagsShown, doorsOf, fetchPickups, FinishedMemory, fridgeOpenTooLong, groupTags, hassCountry, isFinishedState, mailboxPost, nextFridgeCheck, plantThirsty, remainingMinutes, remainingText, servicesDue, sameHousehold, setHouseholdCountry, wasteCalendars, isPackPlant, type HouseholdItem, type HouseholdTag, type Pickup } from "../household.ts";
+import { applianceIdle, binColors, calendarItems, type DayEvent, fetchDayEvents, householdCalendars, binDue, binNext, binOut, binOutToggleable, binPlace, binTagsShown, doorsOf, fetchPickups, FinishedMemory, fridgeOpenTooLong, groupTags, hassCountry, isFinishedState, mailboxPost, nextFridgeCheck, plantThirsty, remainingMinutes, remainingText, servicesDue, sameHousehold, setHouseholdCountry, wasteCalendars, isPackPlant, type HouseholdItem, type HouseholdTag, type Pickup } from "../household.ts";
 import { BAR_RGB, CHARGE_BAR_COUNT, chargeBars, DARK_BAR_RGB } from "../charge-bars.ts";
 import { batteryCharge, deviceSensors, energySummary, fetchSolarRows, fetchTodayChange, type EnergyPrefs, fieldLevels, fieldPowers, findConsumers, flowDots, isLoad, flowSegments, mixColor, sourceMix, gridPoint, powerSensorFor, readPower, solarCurvePath, solarDayFromStats, type Consumer, type EnergySummary, type SolarDay, type FlowKind, type StatRow } from "../energy.ts";
 import { fieldFace, fieldSize, roofFaces, roofWindowRoom } from "../solar.ts";
@@ -147,6 +148,8 @@ import { floorPictureKey } from "../floor-sig.ts";
 import { buildWhere, elsewhere, tapInRoomOn, type Where, type WhereIndex, type WhereInput } from "../tap-room.ts";
 import { loadDevicePopup, loadFind, loadQuickMenu, loadViewNav, loadWeatherTile } from "../load-parts.ts";
 import { need } from "../lazy-part.ts";
+import { liveValues } from "../live-values.ts";
+import { packSpinAxis } from "../live-parts.ts";
 import { energyRole, getPacks, getPlanRecipes, isPackCooktop, isPackHeater, isPackType, isRobotVacuum, isThermostatItem, mountBase, packAmbilight, packItem, packRobotCentre, packItemName, packMotion, packsVersion } from "../packs.ts";
 import { parkedVehicle, PRESENT_STATES, parkedVehicles, vehicleFurniture } from "../parking.ts";
 import { TRAIL_ICON, TRAIL_WINDOW_MS, trailEvents, trailPoints, trailSources, trailTime, type HistoryRow } from "../trail.ts";
@@ -161,18 +164,20 @@ import { anyModule, moduleAlerts, moduleCards, moduleMenuSheets, modulePools, mo
 import { lineFlows, majorOnly, markerEmoji, markerPath, sparkPoints } from "../module-scene.ts";
 import { generateWalls, openingHost, placeWallPlate, pointOnRoomEdge, type Wall } from "../geometry/walls.ts";
 import { signedArea } from "../model.ts";
+import { OSM_ATTRIBUTION, OSM_COPYRIGHT } from "../surroundings.ts";
 import { coverPositionable, lightAbilities } from "../light-abilities.ts";
 import { load3d } from "../load3d.ts";
 import { load2d } from "../load2d.ts";
 import { pinIn2d } from "../plan2d/pins.ts";
 import type { ViewerSurface } from "../viewer-surface.ts";
+import { zoomLateOf } from "../zoom-pref.ts";
 import { loadFun } from "../load-fun.ts";
 import { seasonNow } from "../seasons.ts";
 import { detectionKind, scaleGlow, buildMarkers, cameraMotionSensors, cameraRedUntil, openMoreInfo, setCameraSensors, stateText, toggleEntity } from "../markers.ts";
 import { RACK_STATUS_COLOURS, rackLedStates, slotEntities, slotStatus } from "../rack-links.ts";
 import { fetchRackSpark, RACK_HOTTEST, RACK_ONLINE, rackCardValues, rackSpark, type RackCardValue } from "../rack-card.ts";
 import { activeSections, roofUnderAt, sectionAbove, sectionCutsBelow } from "../roof-sections.ts";
-import { centroid, furnitureFootprint, gangEntities, gangsOf, GANG_TYPES, TECH_TYPES, isLamp, setTerrain, poolFloorY, LAMP_MODEL, LIFT_SPOTS, outdoorGround, pointInPolygon, poolWaterY, roomHolding, spotDepth, surfaceHeight, zonesOf, type Building, type Floor, type Furniture, type Pet, type StartView, type Vec2 } from "../model.ts";
+import { centroid, furnitureFootprint, labelScale, gangEntities, gangsOf, GANG_TYPES, TECH_TYPES, isLamp, setTerrain, poolFloorY, LAMP_MODEL, LIFT_SPOTS, outdoorGround, pointInPolygon, poolWaterY, roomHolding, spotDepth, surfaceHeight, zonesOf, type Building, type Floor, type Furniture, type Pet, type StartView, type Vec2 } from "../model.ts";
 
 import { pathLength, pipePath, pointAlong, type P3 } from "../geometry/runs.ts";
 import { pipePieces, poolAreas, poolNodeAt, poolWallNormal, underBasin, PIPE_IDLE, type PipePiece } from "../pool-runs.ts";
@@ -307,6 +312,9 @@ export class Fp3dView3d extends LitElement {
     themeEvening: { attribute: false },
     themeNight: { attribute: false },
     styleEntity: { attribute: false },
+    zoomStyle: { attribute: false },
+    zoomLate: { attribute: false },
+    zoomScope: { attribute: false },
     clock: { attribute: false },
     clockLook: { attribute: false },
     clockWeather: { attribute: false },
@@ -379,6 +387,7 @@ export class Fp3dView3d extends LitElement {
     clean: { attribute: false },
     cleanButton: { attribute: false },
     roomLabels: { attribute: false },
+    roomCard: { attribute: false },
     hiddenTypes: { attribute: false },
     furnitureOn: { attribute: false },
     pulse: { attribute: false },
@@ -480,6 +489,15 @@ export class Fp3dView3d extends LitElement {
   declare themeEvening: string | null;
   declare themeNight: string | null;
   declare styleEntity: string | null;
+  /**
+   * The zoom style (#456): the style the house blends into close up (a style id, an own style, or "house" for the
+   * house's plan; empty: none), how late it sets in (0 early … 100 late) and where ("all" rooms or only the "room").
+   */
+  declare zoomStyle: string | null;
+  declare zoomLate: number | string | null;
+  declare zoomScope: string | null;
+  /** How far the zoom style has come (0 … 1): the zoom style's background's opacity, set straight on its element. */
+  private zoomM = 0;
   /** A style set from outside for this device (the action `home_3d.set_style`, a spoken style), until a time (#442). */
   private declare _styleOverride: StyleOverride | null;
   /** The styles dialog's try-out (#441), shown instead of the chosen style while it is open. */
@@ -635,6 +653,8 @@ export class Fp3dView3d extends LitElement {
   declare cleanButton: boolean;
   /** Room names in 3D (cards can switch them off). */
   declare roomLabels: boolean;
+  /** A card for one room (its `room` option): it shows the house without the neighbourhood from the map (#463). */
+  declare roomCard: boolean;
   /** Kinds of objects the View hides (#268; the old Furniture switch, #269, is its furniture and decor kinds, #306); hiding is a flag in the viewer, not a rebuild. */
   declare hiddenTypes: ReadonlySet<ObjectType>;
   declare furnitureOn: boolean;
@@ -814,6 +834,8 @@ export class Fp3dView3d extends LitElement {
   private furnitureLinks = new Map<string, FurnitureLinks>();
   /** Household: the pickups of the waste calendars (fetched every 10 minutes while bins read one). */
   private pickups = new Map<string, Pickup[]>();
+  /** Household: today's entries of the calendars chosen for the glass card (#457). */
+  private dayEvents: DayEvent[] = [];
   private pickupKey = "";
   private householdTimer: ReturnType<typeof setInterval> | undefined;
   /** Household: small holograms – bins that go out today or tomorrow, post, a thirsty plant (set by the furniture pass). */
@@ -883,6 +905,9 @@ export class Fp3dView3d extends LitElement {
     this.themeEvening = null;
     this.themeNight = null;
     this.styleEntity = null;
+    this.zoomStyle = null;
+    this.zoomLate = null;
+    this.zoomScope = null;
     this._styleOverride = readOverride(Date.now());
     this.clock = null;
     this.clockLook = null;
@@ -946,6 +971,7 @@ export class Fp3dView3d extends LitElement {
     this.cleanButton = false;
     this.noSettings = false;
     this.roomLabels = true;
+    this.roomCard = false;
     this.hiddenTypes = NO_TYPES;
     this.furnitureOn = true;
     this.pulse = true;
@@ -1136,6 +1162,8 @@ export class Fp3dView3d extends LitElement {
     this.pickupKey = "";
     // back in the page (another dashboard view and back), the day curves are fetched and kept fresh again (#527)
     this.holoIds = "";
+    // the room tint goes to the next viewer again (#1105; ported from NeonPlan 3D 3.3.1, MIT, Mastershort)
+    this.tintSig = "";
     clearTimeout(this.flashTimer);
     this.flashTimer = undefined;
     clearTimeout(this.infoTimer);
@@ -1214,6 +1242,12 @@ export class Fp3dView3d extends LitElement {
         onDeviceHover: (id, x, y) => this.onModelHover(id, x, y),
         onDeviceDoubleTap: (id) => !this.ro && this.taps.doubleTap(id),
         onRoomDoubleTap: (floorId, roomId) => this.onRoomDoubleTap(floorId, roomId),
+        onZoom: (m) => {
+          // straight onto the element: a render of the whole view per frame would make the zoom stutter
+          this.zoomM = m;
+          const el = this.renderRoot.querySelector<HTMLElement>(".fp3d-zoom-bg");
+          if (el) el.style.opacity = String(m);
+        },
         onDeviceSwipe: (id, phase, dy, x, y) => this.onDeviceSwipe(id, phase, dy, x, y),
         onFurnitureSelect: (id) => this.fire("furniture-select", { id }),
         onFurnitureMove: (id, x, z) => this.fire("furniture-move", { id, x, z }),
@@ -1230,6 +1264,7 @@ export class Fp3dView3d extends LitElement {
       this.viewer.setWindowSpill(this.windowSpill);
       this.viewer.setSunHeight(this.sunHeight);
       this.viewer.setStyle(this.effectiveStyle());
+      this.syncZoom(this.viewer);
       this.viewer.setDescription((this.sceneLabel = translate(this.hass, flat ? "sr_plan" : "sr_scene")));
       this.viewer.setAccent(this.accent ?? null);
       this.viewer.setFurnishMode(this.furnish);
@@ -1413,8 +1448,7 @@ export class Fp3dView3d extends LitElement {
     this.wallWin?.attach(this.renderRoot.querySelector<HTMLElement>(".fp3d-wall"));
     // the chrome goes light with the Day look (#85): the shared tokens read the attribute, nested parts inherit it
     if (changed.has("hass") || changed.has("theme") || changed.has("themeEvening") || changed.has("themeNight") || changed.has("styleEntity") || changed.has("_styleOverride")) {
-      this.toggleAttribute("light", lightChrome(this.effectiveTheme()));
-      this.toggleAttribute("contrast", contrastChrome(this.effectiveTheme()));
+      this.syncChrome();
     }
     if (changed.has("plan2d") && changed.get("plan2d") !== undefined) this.switchViewer();
     if (changed.has("hass") && this.live?.el) this.live.el.hass = this.rawHass;
@@ -1456,6 +1490,9 @@ export class Fp3dView3d extends LitElement {
         startChanged = this.shownStartView !== undefined && this.shownStartView !== start;
         this.shownStartView = start;
         v.setStartView(this.startViewOf());
+        v.setBuilding(this.viewPlan(this.building));
+      } else if (changed.has("roomCard") && changed.get("roomCard") !== undefined && this.building) {
+        // a card made a room card or back (#463): the map comes or goes
         v.setBuilding(this.viewPlan(this.building));
       }
       if (changed.has("building") || changed.has("packs") || changed.has("petsOn")) void this.syncPets();
@@ -1511,6 +1548,7 @@ export class Fp3dView3d extends LitElement {
       // the realistic look's sky and the fog colour follow at once
       if (!changed.has("hass")) this.syncDevices(true);
     }
+    if (["zoomStyle", "zoomLate", "zoomScope", "building", "theme"].some((k) => changed.has(k)) || (changed.has("hass") && this.zoomStyle === "house")) this.syncZoom(v);
     if (changed.has("accent")) v.setAccent(this.accent ?? null);
     if (changed.has("surfaceGrab")) v.setSurfaceGrab(this.surfaceGrab ?? null);
     if (changed.has("furnishTypes")) v.setFurnishTypes(this.furnishTypes ?? null);
@@ -1574,7 +1612,7 @@ export class Fp3dView3d extends LitElement {
     if (!v || !full || !this.hass) return;
     const hass = this.hass;
     // seasonal and conditional items (#15): one came or went – the viewer gets the plan without the hidden ones
-    const before = this.shownPlan?.plan;
+    const before = this.viewedPlan;
     const b = this.viewPlan(full);
     if (b !== before) {
       v.setBuilding(b);
@@ -1736,6 +1774,8 @@ export class Fp3dView3d extends LitElement {
     v.setPickTargets(furniture.targets, this.openingTargets());
     v.setScreens(furniture.screens);
     v.setFridgeDoors(fridgeDoors(hass, b.floors));
+    // live parts of pack items (#466) and pack fan blades (#1084): doors, drawers, drums, levels, status lights
+    v.setLiveValues(liveValues(b.floors, hass.states, (id) => this.furnitureLinks.get(id)?.entity ?? null));
     // linked rack gear's status LEDs (#119): only colours change in 3D, never the racks' geometry
     v.setRackLeds(rackLedStates(hass, b.floors));
     v.setAwnings(awningStates(hass, b.floors));
@@ -2737,23 +2777,33 @@ export class Fp3dView3d extends LitElement {
     const media = el.classList.contains("fp3d-holo-media");
     const w = (media ? Math.max(size.w, MEDIA_HOVER_W) : size.w) * s;
     const h = size.h * s;
+    // inside the 3D area (#1088, #335): a card that would stick out at a side moves in, its line follows
+    const edge = 8;
+    const W = this.holoStage.w;
+    const H = this.holoStage.h;
     let x0 = facing ? cx : cx - w;
-    let x1 = x0 + w;
-    if (media) {
-      const sw = this.holoStage.w;
-      if (sw > 0) {
-        const shift = x1 > sw - 6 ? sw - 6 - x1 : x0 < 6 ? 6 - x0 : 0;
-        cx += shift;
-        x0 += shift;
-        x1 += shift;
-      }
-      const top = 6 - (cy - h);
-      if (top > 0 && this.holoStage.h) cy += top;
-    }
+    const shift = W > w + 2 * edge ? Math.max(0, edge - x0) - Math.max(0, x0 + w - (W - edge)) : 0;
+    x0 += shift;
+    cx += shift;
+    const x1 = x0 + w;
     for (let pass = 0; pass < 6; pass++) {
       const hit = this.holoBoxes.find((b) => x0 < b.x1 + 4 && x1 > b.x0 - 4 && cy - h < b.y1 + 4 && cy > b.y0 - 4);
       if (!hit) break;
       cy = hit.y0 - 6;
+    }
+    // no room above (a roof near the top edge, a big card, cards stacked up): it hangs below its anchor instead,
+    // stepping down past the cards there, and never above the top edge; the top keeps clear of the bar of energy tiles
+    const top = 60;
+    const below = cy - h < top;
+    if (below) {
+      cy = y + dy + h;
+      for (let pass = 0; pass < 6; pass++) {
+        const hit = this.holoBoxes.find((b) => x0 < b.x1 + 4 && x1 > b.x0 - 4 && cy - h < b.y1 + 4 && cy > b.y0 - 4);
+        if (!hit) break;
+        cy = hit.y1 + 6 + h;
+      }
+      if (H > h + top + edge) cy = Math.min(cy, H - edge);
+      cy = Math.max(cy, top + h);
     }
     this.holoBoxes.push({ i: index, x0, x1, y0: cy - h, y1: cy });
     // seen from behind the field the card shows its back, mirrored like glass – or, switched off, it stays
@@ -2768,7 +2818,8 @@ export class Fp3dView3d extends LitElement {
       line?.setAttribute("x1", x.toFixed(1));
       line?.setAttribute("y1", y.toFixed(1));
       line?.setAttribute("x2", cx.toFixed(1));
-      line?.setAttribute("y2", cy.toFixed(1));
+      // a card hanging below its anchor is met at its upper corner
+      line?.setAttribute("y2", (below ? cy - h : cy).toFixed(1));
       dot?.setAttribute("cx", x.toFixed(1));
       dot?.setAttribute("cy", y.toFixed(1));
     }
@@ -3745,7 +3796,8 @@ export class Fp3dView3d extends LitElement {
           const lamp = this.lampMarker(hass, floor, f, linked?.entity ?? null);
           markers.push(lamp);
           // a ceiling fan with light: its fan gets a pin of its own beside the light (tap: on/off, hold: speed)
-          const fan = f.type === "lamp_fan" && f.fan && f.fan !== "none" ? f.fan : null;
+          // a pack lamp with fan blades too (#1084)
+          const fan = (f.type === "lamp_fan" || packSpinAxis(packItem(f.type))) && f.fan && f.fan !== "none" ? f.fan : null;
           if (fan && !taken.has(fan)) {
             taken.add(fan);
             const st = hass.states[fan];
@@ -4045,6 +4097,11 @@ export class Fp3dView3d extends LitElement {
         .slice(0, 8);
       today.unshift(...lines.map((text) => ({ icon: "pin-outline", text, entity: notes as string })));
     }
+    // today's calendar entries (#457), right under the pinboard
+    if (this.dayEvents.length) {
+      const pins = today.findIndex((it) => it.icon !== "pin-outline");
+      today.splice(pins < 0 ? today.length : pins, 0, ...calendarItems(this.dayEvents, new Date(), hass.language));
+    }
     // the same list again is no new state: no second update of the view after every sync (#389)
     const household = today.filter((it, i) => today.findIndex((x) => x.text === it.text) === i);
     if (!sameHousehold(household, this._household)) this._household = household;
@@ -4063,6 +4120,16 @@ export class Fp3dView3d extends LitElement {
         if (picture) screens.set(f.id, { color: bg, level: 1, picture, plain: true });
       }
     }
+    // neon signs: their own text in tubes, lit with their light or switch (always, with nothing linked)
+    for (const floor of b.floors) {
+      for (const f of floor.furniture) {
+        if (f.type !== "neon_sign") continue;
+        const entity = this.furnitureLinks.get(f.id)?.entity ?? null;
+        const lit = signLight(f, entity ? hass.states[entity] : undefined, !!entity);
+        const picture = neonSignPicture(signLines(f.sign_text), lit.color, lit.on, lit.level, Math.max(0.05, f.w) / Math.max(0.05, f.h), signFont(f));
+        if (picture) screens.set(f.id, { color: [0.015, 0.015, 0.03], level: 1, picture, plain: true });
+      }
+    }
     // a module's band of light round an item, or its layers (a tank warm above, cool below): on any item, over its own glow
     for (const g of glows.values()) {
       if (g.top) screens.set(g.furnitureId, { color: g.color, level: g.level, faces: [{ part: "strata", color: g.color, top: g.top, level: g.level }] });
@@ -4078,27 +4145,30 @@ export class Fp3dView3d extends LitElement {
    */
   private watchHousehold(hass: HomeAssistant, b: Building): void {
     const items = b.floors.flatMap((f) => f.furniture).filter((f) => f.type === "waste_bin" || f.type === "mailbox");
-    const on = items.length > 0 && !this.replay;
+    // the calendars chosen for the card (#457) are read through Home Assistant's own calendar API, like the bins'
+    const day = householdCalendars(b.settings.household?.calendars);
+    const on = (items.length > 0 || day.length > 0) && !this.replay;
     const calendars = on ? wasteCalendars(b.floors) : [];
-    const key = calendars.join(",");
+    const key = `${calendars.join(",")}|${day.join(",")}`;
     if (!on) {
       clearInterval(this.householdTimer);
       this.householdTimer = undefined;
       this.pickupKey = "";
+      this.dayEvents = [];
       return;
     }
-    const fetch = async () => {
-      if (calendars.length) this.pickups = await fetchPickups(this.hass ?? hass, calendars);
+    const fetch = async (h: HomeAssistant) => {
+      const [p, d] = await Promise.all([calendars.length ? fetchPickups(h, calendars) : null, day.length ? fetchDayEvents(h, day) : null]);
+      if (p) this.pickups = p;
+      this.dayEvents = d ?? [];
       this.syncDevices(true);
     };
     if (key !== this.pickupKey || !this.householdTimer) {
       this.pickupKey = key;
       clearInterval(this.householdTimer);
-      this.householdTimer = setInterval(() => !document.hidden && void fetch(), 600_000);
-      if (calendars.length) void fetchPickups(hass, calendars).then((p) => {
-        this.pickups = p;
-        this.syncDevices(true);
-      });
+      this.householdTimer = setInterval(() => !document.hidden && void fetch(this.hass ?? hass), 600_000);
+      if (calendars.length || day.length) void fetch(hass);
+      else this.dayEvents = [];
     }
   }
 
@@ -4493,7 +4563,7 @@ export class Fp3dView3d extends LitElement {
    * hung on the wall.
    */
   private robotObstacles(floor: Building["floors"][number], room: [number, number][]): [number, number][][] {
-    const OPEN_BELOW = new Set(["rug", "worktop", "table", "table_round", "coffee_table", "chair", "office_chair", "stool", "bar_stool", "bench", "desk", "robot_vacuum", "parking", "stairwell", "radiator", "ac_unit", "tv_wall", "kitchen_wall", "led_strip"]);
+    const OPEN_BELOW = new Set(["rug", "worktop", "table", "table_round", "coffee_table", "chair", "office_chair", "stool", "bar_stool", "bench", "desk", "robot_vacuum", "parking", "stairwell", "radiator", "ac_unit", "tv_wall", "kitchen_wall", "led_strip", "neon_sign"]);
     return floor.furniture
       .filter((m) => {
         if (OPEN_BELOW.has(m.type) || (m.type.startsWith("lamp_") && m.type !== "lamp_floor" && m.type !== "lamp_uplight")) return false;
@@ -6162,6 +6232,25 @@ export class Fp3dView3d extends LitElement {
 
   /** The plan as the 3D view shows it (#15): the same object while the same items are hidden, so the viewer does not rebuild. */
   private viewPlan(b: Building): Building {
+    const plan = this.shownPlanOf(b);
+    // a room card shows the house alone, without the neighbourhood from the map (#463: that belongs to the house view)
+    if (!this.roomCard || !plan.settings.surroundings) return (this.viewedPlan = plan);
+    if (this.noMap?.from !== plan) this.noMap = { from: plan, plan: { ...plan, settings: { ...plan.settings, surroundings: null } } };
+    return (this.viewedPlan = this.noMap.plan);
+  }
+
+  /** What viewPlan gave last (a sync hands the viewer a plan only when it is another one). */
+  private viewedPlan: Building | null = null;
+
+  /** The plan without its map, for a room card (#463), and the plan it was made from. */
+  private noMap: { from: Building; plan: Building } | null = null;
+
+  /** Whether the view draws the neighbourhood from the map, so it names OpenStreetMap (#463). */
+  private mapShown(): boolean {
+    return !!this.building?.settings.surroundings?.on && !this.roomCard;
+  }
+
+  private shownPlanOf(b: Building): Building {
     const now = new Date(this.replay?.t ?? Date.now());
     // the editor keeps hidden items in sight; noted as shown, so the next sync knows it is the same plan (#389: without
     // it every sync beside the editor handed the plan over again and rebuilt the scene, on every power reading)
@@ -6741,7 +6830,7 @@ export class Fp3dView3d extends LitElement {
   private elsewhere(entityId: string): Where | null {
     if (this.furnish || !this.roomId || !tapInRoomOn() || !this.whereInput) return null;
     this.whereCache ??= buildWhere(this.whereInput);
-    return elsewhere(this.whereCache, entityId, this.roomId, true);
+    return elsewhere(this.whereCache, entityId, this.roomId, true, this.floorId);
   }
 
   /** Run an own action; one that asks first asks in the app's own dialog. */
@@ -6883,9 +6972,44 @@ export class Fp3dView3d extends LitElement {
     void this.confirmFor(drive).then((yes) => yes && safeCall(this.hass, domain, domain === "switch" ? "turn_on" : "press", { entity_id: drive }));
   }
 
+  /** The chrome and the glass cards go light or high contrast with the style shown (the cards are darker glass on a bright house, #86 #1126). */
+  private syncChrome(): void {
+    this.toggleAttribute("light", lightChrome(this.effectiveTheme()));
+    this.toggleAttribute("contrast", contrastChrome(this.effectiveTheme()));
+  }
+
   /** The look shown: the chosen one, by the sun for "auto" (Day above the horizon, Neon below), by the HA theme for "theme". */
   private effectiveTheme(): Theme {
     return this.effectiveStyle().base;
+  }
+
+  /** The zoom style (#456): the one asked for, resolved (the house's plan gives one by the time of day); never Realistic. */
+  private zoomDef(): StyleDef | null {
+    const id = this.zoomStyle;
+    if (!id || this.plan2d) return null;
+    const s = styleById(id === "house" ? shownStyle("house", this.hass, this.building?.settings as StylePlan | undefined) : id);
+    return s && s.base !== "realistic" ? s : null;
+  }
+
+  /** The zoom style, how late and where, to the 3D viewer (the 2D plan has none). */
+  private syncZoom(v: ViewerSurface): void {
+    const z = v as Partial<Pick<FloorplanViewer, "setZoomStyle" | "setZoomLate" | "setZoomScope">>;
+    z.setZoomLate?.(zoomLateOf(this.zoomLate));
+    z.setZoomScope?.(this.zoomScope === "room" ? "room" : "all");
+    z.setZoomStyle?.(this.zoomDef());
+  }
+
+  /** The zoom style's background over the style's own, as far as the blend has come (every room only, #456). */
+  private zoomBgShown(): boolean {
+    return this.zoomScope !== "room" && !!this.zoomDef() && !backdropCss(this.building?.settings.backdrop);
+  }
+  private renderZoomBg() {
+    const near = this.zoomBgShown() ? this.zoomDef() : null;
+    if (!near) return nothing;
+    const stage = STAGE[near.base] ?? STAGE.neon;
+    const mix = (a: number[], b: number[]) => `rgb(${a.map((v, i) => Math.round(v + (b[i] - v) * this._sky)).join(",")})`;
+    const bg = near.bg ? `linear-gradient(180deg, ${near.bg[0]} 0%, ${near.bg[1]} 100%)` : `radial-gradient(ellipse at 50% 35%, ${mix(stage.night[0], stage.day[0])}, ${mix(stage.night[1], stage.day[1])} 72%)`;
+    return html`<div class="fp3d-zoom-bg" aria-hidden="true" style="opacity:${this.zoomM};background:${bg}"></div>`;
   }
 
   /** The style shown (#436): the chosen one, or the one the sun, the HA theme or the house's plan gives now. */
@@ -6900,6 +7024,8 @@ export class Fp3dView3d extends LitElement {
    */
   previewStyle(style: StyleDef | null): void {
     this._stylePreview = style;
+    // the try-out of a bright style puts the dark glass on the cards too (#1126)
+    this.syncChrome();
     this.viewer?.setStyle(this.effectiveStyle());
     if (this.viewer) this.syncDevices(true);
   }
@@ -7100,20 +7226,22 @@ export class Fp3dView3d extends LitElement {
     const bg = this.effectiveStyle().bg;
     const own = backdropCss(this.building?.settings.backdrop) ?? (real ? `linear-gradient(180deg, ${rgb(real.top)} 0%, ${rgb(real.horizon)} 62%, ${rgb(real.ground)} 100%)` : bg ? `linear-gradient(180deg, ${bg[0]} 0%, ${bg[1]} 100%)` : null);
     const pinK = this.pinSize === "small" ? 0.8 : this.pinSize === "large" ? 1.25 : 1;
-    const style = `--fp3d-pin-k:${pinK};--fp3d-sky:${mix(stage.night[0], stage.day[0])};--fp3d-ground:${mix(stage.night[1], stage.day[1])}${own ? `;background:${own}` : ""}`;
+    const style = `--fp3d-pin-k:${pinK};--fp3d-room-scale:${labelScale(this.building?.settings)};--fp3d-sky:${mix(stage.night[0], stage.day[0])};--fp3d-ground:${mix(stage.night[1], stage.day[1])}${own ? `;background:${own}` : ""}`;
     return html`<div
       @touchstart=${this.keepTouch}
       @touchmove=${this.keepTouch}
       @touchend=${this.keepTouch}
       @pointerover=${this.onPinOver}
       @pointerout=${this.onPinOut}
-      class="fp3d-stage ${this.roomLabels ? "" : "fp3d-no-room-names"} ${this.pulse && !this._low ? "fp3d-pulse" : ""} ${this._low ? "fp3d-low" : ""} ${this.panelOpen ? "fp3d-panel-open" : ""} ${this.controlsRight ? "fp3d-side-right" : ""} ${this.findButtonShown() ? "" : "fp3d-no-find"} ${this._alerts.length ? "fp3d-has-alerts" : ""} ${this._through ? "fp3d-through-on" : ""} ${this._flash ? "fp3d-flash" : ""} ${this.replay ? "fp3d-replay" : ""}"
+      class="fp3d-stage ${this.roomLabels ? "" : "fp3d-no-room-names"} ${this.pulse && !this._low ? "fp3d-pulse" : ""} ${this._low ? "fp3d-low" : ""} ${this.panelOpen ? "fp3d-panel-open" : ""} ${this.controlsRight ? "fp3d-side-right" : ""} ${this.findButtonShown() ? "" : "fp3d-no-find"} ${this._alerts.length ? "fp3d-has-alerts" : ""} ${this._through ? "fp3d-through-on" : ""} ${this._flash ? "fp3d-flash" : ""} ${this.replay ? "fp3d-replay" : ""} ${this.zoomBgShown() ? "fp3d-zoom-on" : ""}"
       style=${style}
     >
+      ${this.renderZoomBg()}
       ${this._error ? html`<p class="fp3d-error">${this._error}</p>` : nothing} ${this.clean ? nothing : this.renderEnergy()} ${this.renderHologram()} ${this.clean ? nothing : this.renderWires()} ${this.clean ? nothing : this.renderLegend()}
       ${this.renderClock()} ${this.renderAlerts()} ${this.clean || this._walk ? nothing : html`${this.renderHousehold()} ${this.renderThumbs()} ${this.renderScenes()} ${this.renderFind()} ${this.renderCentral()}`} ${this.clean ? nothing : this.renderWalk()} ${this.renderSwipe()} ${this.renderInfo()} ${this.renderBinInfo()} ${this.renderGangMenu()} ${this.renderThrough()} ${this.renderCameraWall()} ${this.renderSheet()} ${this.renderRackView()} ${this.renderNote()}
       ${this.renderMenu()} ${this.renderPopup()} ${this.renderViewNav()} ${this.renderEye()} ${this.renderRoomList()}
       ${this.renderMic()}
+      ${this.mapShown() ? html`<a class="fp3d-osm-credit" href=${OSM_COPYRIGHT} target="_blank" rel="noopener noreferrer">${OSM_ATTRIBUTION}</a>` : nothing}
       ${this.pivotMark && !this._walk ? html`<span class="fp3d-pivot" aria-hidden="true"></span>` : nothing}
       ${this._micProbe && this.hass ? html`<fp3d-mic-probe .hass=${this.rawHass} .building=${this.building} @close=${() => ((this._micProbe = false), micProbeDone())}></fp3d-mic-probe>` : nothing}
       ${this.showStats && this._stats
@@ -7524,6 +7652,16 @@ export class Fp3dView3d extends LitElement {
         background: radial-gradient(ellipse at 50% 35%, var(--fp3d-sky, var(--fp3d-bg2)), var(--fp3d-ground, var(--fp3d-bg)) 72%);
         transition: background 2s ease;
       }
+      /* the zoom style's background (#456): under the canvas, over the stage's own (the stage isolates its layers then) */
+      .fp3d-stage.fp3d-zoom-on {
+        isolation: isolate;
+      }
+      .fp3d-zoom-bg {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+      }
       .fp3d-canvas {
         position: absolute;
         inset: 0;
@@ -7594,7 +7732,7 @@ export class Fp3dView3d extends LitElement {
         text-align: center;
       }
       .fp3d-pin-info small {
-        font-size: 11px;
+        font-size: calc(11px * var(--fp3d-room-scale, 1));
         font-weight: 500;
         opacity: 0.9;
         font-variant-numeric: tabular-nums;
@@ -7614,6 +7752,12 @@ export class Fp3dView3d extends LitElement {
         white-space: nowrap;
         backdrop-filter: blur(6px);
         box-shadow: var(--fp3d-shadow);
+      }
+      /* the house's size of the room names (#458) */
+      .fp3d-pin[data-room] {
+        font-size: calc(12.5px * var(--fp3d-room-scale, 1));
+        padding: calc(5px * var(--fp3d-room-scale, 1)) calc(10px * var(--fp3d-room-scale, 1));
+        border-radius: calc(10px * var(--fp3d-room-scale, 1));
       }
       .fp3d-pin-floor {
         display: grid;
@@ -8069,6 +8213,23 @@ export class Fp3dView3d extends LitElement {
       }
       .fp3d-low .fp3d-central {
         backdrop-filter: none;
+      }
+      /* the map's attribution (#463): small, in the bottom right corner */
+      .fp3d-osm-credit {
+        position: absolute;
+        right: 8px;
+        bottom: calc(3px + var(--fp3d-bottom-inset, 0px));
+        z-index: 3;
+        font-size: 10px;
+        line-height: 1.2;
+        color: var(--fp3d-muted, rgba(200, 210, 230, 0.75));
+        opacity: 0.8;
+        text-decoration: none;
+      }
+      .fp3d-osm-credit:hover,
+      .fp3d-osm-credit:focus-visible {
+        opacity: 1;
+        text-decoration: underline;
       }
       /* the eye sits beside the search button; alone in the corner once the view is clean */
       .fp3d-eye {
@@ -9750,6 +9911,9 @@ export class Fp3dView3d extends LitElement {
         .fp3d-pin {
           padding: 8px 12px;
         }
+        .fp3d-pin[data-room] {
+          padding: calc(8px * var(--fp3d-room-scale, 1)) calc(12px * var(--fp3d-room-scale, 1));
+        }
       }
       .fp3d-dev-full .fp3d-dev-text {
         display: inline;
@@ -9998,7 +10162,7 @@ const UNSPOKEN = new Set(["rug", "stairwell", "grid_point", "worktop"]);
 function markerHeight(f: Furniture): number {
   if (f.type === "tv_board") return f.h + 0.9;
   // wall TV and wall cabinet: above the item (their height above the floor comes from mountBase)
-  if (f.type === "tv_wall" || f.type === "kitchen_wall") return f.h + 0.25;
+  if (f.type === "tv_wall" || f.type === "kitchen_wall" || f.type === "neon_sign") return f.h + 0.25;
   return f.h + 0.35;
 }
 

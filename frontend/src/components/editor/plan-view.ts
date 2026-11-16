@@ -8,9 +8,12 @@ import { announce } from "../../announce.ts";
 import { syncCameraLooks } from "../../model.ts";
 import type { I18nKey } from "../../i18n.ts";
 import { furnitureName } from "../../furniture-names.ts";
-import { bounds, centroid, polygonArea, type Building, type Floor, type Vec2 } from "../../model.ts";
+import { bounds, centroid, labelPoint, polygonArea, type Building, type Floor, type Vec2 } from "../../model.ts";
+import { atGroundLevel, mapCorners, ownOutline, surroundFloorId } from "../../surroundings.ts";
 import { BODY_FONT, clearLabels, itemRank, roomRank, textWidth, TITLE_FONT, type LabelBox } from "../../viewer/label-clear.ts";
 import { type Guides, SNAP_PX, round } from "./helpers.ts";
+import { surroundPlanSvg } from "../../surround-plan.ts";
+import { OSM_ATTRIBUTION, OSM_COPYRIGHT } from "../../surroundings.ts";
 import type { Fp3dEditor } from "../editor.ts";
 
 /** The names the plan last showed, and what they were worked out for (#341). */
@@ -37,7 +40,7 @@ export class PlanViewPart {
     };
     for (const r of floor.rooms) {
       // the name (13 px) and the area under it (11.5 px)
-      const [x, y] = this.toScreen(centroid(r.points));
+      const [x, y] = this.toScreen(labelPoint(r));
       add(`r:${r.id}`, [x, y + 2], Math.max(textWidth(r.name, `600 13px ${TITLE_FONT}`), textWidth(this.area(polygonArea(r.points)), `500 11.5px ${BODY_FONT}`)), 30, roomRank(r), r.id === this._roomId);
     }
     for (const a of floor.outdoor) {
@@ -133,6 +136,20 @@ export class PlanViewPart {
 
   // ------------------------------------------------------------------ view transform
 
+  /** The neighbourhood from the map under the plan (#463), faint, on floors at the ground floor's level. */
+  renderSurroundPlan(this: Fp3dEditor, floor: Floor) {
+    const map = surroundPlanSvg(this._doc, floor);
+    if (map === nothing) return nothing;
+    const { scale, ox, oy } = this._view;
+    return svg`<g class="fp3d-osm" transform="matrix(${scale} 0 0 ${scale} ${ox} ${oy})">${map}</g>`;
+  }
+
+  /** The map's attribution under the plan while the map shows on this floor (#463). */
+  renderMapCredit(this: Fp3dEditor, floor: Floor) {
+    if (surroundPlanSvg(this._doc, floor) === nothing) return nothing;
+    return html`<a class="fp3d-osm-credit" href=${OSM_COPYRIGHT} target="_blank" rel="noopener noreferrer">${OSM_ATTRIBUTION}</a>`;
+  }
+
   toScreen(this: Fp3dEditor, p: Vec2): [number, number] {
     const { scale, ox, oy } = this._view;
     return [p[0] * scale + ox, p[1] * scale + oy];
@@ -167,6 +184,8 @@ export class PlanViewPart {
     this.fittedAll = all;
     // the roof tool shows the roof sections too, which reach past the rooms
     if (this._tool === "roof") for (const s of this._doc.settings.roof.sections ?? []) pts.push([s.x0, s.z0], [s.x1, s.z1]);
+    // an empty ground floor shows the house on the map (the template to draw on, #465)
+    if (!pts.length && this.floor?.id === surroundFloorId(this._doc)) pts.push(...(ownOutline(this._doc) ?? []));
     const b = pts.length ? bounds(pts) : { x0: 0, z0: 0, x1: 10, z1: 8 };
     const margin = 1.5;
     const w = b.x1 - b.x0 + 2 * margin;
@@ -232,6 +251,8 @@ export class PlanViewPart {
         others.push(q);
       });
     }
+    // the corners of the houses on the map snap too, on the floor at the ground floor's level (#465)
+    if (this.floor && atGroundLevel(this._doc, this.floor)) others.push(...mapCorners(this._doc));
     // 1. corners of rooms
     let best: Vec2 | null = null;
     let bestD = thr;

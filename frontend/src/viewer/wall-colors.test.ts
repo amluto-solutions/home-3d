@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { afterEach, test } from "node:test";
 import type { BufferGeometry } from "three";
-import type { Floor, Room } from "../model.ts";
+import type { Floor, FreeWall, Room } from "../model.ts";
 import { newFloor } from "../model.ts";
 import { buildFloorGeometry } from "./build.ts";
 import { hasWallColours, hexColor, paletteKey, setWallTints, WALL_TINT } from "./palette.ts";
@@ -66,4 +66,37 @@ test("a wall's own colour beats the room's; the facade colour paints the outer s
   assert.ok(!v.filter((q) => q[0] > 3.5).some(blue), "no blue on the east wall");
   const facade = v.filter((q) => q[0] < -0.2);
   assert.ok(facade.length > 0 && facade.every((q) => q[2] > q[3] && q[3] > q[4]), "the outer side takes the facade colour");
+});
+
+test("a wall drawn on its own has a colour on both sides, in a room and outside; a reset goes back (#460)", () => {
+  setWallTints(true, "#d0c0a0");
+  const walls = (color: string | null): FreeWall[] => [
+    { id: "in", a: [2, 0.5], b: [2, 3.5], thickness: 0.1, height: 1.2, color },
+    { id: "out", a: [10, 0], b: [12, 0], thickness: null, height: null, color },
+  ];
+  const run = (color: string | null) => {
+    const g = build({ ...floorOf([room("a", 0, 4)]), walls: walls(color) });
+    const v = tinted(g);
+    const mid = (q: number[]) => (Math.abs(q[0] - 2) < 0.1 && q[1] > 0.45 && q[1] < 3.55 ? "inside" : q[0] > 9.95 && q[0] < 12.05 && Math.abs(q[1]) < 0.2 ? "outside" : "other");
+    const out = { inside: 0, outside: 0 };
+    for (const q of v) if (red(q)) {
+      const w = mid(q);
+      if (w !== "other") out[w]++;
+    }
+    return out;
+  };
+  const own = run("#c0392b");
+  assert.ok(own.inside >= 4 && own.outside >= 4, JSON.stringify(own));
+  // no colour of its own: the facade colour outside (not red), and the room's none inside
+  assert.deepEqual(run(null), { inside: 0, outside: 0 });
+  // the room's own walls keep their colour
+  const rooms = tinted(build({ ...floorOf([room("a", 0, 4, { wall_color: "#3b6ea5" })]), walls: walls("#c0392b") }));
+  assert.ok(rooms.some((q) => blue(q) && Math.abs(q[0] - 4) < 0.01), "the room wall stays blue");
+});
+
+test("an own wall colour counts as a wall colour of the home (#460)", () => {
+  const plain = { floors: [{ rooms: [room("a", 0, 4)], walls: [{ color: null }] }] };
+  assert.equal(hasWallColours(plain), false);
+  assert.equal(hasWallColours({ floors: [{ rooms: [room("a", 0, 4)], walls: [{ color: "#c0392b" }] }] }), true);
+  assert.equal(hasWallColours({ floors: [{ rooms: [], walls: [{ color: "red" }] }] }), false);
 });

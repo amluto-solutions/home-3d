@@ -2,6 +2,43 @@
 
 All notable changes to Home 3D.
 
+## Home 3D 1.6.0 (16 November 2026)
+
+Furniture that moves with Home Assistant, your house in its neighbourhood from OpenStreetMap, a zoom style, and a round of NeonPlan 3D 3.2.0 - 3.4.1 ports (MIT, Mastershort) with their fixes. Plan format 5: version 1.5 and older open a plan saved by 1.6 read-only.
+
+### Your house in its neighbourhood
+- Surroundings (#462, #463, #464): Settings > Scene > Surroundings brings in the neighbourhood from the free map OpenStreetMap: the neighbours' houses as blocks of their height, streets, paths, railways, water, parks, woods and trees (radius 100, 150 or 250 m). The map is laid under the plan with north turned to match, so the sun and the shadows are right, and the neighbours cast their shadows into the garden (none at quality Low or with "outlines only"). Turn the map by 90 or 1 degree, move it with the arrows, Align again, tap a house on a small map to hide or show it, show the neighbours as flat outlines, switch the map off in 3D or remove it. It is drawn once with the house (no work per frame, Realistic unchanged without a map); the 2D plans show it faintly, the own house dashed; room cards show the house without it; "© OpenStreetMap contributors" with the copyright link stays in the view.
+- Privacy: Load surroundings sends one request to the public Overpass servers (overpass-api.de, or overpass.kumi.systems when it is busy) with a box around the location set in Home Assistant, only when an admin taps Load, and the text says so before. No other host is called; a test fails on any other outside host. The map data is kept in the plan (20 to 150 KB); a map too big to save is refused.
+- Start with the map (#465): on an empty ground floor an admin is offered the house's outline from OpenStreetMap as the template (turned square to the grid, north set, corners snap while you draw). **Align to the map** lays a floor-plan picture onto it: tap two corners in the picture, then the same two on the outline.
+
+### Furniture that lives
+- Live parts (#466): doors swing open with their contact, drawers slide out, oven and dishwasher doors fold down, drums and fans turn while the machine runs, tanks fill and status lights show green, grey or red (a fault pulses). The item panel has a Live parts section with one entity picker per slot; the library marks such items with ✨ and has a Live chip. Without an entity a part stands as drawn, and nothing is drawn per frame unless something moves. The pack format is documented with a worked example in docs/packs.md. The ceiling fans of Smart-home devices turn.
+- Our own packs (#467, #468): 173 items are live. Kitchen: base, sink, wall, tall, larder, peninsula and corner units, ovens, range cookers, fridges, freezers and the dishwasher (73 items in Kitchen & bath and IKEA UK range). Wardrobes, chests of drawers, bedside tables, sideboards, TV benches, display and shoe cabinets and hall and bathroom cabinets (100 items in Bedroom & kids, IKEA UK range and Kitchen & bath). Sizes, tags and the closed look are unchanged; an open door or drawer shows a liner, shelves or a drawer box. These packs have new releases (Bedroom & kids 4, IKEA UK range 8, Kitchen & bath 6) and stay out of the packs repository until older versions read slots (`tools/publish_packs.py`).
+
+### Styles and look
+- Zoom style (#456): "When zooming in" (View > Appearance, the card dialog, `zoom_style`, `zoom_late`, `zoom_scope`): from afar the house keeps its style, close up it blends into a second style by the camera's distance, with no rebuild while zooming. "Sets in" moves the start from early to late; "Only the room" limits it to the opened room. Any style but Realistic. Nothing changes until one is chosen.
+- Cozy: an unlit ceiling lamp shows as a grey disc like in Evening instead of a black hole (#474).
+- Window light, light cones and the sun's patches write premultiplied colour, so window light outside the house shows over the empty stage of a homely style, and a lamp no longer burns a light lawn out to white (#1114, #1115).
+- Heatmap colours come back after another dashboard view and back (#1105). Trying out a bright style in the styles dialog puts the darker glass on the energy cards at once (#1126).
+- Dashboard card dialog: the style lists are grouped like the panel's and include the plan's own styles, and the dialog has the style helper entity (#1077).
+
+### Plans and rooms
+- Room names: the selected room's name has a handle in the plan; drag it where it covers no other name, in the plan and in 3D (a double tap puts it back). Settings > General sets the name size in 3D, and a Names switch hides the names in the editor's 3D pane (#458).
+- A wall drawn on its own has a Wall colour of its own on both sides, shown in the Homely styles and Realistic; half-height walls in a bathroom and the walls of a carport or a shed keep their own colour (#460).
+- A neon sign: your own text in glowing tubes on the wall, in a light's colour or its own, with a short list of fonts (#459).
+- Household: today's calendar entries in "Today in the household" (tick calendars in Settings > Household); all-day entries first, one starting within the hour glows amber; they come through Home Assistant's own calendar API (#457).
+- Roofs: a roof section sits on the floor under it in split-level houses (#461); roof windows on a flat roof lie flush, a dormer keeps its side walls and front gable when the roof fades, and a garage door is only the door, with no roller shutter box (#470).
+
+### Fixes
+- Security: a phone rings only for its own person or an admin, once in 30 seconds, and the call carries the asking user's context (#455).
+- A device in no room (a camera on an outer wall) acts on its own floor with "Switch devices only in the opened room" (#1103). Located people stand inside their room, also in an L-shaped one (#900). Hologram cards stay inside the 3D view (#1088). A refused time travel subscription no longer floods the error reports.
+- Checked and not reproduced in Home 3D, so unchanged: opaque window panes after a floor change (#1081), a white ground under an own style based on Neon (#1106), and the whole-house turn of roofs (#1124).
+
+### Texts and housekeeping
+- All new texts are translated in the 16 other bundled language packs (88 texts each).
+- Ported from NeonPlan 3D 3.2.0, 3.3.0, 3.3.1, 3.4.0 and 3.4.1 (MIT, Mastershort); shop, licence, preview and error-report parts were not ported, and Home 3D calls no server of Mastershort's or ours.
+- Size budgets raised, with their reasons in `frontend/build.mjs`: the 3D bundle to 936 KB, the 2D bundle to 80 KB, the card editor to 42 KB and settings first open to 111 KB; the new map and map-start parts are lazy bundles. None is on a first paint.
+
 ## Home 3D 1.5.0 (13 November 2026)
 
 Styles for the 3D view, wall and facade colours, own styles and a house style plan, ported from NeonPlan 3D 3.1 (MIT, Mastershort), with the 3.1.1 and 3.1.2 fixes that apply to Home 3D. The plan format is now 4: an older release opens a plan saved by 1.5.0 read-only.

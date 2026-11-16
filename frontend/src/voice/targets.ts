@@ -70,6 +70,7 @@ export const SYNONYMS: Record<string, string[]> = {
   bed: ["bed"],
   waste_bin: ["bin", "waste bin", "trash"],
   mailbox: ["post", "mailbox", "letterbox"],
+  neon_sign: ["neon", "neon sign"],
   awning: ["awning"],
   parking: ["car", "parking"],
   led_strip: ["led", "led strip"],

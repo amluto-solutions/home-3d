@@ -9,9 +9,11 @@ go in the `appliance` folder (they draw power, so they are electric), the rest i
 
 from __future__ import annotations
 
+import json
 import math
 
-from pack_builder import Item, add_items
+from kitchen_live import convert
+from pack_builder import BUNDLED, Item, add_items
 
 PACK = "amluto.kitchen-bath"
 RELEASE = 2
@@ -552,6 +554,11 @@ def corner_sink(size: int, depth: int, sink: str, hand: str) -> None:
         surface=True,
     )
     it.meta["room"] = ["kitchen", "utility"]
+    # live parts (#467): the doors open with their door contacts (tools/kitchen_live.py); the closed look is as drawn
+    live = convert(it.data())
+    if live:
+        it.parts = live["parts"]
+        it.meta["slots"] = live["slots"]
 
 
 def build() -> None:
@@ -628,7 +635,12 @@ def build() -> None:
 
 def main() -> None:
     build()
-    add_items(PACK, items, RELEASE, NOTE)
+    # keep the pack's release and note as they are when they are newer than this script's (later runs raised them)
+    meta = json.loads((BUNDLED / PACK / "pack.json").read_text(encoding="utf-8"))
+    if meta.get("release", 0) > RELEASE:
+        add_items(PACK, items, meta["release"], meta.get("release_note", NOTE))
+    else:
+        add_items(PACK, items, RELEASE, NOTE)
 
 
 if __name__ == "__main__":

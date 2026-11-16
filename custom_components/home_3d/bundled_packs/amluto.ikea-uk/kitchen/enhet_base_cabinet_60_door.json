@@ -29,13 +29,21 @@
   },
   "ikea": "ENHET",
   "surface": true,
+  "slots": [
+    {
+      "id": "door",
+      "kind": "contact"
+    }
+  ],
   "parts": [
     {"shape": "box", "x": 0.0, "z": -0.0161, "w": 1, "d": 0.9677, "y": 0.1429, "h": 0.8571, "color": "white"},
     {"shape": "cyl", "x": -0.4375, "z": -0.4234, "w": 0.0583, "d": 0.0565, "y": 0, "h": 0.1429, "color": "white", "fix": "wdh"},
     {"shape": "cyl", "x": -0.4375, "z": 0.3589, "w": 0.0583, "d": 0.0565, "y": 0, "h": 0.1429, "color": "white", "fix": "wdh"},
     {"shape": "cyl", "x": 0.4375, "z": -0.4234, "w": 0.0583, "d": 0.0565, "y": 0, "h": 0.1429, "color": "white", "fix": "wdh"},
     {"shape": "cyl", "x": 0.4375, "z": 0.3589, "w": 0.0583, "d": 0.0565, "y": 0, "h": 0.1429, "color": "white", "fix": "wdh"},
-    {"shape": "box", "x": 0.0, "z": 0.4823, "w": 0.9933, "d": 0.029, "y": 0.1429, "h": 0.8526, "color": "body", "fix": "d"},
-    {"shape": "box", "x": 0.4333, "z": 0.5, "w": 0.02, "d": 0.0355, "y": 0.7714, "h": 0.1829, "color": "metal", "fix": "wdh"}
+    {"shape": "box", "x": 0.0, "z": 0.4823, "w": 0.9933, "d": 0.029, "y": 0.1429, "h": 0.8526, "color": "body", "fix": "d", "bind": {"slot": "door", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": 0.4333, "z": 0.5, "w": 0.02, "d": 0.0355, "y": 0.7714, "h": 0.1829, "color": "metal", "fix": "wdh", "bind": {"slot": "door", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": 0.0, "z": 0.4726, "w": 0.9533, "d": 0.0097, "y": 0.1566, "h": 0.8252, "color": "dark", "edges": "faint", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4775, "w": 0.9533, "d": 0.0194, "y": 0.5601, "h": 0.0183, "color": "white", "edges": "faint", "fix": "d"}
   ]
 }

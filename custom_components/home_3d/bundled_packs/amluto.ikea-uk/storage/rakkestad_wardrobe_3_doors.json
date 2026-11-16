@@ -28,6 +28,12 @@
     "en": "3 doors · 117"
   },
   "ikea": "RAKKESTAD",
+  "slots": [
+    {
+      "id": "door",
+      "kind": "contact"
+    }
+  ],
   "parts": [
     {"shape": "box", "x": -0.4923, "z": -0.0182, "w": 0.0154, "d": 0.9636, "y": 0, "h": 1, "color": "wood", "fix": "w"},
     {"shape": "box", "x": 0.4923, "z": -0.0182, "w": 0.0154, "d": 0.9636, "y": 0, "h": 1, "color": "wood", "fix": "w"},
@@ -35,11 +41,11 @@
     {"shape": "box", "x": 0.0, "z": -0.0182, "w": 0.9692, "d": 0.9636, "y": 0, "h": 0.0102, "color": "wood", "fix": "h"},
     {"shape": "box", "x": 0.0, "z": -0.4927, "w": 0.9692, "d": 0.0145, "y": 0.0102, "h": 0.9795, "color": "wood", "fix": "d"},
     {"shape": "box", "x": 0.0, "z": 0.4273, "w": 0.9692, "d": 0.0327, "y": 0, "h": 0.0341, "color": "wood", "fix": "h"},
-    {"shape": "box", "x": -0.3333, "z": 0.4818, "w": 0.3299, "d": 0.0327, "y": 0.0341, "h": 0.9636, "color": "wood"},
-    {"shape": "box", "x": -0.2094, "z": 0.5, "w": 0.0103, "d": 0.04, "y": 0.5227, "h": 0.0909, "color": "dark", "fix": "wdh"},
-    {"shape": "box", "x": 0.0, "z": 0.4818, "w": 0.3299, "d": 0.0327, "y": 0.0341, "h": 0.9636, "color": "wood"},
-    {"shape": "box", "x": -0.1239, "z": 0.5, "w": 0.0103, "d": 0.04, "y": 0.5227, "h": 0.0909, "color": "dark", "fix": "wdh"},
-    {"shape": "box", "x": 0.3333, "z": 0.4818, "w": 0.3299, "d": 0.0327, "y": 0.0341, "h": 0.9636, "color": "wood"},
-    {"shape": "box", "x": 0.2094, "z": 0.5, "w": 0.0103, "d": 0.04, "y": 0.5227, "h": 0.0909, "color": "dark", "fix": "wdh"}
+    {"shape": "box", "x": -0.3333, "z": 0.4818, "w": 0.3299, "d": 0.0327, "y": 0.0341, "h": 0.9636, "color": "wood", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": -0.2094, "z": 0.5, "w": 0.0103, "d": 0.04, "y": 0.5227, "h": 0.0909, "color": "dark", "fix": "wdh", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": 0.0, "z": 0.4818, "w": 0.3299, "d": 0.0327, "y": 0.0341, "h": 0.9636, "color": "wood", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 96}},
+    {"shape": "box", "x": -0.1239, "z": 0.5, "w": 0.0103, "d": 0.04, "y": 0.5227, "h": 0.0909, "color": "dark", "fix": "wdh", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 96}},
+    {"shape": "box", "x": 0.3333, "z": 0.4818, "w": 0.3299, "d": 0.0327, "y": 0.0341, "h": 0.9636, "color": "wood", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}},
+    {"shape": "box", "x": 0.2094, "z": 0.5, "w": 0.0103, "d": 0.04, "y": 0.5227, "h": 0.0909, "color": "dark", "fix": "wdh", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}}
   ]
 }

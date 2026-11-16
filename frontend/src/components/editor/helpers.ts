@@ -53,6 +53,7 @@ export type Drag =
   | { kind: "roofvertex"; id: string; index: number; base: Building; moved: boolean; from?: Building }
   | { kind: "cablept"; id: string; index: number; base: Building; moved: boolean }
   | { kind: "holopt"; base: Building; moved: boolean }
+  | { kind: "roomlabel"; roomId: string; grab: Vec2; base: Building; moved: boolean }
   | { kind: "bgmove"; start: Vec2; bx: number; bz: number; base: Building; moved: boolean }
   | { kind: "bgscale"; base: Building; moved: boolean }
   | { kind: "bgrotate"; base: Building; moved: boolean; start: number; rot: number }
@@ -75,7 +76,7 @@ type EditDragKind = Extract<Drag, { base: Building; moved: boolean }>["kind"];
  * Drags that change the document live (restored when cancelled, recorded in the history when done). Typed as a
  * record of every such kind (#184): a new one left out of it no longer type-checks.
  */
-const EDIT_DRAG_KINDS: Record<EditDragKind, true> = { vertex: true, room: true, device: true, pet: true, opening: true, furniture: true, furnset: true, rotate: true, resize: true, outdoor: true, roofmove: true, roofcorner: true, roofvertex: true, outvertex: true, outbox: true, pipept: true, poolport: true, pooldev: true, pooljoint: true, solarmove: true, solarturn: true, cablept: true, holopt: true, bgmove: true, bgscale: true, bgrotate: true, wallmove: true };
+const EDIT_DRAG_KINDS: Record<EditDragKind, true> = { vertex: true, room: true, device: true, pet: true, opening: true, furniture: true, furnset: true, rotate: true, resize: true, outdoor: true, roofmove: true, roofcorner: true, roofvertex: true, outvertex: true, outbox: true, pipept: true, poolport: true, pooldev: true, pooljoint: true, solarmove: true, solarturn: true, cablept: true, holopt: true, roomlabel: true, bgmove: true, bgscale: true, bgrotate: true, wallmove: true };
 export const EDIT_DRAGS: ReadonlySet<string> = new Set(Object.keys(EDIT_DRAG_KINDS));
 
 /** The other doors and windows on the wall `o` sits on (#143): centre offsets and widths, for equal spacing. */
@@ -102,14 +103,14 @@ export type EditorTopic = "favorites" | "own_buttons" | "media_presets" | "direc
 /** Wall view side bar: what stands or hangs at a wall, by kind. */
 export const WALL_CATS: Record<string, string[]> = {
   base: ["kitchen", "sink", "stove", "dishwasher", "sideboard", "dresser", "tv_board", "nightstand", "washbasin", "washer", "dryer", "worktop", "desk"],
-  hang: ["kitchen_wall", "tv_wall", "shelf", "lamp_wall", "radiator", "ac_unit", "led_strip"],
+  hang: ["kitchen_wall", "tv_wall", "shelf", "lamp_wall", "radiator", "ac_unit", "led_strip", "neon_sign"],
   tall: ["kitchen_tall", "fridge", "wardrobe", "tall_cabinet", "shelf", "coat_rack"],
   living: ["sofa", "armchair", "bed", "bunk_bed", "bench", "corner_bench", "plant"],
   light: ["lamp_wall", "lamp_floor", "led_strip", "lamp_table"],
   switches: ["wall_switch", "wall_socket", "wifi_ap", "water_heater"],
 };
 /** Hanging pieces (they go into a gap high on the wall). */
-export const HANGING = new Set(["kitchen_wall", "tv_wall", "lamp_wall", "shelf", "led_strip", "ac_unit"]);
+export const HANGING = new Set(["kitchen_wall", "tv_wall", "lamp_wall", "shelf", "led_strip", "ac_unit", "neon_sign"]);
 /** Cabinets built to measure: in a gap they take its width. */
 export const WALL_FIT = new Set(["kitchen", "kitchen_wall", "kitchen_tall", "sideboard", "dresser", "tv_board", "worktop", "wardrobe", "tall_cabinet", "shelf", "desk"]);
 /** The narrowest a fitted piece may become (a 29 cm desk is no desk). */
@@ -225,7 +226,7 @@ export const ARROWS: Record<string, [number, number]> = { ArrowLeft: [-1, 0], Ar
 export const rackItemOf = (type: string) => packItem(type) ?? packInfo(type);
 
 // furniture without a top to light: no "State from" box
-export const NO_STATE_TYPES = new Set(["parking", "stairwell", "rug", "grid_point", "waste_bin", "mailbox", "wall_switch", "wall_socket", "wifi_ap", "water_heater"]);
+export const NO_STATE_TYPES = new Set(["parking", "stairwell", "rug", "grid_point", "waste_bin", "mailbox", "wall_switch", "wall_socket", "wifi_ap", "water_heater", "neon_sign"]);
 
 /** A device of the energy tool: the built-in meter, inverter, battery, wallbox and grid point, and pack energy items (#22). */
 export function isEnergyDevice(type: string): boolean {

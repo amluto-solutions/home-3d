@@ -15,7 +15,8 @@ const SHARED = new Set([...STAIR_TYPES, "stairwell"]);
 export function floorKeys(b: Building, extra: string, own: (floor: Floor) => string = () => ""): Map<string, string> {
   const shared = JSON.stringify({
     extra,
-    settings: b.settings,
+    // the neighbourhood from the map is no floor's drawing (#463: the viewer keeps it apart) and its data is large
+    settings: b.settings.surroundings ? { ...b.settings, surroundings: undefined } : b.settings,
     floors: b.floors.map((f) => ({ ...f, furniture: f.furniture.filter((m) => SHARED.has(m.type)), placements: undefined })),
   });
   return new Map(b.floors.map((f) => [f.id, `${shared}\n${own(f)}\n${JSON.stringify(f)}`]));

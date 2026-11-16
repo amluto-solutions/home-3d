@@ -2,7 +2,8 @@
 // union of those flat shapes is the shadow; it is drawn once into a small texture (overlaps do not darken twice)
 // and only again when the sun has moved a little – no shadow maps, nothing per frame, light enough for tablets.
 
-import type { Building } from "../model.ts";
+import type { Building, Vec2 } from "../model.ts";
+import type { PlacedSurroundings } from "../surroundings.ts";
 import type { RoofGeometry } from "./roof.ts";
 import { triangulate } from "./geo.ts";
 
@@ -67,4 +68,63 @@ export function shadowBox(tris: readonly number[]): [number, number, number, num
     z1 = Math.max(z1, tris[i + 1]);
   }
   return [x0, z0, x1, z1];
+}
+
+/**
+ * The shadows of plain blocks (the neighbours' houses from the map, #463): each stands on the ground and is `h` tall
+ * above it, laid down along the sun's rays like the house (the same triangles, so overlaps do not darken twice).
+ * Ported from NeonPlan 3D 3.3.0 (MIT, Mastershort).
+ */
+export function blockShadows(blocks: readonly { p: readonly Vec2[]; h: number }[], toSun: [number, number], elevation: number): number[] {
+  const out: number[] = [];
+  if (elevation <= 0) return out;
+  const reach = 1 / Math.tan((elevation * Math.PI) / 180);
+  for (const b of blocks) {
+    if (b.p.length < 3 || b.h <= 0) continue;
+    const d = Math.min(SHADOW_REACH, b.h * reach);
+    const ring = b.p as Vec2[];
+    const hi = ring.map(([x, z]) => [x - toSun[0] * d, z - toSun[1] * d] as Vec2);
+    for (const [i, j, k] of triangulate(ring)) {
+      out.push(ring[i][0], ring[i][1], ring[j][0], ring[j][1], ring[k][0], ring[k][1]);
+      out.push(hi[i][0], hi[i][1], hi[j][0], hi[j][1], hi[k][0], hi[k][1]);
+    }
+    for (let i = 0; i < ring.length; i++) {
+      const j = (i + 1) % ring.length;
+      out.push(ring[i][0], ring[i][1], ring[j][0], ring[j][1], hi[j][0], hi[j][1]);
+      out.push(ring[i][0], ring[i][1], hi[j][0], hi[j][1], hi[i][0], hi[i][1]);
+    }
+  }
+  return out;
+}
+
+/** How far beyond the house's own shadow the neighbours' shadows are drawn (m, #463). */
+export const AROUND_SHADOW = 30;
+
+/**
+ * Adds the shadows of the neighbours' houses from the map to the house's (#463): only of those near the house, and only
+ * as far as AROUND_SHADOW beyond its own shadow, where the shadow's picture is (so it keeps its sharpness for the
+ * house's own shadow); none in the flat outlines mode. `rise`: how high the map's ground lies above the lawn the
+ * shadow falls on. Returns the box of what is drawn.
+ */
+export function neighbourShadows(
+  tris: number[],
+  box: [number, number, number, number],
+  around: PlacedSurroundings | null,
+  toSun: [number, number],
+  elevation: number,
+  rise: number,
+): [number, number, number, number] {
+  if (!around?.buildings.length || around.flat) return box;
+  const R = AROUND_SHADOW;
+  const region: [number, number, number, number] = [box[0] - R, box[1] - R, box[2] + R, box[3] + R];
+  const near = (p: Vec2) => p[0] > region[0] - R && p[0] < region[2] + R && p[1] > region[1] - R && p[1] < region[3] + R;
+  const extra = blockShadows(
+    around.buildings.filter((bd) => bd.p.some(near)).map((bd) => ({ p: bd.p, h: rise + Math.max(1, bd.h) })),
+    toSun,
+    elevation,
+  );
+  if (!extra.length) return box;
+  for (const v of extra) tris.push(v);
+  const all = shadowBox(tris)!;
+  return [Math.max(all[0], region[0]), Math.max(all[1], region[1]), Math.min(all[2], region[2]), Math.min(all[3], region[3])];
 }

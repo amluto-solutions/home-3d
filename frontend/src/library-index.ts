@@ -7,6 +7,7 @@
 import { FURNITURE_GROUPS, LAMP_TYPES } from "./model.ts";
 import { fuzzyEquals } from "./fuzzy.ts";
 import { isElectric, packItemName, packName, packType, type FurniturePack, type PackItemInfo } from "./packs.ts";
+import { isLiveItem } from "./live-parts.ts";
 import { isVocabularyWord, KIND_WORDS, KINDS, ROOMS, synonymWords, type Kind, type Room } from "./vocabulary.ts";
 
 export { KINDS, ROOMS, type Kind, type Room };
@@ -29,6 +30,8 @@ export interface LibraryEntry {
   electric: boolean;
   light: boolean;
   outdoor: boolean;
+  /** Has live parts (#466): doors, drawers, levels, status lights or fan blades that move with Home Assistant (✨). */
+  live?: boolean;
   /** Metres: width, depth, height. */
   size: [number, number, number];
   /** The pack it comes from (null for a built-in kind) and its name for the card. */
@@ -131,6 +134,7 @@ const BASIC: Record<string, [Kind, Room[]]> = {
   awning: ["outdoor", ["garden"]],
   waste_bin: ["household", ["garden", "garage", "utility"]],
   mailbox: ["household", ["garden", "hall"]],
+  neon_sign: ["deco", ["living", "hobby", "kids", "bedroom"]],
   wall_switch: ["tech", []],
   wall_socket: ["tech", []],
   wifi_ap: ["network", []],
@@ -405,6 +409,7 @@ export function buildIndex(src: IndexSource): LibraryEntry[] {
         rooms,
         electric: !!it.electric || !!it.light,
         light: !!it.light,
+        live: isLiveItem(it),
         outdoor: rooms.length > 0 && rooms.every((r) => OUTDOOR_ROOMS.has(r)),
         size: it.size,
         pack: pack.id,
@@ -446,6 +451,8 @@ export interface LibraryFilter {
   electric: boolean;
   light: boolean;
   outdoor: boolean;
+  /** Only items with live parts (#466); left out: all. */
+  live?: boolean;
   /** Only the items of this pack (its id); null or left out: every pack (#109). */
   pack?: string | null;
 }
@@ -477,7 +484,7 @@ function fitsRoom(e: LibraryEntry, room: Room | null): boolean {
 
 /** The toggle chips (Electric, Lights up, Outdoor) and the pack chip: hard filters, with or without a query. */
 function fitsChips(e: LibraryEntry, f: LibraryFilter): boolean {
-  return (!f.pack || e.pack === f.pack) && (!f.electric || e.electric) && (!f.light || e.light) && (!f.outdoor || e.outdoor);
+  return (!f.pack || e.pack === f.pack) && (!f.electric || e.electric) && (!f.light || e.light) && (!f.outdoor || e.outdoor) && (!f.live || !!e.live);
 }
 
 /** What the ranking reads of an entry: its folded label and words, worked out once. */
@@ -613,7 +620,7 @@ export interface LibraryHits {
   hiddenByChips: number;
 }
 
-export type LibraryChip = "room" | "pack" | "electric" | "light" | "outdoor";
+export type LibraryChip = "room" | "pack" | "electric" | "light" | "outdoor" | "live";
 
 /** The chips a filter has switched on, for the "Filters: ... · Clear filters" line (#77). */
 export function activeFilters(f: LibraryFilter): LibraryChip[] {
@@ -623,6 +630,7 @@ export function activeFilters(f: LibraryFilter): LibraryChip[] {
   if (f.electric) on.push("electric");
   if (f.light) on.push("light");
   if (f.outdoor) on.push("outdoor");
+  if (f.live) on.push("live");
   return on;
 }
 

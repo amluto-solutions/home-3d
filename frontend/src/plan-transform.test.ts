@@ -4,13 +4,20 @@ import { test } from "node:test";
 import { emptyBuilding, newFloor, type Building, type RoofSection, type SolarField, type Vec2 } from "./model.ts";
 import { fieldFace, fieldModules, GROUND, proposeField, proposeGroundField, proposeWallField, roofFaces, wallFaces, windowCorners, type RoofFace } from "./solar.ts";
 import { PLAN_FIELDS, shiftBy, transformPlan, turnAbout, type PlanTransform } from "./plan-transform.ts";
+import { mapToPlan } from "./surroundings.ts";
 
 // ---------------------------------------------------------------------------------------------------------------
 // 1. Every field of model.ts that holds plan coordinates or a plan direction is listed in PLAN_FIELDS (or here, as
 //    not a plan coordinate, with the reason). A new coordinate field fails this test until it is handled.
 
-/** Fields that look like coordinates but are not plan coordinates (none at the moment). */
-const NOT_PLAN: Record<string, string> = {};
+/** Fields that look like coordinates but are not plan coordinates. */
+const NOT_PLAN: Record<string, string> = {
+  // #462: the neighbourhood map's points are map metres (east, north); Surroundings.x/z and north place them
+  "SurroundBuilding.p": "map metres, placed by Surroundings.x/z and north",
+  "SurroundWay.p": "map metres, placed by Surroundings.x/z and north",
+  "SurroundArea.p": "map metres, placed by Surroundings.x/z and north",
+  "Surroundings.trees": "map metres, placed by Surroundings.x/z and north",
+};
 
 /** Field names and types that hold plan coordinates or a plan direction. */
 const COORD_NAME = /^(x|z|x0|x1|z0|z1|u|v|nx|nz|rotation|theta|north|axis|slope_dir|pivot|points|a|b|face)$/;
@@ -73,7 +80,7 @@ function plan(): Building {
   const b = emptyBuilding();
   const g = newFloor("g", "Ground", 0);
   g.height = 2.6;
-  g.rooms.push({ id: "r1", name: "Lounge", area_id: null, points: rect(0, 0, 8, 6), floor_material: "wood", start_view: { theta: 0.4, phi: 0.8, radius: 9, target: { x: 4, y: 0.5, z: 3 } } });
+  g.rooms.push({ id: "r1", name: "Lounge", area_id: null, points: rect(0, 0, 8, 6), floor_material: "wood", label_offset: [1.5, -0.5], start_view: { theta: 0.4, phi: 0.8, radius: 9, target: { x: 4, y: 0.5, z: 3 } } });
   g.rooms.push({ id: "r2", name: "Garage", area_id: null, points: rect(8, 0, 11, 4), floor_material: "concrete" });
   g.rooms.push({ id: "r3", name: "Porch", area_id: null, points: rect(-4, 0, 0, 2), floor_material: "stone" });
   g.furniture.push({ id: "bin", type: "bin", x: 12, z: 1, rotation: 30, w: 0.6, d: 0.7, h: 1, variant: null, bin_kerb: { x: 14, z: 7 } });
@@ -121,6 +128,7 @@ function plan(): Building {
     hologram: { place: "free", field: null, x: 9, z: 9, height: 2, size: 1, right: 0, up: 0 },
   };
   b.energy.meter = { floor_id: "g", x: 0.3, z: 0.3 };
+  b.settings.surroundings = { on: true, lat: 45.5, lon: 7.25, at: 0, radius: 100, x: 4, z: 3.5, own: 0, buildings: [{ p: rect(-4, -3, 4, 3), h: 7 }], ways: [{ p: [[-50, -10], [50, -10]], w: 6, k: "road" }], areas: [], trees: [[10, 10]] };
   // solar: one field on each kind of face, and a roof window
   const faces = roofFaces(b);
   const face = (key: string) => faces.find((f) => f.key === key)!;
@@ -170,6 +178,8 @@ function modulesFollow(t: PlanTransform, before: Building, after: Building, id: 
 /** One check per PLAN_FIELDS entry: the field after the move is the field before, moved by t. */
 const CHECKS: Record<keyof typeof PLAN_FIELDS, (t: PlanTransform, a: Building, b: Building) => void> = {
   "Room.points": (t, a, b) => assert.deepEqual(b.floors[0].rooms[0].points, a.floors[0].rooms[0].points.map(t.point)),
+  // the name's offset is a direction: a turn turns it, a shift keeps it (the name moves with its room)
+  "Room.label_offset": (t, a, b) => assert.deepEqual(b.floors[0].rooms[0].label_offset, t.quarter ? [0.5, 1.5] : a.floors[0].rooms[0].label_offset),
   "Room.start_view": (t, a, b) => assert.deepEqual(pt(t, a.floors[0].rooms[0].start_view!.target!), xz(b.floors[0].rooms[0].start_view!.target!)),
   "Furniture.x": (t, a, b) => assert.deepEqual(xz(b.floors[0].furniture[0]), pt(t, a.floors[0].furniture[0])),
   "Furniture.z": (t, a, b) => assert.deepEqual(xz(b.floors[1].furniture[0]), pt(t, a.floors[1].furniture[0])),
@@ -248,6 +258,16 @@ const CHECKS: Record<keyof typeof PLAN_FIELDS, (t: PlanTransform, a: Building, b
   "PoolJoint.nx": (t, _a, b) => assert.deepEqual([b.floors[0].outdoor[1].pool!.joints![0].nx, b.floors[0].outdoor[1].pool!.joints![0].nz], t.quarter ? [-0, 1] : [1, 0]),
   "PoolJoint.nz": (t, _a, b) => assert.deepEqual([b.floors[0].outdoor[1].pool!.joints![0].nx, b.floors[0].outdoor[1].pool!.joints![0].nz], t.quarter ? [-0, 1] : [1, 0]),
   "EnergySettings.meter": (t, a, b) => assert.deepEqual(xz(b.energy.meter!), pt(t, a.energy.meter!)),
+  "Surroundings.x": (t, a, b) => {
+    // the map's points stay map metres; where each lies in the plan moved with the house
+    const [s0, s1] = [a.settings.surroundings!, b.settings.surroundings!];
+    assert.deepEqual(s1.buildings, s0.buildings);
+    for (const p of [...s0.buildings[0].p, ...s0.trees]) {
+      const [want, got] = [t.point(mapToPlan(s0, a.settings.north, p)), mapToPlan(s1, b.settings.north, p)];
+      assert.ok(close(got[0], want[0]) && close(got[1], want[1]), `map point ${p}: ${got} (want ${want})`);
+    }
+  },
+  "Surroundings.z": (t, a, b) => assert.deepEqual(xz(b.settings.surroundings!), pt(t, a.settings.surroundings!)),
 };
 
 /** Every roof face before the move, moved, lies on a face of the moved roof with the same size and slope. */
@@ -319,6 +339,7 @@ test("turning four times brings every field back (#156)", () => {
   assert.deepEqual(after.settings.pets, before.settings.pets);
   assert.deepEqual(after.settings.start_view, before.settings.start_view);
   assert.equal(after.settings.north, before.settings.north);
+  assert.deepEqual(after.settings.surroundings, before.settings.surroundings);
   assert.deepEqual(after.energy, before.energy);
 });
 
@@ -340,6 +361,7 @@ test("shifting one floor moves what is on that floor (and the garden fields with
   assert.deepEqual(after.floors[1], before.floors[1]);
   assert.deepEqual(after.settings.roof.sections, before.settings.roof.sections);
   assert.deepEqual(after.settings.start_view, before.settings.start_view);
+  assert.deepEqual(after.settings.surroundings, before.settings.surroundings, "the map moves with the whole house only, as north turns");
   assert.deepEqual(after.settings.roof.hologram, before.settings.roof.hologram);
   for (const id of ["fb", "fg", "fp", "fs"]) assert.deepEqual(after.settings.roof.solar!.find((f) => f.id === id), before.settings.roof.solar!.find((f) => f.id === id));
   assert.deepEqual(after.settings.roof.windows, before.settings.roof.windows);

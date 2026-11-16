@@ -204,6 +204,10 @@ All measures of a part are **fractions of the item's size**:
 - `profile` (`lathe` only, required there): see [Round shapes](#round-shapes).
 - `round` (`rbox` and `shell` only, optional): see [Round shapes](#round-shapes) and [Curved shells](#curved-shells).
 - `side` (`shell` only, required there), `plan` and `taper` (`shell` only, optional): see [Curved shells](#curved-shells).
+- `bind` (optional): the part is a **live part**: it moves or lights with the entity linked to one of the item's
+  `slots` (a door opens, a drawer slides out). See [Live parts](#live-parts).
+- `spin` (optional): fan blades, `"y"` (about the upright axis, a ceiling fan) or `"z"` (about the front axis, a desk
+  fan). They turn while the item's fan runs. See [Live parts](#live-parts).
 
 ### Round shapes
 
@@ -352,6 +356,7 @@ shapes needs a Home 3D version that knows them (shells: Home 3D after 0.2.1).
   `cushion`, `wood`, `metal`, `glass`, `plant`, `pot`, `case`, `panels`, `valves`, `grille`, `buttons`, `screen`,
   `top`, `base`, `fronts`, `handles`, `shade`. A role left out keeps a plain name: its material (Fabric, Wood, Metal,
   Glass …) or "Main colour", "Second colour", "Details"; a vehicle's are Paint, Tyres and trim, Wheels and Windows.
+- `slots`: the slots the item's live parts are bound to, 1 to 8. See [Live parts](#live-parts).
 - `hole`: stairs. When they reach the floor above, they cut the stairwell opening into that floor, like the built-in
   stairs; the steps rise from the front edge (+z) to the back.
 - `rack_frame`: the item is an empty rack (19 or 10 inch, its height in U); see [Racks](#racks).
@@ -487,6 +492,160 @@ those cannot show, or for places without a wall or a roof to cut:
 | Up-and-over garage door | A garage door opening with the style **Up-and-over door**: it tilts up into a canopy with its cover | The door's look for a garage drawn from items |
 | Bay window | Draw the room's outline with the bay and put a window on each side | A bay that stands in front of a window opening |
 | Chimney breast, half-wall with cap | A free wall can be low, but has no cap | The breast (plain, with an open fireplace or a mantelpiece) and the capped half-wall |
+
+### Live parts
+
+Live parts make an item move with Home Assistant: a door opens with its contact, a drawer slides out, an oven or a
+dishwasher door folds down, a washing machine's drum turns while it runs, a tank fills with its level and a status
+light shows green (fine), grey (off) or red (a fault, pulsing). Fan blades turn while the fan runs.
+
+You need two things:
+
+1. **Slots** on the item (`slots`): what the item panel asks an entity for. Each slot has an `id` and a `kind` (or a
+   `name` of its own); the person who places the item picks one entity per slot under **Live parts**.
+2. **A `bind` on each part that moves**: the slot it follows and what it does. Parts with the same `bind` move together
+   as one piece (a drawer front and its handle).
+
+In 3D a live part is its own small model, so the rest of the item is never drawn again: a live part costs nothing
+while nothing moves. It takes the placed item's colours and materials and keeps its edges. In the plan, the library
+pictures and previews the item is drawn as it is in the file: closed, full, in its own colours. So draw every live
+part **at rest**: doors and drawers closed, a tank full, a status light in its own colour.
+
+**Without an entity** a part stays as drawn. An item with **one slot** takes the item's own entity for it (its main
+link) when that entity is of a kind the slot takes: an oven's power switch does not open its door, a door contact
+does. With two or more slots, each slot needs its own link.
+
+#### A worked example
+
+A sink base unit with a drawer, a door and the status light of a leak sensor under the sink. The tests use this very
+example (`frontend/src/live-parts.test.ts` and `tests/test_packs.py`), so it always passes the checks.
+
+<!-- live-example -->
+```json
+{
+  "id": "base_unit_live",
+  "name": { "en": "Sink base unit (live example)" },
+  "size": [0.6, 0.58, 0.88],
+  "group": "kitchen",
+  "room": ["kitchen"],
+  "slots": [
+    { "id": "door", "kind": "contact" },
+    { "id": "drawer", "kind": "drawer" },
+    { "id": "status", "kind": "status", "name": { "en": "Leak sensor" } }
+  ],
+  "parts": [
+    { "shape": "box", "x": 0, "z": -0.04, "w": 0.94, "d": 0.88, "y": 0, "h": 0.11, "color": "dark", "fix": "h" },
+    { "shape": "box", "x": 0, "z": -0.03, "w": 1, "d": 0.94, "y": 0.11, "h": 0.89, "color": "body" },
+    {
+      "shape": "box", "x": 0, "z": 0.46, "w": 0.98, "d": 0.04, "y": 0.78, "h": 0.21, "color": "white", "edges": "faint",
+      "bind": { "slot": "drawer", "kind": "slide" }
+    },
+    {
+      "shape": "box", "x": 0, "z": 0.49, "w": 0.4, "d": 0.02, "y": 0.87, "h": 0.025, "color": "metal",
+      "bind": { "slot": "drawer", "kind": "slide" }
+    },
+    {
+      "shape": "box", "x": 0, "z": 0.46, "w": 0.98, "d": 0.04, "y": 0.12, "h": 0.65, "color": "white", "edges": "faint",
+      "bind": { "slot": "door", "kind": "open", "hinge": "left", "amount": 100 }
+    },
+    {
+      "shape": "box", "x": 0.4, "z": 0.49, "w": 0.03, "d": 0.02, "y": 0.52, "h": 0.2, "color": "metal",
+      "bind": { "slot": "door", "kind": "open", "hinge": "left", "amount": 100 }
+    },
+    {
+      "shape": "sphere", "x": -0.4, "z": 0.41, "w": 0.03, "d": 0.02, "y": 0.035, "h": 0.04, "color": "accent",
+      "bind": { "slot": "status", "kind": "blink" }
+    }
+  ]
+}
+```
+
+Linked to a door contact, a drawer contact and a leak sensor, the door swings out by 100° about its left edge, the
+drawer slides out by 45 % of the unit's depth and the light turns red while the sensor reports a leak.
+
+#### `bind`: what a part does
+
+| `kind` | The part … | `amount` (optional) | Other fields |
+| --- | --- | --- | --- |
+| `open` | turns about an edge of the parts it moves with, at their front | degrees, 0 to 180 (default 95) | `hinge`: `left` (default), `right`, `top` or `bottom` |
+| `slide` | slides out to the front | a share of the item's depth, 0 to 1 (default 0.45) | |
+| `spin` | turns about the middle of its parts while its entity is on or running | turns a minute at full speed, 0 to 180 (default 60) | `axis`: `y` (default, upright), `x` or `z` |
+| `level` | fills from its bottom up to the entity's share (a percent, or 0 to 1) | | |
+| `blink` | is a status light: green while on or fine, grey while off, red and pulsing for a fault, a problem or unavailable | | |
+| `glow` | glows in its own colour while on, dim while off | | |
+
+`slot` is the id of one of the item's slots. Left, right and the front are seen from the front of the item (+z), as
+everywhere in a recipe; a mirrored item hinges on the other side by itself. Typical uses:
+
+- A door: `{ "slot": "door", "kind": "open", "hinge": "left" }`; a wardrobe's right door `"hinge": "right"`.
+- An oven, a dishwasher or a drop-down flap folds down: `"hinge": "bottom"`, `"amount": 90`. A wall cabinet's lift-up
+  door: `"hinge": "top"`.
+- A drawer: `{ "slot": "drawer", "kind": "slide" }`; a deep pan drawer `"amount": 0.6`.
+- Two doors that open together: the same `bind` on both would turn them about one edge, so give each door its own
+  `bind` with its own hinge on the same slot (`{ "slot": "doors", "kind": "open", "hinge": "left" }` and
+  `"hinge": "right"`). To open them apart, give each its own slot (`door_left`, `door_right`).
+- A washing machine's drum: `{ "slot": "running", "kind": "spin", "axis": "z" }`, with a slot of kind `power` (it turns
+  while the power reading is above 5 W or the switch is on).
+- A water tank's level: `{ "slot": "fill", "kind": "level" }`, with a slot of kind `level`.
+
+What counts as open or on: `on`, `open`, `opening`, `home`, `playing`, `running`, `cleaning`, `printing`, `charging` and
+the like; a cover or a valve by its position; a number above 5 (watts) or as a percent.
+
+#### `slots`: what the item asks an entity for
+
+| Field | Required | Meaning |
+| --- | --- | --- |
+| `id` | yes | Lower-case letters, digits and `_`, up to 24 characters. Every slot has at least one part bound to it, and every bound part names a slot of the list. |
+| `kind` | `kind` or `name` | What the slot is. It names the picker (in every language of Home 3D) and says which entities fit. |
+| `name` | `kind` or `name` | Its own name by language, like an item's `name` (`{ "en": "Leak sensor" }`). It wins over the kind's name. |
+| `domains` | no | Up to 8 entity domains it takes (`["binary_sensor", "cover"]`). They win over the kind's. |
+
+| Slot `kind` | Picker | Domains it takes |
+| --- | --- | --- |
+| `contact` | Door contact | `binary_sensor`, `cover`, `input_boolean`, `lock` |
+| `drawer` | Drawer contact | `binary_sensor`, `cover`, `input_boolean` |
+| `fan` | Fan | `fan`, `switch`, `input_boolean`, `binary_sensor`, `sensor` |
+| `level` | Fill level | `sensor`, `number`, `input_number`, `cover`, `valve` |
+| `progress` | Progress | `sensor`, `number`, `input_number` |
+| `status` | Status light | `binary_sensor`, `sensor`, `switch`, `device_tracker`, `input_boolean`, `update`, `vacuum`, `lawn_mower` |
+| `power` | Running (switch or power) | `switch`, `sensor`, `binary_sensor`, `input_boolean`, `media_player`, `climate`, `water_heater` |
+| `glow` | Light | `light`, `switch`, `binary_sensor`, `input_boolean`, `media_player` |
+
+The plan keeps the links in the placed item's `binds` (slot id to entity id, see [Plan format](plan-format.md)). The
+library marks an item with slots with ✨, and its **Live** chip shows only such items.
+
+#### Fan blades: `spin`
+
+Fan blades need no slot: mark each blade (and the hub, if it should turn too) with `"spin": "y"` for a ceiling fan or
+`"spin": "z"` for a desk or pedestal fan. All the item's `spin` parts turn as one about their middle. They turn with
+the item's fan: a pack lamp with fan blades (an item with `light`) gets a **Fan** picker beside its light, as the
+built-in ceiling fan does, and turns at the fan's speed; any other item turns with its own entity (a fan at its speed,
+a switch at a middle pace while it is on). A part has either `spin` or `bind`, not both.
+
+#### Our own cabinets
+
+Home 3D's own wardrobes, chests of drawers, bedside tables, sideboards, TV benches, display cabinets, shoe cabinets and
+hall and bathroom cabinets (the `amluto.bedroom`, `amluto.ikea-uk` and `amluto.kitchen-bath` items with a ✨) are live.
+`tools/live_cabinets.py` makes them from the plain items and is the repeatable step (a second run changes nothing): it
+binds each door and drawer front, with its handles, to a slot and adds what an open door or drawer shows.
+
+- A **chest** has one `drawer` slot per drawer (`drawer_1` ...), named by its place ("Top drawer", "Second right drawer"); the
+  drawer slides out and carries a box (a bottom and two sides) behind its front.
+- A **wardrobe, cabinet or TV bench** has one `door` slot (`contact`): all its doors open together. Doors open outwards,
+  each column of doors about its own edge, so each column has its own `hinge` and a slightly different `amount` (100, 96,
+  92 ...): parts with the same `bind` would turn about one edge as one piece. Stacked doors of one column swing together.
+- A **shoe cabinet's** tip-out compartments are `open` parts with `"hinge": "bottom"` and a slot each (`flap_1` ...).
+- A **solid** cabinet (one block for the carcass) gets a thin dark recess behind each front, so an open door shows a
+  recess and not a flat face. A cabinet without side panels gets no drawer boxes (they would show from the side).
+- The closed item is unchanged: parts added inside stay hidden behind the fronts, and an item without a `symbol` gets one
+  drawn from its old parts (the top view shows the parts seen from above, and the new ones are inside).
+
+#### Older Home 3D versions
+
+`bind`, `spin` and `slots` came in Home 3D 1.6.0. Older versions refuse an item that uses them (an unknown field), so
+`tools/publish_packs.py` holds such packs back from the packs repository until older versions read them, like
+`role_names`. From 1.6.0 on, a part or slot field that a later version adds asks for an update (`needs_update`) instead
+of breaking the pack.
 
 ### Racks
 
@@ -653,7 +812,7 @@ A pack is refused, with a message that names the file and the fault, when:
 | A file is too large | 50,000 characters | `too_large` |
 | The whole pack is too large | 3,000,000 characters, and 3,800,000 bytes as a folder import sends them (UTF-8 JSON) | `too_large` |
 | A file is not JSON, breaks the schema, or an item id does not match its file name or is used twice | 60 parts and 40 symbol shapes per item | `invalid_content` |
-| A value this version does not know yet (a newer shape, for example) | | `needs_update` |
+| A value this version does not know yet (a newer shape, for example), or a field of a part or a slot it does not know | | `needs_update` |
 
 The size limits keep a pack within one websocket message (Home Assistant takes at most 4 MiB): the page measures a
 folder before sending it and says `too_large` instead of losing the connection, and a pack installed from GitHub is
@@ -903,7 +1062,8 @@ use, and the packs repository is a generated copy so other installs can add or u
 2. Run `python tools/publish_packs.py path/to/home-3d-packs`. It checks every bundled pack with the same schema and
    limits as `tools/fp3dpack.py` and refuses to publish anything if one fails, or if a pack changed since its copy
    in the checkout without a higher `release`. A pack whose items use a field older Home 3D versions refuse
-   (`HELD_FIELDS`: `role_names`, so Living, Office & tech and Smart-home devices for now) is held back: left out
+   (`HELD_FIELDS`: `role_names` and the live parts `slots`, `bind` and `spin`, so Living, Office & tech, Smart-home
+   devices, Kitchen & bath and IKEA UK for now) is held back: left out
    of the checkout and named in the output. Otherwise it copies each pack folder
    over its copy in the checkout (files removed from a pack are removed there too) and writes `README.md` (the
    packs, their install URLs, licence), `NOTICE` (with the IKEA trademark note while the IKEA UK pack is in) and

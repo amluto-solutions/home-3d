@@ -8,14 +8,16 @@
   "family": "under_counter_fridge",
   "variant": {"en": "Fridge"},
   "electric": true,
+  "slots": [{"id": "door", "kind": "contact"}],
   "parts": [
     {"shape": "cyl", "x": -0.4167, "z": 0.3621, "w": 0.05, "d": 0.0517, "y": 0.0, "h": 0.0176, "color": "dark", "fix": "wdh"},
     {"shape": "cyl", "x": 0.4167, "z": 0.3621, "w": 0.05, "d": 0.0517, "y": 0.0, "h": 0.0176, "color": "dark", "fix": "wdh"},
     {"shape": "box", "x": 0.0, "z": -0.4655, "w": 0.9333, "d": 0.069, "y": 0.0, "h": 0.0176, "color": "dark", "fix": "h"},
     {"shape": "rbox", "x": 0.0, "z": -0.0302, "w": 1.0, "d": 0.9397, "y": 0.0176, "h": 0.9824, "color": "white", "round": 0.04},
     {"shape": "box", "x": 0.0, "z": -0.0259, "w": 1.0, "d": 0.9483, "y": 0.9765, "h": 0.0235, "color": "white", "fix": "h"},
-    {"shape": "rbox", "x": 0.0, "z": 0.4655, "w": 0.99, "d": 0.0517, "y": 0.0353, "h": 0.9294, "color": "white", "round": 0.08},
-    {"shape": "box", "x": 0.4292, "z": 0.4957, "w": 0.025, "d": 0.0086, "y": 0.5882, "h": 0.3412, "color": "metal", "fix": "wdh"}
+    {"shape": "rbox", "x": 0.0, "z": 0.4655, "w": 0.99, "d": 0.0517, "y": 0.0353, "h": 0.9294, "color": "white", "round": 0.08, "bind": {"slot": "door", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": 0.4292, "z": 0.4957, "w": 0.025, "d": 0.0086, "y": 0.5882, "h": 0.3412, "color": "metal", "fix": "wdh", "bind": {"slot": "door", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": 0.0, "z": 0.4448, "w": 0.95, "d": 0.0103, "y": 0.0494, "h": 0.9012, "color": "white", "edges": "faint"}
   ],
   "symbol": [
     {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},

@@ -128,6 +128,16 @@ style_entity: input_select.sample_style   # optional, see below
 
 `theme` also takes `auto` (Day while the sun is up, Neon after) and `house` (the house's style plan). Without `theme`, the card follows the Home Assistant theme. With `theme_evening` or `theme_night` set, `theme` is the day style. `style_entity` names an `input_select` or `input_text` whose state is a style id or name; while it names a style, it wins over the card's own choice.
 
+### Zoom style
+
+The house can switch to a second style as you zoom in. Choose it under **View → Appearance → When zooming in**: any style except Realistic, one of your own, or the house's style plan. From afar the house keeps its style; as you zoom towards a room it blends into the zoom style. **Sets in** moves the start from early (an opened floor) to late (close up in a room, the default). **Only the room** limits the blend to the opened room, or the room in the middle of the view, and the rest of the house keeps its style. On a card:
+
+```yaml
+zoom_style: cozy     # any style id but realistic, my_..., or house
+zoom_late: 70        # optional: 0 (early) … 100 (late)
+zoom_scope: room     # optional: all (default) or room
+```
+
 ### The house's style plan
 
 **Settings → House plan style** holds one style for the day, one for the evening and one for the night. Every screen set to **Follow the house's style plan** uses it. Choose how it switches: by the sun (day while the sun is up, evening after sunset, night from the night time) or by the clock (three times you enter). An optional helper entity (an `input_select` or `input_text` that names a style, for example `cozy`) wins over the plan while it names a style. A device or card that has its own choice keeps it. The plan format is now version 4: an older Home 3D opens such a plan read-only.
@@ -170,6 +180,13 @@ Only the optional furniture packs reach outside, and only to GitHub. Home Assist
 - you install a pack from a GitHub link,
 - it checks packs you installed from GitHub for updates, once a day by default. Set this to never under
   **Extensions → Pack updates**.
+
+The neighbourhood map is the one other exception, and only when an admin asks for it. **Load surroundings** (and
+**Load again**, and **Load the map** in the Start with the map note on an empty ground floor) sends one request from your browser to the public OpenStreetMap server `overpass-api.de`, or to
+`overpass.kumi.systems` when the first one is busy. The request holds a box of the chosen radius (100, 150 or 250 m)
+around the location set in Home Assistant, and nothing else. Home 3D stores the answer in your plan, so it shows the
+map with no connection and asks again only when you tap Load again. Map data © OpenStreetMap contributors, under the
+Open Database Licence ([copyright](https://www.openstreetmap.org/copyright)). The Sample Home has no map.
 
 The only other outside addresses Home 3D loads are ones you enter yourself, such as a background picture by URL.
 

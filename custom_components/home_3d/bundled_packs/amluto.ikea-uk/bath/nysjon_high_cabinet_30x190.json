@@ -26,13 +26,29 @@
     "en": "30x190"
   },
   "ikea": "NYSJÖN",
+  "slots": [
+    {
+      "id": "door",
+      "kind": "contact"
+    }
+  ],
   "parts": [
     {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9444, "y": 0.0684, "h": 0.9316, "color": "white"},
     {"shape": "cyl", "x": -0.4, "z": -0.3611, "w": 0.1, "d": 0.1111, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
     {"shape": "cyl", "x": -0.4, "z": 0.3611, "w": 0.1, "d": 0.1111, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
     {"shape": "cyl", "x": 0.4, "z": -0.3611, "w": 0.1, "d": 0.1111, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
     {"shape": "cyl", "x": 0.4, "z": 0.3611, "w": 0.1, "d": 0.1111, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
-    {"shape": "box", "x": 0.0, "z": 0.4778, "w": 0.9867, "d": 0.0667, "y": 0.0737, "h": 0.9216, "color": "white", "fix": "d"},
-    {"shape": "box", "x": -0.3833, "z": 0.5, "w": 0.04, "d": 0.0815, "y": 0.4987, "h": 0.0737, "color": "metal", "fix": "wdh"}
+    {"shape": "box", "x": 0.0, "z": 0.4778, "w": 0.9867, "d": 0.0667, "y": 0.0737, "h": 0.9216, "color": "white", "fix": "d", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}},
+    {"shape": "box", "x": -0.3833, "z": 0.5, "w": 0.04, "d": 0.0815, "y": 0.4987, "h": 0.0737, "color": "metal", "fix": "wdh", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}},
+    {"shape": "box", "x": 0.0, "z": 0.4796, "w": 0.9067, "d": 0.0148, "y": 0.08, "h": 0.909, "color": "dark", "fix": "d"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9444},
+    {"shape": "circle", "x": -0.4, "z": -0.3611, "r": 0.0556},
+    {"shape": "circle", "x": -0.4, "z": 0.3611, "r": 0.0556},
+    {"shape": "circle", "x": 0.4, "z": -0.3611, "r": 0.0556},
+    {"shape": "circle", "x": 0.4, "z": 0.3611, "r": 0.0556},
+    {"shape": "rect", "x": 0.0, "z": 0.4778, "w": 0.9867, "d": 0.0667},
+    {"shape": "rect", "x": -0.3833, "z": 0.5, "w": 0.04, "d": 0.0815}
   ]
 }

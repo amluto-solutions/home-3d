@@ -38,6 +38,16 @@ export const UNLIT_SHADE: Record<"neon" | "blueprint" | "day" | "realistic", num
   realistic: 0x000000,
 };
 
+/**
+ * The unlit shade as the viewer paints it (#474). The natural styles (Cozy, Evening, Winter) leave a dark blue neon colour
+ * to their own grey (theme.ts, "neon leftovers") but a true black stays black: so on natural materials every look takes the
+ * neon blue, and Cozy's unlit shades read as grey discs like Evening's, not as black holes. Realistic, Neon and Day (no
+ * natural materials) keep their own.
+ */
+export function unlitShade(theme: keyof typeof UNLIT_SHADE, natural: boolean): number {
+  return natural ? UNLIT_SHADE.neon : UNLIT_SHADE[theme];
+}
+
 /** The least a lit shade's brightness drops to (a dim light still reads as lit). */
 const LIT_MIN = 0.7;
 /** A lit shade's least relative luminance: a deep blue or red glow is lifted towards white until it reaches it. */

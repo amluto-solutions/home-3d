@@ -26,15 +26,34 @@
     "en": "Laundry 40x190"
   },
   "ikea": "NYSJÖN",
+  "slots": [
+    {
+      "id": "door",
+      "kind": "contact"
+    }
+  ],
   "parts": [
     {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9531, "y": 0.0684, "h": 0.9316, "color": "white"},
     {"shape": "cyl", "x": -0.425, "z": -0.3828, "w": 0.075, "d": 0.0938, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
     {"shape": "cyl", "x": -0.425, "z": 0.3828, "w": 0.075, "d": 0.0938, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
     {"shape": "cyl", "x": 0.425, "z": -0.3828, "w": 0.075, "d": 0.0938, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
     {"shape": "cyl", "x": 0.425, "z": 0.3828, "w": 0.075, "d": 0.0938, "y": 0, "h": 0.0684, "color": "white", "fix": "wdh"},
-    {"shape": "box", "x": 0.0, "z": 0.4813, "w": 0.99, "d": 0.0562, "y": 0.5421, "h": 0.4558, "color": "white", "fix": "d"},
-    {"shape": "box", "x": -0.4125, "z": 0.5, "w": 0.03, "d": 0.0687, "y": 0.7342, "h": 0.0737, "color": "metal", "fix": "wdh"},
-    {"shape": "box", "x": 0.0, "z": 0.4813, "w": 0.99, "d": 0.0562, "y": 0.0737, "h": 0.4611, "color": "white", "fix": "d"},
-    {"shape": "box", "x": -0.4125, "z": 0.5, "w": 0.03, "d": 0.0687, "y": 0.2684, "h": 0.0737, "color": "metal", "fix": "wdh"}
+    {"shape": "box", "x": 0.0, "z": 0.4813, "w": 0.99, "d": 0.0562, "y": 0.5421, "h": 0.4558, "color": "white", "fix": "d", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}},
+    {"shape": "box", "x": -0.4125, "z": 0.5, "w": 0.03, "d": 0.0687, "y": 0.7342, "h": 0.0737, "color": "metal", "fix": "wdh", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}},
+    {"shape": "box", "x": 0.0, "z": 0.4813, "w": 0.99, "d": 0.0562, "y": 0.0737, "h": 0.4611, "color": "white", "fix": "d", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}},
+    {"shape": "box", "x": -0.4125, "z": 0.5, "w": 0.03, "d": 0.0687, "y": 0.2684, "h": 0.0737, "color": "metal", "fix": "wdh", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}},
+    {"shape": "box", "x": 0.0, "z": 0.4828, "w": 0.93, "d": 0.0125, "y": 0.5484, "h": 0.4432, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.4828, "w": 0.93, "d": 0.0125, "y": 0.08, "h": 0.4485, "color": "dark", "fix": "d"}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9531},
+    {"shape": "circle", "x": -0.425, "z": -0.3828, "r": 0.0469},
+    {"shape": "circle", "x": -0.425, "z": 0.3828, "r": 0.0469},
+    {"shape": "circle", "x": 0.425, "z": -0.3828, "r": 0.0469},
+    {"shape": "circle", "x": 0.425, "z": 0.3828, "r": 0.0469},
+    {"shape": "rect", "x": 0.0, "z": 0.4813, "w": 0.99, "d": 0.0562},
+    {"shape": "rect", "x": -0.4125, "z": 0.5, "w": 0.03, "d": 0.0687},
+    {"shape": "rect", "x": 0.0, "z": 0.4813, "w": 0.99, "d": 0.0562},
+    {"shape": "rect", "x": -0.4125, "z": 0.5, "w": 0.03, "d": 0.0687}
   ]
 }

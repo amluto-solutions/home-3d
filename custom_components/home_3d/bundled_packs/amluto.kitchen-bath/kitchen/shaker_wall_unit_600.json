@@ -9,14 +9,17 @@
   "variant": {"en": "600"},
   "mount": "wall",
   "wall_y": 1.45,
+  "slots": [{"id": "door", "kind": "contact"}],
   "parts": [
     {"shape": "box", "x": 0.0, "z": -0.0636, "w": 1.0, "d": 0.8727, "y": 0.0, "h": 1.0, "color": "white"},
-    {"shape": "box", "x": 0.0, "z": 0.4, "w": 0.99, "d": 0.0545, "y": 0.0042, "h": 0.9917, "color": "body"},
-    {"shape": "box", "x": -0.445, "z": 0.4364, "w": 0.1, "d": 0.0182, "y": 0.0042, "h": 0.9917, "color": "body", "fix": "w"},
-    {"shape": "box", "x": 0.445, "z": 0.4364, "w": 0.1, "d": 0.0182, "y": 0.0042, "h": 0.9917, "color": "body", "fix": "w"},
-    {"shape": "box", "x": 0.0, "z": 0.4364, "w": 0.79, "d": 0.0182, "y": 0.0042, "h": 0.0833, "color": "body", "fix": "h"},
-    {"shape": "box", "x": 0.0, "z": 0.4364, "w": 0.79, "d": 0.0182, "y": 0.9125, "h": 0.0833, "color": "body", "fix": "h"},
-    {"shape": "box", "x": 0.445, "z": 0.4727, "w": 0.02, "d": 0.0545, "y": 0.0736, "h": 0.1806, "color": "metal", "fix": "wdh"}
+    {"shape": "box", "x": 0.0, "z": 0.4, "w": 0.99, "d": 0.0545, "y": 0.0042, "h": 0.9917, "color": "body", "bind": {"slot": "door", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": -0.445, "z": 0.4364, "w": 0.1, "d": 0.0182, "y": 0.0042, "h": 0.9917, "color": "body", "fix": "w", "bind": {"slot": "door", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": 0.445, "z": 0.4364, "w": 0.1, "d": 0.0182, "y": 0.0042, "h": 0.9917, "color": "body", "fix": "w", "bind": {"slot": "door", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": 0.0, "z": 0.4364, "w": 0.79, "d": 0.0182, "y": 0.0042, "h": 0.0833, "color": "body", "fix": "h", "bind": {"slot": "door", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": 0.0, "z": 0.4364, "w": 0.79, "d": 0.0182, "y": 0.9125, "h": 0.0833, "color": "body", "fix": "h", "bind": {"slot": "door", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": 0.445, "z": 0.4727, "w": 0.02, "d": 0.0545, "y": 0.0736, "h": 0.1806, "color": "metal", "fix": "wdh", "bind": {"slot": "door", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": 0.0, "z": 0.3818, "w": 0.95, "d": 0.0182, "y": 0.0209, "h": 0.9584, "color": "dark", "edges": "faint"},
+    {"shape": "box", "x": 0.0, "z": 0.3909, "w": 0.95, "d": 0.0364, "y": 0.4889, "h": 0.0222, "color": "white", "edges": "faint"}
   ],
   "symbol": [
     {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},

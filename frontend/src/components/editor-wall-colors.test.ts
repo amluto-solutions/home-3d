@@ -81,3 +81,20 @@ test("the 3D pane beside the plan: Neon until a wall colour is set, then Cozy (#
   ed._doc3d = ed._doc;
   assert.equal(theme(), "cozy");
 });
+
+test("a free wall has a colour of its own on both sides; a reset clears it (#460)", async () => {
+  const ed = await makeEditor([square("r", 0, 0, 4, 3)]);
+  ed.addFreeWall([2, 0.2], [2, 2.8]);
+  const wall = () => (ed as unknown as { _doc: { floors: { walls: { color?: string | null }[] }[] } })._doc.floors[0].walls[0];
+  assert.match(flat(ed.renderFreeWallForm(wall() as never)), /fp3d-colour-field/);
+  assert.ok(flat(ed.renderFreeWallForm(wall() as never)).includes(ed.t("wall_colour_free")));
+  ed._notice = null;
+  ed.setFreeWallColour("#c0392b");
+  assert.equal(wall().color, "#c0392b");
+  assert.equal(ed._notice, ed.t("wall_colors_shown"), "the first wall colour of a home says where colours show");
+  ed._doc3d = ed._doc;
+  ed.setFreeWallColour(null);
+  assert.equal(wall().color, null);
+  ed.undo();
+  assert.equal(wall().color, "#c0392b");
+});

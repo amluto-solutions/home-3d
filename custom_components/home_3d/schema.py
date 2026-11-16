@@ -116,6 +116,10 @@ ROOM_SCHEMA = vol.Schema(
         vol.Required("area_id"): vol.Any(None, vol.All(str, vol.Length(max=255))),
         vol.Required("points"): vol.All([_POINT], vol.Length(min=3, max=MAX_POINTS)),
         vol.Required("floor_material"): vol.All(str, vol.Length(max=32)),
+        # the room's name moved from its middle in the plan and in 3D (metres; None = in the middle) (#458)
+        vol.Optional("label_offset"): vol.Any(
+            None, vol.All([vol.All(vol.Coerce(float), vol.Range(min=-100, max=100))], vol.Length(min=2, max=2))
+        ),
         # left out of the room selector unless "Show hidden" is on (#298); the room is still drawn
         vol.Optional("hide_in_picker"): bool,
         # the camera this room opens with when it is tapped (None = framed from above)
@@ -591,6 +595,24 @@ FURNITURE_SCHEMA = vol.Schema(
         vol.Optional("bin_source"): vol.Any(None, vol.All(str, vol.Length(max=255))),
         vol.Optional("bin_match"): vol.Any(None, vol.All(str, vol.Length(max=120))),
         vol.Optional("mailbox_door"): vol.Any(None, vol.All(str, vol.Length(max=255))),
+        # a neon sign: its own text (two lines split with |), the colour of its tubes and its font. The font is an
+        # open string on purpose: the frontend knows script, sans, block and serif, anything else is script, so a
+        # newer version may add fonts without a closed set of choices (and a PLAN_VERSION bump)
+        vol.Optional("sign_text"): vol.Any(None, vol.All(str, vol.Length(max=80))),
+        vol.Optional("sign_color"): vol.Any(None, vol.Match(r"^#[0-9a-fA-F]{6}$")),
+        vol.Optional("sign_font"): vol.Any(None, vol.All(str, vol.Length(max=16))),
+        # live parts of a pack item (#466): the entity of each of its slots (slot id -> entity id); the slots are the
+        # pack's, so any slot id the pack format allows is kept (no closed list, no plan format bump)
+        vol.Optional("binds"): vol.Any(
+            None,
+            vol.All(
+                vol.Schema(
+                    {vol.All(str, vol.Match(r"^[a-z0-9_]{1,24}$")): vol.All(str, vol.Length(max=255))},
+                    extra=vol.PREVENT_EXTRA,
+                ),
+                vol.Length(max=16),
+            ),
+        ),
         # Household: on while the bin is out (an input_boolean a nightly automation resets)
         vol.Optional("bin_out"): vol.Any(None, vol.All(str, vol.Length(max=255))),
         # where the bin stands while it is out (#142): a point on its floor's plan, drawn there while bin_out is on
@@ -1010,6 +1032,8 @@ FREE_WALL_SCHEMA = vol.Schema(
         vol.Required("b"): _POINT,
         vol.Optional("thickness", default=None): vol.Any(None, vol.All(vol.Coerce(float), vol.Range(min=0.02, max=1))),
         vol.Optional("height", default=None): vol.Any(None, vol.All(vol.Coerce(float), vol.Range(min=0.05, max=20))),
+        # colour of both sides (#460, homely styles; None = the room's wall, or the facade outside the rooms)
+        vol.Optional("color"): vol.Any(None, vol.All(str, vol.Length(max=16))),
     },
     extra=vol.ALLOW_EXTRA,
 )
@@ -1038,6 +1062,62 @@ FLOOR_SCHEMA = vol.Schema(
 )
 
 
+# the neighbourhood from OpenStreetMap (#462, surroundings.ts): map metres (east, north) around the home's location,
+# fetched once in the browser when an admin taps Load surroundings. Plan version 5: an older Home 3D opens a plan with
+# it read-only. The limits are those of surround-fetch.ts (SURROUND_LIMITS, 200 points a shape).
+_MAP_POINT = vol.All([_COORD], vol.Length(min=2, max=2))
+_MAP_SHAPE = vol.All([_MAP_POINT], vol.Length(min=2, max=MAX_POINTS))
+_MAP_INDEX = vol.All(int, vol.Range(min=0, max=2999))
+SURROUNDINGS_SCHEMA = vol.Schema(
+    {
+        # shown; the data stays in the plan when it is switched off
+        vol.Required("on"): bool,
+        # where (degrees) and when (unix seconds) it was fetched, and the radius (m)
+        vol.Required("lat"): vol.All(vol.Coerce(float), vol.Range(min=-90, max=90)),
+        vol.Required("lon"): vol.All(vol.Coerce(float), vol.Range(min=-180, max=180)),
+        vol.Required("at"): vol.All(vol.Coerce(float), vol.Range(min=0)),
+        vol.Required("radius"): vol.All(vol.Coerce(float), vol.Range(min=20, max=600)),
+        # the plan point the home's location lies on
+        vol.Required("x"): _COORD,
+        vol.Required("z"): _COORD,
+        # the map building that is the house itself (None = none), hidden by hand, shown although on the plan
+        vol.Optional("own"): vol.Any(None, _MAP_INDEX),
+        vol.Optional("hide"): vol.All([_MAP_INDEX], vol.Length(max=3000)),
+        vol.Optional("show"): vol.All([_MAP_INDEX], vol.Length(max=3000)),
+        # the neighbours only as outlines on the ground
+        vol.Optional("flat"): bool,
+        vol.Required("buildings"): vol.All(
+            [
+                vol.Schema(
+                    {
+                        vol.Required("p"): _MAP_SHAPE,
+                        vol.Required("h"): vol.All(vol.Coerce(float), vol.Range(min=0, max=400)),
+                    }
+                )
+            ],
+            vol.Length(max=3000),
+        ),
+        vol.Required("ways"): vol.All(
+            [
+                vol.Schema(
+                    {
+                        vol.Required("p"): _MAP_SHAPE,
+                        vol.Required("w"): vol.All(vol.Coerce(float), vol.Range(min=0, max=60)),
+                        vol.Required("k"): vol.In(["road", "path", "rail", "water"]),
+                    }
+                )
+            ],
+            vol.Length(max=3000),
+        ),
+        vol.Required("areas"): vol.All(
+            [vol.Schema({vol.Required("p"): _MAP_SHAPE, vol.Required("k"): vol.In(["water", "green", "wood"])})],
+            vol.Length(max=500),
+        ),
+        vol.Required("trees"): vol.All([_MAP_POINT], vol.Length(max=3000)),
+    }
+)
+
+
 SETTINGS_SCHEMA = vol.Schema(
     {
         vol.Required("wall_exterior"): vol.All(vol.Coerce(float), vol.Range(min=0.02, max=1)),
@@ -1051,6 +1131,8 @@ SETTINGS_SCHEMA = vol.Schema(
         vol.Optional("person_look", default=None): vol.Any(None, vol.In(["figure", "pin", "off"])),
         # plan lock: rooms, walls, doors, windows and outdoor areas cannot be moved by accident
         vol.Optional("lock_plan", default=False): bool,
+        # size of the room names in 3D (None = 1, as before) (#458)
+        vol.Optional("label_scale"): vol.Any(None, vol.All(vol.Coerce(float), vol.Range(min=0.5, max=2))),
         # the floor the editor opens with (None: the first) (#166: was only in model.ts)
         vol.Optional("editor_floor"): vol.Any(None, vol.All(str, vol.Length(max=64))),
         # False for a sample or template home (#61): the editor never offers to add rooms from this install's areas
@@ -1164,6 +1246,10 @@ SETTINGS_SCHEMA = vol.Schema(
                     # only the bins of the next pickup wear a tag; tags only from some days before (None = always)
                     vol.Optional("bin_next_only"): vol.Any(None, bool),
                     vol.Optional("bin_days"): vol.Any(None, vol.All(vol.Coerce(int), vol.Range(min=0, max=60))),
+                    # calendars whose entries of today stand in the glass card "Today in the household" (#457)
+                    vol.Optional("calendars"): vol.Any(
+                        None, vol.All([vol.All(str, vol.Length(max=255))], vol.Length(max=10))
+                    ),
                     # a to-do list for the household's notes (#166: was only in model.ts)
                     vol.Optional("notes"): vol.Any(None, vol.All(str, vol.Length(max=255))),
                 },
@@ -1378,6 +1464,8 @@ SETTINGS_SCHEMA = vol.Schema(
         ),
         # what a module keeps for this room or the whole house (its settings), by the module's id
         vol.Optional("mods"): _MODULE_DATA,
+        # the neighbourhood from OpenStreetMap (#462, plan version 5)
+        vol.Optional("surroundings"): vol.Any(None, SURROUNDINGS_SCHEMA),
     },
     extra=vol.ALLOW_EXTRA,
 )

@@ -4,7 +4,7 @@ import type { Furniture } from "../model.ts";
 import { mountBase, setPacks, type FurniturePack } from "../packs.ts";
 import { FURNITURE_SIZE, FURNITURE_TYPES, isLamp, newFloor } from "../model.ts";
 import { COLOUR_ROLES, itemColourRoles } from "../colour-roles.ts";
-import { hasFixedColors, hasOwnColours, packGlowCentre, packMotionParts, pushAwning, pushFridgeDoors, pushFurniture, pushPackLamp, pushPackMotion, screenPictureSize, setLightLook } from "./furniture.ts";
+import { hasFixedColors, hasOwnColours, packGlowCentre, packMotionParts, pushAwning, pushFridgeDoors, pushFurniture, pushPackLamp, pushPackMotion, screenPictureSize, screenRect, setLightLook } from "./furniture.ts";
 import { packMotion, type PackItem } from "../packs.ts";
 import { GeoBuffer, LineBuffer, pushPrism } from "./geo.ts";
 
@@ -95,6 +95,23 @@ test("every mailbox shape is drawn where its box is: a wall mailbox at 1 m, a ba
     const b2 = new GeoBuffer();
     pushFurniture(b2, new LineBuffer(), new GeoBuffer(), low, mountBase(floor, low));
     assert.ok(Math.abs(Math.min(...b2.p.filter((_, i) => i % 3 === 1)) - 0.5) < 1e-6, `${variant} at 0.5`);
+  }
+});
+
+test("a neon sign hangs with its middle at 1.6 m, follows a mount height, and its picture lies on its plate", () => {
+  const floor = newFloor("ground", "Ground", 0);
+  const f = { id: "n", type: "neon_sign", x: 2, z: 1, w: 0.9, d: 0.03, h: 0.32, rotation: 0, variant: null } as Furniture;
+  for (const [mount, bottom] of [[undefined, 1.6 - 0.16], [1.0, 1.0]] as const) {
+    const g = mount === undefined ? f : { ...f, mount_y: mount };
+    const buf = new GeoBuffer();
+    pushFurniture(buf, new LineBuffer(), new GeoBuffer(), g, mountBase(floor, g));
+    const ys = buf.p.filter((_, i) => i % 3 === 1);
+    assert.ok(Math.abs(Math.min(...ys) - bottom) < 1e-6, `bottom ${Math.min(...ys)} for ${mount}`);
+    assert.ok(Math.abs(Math.max(...ys) - (bottom + 0.32)) < 1e-6, `top ${Math.max(...ys)} for ${mount}`);
+    // the picture's rectangle is the plate's front, inside it
+    const r = screenRect(g, floor)!;
+    assert.ok(r && r.x1 - r.x0 > 0.85 && r.x1 - r.x0 < 0.9, "as wide as the plate");
+    assert.ok(Math.abs(r.y0 - (bottom + 0.01)) < 1e-6 && Math.abs(r.y1 - (bottom + 0.31)) < 1e-6, "as high as the plate");
   }
 });
 

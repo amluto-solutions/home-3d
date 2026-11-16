@@ -19,11 +19,13 @@ import { familyPresets, partFamily, partFinishes, partName, partOrder } from "..
 import { ownMaterial, setRoleMaterial, usualMaterial, type Material } from "../../role-materials.ts";
 import { furnitureName } from "../../furniture-names.ts";
 import { itemTempSource, shadeKind } from "../../room-effects.ts";
-import { energyRole, isElectric, isRobotVacuum, mountBase, packInfo, packItemName, packMotion, packName, packType } from "../../packs.ts";
+import { energyRole, isElectric, isRobotVacuum, mountBase, packInfo, packItem, packItemName, packMotion, packName, packType } from "../../packs.ts";
+import { packSpinAxis } from "../../live-parts.ts";
 import { isThermostatItem, linkField, linkFilter } from "../../furniture-links.ts";
 import { itemShown, setIntervalPart } from "../../show-when.ts";
 import { MAX_MOUNT_Y, round, isEnergyDevice, volumeMeter, numberish, binaryish } from "./helpers.ts";
 import { colourReset } from "../../colour-reset.ts";
+import { SIGN_DEFAULT, SIGN_FONTS, signFont } from "../../neon-sign.ts";
 import { colourField } from "../../colour-field-tag.ts";
 import { roleInLook } from "../../look-surface.ts";
 import { lookOf, type Theme } from "../../themes.ts";
@@ -529,6 +531,31 @@ export class ItemFormPart {
     </div>`;
   }
 
+  /** Neon sign: its text, the colour of its tubes (a coloured light gives its own) and its font. */
+  renderSignForm(this: Fp3dEditor, f: Furniture) {
+    const admin = this.isEditor;
+    const font = signFont(f);
+    return html`<div class="fp3d-form fp3d-links">
+      <label class="fp3d-field fp3d-wide"
+        >${this.t("neon_text")}
+        <input type="text" maxlength="80" .value=${f.sign_text ?? ""} placeholder="Neon" ?disabled=${!admin}
+          @change=${(e: Event) => this.updateFurniture({ sign_text: (e.target as HTMLInputElement).value.trim() || null })} /></label>
+      <label class="fp3d-field"
+        >${this.t("neon_color")}
+        <span class="fp3d-colour-row"
+          >${colourField({ value: f.sign_color ?? null, base: SIGN_DEFAULT, label: this.t("neon_color"), t: (k, v) => this.t(k, v), disabled: !admin, onChange: (hex) => hex && this.updateFurniture({ sign_color: hex }) })}
+          ${colourReset({ value: f.sign_color ?? null, fallback: SIGN_DEFAULT, label: this.t("colour_reset"), disabled: !admin, onReset: () => this.updateFurniture({ sign_color: null }) })}</span
+        ></label>
+      <label class="fp3d-field"
+        >${this.t("neon_font")}
+        <select ?disabled=${!admin} @change=${(e: Event) => this.updateFurniture({ sign_font: (e.target as HTMLSelectElement).value === "script" ? null : (e.target as HTMLSelectElement).value })}>
+          ${SIGN_FONTS.map((o) => html`<option value=${o} ?selected=${o === font}>${this.t(`neon_font_${o}` as I18nKey)}</option>`)}
+        </select></label
+      >
+      <p class="fp3d-sub fp3d-wide">${this.t("neon_hint")}</p>
+    </div>`;
+  }
+
   /**
    * Waste bin and mailbox: shape and colours for everyone; the waste calendar and the post sensors for live data
    * (a teaser while it is locked).
@@ -802,8 +829,8 @@ export class ItemFormPart {
         ${f.type === "grid_point"
           ? html`<p class="fp3d-sub fp3d-wide">${this.t("grid_point_hint")}</p>`
           : this.withInfo(this.entitySelect(this.t(field.label), f.entity ?? null, autoPick, entities, (v) => this.updateFurniture({ entity: v }), field.domains), hint, this.t(field.label))}
-        ${this.renderGlowColour(f, f.entity && f.entity !== "none" ? f.entity : f.entity === "none" ? null : autoPick)}
-        ${f.type === "lamp_fan"
+        ${f.type === "neon_sign" ? nothing : this.renderGlowColour(f, f.entity && f.entity !== "none" ? f.entity : f.entity === "none" ? null : autoPick)}
+        ${f.type === "lamp_fan" || (lamp && packSpinAxis(packItem(f.type)))
           ? this.withInfo(this.entitySelect(this.t("fan_entity"), f.fan ?? null, undefined, this.entityOptions((id) => id.startsWith("fan.")), (v) => this.updateFurniture({ fan: v && v !== "none" ? v : null })), "fan_hint", this.t("fan_entity"))
           : nothing}
         ${heating

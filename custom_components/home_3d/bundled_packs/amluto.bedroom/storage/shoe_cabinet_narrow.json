@@ -24,16 +24,34 @@
     "flip door",
     "hallway"
   ],
+  "slots": [
+    {
+      "id": "flap_1",
+      "kind": "contact",
+      "name": {
+        "en": "Top compartment"
+      }
+    },
+    {
+      "id": "flap_2",
+      "kind": "contact",
+      "name": {
+        "en": "Second compartment"
+      }
+    }
+  ],
   "parts": [
     {"shape": "box", "x": 0, "z": -0.0417, "w": 0.9667, "d": 0.8333, "y": 0, "h": 0.05, "color": "body", "fix": "h"},
     {"shape": "box", "x": -0.485, "z": -0.0417, "w": 0.03, "d": 0.9167, "y": 0.05, "h": 0.93, "color": "body", "fix": "w"},
     {"shape": "box", "x": 0.485, "z": -0.0417, "w": 0.03, "d": 0.9167, "y": 0.05, "h": 0.93, "color": "body", "fix": "w"},
     {"shape": "box", "x": 0, "z": -0.0417, "w": 0.94, "d": 0.9167, "y": 0.05, "h": 0.93, "color": "body"},
     {"shape": "box", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.98, "h": 0.02, "color": "body", "fix": "h"},
-    {"shape": "box", "x": 0, "z": 0.4583, "w": 0.99, "d": 0.0833, "y": 0.055, "h": 0.458, "color": "white"},
-    {"shape": "box", "x": 0, "z": 0.4979, "w": 0.1667, "d": 0.0042, "y": 0.46, "h": 0.016, "color": "metal", "fix": "wdh"},
-    {"shape": "box", "x": 0, "z": 0.4583, "w": 0.99, "d": 0.0833, "y": 0.517, "h": 0.458, "color": "white"},
-    {"shape": "box", "x": 0, "z": 0.4979, "w": 0.1667, "d": 0.0042, "y": 0.922, "h": 0.016, "color": "metal", "fix": "wdh"}
+    {"shape": "box", "x": 0, "z": 0.4583, "w": 0.99, "d": 0.0833, "y": 0.055, "h": 0.458, "color": "white", "bind": {"slot": "flap_2", "kind": "open", "hinge": "bottom", "amount": 70}},
+    {"shape": "box", "x": 0, "z": 0.4979, "w": 0.1667, "d": 0.0042, "y": 0.46, "h": 0.016, "color": "metal", "fix": "wdh", "bind": {"slot": "flap_2", "kind": "open", "hinge": "bottom", "amount": 70}},
+    {"shape": "box", "x": 0, "z": 0.4583, "w": 0.99, "d": 0.0833, "y": 0.517, "h": 0.458, "color": "white", "bind": {"slot": "flap_1", "kind": "open", "hinge": "bottom", "amount": 70}},
+    {"shape": "box", "x": 0, "z": 0.4979, "w": 0.1667, "d": 0.0042, "y": 0.922, "h": 0.016, "color": "metal", "fix": "wdh", "bind": {"slot": "flap_1", "kind": "open", "hinge": "bottom", "amount": 70}},
+    {"shape": "box", "x": 0.0, "z": 0.425, "w": 0.95, "d": 0.0167, "y": 0.067, "h": 0.434, "color": "dark", "fix": "d"},
+    {"shape": "box", "x": 0.0, "z": 0.425, "w": 0.95, "d": 0.0167, "y": 0.529, "h": 0.434, "color": "dark", "fix": "d"}
   ],
   "symbol": [
     {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},

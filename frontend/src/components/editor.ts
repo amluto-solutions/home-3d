@@ -90,6 +90,7 @@ import { preloadParts } from "./editor/lazy.ts";
 import { BackupPart } from "./editor/backup.ts";
 import { PhonePart, type SheetHeight } from "./editor/phone.ts";
 import { PetsPart } from "./editor/pets.ts";
+import { MAP_START_KEY, MapTemplatePart } from "./editor/map-template.ts";
 import { vacuumTag } from "./editor/vacuums.ts";
 import { sameFloorName } from "../floor-link.ts";
 import { BackLayers } from "../back-stack.ts";
@@ -104,6 +105,8 @@ export class Fp3dEditor extends LitElement {
     _bgRuler: { state: true },
     _bgRulerLen: { state: true },
     _bgLevel: { state: true },
+    _bgMap: { state: true },
+    _mapStartOff: { state: true },
     _bgOpen: { state: true },
     _shiftZ: { state: true },
     hass: { attribute: false },
@@ -120,6 +123,7 @@ export class Fp3dEditor extends LitElement {
     _splitRatio: { state: true },
     _backupBusy: { state: true },
     _wall3d: { state: true },
+    _names3d: { state: true },
     _solarDim: { state: true },
     _sidePinned: { state: true },
     _sideMin: { state: true },
@@ -278,6 +282,8 @@ export class Fp3dEditor extends LitElement {
   declare _backupBusy: boolean;
   /** Walls in the 3D pane: full height ("auto") or cut at the cut height (shows wall units and shelves). */
   declare _wall3d: WallMode;
+  /** Room names in the 3D pane (a switch beside the walls choice; this device only) (#458). */
+  declare _names3d: boolean;
   /** Energy tool: roof solar fields drawn faint over the floor plan (the selected one stays full), per device (#89). */
   declare _solarDim: boolean;
   /** Sidebar beside the 3D pane: pinned open always, or folded to a strip while nothing is selected. */
@@ -449,6 +455,10 @@ export class Fp3dEditor extends LitElement {
   declare _bgRulerLen: number;
   /** Straighten the background: two taps along a wall that should run straight (null = off). */
   declare _bgLevel: Vec2[] | null;
+  /** Fitting the picture to the map (#465): the corners tapped so far (two in the picture, then two on the house from the map); null = off. */
+  declare _bgMap: Vec2[] | null;
+  /** The note to start with the map on an empty ground floor was put away (kept on this device). */
+  declare _mapStartOff: boolean;
   /** The background section is open: the picture has handles like a piece of furniture (move, scale, turn). */
   declare _bgOpen: boolean;
   declare _shiftZ: number;
@@ -639,6 +649,13 @@ export class Fp3dEditor extends LitElement {
     this._bgRuler = null;
     this._bgRulerLen = 0;
     this._bgLevel = null;
+    this._bgMap = null;
+    this._mapStartOff = false;
+    try {
+      this._mapStartOff = localStorage.getItem(MAP_START_KEY) === "0";
+    } catch {
+      // no storage: shown until put away
+    }
     this._bgOpen = false;
     this._shiftZ = 0;
     this._floorMenu = false;
@@ -671,8 +688,10 @@ export class Fp3dEditor extends LitElement {
     // the 3D pane's wall view stays as it was last set on this device (#309)
     this._wall3d = "cut";
     this._wallsOpen = false;
+    this._names3d = true;
     try {
       if (localStorage.getItem("home3d.walls3d") === "auto") this._wall3d = "auto";
+      this._names3d = localStorage.getItem("home3d.editorNames") !== "0";
       this._wallsOpen = localStorage.getItem("home3d.wallsOpen") === "1";
     } catch {
       // no storage: the default
@@ -1214,7 +1233,7 @@ export class Fp3dEditor extends LitElement {
               @dragover=${this.onPlanDragOver}
               @drop=${this.onPlanDrop}
             >
-              ${this.renderBackground(floor)} ${this.renderGrid()} ${this.renderGhost()} ${walls ? this.renderWalls(walls.walls) : nothing}
+              ${this.renderBackground(floor)} ${this.renderGrid()} ${floor ? this.renderSurroundPlan(floor) : nothing} ${this.renderGhost()} ${walls ? this.renderWalls(walls.walls) : nothing}
               ${floor ? this.renderOutdoorGhosts(floor) : nothing} ${floor ? this.renderOutdoor(floor) : nothing} ${floor ? this.renderRooms(floor) : nothing} ${floor ? this.renderFurniture(floor) : nothing} ${this.renderPlaceGhost()}
               ${floor ? this.renderFreeWalls(floor) : nothing}
               ${floor && walls ? this.renderOpenings(floor, walls.walls) : nothing} ${floor ? this.renderMeter(floor) : nothing}
@@ -1226,10 +1245,12 @@ export class Fp3dEditor extends LitElement {
               ${floor ? this.renderHeadroom(floor) : nothing}
               ${this._tool === "roof" ? svg`${this.renderRoofSections()}${this.renderRoofWindows()}` : this._tool === "energy" ? svg`${this.renderRoofSections()}${this.renderSolarFields()}${this.renderCables()}${this.renderEnergyMarkers()}` : this._tool === "pool" && floor && this.pipeRules ? this.renderPoolPlan(floor) : nothing} ${this.renderDraft()} ${this.renderGuides()}
               ${floor ? this.renderKerb(floor) : nothing}
+              ${floor ? this.renderMapTemplate(floor) : nothing}
             </svg>
             ${vacuumTag(this, floor, true)} ${this.renderContext()}
+            ${this.renderMapStart(floor)}
             ${this.renderNav()}
-            ${this.renderHint()}
+            ${this.renderHint()} ${floor ? this.renderMapCredit(floor) : nothing}
           </div>
           ${this._split && !this.narrow
             ? html`<div class="fp3d-split-handle" title=${this.t("split_handle_hint")} @pointerdown=${this.onSplitDown}></div>`
@@ -1350,8 +1371,8 @@ export class Fp3dEditor extends LitElement {
 }
 
 /** The area modules' methods (#202): one class per editor area under editor/, all on this element. */
-export interface Fp3dEditor extends Pane3dPart, PlanViewPart, PointerPart, KeysPart, RoomsPart, WallsPart, OutdoorPart, FloorsPart, RoofPart, SolarPart, EnergyPart, SelectionPart, OpeningsPart, FurniturePart, ItemFormPart, ItemSectionsPart, PanelHeadPart, ItemFoldsPart, DevicePanelPart, CamerasPart, ToolbarPart, SidePanelPart, RacksPart, WallViewPart, WallKitPart, PipesPart, PoolPart, FieldsPart, SettingsPart, BackupPart, PhonePart, PetsPart, AreaSelectPart, ToolPanelPart, OutdoorFindPart {}
-mixParts(Fp3dEditor, [Pane3dPart, PlanViewPart, PointerPart, KeysPart, RoomsPart, WallsPart, OutdoorPart, FloorsPart, RoofPart, SolarPart, EnergyPart, SelectionPart, OpeningsPart, FurniturePart, ItemFormPart, ItemSectionsPart, PanelHeadPart, ItemFoldsPart, DevicePanelPart, CamerasPart, ToolbarPart, SidePanelPart, RacksPart, WallViewPart, WallKitPart, PipesPart, PoolPart, FieldsPart, SettingsPart, BackupPart, PhonePart, PetsPart, AreaSelectPart, ToolPanelPart, OutdoorFindPart]);
+export interface Fp3dEditor extends Pane3dPart, PlanViewPart, PointerPart, KeysPart, RoomsPart, WallsPart, OutdoorPart, FloorsPart, RoofPart, SolarPart, EnergyPart, SelectionPart, OpeningsPart, FurniturePart, ItemFormPart, ItemSectionsPart, PanelHeadPart, ItemFoldsPart, DevicePanelPart, CamerasPart, ToolbarPart, SidePanelPart, RacksPart, WallViewPart, WallKitPart, PipesPart, PoolPart, FieldsPart, SettingsPart, BackupPart, PhonePart, PetsPart, AreaSelectPart, ToolPanelPart, OutdoorFindPart, MapTemplatePart {}
+mixParts(Fp3dEditor, [Pane3dPart, PlanViewPart, PointerPart, KeysPart, RoomsPart, WallsPart, OutdoorPart, FloorsPart, RoofPart, SolarPart, EnergyPart, SelectionPart, OpeningsPart, FurniturePart, ItemFormPart, ItemSectionsPart, PanelHeadPart, ItemFoldsPart, DevicePanelPart, CamerasPart, ToolbarPart, SidePanelPart, RacksPart, WallViewPart, WallKitPart, PipesPart, PoolPart, FieldsPart, SettingsPart, BackupPart, PhonePart, PetsPart, AreaSelectPart, ToolPanelPart, OutdoorFindPart, MapTemplatePart]);
 
 defineElement("fp3d-editor", Fp3dEditor);
 

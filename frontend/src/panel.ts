@@ -27,6 +27,7 @@ import type { MarkerMode } from "./components/view3d.ts";
 import type { ViewContext } from "./settings/view-settings.ts";
 import type { HeatMode } from "./heatmap.ts";
 import { lookOf, type Look } from "./themes.ts";
+import { zoomLateOf } from "./zoom-pref.ts";
 import { contrastChrome, lightChrome } from "./scheme.ts";
 import { accentVars, shownAccent, shownLook, shownStyle } from "./ha-theme.ts";
 import type { CustomStyle } from "./looks.ts";
@@ -132,6 +133,9 @@ export class Floorplan3dPanel extends LitElement {
     _pinSize: { state: true },
     _heat: { state: true },
     _theme: { state: true },
+    _zoomStyle: { state: true },
+    _zoomLate: { state: true },
+    _zoomScope: { state: true },
     _clock: { state: true },
     _clockLook: { state: true },
     _furnish: { state: true },
@@ -219,6 +223,10 @@ export class Floorplan3dPanel extends LitElement {
   private declare _pinSize: "small" | "normal" | "large";
   private declare _heat: HeatMode;
   private declare _theme: Look;
+  /** The zoom style of this device (#456): the style, how late (0–100), "room" for only the room. */
+  private declare _zoomStyle: string;
+  private declare _zoomLate: number;
+  private declare _zoomScope: string;
   private declare _clock: ClockPos;
   private declare _clockLook: ClockLook;
   private declare _furnish: boolean;
@@ -350,6 +358,9 @@ export class Floorplan3dPanel extends LitElement {
     const heat = prefs.get("heat");
     this._heat = heat === "temperature" || heat === "humidity" || heat === "co2" || heat === "values" ? heat : "none";
     this._theme = lookOf(prefs.get("theme"));
+    this._zoomStyle = prefs.get("zoom_style") ?? "";
+    this._zoomLate = Math.round(zoomLateOf(prefs.get("zoom_late")) * 100);
+    this._zoomScope = prefs.get("zoom_scope") === "room" ? "room" : "all";
     const clock = prefs.get("clock");
     this._clockLook = clockLookOf((k) => prefs.get(k));
     this._clock = clock === "tl" || clock === "tr" || clock === "bl" || clock === "br" ? clock : "off";
@@ -1674,6 +1685,9 @@ export class Floorplan3dPanel extends LitElement {
           .pinSize=${this._pinSize}
           .heatMode=${this._heat}
           .theme=${this._theme}
+          .zoomStyle=${this._zoomStyle || null}
+          .zoomLate=${this._zoomLate}
+          .zoomScope=${this._zoomScope}
           .clock=${this._clock}
           .clockLook=${this._clockLook}
           .clockWeather=${this._clockWeather}

@@ -9,6 +9,7 @@ export const SEARCH_WORDS: Readonly<Record<string, readonly string[]>> = {
   grid: ["spacing", "lines", "squares", "align", "tiles"],
   wall_exterior: ["outside", "external", "facade", "brick", "width", "thick"],
   wall_interior: ["inside", "internal", "partition", "stud", "width", "divider"],
+  label_scale: ["captions", "tags", "bigger", "smaller", "readable", "tablet"],
   north: ["bearing", "direction", "heading", "azimuth", "cardinal", "facing"],
   lock_plan: ["freeze", "unlock", "protect", "drag", "pin", "stuck"],
   // general / opening
@@ -95,6 +96,7 @@ export const SEARCH_WORDS: Readonly<Record<string, readonly string[]>> = {
   "household.bin_days": ["countdown", "lead", "advance", "notice", "tags", "timing", "hide", "pickup"],
   "household.kerb": ["kerbside", "curb", "pavement", "pickup", "collection", "verge", "spot", "set"],
   "household.notes": ["note", "message", "memo", "board", "reminder", "post"],
+  "household.calendars": ["appointments", "events", "agenda", "schedule", "diary", "family", "today", "amber"],
   // favourites
   favorites: ["favorite", "favourite", "bookmark", "shortcut", "pinned", "saved"],
   buttons: ["shortcuts", "links", "actions", "tiles", "custom", "tap"],
@@ -102,6 +104,9 @@ export const SEARCH_WORDS: Readonly<Record<string, readonly string[]>> = {
   // look
   theme: ["look", "style", "mode", "skin", "scheme", "shade"],
   accent: ["tint", "trim", "edge", "glow", "neon", "brand"],
+  zoom_style: ["zoom", "closer", "near", "blend", "fade", "nearby"],
+  zoom_late: ["early", "late", "start", "threshold", "distance"],
+  zoom_scope: ["only", "single", "room", "limit", "mask"],
   clock: ["watch", "hour", "display", "digital", "widget", "timepiece"],
   clock_hours: ["format", "military", "twelve", "hourly", "meridiem", "hour"],
   clock_style: ["analogue", "analog", "digital", "design", "style", "numerals"],
@@ -126,6 +131,7 @@ export const SEARCH_WORDS: Readonly<Record<string, readonly string[]>> = {
   trail: ["path", "track", "movements", "breadcrumbs", "route", "journey"],
   weather: ["forecast", "clouds", "fog", "sunshine", "outdoor", "sky"],
   dashboard_cards: ["widgets", "tiles", "panels", "editor", "layout", "appearance"],
+  surroundings: ["streets", "neighbours", "satellite", "outline", "osm", "geography", "town", "garden"],
   // screen and controls
   stats: ["counter", "diagnostics", "debug", "render", "monitor", "meter"],
   controls: ["side", "layout", "handed", "lefty", "menu", "hand"],

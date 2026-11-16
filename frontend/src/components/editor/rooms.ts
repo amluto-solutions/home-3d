@@ -11,7 +11,7 @@ import { furnishRoom, PACKAGES, type PackageId } from "../../packages.ts";
 import { nameNewRoom, roomNameSuggestions } from "../../room-naming.ts";
 import { carryRectResize, strandedBy } from "../../geometry/room-resize.ts";
 import { formatNumber, type I18nKey } from "../../i18n.ts";
-import { bounds, centroid, FLOOR_MATERIALS, isLamp, splitAliases, FURNITURE_SIZE, isAxisRect, spotGrid, step, type Direction, pointInPolygon, polygonArea, uid, type Building, type Floor, type Furniture, type FurnitureType, type Room, type Vec2 } from "../../model.ts";
+import { bounds, centroid, labelPoint, FLOOR_MATERIALS, isLamp, splitAliases, FURNITURE_SIZE, isAxisRect, spotGrid, step, type Direction, pointInPolygon, polygonArea, uid, type Building, type Floor, type Furniture, type FurnitureType, type Room, type Vec2 } from "../../model.ts";
 import { roomLiveSensors, type LiveKind } from "../../room-effects.ts";
 import { askConfirm } from "../../ask.ts";
 import { cornerLoss, removeCorner } from "../../geometry/room-corners.ts";
@@ -416,11 +416,39 @@ export class RoomsPart {
       <g pointer-events="none">${floor.rooms.map((r) => {
         // names that would sit on another's give way (#341)
         if (!shown.has(`r:${r.id}`)) return nothing;
-        const [cx, cy] = this.toScreen(centroid(r.points));
+        const [cx, cy] = this.toScreen(labelPoint(r));
+        // the selected room's name gets a handle to move it where it covers no other name (#458)
+        const g = r.id === this._roomId && this.isEditor && this._tool === "select" ? this.labelGrip(r) : null;
+        const grip = g
+          ? svg`<g class="fp3d-label-grip" data-room-label=${r.id} pointer-events="all"><title>${this.t("room_label_move")}</title><circle class="fp3d-hit" cx=${g[0]} cy=${g[1]} r="14" /><circle cx=${g[0]} cy=${g[1]} r="7" /><path d=${`M${g[0] - 4} ${g[1]}h8M${g[0]} ${g[1] - 4}v8`} /></g>`
+          : nothing;
         return svg`<text class="fp3d-room-name" x=${cx} y=${cy - 2}>${r.name}</text>
-          <text class="fp3d-room-area" x=${cx} y=${cy + 14}>${this.area(polygonArea(r.points))}</text>`;
+          <text class="fp3d-room-area" x=${cx} y=${cy + 14}>${this.area(polygonArea(r.points))}</text>${grip}`;
       })}</g>
     `;
+  }
+
+  /** Where the handle of a room's name sits on screen: left of the name (#458). */
+  labelGrip(this: Fp3dEditor, r: Room): [number, number] {
+    const [cx, cy] = this.toScreen(labelPoint(r));
+    return [cx - r.name.length * 3.9 - 14, cy - 6];
+  }
+
+  /** The selected room whose name handle lies under a screen point (editors, Select tool) (#458). */
+  labelGripAt(this: Fp3dEditor, local: [number, number]): Room | null {
+    if (!this.isEditor || this._tool !== "select" || !this._roomId) return null;
+    const r = this.floor?.rooms.find((x) => x.id === this._roomId);
+    if (!r) return null;
+    const [gx, gy] = this.labelGrip(r);
+    return Math.hypot(local[0] - gx, local[1] - gy) <= 15 ? r : null;
+  }
+
+  /** The room's name back in the middle of the room: the offset goes (#458). */
+  resetLabel(this: Fp3dEditor, roomId: string): void {
+    this.change((_, floor) => {
+      const r = floor.rooms.find((x) => x.id === roomId);
+      if (r) delete r.label_offset;
+    });
   }
 
   renderHandles(this: Fp3dEditor, room: Room) {
@@ -582,6 +610,9 @@ export class RoomsPart {
           >${this.t("room_name")}
           <input .value=${room.name} ?disabled=${!admin} @change=${(e: Event) => this.updateRoom({ name: (e.target as HTMLInputElement).value })}
         /></label>
+        ${room.label_offset && admin
+          ? html`<button class="fp3d-btn fp3d-wide" title=${this.t("room_label_move")} @click=${() => this.resetLabel(room.id)}>⌖ ${this.t("room_label_reset")}</button>`
+          : nothing}
         <label class="fp3d-field fp3d-wide"
           >${this.t("area")}
           <select ?disabled=${!admin} @change=${(e: Event) => this.setArea((e.target as HTMLSelectElement).value)}>

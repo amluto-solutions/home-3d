@@ -25,6 +25,12 @@
     "showcase",
     "glass doors"
   ],
+  "slots": [
+    {
+      "id": "door",
+      "kind": "contact"
+    }
+  ],
   "parts": [
     {"shape": "box", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0, "h": 0.0389, "color": "wood", "fix": "h"},
     {"shape": "box", "x": -0.478, "z": 0, "w": 0.044, "d": 1.0, "y": 0.0389, "h": 0.9444, "color": "wood", "fix": "w"},
@@ -35,12 +41,12 @@
     {"shape": "box", "x": 0, "z": -0.0237, "w": 0.912, "d": 0.8895, "y": 0.4167, "h": 0.0044, "color": "glass"},
     {"shape": "box", "x": 0, "z": -0.0237, "w": 0.912, "d": 0.8895, "y": 0.6056, "h": 0.0044, "color": "glass"},
     {"shape": "box", "x": 0, "z": -0.0237, "w": 0.912, "d": 0.8895, "y": 0.7944, "h": 0.0044, "color": "glass"},
-    {"shape": "box", "x": 0, "z": 0.4711, "w": 0.744, "d": 0.0263, "y": 0.0633, "h": 0.8956, "color": "glass"},
-    {"shape": "box", "x": -0.412, "z": 0.4711, "w": 0.08, "d": 0.0579, "y": 0.0411, "h": 0.94, "color": "wood"},
-    {"shape": "box", "x": 0.412, "z": 0.4711, "w": 0.08, "d": 0.0579, "y": 0.0411, "h": 0.94, "color": "wood"},
-    {"shape": "box", "x": 0, "z": 0.4711, "w": 0.744, "d": 0.0579, "y": 0.0411, "h": 0.0222, "color": "wood", "fix": "h"},
-    {"shape": "box", "x": 0, "z": 0.4711, "w": 0.744, "d": 0.0579, "y": 0.9589, "h": 0.0222, "color": "wood", "fix": "h"},
-    {"shape": "box", "x": 0.412, "z": 0.4947, "w": 0.032, "d": 0.0105, "y": 0.4833, "h": 0.0556, "color": "metal", "fix": "wdh"}
+    {"shape": "box", "x": 0, "z": 0.4711, "w": 0.744, "d": 0.0263, "y": 0.0633, "h": 0.8956, "color": "glass", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": -0.412, "z": 0.4711, "w": 0.08, "d": 0.0579, "y": 0.0411, "h": 0.94, "color": "wood", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": 0.412, "z": 0.4711, "w": 0.08, "d": 0.0579, "y": 0.0411, "h": 0.94, "color": "wood", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": 0, "z": 0.4711, "w": 0.744, "d": 0.0579, "y": 0.0411, "h": 0.0222, "color": "wood", "fix": "h", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": 0, "z": 0.4711, "w": 0.744, "d": 0.0579, "y": 0.9589, "h": 0.0222, "color": "wood", "fix": "h", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": 0.412, "z": 0.4947, "w": 0.032, "d": 0.0105, "y": 0.4833, "h": 0.0556, "color": "metal", "fix": "wdh", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}}
   ],
   "symbol": [
     {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},

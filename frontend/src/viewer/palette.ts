@@ -47,12 +47,12 @@ export function hexColor(hex: string | null | undefined): number | null {
 /** The parts of a building whose wall colours matter here (a Building, without importing it). */
 interface Tinted {
   settings?: { facade_color?: string | null };
-  floors: { rooms: { wall_color?: string | null; wall_colors?: (string | null)[] | null }[] }[];
+  floors: { rooms: { wall_color?: string | null; wall_colors?: (string | null)[] | null }[]; walls?: { color?: string | null }[] }[];
 }
 
 /** Whether a building has a wall colour or a facade colour at all. */
 export function hasWallColours(b: Tinted | null | undefined): boolean {
-  return !!b && (hexColor(b.settings?.facade_color) !== null || b.floors.some((f) => f.rooms.some((r) => hexColor(r.wall_color) !== null || !!r.wall_colors?.some((c) => hexColor(c) !== null))));
+  return !!b && (hexColor(b.settings?.facade_color) !== null || b.floors.some((f) => f.rooms.some((r) => hexColor(r.wall_color) !== null || !!r.wall_colors?.some((c) => hexColor(c) !== null)) || !!f.walls?.some((w) => hexColor(w.color) !== null)));
 }
 
 /**

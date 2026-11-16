@@ -30,6 +30,22 @@
     "en": "2 drawers · 40x55"
   },
   "ikea": "MALM",
+  "slots": [
+    {
+      "id": "drawer_1",
+      "kind": "drawer",
+      "name": {
+        "en": "Top drawer"
+      }
+    },
+    {
+      "id": "drawer_2",
+      "kind": "drawer",
+      "name": {
+        "en": "Second drawer"
+      }
+    }
+  ],
   "parts": [
     {"shape": "box", "x": -0.4775, "z": -0.0187, "w": 0.045, "d": 0.9625, "y": 0, "h": 1, "color": "white", "fix": "w"},
     {"shape": "box", "x": 0.4775, "z": -0.0187, "w": 0.045, "d": 0.9625, "y": 0, "h": 1, "color": "white", "fix": "w"},
@@ -37,9 +53,27 @@
     {"shape": "box", "x": 0.0, "z": -0.0187, "w": 0.91, "d": 0.9625, "y": 0, "h": 0.0327, "color": "white", "fix": "h"},
     {"shape": "box", "x": 0.0, "z": -0.4917, "w": 0.91, "d": 0.0167, "y": 0.0327, "h": 0.9345, "color": "white", "fix": "d"},
     {"shape": "box", "x": 0.0, "z": 0.4167, "w": 0.91, "d": 0.0417, "y": 0, "h": 0.0636, "color": "dark", "fix": "h"},
-    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.0636, "h": 0.4336, "color": "white"},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.0636, "h": 0.4336, "color": "white", "bind": {"slot": "drawer_2", "kind": "slide"}},
     {"shape": "box", "x": 0.0, "z": 0.475, "w": 0.99, "d": 0.025, "y": 0.4973, "h": 0.0218, "color": "dark", "fix": "h"},
-    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.5318, "h": 0.4336, "color": "white"},
-    {"shape": "box", "x": 0.0, "z": 0.475, "w": 0.99, "d": 0.025, "y": 0.9655, "h": 0.0218, "color": "dark", "fix": "h"}
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.5318, "h": 0.4336, "color": "white", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.475, "w": 0.99, "d": 0.025, "y": 0.9655, "h": 0.0218, "color": "dark", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0935, "w": 0.885, "d": 0.734, "y": 0.107, "h": 0.0218, "color": "white", "fix": "h", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": -0.4275, "z": 0.0935, "w": 0.03, "d": 0.734, "y": 0.107, "h": 0.2688, "color": "white", "fix": "w", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": 0.4275, "z": 0.0935, "w": 0.03, "d": 0.734, "y": 0.107, "h": 0.2688, "color": "white", "fix": "w", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.0935, "w": 0.885, "d": 0.734, "y": 0.5752, "h": 0.0218, "color": "white", "fix": "h", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "box", "x": -0.4275, "z": 0.0935, "w": 0.03, "d": 0.734, "y": 0.5752, "h": 0.2688, "color": "white", "fix": "w", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "box", "x": 0.4275, "z": 0.0935, "w": 0.03, "d": 0.734, "y": 0.5752, "h": 0.2688, "color": "white", "fix": "w", "bind": {"slot": "drawer_1", "kind": "slide"}}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": -0.4775, "z": -0.0187, "w": 0.045, "d": 0.9625},
+    {"shape": "rect", "x": 0.4775, "z": -0.0187, "w": 0.045, "d": 0.9625},
+    {"shape": "rect", "x": 0.0, "z": -0.0187, "w": 1, "d": 0.9625},
+    {"shape": "rect", "x": 0.0, "z": -0.0187, "w": 0.91, "d": 0.9625},
+    {"shape": "rect", "x": 0.0, "z": -0.4917, "w": 0.91, "d": 0.0167},
+    {"shape": "rect", "x": 0.0, "z": 0.4167, "w": 0.91, "d": 0.0417},
+    {"shape": "rect", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375},
+    {"shape": "rect", "x": 0.0, "z": 0.475, "w": 0.99, "d": 0.025},
+    {"shape": "rect", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375},
+    {"shape": "rect", "x": 0.0, "z": 0.475, "w": 0.99, "d": 0.025}
   ]
 }

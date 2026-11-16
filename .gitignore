@@ -24,3 +24,4 @@ demo/static/
 tools/deploy.local.json
 # Screenshots from the checks and reviews
 .impeccable/review/
+demo/_track-shots/

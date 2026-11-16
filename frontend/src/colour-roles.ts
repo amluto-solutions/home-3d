@@ -159,6 +159,7 @@ const BUILTIN_ROLES: Record<string, string> = {
   awning: "body fabric accent",
   waste_bin: "metal dark",
   mailbox: "metal dark",
+  neon_sign: "metal dark",
   wall_switch: "white",
   wall_socket: "white dark",
   wifi_ap: "white metal",

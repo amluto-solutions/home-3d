@@ -93,6 +93,14 @@ LIGHTS = [
     "garden",
 ]
 MAX_PARTS = 60
+# live parts (#466, frontend/src/live-parts.ts reads the same lists, a test compares them): what a bound part does,
+# the edge a door turns about, what a slot is, and how many slots an item may have
+BIND_KINDS = ["open", "slide", "spin", "level", "blink", "glow"]
+BIND_HINGES = ["left", "right", "top", "bottom"]
+SLOT_KINDS = ["contact", "drawer", "fan", "level", "progress", "status", "power", "glow"]
+MAX_SLOTS = 8
+# a slot id, as the plan stores it in furniture "binds" (schema.py)
+SLOT_ID = r"^[a-z0-9_]{1,24}$"
 MAX_NAME_LENGTH = 80
 MAX_ROOMS = 12
 MAX_TAGS = 12
@@ -218,9 +226,43 @@ _PART_FIELDS = vol.Schema(
         vol.Optional("side"): _SIDE,
         vol.Optional("plan"): _PLAN,
         vol.Optional("taper"): _range(TAPER_RANGE),
+        # fan blades (#1084): turn while the item's fan runs, about the upright ("y") or the front axis ("z")
+        vol.Optional("spin"): vol.In(["y", "z"]),
+        # a live part (#466): moves or lights with the entity linked to one of the item's slots - a door opens
+        # ("open", about `hinge` by `amount` degrees), a drawer slides out ("slide", `amount` of the depth), a drum
+        # turns ("spin", about `axis`, `amount` turns a minute), a tank fills ("level"), a status light shows ok, off
+        # or a fault ("blink"), a part glows while on ("glow")
+        vol.Optional("bind"): vol.Schema(
+            {
+                vol.Required("slot"): vol.All(str, vol.Match(SLOT_ID)),
+                vol.Required("kind"): vol.In(BIND_KINDS),
+                vol.Optional("hinge"): vol.In(BIND_HINGES),
+                vol.Optional("axis"): vol.In(["x", "y", "z"]),
+                vol.Optional("amount"): vol.All(vol.Coerce(float), vol.Range(min=0, max=180)),
+            }
+        ),
     }
 )
-PART_SCHEMA = vol.All(_PART_FIELDS, _shape_fields)
+
+
+def _bind_fields(part: dict[str, Any]) -> dict[str, Any]:
+    """A live part's fields fit its kind: only a door has a hinge, only a turning part an axis, a drawer slides at
+    most its item's depth; fan blades (spin) are no bound part."""
+    bind = part.get("bind")
+    if bind is None:
+        return part
+    if "spin" in part:
+        raise vol.Invalid("a part either turns with the item's fan (spin) or is bound to a slot (bind)", path=["bind"])
+    if "hinge" in bind and bind["kind"] != "open":
+        raise vol.Invalid('only a part that opens ("open") has a hinge', path=["bind", "hinge"])
+    if "axis" in bind and bind["kind"] != "spin":
+        raise vol.Invalid('only a part that turns ("spin") has an axis', path=["bind", "axis"])
+    if bind["kind"] == "slide" and bind.get("amount", 0) > 1:
+        raise vol.Invalid("a drawer slides out at most the item's depth (amount up to 1)", path=["bind", "amount"])
+    return part
+
+
+PART_SCHEMA = vol.All(_PART_FIELDS, _shape_fields, _bind_fields)
 
 # Plan symbol in the same fractions (optional: without it the parts are drawn from above).
 SYMBOL_SCHEMA = vol.Any(
@@ -389,9 +431,47 @@ _ITEM_FIELDS = vol.Schema(
         vol.Optional("rack"): vol.All(RACK_GEAR_SCHEMA, _shelf_has_room),
         # its estimated typical power draw: a rack's total adds up its gear's (#114)
         vol.Optional("watts"): vol.All(_watts, vol.Range(min=0, max=MAX_WATTS)),
+        # the slots its live parts are bound to (#466): the item panel links an entity to each; a slot's kind names
+        # it and says which entities fit, unless it has a name and domains of its own
+        vol.Optional("slots"): vol.All(
+            [
+                vol.Schema(
+                    {
+                        vol.Required("id"): vol.All(str, vol.Match(SLOT_ID)),
+                        vol.Optional("kind"): vol.In(SLOT_KINDS),
+                        vol.Optional("name"): vol.All(
+                            {vol.All(str, vol.Length(min=2, max=5)): _TEXT}, vol.Length(min=1, max=10)
+                        ),
+                        vol.Optional("domains"): vol.All(
+                            [vol.All(str, vol.Match(r"^[a-z_]{2,30}$"))], vol.Length(min=1, max=8)
+                        ),
+                    }
+                )
+            ],
+            vol.Length(min=1, max=MAX_SLOTS),
+        ),
     }
 )
-ITEM_SCHEMA = vol.All(_ITEM_FIELDS, _rack_fits)
+
+
+def _slots_fit(item: dict[str, Any]) -> dict[str, Any]:
+    """Every bound part names a slot of its item, every slot is named (by its kind or a name) and used, once each."""
+    slots = item.get("slots", [])
+    ids = [slot["id"] for slot in slots]
+    if len(set(ids)) != len(ids):
+        raise vol.Invalid("each slot id once", path=["slots"])
+    for slot in slots:
+        if "kind" not in slot and "name" not in slot:
+            raise vol.Invalid(f"slot {slot['id']} needs a kind or a name", path=["slots"])
+    used = {part["bind"]["slot"] for part in item["parts"] if "bind" in part}
+    for missing in sorted(used - set(ids)):
+        raise vol.Invalid(f"a part is bound to slot {missing!r}, which the item's slots do not list", path=["parts"])
+    for unused in sorted(set(ids) - used):
+        raise vol.Invalid(f"slot {unused!r} has no part bound to it", path=["slots"])
+    return item
+
+
+ITEM_SCHEMA = vol.All(_ITEM_FIELDS, _rack_fits, _slots_fit)
 
 
 class PackError(Exception):
@@ -404,11 +484,22 @@ class PackError(Exception):
         self.detail = detail
 
 
+def _newer_field(err: Any) -> bool:
+    """A field this version does not know yet on a part or a slot (#466: a part field of a newer pack release)."""
+    path = [str(p) for p in getattr(err, "path", None) or []]
+    if not ({"parts", "slots"} & set(path)):
+        return False
+    return getattr(err, "code", None) in ("extra_key", "extra_keys_not_allowed") or "extra keys not allowed" in str(err)
+
+
 def _unknown_value(err: vol.Invalid) -> bool:
     """Whether a value outside a known list failed: voluptuous says so in its message; Probatio, which checks
-    schemas since Home Assistant 2026.9, gives it the code "not_in_list" (pointed out by hohoanganh)."""
+    schemas since Home Assistant 2026.9, gives it the code "not_in_list" (pointed out by hohoanganh). A field of a part
+    or a slot this version does not know counts the same (#466); an unknown item or pack field stays an error."""
     found = getattr(err, "errors", None) or [err]
-    return any(getattr(e, "code", None) == "not_in_list" or "value must be one of" in str(e) for e in found)
+    return any(
+        getattr(e, "code", None) == "not_in_list" or "value must be one of" in str(e) or _newer_field(e) for e in found
+    )
 
 
 def _check(schema: vol.Schema | vol.All, path: str, data: Any) -> dict[str, Any]:

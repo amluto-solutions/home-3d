@@ -10,15 +10,17 @@
   "electric": true,
   "mount": "wall",
   "wall_y": 0.15,
+  "slots": [{"id": "oven_door", "kind": "contact", "name": {"en": "Oven door"}}],
   "parts": [
     {"shape": "box", "x": 0.0, "z": -0.0455, "w": 0.9664, "d": 0.9091, "y": 0.0084, "h": 0.9832, "color": "dark"},
     {"shape": "box", "x": 0.0, "z": 0.4273, "w": 1.0, "d": 0.0364, "y": 0.8319, "h": 0.1681, "color": "metal"},
     {"shape": "cyl", "x": -0.3655, "z": 0.4545, "w": 0.0504, "d": 0.0182, "y": 0.8908, "h": 0.0504, "color": "dark", "axis": "z"},
     {"shape": "cyl", "x": 0.3655, "z": 0.4545, "w": 0.0504, "d": 0.0182, "y": 0.8908, "h": 0.0504, "color": "dark", "axis": "z"},
     {"shape": "box", "x": 0.0, "z": 0.4473, "w": 0.2017, "d": 0.0036, "y": 0.8824, "h": 0.0588, "color": "#7fe3ff", "edges": "faint"},
-    {"shape": "box", "x": 0.0, "z": 0.4318, "w": 1.0, "d": 0.0455, "y": 0.0, "h": 0.8235, "color": "dark", "top": "metal"},
-    {"shape": "box", "x": 0.0, "z": 0.4564, "w": 0.8319, "d": 0.0036, "y": 0.084, "h": 0.6134, "color": "glass"},
-    {"shape": "box", "x": 0.0, "z": 0.4709, "w": 0.7311, "d": 0.0218, "y": 0.7479, "h": 0.0252, "color": "metal", "fix": "h"}
+    {"shape": "box", "x": 0.0, "z": 0.4318, "w": 1.0, "d": 0.0455, "y": 0.0, "h": 0.8235, "color": "dark", "top": "metal", "bind": {"slot": "oven_door", "kind": "open", "hinge": "bottom", "amount": 90}},
+    {"shape": "box", "x": 0.0, "z": 0.4564, "w": 0.8319, "d": 0.0036, "y": 0.084, "h": 0.6134, "color": "glass", "bind": {"slot": "oven_door", "kind": "open", "hinge": "bottom", "amount": 90}},
+    {"shape": "box", "x": 0.0, "z": 0.4709, "w": 0.7311, "d": 0.0218, "y": 0.7479, "h": 0.0252, "color": "metal", "fix": "h", "bind": {"slot": "oven_door", "kind": "open", "hinge": "bottom", "amount": 90}},
+    {"shape": "box", "x": 0.0, "z": 0.4127, "w": 0.9328, "d": 0.0073, "y": 0.0336, "h": 0.7563, "color": "metal", "edges": "faint"}
   ],
   "symbol": [
     {"shape": "rect", "x": 0.0, "z": 0.0, "w": 1.0, "d": 1.0},

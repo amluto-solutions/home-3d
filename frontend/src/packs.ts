@@ -7,6 +7,7 @@ import { builtinBase, techBase, ELECTRIC_FURNITURE, type Building, FURNITURE_SIZ
 import type { LampModel } from "./viewer/viewer3d.ts";
 import type { RackFrameSpec } from "./rack-frame.ts";
 import type { RackGearSpec } from "./rack.ts";
+import type { PackSlot, PartBind } from "./live-parts.ts";
 
 /** A cooking zone of a pack cooktop: a thin disc lying on the item's top. */
 export function isCooktopZone(p: Pick<PackPart, "shape" | "y" | "h" | "axis">): boolean {
@@ -68,6 +69,13 @@ export interface PackPart {
   plan?: [number, number][];
   /** Shell: the width at the top of its cross-sections against their bottom (0.1 to 1.5, default 1). */
   taper?: number;
+  /**
+   * Fan blades (#1084): turn while the item's fan runs, about the upright axis ("y", a ceiling fan) or the front axis
+   * ("z", a desk fan), about the middle of all the item's turning parts.
+   */
+  spin?: "y" | "z";
+  /** A live part (#466): moves or lights with the entity linked to one of the item's slots (live-parts.ts). */
+  bind?: PartBind;
 }
 
 export type PackSymbol =
@@ -115,6 +123,8 @@ export interface PackItem {
   rack?: RackGearSpec;
   /** Estimated typical power draw in watts (#114): a rack's total adds up its gear's. */
   watts?: number;
+  /** The slots its live parts are tied to (#466): the item panel links an entity to each. */
+  slots?: PackSlot[];
 }
 
 /**

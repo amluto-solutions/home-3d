@@ -27,7 +27,7 @@ test("recolouring writes the light's colour times the factor into the lamp's ran
 
 // ---- a lit lamp reads against an unlit one in every look (#216) ----
 import { contrast } from "../scheme.ts";
-import { litShade, LIT_MIN_LUMINANCE, relLuminance, UNLIT_SHADE } from "./lamp-colors.ts";
+import { litShade, LIT_MIN_LUMINANCE, relLuminance, UNLIT_SHADE, unlitShade } from "./lamp-colors.ts";
 import { themedSurface, type Theme } from "./theme.ts";
 import { THEMES } from "../themes.ts";
 
@@ -74,4 +74,33 @@ test("a brighter light shows a brighter shade (#216)", () => {
   const dim = litShade([1, 0.83, 0.42], 0);
   const full = litShade([1, 0.83, 0.42], 1);
   assert.ok(relLuminance(full) > relLuminance(dim));
+});
+
+// ---- the unlit shade on natural materials (#474) ----
+// Cozy (a day base with natural materials) showed unlit discs as black holes: the natural shader turns the neon's dark
+// blue into a neutral grey (theme.ts, "neon leftovers") but leaves a true black black.
+
+/** The shader's test for a neon leftover on natural materials (theme.ts fp3dStyled): such a colour turns neutral grey. */
+const toLinear = (c: number[]) => c.map((v) => (v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4)));
+const turnsGrey = (c0: number[]) => {
+  // the vertex colours are linear in the shader (colour management)
+  const c = toLinear(c0);
+  return Math.max(...c) < 0.2 && c[2] > c[0] * 2 && c[2] > c[1] * 1.5;
+};
+
+test("an unlit shade on natural materials is one the natural shader turns grey, in every base look (#474)", () => {
+  for (const theme of THEMES as Theme[]) assert.ok(turnsGrey(unit(unlitShade(theme, true))), `${theme} natural`);
+  assert.ok(!turnsGrey(unit(UNLIT_SHADE.day)), "a true black would stay black");
+});
+
+test("Realistic, Neon, Day and High contrast keep their unlit shades without natural materials (#474)", () => {
+  for (const theme of THEMES as Theme[]) assert.equal(unlitShade(theme, false), UNLIT_SHADE[theme], theme);
+  assert.equal(unlitShade("realistic", false), 0x000000);
+  assert.equal(unlitShade("day", false), 0x000000);
+  assert.equal(unlitShade("neon", false), 0x1d2946);
+});
+
+test("Cozy's unlit shade is the one Evening already shows (#474)", () => {
+  assert.equal(unlitShade("day", true), unlitShade("neon", true));
+  assert.equal(unlitShade("day", true), unlitShade("neon", false));
 });

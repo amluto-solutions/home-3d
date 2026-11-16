@@ -1,7 +1,8 @@
 // The plan drawing: grid, rooms, walls, corners, drafts, snap guides and the hint bar.
 // Part of the editor's styles (fp3d-editor static styles, #202): the slices are applied in the order editor.ts lists them.
 
-import { css } from "lit";
+import { css, unsafeCSS } from "lit";
+import { SURROUND_PLAN_CSS } from "../../../surround-plan.ts";
 
 export const planStyles = css`
       svg.fp3d-plan {
@@ -70,6 +71,17 @@ export const planStyles = css`
         fill: var(--fp3d-text);
         font: 600 13px var(--fp3d-title-font);
         text-anchor: middle;
+      }
+      .fp3d-label-grip {
+        cursor: move;
+      }
+      .fp3d-label-grip circle:not(.fp3d-hit) {
+        fill: var(--fp3d-accent);
+        stroke: none;
+      }
+      .fp3d-label-grip path {
+        stroke: var(--fp3d-accent-text, #001);
+        stroke-width: 1.6;
       }
       .fp3d-room-area {
         fill: var(--fp3d-muted);
@@ -356,4 +368,21 @@ export const planStyles = css`
           display: none;
         }
       }
+      /* the neighbourhood from the map under the plan (#463) */
+      .fp3d-canvas-wrap > .fp3d-osm-credit {
+        position: absolute;
+        right: 8px;
+        top: 6px;
+        z-index: 2;
+        font-size: 10px;
+        color: var(--fp3d-muted);
+        opacity: 0.7;
+        text-decoration: none;
+      }
+      .fp3d-canvas-wrap > .fp3d-osm-credit:hover,
+      .fp3d-canvas-wrap > .fp3d-osm-credit:focus-visible {
+        opacity: 1;
+        text-decoration: underline;
+      }
+      ${unsafeCSS(SURROUND_PLAN_CSS)}
 `;

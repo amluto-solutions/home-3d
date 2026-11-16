@@ -76,7 +76,7 @@ function otherValue(s: Setting, e: SettingsEnv): unknown {
     case "range":
       return c.min === now ? c.max : c.min;
     case "checks":
-      return [c.options[0].value];
+      return [(typeof c.options === "function" ? c.options(e) : c.options)[0].value];
     case "list":
       return [];
     case "action":
@@ -421,4 +421,35 @@ test("the house's style plan is one card beside the facade: styles, switch, time
   assert.equal((row("style_evening").write!(e, "") as Building).settings.style_evening, null);
   const entity = row("style_entity").control;
   assert.ok(entity.kind === "entity" && entity.filter("input_select.sample_style", e) && !entity.filter("light.sample_lounge", e));
+});
+
+test("the household calendars are a checklist of the calendars Home Assistant has, kept in the plan (#457)", () => {
+  const s = settingById("household.calendars")!;
+  assert.ok(s && s.section === "household" && s.control.kind === "checks");
+  const e = env();
+  const options = typeof s.control.options === "function" ? s.control.options(e) : s.control.options;
+  assert.deepEqual(options.map((o) => o.value), ["calendar.sample_family"]);
+  assert.equal(options[0].label, "Family");
+  assert.deepEqual(s.read(e), []);
+  const next = s.write!(e, ["calendar.sample_family", "light.not_a_calendar"]) as Building;
+  assert.deepEqual(next.settings.household?.calendars, ["calendar.sample_family"]);
+  assert.deepEqual(s.read({ ...e, building: next }), ["calendar.sample_family"]);
+  // a calendar chosen earlier that Home Assistant no longer has stays listed, so it can be unticked
+  const gone = { ...e, building: next, hass: { ...e.hass!, states: {} } } as SettingsEnv;
+  assert.deepEqual((typeof s.control.options === "function" ? s.control.options(gone) : []).map((o) => o.value), ["calendar.sample_family"]);
+  // none chosen: the key is cleared (null), like the other optional household values
+  assert.equal((s.write!({ ...e, building: next }, []) as Building).settings.household?.calendars, null);
+});
+
+test("the size of the room names in 3D is a percentage: 100 is the usual size and stores nothing (#458)", () => {
+  const e = env();
+  const s = settingById("label_scale")!;
+  assert.equal(s.read(e), 100);
+  const bigger = s.write!(e, 150) as Building;
+  assert.equal(bigger.settings.label_scale, 1.5);
+  assert.equal(s.read({ ...e, building: bigger }), 150);
+  // out of range values are held to half and double
+  assert.equal((s.write!(e, 500) as Building).settings.label_scale, 2);
+  assert.equal((s.write!(e, 10) as Building).settings.label_scale, 0.5);
+  assert.equal((s.write!({ ...e, building: bigger }, 100) as Building).settings.label_scale, null);
 });

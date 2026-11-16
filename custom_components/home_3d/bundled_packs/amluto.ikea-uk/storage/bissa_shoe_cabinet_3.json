@@ -26,17 +26,40 @@
     "en": "3 compartments"
   },
   "ikea": "BISSA",
+  "slots": [
+    {
+      "id": "flap_1",
+      "kind": "contact",
+      "name": {
+        "en": "Top compartment"
+      }
+    },
+    {
+      "id": "flap_2",
+      "kind": "contact",
+      "name": {
+        "en": "Second compartment"
+      }
+    },
+    {
+      "id": "flap_3",
+      "kind": "contact",
+      "name": {
+        "en": "Bottom compartment"
+      }
+    }
+  ],
   "parts": [
     {"shape": "box", "x": -0.4837, "z": 0.0, "w": 0.0327, "d": 0.9655, "y": 0, "h": 1, "color": "white", "fix": "w"},
     {"shape": "box", "x": 0.4837, "z": 0.0, "w": 0.0327, "d": 0.9655, "y": 0, "h": 1, "color": "white", "fix": "w"},
     {"shape": "box", "x": 0.0, "z": 0.0, "w": 1, "d": 0.9655, "y": 0.9881, "h": 0.0119, "color": "white", "fix": "h"},
     {"shape": "box", "x": 0.0, "z": 0.0, "w": 0.9347, "d": 0.9655, "y": 0, "h": 0.0119, "color": "white", "fix": "h"},
     {"shape": "box", "x": 0.0, "z": -0.469, "w": 0.9347, "d": 0.0276, "y": 0.0119, "h": 0.9763, "color": "white", "fix": "d"},
-    {"shape": "loft", "x": 0.0, "z": 0.4483, "w": 0.9918, "d": 0.069, "y": 0.0296, "h": 0.3205, "color": "white", "tz": 0.4138},
-    {"shape": "box", "x": 0.0, "z": 0.4897, "w": 0.2449, "d": 0.0414, "y": 0.3131, "h": 0.0148, "color": "dark", "fix": "wdh"},
-    {"shape": "loft", "x": 0.0, "z": 0.4483, "w": 0.9918, "d": 0.069, "y": 0.3531, "h": 0.3205, "color": "white", "tz": 0.4138},
-    {"shape": "box", "x": 0.0, "z": 0.4897, "w": 0.2449, "d": 0.0414, "y": 0.6365, "h": 0.0148, "color": "dark", "fix": "wdh"},
-    {"shape": "loft", "x": 0.0, "z": 0.4483, "w": 0.9918, "d": 0.069, "y": 0.6765, "h": 0.3205, "color": "white", "tz": 0.4138},
-    {"shape": "box", "x": 0.0, "z": 0.4897, "w": 0.2449, "d": 0.0414, "y": 0.96, "h": 0.0148, "color": "dark", "fix": "wdh"}
+    {"shape": "loft", "x": 0.0, "z": 0.4483, "w": 0.9918, "d": 0.069, "y": 0.0296, "h": 0.3205, "color": "white", "tz": 0.4138, "bind": {"slot": "flap_3", "kind": "open", "hinge": "bottom", "amount": 70}},
+    {"shape": "box", "x": 0.0, "z": 0.4897, "w": 0.2449, "d": 0.0414, "y": 0.3131, "h": 0.0148, "color": "dark", "fix": "wdh", "bind": {"slot": "flap_3", "kind": "open", "hinge": "bottom", "amount": 70}},
+    {"shape": "loft", "x": 0.0, "z": 0.4483, "w": 0.9918, "d": 0.069, "y": 0.3531, "h": 0.3205, "color": "white", "tz": 0.4138, "bind": {"slot": "flap_2", "kind": "open", "hinge": "bottom", "amount": 70}},
+    {"shape": "box", "x": 0.0, "z": 0.4897, "w": 0.2449, "d": 0.0414, "y": 0.6365, "h": 0.0148, "color": "dark", "fix": "wdh", "bind": {"slot": "flap_2", "kind": "open", "hinge": "bottom", "amount": 70}},
+    {"shape": "loft", "x": 0.0, "z": 0.4483, "w": 0.9918, "d": 0.069, "y": 0.6765, "h": 0.3205, "color": "white", "tz": 0.4138, "bind": {"slot": "flap_1", "kind": "open", "hinge": "bottom", "amount": 70}},
+    {"shape": "box", "x": 0.0, "z": 0.4897, "w": 0.2449, "d": 0.0414, "y": 0.96, "h": 0.0148, "color": "dark", "fix": "wdh", "bind": {"slot": "flap_1", "kind": "open", "hinge": "bottom", "amount": 70}}
   ]
 }

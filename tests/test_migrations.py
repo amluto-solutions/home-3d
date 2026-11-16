@@ -364,7 +364,7 @@ def test_a_plan_with_a_house_style_plan_is_version_four_and_an_older_home_3d_ope
     """#440: `style_switch` ("sun" or "time") is a new choice, so plan version 4. The 3 -> 4 step changes nothing, the
     keys are kept as they are, and a Home 3D that reads versions up to 3 shows such a plan read-only instead of
     repairing it (docs/plan-format.md)."""
-    assert PLAN_VERSION == 4
+    assert PLAN_VERSION >= 4
     style = {
         "style_day": "cozy",
         "style_evening": "evening",
@@ -378,7 +378,7 @@ def test_a_plan_with_a_house_style_plan_is_version_four_and_an_older_home_3d_ope
     older = {**copy.deepcopy(BUILDING), "version": 3}
     older["settings"] = {**older.get("settings", {}), **style}
     migrated = migrate_plan(older)
-    assert migrated["version"] == 4 and migrated["settings"] == older["settings"]
+    assert migrated["version"] == PLAN_VERSION and migrated["settings"] == older["settings"]
     assert older["version"] == 3, "the stored plan is left as it was"
     assert BUILDING_SCHEMA(older)["settings"]["style_switch"] == "time"
     assert migrate_plan(migrated) is migrated, "idempotent"
@@ -391,3 +391,75 @@ def test_a_plan_with_a_house_style_plan_is_version_four_and_an_older_home_3d_ope
     monkeypatch.setattr("custom_components.home_3d.migrations.PLAN_VERSION", 3)
     with pytest.raises(PlanTooNew, match=r"made by a newer Home 3D"):
         migrate_plan(migrated)
+
+
+def _surroundings() -> dict[str, Any]:
+    """A small neighbourhood as the frontend stores it (invented map metres around an invented point)."""
+    return {
+        "on": True,
+        "lat": 45.5,
+        "lon": 7.25,
+        "at": 1763164800,
+        "radius": 150,
+        "x": 6.0,
+        "z": 4.0,
+        "own": 0,
+        "hide": [2],
+        "show": [],
+        "flat": False,
+        "buildings": [
+            {"p": [[-6, -4], [6, -4], [6, 4], [-6, 4]], "h": 7.5},
+            {"p": [[20, -5], [30, -5], [30, 5], [20, 5]], "h": 9.5},
+            {"p": [[-25, 10], [-19, 10], [-19, 16]], "h": 3},
+        ],
+        "ways": [{"p": [[-172.5, -15], [172.5, -15]], "w": 6, "k": "road"}],
+        "areas": [{"p": [[-60, 20], [-30, 20], [-30, 50], [-60, 50]], "k": "green"}],
+        "trees": [[10, 10]],
+    }
+
+
+def test_a_plan_with_surroundings_is_version_five_and_an_older_home_3d_opens_it_read_only(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """#462: the neighbourhood from OpenStreetMap (`settings.surroundings`, its way and area kinds new choices) is plan
+    version 5. The 4 -> 5 step changes nothing; a version-4 plan loads unchanged, keeps every key, and gets no map.
+    A Home 3D that reads versions up to 4 (1.5.x) shows a plan with surroundings read-only instead of repairing it."""
+    assert PLAN_VERSION == 5
+    older = {**copy.deepcopy(BUILDING), "version": 4}
+    kept = copy.deepcopy(older)
+    migrated = migrate_plan(older)
+    assert older == kept, "the stored plan is left as it was"
+    assert migrated == {**kept, "version": 5}, "no key dropped, none added"
+    assert migrate_plan(migrated) is migrated, "idempotent"
+    assert "surroundings" not in BUILDING_SCHEMA(older)["settings"], "an older plan gets no map"
+
+    with_map = {**copy.deepcopy(BUILDING), "version": 5}
+    with_map["settings"] = {**with_map.get("settings", {}), "surroundings": _surroundings()}
+    loaded = BUILDING_SCHEMA(with_map)["settings"]["surroundings"]
+    assert loaded == _surroundings(), "every key kept as stored (numbers as floats)"
+    # switched off, or removed (None): both are a plan of version 5 still
+    assert BUILDING_SCHEMA({**with_map, "settings": {**with_map["settings"], "surroundings": None}})
+    for broken in (
+        {"ways": [{"p": [[0, 0], [1, 1]], "w": 6, "k": "motorway"}]},
+        {"areas": [{"p": [[0, 0], [1, 1], [1, 0]], "k": "desert"}]},
+        {"buildings": [{"p": [[0, 0], [1, 1], [1, 0]], "h": 500}]},
+        {"buildings": [{"p": [[0, 0]] * 201, "h": 7}]},
+        {"radius": 5000},
+        {"lat": 91},
+        {"extra": 1},
+    ):
+        with pytest.raises(vol.Invalid):
+            surroundings = {**_surroundings(), **broken}
+            BUILDING_SCHEMA({**with_map, "settings": {**with_map["settings"], "surroundings": surroundings}})
+
+    # the release before this one (1.5.x) reads versions up to 4: a version-5 plan is refused, never repaired
+    monkeypatch.setattr("custom_components.home_3d.migrations.PLAN_VERSION", 4)
+    with pytest.raises(PlanTooNew, match=r"made by a newer Home 3D"):
+        migrate_plan(with_map)
+
+
+def test_the_sample_home_has_no_surroundings() -> None:
+    """#462: the Sample Home ships without a map of any real place."""
+    sample = json.loads(SAMPLE.read_text(encoding="utf-8"))
+    plans = [sample, *(h.get("building", {}) for h in sample.get("homes", []) if isinstance(h, dict))]
+    assert all(not (p.get("settings") or {}).get("surroundings") for p in plans if isinstance(p, dict))

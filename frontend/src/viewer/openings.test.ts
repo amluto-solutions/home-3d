@@ -223,3 +223,25 @@ test("a blind set to hang inside is a roller shade on the room's side of the wal
   assert.equal(blindInside({ type: "window", blind_side: "outside" }), false);
   assert.equal(blindInside({ type: "window" }), false);
 });
+
+test("a garage door is the door only: no roller shutter or shutter box in front of it (#1094)", () => {
+  const ys = (parts: ReturnType<typeof buildOpeningParts>, which: ("frames" | "blinds")[] = ["frames", "blinds"]) => {
+    const out: number[] = [];
+    for (const g of which.map((k) => parts[k])) {
+      const pos = g.getAttribute("position");
+      for (let i = 0; i < pos.count; i++) out.push(pos.getY(i));
+    }
+    return out;
+  };
+  for (const style of [null, "up_and_over"] as const) {
+    const gate = info("g", 1, 2.5, 0, 2.1, { type: "garage", style });
+    for (const cover of [1, 0.5, 0]) {
+      const parts = buildOpeningParts([gate], new Map([["g", { open: 0, tilt: 0, cover }]]), 99);
+      // the shutter box would stand in the frames above the head; an up-and-over leaf itself swings above it half way
+      assert.ok(Math.max(...ys(parts, style ? ["frames"] : ["frames", "blinds"])) < 2.1 + 0.05, `no shutter box above the door (${style ?? "sectional"}, closed ${cover})`);
+    }
+  }
+  // a window with a cover still gets its shutter and box
+  const w = info("w", 1, 1.2, 0.9, 2.2, { cover: "cover.w" });
+  assert.ok(Math.max(...ys(buildOpeningParts([w], new Map([["w", { open: 0, tilt: 0, cover: 1 }]]), 99))) > 2.3);
+});

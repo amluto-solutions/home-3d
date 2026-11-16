@@ -38,6 +38,12 @@ export class GeoBuffer {
   /** While an item draws: the material of a colour it draws with (its role's; undefined: not a role's colour). */
   private materialOf: ((hex: number) => number | undefined) | null = null;
   private mat = 0;
+  /**
+   * How far the buffer's own y = 0 stands above the floor (m). The ambient-occlusion ramp and the "raised, so it has an
+   * underside" test count from the floor, so a model drawn about its pivot (a live part, #466) sets it and is shaded
+   * like the same part drawn in place.
+   */
+  lift = 0;
 
   constructor(uvs = false, tiles = false) {
     this.uv = uvs ? [] : null;
@@ -391,7 +397,7 @@ export function triangulate(poly: Vec2[], holes: Vec2[][] = []): number[][] {
  */
 export function pushLoft(buf: GeoBuffer, lo: Vec2[], hi: Vec2[], y0: number, y1: number, side: number, top: number): void {
   const topC = new Color(top);
-  const k = (y: number) => 0.5 + 0.5 * Math.min(1, Math.max(0, y / 1.6));
+  const k = (y: number) => 0.5 + 0.5 * Math.min(1, Math.max(0, (y + buf.lift) / 1.6));
   for (let i = 0; i < 4; i++) {
     const a = lo[i];
     const b = lo[(i + 1) % 4];
@@ -496,7 +502,7 @@ export function pushPrism(
   const topY = typeof y1 === "number" ? () => y1 : (p: Vec2) => Math.max(y0 + 0.002, y1(p[0], p[1]));
   const aoFrom = opts.aoFrom ?? y0;
   const fold = opts.fold ?? ALWAYS;
-  const k = (y: number) => 0.5 + 0.5 * Math.min(1, Math.max(0, (y - aoFrom) / 1.6));
+  const k = (y: number) => 0.5 + 0.5 * Math.min(1, Math.max(0, (y + buf.lift - aoFrom) / 1.6));
   // holes (an area with a patch cut out): their rings run clockwise so the inner sides face the hole
   const holes = (opts.holes ?? []).map((h) => (ringArea(h) > 0 ? [...h].reverse() : h));
   const all = holes.length ? [...poly, ...holes.flat()] : poly;
@@ -562,7 +568,7 @@ export interface Ring {
  */
 export function shadedTri(buf: GeoBuffer, side: number, top: number): (a: V3, b: V3, c: V3) => void {
   const topC = new Color(top);
-  const k = (y: number) => 0.5 + 0.5 * Math.min(1, Math.max(0, y / 1.6));
+  const k = (y: number) => 0.5 + 0.5 * Math.min(1, Math.max(0, (y + buf.lift) / 1.6));
   return (a: V3, b: V3, c: V3) => {
     const ux = b[0] - a[0];
     const uy = b[1] - a[1];

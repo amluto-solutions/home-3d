@@ -7,7 +7,7 @@ import { html, nothing, render, svg } from "lit";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { furnitureSymbol } from "../components/furniture2d.ts";
 import { generateWalls, type Wall } from "../geometry/walls.ts";
-import { centroid, type Building, type Floor, type StartView, type Vec2 } from "../model.ts";
+import { labelPoint, type Building, type Floor, type StartView, type Vec2 } from "../model.ts";
 import { setPacks, setPlanRecipes } from "../packs.ts";
 import type { OpeningState } from "../viewer/openings.ts";
 import { pinsShown, readPinZoom } from "../plan-pins.ts";
@@ -17,6 +17,7 @@ import type { DeviceMarker, FlowPiece, ScreenState, Theme, ViewerOptions } from 
 import type { ViewerSurface } from "../viewer-surface.ts";
 import type { StyleDef } from "../looks.ts";
 import { Gestures } from "./gestures.ts";
+import { SURROUND_PLAN_CSS, surroundPlanSvg } from "../surround-plan.ts";
 import { anchorSpots, rackDraw, rackOfPick, fitInside, roomFocusView, floorPictures, flowLines, planBounds, planItems, planMarkers, planOpenings, shownFloor, zoomView, type PlanOpening, type PlanView } from "./scene.ts";
 
 type View = ReturnType<ViewerSurface["getView"]>;
@@ -354,6 +355,7 @@ export class Plan2dViewer implements ViewerSurface {
   setFloorInfo(): void {}
   setFloorStack(): void {}
   setFridgeDoors(): void {}
+  setLiveValues(): void {}
   /** Rack LEDs are a 3D thing (#119): the 2D plan opens the front view, which shows them. */
   setRackLeds(): void {}
   setFurnishMode(): void {}
@@ -511,6 +513,7 @@ export class Plan2dViewer implements ViewerSurface {
     };
     render(
       svg`
+        <g class="fp3d-osm">${surroundPlanSvg(b, floor)}</g>
         <g class="fp3d-p2d-outdoor">${floor.outdoor.map((a) => svg`<polygon class=${`fp3d-p2d-out fp3d-p2d-out-${a.type}`} points=${pts(a.points)} />`)}</g>
         <g>${floor.rooms.filter((r) => r.points.length >= 3).map(
           (r) => svg`<polygon data-room=${r.id} class=${`fp3d-p2d-room${r.id === this.roomId ? " fp3d-p2d-room-sel" : ""}`} style=${tint(r.id)} points=${pts(r.points)} />`,
@@ -535,7 +538,7 @@ export class Plan2dViewer implements ViewerSurface {
     const named = floor.rooms.filter((r) => r.points.length >= 3 && !r.outdoor);
     render(
       html`${named.map((r) => {
-          const [x, z] = centroid(r.points);
+          const [x, z] = labelPoint(r);
           const info = this.roomInfo.get(r.id);
           return html`<span class="fp3d-p2d-label" style=${`--x:${x};--z:${z}`}>${r.name}${info ? html`<small>${info}</small>` : nothing}</span>`;
         })}
@@ -556,7 +559,7 @@ export class Plan2dViewer implements ViewerSurface {
     );
     const els = this.layer.querySelectorAll<HTMLElement>(".fp3d-p2d-label");
     this.names = named.map((r, i) => {
-      const [x, z] = centroid(r.points);
+      const [x, z] = labelPoint(r);
       // by the values line's length, not its text: "21.5 °C" and "21.6 °C" are one size, and the sizes kept stay few
       return { el: els[i]!, x, z, key: `${r.name}
 ${this.roomInfo.get(r.id)?.length}`, box: { x: 0, y: 0, w: 0, h: 0, rank: roomRank(r), keep: r.id === this.roomId } };
@@ -680,7 +683,7 @@ export function createViewer(host: HTMLElement, options?: ViewerOptions): Plan2d
 }
 
 /** The plan's look per theme; the pins use the view's own pin styles. */
-export const PLAN2D_CSS = `
+export const PLAN2D_CSS = `${SURROUND_PLAN_CSS}
 .fp3d-p2d:focus-visible {
   outline: 2px solid var(--fp3d-accent, #37e0ff);
   outline-offset: -3px;

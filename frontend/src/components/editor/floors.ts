@@ -312,11 +312,12 @@ export class FloorsPart {
 
   /** The ruler's points and line over the background (#183), or the straighten line. */
   renderBgRuler(this: Fp3dEditor) {
-    const pts = this._bgLevel?.length ? this._bgLevel : this._bgRuler;
+    const pts = this._bgMap?.length ? this._bgMap : this._bgLevel?.length ? this._bgLevel : this._bgRuler;
     if (!pts?.length) return nothing;
     const s = pts.map((p) => this.toScreen(p));
+    // two points make a line; the map's four taps make two (the picture's corners, then the map's)
     return svg`<g class="fp3d-bg-ruler">
-      ${s.length === 2 ? svg`<line x1=${s[0][0]} y1=${s[0][1]} x2=${s[1][0]} y2=${s[1][1]} />` : nothing}
+      ${[0, 2].map((i) => (s[i + 1] ? svg`<line x1=${s[i][0]} y1=${s[i][1]} x2=${s[i + 1][0]} y2=${s[i + 1][1]} />` : nothing))}
       ${s.map(([x, y]) => svg`<circle cx=${x} cy=${y} r="6" />`)}
     </g>`;
   }
@@ -417,6 +418,7 @@ export class FloorsPart {
                       aria-pressed=${this._bgEdit}
                       @click=${() => {
                         this._bgEdit = !this._bgEdit;
+                        this._bgMap = null;
                         // the handles need the select tool
                         if (this._bgEdit) this._tool = "select";
                       }}
@@ -424,8 +426,10 @@ export class FloorsPart {
                       ${this.t(this._bgEdit ? "background_edit_done" : "background_edit")}
                     </button>
                     <p class="fp3d-sub fp3d-wide">${this.t(this._bgEdit ? "background_handles_hint" : "background_fixed_hint")}</p>
+                  ${this.renderBgMapButton(floor)}
                   <button class="fp3d-btn fp3d-wide ${this._bgLevel ? "fp3d-primary" : ""}" aria-pressed=${!!this._bgLevel} @click=${() => {
                     this._bgLevel = this._bgLevel ? null : [];
+                    this._bgMap = null;
                     this._bgRuler = null;
                     this._bgEdit = false;
                   }}>📐 ${this.t(this._bgLevel ? "bg_level_cancel" : "bg_level")}</button>
@@ -433,6 +437,7 @@ export class FloorsPart {
                   <button class="fp3d-btn fp3d-wide ${this._bgRuler ? "fp3d-primary" : ""}" aria-pressed=${!!this._bgRuler} @click=${() => {
                     this._bgRuler = this._bgRuler ? null : [];
                     this._bgLevel = null;
+                    this._bgMap = null;
                     this._bgEdit = false;
                   }}>📏 ${this.t(this._bgRuler ? "bg_ruler_cancel" : "bg_ruler")}</button>
                   ${this._bgRuler

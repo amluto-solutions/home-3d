@@ -30,6 +30,12 @@
   },
   "ikea": "BESTÅ",
   "surface": true,
+  "slots": [
+    {
+      "id": "door",
+      "kind": "contact"
+    }
+  ],
   "parts": [
     {"shape": "box", "x": -0.4967, "z": -0.0238, "w": 0.0067, "d": 0.9524, "y": 0, "h": 1, "color": "white", "fix": "w"},
     {"shape": "box", "x": 0.4967, "z": -0.0238, "w": 0.0067, "d": 0.9524, "y": 0, "h": 1, "color": "white", "fix": "w"},
@@ -39,9 +45,9 @@
     {"shape": "box", "x": -0.25, "z": -0.0238, "w": 0.0067, "d": 0.9286, "y": 0.0421, "h": 0.9158, "color": "white"},
     {"shape": "box", "x": 0.0, "z": -0.0238, "w": 0.0067, "d": 0.9286, "y": 0.0421, "h": 0.9158, "color": "white"},
     {"shape": "box", "x": 0.25, "z": -0.0238, "w": 0.0067, "d": 0.9286, "y": 0.0421, "h": 0.9158, "color": "white"},
-    {"shape": "box", "x": -0.375, "z": 0.4762, "w": 0.2483, "d": 0.0476, "y": 0.0079, "h": 0.9842, "color": "white"},
-    {"shape": "box", "x": -0.125, "z": 0.4762, "w": 0.2483, "d": 0.0476, "y": 0.0079, "h": 0.9842, "color": "white"},
-    {"shape": "box", "x": 0.125, "z": 0.4762, "w": 0.2483, "d": 0.0476, "y": 0.0079, "h": 0.9842, "color": "white"},
-    {"shape": "box", "x": 0.375, "z": 0.4762, "w": 0.2483, "d": 0.0476, "y": 0.0079, "h": 0.9842, "color": "white"}
+    {"shape": "box", "x": -0.375, "z": 0.4762, "w": 0.2483, "d": 0.0476, "y": 0.0079, "h": 0.9842, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": -0.125, "z": 0.4762, "w": 0.2483, "d": 0.0476, "y": 0.0079, "h": 0.9842, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 96}},
+    {"shape": "box", "x": 0.125, "z": 0.4762, "w": 0.2483, "d": 0.0476, "y": 0.0079, "h": 0.9842, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 96}},
+    {"shape": "box", "x": 0.375, "z": 0.4762, "w": 0.2483, "d": 0.0476, "y": 0.0079, "h": 0.9842, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}}
   ]
 }

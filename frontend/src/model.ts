@@ -60,6 +60,11 @@ export interface Room {
   start_view?: StartView | null;
   points: Vec2[];
   floor_material: string;
+  /**
+   * The room's name moved from the room's middle, in the plan and in 3D, in metres (null: in the middle): where the
+   * names of small rooms would cover each other. An offset, so the name moves along with the room (#458).
+   */
+  label_offset?: Vec2 | null;
   /** Entities shown in the room's panel although they are not in the plan. */
   panel?: string[];
   /** Entities of the room's area kept out of the room panel. */
@@ -306,6 +311,11 @@ export interface Furniture {
   bin_kerb?: { x: number; z: number } | null;
   /** Household, mailbox: the sensor of the door it is emptied through (post counts until it opens). */
   mailbox_door?: EntityRef;
+  /** Neon sign: its own text (one or two lines, split with |), the colour of its tubes while no light gives one, and its font. */
+  sign_text?: string | null;
+  sign_color?: string | null;
+  /** Neon sign: one of `SIGN_FONTS` in neon-sign.ts (null or unknown: script). */
+  sign_font?: string | null;
   /** Household, plant: a plant.* entity or a soil moisture sensor; thirsty below `moisture_min`. */
   moisture?: EntityRef;
   /** Household, plant: the moisture (%) below which it is thirsty (null = 20). */
@@ -381,6 +391,8 @@ export interface Furniture {
   upright?: boolean;
   /** Ceiling fan with light (D606): its fan entity – the blades turn with its speed (the light is `entity`). */
   fan?: EntityRef;
+  /** Live parts of a pack item (#466): the entity of each of its slots (slot id -> entity id; live-parts.ts). */
+  binds?: Record<string, string> | null;
   /** Wi-Fi access point (D582): a sensor with the number of connected clients (its status is `entity`). */
   clients?: EntityRef;
   /** Water heater: a sensor with the water temperature (else the heater's own current temperature). */
@@ -508,6 +520,8 @@ export interface FreeWall {
   thickness?: number | null;
   /** Height in metres (null = full floor height), e.g. a half-height wall or a counter. */
   height?: number | null;
+  /** Colour of both sides ("#rrggbb"; null = the room's wall, or the facade outside the rooms), shown in the homely styles (#460). */
+  color?: string | null;
 }
 
 /** "custom": the roof is made of sections (wings of an L- or T-shaped house, a barn, a lean-to …). */
@@ -967,7 +981,7 @@ export interface BuildingSettings {
    * Household: from which hour the day before a bin glows (null = 14) and until which hour on the day (null = 12);
    * only the bins of the next pickup wear a tag (`bin_next_only`), tags only from `bin_days` days before (null = always).
    */
-  household?: { bin_from?: number | null; bin_until?: number | null; notes?: EntityRef; bin_next_only?: boolean | null; bin_days?: number | null } | null;
+  household?: { bin_from?: number | null; bin_until?: number | null; notes?: EntityRef; bin_next_only?: boolean | null; bin_days?: number | null; /** Calendars (calendar.*) whose entries of today stand in "Today in the household". */ calendars?: string[] | null } | null;
   /** The floor the editor opens with (null: the first of the list) (D418). */
   editor_floor?: string | null;
   /** Located people in 3D: a neon figure (null = default), a pin, or not shown. */
@@ -986,6 +1000,8 @@ export interface BuildingSettings {
   easter_eggs?: boolean;
   /** Plan lock: rooms, walls, doors, windows and outdoor areas cannot be moved by accident. */
   lock_plan?: boolean;
+  /** Size of the room names in 3D, 0.5 to 2 (null = 1, as before) (#458). */
+  label_scale?: number | null;
   /** False for a sample or template home (#61): the editor never offers to add rooms from this install's areas. */
   area_import?: boolean;
   /**
@@ -1003,6 +1019,57 @@ export interface BuildingSettings {
   start_view?: StartView | null;
   /** What a module keeps for the whole house (its settings), by the module's id. */
   mods?: ModuleData | null;
+  /** The neighbourhood from OpenStreetMap around the house (surroundings.ts, #462), fetched once and kept in the plan. */
+  surroundings?: Surroundings | null;
+}
+
+/** A building of the neighbourhood: its footprint in map metres (east, north from the origin) and its height (m). */
+export interface SurroundBuilding {
+  p: Vec2[];
+  h: number;
+}
+
+/** A street, path, railway or stream as a centre line in map metres, with its width (m). */
+export interface SurroundWay {
+  p: Vec2[];
+  w: number;
+  k: "road" | "path" | "rail" | "water";
+}
+
+/** A flat area of the neighbourhood: water, a green (park, meadow) or a wood. */
+export interface SurroundArea {
+  p: Vec2[];
+  k: "water" | "green" | "wood";
+}
+
+/**
+ * The neighbourhood around the house from OpenStreetMap (© OpenStreetMap contributors, ODbL, #462): fetched once at
+ * Home Assistant's location when an admin taps Load and kept in the plan. Coordinates are map metres from the origin
+ * (east, north); the plan turns them by its `north` and puts the origin at the plan point (x, z). Plan format 5.
+ */
+export interface Surroundings {
+  /** Shown (the data stays when it is switched off). */
+  on: boolean;
+  /** Where it was fetched (degrees), when (unix seconds) and the radius in metres. */
+  lat: number;
+  lon: number;
+  at: number;
+  radius: number;
+  /** The plan point the origin (the home's location) lies on. */
+  x: number;
+  z: number;
+  /** The map building that is the house itself (not drawn: the plan stands there); null = none. */
+  own?: number | null;
+  /** Map buildings hidden by hand, and ones shown although they stand where the plan has the house (indices). */
+  hide?: number[];
+  show?: number[];
+  /** The neighbours' houses only as their outline on the ground instead of blocks. */
+  flat?: boolean;
+  buildings: SurroundBuilding[];
+  ways: SurroundWay[];
+  areas: SurroundArea[];
+  /** Single trees (map metres). */
+  trees: Vec2[];
 }
 
 /** A camera position around the house: azimuth and polar angle (radians) and the distance (m). */
@@ -1441,7 +1508,7 @@ export interface PresenceLink {
  * version (custom_components/home_3d/migrations.py) before anyone sees it; the frontend never changes the version of a
  * plan it was given, so a plan it saves is migrated again where needed (an older backend keeps a version-1 plan).
  */
-export const PLAN_VERSION = 4;
+export const PLAN_VERSION = 5;
 
 /** Whether `version` is one of a plan this frontend reads (1 up to PLAN_VERSION). */
 export function knownPlanVersion(version: unknown): version is number {
@@ -1647,12 +1714,13 @@ export const FURNITURE_TYPES = [
   "lamp_fan",
   "wifi_ap",
   "water_heater",
+  "neon_sign",
 ] as const;
 
 /** Furniture library sections (the editor lists them in this order). */
 export const FURNITURE_GROUPS: Record<string, FurnitureType[]> = {
   lights: ["lamp_ceiling", "lamp_downlight", "lamp_spot", "lamp_panel", "lamp_pendant", "lamp_fan", "lamp_floor", "lamp_uplight", "lamp_table", "lamp_wall", "led_strip", "lamp_bollard", "lamp_garden"],
-  living: ["sofa", "sofa_l", "sofa_u", "armchair", "stool", "coffee_table", "tv_board", "tv_wall", "sideboard", "shelf", "plant", "rug"],
+  living: ["sofa", "sofa_l", "sofa_u", "armchair", "stool", "coffee_table", "tv_board", "tv_wall", "sideboard", "shelf", "plant", "rug", "neon_sign"],
   dining: ["table", "table_round", "chair", "bench", "corner_bench", "bar_stool"],
   kitchen: ["kitchen", "kitchen_wall", "kitchen_tall", "island", "worktop", "sink", "stove", "dishwasher", "fridge"],
   sleeping: ["bed", "bunk_bed", "nightstand", "wardrobe", "dresser"],
@@ -1875,6 +1943,9 @@ export function builtinBase(f: Pick<Furniture, "type" | "h"> & { variant?: strin
       return 1.45;
     case "tv_wall":
       return Math.max(0, 1.3 - f.h / 2);
+    case "neon_sign":
+      // a neon sign hangs on the wall, its middle at 1.6 m
+      return Math.max(0, 1.6 - f.h / 2);
     case "radiator":
       return 0.12;
     case "ac_unit":
@@ -1979,6 +2050,7 @@ export const ELECTRIC_FURNITURE = new Set<string>([
   "pool_dosing",
   "tv_board",
   "tv_wall",
+  "neon_sign",
   "desk",
   "fridge",
   "fridge_smart",
@@ -2057,6 +2129,8 @@ export const FURNITURE_SIZE: Record<FurnitureType, [number, number, number]> = {
   // a 240 l wheelie bin; a wall mailbox
   waste_bin: [0.58, 0.73, 1.07],
   mailbox: [0.38, 0.14, 0.34],
+  // a neon sign on its dark acrylic plate
+  neon_sign: [0.9, 0.03, 0.32],
   // a single plate; more gangs make it wider (gangPlateWidth)
   wall_switch: [0.085, 0.012, 0.085],
   wall_socket: [0.085, 0.014, 0.085],
@@ -2257,6 +2331,59 @@ export function polygonArea(points: readonly Vec2[]): number {
   return Math.abs(signedArea(points));
 }
 
+/** How far a point lies from a polygon's outline (m). */
+function edgeDistance(p: Vec2, points: readonly Vec2[]): number {
+  let best = Infinity;
+  for (let i = 0; i < points.length; i++) {
+    const a = points[i];
+    const b = points[(i + 1) % points.length];
+    const dx = b[0] - a[0];
+    const dz = b[1] - a[1];
+    const l = dx * dx + dz * dz;
+    const t = l > 0 ? Math.max(0, Math.min(1, ((p[0] - a[0]) * dx + (p[1] - a[1]) * dz) / l)) : 0;
+    best = Math.min(best, Math.hypot(p[0] - a[0] - t * dx, p[1] - a[1] - t * dz));
+  }
+  return best;
+}
+
+/**
+ * A point well inside a room: its middle when that lies inside with some room around it, else the point of a fine
+ * grid farthest from the walls. The middle of an L-shaped room can lie in the room next to it (#900). Ported from
+ * NeonPlan 3D 3.4.1 (MIT, Mastershort).
+ */
+export function innerPoint(points: readonly Vec2[]): Vec2 {
+  const c = centroid(points);
+  if (points.length < 3 || (pointInPolygon(c, points) && edgeDistance(c, points) >= 0.6)) return c;
+  const xs = points.map((p) => p[0]);
+  const zs = points.map((p) => p[1]);
+  const [x0, x1, z0, z1] = [Math.min(...xs), Math.max(...xs), Math.min(...zs), Math.max(...zs)];
+  const n = 24;
+  let best: Vec2 = c;
+  let far = pointInPolygon(c, points) ? edgeDistance(c, points) : -1;
+  for (let i = 0; i <= n; i++) {
+    for (let j = 0; j <= n; j++) {
+      const q: Vec2 = [x0 + ((x1 - x0) * i) / n, z0 + ((z1 - z0) * j) / n];
+      if (!pointInPolygon(q, points)) continue;
+      const d = edgeDistance(q, points);
+      if (d > far + 1e-9) [best, far] = [q, d];
+    }
+  }
+  return best;
+}
+
+/** Where a room's name stands: its middle, moved by its own offset (#458, from NeonPlan 3D 3.2.0, MIT, Mastershort). */
+export function labelPoint(room: Pick<Room, "points" | "label_offset">): Vec2 {
+  const [x, z] = centroid(room.points);
+  const o = room.label_offset;
+  return o && Number.isFinite(o[0]) && Number.isFinite(o[1]) ? [x + o[0], z + o[1]] : [x, z];
+}
+
+/** The size of the room names in 3D: the house's setting, between half and double (1 = as before) (#458). */
+export function labelScale(settings: Pick<BuildingSettings, "label_scale"> | null | undefined): number {
+  const v = settings?.label_scale;
+  return typeof v === "number" && Number.isFinite(v) ? Math.min(2, Math.max(0.5, v)) : 1;
+}
+
 /** Area-weighted centroid; falls back to the vertex average for degenerate polygons. */
 export function centroid(points: readonly Vec2[]): Vec2 {
   const a = signedArea(points);
@@ -2384,4 +2511,10 @@ export function syncCameraLooks(next: Building, base: Building): void {
       return true;
     });
   }
+}
+
+/** The calendars the plan chose for the card: only calendar entities, no doubles, at most ten. */
+export function householdCalendars(chosen: unknown): string[] {
+  if (!Array.isArray(chosen)) return [];
+  return [...new Set(chosen.filter((c): c is string => typeof c === "string" && c.startsWith("calendar.")))].slice(0, 10);
 }

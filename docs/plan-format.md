@@ -50,7 +50,7 @@ everything properly (doors and windows on their walls, rooms joined, furniture m
 | `windows[]` | `at`, `width`, `height`, `sill` (bottom edge above the floor), optional `sill_board`: `"auto"` (default: board inside and sill outside from 0.3 m sill height, none for a window directly above another opening), `"none"`, `"inside"` or `"outside"`. Two windows above each other (a transom light) are listed as two windows with the same `at`. |
 | `furniture[]` | `at` = the middle, `type` (a built-in kind, see below) or `name` (recognised by its words in several languages: "Sofa", "Fridge", "lit double" …), `width` (along its front), `depth`, `height` (optional: the kind's usual size), `rotation` in degrees clockwise (0 = its front faces down the plan, 180 = up), `elevation` (bottom above the floor, e.g. a wall cabinet) |
 
-Built-in furniture kinds: `sofa`, `sofa_l`, `sofa_u`, `armchair`, `stool`, `coffee_table`, `tv_board`, `tv_wall`, `sideboard`, `shelf`, `plant`, `rug`, `table`, `table_round`, `chair`, `bench`, `corner_bench`, `bar_stool`, `kitchen` (base cabinet), `kitchen_wall`, `kitchen_tall`, `island`, `worktop`, `sink`, `stove`, `dishwasher`, `fridge`, `bed`, `bunk_bed`, `nightstand`, `wardrobe`, `dresser`, `bathtub`, `shower`, `wc`, `washbasin`, `washer`, `dryer`, `desk`, `office_chair`, `tall_cabinet`, `coat_rack`, `stairs`, `stairs_u`, `radiator`, `ac_unit`, `robot_vacuum`, lamps `lamp_ceiling`, `lamp_downlight`, `lamp_spot`, `lamp_panel`, `lamp_pendant`, `lamp_floor`, `lamp_table`, `lamp_wall`, `led_strip`.
+Built-in furniture kinds: `sofa`, `sofa_l`, `sofa_u`, `armchair`, `stool`, `coffee_table`, `tv_board`, `tv_wall`, `sideboard`, `shelf`, `plant`, `rug`, `table`, `table_round`, `chair`, `bench`, `corner_bench`, `bar_stool`, `kitchen` (base cabinet), `kitchen_wall`, `kitchen_tall`, `island`, `worktop`, `sink`, `stove`, `dishwasher`, `fridge`, `bed`, `bunk_bed`, `nightstand`, `wardrobe`, `dresser`, `bathtub`, `shower`, `wc`, `washbasin`, `washer`, `dryer`, `desk`, `office_chair`, `tall_cabinet`, `coat_rack`, `stairs`, `stairs_u`, `radiator`, `ac_unit`, `robot_vacuum`, lamps `lamp_ceiling`, `lamp_downlight`, `lamp_spot`, `lamp_panel`, `lamp_pendant`, `lamp_floor`, `lamp_table`, `lamp_wall`, `led_strip`. Also `neon_sign`: a sign on the wall with optional `sign_text` (two lines split with `|`), `sign_color` (`#rrggbb`) and `sign_font` (`script`, `sans`, `block` or `serif`; anything else counts as `script`). A pack item with live parts may carry `binds`: the entity of each of its slots, slot id to entity id (up to 16; slot ids are lower-case letters, digits and `_`, see [Live parts](packs.md#live-parts)); without it the parts stand as drawn.
 
 ## Tips
 
@@ -88,7 +88,33 @@ So **bump `PLAN_VERSION` whenever the stored plan can hold a value an older rele
 
 ### Plan versions
 
+- **5**: the neighbourhood from OpenStreetMap (`settings.surroundings`, #462). It is `null` or absent (no map), or an
+  object with:
+
+  | Key | Meaning |
+  |---|---|
+  | `on` | shown (`false` keeps the data in the plan, hidden) |
+  | `lat`, `lon` | where it was loaded (degrees): Home Assistant's location at the time |
+  | `at` | when it was loaded (unix seconds) |
+  | `radius` | the radius loaded, in metres (the editor offers 100, 150 and 250; the schema takes 20 to 600) |
+  | `x`, `z` | the plan point the home's location (the map's origin) lies on |
+  | `own` | optional: the index in `buildings` of the house itself (not drawn, the plan stands there); `null` = none |
+  | `hide`, `show` | optional: indices of map buildings hidden by hand, and of ones shown although they stand on the plan |
+  | `flat` | optional: `true` draws the neighbours as outlines on the ground instead of blocks |
+  | `buildings[]` | `p` (the footprint, 2 to 200 `[east, north]` points in metres from the origin) and `h` (height, 0 to 400 m) |
+  | `ways[]` | `p` (a centre line), `w` (width, 0 to 60 m) and `k`: `"road"`, `"path"`, `"rail"` or `"water"` |
+  | `areas[]` | `p` (an outline) and `k`: `"water"`, `"green"` or `"wood"` |
+  | `trees[]` | single trees, `[east, north]` |
+
+  Map points are metres east and north of the origin, not plan coordinates: a map point `[e, n]` lies at
+  `x + e·cos(t) + n·sin(t)`, `z + e·sin(t) − n·cos(t)` in the plan, where `t` is `settings.north` in radians. Turning
+  or moving the map changes `north`, `x` and `z`, never the map points. At most 3,000 buildings, ways and trees and
+  500 areas. The way and area kinds are new choices, so the version went up; the 4 -> 5 step changes nothing, and a
+  plan of version 4 or older loads unchanged with no map. A Home 3D that reads versions up to 4 (1.5.x) shows a
+  version-5 plan read-only, with or without a map (the plan as stored before the upgrade stays as a restore point).
 - **4**: the house's style plan (`settings.style_day`, `style_evening`, `style_night`, `style_switch` = `"sun"` or `"time"`, `style_morning_at`, `style_evening_at`, `style_night_at` as `HH:MM`, `style_entity`). `style_switch` is a new choice, so the version went up; the 3 -> 4 step changes nothing. A Home 3D that reads versions up to 3 shows a version-4 plan read-only.
 - Own styles (`settings.styles_custom`, #441): a list of up to 40 dicts, each with `id` (`my_` and letters or digits), `name` and the settings of a style (`base`, `palette`, `natural`, `ao`, `dim`, `floors`, `cutDark`, `bg`, `signal`, `shadows`, `sun`). It is an optional list of loose dicts, so the version stays 4; the frontend clamps every value it reads and drops what it does not know.
 - Wall and facade colours (#437): a room's optional `wall_color` (all its walls) and `wall_colors` (one per wall, `null` = `wall_color`), and the setting `facade_color`, all `"#rrggbb"`. Optional keys, so the version stays 4.
 - Covers (#453): a window or door's optional `blind_side` (`"inside"` puts the cassette and cloth on the room's side; absent or `"outside"` is the default) and `slat_invert` (`true`: a venetian blind's slats count the other way round, 0 = open). Optional keys, so the version stays 4.
+- A colour for a single wall (#460): a wall drawn on its own (`floors[].walls[]`) has an optional `color` (`"#rrggbb"`, `null` = the room's wall colour, outside rooms the facade colour), for both its sides. An optional key, so no bump.
+- Room names (#458): a room's optional `label_offset` (`[x, z]` in metres, -100 to 100: its name moved from the room's middle, in the plan and in 3D; `null` or missing = in the middle) and the setting `label_scale` (0.5 to 2, the size of the room names in 3D; missing = 1). Optional keys, so no bump.

@@ -534,6 +534,9 @@ clearTimeout(this.cleanTimer);
               .themeEvening=${lookOf(this._config?.theme_evening) === "theme" ? null : (this._config?.theme_evening ?? null)}
               .themeNight=${lookOf(this._config?.theme_night) === "theme" ? null : (this._config?.theme_night ?? null)}
               .styleEntity=${this._config?.style_entity || null}
+              .zoomStyle=${this._config?.zoom_style || null}
+              .zoomLate=${this._config?.zoom_late ?? null}
+              .zoomScope=${this._config?.zoom_scope ?? null}
               .clock=${this._config?.clock ?? null}
               .accent=${accent}
               .showEnergy=${this._config?.energy ?? true}
@@ -541,6 +544,7 @@ clearTimeout(this.cleanTimer);
               .holograms=${this._config?.holograms ?? null}
               .floorThumbs=${this.thumbs}
               .roomLabels=${c?.room_names !== false}
+              .roomCard=${!!c?.room}
               .controlsRight=${c?.controls_side === "right"}
               .keepView=${c?.keep_view === true}
               .angleLock=${c?.angle_lock === true}

@@ -228,6 +228,40 @@ test("a roof drawn over an upper floor with a hole in its middle sits on the upp
   assert.equal(sectionFloor(b, { base: top! })?.id, "upper");
 });
 
+test("in a split-level house each roof sits on the floor under it, not on the highest one beside it (#1097)", async () => {
+  const { sectionFloor } = await import("./roof-sections.ts");
+  const { emptyBuilding, newFloor } = await import("./model.ts");
+  const b = emptyBuilding();
+  const room = (id: string, x0: number, z0: number, x1: number, z1: number) => ({ id, name: id, area_id: null, points: [[x0, z0], [x1, z0], [x1, z1], [x0, z1]] as [number, number][], floor_material: "wood" as const });
+  // two halves on a slope, half a storey apart: west 0–6 (flat, ground floor), east 6–12 (basement, upper floor)
+  b.floors = [
+    { ...newFloor("flat", "Flat", -2.6), height: 2.58, rooms: [room("w1", 0, 0, 6, 8)] },
+    { ...newFloor("ug", "UG", -1.387), height: 2.58, rooms: [room("e1", 6, 0, 12, 8)] },
+    { ...newFloor("eg", "EG", 0), height: 2.6, rooms: [room("w2", 0, 0, 6, 8)] },
+    { ...newFloor("og", "OG", 1.213), height: 2.81, rooms: [room("e2", 6, 0, 12, 8)] },
+  ];
+  const west = { base: 2.6, x0: -0.24, z0: -0.24, x1: 6, z1: 8.24 };
+  const east = { base: 4.02, x0: 6, z0: -0.24, x1: 12.24, z1: 8.24 };
+  assert.equal(sectionFloor(b, west)?.id, "eg");
+  assert.equal(sectionFloor(b, east)?.id, "og");
+  // a turned section (a free shape too) is looked for where it stands
+  assert.equal(sectionFloor(b, { ...west, rotation: 90, pivot: [3, 4] })?.id, "eg");
+  assert.equal(sectionFloor(b, { ...west, points: [[-0.24, -0.24], [6, -0.24], [6, 8.24], [-0.24, 8.24]] })?.id, "eg");
+  // without its rectangle: the highest floor below, as before
+  assert.equal(sectionFloor(b, { base: 2.6 })?.id, "og");
+  // the roof's parts follow: each wing's roof is built on its own floor (it rides with it when the floors are pulled apart)
+  b.settings.roof = {
+    type: "custom",
+    pitch: 35,
+    overhang: 0.3,
+    sections: [
+      { id: "w", ...west, shape: "gable", axis: "z", eave_a: 2.6, eave_b: 2.6, pitch_a: 35, pitch_b: 35 },
+      { id: "e", ...east, shape: "gable", axis: "z", eave_a: 4.02, eave_b: 4.02, pitch_a: 35, pitch_b: 35 },
+    ],
+  };
+  assert.deepEqual(buildRoof(b).map((p) => p.floor.id).sort(), ["eg", "og"]);
+});
+
 test("pulled apart, a roof rides with the loft under its slopes, a garage roof with its own floor (#202, D207)", () => {
   const b = emptyBuilding();
   b.floors = [

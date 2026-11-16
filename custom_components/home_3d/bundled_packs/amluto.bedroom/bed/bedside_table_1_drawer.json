@@ -25,6 +25,12 @@
     "side table",
     "drawer"
   ],
+  "slots": [
+    {
+      "id": "drawer",
+      "kind": "drawer"
+    }
+  ],
   "parts": [
     {"shape": "loft", "x": -0.4167, "z": -0.3929, "w": 0.0422, "d": 0.0543, "y": 0, "h": 0.2545, "color": "wood", "tx": -0.4167, "tz": -0.3929, "tw": 0.0778, "td": 0.1, "fix": "wdh"},
     {"shape": "loft", "x": -0.4167, "z": 0.3929, "w": 0.0422, "d": 0.0543, "y": 0, "h": 0.2545, "color": "wood", "tx": -0.4167, "tz": 0.3929, "tw": 0.0778, "td": 0.1, "fix": "wdh"},
@@ -35,9 +41,12 @@
     {"shape": "box", "x": 0, "z": -0.4829, "w": 0.92, "d": 0.0343, "y": 0.2545, "h": 0.7055, "color": "wood"},
     {"shape": "box", "x": 0, "z": 0, "w": 0.92, "d": 1.0, "y": 0.2545, "h": 0.0327, "color": "wood", "fix": "h"},
     {"shape": "box", "x": 0, "z": 0, "w": 1.0, "d": 1.0, "y": 0.96, "h": 0.04, "color": "wood", "fix": "h"},
-    {"shape": "box", "x": 0, "z": 0.4714, "w": 0.9111, "d": 0.0571, "y": 0.6836, "h": 0.2655, "color": "white"},
-    {"shape": "box", "x": 0, "z": 0.4986, "w": 0.1778, "d": 0.0029, "y": 0.8673, "h": 0.0236, "color": "metal", "fix": "wdh"},
-    {"shape": "box", "x": 0, "z": 0.0029, "w": 0.92, "d": 0.9371, "y": 0.6473, "h": 0.0327, "color": "wood", "fix": "h"}
+    {"shape": "box", "x": 0, "z": 0.4714, "w": 0.9111, "d": 0.0571, "y": 0.6836, "h": 0.2655, "color": "white", "bind": {"slot": "drawer", "kind": "slide"}},
+    {"shape": "box", "x": 0, "z": 0.4986, "w": 0.1778, "d": 0.0029, "y": 0.8673, "h": 0.0236, "color": "metal", "fix": "wdh", "bind": {"slot": "drawer", "kind": "slide"}},
+    {"shape": "box", "x": 0, "z": 0.0029, "w": 0.92, "d": 0.9371, "y": 0.6473, "h": 0.0327, "color": "wood", "fix": "h"},
+    {"shape": "box", "x": 0.0, "z": 0.0817, "w": 0.8222, "d": 0.7183, "y": 0.7101, "h": 0.0218, "color": "white", "fix": "h", "bind": {"slot": "drawer", "kind": "slide"}},
+    {"shape": "box", "x": -0.3978, "z": 0.0817, "w": 0.0267, "d": 0.7183, "y": 0.7101, "h": 0.1646, "color": "white", "fix": "w", "bind": {"slot": "drawer", "kind": "slide"}},
+    {"shape": "box", "x": 0.3978, "z": 0.0817, "w": 0.0267, "d": 0.7183, "y": 0.7101, "h": 0.1646, "color": "white", "fix": "w", "bind": {"slot": "drawer", "kind": "slide"}}
   ],
   "symbol": [
     {"shape": "rect", "x": 0, "z": 0, "w": 1, "d": 1},

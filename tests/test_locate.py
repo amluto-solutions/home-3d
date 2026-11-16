@@ -11,9 +11,11 @@ from homeassistant.helpers import area_registry as ar
 from homeassistant.helpers import entity_registry as er
 from homeassistant.helpers.dispatcher import async_dispatcher_send
 from homeassistant.setup import async_setup_component
+import pytest
 from pytest_homeassistant_custom_component.common import MockConfigEntry, async_mock_service
 
 from custom_components.home_3d.const import DOMAIN
+from custom_components.home_3d.locate import answers
 from custom_components.home_3d.locate.answers import _away
 from custom_components.home_3d.locate.engine import Fingerprints
 from custom_components.home_3d.locate.plan import plan_doors, plan_rooms
@@ -25,6 +27,14 @@ ROOMS = [
     {"id": "living", "name": "Living", "floor": "Ground", "area_id": None},
 ]
 WATCH = {"id": "irk_watch", "name": "Watch", "kind": "irk", "key": "00112233445566778899aabbccddeeff", "person": None}
+
+
+@pytest.fixture(autouse=True)
+def _fresh_ring_cooldown():
+    """The ring cooldown is kept per notify service for the whole process: every test starts with none."""
+    answers._rung.clear()
+    yield
+    answers._rung.clear()
 
 
 async def _setup(hass: HomeAssistant) -> MockConfigEntry:
@@ -391,6 +401,128 @@ async def test_ringing_copes_with_a_missing_notify_service(hass: HomeAssistant) 
     calls = async_mock_service(hass, "notify", "mobile_app_gone")
     assert await ask() == "Watch is ringing now."
     assert len(calls) == 1
+
+
+async def _ring_setup(hass: HomeAssistant, hass_admin_user, hass_read_only_user):
+    """Two people (the read-only user is Sam), a phone each and a phone of nobody, all with a notify service."""
+    await _setup(hass)
+    service: LocateService = hass.data[DATA_LOCATE]
+    hass.states.async_set("person.alex", "home", {"friendly_name": "Alex", "user_id": hass_admin_user.id})
+    hass.states.async_set("person.sam", "home", {"friendly_name": "Sam", "user_id": hass_read_only_user.id})
+    service.devices = [
+        dict(WATCH, id="a", name="Alex Phone", person="person.alex", notify="notify.mobile_app_alex"),
+        dict(WATCH, id="s", name="Sam Phone", person="person.sam", notify="notify.mobile_app_sam"),
+        dict(WATCH, id="n", name="Spare Phone", person=None, notify="notify.mobile_app_spare"),
+    ]
+    service.rooms = ROOMS
+    calls = {name: async_mock_service(hass, "notify", f"mobile_app_{name}") for name in ("alex", "sam", "spare")}
+
+    async def ask(text: str, user_id: str | None = None) -> str:
+        got = await answers.async_locate(hass, service, text, "en", user_id)
+        assert got is not None
+        return got.text
+
+    return ask, calls
+
+
+async def test_a_user_rings_only_their_own_phone(hass: HomeAssistant, hass_admin_user, hass_read_only_user) -> None:
+    """#455: a non-admin rings the phone of their own person; another person's phone stays silent."""
+    ask, calls = await _ring_setup(hass, hass_admin_user, hass_read_only_user)
+    sam = hass_read_only_user.id
+    assert await ask("ring Alex Phone", sam) == "You can only ring your own devices."
+    assert await ask("ring Alex", sam) == "You can only ring your own devices."
+    assert calls["alex"] == []
+    assert await ask("ring my phone", sam) == "Sam Phone is ringing now."
+    assert len(calls["sam"]) == 1
+    # a device of nobody belongs to no other person: it rings for anyone
+    assert await ask("ring the spare phone", sam) == "Spare Phone is ringing now."
+    assert len(calls["spare"]) == 1
+
+
+async def test_an_admin_rings_any_phone(hass: HomeAssistant, hass_admin_user, hass_read_only_user) -> None:
+    ask, calls = await _ring_setup(hass, hass_admin_user, hass_read_only_user)
+    assert await ask("ring Sam Phone", hass_admin_user.id) == "Sam Phone is ringing now."
+    assert len(calls["sam"]) == 1
+
+
+async def test_no_user_rings_like_an_admin(hass: HomeAssistant, hass_admin_user, hass_read_only_user) -> None:
+    """An automation or a voice satellite has no user: it may ring any phone."""
+    ask, calls = await _ring_setup(hass, hass_admin_user, hass_read_only_user)
+    assert await ask("ring Alex Phone") == "Alex Phone is ringing now."
+    assert len(calls["alex"]) == 1
+    assert calls["alex"][0].context.user_id is None
+
+
+async def test_an_unknown_user_rings_only_their_own(hass: HomeAssistant, hass_admin_user, hass_read_only_user) -> None:
+    """A user id that names no user is no admin and owns no phone; an inactive admin is no admin either."""
+    ask, calls = await _ring_setup(hass, hass_admin_user, hass_read_only_user)
+    assert await ask("ring Alex Phone", "no-such-user") == "You can only ring your own devices."
+    hass_admin_user.is_active = False
+    assert await ask("ring Sam Phone", hass_admin_user.id) == "You can only ring your own devices."
+    assert calls["sam"] == []
+    assert await ask("ring Alex Phone", hass_admin_user.id) == "Alex Phone is ringing now."
+
+
+async def test_a_phone_rings_once_in_thirty_seconds(
+    hass: HomeAssistant, hass_admin_user, hass_read_only_user, monkeypatch
+) -> None:
+    """#455: whoever asks, one phone rings at most once in 30 s; then it may ring again."""
+    ask, calls = await _ring_setup(hass, hass_admin_user, hass_read_only_user)
+    now = [1000.0]
+    monkeypatch.setattr(answers, "_clock", lambda: now[0])
+    sam, admin = hass_read_only_user.id, hass_admin_user.id
+    assert await ask("ring my phone", sam) == "Sam Phone is ringing now."
+    now[0] += 29
+    assert await ask("ring my phone", sam) == "Sam Phone rang just now."
+    assert await ask("ring Sam Phone", admin) == "Sam Phone rang just now."
+    assert len(calls["sam"]) == 1
+    # another phone has its own cooldown
+    assert await ask("ring Alex Phone", admin) == "Alex Phone is ringing now."
+    now[0] += 1
+    assert await ask("ring Sam Phone", admin) == "Sam Phone is ringing now."
+    assert len(calls["sam"]) == 2
+    # a refused ring starts no cooldown
+    now[0] += 31
+    assert await ask("ring Alex Phone", sam) == "You can only ring your own devices."
+    assert await ask("ring Alex Phone", admin) == "Alex Phone is ringing now."
+    assert len(calls["alex"]) == 2
+
+
+async def test_the_ring_carries_the_askers_context(hass: HomeAssistant, hass_admin_user, hass_read_only_user) -> None:
+    ask, calls = await _ring_setup(hass, hass_admin_user, hass_read_only_user)
+    await ask("ring my phone", hass_read_only_user.id)
+    await ask("ring Alex Phone", hass_admin_user.id)
+    assert calls["sam"][0].context.user_id == hass_read_only_user.id
+    assert calls["alex"][0].context.user_id == hass_admin_user.id
+
+
+async def test_every_ring_path_follows_the_rules(
+    hass: HomeAssistant, hass_ws_client, hass_admin_user, hass_read_only_user, hass_read_only_access_token
+) -> None:
+    """#455: the ask action and the websocket command are the sentence's other doors: same rules, same context."""
+    _ask, calls = await _ring_setup(hass, hass_admin_user, hass_read_only_user)
+    sam = Context(user_id=hass_read_only_user.id)
+
+    async def action(text: str, context: Context | None) -> str:
+        got = await hass.services.async_call(
+            DOMAIN, "ask", {"text": text}, blocking=True, return_response=True, context=context
+        )
+        return str(got["answer"])
+
+    assert await action("ring Alex Phone", sam) == "You can only ring your own devices."
+    assert await action("ring my phone", sam) == "Sam Phone is ringing now."
+    assert await action("ring my phone", sam) == "Sam Phone rang just now."
+    assert calls["sam"][0].context.user_id == hass_read_only_user.id
+    assert await action("ring Alex Phone", None) == "Alex Phone is ringing now."
+    other = await hass_ws_client(hass, hass_read_only_access_token)
+    await other.send_json_auto_id({"type": "home_3d/locate/ask", "text": "ring Alex Phone", "language": "en"})
+    assert (await other.receive_json())["result"]["text"] == "You can only ring your own devices."
+    await other.send_json_auto_id({"type": "home_3d/locate/ask", "text": "ring Sam Phone", "language": "en"})
+    assert (await other.receive_json())["result"]["text"] == "Sam Phone rang just now."
+    admin = await hass_ws_client(hass)
+    await admin.send_json_auto_id({"type": "home_3d/locate/ask", "text": "ring Spare Phone", "language": "en"})
+    assert (await admin.receive_json())["result"]["text"] == "Spare Phone is ringing now."
+    assert calls["spare"][0].context.user_id == hass_admin_user.id
 
 
 async def test_no_room_sensors_for_people_when_turned_off(hass: HomeAssistant, hass_ws_client) -> None:

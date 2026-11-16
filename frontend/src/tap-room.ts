@@ -66,11 +66,15 @@ export function buildWhere(input: WhereInput): WhereIndex {
 
 /**
  * Where a tap on `id` goes instead, when the preference is on and a room is open: the device's place when it is not in
- * the opened room. Null: switch as usual (no room open, the device is in the opened room, or nobody knows where it is).
+ * the opened room. Null: switch as usual (no room open, the device is in the opened room, it lies in no room of the opened
+ * room's floor, or nobody knows where it is).
  */
-export function elsewhere(index: WhereIndex, id: string, openRoom: string | null, on: boolean): Where | null {
+export function elsewhere(index: WhereIndex, id: string, openRoom: string | null, on: boolean, openFloor: string | null = null): Where | null {
   if (!on || !openRoom) return null;
   const found = index.get(id);
   if (!found?.length || found.some((w) => w.roomId === openRoom)) return null;
+  // a device in no room (a camera on an outer wall) has no room to open: on the opened room's own floor a tap is for the
+  // device itself (#1103); from another floor it opens its floor
+  if (openFloor && found.every((w) => w.roomId === null) && found.some((w) => w.floorId === openFloor)) return null;
   return found[0];
 }

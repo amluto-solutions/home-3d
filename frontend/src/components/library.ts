@@ -70,6 +70,7 @@ export class FurnitureLibrary extends LitElement {
     _electric: { state: true },
     _light: { state: true },
     _outdoor: { state: true },
+    _live: { state: true },
     _pack: { state: true },
     _open: { state: true },
     _shut: { state: true },
@@ -102,6 +103,8 @@ export class FurnitureLibrary extends LitElement {
   private declare _electric: boolean;
   private declare _light: boolean;
   private declare _outdoor: boolean;
+  /** Only items with live parts (✨, #466). */
+  private declare _live: boolean;
   /** The pack the library is narrowed to (its id), or null for all (#109). */
   private declare _pack: string | null;
   /** The sections the person left open (remembered per device); null until one was opened or closed (#211). */
@@ -151,6 +154,7 @@ export class FurnitureLibrary extends LitElement {
     this._electric = false;
     this._light = false;
     this._outdoor = false;
+    this._live = false;
     this._pack = null;
     const stored = load<string[] | null>(STORE_OPEN, null);
     this._open = Array.isArray(stored) ? new Set(stored) : null;
@@ -366,7 +370,7 @@ export class FurnitureLibrary extends LitElement {
 
   /** The filter the cards show: the typed words and the chips. */
   get filter(): LibraryFilter {
-    return { query: this._query, room: this._room, electric: this._electric, light: this._light, outdoor: this._outdoor, pack: this._pack };
+    return { query: this._query, room: this._room, electric: this._electric, light: this._light, outdoor: this._outdoor, live: this._live, pack: this._pack };
   }
 
   /** The chips that are switched on (shown above the cards with "Clear filters"). */
@@ -379,7 +383,7 @@ export class FurnitureLibrary extends LitElement {
     this.roomTouched = true;
     this._room = null;
     this._pack = null;
-    this._electric = this._light = this._outdoor = false;
+    this._electric = this._light = this._outdoor = this._live = false;
   }
 
   /** After an item is chosen: chips off and the room chip back on the open room (it follows the room again). */
@@ -387,7 +391,7 @@ export class FurnitureLibrary extends LitElement {
     this.roomTouched = false;
     this._room = this.roomHint;
     this._pack = null;
-    this._electric = this._light = this._outdoor = false;
+    this._electric = this._light = this._outdoor = this._live = false;
   }
 
   render() {
@@ -453,6 +457,9 @@ export class FurnitureLibrary extends LitElement {
             <button class="fp3d-chip fp3d-chip-f ${this._electric ? "on" : ""}" aria-pressed=${this._electric} @click=${() => (this._electric = !this._electric)}><span aria-hidden="true">⚡</span> ${t("lib_chip_electric")}</button>
             <button class="fp3d-chip fp3d-chip-f ${this._light ? "on" : ""}" aria-pressed=${this._light} @click=${() => (this._light = !this._light)}><span aria-hidden="true">💡</span> ${t("lib_chip_light")}</button>
             <button class="fp3d-chip fp3d-chip-f ${this._outdoor ? "on" : ""}" aria-pressed=${this._outdoor} @click=${() => (this._outdoor = !this._outdoor)}><span aria-hidden="true">🌳</span> ${t("lib_chip_outdoor")}</button>
+            ${this.entries.some((e) => e.live)
+              ? html`<button class="fp3d-chip fp3d-chip-f ${this._live ? "on" : ""}" aria-pressed=${this._live} title=${t("lib_live_hint")} @click=${() => (this._live = !this._live)}><span aria-hidden="true">✨</span> ${t("lib_chip_live")}</button>`
+              : nothing}
           </div>
         </div>
         ${active.length
@@ -516,7 +523,8 @@ export class FurnitureLibrary extends LitElement {
     const shownKey = this._shown.get(first.key);
     const shown = (shownKey && c.entries.find((e) => e.key === shownKey)) || first;
     const pic = this._thumbs.get(pictureKey(shown)) ?? this._thumbs.get(pictureKey(first));
-    const badge = first.light ? "💡" : first.electric ? "⚡" : "";
+    // ✨ an item with live parts (#466), beside its light or power sign
+    const badge = `${c.entries.some((e) => e.live) ? "✨" : ""}${first.light ? "💡" : first.electric ? "⚡" : ""}`;
     const updates = updatesOnCard(c.entries.map((e) => e.type), this.updates, this.admin);
     return html`<div class="fp3d-lc ${family ? "fp3d-lc-family" : ""}" title=${shown.ikea ? `${shown.label} (IKEA ${shown.ikea})` : shown.label} @mouseleave=${() => family && this.showVariant(first.key, null, null)}>
       <button

@@ -26,6 +26,29 @@
     "en": "3 drawers · 99x100"
   },
   "ikea": "GULLABERG",
+  "slots": [
+    {
+      "id": "drawer_1",
+      "kind": "drawer",
+      "name": {
+        "en": "Top drawer"
+      }
+    },
+    {
+      "id": "drawer_2",
+      "kind": "drawer",
+      "name": {
+        "en": "Second drawer"
+      }
+    },
+    {
+      "id": "drawer_3",
+      "kind": "drawer",
+      "name": {
+        "en": "Bottom drawer"
+      }
+    }
+  ],
   "parts": [
     {"shape": "box", "x": -0.4909, "z": -0.0187, "w": 0.0182, "d": 0.9625, "y": 0.2, "h": 0.78, "color": "white", "fix": "w"},
     {"shape": "box", "x": 0.4909, "z": -0.0187, "w": 0.0182, "d": 0.9625, "y": 0.2, "h": 0.78, "color": "white", "fix": "w"},
@@ -36,14 +59,42 @@
     {"shape": "loft", "x": -0.452, "z": 0.3802, "w": 0.0212, "d": 0.0438, "y": 0, "h": 0.2, "color": "white", "tw": 0.0354, "td": 0.0729, "fix": "wdh"},
     {"shape": "loft", "x": 0.452, "z": -0.3802, "w": 0.0212, "d": 0.0438, "y": 0, "h": 0.2, "color": "white", "tw": 0.0354, "td": 0.0729, "fix": "wdh"},
     {"shape": "loft", "x": 0.452, "z": 0.3802, "w": 0.0212, "d": 0.0438, "y": 0, "h": 0.2, "color": "white", "tw": 0.0354, "td": 0.0729, "fix": "wdh"},
-    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.9919, "d": 0.0375, "y": 0.722, "h": 0.256, "color": "white"},
-    {"shape": "cyl", "x": -0.248, "z": 0.5, "w": 0.0303, "d": 0.05, "y": 0.8662, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
-    {"shape": "cyl", "x": 0.248, "z": 0.5, "w": 0.0303, "d": 0.05, "y": 0.8662, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
-    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.9919, "d": 0.0375, "y": 0.462, "h": 0.256, "color": "white"},
-    {"shape": "cyl", "x": -0.248, "z": 0.5, "w": 0.0303, "d": 0.05, "y": 0.6062, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
-    {"shape": "cyl", "x": 0.248, "z": 0.5, "w": 0.0303, "d": 0.05, "y": 0.6062, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
-    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.9919, "d": 0.0375, "y": 0.202, "h": 0.256, "color": "white"},
-    {"shape": "cyl", "x": -0.248, "z": 0.5, "w": 0.0303, "d": 0.05, "y": 0.3462, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"},
-    {"shape": "cyl", "x": 0.248, "z": 0.5, "w": 0.0303, "d": 0.05, "y": 0.3462, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh"}
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.9919, "d": 0.0375, "y": 0.722, "h": 0.256, "color": "white", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "cyl", "x": -0.248, "z": 0.5, "w": 0.0303, "d": 0.05, "y": 0.8662, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "cyl", "x": 0.248, "z": 0.5, "w": 0.0303, "d": 0.05, "y": 0.8662, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.9919, "d": 0.0375, "y": 0.462, "h": 0.256, "color": "white", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "cyl", "x": -0.248, "z": 0.5, "w": 0.0303, "d": 0.05, "y": 0.6062, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "cyl", "x": 0.248, "z": 0.5, "w": 0.0303, "d": 0.05, "y": 0.6062, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.9919, "d": 0.0375, "y": 0.202, "h": 0.256, "color": "white", "bind": {"slot": "drawer_3", "kind": "slide"}},
+    {"shape": "cyl", "x": -0.248, "z": 0.5, "w": 0.0303, "d": 0.05, "y": 0.3462, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh", "bind": {"slot": "drawer_3", "kind": "slide"}},
+    {"shape": "cyl", "x": 0.248, "z": 0.5, "w": 0.0303, "d": 0.05, "y": 0.3462, "h": 0.03, "color": "metal", "axis": "z", "fix": "wdh", "bind": {"slot": "drawer_3", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.0935, "w": 0.9515, "d": 0.734, "y": 0.7476, "h": 0.012, "color": "white", "fix": "h", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "box", "x": -0.4697, "z": 0.0935, "w": 0.0121, "d": 0.734, "y": 0.7476, "h": 0.1587, "color": "white", "fix": "w", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "box", "x": 0.4697, "z": 0.0935, "w": 0.0121, "d": 0.734, "y": 0.7476, "h": 0.1587, "color": "white", "fix": "w", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.0935, "w": 0.9515, "d": 0.734, "y": 0.4876, "h": 0.012, "color": "white", "fix": "h", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": -0.4697, "z": 0.0935, "w": 0.0121, "d": 0.734, "y": 0.4876, "h": 0.1587, "color": "white", "fix": "w", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": 0.4697, "z": 0.0935, "w": 0.0121, "d": 0.734, "y": 0.4876, "h": 0.1587, "color": "white", "fix": "w", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.0935, "w": 0.9515, "d": 0.734, "y": 0.2276, "h": 0.012, "color": "white", "fix": "h", "bind": {"slot": "drawer_3", "kind": "slide"}},
+    {"shape": "box", "x": -0.4697, "z": 0.0935, "w": 0.0121, "d": 0.734, "y": 0.2276, "h": 0.1587, "color": "white", "fix": "w", "bind": {"slot": "drawer_3", "kind": "slide"}},
+    {"shape": "box", "x": 0.4697, "z": 0.0935, "w": 0.0121, "d": 0.734, "y": 0.2276, "h": 0.1587, "color": "white", "fix": "w", "bind": {"slot": "drawer_3", "kind": "slide"}}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": -0.4909, "z": -0.0187, "w": 0.0182, "d": 0.9625},
+    {"shape": "rect", "x": 0.4909, "z": -0.0187, "w": 0.0182, "d": 0.9625},
+    {"shape": "rect", "x": 0.0, "z": -0.0187, "w": 0.9636, "d": 0.9625},
+    {"shape": "rect", "x": 0.0, "z": -0.4917, "w": 0.9636, "d": 0.0167},
+    {"shape": "rect", "x": -0.452, "z": -0.3802, "w": 0.0212, "d": 0.0438},
+    {"shape": "rect", "x": -0.452, "z": 0.3802, "w": 0.0212, "d": 0.0438},
+    {"shape": "rect", "x": 0.452, "z": -0.3802, "w": 0.0212, "d": 0.0438},
+    {"shape": "rect", "x": 0.452, "z": 0.3802, "w": 0.0212, "d": 0.0438},
+    {"shape": "rect", "x": 0.0, "z": 0.4812, "w": 0.9919, "d": 0.0375},
+    {"shape": "rect", "x": -0.248, "z": 0.5, "w": 0.0303, "d": 0.05},
+    {"shape": "rect", "x": 0.248, "z": 0.5, "w": 0.0303, "d": 0.05},
+    {"shape": "rect", "x": 0.0, "z": 0.4812, "w": 0.9919, "d": 0.0375},
+    {"shape": "rect", "x": -0.248, "z": 0.5, "w": 0.0303, "d": 0.05},
+    {"shape": "rect", "x": 0.248, "z": 0.5, "w": 0.0303, "d": 0.05},
+    {"shape": "rect", "x": 0.0, "z": 0.4812, "w": 0.9919, "d": 0.0375},
+    {"shape": "rect", "x": -0.248, "z": 0.5, "w": 0.0303, "d": 0.05},
+    {"shape": "rect", "x": 0.248, "z": 0.5, "w": 0.0303, "d": 0.05}
   ]
 }

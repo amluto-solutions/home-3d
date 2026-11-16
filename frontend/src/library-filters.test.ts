@@ -30,12 +30,14 @@ test("the drawer is closed by default, remembered per device, and typing never o
   assert.match(render, /<div id="fp3d-lib-filters" class="fp3d-lib-drawer" \?hidden=\$\{!open\}>/);
 });
 
-test("room and pack are labelled selects; linkable, lights up and outdoors are toggle buttons", () => {
+test("room and pack are labelled selects; linkable, lights up, outdoors and live (#466) are toggle buttons", () => {
   assert.equal((render.match(/<label class="fp3d-lib-sel"/g) ?? []).length, 2);
   assert.match(render, /lib_room_label[\s\S]*<select/);
   assert.match(render, /lib_pack_label[\s\S]*<select/);
-  assert.equal((render.match(/aria-pressed=/g) ?? []).length, 3);
-  assert.equal((render.match(/<span aria-hidden="true">/g) ?? []).length, 3, "the emoji are hidden from screen readers");
+  // the Live chip shows only while some item has live parts
+  assert.equal((render.match(/aria-pressed=/g) ?? []).length, 4);
+  assert.match(render, /this\.entries\.some\(\(e\) => e\.live\)\s*\? html`<button class="fp3d-chip fp3d-chip-f/);
+  assert.equal((render.match(/<span aria-hidden="true">/g) ?? []).length, 4, "the emoji are hidden from screen readers");
   assert.match(render, /role="group" aria-label=\$\{t\("lib_toggles_label"\)\}/);
   assert.ok(!render.includes("fp3d-lib-rooms"), "the 40 room chips are gone");
 });

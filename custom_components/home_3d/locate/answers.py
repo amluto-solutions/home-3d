@@ -9,7 +9,7 @@ import time
 from typing import Any, NamedTuple
 import unicodedata
 
-from homeassistant.core import HomeAssistant
+from homeassistant.core import Context, HomeAssistant
 from homeassistant.util.location import distance as location_distance
 
 from .service import LocateService
@@ -93,6 +93,8 @@ _TEXT = {
         "ring": "{who} is ringing now.",
         "no_ring": "No app to ring is set for {who}.",
         "withheld": "Only an administrator can be told where people are.",
+        "not_yours": "You can only ring your own devices.",
+        "ring_wait": "{who} rang just now.",
     },
 }
 
@@ -220,6 +222,20 @@ async def _is_admin(hass: HomeAssistant, user_id: str | None) -> bool:
     return bool(user and user.is_admin and user.is_active)
 
 
+# a phone rings at most once in this many seconds, whoever asks (#455)
+RING_COOLDOWN = 30.0
+_rung: dict[str, float] = {}
+_clock = time.monotonic
+
+
+async def _may_ring_any(hass: HomeAssistant, user_id: str | None) -> bool:
+    """Whether the asker may ring the phone of any person: an admin, or Home Assistant itself (an automation or a
+    voice satellite has no user). A user id that names no user, or an inactive one, may not."""
+    if user_id is None:
+        return True
+    return await _is_admin(hass, user_id)
+
+
 async def async_locate(
     hass: HomeAssistant, service: LocateService | None, text: str, language: str, user_id: str | None = None
 ) -> Located | None:
@@ -271,11 +287,23 @@ async def _locate(
         if found is None:
             return None
         who, devices = found
+        # a phone of a person rings for that person or an admin; a device of nobody rings for anyone (#455)
+        if not await _may_ring_any(hass, user_id):
+            speaker = _speaker(hass, user_id)
+            if any(d.get("person") and d.get("person") != speaker for d in devices):
+                return Located(t["not_yours"], [], False)
         notify = next((d.get("notify") for d in devices if d.get("notify")), None)
         # no notify service (the app was removed): say so instead of failing the whole answer (#152)
         if not notify or not hass.services.has_service("notify", notify.removeprefix("notify.")):
             return Located(t["no_ring"].format(who=who), [], False)
-        await ring(hass, notify, lang)
+        # one phone rings at most once in RING_COOLDOWN seconds, whoever asks
+        now = _clock()
+        if now - _rung.get(notify, -RING_COOLDOWN) < RING_COOLDOWN:
+            return Located(t["ring_wait"].format(who=who), [], False)
+        for key in [k for k, at in _rung.items() if now - at >= RING_COOLDOWN]:
+            del _rung[key]
+        _rung[notify] = now
+        await ring(hass, notify, lang, user_id)
         return Located(t["ring"].format(who=who), [], False)
     if m := _WHERE[lang].match(sentence):
         found = _match(hass, service, m["what"], (m["art"] or "") in MINE, user_id)
@@ -286,8 +314,9 @@ async def _locate(
     return None
 
 
-async def ring(hass: HomeAssistant, notify: str, lang: str) -> None:
-    """A loud notification through the Home Assistant app (critical on iPhone, alarm channel on Android)."""
+async def ring(hass: HomeAssistant, notify: str, lang: str, user_id: str | None = None) -> None:
+    """A loud notification through the Home Assistant app (critical on iPhone, alarm channel on Android).
+    The call carries the asking user's context: Home Assistant checks and logs it as theirs (#455)."""
     service = notify.removeprefix("notify.")
     message = "Home 3D is looking for you 🔔"
     await hass.services.async_call(
@@ -304,4 +333,5 @@ async def ring(hass: HomeAssistant, notify: str, lang: str) -> None:
             },
         },
         blocking=False,
+        context=Context(user_id=user_id),
     )

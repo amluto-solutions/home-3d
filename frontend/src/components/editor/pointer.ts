@@ -8,7 +8,7 @@ import { polygonBox } from "../../roof-sections.ts";
 import { clampField, faceAt, fieldFace, pointOnFace, roofFaces, turnGroundField, fieldCenter, wallFaces, windowAsField } from "../../solar.ts";
 import { type FreeWall, poolShapePoints } from "../../model.ts";
 import { openingHost } from "../../geometry/walls.ts";
-import { bounds, DEFAULT_HOLOGRAM, isAxisRect, resizeFurniture, pointInPolygon, polygonArea, type Room, type Vec2 } from "../../model.ts";
+import { bounds, centroid, DEFAULT_HOLOGRAM, isAxisRect, labelPoint, resizeFurniture, pointInPolygon, polygonArea, type Room, type Vec2 } from "../../model.ts";
 import { movePet, placeOfRef } from "../../pet-place.ts";
 import { insertCorner } from "../../geometry/room-corners.ts";
 import { type FixKind, EDIT_DRAGS, wallPeers, SNAP_PX, round, patchItem, distToSegment } from "./helpers.ts";
@@ -146,6 +146,13 @@ export class PointerPart {
       const pts = [...this._bgLevel, world];
       if (pts.length < 2) this._bgLevel = pts;
       else this.applyBgLevel(pts[0], pts[1]);
+      return;
+    }
+    if (this._bgMap && this.isEditor && this.floor?.background) {
+      // align to the map (#465): two corners in the picture, then the same two on the house from the map (the last two snap to its corners)
+      const pts = [...this._bgMap, this._bgMap.length < 2 ? world : this.nearMapCorner(world)];
+      if (pts.length < 4) this._bgMap = pts;
+      else this.applyBgMap(pts);
       return;
     }
     if (this.bgHandles() && this.floor.background && target.closest("[data-bg-rotate]")) {
@@ -378,6 +385,19 @@ export class PointerPart {
         this.toggleAreaMulti(this.outdoorAt(world) ?? outEl.getAttribute("data-outdoor")!);
         this.drag = null;
       } else this.drag = { kind: "marquee", start: world, end: world, add: true };
+      return;
+    }
+    // the selected room's name, by its handle: moved where it covers no other name, a double tap puts it back (#458);
+    // found by its place, since an item under the name (a rug) lies above it
+    const labelRoom = this.labelGripAt(local);
+    if (labelRoom) {
+      if (this.doubleTap(e, `label:${labelRoom.id}`)) {
+        this.resetLabel(labelRoom.id);
+        this.drag = { kind: "pan", last: local };
+        return;
+      }
+      const [lx, lz] = labelPoint(labelRoom);
+      this.drag = { kind: "roomlabel", roomId: labelRoom.id, grab: [world[0] - lx, world[1] - lz], base: this._doc, moved: false };
       return;
     }
     const petEl = target.closest("[data-pet]");
@@ -873,6 +893,16 @@ export class PointerPart {
         );
         break;
       }
+      case "roomlabel": {
+        drag.moved = true;
+        this.changeFloor((floor) => {
+          const r = floor.rooms.find((x) => x.id === drag.roomId);
+          if (!r) return;
+          const [cx, cz] = centroid(r.points);
+          r.label_offset = [round(world[0] - drag.grab[0] - cx), round(world[1] - drag.grab[1] - cz)];
+        }, drag.base);
+        break;
+      }
       case "holopt": {
         drag.moved = true;
         const p = this.snap(world, undefined, e.altKey);
@@ -1183,6 +1213,7 @@ export class PointerPart {
         else if (drag.kind === "poolport" || drag.kind === "pooljoint") this.openCard(drag.pool, `${drag.kind === "poolport" ? "port" : "joint"}:${drag.id}`);
         break;
       case "holopt":
+      case "roomlabel":
       case "bgmove":
       case "bgscale":
       case "bgrotate":

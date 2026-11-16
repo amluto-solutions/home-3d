@@ -26,6 +26,7 @@ export function sampleHass(): HomeAssistant {
       st("binary_sensor.sample_grid", { device_class: "power" }),
       st("sensor.sample_power", { device_class: "power", unit_of_measurement: "W" }),
       st("input_text.sample_notes"),
+      st("calendar.sample_family", { friendly_name: "Family" }),
       st("weather.sample_home"),
       st("scene.sample_evening"),
     ].map((s) => [s.entity_id, s]),

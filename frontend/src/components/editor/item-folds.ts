@@ -15,6 +15,7 @@ import { isElectric, packInfo } from "../../packs.ts";
 import { isPackBin, isPackPlant } from "../../household.ts";
 import { isVehicleItem } from "../../furniture-links.ts";
 import { volumeMeter } from "./helpers.ts";
+import { renderLiveSlots } from "./live-slots.ts";
 import type { Fp3dEditor } from "../editor.ts";
 
 /** Pack families and tags of a circuit monitor or a CT clamp (the double-count warning only means something with one). */
@@ -66,7 +67,7 @@ export class ItemFoldsPart {
             this.requestUpdate();
           }}>${this.t("block_select")}</button></p>`
         : nothing}
-      ${this.renderItemMain(f, p)} ${this.renderModuleFurnitureFields(f)}
+      ${this.renderItemMain(f, p)} ${renderLiveSlots(this, f)} ${this.renderModuleFurnitureFields(f)}
       ${this.rackOf(f) ? this.renderRackFrameForm(f) : nothing} ${this.renderRackElevation(f)} ${this.renderRackCardForm(f)}
       ${this.rackOf(f) ? html`<div class="fp3d-actions"><button class="fp3d-btn" @click=${() => this.openRackSheet()}>▤ ${this.t("rack_edit")}</button></div>` : nothing}
       ${itemFolds(f, p).map((fold) => this.renderItemFold(f, p, fold))}
@@ -83,7 +84,8 @@ export class ItemFoldsPart {
       case "lamp":
       case "device": {
         if (!this.hass) return nothing;
-        return html`<section class="fp3d-link-block" aria-labelledby="fp3d-main-h">
+        // a neon sign's text, colour and font come first, then the light or switch it follows
+        return html`${f.type === "neon_sign" ? html`<section class="fp3d-link-block"><h3>${this.t("furn_neon_sign")}</h3>${this.renderSignForm(f)}</section>` : nothing}<section class="fp3d-link-block" aria-labelledby="fp3d-main-h">
           <div class="fp3d-h3row"><h3 id="fp3d-main-h">${this.t(p.main === "lamp" ? "link_light" : "link_device")}</h3></div>
           ${this.renderFurnitureLinks(f)}
         </section>`;

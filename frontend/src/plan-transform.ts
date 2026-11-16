@@ -48,6 +48,7 @@ export const PLAN_FIELDS = {
   // #350: the pairs' plan ends (p) move, the robot's own (v) stay
   "VacuumMap.points": "moved",
   "Room.start_view": "a StartView, moved with its room",
+  "Room.label_offset": "a plan direction (the name's offset from the room's middle): turned, a shift leaves it",
   "Furniture.x": "moved",
   "Furniture.z": "moved",
   "Furniture.rotation": "turned",
@@ -99,6 +100,9 @@ export const PLAN_FIELDS = {
   "PoolJoint.nx": "turned",
   "PoolJoint.nz": "turned",
   "EnergySettings.meter": "moved with its floor",
+  // #462: the neighbourhood's origin moves with the whole house (as north turns), so the map stays where it lay
+  "Surroundings.x": "moved with the whole house (all floors)",
+  "Surroundings.z": "as x",
 } as const;
 
 function moveView(t: PlanTransform, v: StartView | null | undefined): void {
@@ -126,6 +130,7 @@ function moveArea(t: PlanTransform, a: OutdoorArea): void {
 function moveFloor(t: PlanTransform, f: Floor): void {
   for (const r of f.rooms) {
     r.points = r.points.map(t.point);
+    if (r.label_offset && t.quarter) r.label_offset = dir(t, r.label_offset);
     moveView(t, r.start_view);
   }
   for (const m of f.furniture) {
@@ -272,7 +277,8 @@ function mirror(f: SolarField, cols: boolean, rows: boolean): void {
  * their bin kerb spots, devices, outdoor areas with their pools (ports, joints, pipes), free walls, the background,
  * static pets, cables and the meter of those floors, garden solar fields with the ground floor, start views, and
  * fields and roof windows on walls (and on the roof when it moves) found again on their moved face. With every floor
- * also the roof sections, the free hologram, the house's start view and north. Changes `doc` in place.
+ * also the roof sections, the free hologram, the house's start view, north and the neighbourhood map's origin. Changes
+ * `doc` in place.
  */
 export function transformPlan(doc: Building, floorIds: readonly string[] | null, t: PlanTransform): void {
   const all = floorIds == null;
@@ -327,6 +333,8 @@ export function transformPlan(doc: Building, floorIds: readonly string[] | null,
     if (h && h.place === "free" && h.x != null && h.z != null) [h.x, h.z] = t.point([h.x, h.z]);
     moveView(t, doc.settings.start_view);
     if (t.quarter) doc.settings.north = deg(t, doc.settings.north ?? 0);
+    const map = doc.settings.surroundings;
+    if (map) [map.x, map.z] = t.point([map.x, map.z]);
   }
 
   // fields and roof windows on what moved: found again on the moved face (a wall's key holds its coordinates)

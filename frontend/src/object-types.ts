@@ -32,7 +32,7 @@ export function typeOfEntity(entityId: string | null | undefined): ObjectType | 
   return DOMAIN_TYPE[entityId.slice(0, entityId.indexOf("."))] ?? null;
 }
 
-const DECOR = new Set(["plant", "rug", "shelf", "coat_rack"]);
+const DECOR = new Set(["plant", "rug", "shelf", "coat_rack", "neon_sign"]);
 const OUTDOOR = new Set(["awning", "waste_bin", "mailbox", "parking", "pool_pump", "pool_filter", "pool_heat_pump", "pool_dosing", "pool_valve"]);
 const PLUGS = new Set(["wall_switch", "wall_socket", "wifi_ap", "water_heater", "robot_vacuum", "fridge_smart", "washer", "dryer", "dishwasher"]);
 /** The building's own parts: never hidden here. */

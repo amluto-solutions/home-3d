@@ -8,6 +8,7 @@ import { ACCENT_DEFAULT } from "../colour-reset.ts";
 import { shownStyle } from "../ha-theme.ts";
 import { STYLE_IDS, styleById, styleChoices, type StyleId, type StylePlan } from "../looks.ts";
 import { lookOf, type Look } from "../themes.ts";
+import { ZOOM_LATE_DEFAULT, zoomChoices, zoomLateOf, zoomStyleOk } from "../zoom-pref.ts";
 import { DISPLAY_HIDDEN_KEY, hiddenText, OBJECT_TYPES, parseHidden, SHOW_FURNITURE_KEY } from "../display-pref.ts";
 import { parsePinZoom, PLAN_PIN_ZOOM_DEFAULT, PLAN_PIN_ZOOM_KEY, PLAN_PIN_ZOOM_MAX } from "../plan-pins.ts";
 import type { Option, SectionId, Setting, SettingsEnv, TextKey } from "./registry.ts";
@@ -84,6 +85,25 @@ export function appearanceOptions(env: Pick<SettingsEnv, "hass" | "building">): 
   return out;
 }
 
+/** The zoom style's choices (#456): it stays as it is, the house's plan, then every style but Realistic (own ones too). */
+export function zoomOptions(): Option[] {
+  const out: Option[] = [];
+  for (const { group, values } of zoomChoices()) {
+    for (const value of values) {
+      if (group === "none") out.push({ value, label: "zoom_style_off" });
+      else if (group === "auto") out.push({ value, label: "style_house", group: "style_group_auto" });
+      else {
+        const own = styleById(value);
+        out.push(own?.group === "custom" ? { value, label: own.name ?? value, raw: true, group: "style_group_custom" } : { value, label: `style_${value}`, group: `style_group_${group}` });
+      }
+    }
+  }
+  return out;
+}
+
+/** The zoom style's details show while one is chosen. */
+const zoomChosen = (env: Pick<SettingsEnv, "prefs">) => zoomStyleOk(env.prefs.get("zoom_style"));
+
 /** What a choice reads: its label, and the look it shows now for a "follow" choice. */
 export function optionText(o: Option, t: (key: TextKey, vars?: Record<string, string | number>) => string): string {
   const label = o.raw ? o.label : t(o.label);
@@ -110,6 +130,48 @@ export const LOOK: Setting[] = [
     read: (env) => lookOf(env.prefs.get("theme")),
     control: { kind: "select", options: appearanceOptions },
   },
+  // #456: a second style the house blends into close up, when it sets in, and whether only the room turns
+  {
+    ...deviceChoice("zoom_style", "look", "look", "zoom_style", [], "", "zoom_style", [], "zoom_style_hint", ["zoom", "close", "near", "blend", "room", "style"], "select"),
+    read: (env) => {
+      const v = env.prefs.get("zoom_style");
+      return zoomStyleOk(v) ? v : "";
+    },
+    write: (env, v) => env.prefs.set("zoom_style", typeof v === "string" && v ? v : null),
+    control: { kind: "select", options: zoomOptions },
+  },
+  {
+    id: "zoom_late",
+    section: "look",
+    card: "look",
+    scope: "device",
+    permission: "everyone",
+    label: "zoom_late",
+    hint: "zoom_late_hint",
+    keywords: ["zoom", "early", "late", "blend"],
+    control: { kind: "range", min: 0, max: 100, step: 5, ends: ["zoom_late_early", "zoom_late_late"] },
+    default: ZOOM_LATE_DEFAULT,
+    prefKeys: ["zoom_late"],
+    read: (env) => Math.round(zoomLateOf(env.prefs.get("zoom_late")) * 100),
+    write: (env, v) => env.prefs.set("zoom_late", String(Math.round(clamp(v, 0, 100)))),
+    visible: zoomChosen,
+  } as Setting<number>,
+  {
+    id: "zoom_scope",
+    section: "look",
+    card: "look",
+    scope: "device",
+    permission: "everyone",
+    label: "zoom_scope_room",
+    hint: "zoom_scope_hint",
+    keywords: ["zoom", "room", "only"],
+    control: { kind: "switch" },
+    default: false,
+    prefKeys: ["zoom_scope"],
+    read: (env) => env.prefs.get("zoom_scope") === "room",
+    write: (env, v) => env.prefs.set("zoom_scope", v ? "room" : null),
+    visible: zoomChosen,
+  } as Setting<boolean>,
   {
     id: "accent",
     section: "look",
@@ -266,7 +328,7 @@ export function viewSections(ctx: ViewContext): ViewSection[] {
   const shows: ViewSection = { id: "show", title: "st_card_show", rows: show, hint: show.some((r) => r.disabled) ? "pick_all_floors" : undefined, openOnPhone: false };
   if (ctx.kiosk) return [{ ...shows, openOnPhone: true }];
   return [
-    { id: "look", title: "theme", rows: [{ id: "theme" }, { id: "accent" }], openOnPhone: true },
+    { id: "look", title: "theme", rows: [{ id: "theme" }, { id: "accent" }, { id: "zoom_style" }, { id: "zoom_late" }, { id: "zoom_scope" }], openOnPhone: true },
     shows,
     { id: "markers", title: "markers", rows: [{ id: "markers" }, { id: "pinSize" }, { id: "pulse" }], hint: "markers_important_hint", openOnPhone: true },
     { id: "clock", title: "st_clock", rows: [{ id: "clock" }, { id: "clock_weather" }], openOnPhone: false },

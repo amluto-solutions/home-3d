@@ -47,6 +47,7 @@ export type ViewerSurface = Pick<
   | "setKeepRoof"
   | "setKeepView"
   | "setLabelInset"
+  | "setLiveValues"
   | "setOpeningStates"
   | "setPacks"
   | "setParked"

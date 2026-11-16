@@ -108,12 +108,25 @@ test("a cross gable a top floor reaches into leaves its walls to that floor, lik
     // the roof's own gable end: points in the wall's plane at the front, short of the verge's overhang
     let n = 0;
     for (const part of buildRoof(b)) {
-      const p = part.solid.p;
-      for (let i = 0; i < p.length; i += 3) if (p[i + 2] > 11 && p[i + 2] < 11.3 && p[i] > 3.2 && p[i] < 6.8) n++;
+      // the gable end of a cross gable is a wall of its room: it sits with the roof's floating parts (#470)
+      for (const p of [part.solid.p, part.win?.solid.p ?? []]) for (let i = 0; i < p.length; i += 3) if (p[i + 2] > 11 && p[i + 2] < 11.3 && p[i] > 3.2 && p[i] < 6.8) n++;
     }
     return n;
   };
   // without the top floor in it, the cross gable draws its gable end; with it, that floor's walls stand there
   assert.ok(gableEnd(false) > 0);
   assert.equal(gableEnd(true), 0);
+});
+
+test("a dormer's cheeks and front gable stay with the room when the roof fades over it (#470)", () => {
+  const b = emptyBuilding();
+  b.floors = [{ ...newFloor("ground", "Ground", 0), rooms: [rect("a", 10, 8)] }];
+  const main = { id: "main", x0: -0.24, z0: -0.24, x1: 10.24, z1: 8.24, shape: "gable" as const, axis: "x" as const, eave_a: 2.6, eave_b: 2.6, pitch_a: 35, pitch_b: 35, base: 2.6 };
+  b.settings.roof = { type: "custom", pitch: 35, overhang: 0.3, sections: [main] };
+  const [plain] = buildRoof(b);
+  assert.ok(!plain.win?.solid.count, "a roof alone has nothing apart from itself");
+  b.settings.roof = { type: "custom", pitch: 35, overhang: 0.3, sections: [main, { id: "d", x0: 3, z0: -0.2, x1: 5, z1: 2, shape: "gable", axis: "z", eave_a: 3.6, eave_b: 3.6, pitch_a: 35, pitch_b: 35, base: 2.6, dormer: true }] };
+  const [part] = buildRoof(b);
+  assert.ok(part.win?.solid.count, "the dormer's cheeks and gable stand apart from the roof, in the floor view");
+  assert.ok(part.solid.count > 0, "its slopes stay with the roof");
 });

@@ -4,7 +4,7 @@
 import { areaEntities, kindOf, openingState, primaryEntities, type OpeningEntities } from "./devices.ts";
 import { translate } from "./i18n.ts";
 import type { Building, Room } from "./model.ts";
-import { centroid, pointInPolygon } from "./model.ts";
+import { centroid, innerPoint, pointInPolygon } from "./model.ts";
 import type { HomeAssistant } from "./types.ts";
 import { idsWhere } from "./state-index.ts";
 
@@ -105,10 +105,12 @@ export function personsInRooms(hass: HomeAssistant, building: Building): PersonM
     if (!hit) continue;
     const i = perRoom.get(hit.room.id) ?? 0;
     perRoom.set(hit.room.id, i + 1);
-    const [cx, cz] = centroid(hit.room.points);
+    const [cx, cz] = innerPoint(hit.room.points);
     // next to the room label, one after another on a small circle
     const a = -Math.PI / 2 + 0.9 + i * 1.15;
     const r = 0.75;
+    const around: [number, number] = [cx + Math.cos(a) * r, cz + Math.sin(a) * r];
+    const [x, z] = pointInPolygon(around, hit.room.points) ? around : [cx, cz];
     const name = (person.attributes.friendly_name as string | undefined) ?? link.person;
     out.push({
       id: link.person,
@@ -117,8 +119,8 @@ export function personsInRooms(hass: HomeAssistant, building: Building): PersonM
       picture: (person.attributes.entity_picture as string | undefined) ?? null,
       floorId: hit.floorId,
       roomId: hit.room.id,
-      x: cx + Math.cos(a) * r,
-      z: cz + Math.sin(a) * r,
+      x,
+      z,
     });
   }
   return out;
@@ -192,15 +194,20 @@ export function locatedPersons(hass: HomeAssistant, building: Building, skip: Re
         }
         spotsOf.set(f.room.id, spots);
       }
-      const spot = spots.shift();
+      // a zone spot outside the room (a radar zone reaching through the wall) is no place for the person in it
+      let spot = spots.shift();
+      while (spot && !pointInPolygon(spot, f.room.points)) spot = spots.shift();
       if (spot) {
         out.push({ ...marker, floorId: f.floorId, roomId: f.room.id, x: spot[0], z: spot[1] });
         return;
       }
     }
-    const [cx, cz] = centroid(f.room.points);
+    // around a point well inside the room; a step around it that would leave the room stays on that point (#900)
+    const [cx, cz] = innerPoint(f.room.points);
     const angle = -Math.PI / 2 + 0.9 + i * 1.15;
-    out.push({ ...marker, floorId: f.floorId, roomId: f.room.id, x: cx + Math.cos(angle) * 0.75, z: cz + Math.sin(angle) * 0.75 });
+    const around: [number, number] = [cx + Math.cos(angle) * 0.75, cz + Math.sin(angle) * 0.75];
+    const [x, z] = pointInPolygon(around, f.room.points) ? around : [cx, cz];
+    out.push({ ...marker, floorId: f.floorId, roomId: f.room.id, x, z });
   };
   const thing = (f: Found, color: string) =>
     place(f, { id: f.entityId, name: f.name, initials: f.name.slice(0, 1).toUpperCase(), picture: null, color, entity: f.entityId, tag: f.name, thing: true });

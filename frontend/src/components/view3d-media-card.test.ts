@@ -18,7 +18,7 @@ test("the TV and player card grows as a whole box under the mouse, not just its 
 });
 
 /** A viewer with one media card of 236 px and a stage of the given size; returns the transform the card was given. */
-function place(stageW: number, stageH: number, x: number, y: number, facing = true): string {
+function place(stageW: number, stageH: number, x: number, y: number, facing = true, media = true, line?: { y2?: string }): string {
   const el = new Fp3dView3d();
   const card: Record<string, any> = {
     hidden: false,
@@ -26,10 +26,11 @@ function place(stageW: number, stageH: number, x: number, y: number, facing = tr
     offsetWidth: 236,
     offsetHeight: 130,
     style: { transform: "" },
-    classList: { contains: (c: string) => c === "fp3d-holo-media", toggle: () => undefined },
+    classList: { contains: (c: string) => media && c === "fp3d-holo-media", toggle: () => undefined },
   };
+  const link = { hasAttribute: () => false, toggleAttribute: () => undefined, firstElementChild: { setAttribute: (k: string, v: string) => k === "y2" && line && (line.y2 = v) }, lastElementChild: { setAttribute: () => undefined } };
   const stage = { clientWidth: stageW, clientHeight: stageH };
-  el.renderRoot = { querySelector: (q: string) => (q.startsWith(".fp3d-holo[") ? card : q === ".fp3d-stage" ? stage : null), querySelectorAll: (q: string) => (q.startsWith(".fp3d-holo[") ? [card] : []) };
+  el.renderRoot = { querySelector: (q: string) => (q.startsWith(".fp3d-holo[") ? card : q.startsWith(".fp3d-holo-link[") ? link : q === ".fp3d-stage" ? stage : null), querySelectorAll: (q: string) => (q.startsWith(".fp3d-holo[") ? [card] : []) };
   el._holos = [{ kind: "device", name: "TV", w: null, dayIds: [], battery: null }];
   el.holoCount = 1;
   el.placeHolo(0, x, y, true, 1.25, facing);
@@ -102,4 +103,22 @@ test("the cards' sizes are read in one go before a frame places any of them (run
   log.length = 0;
   for (let i = 0; i < 3; i++) el.placeHolo(i, 100 + i * 200, 300, true, 1, true);
   assert.deepEqual(log, ["write 0", "write 1", "write 2"]);
+});
+
+test("a hologram card stays inside the 3D view: moved in from the sides, hung below its anchor with no room above (#1088)", () => {
+  // a plain 236 x 130 card at scale 1 on a 600 x 500 stage
+  const right = at(place(600, 500, 560, 300, true, false));
+  assert.ok(right.x + 236 <= 600 - 8 + 0.5, `right edge ${right.x + 236}`);
+  const left = at(place(600, 500, 40, 300, false, false));
+  assert.ok(left.x - 236 >= 8 - 0.5, `left edge ${left.x - 236}`);
+  // an anchor near the top edge (a roof field): the card would stick out above, so it hangs below the anchor
+  const line: { y2?: string } = {};
+  const top = at(place(600, 500, 300, 70, true, false, line));
+  assert.ok(top.y - 130 >= 60 - 0.5, `top edge ${top.y - 130}`);
+  assert.ok(top.y - 130 >= 70, "the card hangs below its anchor");
+  // its line meets the card's upper corner
+  assert.equal(Number(line.y2), top.y - 130);
+  // room above: where it always was
+  const free = at(place(1200, 800, 300, 400, true, false));
+  assert.deepEqual(free, { x: 334, y: 354 });
 });

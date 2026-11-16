@@ -453,16 +453,16 @@ export function buildOpeningParts(infos: readonly OpeningInfo[], states: Readonl
         else panel(blinds, tf, -0.02, W + 0.02, face + 0.03, bottom, T, new Color(0xffffff), cut, bucket);
         splitBox(frames, tf, -0.02, W + 0.02, face + 0.02, face + 0.045, bottom, bottom + 0.025, new Color(OP.BLIND_BOX), frameTop, cut, bucket);
       }
-    } else if (st.cover !== null && !(info.opening.type === "garage" && openingStyle(info.opening, info.exterior) === "up_and_over")) {
-      // blind on the outside: box above the opening, slats down to the closed fraction (an up-and-over door's cover
-      // is the door itself)
+    } else if (st.cover !== null && info.opening.type !== "garage") {
+      // blind on the outside: box above the opening, slats down to the closed fraction. A garage door's closed
+      // fraction is the door itself (drawn above): it never gets a roller shutter in front of it (#1094)
       const out = -info.faceOut;
       const boxTop = T + 0.2;
       splitBox(frames, tf, -0.05, W + 0.05, out - 0.15, out, T, boxTop, new Color(OP.BLIND_BOX), frameTop, cut, bucket);
       const closed = Math.min(1, Math.max(0, st.cover));
       if (closed > 0.01) {
         const bottom = T - closed * (T - S);
-        if (slatsOpen !== null && info.opening.type !== "garage") slatStrips(blinds, tf, 0, W, out - 0.07, bottom, T, slatsOpen, new Color(0xffffff), cut, bucket);
+        if (slatsOpen !== null) slatStrips(blinds, tf, 0, W, out - 0.07, bottom, T, slatsOpen, new Color(0xffffff), cut, bucket);
         else panel(blinds, tf, 0, W, out - 0.07, bottom, T, new Color(0xffffff), cut, bucket, 0.045);
       }
     }

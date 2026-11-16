@@ -225,3 +225,38 @@ test("a located person whose Home Assistant person has no tracker (state unknown
   hass.states["person.tom"] = st("person.tom", "Work", { friendly_name: "Work" });
   assert.ok(!locatedPersons(hass, building, new Set(), now).some((p) => p.id === "person.tom"));
 });
+
+test("people stand inside an L-shaped room, not at its middle in the room next to it (#900)", async () => {
+  const { pointInPolygon } = await import("./model.ts");
+  const { hass, building } = setup();
+  // an L: the centroid lies near the inner corner, outside the room
+  const L: [number, number][] = [[0, 0], [6, 0], [6, 1.5], [1.5, 1.5], [1.5, 6], [0, 6]];
+  building.floors[0].rooms = [{ ...rect("r1", "Lounge", "living_room", 0), points: L }];
+  const now = Date.parse("2026-10-23T12:00:00Z");
+  hass.states["sensor.tom_watch_room"] = st("sensor.tom_watch_room", "x", { home3d_locate: true, room_id: "r1", person: "person.tom", device_name: "Tom Watch", wearable: true, last_seen: new Date(now - 5000).toISOString() });
+  hass.states["sensor.pixel_room"] = st("sensor.pixel_room", "x", { home3d_locate: true, room_id: "r1", device_name: "Pixel", wearable: false, last_seen: new Date(now - 5000).toISOString() });
+  const placed = locatedPersons(hass, building, new Set(), now);
+  assert.ok(placed.length >= 2);
+  for (const p of placed) assert.ok(pointInPolygon([p.x, p.z], L), `${p.id} at ${p.x},${p.z}`);
+  // the people the room sensors name (personsInRooms) too
+  hass.states["sensor.mia_area"] = st("sensor.mia_area", "Living room");
+  for (const p of personsInRooms(hass, building)) assert.ok(pointInPolygon([p.x, p.z], L), `${p.id} at ${p.x},${p.z}`);
+});
+
+test("a zone spot outside the room is skipped (#900)", async () => {
+  const { pointInPolygon } = await import("./model.ts");
+  const { hass, building } = setup();
+  const now = Date.parse("2026-10-23T12:00:00Z");
+  // an L with a door on its inner corner's edge: the step in front of it towards the centroid lands outside the room
+  const L: [number, number][] = [[0, 0], [6, 0], [6, 1.5], [1.5, 1.5], [1.5, 6], [0, 6]];
+  building.floors[0].rooms = [{ ...rect("r1", "Lounge", "living_room", 0), points: L }];
+  building.floors[0].openings = [{ id: "d", room_id: "r1", edge: 2, offset: 3, width: 0.9, type: "door", sill: 0, height: 2.1, hinge: "left", leaves: 1, swing: "in" } as Building["floors"][number]["openings"][number]];
+  hass.entities = { ...hass.entities, "binary_sensor.fp2_entrance_terrace": { entity_id: "binary_sensor.fp2_entrance_terrace", area_id: "living_room" } };
+  hass.states["binary_sensor.fp2_entrance_terrace"] = st("binary_sensor.fp2_entrance_terrace", "on", { device_class: "occupancy", friendly_name: "Living room presence Entrance Terrace" });
+  hass.states["sensor.tom_watch_room"] = st("sensor.tom_watch_room", "x", { home3d_locate: true, room_id: "r1", person: "person.tom", device_name: "Tom Watch", wearable: true, last_seen: new Date(now - 5000).toISOString() });
+  const spots = zoneSpots(hass, building, "ground", building.floors[0].rooms[0]);
+  assert.equal(spots.length, 1);
+  assert.ok(!pointInPolygon(spots[0], L), "the spot itself lies outside the room");
+  const tom = locatedPersons(hass, building, new Set(), now).find((p) => p.id === "person.tom");
+  assert.ok(tom && pointInPolygon([tom.x, tom.z], L), `${tom?.x},${tom?.z}`);
+});

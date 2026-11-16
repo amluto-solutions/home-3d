@@ -3,7 +3,7 @@
 // glowing screens) are bright and saturated and stay as they are in every look. The homely styles (#436) are the
 // exception: the house is built once in natural colours (palette.ts) and this shader only shades them.
 
-import { AdditiveBlending, Color, NormalBlending, Vector3, type Material } from "three";
+import { AdditiveBlending, Color, NormalBlending, Vector2, Vector3, type Material } from "three";
 import { THEMES, type Theme } from "../themes.ts";
 import { BLUEPRINT_FILL, DAY, NEON_LIFT, PALETTE_SPREAD, blueprintSurface, daySurface, neonSurface, realisticSurface, themedSurface } from "../look-surface.ts";
 import type { StyleDef } from "../looks.ts";
@@ -19,7 +19,120 @@ export interface ThemeUniform {
   value: number;
   /** The style's shader numbers of this view (#436): several views on a page each keep their own. */
   style?: StyleUniforms;
+  /** The zoom style of this view (#456): the second style close up. Without it (or in mode 0) nothing of it is compiled. */
+  zoom?: ZoomUniforms;
 }
+
+// ---- the zoom style (#456, ported from NeonPlan 3D 3.2.0, MIT, (c) 2026 Mastershort) ----
+// Close up the house blends into a second style. Its shader numbers are a second set of the style uniforms (uZs…, the
+// same code as the first set, renamed), so any style can be the far one; the blend and the room it is limited to are
+// uniforms too: zooming changes numbers only, never a program. The house's own colours serve both styles, except
+// where one of them builds it in natural materials and the other does not: then each vertex carries the other
+// palette's colour as a second colour (ZOOM_ATTRIBUTE, mode 2).
+
+/** Most corners of the room the zoom style is limited to (the shader walks them; more are thinned out). */
+export const ZOOM_POLY_MAX = 24;
+
+/** The second colour of every vertex while the two styles build the house in different palettes (mode 2). */
+export const ZOOM_ATTRIBUTE = "fp3dColor2";
+
+export interface ZoomUniforms {
+  /** What the programs carry (read when they compile): 0 nothing, 1 the blend, 2 the blend with a second colour per vertex. */
+  mode: 0 | 1 | 2;
+  /** How far the blend has come (0 the view's own style, 1 the zoom style). */
+  uZoom: { value: number };
+  /** The zoom style's look index (as uTheme). */
+  uZTheme: { value: number };
+  /** The zoom style's shader numbers (named uZs… in the shader). */
+  near: StyleUniforms;
+  /** "Only the room": its outline's corner count (0: everywhere), the outline (closed), its floor's world heights. */
+  uZoomN: { value: number };
+  uZoomPoly: { value: Vector2[] };
+  uZoomY: { value: Vector2 };
+  /** 1 when the zoom style has natural materials (the neon floor pattern fades where it shows). */
+  uZoomNat: { value: number };
+}
+
+export function makeZoomUniforms(): ZoomUniforms {
+  return {
+    mode: 0,
+    uZoom: { value: 0 },
+    uZTheme: { value: 0 },
+    near: makeStyleUniforms(),
+    uZoomN: { value: 0 },
+    uZoomPoly: { value: Array.from({ length: ZOOM_POLY_MAX + 1 }, () => new Vector2()) },
+    uZoomY: { value: new Vector2(-1e9, 1e9) },
+    uZoomNat: { value: 0 },
+  };
+}
+
+/** The zoom uniforms as the shader names them. */
+function zoomShaderUniforms(z: ZoomUniforms): Record<string, { value: unknown }> {
+  const out: Record<string, { value: unknown }> = { uZoom: z.uZoom, uZTheme: z.uZTheme, uZoomN: z.uZoomN, uZoomPoly: z.uZoomPoly, uZoomY: z.uZoomY, uZoomNat: z.uZoomNat };
+  for (const [k, v] of Object.entries(z.near)) out[k.replace(/^uSt/, "uZs")] = v;
+  return out;
+}
+
+/**
+ * GLSL: the blend at a world point – uZoom everywhere, or with a room outline only inside it (and on its walls' faces,
+ * which lie on the outline) and on its floor; 0 elsewhere.
+ */
+const ZOOM_AT = `
+uniform float uZoom;
+uniform int uZoomN;
+uniform vec2 uZoomPoly[${ZOOM_POLY_MAX + 1}];
+uniform vec2 uZoomY;
+uniform float uZoomNat;
+varying vec3 vFp3dZW;
+float fp3dZoomAt(vec3 w) {
+  if (uZoomN <= 0 || uZoom <= 0.0) return uZoom;
+  if (w.y < uZoomY.x || w.y > uZoomY.y) return 0.0;
+  vec2 p = w.xz;
+  bool inside = false;
+  float d = 1e9;
+  vec2 a = uZoomPoly[0];
+  for (int i = 1; i <= ${ZOOM_POLY_MAX}; i++) {
+    if (i > uZoomN) break;
+    vec2 b = uZoomPoly[i];
+    if ((a.y > p.y) != (b.y > p.y) && p.x < (b.x - a.x) * (p.y - a.y) / (b.y - a.y) + a.x) inside = !inside;
+    vec2 ab = b - a;
+    float t = clamp(dot(p - a, ab) / max(dot(ab, ab), 1e-6), 0.0, 1.0);
+    d = min(d, length(p - a - ab * t));
+    a = b;
+  }
+  return inside || d < 0.03 ? uZoom : 0.0;
+}`;
+
+/** The second set's code: the style code of the first set with its names changed. */
+const zoomRenamed = (glsl: string) =>
+  glsl
+    .replace(/\buSt(?=[A-Z])/g, "uZs")
+    .replace(/\buTheme\b/g, "uZTheme")
+    .replace(/\bfp3d(Styled|StyleLight|StyleFloor|StHash|Themed)\b/g, "fp3dZ$1");
+
+/** The world position's varying for the room mask (vertex shader). */
+function zoomVertex(vertexShader: string, mode: 1 | 2): string {
+  return vertexShader
+    .replace("#include <common>", `#include <common>\nvarying vec3 vFp3dZW;${mode === 2 ? `\nattribute vec3 ${ZOOM_ATTRIBUTE};\nvarying vec3 vFp3dColor2;` : ""}`)
+    .replace("#include <project_vertex>", `#include <project_vertex>\nvFp3dZW = (modelMatrix * vec4(transformed, 1.0)).xyz;${mode === 2 ? `\nvFp3dColor2 = ${ZOOM_ATTRIBUTE};` : ""}`);
+}
+
+/**
+ * The floor pattern under a zoom style (#456): it fades where a natural zoom style shows (the room, or everywhere). Only
+ * with a zoom style on; the pattern's program is the same as before otherwise. Call it last in its onBeforeCompile.
+ */
+export function zoomPattern(shader: { uniforms: Record<string, unknown>; vertexShader: string; fragmentShader: string }, theme: ThemeUniform): void {
+  const z = theme.zoom;
+  if (!z?.mode) return;
+  Object.assign(shader.uniforms, zoomShaderUniforms(z));
+  shader.vertexShader = zoomVertex(shader.vertexShader, 1);
+  shader.fragmentShader = shader.fragmentShader
+    .replace("#include <common>", `#include <common>\n${ZOOM_AT}`)
+    .replace("#include <opaque_fragment>", `diffuseColor *= 1.0 - fp3dZoomAt(vFp3dZW) * uZoomNat;\n#include <opaque_fragment>`);
+}
+
+/** The pattern's program key part for the zoom style. */
+export const zoomKey = (theme: ThemeUniform): string => (theme.zoom?.mode ? `-z${theme.zoom.mode}` : "");
 
 export function themeIndex(theme: Theme): number {
   return THEMES.indexOf(theme);
@@ -258,7 +371,10 @@ float fp3dGlow = 0.0;
 ${FLOOR_GLSL}
 ${DAY_FLOOR_GLSL}
 ${DAY_LAWN_GLSL}
-uniform vec3 uStLine;
+__FP3D_LOOK__`;
+
+/** The style uniforms' declarations (the zoom style declares them a second time, renamed). */
+const ST_DECL = `uniform vec3 uStLine;
 uniform vec3 uStDark;
 uniform vec3 uStLight;
 uniform float uStHue;
@@ -268,9 +384,10 @@ uniform int uStSignal;
 uniform int uStNatural;
 uniform float uStAO;
 uniform float uStDim;
-uniform float uStFloors;
-__FP3D_STYLED__
-vec3 fp3dThemed(vec3 c, bool line) {
+uniform float uStFloors;`;
+
+/** Mapping a colour to a look: the look index in uTheme, a style's numbers in uSt… (the zoom style has its own copy). */
+const THEMED_FN = `vec3 fp3dThemed(vec3 c, bool line) {
   // a wall colour (#437, geo.ts pushPrism) is marked by its offset: take it off; the natural styles and Realistic let it through
   bool tint = !line && c.r > ${WALL_TINT - 0.5};
   if (tint) c -= vec3(${WALL_TINT.toFixed(1)});
@@ -345,15 +462,42 @@ export function themed<T extends Material>(material: T, uniform: ThemeUniform, l
         .replace("#include <common>", `#include <common>\nvarying vec3 vFp3dStW;\nvarying float vFp3dStZ;`)
         .replace("#include <project_vertex>", `#include <project_vertex>\nvFp3dStW = (modelMatrix * vec4(transformed, 1.0)).xyz;\nvFp3dStZ = -mvPosition.z;`);
     }
-    const levelCode = placed ? `uniform float uFloorY;\nvarying vec3 vFp3dStW;\nvarying float vFp3dStZ;\n${WALL_FEET}\n${level === 2 ? FLOOR_STRUCTURE : NO_FLOOR_STRUCTURE}` : `${NO_WALL_FEET}\n${NO_FLOOR_STRUCTURE}`;
+    const levelDecl = placed ? `uniform float uFloorY;\nvarying vec3 vFp3dStW;\nvarying float vFp3dStZ;\n` : "";
+    const levelFns = placed ? `${WALL_FEET}\n${level === 2 ? FLOOR_STRUCTURE : NO_FLOOR_STRUCTURE}` : `${NO_WALL_FEET}\n${NO_FLOOR_STRUCTURE}`;
+    const styled = (fns: string) => (line ? STYLE_LINE : STYLE_SURFACE.replace("__FP3D_LEVEL__", fns));
+    const look = `${ST_DECL}\n${styled(levelDecl + levelFns)}\n${THEMED_FN}`;
+    const l = line ? "true" : "false";
+    const z = uniform.zoom;
+    if (!z?.mode) {
+      shader.fragmentShader = shader.fragmentShader
+        .replace("#include <common>", `#include <common>\n${GLSL.replace("__FP3D_LOOK__", look)}`)
+        .replace(
+          "#include <color_fragment>",
+          `#include <color_fragment>\n  diffuseColor.rgb = fp3dThemed(diffuseColor.rgb, ${l});${line ? "\n  if (uTheme == 3) diffuseColor.a *= 0.22;\n  if (uTheme == 4 && uStNatural == 1) diffuseColor.a *= 0.6;" : ""}`,
+        );
+      return;
+    }
+    // the zoom style (#456): both styles' mappings, blended by the uniform (one branch for the whole frame while the
+    // blend is at an end; both only while it runs, or along the room's outline)
+    Object.assign(shader.uniforms, zoomShaderUniforms(z));
+    shader.vertexShader = zoomVertex(shader.vertexShader, z.mode);
+    const near = zoomRenamed(`uniform int uTheme;\n${ST_DECL}\n${styled(levelFns)}\n${THEMED_FN}`);
+    const nearIn = z.mode === 2 ? "fp3dBase * vFp3dColor2" : "fp3dIn";
     shader.fragmentShader = shader.fragmentShader
-      .replace("#include <common>", `#include <common>\n${GLSL.replace("__FP3D_STYLED__", line ? STYLE_LINE : STYLE_SURFACE.replace("__FP3D_LEVEL__", levelCode))}`)
+      .replace("#include <common>", `#include <common>\n${GLSL.replace("__FP3D_LOOK__", look)}\n${near}\n${ZOOM_AT}${z.mode === 2 ? "\nvarying vec3 vFp3dColor2;" : ""}`)
       .replace(
         "#include <color_fragment>",
-        `#include <color_fragment>\n  diffuseColor.rgb = fp3dThemed(diffuseColor.rgb, ${line ? "true" : "false"});${line ? "\n  if (uTheme == 3) diffuseColor.a *= 0.22;\n  if (uTheme == 4 && uStNatural == 1) diffuseColor.a *= 0.6;" : ""}`,
+        `${z.mode === 2 ? "vec3 fp3dBase = diffuseColor.rgb;\n" : ""}#include <color_fragment>
+  float fp3dM = fp3dZoomAt(vFp3dZW);
+  vec3 fp3dIn = diffuseColor.rgb;
+  if (fp3dM < 1.0) diffuseColor.rgb = fp3dThemed(fp3dIn, ${l});
+  if (fp3dM > 0.0) {
+    vec3 fp3dNear = fp3dZThemed(${nearIn}, ${l});
+    diffuseColor.rgb = fp3dM >= 1.0 ? fp3dNear : mix(diffuseColor.rgb, fp3dNear, fp3dM);
+  }${line ? "\n  diffuseColor.a *= mix((uTheme == 3 ? 0.22 : 1.0) * (uTheme == 4 && uStNatural == 1 ? 0.6 : 1.0), uZTheme == 4 && uZsNatural == 1 ? 0.6 : 1.0, fp3dM);" : ""}`,
       );
   };
-  material.customProgramCacheKey = () => `${key()}-themed-${line ? "l" : "s"}${line ? "" : level || ""}`;
+  material.customProgramCacheKey = () => `${key()}-themed-${line ? "l" : "s"}${line ? "" : level || ""}${zoomKey(uniform)}`;
   // the realistic look gives themed surfaces a lit twin (realism.ts); lines stay as they are
   material.userData.fp3dThemed = line ? "line" : "surface";
   return material;

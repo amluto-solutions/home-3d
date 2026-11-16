@@ -18,7 +18,7 @@ export type Complete<T> = T extends readonly (infer U)[]
 
 // the recipe copies are checked by the pack format's own tests (packs.md); here the plan only has the field
 export const PLAN_CONTRACT = {
-  "version": 4,
+  "version": 5,
   "floors": [
     {
       "id": "text",
@@ -58,6 +58,10 @@ export const PLAN_CONTRACT = {
             ]
           ],
           "floor_material": "text",
+          "label_offset": [
+            -5.0,
+            -5.0
+          ],
           "start_view": {
             "theta": 1.0,
             "phi": 0.8,
@@ -275,6 +279,10 @@ export const PLAN_CONTRACT = {
           "bin_source": "text",
           "bin_match": "text",
           "mailbox_door": "text",
+          "sign_text": "text",
+          "sign_color": "#336699",
+          "sign_font": "sans",
+          "binds": { "door": "binary_sensor.sample_door" },
           "bin_out": "text",
           "bin_kerb": {
             "x": -500.0,
@@ -568,7 +576,8 @@ export const PLAN_CONTRACT = {
             1.0
           ],
           "thickness": 0.265,
-          "height": 5.0375
+          "height": 5.0375,
+          "color": "text"
         }
       ],
       "ha_floor": "text",
@@ -592,6 +601,7 @@ export const PLAN_CONTRACT = {
     "units": "metric",
     "person_look": "figure",
     "lock_plan": true,
+    "label_scale": 1.25,
     "area_import": true,
     "demo": true,
     "unplaced_hidden": [
@@ -799,7 +809,8 @@ export const PLAN_CONTRACT = {
       "bin_until": 6.0,
       "bin_next_only": true,
       "bin_days": 15,
-      "notes": "todo.sample_notes"
+      "notes": "todo.sample_notes",
+      "calendars": ["calendar.sample_family"]
     },
     "facade_color": "#d9c7a3",
     "style_day": "cozy",
@@ -946,7 +957,40 @@ export const PLAN_CONTRACT = {
     "mods": {
       "key1": {}
     },
-    "editor_floor": "g"
+    "editor_floor": "g",
+    "surroundings": {
+      "on": true,
+      "lat": 45.5,
+      "lon": 7.25,
+      "at": 1700000000.0,
+      "radius": 150.0,
+      "x": 1.5,
+      "z": -2.5,
+      "own": 0,
+      "hide": [1],
+      "show": [0],
+      "flat": true,
+      "buildings": [
+        {
+          "p": [[0.0, 0.0], [10.0, 0.0], [10.0, 8.0]],
+          "h": 7.5
+        }
+      ],
+      "ways": [
+        {
+          "p": [[-20.0, 0.0], [20.0, 0.0]],
+          "w": 6.0,
+          "k": "road"
+        }
+      ],
+      "areas": [
+        {
+          "p": [[30.0, 30.0], [40.0, 30.0], [40.0, 40.0]],
+          "k": "green"
+        }
+      ],
+      "trees": [[12.0, 3.0]]
+    }
   },
   "energy": {
     "meter": {

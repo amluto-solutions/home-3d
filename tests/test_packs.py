@@ -324,6 +324,29 @@ def test_a_newer_part_shape_asks_for_an_update() -> None:
     assert err.value.code == "invalid_content"
 
 
+def test_fan_blades_spin_and_an_unknown_part_field_asks_for_an_update() -> None:
+    """Turning parts (#1084) are known; a part field of a newer pack release asks for an update, not "invalid"."""
+    item = copy.deepcopy(PAYLOAD["items"][0])
+    item["parts"][0]["spin"] = "y"
+    assert packs.validate_payload({**PAYLOAD, "items": [item]})["items"][0]["parts"][0]["spin"] == "y"
+    item["parts"][0]["spin"] = "x"
+    with pytest.raises(packs.PackError) as err:
+        packs.validate_payload({**PAYLOAD, "items": [item]})
+    assert err.value.code == "needs_update"
+    del item["parts"][0]["spin"]
+    item["parts"][0]["some_future_field"] = 1
+    with pytest.raises(packs.PackError) as err:
+        packs.validate_payload({**PAYLOAD, "items": [item]})
+    assert err.value.code == "needs_update"
+    # in a v2 folder too; an unknown field of the item itself stays an error (older versions refuse it, #424)
+    with pytest.raises(packs.PackError) as err:
+        packs.verify_folder(_folder(**{"cube_chair.json": _item("cube_chair", parts=item["parts"])}))
+    assert err.value.code == "needs_update"
+    with pytest.raises(packs.PackError) as err:
+        packs.verify_folder(_folder(**{"cube_chair.json": _item("cube_chair", some_future_field=1)}))
+    assert err.value.code == "invalid_content"
+
+
 def test_probatio_marks_an_unknown_value_by_its_code() -> None:
     """Probatio (Home Assistant 2026.9+) words its errors its own way but gives the code "not_in_list"."""
     probatio = SimpleNamespace(errors=[SimpleNamespace(code="not_in_list")])
@@ -548,3 +571,125 @@ def test_a_v2_pack_json_imported_as_a_file_asks_for_the_folder() -> None:
     with pytest.raises(packs.PackError) as err:
         packs.verify_pack("{}")
     assert err.value.detail
+
+
+def _live_cabinet(**extra) -> dict:
+    """A cabinet with a door bound to a contact slot and a status light (#466)."""
+    return _item(
+        "live_cabinet",
+        parts=[
+            {"shape": "box", "x": 0, "z": -0.02, "w": 1, "d": 0.96, "y": 0, "h": 1, "color": "body"},
+            {
+                "shape": "box",
+                "x": 0,
+                "z": 0.48,
+                "w": 0.96,
+                "d": 0.04,
+                "y": 0.02,
+                "h": 0.96,
+                "color": "white",
+                "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100},
+            },
+            {
+                "shape": "sphere",
+                "x": 0.4,
+                "z": 0.5,
+                "w": 0.03,
+                "d": 0.02,
+                "y": 0.9,
+                "h": 0.03,
+                "color": "accent",
+                "bind": {"slot": "status", "kind": "blink"},
+            },
+        ],
+        **{
+            "slots": [
+                {"id": "door", "kind": "contact"},
+                {"id": "status", "name": {"en": "Status"}, "domains": ["sensor"]},
+            ],
+            **extra,
+        },
+    )
+
+
+def test_live_parts_and_their_slots_are_accepted() -> None:
+    """A part may be bound to a slot of its item; the item lists its slots with a kind or a name (#466)."""
+    pack = packs.verify_folder(_folder(**{"live_cabinet.json": _live_cabinet()}))
+    item = pack["items"][0]
+    assert item["parts"][1]["bind"] == {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}
+    assert [s["id"] for s in item["slots"]] == ["door", "status"]
+    # the library's index keeps the slots (it marks live items without their parts)
+    assert packs.item_index(item)["slots"] == item["slots"]
+
+
+def _bound(bind: dict, slots: list | None = None) -> dict:
+    item = _live_cabinet()
+    item["parts"][1]["bind"] = bind
+    if slots is not None:
+        item["slots"] = slots
+    return item
+
+
+@pytest.mark.parametrize(
+    ("item", "why"),
+    [
+        (_bound({"slot": "drawer", "kind": "slide"}), "a bound part names a slot the item lists"),
+        (_bound({"slot": "door", "kind": "open"}, [{"id": "status", "kind": "status"}]), "slots are listed"),
+        (_bound({"slot": "door", "kind": "slide", "hinge": "left"}), "only a door has a hinge"),
+        (_bound({"slot": "door", "kind": "open", "axis": "x"}), "only a turning part has an axis"),
+        (_bound({"slot": "door", "kind": "slide", "amount": 1.5}), "a drawer slides at most the depth"),
+        (_bound({"slot": "door", "kind": "open", "amount": 200}), "a door opens at most 180 degrees"),
+        (_bound({"slot": "Door", "kind": "open"}), "slot ids are lower case"),
+        (_bound({"kind": "open"}), "a bind names its slot"),
+        (
+            _bound({"slot": "door", "kind": "open"}, [{"id": "door"}, {"id": "status", "kind": "status"}]),
+            "a slot has a kind or a name",
+        ),
+        (
+            _bound(
+                {"slot": "door", "kind": "open"},
+                [
+                    {"id": "door", "kind": "contact"},
+                    {"id": "door", "kind": "contact"},
+                    {"id": "status", "kind": "status"},
+                ],
+            ),
+            "each slot once",
+        ),
+        (
+            _bound(
+                {"slot": "door", "kind": "open"},
+                [{"id": "door", "kind": "contact"}, {"id": "status", "kind": "status"}, {"id": "spare", "kind": "fan"}],
+            ),
+            "every slot has a part",
+        ),
+    ],
+)
+def test_bad_live_parts_are_refused(item: dict, why: str) -> None:
+    with pytest.raises(packs.PackError) as err:
+        packs.verify_folder(_folder(**{"live_cabinet.json": item}))
+    assert err.value.code == "invalid_content", why
+
+
+def test_a_part_is_bound_or_spins_not_both() -> None:
+    item = _live_cabinet()
+    item["parts"][1]["spin"] = "y"
+    with pytest.raises(packs.PackError) as err:
+        packs.verify_folder(_folder(**{"live_cabinet.json": item}))
+    assert err.value.code == "invalid_content"
+
+
+def test_a_newer_live_part_kind_asks_for_an_update() -> None:
+    """A bind kind or a slot kind of a newer release asks for an update (#466)."""
+    for item in (
+        _bound({"slot": "door", "kind": "some_future_kind"}),
+        _live_cabinet(slots=[{"id": "door", "kind": "future"}, {"id": "status", "kind": "status"}]),
+    ):
+        with pytest.raises(packs.PackError) as err:
+            packs.verify_folder(_folder(**{"live_cabinet.json": item}))
+        assert err.value.code == "needs_update"
+    newer = _live_cabinet()
+    newer["slots"][0]["future_field"] = 1
+    with pytest.raises(packs.PackError) as err:
+        packs.verify_folder(_folder(**{"live_cabinet.json": newer}))
+    assert err.value.code == "needs_update"

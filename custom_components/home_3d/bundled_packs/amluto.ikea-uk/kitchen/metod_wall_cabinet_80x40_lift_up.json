@@ -34,9 +34,16 @@
   "ikea": "METOD",
   "mount": "wall",
   "wall_y": 1.8,
+  "slots": [
+    {
+      "id": "door",
+      "kind": "contact"
+    }
+  ],
   "parts": [
     {"shape": "box", "x": 0.0, "z": -0.0207, "w": 1, "d": 0.9585, "y": 0, "h": 1, "color": "white"},
-    {"shape": "box", "x": 0.0, "z": 0.4819, "w": 0.995, "d": 0.0466, "y": 0, "h": 0.99, "color": "body", "fix": "d"},
-    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.4, "d": 0.057, "y": 0.11, "h": 0.03, "color": "metal", "fix": "wdh"}
+    {"shape": "box", "x": 0.0, "z": 0.4819, "w": 0.995, "d": 0.0466, "y": 0, "h": 0.99, "color": "body", "fix": "d", "bind": {"slot": "door", "kind": "open", "hinge": "top"}},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.4, "d": 0.057, "y": 0.11, "h": 0.03, "color": "metal", "fix": "wdh", "bind": {"slot": "door", "kind": "open", "hinge": "top"}},
+    {"shape": "box", "x": 0.0, "z": 0.4664, "w": 0.965, "d": 0.0155, "y": 0.03, "h": 0.93, "color": "dark", "edges": "faint", "fix": "d"}
   ]
 }

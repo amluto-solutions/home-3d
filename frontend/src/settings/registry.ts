@@ -5,9 +5,9 @@
 // and the page's own bundle stays small.
 
 import type { Building, BuildingSettings, StartView } from "../model.ts";
-import { DEFAULT_WEATHER_EFFECTS, WEATHER_EFFECTS } from "../model.ts";
+import { DEFAULT_WEATHER_EFFECTS, householdCalendars, labelScale, WEATHER_EFFECTS } from "../model.ts";
 import type { HomeAssistant } from "../types.ts";
-import { fromCelsius, tempUnit, toCelsius } from "../devices.ts";
+import { entityName, fromCelsius, tempUnit, toCelsius } from "../devices.ts";
 import { doorbellCamera, doorbellEntities, HOLD_DEFAULT, HOLD_MAX, HOLD_MIN } from "../director.ts";
 import { isRainSource, weatherEntity } from "../weather.ts";
 import { backdropImage } from "../backdrop.ts";
@@ -135,14 +135,16 @@ export type Control =
   /** A time of day stored as a number of hours (14.5 = 14:30), picked with the time field (#225). */
   | { kind: "hour" }
   | { kind: "colour"; fallback: string; clearable?: boolean }
-  | { kind: "range"; min: number; max: number; step: number }
-  | { kind: "checks"; options: Option[] }
+  | { kind: "range"; min: number; max: number; step: number; /** Words at the two ends instead of the number (#456). */ ends?: [TextKey, TextKey] }
+  | { kind: "checks"; options: Option[] | ((env: SettingsEnv) => Option[]) }
   /** A button; `action` names what the page does (it may also write, see Setting.write). */
   | { kind: "action"; button: TextKey; action: string }
   /** A list the page draws itself (the warnings dismissed for good). */
   | { kind: "list"; list: "alert_ignored" }
   /** The list of homes with its buttons (#296); a lazy chunk draws it. */
   | { kind: "homes" }
+  /** The neighbourhood map from OpenStreetMap (#464): load, align, hide houses; a lazy chunk draws it. */
+  | { kind: "surroundings" }
   /** A block the editor bundle draws (lists with their own logic: favourites, own buttons, backup …). */
   | { kind: "embed"; topic: EmbedTopic }
   /** Only words: where something is set instead (the card options, the modules' settings). */
@@ -235,6 +237,7 @@ export const SECTIONS: Section[] = [
       { id: "backdrop", title: "st_card_backdrop" },
       { id: "facade", title: "st_card_facade" },
       { id: "style_plan", title: "st_card_style_plan" },
+      { id: "surroundings", title: "st_card_surround" },
     ],
   },
   {
@@ -557,6 +560,21 @@ const GENERAL: Setting[] = [
     default: 0,
     read: (env) => settingsOf(env).north ?? 0,
     write: (env, v) => withSettings(env.building!, { north: ((Math.round(v) % 360) + 360) % 360 }),
+  } as Setting<number>,
+  {
+    id: "label_scale",
+    section: "general",
+    card: "plan",
+    scope: "house",
+    permission: "editor",
+    label: "room_names_size",
+    hint: "room_names_size_hint",
+    keywords: ["room names", "labels", "size", "text"],
+    control: { kind: "number", step: 10, min: 50, max: 200, unit: "%" },
+    default: 100,
+    read: (env) => Math.round(labelScale(settingsOf(env)) * 100),
+    // 100 % is the usual size: the key goes (null)
+    write: (env, v) => withSettings(env.building!, { label_scale: Math.abs(v - 100) < 1 ? null : clamp(v, 50, 200) / 100 }),
   } as Setting<number>,
   houseSwitch("lock_plan", "general", "plan", "lock_plan", false, "plan_lock", "st_lock_plan_hint", ["lock", "fixed", "accident"]),
   {
@@ -902,6 +920,20 @@ const planTime = (key: PlanTimeKey, label: TextKey, def: string, visible: (env: 
 const planByClock = (env: SettingsEnv): boolean => settingsOf(env).style_switch === "time";
 
 const SCENE: Setting[] = [
+  /* the neighbourhood from OpenStreetMap (#464): the map is fetched from public servers, so only Home Assistant admins load it */
+  {
+    id: "surroundings",
+    section: "scene",
+    card: "surroundings",
+    scope: "house",
+    permission: "ha_admin",
+    label: "st_surround",
+    hint: "surround_hint",
+    keywords: ["map", "neighbours", "neighbourhood", "streets", "osm", "openstreetmap", "houses", "trees", "outlines", "align", "north"],
+    control: { kind: "surroundings" },
+    default: null,
+    read: (env) => env.building?.settings.surroundings ?? null,
+  },
   planStyle("style_day", "st_style_day", false, ["day", "sun"]),
   planStyle("style_evening", "st_style_evening", true, ["evening", "sunset"]),
   planStyle("style_night", "st_style_night", true, ["night", "dark"]),
@@ -1030,6 +1062,11 @@ const SCENE: Setting[] = [
 ];
 
 const householdOf = (env: SettingsEnv) => env.building?.settings.household ?? {};
+/** The calendars to choose from for "Today in the household" (#457): all `calendar.*` entities, plus any chosen one that is gone. */
+function householdCalendarOptions(env: SettingsEnv): Option[] {
+  const ids = new Set([...Object.keys(env.hass?.states ?? {}).filter((id) => id.startsWith("calendar.")), ...householdCalendars(householdOf(env).calendars)]);
+  return [...ids].sort().map((id) => ({ value: id, label: env.hass ? entityName(env.hass, id) : id, raw: true }));
+}
 /** A time of day of the bins' glow (Household), stored as hours (14.5 = 14:30), for every bin. */
 const binHour = (id: "bin_from" | "bin_until", label: TextKey, def: number, hint?: TextKey): Setting<number> => ({
   id: `household.${id}`,
@@ -1103,6 +1140,21 @@ const HOUSEHOLD: Setting[] = [
     read: (env) => env.building?.settings.household?.notes ?? null,
     write: (env, v) => withPart(env.building!, "household", { notes: v }),
   } as Setting<string | null>,
+  {
+    id: "household.calendars",
+    section: "household",
+    card: "pinboard",
+    scope: "house",
+    permission: "editor",
+    label: "hh_calendars",
+    hint: "hh_calendars_hint",
+    keywords: ["calendar", "appointment", "today", "household", "agenda"],
+    // every calendar of Home Assistant, by its name; a calendar chosen earlier that is gone stays listed by its id
+    control: { kind: "checks", options: householdCalendarOptions },
+    default: [],
+    read: (env) => householdCalendars(householdOf(env).calendars),
+    write: (env, v) => withPart(env.building!, "household", { calendars: householdCalendars(v).length ? householdCalendars(v) : null }),
+  } as Setting<string[]>,
 ];
 
 /** A list the editor draws (its own logic), shown as one row. */

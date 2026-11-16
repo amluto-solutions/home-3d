@@ -32,6 +32,12 @@
   },
   "ikea": "BESTÅ",
   "surface": false,
+  "slots": [
+    {
+      "id": "door",
+      "kind": "contact"
+    }
+  ],
   "parts": [
     {"shape": "box", "x": -0.4933, "z": -0.0238, "w": 0.0133, "d": 0.9524, "y": 0.0518, "h": 0.9482, "color": "white", "fix": "w"},
     {"shape": "box", "x": 0.4933, "z": -0.0238, "w": 0.0133, "d": 0.9524, "y": 0.0518, "h": 0.9482, "color": "white", "fix": "w"},
@@ -45,11 +51,11 @@
     {"shape": "box", "x": 0.0, "z": -0.0238, "w": 0.0133, "d": 0.9286, "y": 0.0601, "h": 0.9316, "color": "white"},
     {"shape": "box", "x": 0.0, "z": -0.0238, "w": 0.9733, "d": 0.9286, "y": 0.3637, "h": 0.0083, "color": "white"},
     {"shape": "box", "x": 0.0, "z": -0.0238, "w": 0.9733, "d": 0.9286, "y": 0.6798, "h": 0.0083, "color": "white"},
-    {"shape": "box", "x": -0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.0528, "h": 0.314, "color": "white"},
-    {"shape": "box", "x": -0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.3689, "h": 0.314, "color": "white"},
-    {"shape": "box", "x": -0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.685, "h": 0.314, "color": "white"},
-    {"shape": "box", "x": 0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.0528, "h": 0.314, "color": "white"},
-    {"shape": "box", "x": 0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.3689, "h": 0.314, "color": "white"},
-    {"shape": "box", "x": 0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.685, "h": 0.314, "color": "white"}
+    {"shape": "box", "x": -0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.0528, "h": 0.314, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": -0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.3689, "h": 0.314, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": -0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.685, "h": 0.314, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "left", "amount": 100}},
+    {"shape": "box", "x": 0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.0528, "h": 0.314, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}},
+    {"shape": "box", "x": 0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.3689, "h": 0.314, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}},
+    {"shape": "box", "x": 0.25, "z": 0.4762, "w": 0.4967, "d": 0.0476, "y": 0.685, "h": 0.314, "color": "white", "bind": {"slot": "door", "kind": "open", "hinge": "right", "amount": 100}}
   ]
 }

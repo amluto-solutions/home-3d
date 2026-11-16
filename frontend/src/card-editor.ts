@@ -10,6 +10,8 @@ import { colourField } from "./colour-field-tag.ts";
 import { labOn, UNRELEASED } from "./features.ts";
 import { CARD_CONTROLS, type CardConfig, type CardControl } from "./card-config.ts";
 import { languageReady, loadLanguage, translate, uiLanguage, type I18nKey } from "./i18n.ts";
+import { setCustomStyles, styleById, styleChoices } from "./looks.ts";
+import { ZOOM_LATE_DEFAULT, zoomChoices } from "./zoom-pref.ts";
 import type { HomeAssistant } from "./types.ts";
 
 /** Defaults of the card: options at their default are left out of the config. */
@@ -61,11 +63,14 @@ export class Floorplan3dCardEditor extends LitElement {
     hass: { attribute: false },
     _config: { state: true },
     _floors: { state: true },
+    _styles: { state: true },
   };
 
   declare hass: HomeAssistant | undefined;
   private declare _config: CardConfig;
   private declare _floors: { id: string; name: string }[];
+  /** The plan's own styles (`styles_custom`) of the card's home, for the style lists (#1077). */
+  private declare _styles: readonly unknown[];
   /** The homes to choose from (#53; editors only, empty for anyone else or a backend before #53). */
   private declare _homes: HomeInfo[];
   /** The home whose floors are loaded (or loading): undefined for none yet, "" for the active one. */
@@ -76,6 +81,7 @@ export class Floorplan3dCardEditor extends LitElement {
     super();
     this._config = { type: "custom:home-3d-card" };
     this._floors = [];
+    this._styles = [];
     this._homes = [];
   }
 
@@ -95,7 +101,9 @@ export class Floorplan3dCardEditor extends LitElement {
       this.floorsOf = home;
       fetchBuilding(this.hass, home || undefined).then(
         (res) => {
-          if (this.floorsOf === home) this._floors = res.building.floors.map((f) => ({ id: f.id, name: f.name }));
+          if (this.floorsOf !== home) return;
+          this._floors = res.building.floors.map((f) => ({ id: f.id, name: f.name }));
+          this._styles = res.building.settings?.styles_custom ?? [];
         },
         () => undefined,
       );
@@ -131,6 +139,30 @@ export class Floorplan3dCardEditor extends LitElement {
       >${this.t(label)}
       <select @change=${(e: Event) => this.set(key, (e.target as HTMLSelectElement).value as CardConfig[K])}>
         ${choices.map(([value, text]) => html`<option value=${value} ?selected=${value === current}>${this.t(text)}</option>`)}
+      </select>
+    </label>`;
+  }
+
+  /**
+   * A style choice, grouped like the panel's (#439): automatic, neon, homely, designed and the plan's own styles (#1077,
+   * read with the plan the card shows). An empty choice removes the option. A stored id this plan does not know stays
+   * listed, so opening the dialog never changes it.
+   */
+  private styleSelect(key: "theme" | "theme_evening" | "theme_night" | "zoom_style", label: I18nKey, current: string, opts: { auto?: boolean; theme?: boolean; house?: boolean; none?: boolean }) {
+    setCustomStyles(this._styles);
+    const auto: Record<string, I18nKey> = { theme: "theme_theme", auto: "theme_auto", house: "style_house" };
+    const option = (value: string) => {
+      const own = styleById(value)?.group === "custom" ? styleById(value) : undefined;
+      const text = value === "" ? this.t(key === "zoom_style" ? "zoom_style_off" : "style_none") : auto[value] ? this.t(auto[value]) : own ? (own.name ?? value) : this.t(`style_${value}` as I18nKey);
+      return html`<option value=${value} ?selected=${value === current}>${text}</option>`;
+    };
+    const groups = key === "zoom_style" ? zoomChoices() : styleChoices(opts);
+    const known = groups.some((g) => g.values.includes(current));
+    return html`<label class="field"
+      >${this.t(label)}
+      <select @change=${(e: Event) => this.set(key, (e.target as HTMLSelectElement).value || undefined)}>
+        ${groups.map((g) => (g.group === "none" || !g.group ? g.values.map(option) : html`<optgroup label=${this.t(`style_group_${g.group}` as I18nKey)}>${g.values.map(option)}</optgroup>`))}
+        ${known ? nothing : html`<option value=${current} selected>${current}</option>`}
       </select>
     </label>`;
   }
@@ -361,7 +393,35 @@ export class Floorplan3dCardEditor extends LitElement {
             }}
           />
         </label>
-        ${this.select("theme", "theme", [["theme", "theme_theme"], ["neon", "theme_neon"], ["blueprint", "theme_blueprint"], ["day", "theme_day"], ["realistic", "theme_realistic"], ["auto", "theme_auto"]], v.theme)}
+        ${this.styleSelect("theme", "theme", v.theme, { theme: true, auto: true, house: true })}
+        ${this.styleSelect("theme_evening", "card_theme_evening", this._config.theme_evening ?? "", { none: true })}
+        ${this.styleSelect("theme_night", "card_theme_night", this._config.theme_night ?? "", { none: true })}
+        <label class="field"
+          >${this.t("card_style_entity")}
+          <input type="text" placeholder="input_select.style" .value=${this._config.style_entity ?? ""} @change=${(e: Event) => this.set("style_entity", (e.target as HTMLInputElement).value.trim() || undefined)} />
+        </label>
+        ${this.styleSelect("zoom_style", "zoom_style", this._config.zoom_style ?? "", {})}
+        ${this._config.zoom_style
+          ? html`<label class="field" title=${this.t("zoom_late_hint")}
+                >${this.t("zoom_late")} (${this.t("zoom_late_early")} … ${this.t("zoom_late_late")})
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="5"
+                  .value=${String(this._config.zoom_late ?? ZOOM_LATE_DEFAULT)}
+                  @change=${(e: Event) => {
+                    const n = Math.round(Number((e.target as HTMLInputElement).value));
+                    this.set("zoom_late", n === ZOOM_LATE_DEFAULT ? undefined : n);
+                  }}
+                />
+              </label>
+              <label class="toggle">
+                <input type="checkbox" .checked=${this._config.zoom_scope === "room"} @change=${(e: Event) => this.set("zoom_scope", (e.target as HTMLInputElement).checked ? "room" : undefined)} />
+                <span>${this.t("zoom_scope_room")}<small>${this.t("zoom_scope_hint")}</small></span>
+              </label>
+              <p class="hint">${this.t("zoom_style_hint")}</p>`
+          : nothing}
         ${this.select("clock", "clock", [["off", "clock_off"], ["tl", "clock_tl"], ["tr", "clock_tr"], ["bl", "clock_bl"], ["br", "clock_br"]], v.clock ?? "off")}
         <label class="field"
           >${this.t("accent")}

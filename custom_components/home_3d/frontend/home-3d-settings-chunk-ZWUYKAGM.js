@@ -1,0 +1,1 @@
+var r="__fp3dImportFailed";function s(t){return t.catch(e=>{throw globalThis[r]?.(e),e})}var n=globalThis.__fp3dLanguages??={extra:new Map,pending:new Map},{extra:o,pending:i}=n;function g(){return n.late?n.late():Promise.resolve()}var l="home3d.language";export{s as a,g as b,l as c};

@@ -36,6 +36,9 @@ LICENCE_PACK = "amluto.living"
 # with one would fail there. `role_names` (#411) came in 1.2.0; the packs that use it (Living, Office & tech,
 # Smart-home devices) stay out of the packs repository until older versions can read it (#424).
 HELD_FIELDS = ("role_names",)
+# Live parts (#466) came in 1.6.0: an item with slots, or a part with a bind or fan blades (spin), is refused before it.
+HELD_FIELDS += ("slots",)
+HELD_PART_FIELDS = ("bind", "spin")
 
 IKEA_PACK = "amluto.ikea-uk"
 IKEA_NOTICE = (
@@ -210,8 +213,11 @@ def _retire(target: Path, published: list[str], moves_file: Path) -> list[str]:
 
 
 def held_back(pack: dict) -> list[str]:
-    """The HELD_FIELDS a pack's items use (none: it is published)."""
-    return sorted({field for item in pack.get("items", []) for field in HELD_FIELDS if field in item})
+    """The HELD_FIELDS a pack's items and the HELD_PART_FIELDS their parts use (none: it is published)."""
+    items = pack.get("items", [])
+    fields = {field for item in items for field in HELD_FIELDS if field in item}
+    fields |= {field for item in items for part in item.get("parts", []) for field in HELD_PART_FIELDS if field in part}
+    return sorted(fields)
 
 
 def publish(target: Path, source: Path = BUNDLED_DIR, moves_file: Path | None = None) -> list[str]:

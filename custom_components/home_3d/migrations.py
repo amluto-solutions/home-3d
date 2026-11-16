@@ -170,8 +170,23 @@ def style_plan(plan: dict[str, Any]) -> dict[str, Any]:
     return plan
 
 
+# ---------------------------------------------------------------------------- 4 -> 5: the neighbourhood
+
+
+def surroundings(plan: dict[str, Any]) -> dict[str, Any]:
+    """Version 4 -> 5: changes nothing. The neighbourhood from OpenStreetMap (#462: `settings.surroundings`, with its
+    way and area kinds as new choices) is new data a plan can hold; the bump makes an older Home 3D open such a plan
+    read-only instead of leaving the map out as invalid."""
+    return plan
+
+
 # MIGRATIONS[n - 1] turns a plan of version n into one of version n + 1
-MIGRATIONS: tuple[Callable[[dict[str, Any]], dict[str, Any]], ...] = (lights_to_lamps, pet_spots, style_plan)
+MIGRATIONS: tuple[Callable[[dict[str, Any]], dict[str, Any]], ...] = (
+    lights_to_lamps,
+    pet_spots,
+    style_plan,
+    surroundings,
+)
 assert len(MIGRATIONS) == PLAN_VERSION - 1, "every plan version but the first has its migration"
 
 

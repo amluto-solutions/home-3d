@@ -64,7 +64,7 @@ export interface ItemProfile {
 }
 
 /** Built-in types that link nothing that glows (no state link). */
-const NO_GLOW = new Set(["parking", "stairwell", "rug", "grid_point", "waste_bin", "mailbox", "wall_switch", "wall_socket", "wifi_ap", "water_heater"]);
+const NO_GLOW = new Set(["parking", "stairwell", "rug", "grid_point", "waste_bin", "mailbox", "wall_switch", "wall_socket", "wifi_ap", "water_heater", "neon_sign"]);
 const SEATS = new Set(["sofa", "sofa_l", "sofa_u", "armchair", "stool", "chair", "bench", "corner_bench", "bar_stool", "office_chair"]);
 const BEDS = new Set(["bed", "bunk_bed"]);
 const STAIRS = new Set(["stairs", "stairs_u"]);
@@ -193,7 +193,7 @@ export function itemProfile(type: string): ItemProfile {
     glow: !NO_GLOW.has(type) && (furnitureLike || kind === "appliance" || kind === "car" || kind === "printer" || kind === "network"),
     secondState: kind === "bed" || (kind === "seating" && isSofaItem(type)),
     // a boiler's yearly service and an air conditioner's filter stay; a radiator valve has none
-    consumable: kind === "appliance" || kind === "screen" || kind === "printer" || (kind === "heating" && !controlOnly),
+    consumable: (kind === "appliance" && type !== "neon_sign") || kind === "screen" || kind === "printer" || (kind === "heating" && !controlOnly),
     confirm: kind === "heating" ? !controlOnly : !NO_CONFIRM.has(kind),
   };
   profiles.set(type, profile);

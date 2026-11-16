@@ -271,6 +271,7 @@ export class Pane3dPart {
         : html`<div class="fp3d-seg fp3d-3d-walls">
             <button aria-pressed=${this._wall3d === "auto"} @click=${() => this.setWall3d("auto")}>${this.t("walls_auto")}</button>
             <button aria-pressed=${this._wall3d === "cut"} @click=${() => this.setWall3d("cut")}>${this.t("walls_cut")}</button>
+            <button class="fp3d-names3d" aria-pressed=${this._names3d} title=${this.t("names3d_hint")} @click=${() => this.setNames3d(!this._names3d)}>${this.t("names3d")}</button>
           </div>`}
       ${this._phone
         ? html`<button class="fp3d-3d-fold" title=${this.t("split_back_2d_hint")} aria-label=${this.t("split_back_2d_hint")} @click=${() => this.toggleSplit()}>← ${this.t("split_back_2d")}</button>`
@@ -303,7 +304,7 @@ export class Pane3dPart {
         .selectedDevice=${this._deviceId}
         .quality=${"auto"}
         .floorThumbs=${false}
-        .roomLabels=${true}
+        .roomLabels=${this._names3d}
         .floorStack=${this.houseTool ? "stacked" : "single"}
         .panelOpen=${false}
         .alerts=${false}
@@ -327,6 +328,16 @@ export class Pane3dPart {
         }}
       ></fp3d-view3d>
     </div>`;
+  }
+
+  /** Room names in the 3D pane on or off (#458): only the editor's pane, remembered on this device. */
+  setNames3d(this: Fp3dEditor, on: boolean): void {
+    this._names3d = on;
+    try {
+      localStorage.setItem("home3d.editorNames", on ? "1" : "0");
+    } catch {
+      // no storage: not remembered
+    }
   }
 
   setWall3d(this: Fp3dEditor, mode: WallMode): void {

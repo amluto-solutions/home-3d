@@ -65,6 +65,14 @@ export interface CardConfig {
   theme_night?: string;
   /** An input_select or input_text whose state names a style (id or name): it wins while it names one. */
   style_entity?: string;
+  /**
+   * The zoom style (#456): the style the house blends into when zoomed in (any style but realistic, an own `my_*` one or
+   * "house" for the house's plan); leave out for none. `zoom_late`: when it sets in, 0 (early) … 100 (late, default 70);
+   * `zoom_scope`: "all" rooms (default) or only the "room" zoomed into.
+   */
+  zoom_style?: string;
+  zoom_late?: number;
+  zoom_scope?: "all" | "room";
   /** Date and time in a corner of the view (default off). */
   clock?: ClockPos;
   /** Accent colour for the neon look and the card's chips ("#rrggbb"); leave out for the stock cyan. */

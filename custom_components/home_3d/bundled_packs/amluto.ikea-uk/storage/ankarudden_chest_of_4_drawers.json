@@ -26,6 +26,36 @@
     "en": "4 drawers · 80x107"
   },
   "ikea": "ANKARUDDEN",
+  "slots": [
+    {
+      "id": "drawer_1",
+      "kind": "drawer",
+      "name": {
+        "en": "Top drawer"
+      }
+    },
+    {
+      "id": "drawer_2",
+      "kind": "drawer",
+      "name": {
+        "en": "Second drawer"
+      }
+    },
+    {
+      "id": "drawer_3",
+      "kind": "drawer",
+      "name": {
+        "en": "Third drawer"
+      }
+    },
+    {
+      "id": "drawer_4",
+      "kind": "drawer",
+      "name": {
+        "en": "Bottom drawer"
+      }
+    }
+  ],
   "parts": [
     {"shape": "box", "x": -0.4888, "z": -0.0187, "w": 0.0225, "d": 0.9625, "y": 0.1121, "h": 0.8692, "color": "wood", "fix": "w"},
     {"shape": "box", "x": 0.4888, "z": -0.0187, "w": 0.0225, "d": 0.9625, "y": 0.1121, "h": 0.8692, "color": "wood", "fix": "w"},
@@ -36,13 +66,43 @@
     {"shape": "cyl", "x": -0.4406, "z": 0.3802, "w": 0.0438, "d": 0.0729, "y": 0, "h": 0.1121, "color": "wood", "fix": "wdh"},
     {"shape": "cyl", "x": 0.4406, "z": -0.3802, "w": 0.0438, "d": 0.0729, "y": 0, "h": 0.1121, "color": "wood", "fix": "wdh"},
     {"shape": "cyl", "x": 0.4406, "z": 0.3802, "w": 0.0438, "d": 0.0729, "y": 0, "h": 0.1121, "color": "wood", "fix": "wdh"},
-    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.7659, "h": 0.2136, "color": "wood"},
-    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458, "y": 0.8931, "h": 0.0112, "color": "dark", "fix": "wdh"},
-    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.5486, "h": 0.2136, "color": "wood"},
-    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458, "y": 0.6758, "h": 0.0112, "color": "dark", "fix": "wdh"},
-    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.3313, "h": 0.2136, "color": "wood"},
-    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458, "y": 0.4586, "h": 0.0112, "color": "dark", "fix": "wdh"},
-    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.114, "h": 0.2136, "color": "wood"},
-    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458, "y": 0.2413, "h": 0.0112, "color": "dark", "fix": "wdh"}
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.7659, "h": 0.2136, "color": "wood", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458, "y": 0.8931, "h": 0.0112, "color": "dark", "fix": "wdh", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.5486, "h": 0.2136, "color": "wood", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458, "y": 0.6758, "h": 0.0112, "color": "dark", "fix": "wdh", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.3313, "h": 0.2136, "color": "wood", "bind": {"slot": "drawer_3", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458, "y": 0.4586, "h": 0.0112, "color": "dark", "fix": "wdh", "bind": {"slot": "drawer_3", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375, "y": 0.114, "h": 0.2136, "color": "wood", "bind": {"slot": "drawer_4", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458, "y": 0.2413, "h": 0.0112, "color": "dark", "fix": "wdh", "bind": {"slot": "drawer_4", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.0935, "w": 0.94, "d": 0.734, "y": 0.7873, "h": 0.0112, "color": "wood", "fix": "h", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "box", "x": -0.4625, "z": 0.0935, "w": 0.015, "d": 0.734, "y": 0.7873, "h": 0.1324, "color": "wood", "fix": "w", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "box", "x": 0.4625, "z": 0.0935, "w": 0.015, "d": 0.734, "y": 0.7873, "h": 0.1324, "color": "wood", "fix": "w", "bind": {"slot": "drawer_1", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.0935, "w": 0.94, "d": 0.734, "y": 0.57, "h": 0.0112, "color": "wood", "fix": "h", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": -0.4625, "z": 0.0935, "w": 0.015, "d": 0.734, "y": 0.57, "h": 0.1324, "color": "wood", "fix": "w", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": 0.4625, "z": 0.0935, "w": 0.015, "d": 0.734, "y": 0.57, "h": 0.1324, "color": "wood", "fix": "w", "bind": {"slot": "drawer_2", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.0935, "w": 0.94, "d": 0.734, "y": 0.3527, "h": 0.0112, "color": "wood", "fix": "h", "bind": {"slot": "drawer_3", "kind": "slide"}},
+    {"shape": "box", "x": -0.4625, "z": 0.0935, "w": 0.015, "d": 0.734, "y": 0.3527, "h": 0.1324, "color": "wood", "fix": "w", "bind": {"slot": "drawer_3", "kind": "slide"}},
+    {"shape": "box", "x": 0.4625, "z": 0.0935, "w": 0.015, "d": 0.734, "y": 0.3527, "h": 0.1324, "color": "wood", "fix": "w", "bind": {"slot": "drawer_3", "kind": "slide"}},
+    {"shape": "box", "x": 0.0, "z": 0.0935, "w": 0.94, "d": 0.734, "y": 0.1354, "h": 0.0112, "color": "wood", "fix": "h", "bind": {"slot": "drawer_4", "kind": "slide"}},
+    {"shape": "box", "x": -0.4625, "z": 0.0935, "w": 0.015, "d": 0.734, "y": 0.1354, "h": 0.1324, "color": "wood", "fix": "w", "bind": {"slot": "drawer_4", "kind": "slide"}},
+    {"shape": "box", "x": 0.4625, "z": 0.0935, "w": 0.015, "d": 0.734, "y": 0.1354, "h": 0.1324, "color": "wood", "fix": "w", "bind": {"slot": "drawer_4", "kind": "slide"}}
+  ],
+  "symbol": [
+    {"shape": "rect", "x": -0.4888, "z": -0.0187, "w": 0.0225, "d": 0.9625},
+    {"shape": "rect", "x": 0.4888, "z": -0.0187, "w": 0.0225, "d": 0.9625},
+    {"shape": "rect", "x": 0.0, "z": -0.0187, "w": 0.955, "d": 0.9625},
+    {"shape": "rect", "x": 0.0, "z": -0.4917, "w": 0.955, "d": 0.0167},
+    {"shape": "circle", "x": -0.4406, "z": -0.3802, "r": 0.0365},
+    {"shape": "circle", "x": -0.4406, "z": 0.3802, "r": 0.0365},
+    {"shape": "circle", "x": 0.4406, "z": -0.3802, "r": 0.0365},
+    {"shape": "circle", "x": 0.4406, "z": 0.3802, "r": 0.0365},
+    {"shape": "rect", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375},
+    {"shape": "rect", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458},
+    {"shape": "rect", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375},
+    {"shape": "rect", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458},
+    {"shape": "rect", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375},
+    {"shape": "rect", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458},
+    {"shape": "rect", "x": 0.0, "z": 0.4812, "w": 0.99, "d": 0.0375},
+    {"shape": "rect", "x": 0.0, "z": 0.5, "w": 0.25, "d": 0.0458}
   ]
 }

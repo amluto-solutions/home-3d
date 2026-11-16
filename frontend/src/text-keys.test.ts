@@ -53,7 +53,7 @@ test("every Settings group, section, card, row, button and choice has English te
     if (c.kind === "text" && c.placeholder) keys.add(c.placeholder);
     if (c.kind === "segment") labels(typeof c.options === "function" ? c.options(env) : c.options);
     if (c.kind === "select") labels(c.options(env));
-    if (c.kind === "checks") labels(c.options);
+    if (c.kind === "checks") labels(typeof c.options === "function" ? c.options(env) : c.options);
   }
   assert.ok(keys.size > 100, `the registry was read (${keys.size} keys)`);
   assert.deepEqual([...keys].filter((k) => !(k in en)), []);

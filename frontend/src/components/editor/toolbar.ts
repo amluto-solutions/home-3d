@@ -30,6 +30,7 @@ export class ToolbarPart {
     // on a touch-only device the hints say taps, not clicks and keys (#228)
     const say = (k: I18nKey, p?: Record<string, string | number>) => touchWording(touchOnly(), k, (key, params) => this.t(key, params), p);
     if (snapped) return say("hint_snapped", { what: snapped });
+    if (this._bgMap) return this.bgMapStep();
     const key = this.hintKeyNow();
     // the kind the next tap adds is always named: it is never inherited silently (#63)
     if (key === "hint_place" && this._placing) return say("hint_place", { name: furnitureName(this.hass, this._placing.type) });
@@ -292,7 +293,8 @@ export class ToolbarPart {
 
   /** Whether the empty home's checklist is up (the side panel leaves the first-floor call to it, #262). */
   startShowing(this: Fp3dEditor): boolean {
-    return this.isEditor && this._tool === "select" && !this._placing && startChecklist(this._doc).show;
+    // aligning a picture to the map (#465) needs the hint bar, which the checklist would cover
+    return this.isEditor && this._tool === "select" && !this._placing && !this._bgMap && startChecklist(this._doc).show;
   }
 
   /** The empty home's checklist (#193): replaces the hint pill until the first room exists. */

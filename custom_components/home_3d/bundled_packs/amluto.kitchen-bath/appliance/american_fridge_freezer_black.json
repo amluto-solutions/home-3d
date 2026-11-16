@@ -8,15 +8,17 @@
   "family": "american_fridge_freezer",
   "variant": {"en": "Side-by-side black"},
   "electric": true,
+  "slots": [{"id": "freezer_door", "kind": "contact", "name": {"en": "Freezer door"}}, {"id": "fridge_door", "kind": "contact", "name": {"en": "Fridge door"}}],
   "parts": [
     {"shape": "rbox", "x": 0.0, "z": -0.0694, "w": 1.0, "d": 0.8611, "y": 0.0112, "h": 0.9888, "color": "dark", "round": 0.04},
     {"shape": "box", "x": 0.0, "z": -0.0625, "w": 0.9121, "d": 0.7361, "y": 0.0, "h": 0.0112, "color": "dark", "fix": "h"},
-    {"shape": "rbox", "x": -0.2791, "z": 0.3958, "w": 0.4418, "d": 0.0694, "y": 0.0169, "h": 0.9831, "color": "dark", "round": 0.08},
-    {"shape": "rbox", "x": 0.2242, "z": 0.3958, "w": 0.5516, "d": 0.0694, "y": 0.0169, "h": 0.9831, "color": "dark", "round": 0.08},
-    {"shape": "rbox", "x": -0.0879, "z": 0.4653, "w": 0.0242, "d": 0.0694, "y": 0.4663, "h": 0.4213, "color": "metal", "round": 0.4, "fix": "w"},
-    {"shape": "rbox", "x": -0.022, "z": 0.4653, "w": 0.0242, "d": 0.0694, "y": 0.4663, "h": 0.4213, "color": "metal", "round": 0.4, "fix": "w"},
-    {"shape": "box", "x": -0.2527, "z": 0.4389, "w": 0.2198, "d": 0.0167, "y": 0.5618, "h": 0.1685, "color": "dark"},
-    {"shape": "box", "x": -0.2527, "z": 0.4486, "w": 0.1319, "d": 0.0028, "y": 0.6966, "h": 0.0225, "color": "#7fe3ff", "edges": "faint"}
+    {"shape": "rbox", "x": -0.2791, "z": 0.3958, "w": 0.4418, "d": 0.0694, "y": 0.0169, "h": 0.9831, "color": "dark", "round": 0.08, "bind": {"slot": "freezer_door", "kind": "open", "hinge": "left"}},
+    {"shape": "rbox", "x": 0.2242, "z": 0.3958, "w": 0.5516, "d": 0.0694, "y": 0.0169, "h": 0.9831, "color": "dark", "round": 0.08, "bind": {"slot": "fridge_door", "kind": "open", "hinge": "right"}},
+    {"shape": "rbox", "x": -0.0879, "z": 0.4653, "w": 0.0242, "d": 0.0694, "y": 0.4663, "h": 0.4213, "color": "metal", "round": 0.4, "fix": "w", "bind": {"slot": "freezer_door", "kind": "open", "hinge": "left"}},
+    {"shape": "rbox", "x": -0.022, "z": 0.4653, "w": 0.0242, "d": 0.0694, "y": 0.4663, "h": 0.4213, "color": "metal", "round": 0.4, "fix": "w", "bind": {"slot": "fridge_door", "kind": "open", "hinge": "right"}},
+    {"shape": "box", "x": -0.2527, "z": 0.4389, "w": 0.2198, "d": 0.0167, "y": 0.5618, "h": 0.1685, "color": "dark", "bind": {"slot": "freezer_door", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": -0.2527, "z": 0.4486, "w": 0.1319, "d": 0.0028, "y": 0.6966, "h": 0.0225, "color": "#7fe3ff", "edges": "faint", "bind": {"slot": "freezer_door", "kind": "open", "hinge": "left"}},
+    {"shape": "box", "x": -0.0, "z": 0.3653, "w": 0.9736, "d": 0.0083, "y": 0.0236, "h": 0.9696, "color": "white", "edges": "faint"}
   ],
   "symbol": [
     {"shape": "line", "x1": -0.0549, "z1": 0.3611, "x2": -0.0549, "z2": 0.5},

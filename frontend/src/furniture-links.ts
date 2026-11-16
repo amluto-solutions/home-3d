@@ -72,7 +72,7 @@ export interface LinkField {
 
 /** Which main link field an item shows: from its type, else its pack family and tags (#132). */
 export function linkField(type: string): LinkField {
-  if (isLamp(type)) return { label: "furn_entity_light", domains: ["light", "switch", "input_boolean"] };
+  if (isLamp(type) || type === "neon_sign") return { label: "furn_entity_light", domains: ["light", "switch", "input_boolean"] };
   if (packMotion(type)) return { label: "motor_cover", domains: ["cover", "switch"] };
   if (type === "ac_unit" || isThermostatItem(type)) return { label: "furn_entity_climate", domains: ["climate"] };
   if (isHeaterItem(type)) return { label: "furn_entity_heater", domains: ["climate", "water_heater", "switch"] };
@@ -94,7 +94,7 @@ export function mainLinkAccepts(hass: HomeAssistant, type: string, id: string): 
   // a generic sensor or switch marker stands for any device: any entity (#79)
   if (isEntityMarker(type)) return true;
   // a lamp can follow a light or a plain switch (e.g. a relay that switches the ceiling light)
-  if (isLamp(type)) return /^(light|switch|input_boolean)\./.test(id);
+  if (isLamp(type) || type === "neon_sign") return /^(light|switch|input_boolean)\./.test(id);
   // a radiator (built-in, a pack's radiator with a TRV, a smart valve, a wall thermostat) and an air conditioner: their
   // thermostat (#81); before the TV test, so a thermostat's display does not make it a TV (#132)
   if (type === "ac_unit" || isThermostatItem(type)) return id.startsWith("climate.");

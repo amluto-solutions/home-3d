@@ -54,6 +54,13 @@ test("a device outside every room is elsewhere; an unknown id is not", () => {
   assert.equal(elsewhere(index, "switch.unknown", "lounge", true), null);
 });
 
+test("a device in no room acts on its own floor; from another floor it opens its floor (#1103)", () => {
+  assert.equal(elsewhere(index, "switch.sample_garden", "lounge", true, "f1"), null);
+  assert.deepEqual(elsewhere(index, "switch.sample_garden", "lounge", true, "f2"), { floorId: "f1", roomId: null });
+  // a device of a room stays redirected, whatever floor is open
+  assert.deepEqual(elsewhere(index, "light.sample_kitchen", "lounge", true, "f1"), { floorId: "f1", roomId: "kitchen" });
+});
+
 test("the preference is off unless stored as 1", () => {
   const store = new Map<string, string>();
   (globalThis as { localStorage?: unknown }).localStorage = { getItem: (k: string) => store.get(k) ?? null };
