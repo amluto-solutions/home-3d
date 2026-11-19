@@ -326,6 +326,13 @@ test("the own building and buildings standing in the plan's rooms are not drawn;
   assert.equal(placed.buildings.length, 1);
   assert.deepEqual(placed.buildings[0].p[0], [26, 4]);
   assert.equal(placed.flat, false);
+  // on the ground floor's ground unless the map is moved up or down (#482); a map saved without a height is at 0
+  assert.equal(placed.y, 0);
+  const at = (y: number) => placedSurroundings({ ...b, settings: { ...b.settings, surroundings: s, surroundings_y: y } })!.y;
+  assert.equal(at(-1.2), -1.2);
+  assert.equal(at(99), 30);
+  assert.equal(at(-99), -30);
+  assert.equal(at(Number.NaN), 0);
   assert.equal(placedSurroundings({ ...b, settings: { ...b.settings, surroundings: { ...s, on: false } } }), null);
   assert.equal(placedSurroundings(b), null);
   const picked = { ...s, hide: [1], show: [2], flat: true };
@@ -435,6 +442,9 @@ test("the own outline, the corners to snap to and the redraw key follow the map"
   const key = surroundKey(withMap);
   assert.notEqual(key, "");
   assert.notEqual(surroundKey({ ...withMap, settings: { ...withMap.settings, surroundings: { ...s, flat: true } } }), key);
+  // a new height redraws the map and its shadows (#482); no height and 0 are the same map
+  assert.notEqual(surroundKey({ ...withMap, settings: { ...withMap.settings, surroundings_y: 1.5 } }), key);
+  assert.equal(surroundKey({ ...withMap, settings: { ...withMap.settings, surroundings_y: 0 } }), key);
   assert.equal(surroundKey({ ...withMap, settings: { ...withMap.settings, surroundings: { ...s, on: false } } }), "");
 });
 

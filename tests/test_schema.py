@@ -337,6 +337,21 @@ def test_material_per_colour_role_is_kept_and_checked() -> None:
             FURNITURE_SCHEMA({**base, "materials": bad})
 
 
+def test_a_placed_item_keeps_its_front_colour_as_a_role() -> None:
+    """The front colour and material (#478) are a role of the closed set since plan version 6."""
+    base = {"id": "k1", "type": "kitchen", "x": 1, "z": 1, "rotation": 0, "w": 2, "d": 0.6, "h": 0.9, "variant": None}
+    out = FURNITURE_SCHEMA({**base, "colors": {"front": "#5D7590", "white": "#edebe7"}, "materials": {"front": "matt"}})
+    assert out["colors"] == {"front": "#5D7590", "white": "#edebe7"}
+    assert out["materials"] == {"front": "matt"}
+    for bad in ({"fronts": "#5d7590"}, {"front": "blue"}, {"front": None}):
+        with pytest.raises(vol.Invalid):
+            FURNITURE_SCHEMA({**base, "colors": bad})
+    # the materials are the closed set every role takes
+    for bad in (None, 5, "velvet", "x" * 13):
+        with pytest.raises(vol.Invalid):
+            FURNITURE_SCHEMA({**base, "materials": {"front": bad}})
+
+
 def test_materials_match_the_frontend() -> None:
     """The backend checks the same materials the item panel offers (frontend/src/role-materials.ts)."""
     src = (Path(__file__).parents[1] / "frontend" / "src" / "role-materials.ts").read_text(encoding="utf-8")
@@ -588,6 +603,19 @@ def test_roof_section_keeps_its_turn() -> None:
     assert (turned["rotation"], turned["pivot"]) == (30, [5, 4])
     with pytest.raises(vol.Invalid):
         ROOF_SECTION_SCHEMA({**sec, "rotation": 400})
+
+
+def test_roof_section_keeps_its_upper_pitch() -> None:
+    """A mansard's upper slope (#479): optional, None or missing = 30 degrees; a plan without it loads as is."""
+    sec = {"id": "s", "x0": 0, "z0": 0, "x1": 10, "z1": 8, "shape": "mansard", "eave_a": 3, "eave_b": 3, "base": 3}
+    plain = ROOF_SECTION_SCHEMA(sec)
+    assert "pitch_upper" not in plain
+    assert ROOF_SECTION_SCHEMA({**sec, "pitch_upper": None})["pitch_upper"] is None
+    assert ROOF_SECTION_SCHEMA({**sec, "pitch_upper": 45})["pitch_upper"] == 45
+    assert ROOF_SECTION_SCHEMA({**sec, "pitch_upper": "12.5"})["pitch_upper"] == 12.5
+    for bad in (-1, 81, "steep"):
+        with pytest.raises(vol.Invalid):
+            ROOF_SECTION_SCHEMA({**sec, "pitch_upper": bad})
 
 
 def test_module_data_on_furniture_and_areas() -> None:

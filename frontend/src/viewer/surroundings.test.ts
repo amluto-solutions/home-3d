@@ -158,6 +158,7 @@ test("the neighbours near the house add their shadows into the garden; far ones 
     areas: [],
     trees: [],
     flat: false,
+    y: 0,
     ...extra,
   });
   const own: [number, number, number, number] = [0, -3, 12, 8];
@@ -172,6 +173,10 @@ test("the neighbours near the house add their shadows into the garden; far ones 
   assert.deepEqual(neighbourShadows(flat, own, placed({ flat: true }), [1, 0], 30, 0.2), own);
   assert.equal(flat.length, 0);
   assert.deepEqual(neighbourShadows([], own, null, [1, 0], 30, 0.2), own, "no map, the house's own box");
+  // a map lowered below the lawn (a street under the garden, #482): the blocks keep a height, no empty or upside-down shadow
+  const low: number[] = [];
+  neighbourShadows(low, own, placed(), [1, 0], 30, -50);
+  assert.ok(low.length > 0 && low.every(Number.isFinite));
 });
 
 test("the viewer: the map only on the ground floor, shadows dropped with quality Low, sun and patches use the aligned north", () => {
@@ -183,6 +188,10 @@ test("the viewer: the map only on the ground floor, shadows dropped with quality
   // the shadow is drawn only above quality Low (the neighbours' with the house's)
   assert.match(src, /const shade = on && !this\.lowQuality && /);
   assert.match(src, /neighbourShadows\(tris, own, placedOnce\(b\), toSun,/);
+  // the map stands on the ground floor's ground moved by its height (#482): drawn, its sky edge and its shadows
+  assert.match(src, /const ground = groundLevel\(fv\.floor\) \+ placed\.y;/);
+  assert.match(src, /const ground = groundLevel\(fv\.floor\) \+ \(placed\?\.y \?\? 0\);/);
+  assert.match(src, /groundLevel\(gf\) \+ \(placedOnce\(b\)\?\.y \?\? 0\) - lawn/);
   // the shadow's key follows the map, and the sun's direction comes from the plan's north (the map turns it)
   assert.match(src, /this\.roofGeos\.length\},\$\{surroundKey\(b\)\}`/);
   assert.match(src, /const toSun: \[number, number\] = \[Math\.sin\(north \+ az\), -Math\.cos\(north \+ az\)\]/);

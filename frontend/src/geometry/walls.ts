@@ -70,6 +70,8 @@ export interface WallResult {
   warnings: string[];
   /** Room pairs whose shared wall is left out ("no wall"): they form one space, also for the light. */
   open: [string, string][];
+  /** The room edges of each wall left out by a height of 0 (the editor shows and lifts it from either room, #1151). */
+  noWalls: WallSource[][];
   /**
    * Where the parts of each room edge start (m from points[edge], sorted), by "room:edge": the parts a per-part
    * wall_heights list follows, one per cut by another room's corner, a free wall's end or a split (#157).
@@ -250,6 +252,7 @@ export function generateWalls(rooms: readonly Room[], options: WallOptions, free
     return slope ? { height: Math.max(slope.h0, slope.h1), slope } : { height: heightOf(list) };
   };
   const open: [string, string][] = [];
+  const noWalls: WallSource[][] = [];
   let drafts: Draft[] = [];
   for (const g of groups.values()) {
     const first = g[0];
@@ -259,6 +262,7 @@ export function generateWalls(rooms: readonly Room[], options: WallOptions, free
     }
     if (noWall(partner ? [first, partner] : [first])) {
       if (partner) open.push([first.room, partner.room]);
+      noWalls.push(partner ? [src(first), src(partner)] : [src(first)]);
       continue;
     }
     if (partner) {
@@ -376,7 +380,7 @@ export function generateWalls(rooms: readonly Room[], options: WallOptions, free
       ...(w.slope ? { slope: w.slope } : {}),
     };
   });
-  return { walls, warnings: [...new Set(warnings)], open, parts: partsOf };
+  return { walls, warnings: [...new Set(warnings)], open, noWalls, parts: partsOf };
 }
 
 function wallId(a: Vec2, b: Vec2): string {

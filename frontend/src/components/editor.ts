@@ -320,9 +320,17 @@ export class Fp3dEditor extends LitElement {
   lastFurnTap: { id: string; t: number } | null = null;
   /** Whether Shift is held (the 3D views report taps without their keys). */
   shiftHeld = false;
-  readonly onShift = (e: KeyboardEvent) => (this.shiftHeld = e.shiftKey);
-  /** The window lost the keys (Alt+Tab with Shift down, a hidden tab): no keyup comes, so Shift is let go here. */
-  readonly onKeysLost = () => (this.shiftHeld = false);
+  readonly onShift = (e: KeyboardEvent) => {
+    this.shiftHeld = e.shiftKey;
+    if (e.key === " ") this.spaceHeld = false;
+  };
+  /** Space is held down: a mouse drag pans the plan and never grabs an item (#484). */
+  spaceHeld = false;
+  /** The window lost the keys (Alt+Tab with Shift down, a hidden tab): no keyup comes, so Shift and Space are let go here. */
+  readonly onKeysLost = () => {
+    this.shiftHeld = false;
+    this.spaceHeld = false;
+  };
   /** Library pictures for the wall view's side bar (type -> image). */
   kitPics = new Map<string, string>();
   kitPicsAsked = new Set<string>();
@@ -1053,6 +1061,12 @@ export class Fp3dEditor extends LitElement {
     // the rack sheet (#113) has its own keys; none edits the plan behind it
     if (this._rackSheet) {
       if (e.key === "Escape") this._rackSheet = null;
+      return;
+    }
+    if (e.key === " " && !path.some((el) => el instanceof HTMLButtonElement)) {
+      // held for panning: the page must not scroll
+      this.spaceHeld = true;
+      e.preventDefault();
       return;
     }
     const mod = e.ctrlKey || e.metaKey;

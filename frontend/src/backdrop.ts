@@ -27,3 +27,11 @@ export function backdropCss(b: Backdrop | null | undefined): string | null {
   const dim = Math.min(0.9, Math.max(0, b.dim ?? 0.45));
   return `linear-gradient(rgba(4, 8, 16, ${dim}), rgba(4, 8, 16, ${dim})), url("${img}") center / cover no-repeat`;
 }
+
+/**
+ * Whether the real sky (#476) shows behind the house: on unless switched off in Settings, never over an own background
+ * that draws (colour, gradient, picture) and never in the blueprint look.
+ */
+export function realSkyShown(settings: Pick<BuildingSettings, "sky" | "backdrop"> | null | undefined, base: string): boolean {
+  return !!settings && settings.sky !== false && backdropCss(settings.backdrop) === null && base !== "blueprint";
+}

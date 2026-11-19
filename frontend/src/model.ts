@@ -555,6 +555,11 @@ export interface RoofSection {
   /** Slopes in degrees. */
   pitch_a: number;
   pitch_b: number;
+  /**
+   * Mansard only: the slope of the upper, flatter part up to the ridge in degrees (5 … 60); pitch_a and pitch_b
+   * set the steep lower part. Null or missing = 30°, as every mansard drawn before (#479).
+   */
+  pitch_upper?: number | null;
   /** Top of the walls below: gable and knee walls are built from here up to the roof. */
   base: number;
   /** Overhang beyond the walls (null = the roof setting). */
@@ -973,6 +978,10 @@ export interface BuildingSettings {
   sun_patches?: boolean;
   /** The sun's arc over the house and the house's shadow on the ground (default on). */
   sun_shadow?: boolean;
+  /** The real sky behind the house: sunset colours, stars, the moon in its phase, clouds with the weather (default on, #476). */
+  sky?: boolean;
+  /** "Fly in from space": the view opens with a globe that dives in onto the house (default off, #477). */
+  flyin?: boolean;
   /** Old home setting, no longer read: the light out of the windows is a setting of each device, off by default (#274). */
   window_glow?: boolean;
   /** The ground around the house: its height and the earth around cellars. */
@@ -1021,6 +1030,11 @@ export interface BuildingSettings {
   mods?: ModuleData | null;
   /** The neighbourhood from OpenStreetMap around the house (surroundings.ts, #462), fetched once and kept in the plan. */
   surroundings?: Surroundings | null;
+  /**
+   * The whole map moved up (+) or down (-) from the ground floor's ground (m, -30 to 30), for a street that lies higher
+   * or lower; absent = 0 (#482). Beside the map, not in it: the map's object takes no new keys without a plan version.
+   */
+  surroundings_y?: number;
 }
 
 /** A building of the neighbourhood: its footprint in map metres (east, north from the origin) and its height (m). */
@@ -1508,7 +1522,7 @@ export interface PresenceLink {
  * version (custom_components/home_3d/migrations.py) before anyone sees it; the frontend never changes the version of a
  * plan it was given, so a plan it saves is migrated again where needed (an older backend keeps a version-1 plan).
  */
-export const PLAN_VERSION = 5;
+export const PLAN_VERSION = 6;
 
 /** Whether `version` is one of a plan this frontend reads (1 up to PLAN_VERSION). */
 export function knownPlanVersion(version: unknown): version is number {

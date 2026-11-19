@@ -13,7 +13,7 @@ test("a lamp switched by a relay takes colour and brightness from its colour ent
   // the bulb unavailable: the relay's own (plain) glow
   assert.deepEqual(lightGlow(relay as never, { ...bulb, state: "unavailable" } as never)!.color, [1, 0.71, 0.28]);
 });
-import { slatTilt, slatsInverted, climateReading, coverTiltButtons, isPulseDrive, isRelevant, apOnline, fanSpeed, climateModeGlow, cooktopLevel, onlyColor, appColor, carLocked, areaEntities, otherAreaEntities, roomClimateSensors, roomClimateValue, unassignedEntities, autoPlace, entityName, fridgeDoors, furnitureEntities, groupByDevice, isActive, kindOf, lightGlow, openingEntities, openingState, powerSensorsOf, primaryEntities, roomPanelEntities, windowPosition, confirmEntities, robotRoom, robotRoomSensor, roomKey, vacuumCleaning } from "./devices.ts";
+import { chargerStatus, slatTilt, slatsInverted, climateReading, coverTiltButtons, isPulseDrive, isRelevant, apOnline, fanSpeed, climateModeGlow, cooktopLevel, onlyColor, appColor, carLocked, areaEntities, otherAreaEntities, roomClimateSensors, roomClimateValue, unassignedEntities, autoPlace, entityName, fridgeDoors, furnitureEntities, groupByDevice, isActive, kindOf, lightGlow, openingEntities, openingState, powerSensorsOf, primaryEntities, roomPanelEntities, windowPosition, confirmEntities, robotRoom, robotRoomSensor, roomKey, vacuumCleaning } from "./devices.ts";
 import type { Floor, Opening, Room } from "./model.ts";
 import { centroid, newFloor, pointInPolygon } from "./model.ts";
 import type { HomeAssistant } from "./types.ts";
@@ -922,4 +922,60 @@ test("a venetian blind reports how far its slats stand open; \"Invert slats\" tu
   assert.equal(slatsInverted(null, "cover.sample_raff"), false);
   const ents = openingEntities({ states: {} } as unknown as HomeAssistant, [floor]);
   assert.equal(ents.get("w")?.slatInvert, true);
+});
+
+test("the room panel drops the device name Home Assistant 2026.11 puts in front of a renamed entity (#484)", () => {
+  const hass = {
+    states: { "switch.sample_a": { entity_id: "switch.sample_a", state: "on", attributes: { friendly_name: "Sample switch Ceiling light" } } },
+    entities: { "switch.sample_a": { entity_id: "switch.sample_a", name: "Ceiling light", device_id: "d1" } },
+    devices: { d1: { id: "d1", name: "Sample switch" } },
+  } as unknown as HomeAssistant;
+  assert.equal(entityName(hass, "switch.sample_a", undefined, true), "Ceiling light");
+  // everywhere else the friendly name stays as it is
+  assert.equal(entityName(hass, "switch.sample_a"), "Sample switch Ceiling light");
+  // a device the user renamed: the name they gave counts
+  (hass.devices as Record<string, { name_by_user?: string }>).d1.name_by_user = "Sample switch";
+  assert.equal(entityName(hass, "switch.sample_a", undefined, true), "Ceiling light");
+  // a friendly name that is not "device + entity" is left alone
+  (hass.states["switch.sample_a"].attributes as Record<string, unknown>).friendly_name = "Hall ceiling";
+  assert.equal(entityName(hass, "switch.sample_a", undefined, true), "Hall ceiling");
+});
+
+test("own navigate buttons write the page they came from into the history state (#484)", async () => {
+  const { haNavigate, runButton } = await import("./devices.ts");
+  const g = globalThis as Record<string, unknown>;
+  const seen: { state: unknown; url: string }[] = [];
+  const events: { type: string; replace: unknown }[] = [];
+  const keep = { location: g.location, history: g.history, window: g.window };
+  g.location = { pathname: "/lovelace/plan", search: "" };
+  g.history = { state: null, pushState: (state: unknown, _t: string, url: string) => seen.push({ state, url }) };
+  g.window = { dispatchEvent: (e: { type: string; detail: { replace: unknown } }) => events.push({ type: e.type, replace: e.detail.replace }) };
+  try {
+    haNavigate("/lovelace/energy");
+    assert.deepEqual(seen, [{ state: { from: "/lovelace/plan" }, url: "/lovelace/energy" }]);
+    assert.deepEqual(events, [{ type: "location-changed", replace: false }]);
+    // the page that is shown already: no new entry
+    haNavigate("/lovelace/plan");
+    assert.equal(seen.length, 1);
+    runButton({} as never, {} as never, { action: "navigate", target: "/lovelace/more" }, () => "");
+    assert.deepEqual(seen[1], { state: { from: "/lovelace/plan" }, url: "/lovelace/more" });
+  } finally {
+    Object.assign(g, keep);
+  }
+});
+
+test("a charger's status: whole words, so not_charging or charger_free is no charging and disconnected no car (#483)", () => {
+  const c = (raw: string) => chargerStatus(raw);
+  assert.deepEqual(c("charging"), { charging: true, plugged: true });
+  assert.deepEqual(c("Laden"), { charging: true, plugged: true });
+  assert.deepEqual(c("not_charging"), { charging: false, plugged: false });
+  assert.deepEqual(c("ready_to_charge"), { charging: false, plugged: true });
+  assert.deepEqual(c("charger_free"), { charging: false, plugged: false });
+  assert.deepEqual(c("charger_insert"), { charging: false, plugged: true });
+  assert.deepEqual(c("disconnected"), { charging: false, plugged: false });
+  assert.deepEqual(c("unplugged"), { charging: false, plugged: false });
+  assert.deepEqual(c("connected"), { charging: false, plugged: true });
+  assert.deepEqual(c("Available"), { charging: false, plugged: false });
+  assert.deepEqual(c("SuspendedEV"), { charging: false, plugged: true });
+  assert.deepEqual(c("charge complete"), { charging: false, plugged: true });
 });

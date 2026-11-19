@@ -88,6 +88,10 @@ So **bump `PLAN_VERSION` whenever the stored plan can hold a value an older rele
 
 ### Plan versions
 
+- **6**: Home 3D 1.7.0. The step from 5 changes nothing. The plan can hold the colour and material of door and drawer
+  fronts (`front` in an item's `colors` and `materials`, #478), the height of the surroundings (`settings.surroundings_y`, #482)
+  and the upper pitch of a mansard roof section (`pitch_upper`, #479). A Home 3D that reads versions up to 5 (1.6.x)
+  shows a version-6 plan read-only (the plan as stored before the upgrade stays as a restore point).
 - **5**: the neighbourhood from OpenStreetMap (`settings.surroundings`, #462). It is `null` or absent (no map), or an
   object with:
 
@@ -112,9 +116,15 @@ So **bump `PLAN_VERSION` whenever the stored plan can hold a value an older rele
   500 areas. The way and area kinds are new choices, so the version went up; the 4 -> 5 step changes nothing, and a
   plan of version 4 or older loads unchanged with no map. A Home 3D that reads versions up to 4 (1.5.x) shows a
   version-5 plan read-only, with or without a map (the plan as stored before the upgrade stays as a restore point).
+
+  Beside the map, `settings.surroundings_y` (optional, #482, version 6) moves the whole map up (+) or down (-) from the ground
+  floor's ground, in metres (-30 to 30; absent = 0). It sits beside the map and not in it, so Load again keeps it and
+  removing the map drops it too. An older plan has none and loads unchanged.
 - **4**: the house's style plan (`settings.style_day`, `style_evening`, `style_night`, `style_switch` = `"sun"` or `"time"`, `style_morning_at`, `style_evening_at`, `style_night_at` as `HH:MM`, `style_entity`). `style_switch` is a new choice, so the version went up; the 3 -> 4 step changes nothing. A Home 3D that reads versions up to 3 shows a version-4 plan read-only.
 - Own styles (`settings.styles_custom`, #441): a list of up to 40 dicts, each with `id` (`my_` and letters or digits), `name` and the settings of a style (`base`, `palette`, `natural`, `ao`, `dim`, `floors`, `cutDark`, `bg`, `signal`, `shadows`, `sun`). It is an optional list of loose dicts, so the version stays 4; the frontend clamps every value it reads and drops what it does not know.
 - Wall and facade colours (#437): a room's optional `wall_color` (all its walls) and `wall_colors` (one per wall, `null` = `wall_color`), and the setting `facade_color`, all `"#rrggbb"`. Optional keys, so the version stays 4.
 - Covers (#453): a window or door's optional `blind_side` (`"inside"` puts the cassette and cloth on the room's side; absent or `"outside"` is the default) and `slat_invert` (`true`: a venetian blind's slats count the other way round, 0 = open). Optional keys, so the version stays 4.
+- Front colour (#478): a placed item's `colors` and `materials` may also hold `front` (door and drawer fronts, a pack colour role of 1.7.0; `"#rrggbb"` and a material). Since version 6 `front` is a role of the closed set, like `white` and `wood`. Where fronts and carcass are told apart, the carcass is the `white` colour.
 - A colour for a single wall (#460): a wall drawn on its own (`floors[].walls[]`) has an optional `color` (`"#rrggbb"`, `null` = the room's wall colour, outside rooms the facade colour), for both its sides. An optional key, so no bump.
 - Room names (#458): a room's optional `label_offset` (`[x, z]` in metres, -100 to 100: its name moved from the room's middle, in the plan and in 3D; `null` or missing = in the middle) and the setting `label_scale` (0.5 to 2, the size of the room names in 3D; missing = 1). Optional keys, so no bump.
+- Upper roof pitch (#479): a roof section's optional `pitch_upper` (degrees) sets the slope of the upper, flatter part of a **mansard** roof; `pitch_a` and `pitch_b` still set the steep lower part. The frontend keeps it in 5 to 60; `null`, missing or any other shape means 30 (the slope of every mansard drawn before), and a mansard's break and ridge position follow from it (a steeper upper slope raises the ridge, the break stays). The schema takes `null` or a number from 0 to 80 and the frontend clamps it. An optional key: older plans load unchanged and a section without it keeps 30 degrees. It came with version 6, so a Home 3D that does not know it (1.6.x) opens such a plan read-only.

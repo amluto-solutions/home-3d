@@ -22,3 +22,15 @@ test("only safe picture addresses get into the CSS", () => {
   assert.equal(backdropImage('/local/a.jpg") ; x'), null);
   assert.equal(backdropCss({ kind: "image", image: "" }), null);
 });
+
+test("the real sky shows unless switched off, over an own background that draws, or in the blueprint look (#476)", async () => {
+  const { realSkyShown } = await import("./backdrop.ts");
+  assert.equal(realSkyShown({}, "neon"), true);
+  assert.equal(realSkyShown({ sky: true }, "realistic"), true);
+  assert.equal(realSkyShown({ sky: false }, "neon"), false);
+  assert.equal(realSkyShown({}, "blueprint"), false);
+  assert.equal(realSkyShown({ backdrop: { kind: "color", color: "#112233" } }, "neon"), false);
+  // a picture with an unsafe address does not draw: the sky stays
+  assert.equal(realSkyShown({ backdrop: { kind: "image", image: "bad url" } }, "neon"), true);
+  assert.equal(realSkyShown(null, "neon"), false);
+});

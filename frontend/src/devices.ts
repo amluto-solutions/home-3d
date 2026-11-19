@@ -386,9 +386,17 @@ export function powerSensorsOf(hass: HomeAssistant, deviceId: string): string[] 
 }
 
 /** Friendly name without a leading area name ("Living room ceiling light" in the Living room -> "ceiling light"). */
-export function entityName(hass: HomeAssistant, entityId: string, areaName?: string): string {
+export function entityName(hass: HomeAssistant, entityId: string, areaName?: string, dropDevice = false): string {
   const st = hass.states[entityId];
-  const name = (st?.attributes.friendly_name as string | undefined) ?? hass.entities?.[entityId]?.name ?? entityId;
+  const entry = hass.entities?.[entityId];
+  let name = (st?.attributes.friendly_name as string | undefined) ?? entry?.name ?? entityId;
+  // Home Assistant 2026.11: friendly_name is the legacy "device + entity" name; where the device stands apart
+  // (the room panel), show the entity's own name as Home Assistant's dialogs do ("Sample switch Ceiling light" -> "Ceiling light") (#484)
+  if (dropDevice && entry?.name && entry.device_id) {
+    const dev = hass.devices?.[entry.device_id];
+    const devName = (dev?.name_by_user || dev?.name || "").trim();
+    if (devName && name.toLowerCase() === `${devName} ${entry.name}`.toLowerCase()) name = entry.name;
+  }
   if (areaName && name.length > areaName.length + 1 && name.toLowerCase().startsWith(areaName.toLowerCase() + " ")) {
     const rest = name.slice(areaName.length + 1);
     return rest.charAt(0).toUpperCase() + rest.slice(1);
@@ -417,6 +425,19 @@ export function alarmTriggered(st: HassEntity | undefined): boolean {
   if (st.entity_id.startsWith("alarm_control_panel.")) return st.state === "triggered";
   const cls = st.attributes.device_class;
   return st.entity_id.startsWith("binary_sensor.") && (cls === "smoke" || cls === "carbon_monoxide" || cls === "gas") && st.state === "on";
+}
+
+/**
+ * A charger's status text read as charging and plugged in. Whole words only: "not_charging", "ready_to_charge" and
+ * "charger_free" are no charging, "disconnected" and "unplugged" no car at the cable.
+ */
+export function chargerStatus(raw: string): { charging: boolean; plugged: boolean } {
+  const s = raw.toLowerCase().trim().replace(/[\s-]+/g, "_");
+  const not = /(^|_)(not|no|nicht|kein|keine|un|dis)_?(charging|charge|connected|plugged|verbunden|angesteckt)/.test(s);
+  const free = /charger_free|^available$|^idle$|frei|abgesteckt|no_car|kein_fahrzeug/.test(s);
+  const charging = !not && !/ready_to_charge|charger_|complete|finish|charged|fertig|beendet|voll$|full/.test(s) && /(^|_)(charging|charge|laden|lädt|ladend|lade)($|_)/.test(s);
+  const plugged = charging || (!not && !free && /connect|plug|ready|insert|angesteckt|verbunden|wait|paused|suspend|preparing|complete|finish|charged|fertig|full|voll/.test(s));
+  return { charging, plugged };
 }
 
 export function isUnavailable(st: HassEntity | undefined): boolean {
@@ -1428,14 +1449,23 @@ export function favoriteCall(entityId: string): [domain: string, service: string
 }
 
 /**
+ * Opens a path inside Home Assistant without a reload, the way its own navigate() does: the new history entry
+ * names the page it came from (`from`), so a subview's back arrow goes back here and not to the dashboard's first view (#484).
+ */
+export function haNavigate(path: string): void {
+  if (path === location.pathname + location.search) return;
+  history.pushState({ from: location.pathname }, "", path);
+  window.dispatchEvent(new CustomEvent("location-changed", { bubbles: true, composed: true, detail: { replace: false } }));
+}
+
+/**
  * Run an own button (D143) from an element inside the dashboard: navigate, more-info, a service, or a
  * DOM event – "ll-custom" is what Home Assistant's fire-dom-event sends, and browser_mod listens for it.
  */
 export function runButton(hass: HomeAssistant, from: HTMLElement, b: { action: string; target?: string | null; data?: Record<string, unknown> | null }, failed: (error: string) => string): void {
   const target = b.target?.trim() ?? "";
   if (b.action === "navigate" && target) {
-    history.pushState(null, "", target);
-    window.dispatchEvent(new CustomEvent("location-changed", { detail: { replace: false } }));
+    haNavigate(target);
   } else if (b.action === "more_info" && target) {
     from.dispatchEvent(new CustomEvent("hass-more-info", { detail: { entityId: target }, bubbles: true, composed: true }));
   } else if (b.action === "service" && target.includes(".")) {

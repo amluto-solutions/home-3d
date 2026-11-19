@@ -278,3 +278,26 @@ test("a roof window on a flat roof lies flush, not tilted on a frame like a modu
   const ys = c.map((p) => p[1]);
   near(Math.max(...ys) - Math.min(...ys), 0);
 });
+
+test("a turned flat roof's face turns with it: solar fields and roof windows lie square to the roof (#480, NeonPlan #1147)", async () => {
+  const { sectionFrame } = await import("./roof-sections.ts");
+  const plain: RoofSection = { id: "f", x0: 0, z0: 0, x1: 10, z1: 8, shape: "flat", axis: "x", eave_a: 2.5, eave_b: 2.5, pitch_a: 0, pitch_b: 0, base: 2.5, overhang: 0 };
+  const turned: RoofSection = { ...plain, rotation: 30, pivot: [5, 4] };
+  const corners = (s: RoofSection) => {
+    const face = roofFaces(house({ type: "custom", pitch: 30, overhang: 0, sections: [s] })).find((f) => f.flat)!;
+    const at = (u: number, v: number) => [face.o[0] + face.eu[0] * u + face.es[0] * v, face.o[2] + face.eu[2] * u + face.es[2] * v];
+    return { face, pts: [at(0, 0), at(face.lu, 0), at(face.lu, face.ls), at(0, face.ls)] };
+  };
+  // not turned: the same face as before
+  const a = corners(plain);
+  assert.deepEqual(a.face.o, [0, 2.75, 0]);
+  assert.deepEqual(a.face.eu, [1, 0, 0]);
+  // turned: its corners are the turned roof's corners, its size the roof's own
+  const b = corners(turned);
+  near(b.face.lu, 10);
+  near(b.face.ls, 8);
+  const fr = sectionFrame(turned);
+  const want = [fr.at(0, 0), fr.at(10, 0), fr.at(10, 8), fr.at(0, 8)];
+  for (const p of b.pts) assert.ok(want.some((q) => Math.hypot(p[0] - q[0], p[1] - q[1]) < 1e-9), `corner ${p} not on the turned roof`);
+  near(b.face.n[1], 1);
+});

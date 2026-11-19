@@ -21,8 +21,8 @@ const pack: FurniturePack = {
   ],
 };
 
-test("the colour roles are the twelve of the plan (paint is the car's body colour), in the panel's order", () => {
-  assert.deepEqual([...COLOUR_ROLES], ["body", "fabric", "cushion", "wood", "white", "metal", "dark", "glass", "plant", "pot", "accent", "paint"]);
+test("the colour roles are the twelve of the plan (paint is the car's body colour) and the fronts, in the panel's order", () => {
+  assert.deepEqual([...COLOUR_ROLES], ["body", "fabric", "cushion", "wood", "white", "front", "metal", "dark", "glass", "plant", "pot", "accent", "paint"]);
 });
 
 test("paint colours: ten base colours, each a #rrggbb with a unique id (#129)", () => {

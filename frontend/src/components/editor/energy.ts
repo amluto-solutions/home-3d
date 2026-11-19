@@ -317,7 +317,7 @@ export class EnergyPart {
     const batteries = of("home_battery");
     const grid = of("grid_point");
     const meterOk = !!doc.energy.grid || meters.some((x) => this.devicePower(x.m, links));
-    const inverterOk = !!doc.energy.solar || (inverters.length > 0 && inverters.every((x) => this.devicePower(x.m, links)));
+    const inverterOk = !!doc.energy.solar || (inverters.length > 0 && inverters.every((x) => this.devicePower(x.m, links) || (doc.settings.roof.strings ?? []).some((st) => st.inverter === x.m.id && st.entity && st.entity !== "none")));
     const batteryOk = batteries.every((x) => this.devicePower(x.m, links) && x.m.soc && x.m.soc !== "none") || !!doc.energy.battery;
     type Row = { state: "ok" | "todo" | "opt"; label: string; action?: () => void; href?: string };
     const rows: Row[] = [

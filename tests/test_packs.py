@@ -297,6 +297,23 @@ def test_an_item_may_name_its_parts_by_role() -> None:
             packs.validate_payload({**PAYLOAD, "items": [{**item, "role_names": bad}]})
 
 
+def test_a_part_may_be_a_door_front_and_follow_a_colour_role() -> None:
+    """The role `front` (door and drawer fronts) and a part's `finish` (the role a part in a colour of its own follows)
+    came in 1.7.0 (#478); an item that uses neither is read as before."""
+    item = PAYLOAD["items"][0]
+    front = {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 0.05, "y": 0, "h": 1, "color": "front", "top": "front"}
+    cover = {"shape": "box", "x": 0, "z": 0, "w": 1, "d": 1, "y": 0.5, "h": 0.2, "color": "#a02020", "finish": "fabric"}
+    clean = packs.validate_payload(
+        {**PAYLOAD, "items": [{**item, "parts": [*item["parts"], front, cover], "colors": {"front": "#445566"}}]}
+    )["items"][0]
+    assert clean["parts"][-2]["color"] == "front" and clean["parts"][-1]["finish"] == "fabric"
+    assert clean["colors"] == {"front": "#445566"}
+    assert all("finish" not in part for part in packs.validate_payload(PAYLOAD)["items"][0]["parts"])
+    for bad in ({**cover, "finish": "chrome"}, {**cover, "finish": None}, {**front, "color": "fronts"}):
+        with pytest.raises(packs.PackError):
+            packs.validate_payload({**PAYLOAD, "items": [{**item, "parts": [bad]}]})
+
+
 def test_feature_packs_need_no_items_but_a_pack_needs_something() -> None:
     """A pack may list features without furniture (compatibility); an empty pack is refused."""
     pro = {**PAYLOAD, "id": "test.pro", "items": [], "features": ["camera_cockpit", "weather"]}

@@ -581,12 +581,21 @@ FURNITURE_SCHEMA = vol.Schema(
         vol.Optional("awning_time", default=None): vol.Any(None, vol.All(vol.Coerce(float), vol.Range(min=2, max=300))),
         vol.Optional("awning_invert", default=False): bool,
         # its own colour per role (#12); roles left out follow the theme
+        # (#478) "front", the colour of door and drawer fronts, is a role of the closed set since plan version 6
         vol.Optional("colors"): vol.Any(
-            None, vol.Schema({vol.In(COLOUR_ROLES): vol.Match(r"^#[0-9a-fA-F]{6}$")}, extra=vol.PREVENT_EXTRA)
+            None,
+            vol.Schema(
+                {vol.In(COLOUR_ROLES): vol.Match(r"^#[0-9a-fA-F]{6}$")},
+                extra=vol.PREVENT_EXTRA,
+            ),
         ),
         # its own material per role (#40); roles left out take their usual one
         vol.Optional("materials"): vol.Any(
-            None, vol.Schema({vol.In(COLOUR_ROLES): vol.In(MATERIALS)}, extra=vol.PREVENT_EXTRA)
+            None,
+            vol.Schema(
+                {vol.In(COLOUR_ROLES): vol.In(MATERIALS)},
+                extra=vol.PREVENT_EXTRA,
+            ),
         ),
         # household: a waste bin's kind and colours, its calendar (household feature); a mailbox's emptying door
         vol.Optional("bin_kind"): vol.Any(None, vol.In(WASTE_KINDS)),
@@ -879,6 +888,8 @@ ROOF_SECTION_SCHEMA = vol.Schema(
         vol.Required("eave_b"): _HEIGHT,
         vol.Optional("pitch_a", default=35): vol.All(vol.Coerce(float), vol.Range(min=0, max=80)),
         vol.Optional("pitch_b", default=35): vol.All(vol.Coerce(float), vol.Range(min=0, max=80)),
+        # mansard: the slope of the upper part (None or missing = 30 degrees, the frontend keeps it in 5 ... 60, #479)
+        vol.Optional("pitch_upper"): vol.Any(None, vol.All(vol.Coerce(float), vol.Range(min=0, max=80))),
         vol.Required("base"): _HEIGHT,
         vol.Optional("overhang", default=None): vol.Any(None, vol.All(vol.Coerce(float), vol.Range(min=0, max=2))),
         vol.Optional("flip", default=False): bool,
@@ -1234,6 +1245,10 @@ SETTINGS_SCHEMA = vol.Schema(
         # sunlight through the windows as patches on the floor
         vol.Optional("sun_patches", default=True): bool,
         vol.Optional("sun_shadow", default=True): bool,
+        # the real sky behind the house (#476; missing = on)
+        vol.Optional("sky"): bool,
+        # "Fly in from space" when the view opens (#477; missing = off)
+        vol.Optional("flyin"): bool,
         vol.Optional("window_glow", default=True): bool,
         # fun pack "Halloween": the ghost floating through the house (on unless switched off)
         # Household: the hours a waste bin glows (from the day before, until on the day)
@@ -1466,6 +1481,9 @@ SETTINGS_SCHEMA = vol.Schema(
         vol.Optional("mods"): _MODULE_DATA,
         # the neighbourhood from OpenStreetMap (#462, plan version 5)
         vol.Optional("surroundings"): vol.Any(None, SURROUNDINGS_SCHEMA),
+        # the whole map moved up or down from the ground floor's ground (m, #482). A key of its own beside the map: the
+        # map's object lets in no other keys, so a new key in it would need a plan version
+        vol.Optional("surroundings_y"): vol.All(vol.Coerce(float), vol.Range(min=-30, max=30)),
     },
     extra=vol.ALLOW_EXTRA,
 )

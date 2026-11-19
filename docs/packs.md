@@ -181,12 +181,20 @@ All measures of a part are **fractions of the item's size**:
   - `rbox`: a box with rounded edges (cushions, mattresses, appliances, soft seats); `round` sets how round.
   - `shell`: a curved body lofted through cross-sections (car bodies, boats, bath tubs): `side` and `plan` give its
     side and plan views. See [Curved shells](#curved-shells).
-- `color`: `#rrggbb` or a role of the built-in palette (`body`, `fabric`, `cushion`, `wood`, `white`, `metal`,
-  `dark`, `glass`, `plant`, `pot`, `accent`, `paint`). Roles follow the look of the plan, so prefer them. `paint` is the body of a vehicle: the item panel offers ten base car colours and a hex value for it (the catalogue is in [vehicles.md](vehicles.md)). In the realistic
+- `color`: `#rrggbb` or a role of the built-in palette (`body`, `fabric`, `cushion`, `wood`, `white`, `front`, `metal`,
+  `dark`, `glass`, `plant`, `pot`, `accent`, `paint`). Roles follow the look of the plan, so prefer them. `front` is
+  the door and drawer fronts of a cabinet, kitchen unit or dresser (1.7.0): it is drawn like `white` until the placed
+  item has a colour for it. An item with `front` parts lists "Fronts" and, beside it, "Carcass" (the `white` parts, the
+  body behind the fronts) in the item panel. A front colour colours the carcass too until the carcass has a colour of
+  its own, as a colour for the white parts always did. An item that has no `front` part is as it always was. `paint` is the body of a vehicle: the item panel offers ten base car colours and a hex value for it (the catalogue is in [vehicles.md](vehicles.md)). In the realistic
   look each role also has a material (`fabric` and `cushion` fabric, `metal` metal, `glass` glass, `white` gloss, the
   rest matt), which an editor can change per placed item in the item panel (matt, gloss, fabric, glass, metal or
   rattan weave); a `#rrggbb` part is matt.
 - `top` (optional): another colour for the top face.
+- `finish` (optional, 1.7.0): a colour role that a part in a colour of its own (`#rrggbb`, or a role like `dark`)
+  follows. The part keeps its colour until the placed item has a colour for that role, then it takes it, sides and top
+  (a gaming chair's red cover with `"finish": "fabric"`, a table's oak top with `"finish": "wood"`). A part drawn in
+  the role itself needs no `finish`.
 - `edges` (optional): glowing outlines: `true` (soft blue), `"glow"` (cyan like the walls) or `"faint"`.
 - `rot` (optional): turn of the part around its own centre, in degrees around the vertical axis (−360 to 360), for
   spiral stairs or diagonal struts.
@@ -354,7 +362,7 @@ shapes needs a Home 3D version that knows them (shells: Home 3D after 0.2.1).
   that colour row so ("Panels", "Valves") instead of by the role's colour word. Names: `main`, `second`, `third`,
   `details`, `paint`, `trim`, `tyres`, `tyres_trim`, `wheels`, `windows`, `lights`, `frame`, `legs`, `seat`, `fabric`,
   `cushion`, `wood`, `metal`, `glass`, `plant`, `pot`, `case`, `panels`, `valves`, `grille`, `buttons`, `screen`,
-  `top`, `base`, `fronts`, `handles`, `shade`. A role left out keeps a plain name: its material (Fabric, Wood, Metal,
+  `top`, `base`, `fronts`, `handles`, `shade`, `carcass`. A role left out keeps a plain name: its material (Fabric, Wood, Metal,
   Glass …) or "Main colour", "Second colour", "Details"; a vehicle's are Paint, Tyres and trim, Wheels and Windows.
 - `slots`: the slots the item's live parts are bound to, 1 to 8. See [Live parts](#live-parts).
 - `hole`: stairs. When they reach the floor above, they cut the stairwell opening into that floor, like the built-in
@@ -657,6 +665,10 @@ It reads each item from a list, not by guessing, and a second run changes nothin
 `tools/publish_packs.py` holds such packs back from the packs repository until older versions read them, like
 `role_names`. From 1.6.0 on, a part or slot field that a later version adds asks for an update (`needs_update`) instead
 of breaking the pack.
+
+The role `front` and a part's `finish` came in 1.7.0 and ask older versions for an update the same way, so
+`tools/publish_packs.py` holds back a pack whose items use either (a part drawn in `front`, a `front` colour or name in
+an item's `colors` or `role_names`, a part with `finish`) until 1.7.0 is out. None of our own packs uses them yet.
 
 ### Racks
 
@@ -1073,7 +1085,8 @@ use, and the packs repository is a generated copy so other installs can add or u
 2. Run `python tools/publish_packs.py path/to/home-3d-packs`. It checks every bundled pack with the same schema and
    limits as `tools/fp3dpack.py` and refuses to publish anything if one fails, or if a pack changed since its copy
    in the checkout without a higher `release`. A pack whose items use a field older Home 3D versions refuse
-   (`HELD_FIELDS`: `role_names` and the live parts `slots`, `bind` and `spin`, so Living, Office & tech, Smart-home
+   (`HELD_FIELDS`: `role_names`, the live parts `slots`, `bind` and `spin`, and the 1.7.0 additions `finish` and the
+   role `front`, so Living, Office & tech, Smart-home
    devices, Kitchen & bath and IKEA UK for now) is held back: left out
    of the checkout and named in the output. Otherwise it copies each pack folder
    over its copy in the checkout (files removed from a pack are removed there too) and writes `README.md` (the

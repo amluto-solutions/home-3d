@@ -977,6 +977,8 @@ const SCENE: Setting[] = [
   } as Setting<string | null>,
   houseSwitch("sun_shadow", "scene", "sun", "sun_shadow", true, "sun_shadow", "st_sun_shadow_hint", ["sun", "arc", "shadow"]),
   houseSwitch("sun_patches", "scene", "sun", "sun_patches", true, "sun_patches", "st_sun_patches_hint", ["sun", "floor", "light"]),
+  houseSwitch("sky", "scene", "sun", "sky", true, "real_sky", "st_real_sky_hint", ["sky", "stars", "moon", "clouds"]),
+  houseSwitch("flyin", "scene", "sun", "flyin", false, "st_flyin", "st_flyin_hint", ["fly", "space", "globe", "intro", "opening", "animation"]),
   houseEntity("weather_entity", "scene", "weather", "weather_entity", "weather_entity", "weather_entity_hint", (id) => id.startsWith("weather."), (env) => (env.hass ? weatherEntity(env.hass, null) : undefined), ["forecast", "rain", "snow"]),
   {
     id: "weather_effects",

@@ -34,6 +34,7 @@ COLOUR_ROLES = [
     "cushion",
     "wood",
     "white",
+    "front",
     "metal",
     "dark",
     "glass",
@@ -42,6 +43,9 @@ COLOUR_ROLES = [
     "accent",
     "paint",
 ]
+# "front" (door and drawer fronts, #478) is the one role a placed plan keeps in an optional key of its own (schema.py),
+# so the plan's closed set of roles stays what it was. It is drawn like "white" until the placed item has a colour
+# for it.
 # what an item may call the part drawn in a colour role (`role_names`, #411): the names of its colour rows in the panel
 PART_NAMES = [
     "main",
@@ -76,6 +80,7 @@ PART_NAMES = [
     "fronts",
     "handles",
     "shade",
+    "carcass",
 ]
 MOUNTS = ["floor", "surface", "wall", "ceiling"]
 LIGHTS = [
@@ -201,6 +206,9 @@ _PART_FIELDS = vol.Schema(
         vol.Required("h"): _SPAN,
         vol.Required("color"): _COLOR,
         vol.Optional("top"): _COLOR,
+        # the colour role a part in a colour of its own follows (#478): it keeps its colour until the placed item has a
+        # colour for that role (a gaming chair's red cover takes the fabric colour, a table's oak top the wood colour)
+        vol.Optional("finish"): vol.In(COLOUR_ROLES),
         # outline: True (soft blue), "glow" (cyan like the walls) or "faint"
         vol.Optional("edges", default=False): vol.Any(bool, vol.In(["glow", "faint"])),
         # lamps: the part shines in the colour and brightness of the linked light

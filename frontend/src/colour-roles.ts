@@ -117,11 +117,11 @@ const BUILTIN_ROLES: Record<string, string> = {
   bench: "cushion wood",
   corner_bench: "cushion wood",
   bar_stool: "fabric cushion metal",
-  kitchen: "body white dark",
+  kitchen: "body wood white dark",
   kitchen_wall: "body",
   kitchen_tall: "body dark",
-  island: "body white dark",
-  worktop: "white",
+  island: "body wood white dark",
+  worktop: "wood white",
   sink: "body white metal dark",
   stove: "body dark",
   dishwasher: "body white dark",
@@ -170,7 +170,8 @@ const BUILTIN_ROLES: Record<string, string> = {
 export function itemColourRoles(type: string): ColourRole[] {
   const item = packItem(type);
   if (item) {
-    const used = new Set(item.parts.flatMap((p) => [p.color, p.top]));
+    // a part that follows a role (#478) asks for that role's row too
+    const used = new Set(item.parts.flatMap((p) => [p.color, p.top, p.finish]));
     return COLOUR_ROLES.filter((r) => used.has(r));
   }
   // a pack item whose pack is gone is drawn as a plain body box

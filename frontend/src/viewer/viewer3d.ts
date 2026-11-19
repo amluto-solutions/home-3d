@@ -63,7 +63,7 @@ import { placeWallPlate } from "../geometry/walls.ts";
 import { buildEarth } from "./earth.ts";
 import { clampIntoRoom } from "../geometry/snap.ts";
 import { alignLines, halfSize, itemBox, snapPoint, SNAP_GUIDE_PX, type AlignLines, type Box } from "../geometry/snap-guides.ts";
-import { activeSections, roofRider, roofUnderAt, sectionAbove, sectionCutsBelow } from "../roof-sections.ts";
+import { activeSections, dormerRise, roofRider, roofUnderAt, sectionAbove, sectionCutsBelow } from "../roof-sections.ts";
 import { buildFloorGeometry, buildRackGear, floorGeometrySteps, keepFurnitureOf, primeStoredPieces, SLAB, stairHoleParts, takeCollected, type FloorGeometry, type RackGearAt } from "./build.ts";
 import { nextTask, pageClock, runSliced, SLICE_MS, type SliceJob } from "./slices.ts";
 import { openStore, readFloor, writeFloor, type StoredFloor } from "./piece-store.ts";
@@ -90,6 +90,9 @@ import { RebuildBatch } from "./rebuild-batch.ts";
 import { buildOrder } from "./floor-order.ts";
 import { buildRoof, type RoofGeometry, type RoofWindowState } from "./roof.ts";
 import { SunFx } from "./sun-fx.ts";
+import { boxEdgeOnScreen, outlineBox, SkyLayer, skyMode } from "./sky.ts";
+import { FlyInLayer } from "./fly-in.ts";
+import { realSkyShown } from "../backdrop.ts";
 import { Realism } from "./realism.ts";
 import { watchContext } from "./context-loss.ts";
 import { keepRender } from "./keep-render.ts";
@@ -441,6 +444,8 @@ const EXPLODE_GAP = 2.4;
  * floors, so a loft under the roof can be seen into like the floors below it.
  */
 const ROOF_GAP = EXPLODE_GAP;
+/** Pulled apart, the roof's eaves stay at least this far above the top of the floor it rides on (#480, NeonPlan 3D 3.5.0). */
+const ROOF_CLEAR = 0.3;
 /** Opacity of the floors below the selected one. */
 const BELOW_OPACITY = 0.22;
 /** Time constant of the floor animation (ms); about 700 ms until settled. */
@@ -833,7 +838,8 @@ export class FloorplanViewer {
   /** The roof: one group with a part per floor it sits on (each part follows its floor). */
   private roof: {
     group: Group;
-    parts: { group: Group; floorId: string; rideId: string; base: number; lift: boolean; win: Group | null }[];
+    /** low: the lowest point of the part's roof body above its base (the eaves); cheeks: a dormer's, attic: over an attic. */
+    parts: { group: Group; floorId: string; rideId: string; base: number; low: number; lift: boolean; win: Group | null; cheeks: Mesh | null; attic: boolean }[];
     /** Roof windows over rooms of a lower floor: they follow that floor (#482). */
     below: { floorId: string; win: Group }[];
     solid: MeshBasicMaterial;
@@ -1016,6 +1022,9 @@ export class FloorplanViewer {
     this.skyDisc.renderOrder = -1;
     this.scene.add(this.rain, this.snow, this.skyDisc, this.sunFx.group);
     this.controls = this.makeControls();
+    // the real sky (#476): a 2D canvas behind the 3D one (first on the stage, so the look's own layers stay above it)
+    this.sky = new SkyLayer(this.camera, () => this.lowQuality, () => this.mapEdge(), () => this.size);
+    host.prepend(this.sky.canvas);
     this.resizeObserver = new ResizeObserver(() => this.resize());
     this.resizeObserver.observe(host);
     document.addEventListener("visibilitychange", this.onVisibility);
@@ -1163,6 +1172,9 @@ export class FloorplanViewer {
     const next = this.makeRenderer(quality);
     this.rebuildTier();
     this.applyTierFlags();
+    // the new renderer's canvas went first on the stage: the sky goes back under it
+    this.host.prepend(this.sky.canvas);
+    this.placeRealSky();
     // the new context compiles the scene's shaders before it takes over (#131): the old one keeps drawing meanwhile
     this.nextRenderer?.dispose();
     this.nextRenderer?.forceContextLoss();
@@ -1262,6 +1274,7 @@ export class FloorplanViewer {
     // this bundle's own copy of the ground (outdoor areas, earth around cellars) and of the plan's recipes (#2)
     setTerrain(building);
     setPlanRecipes(building.recipes);
+    this.placeRealSky();
     // an edit changes one floor, mostly: the others stay as they are (#131)
     if (first) this.fitBuilt = true;
     this.rebuilds.request(true);
@@ -1881,6 +1894,7 @@ export class FloorplanViewer {
     else this.placeGround();
     this.styleFloors();
     this.applyTierFlags();
+    this.placeRealSky();
     // a zoom style over the new style (#456): its numbers stay, what it needs follows
     if (this.zoomWanted) this.syncZoom();
     this.invalidate();
@@ -1955,6 +1969,7 @@ export class FloorplanViewer {
       this.zoomExtras();
     }
     this.options.onZoom?.(0, this.zoomStyle);
+    this.sky?.fade(0);
   }
 
   /** The palette a style builds the house in (natural materials, dark cut tops, wall colours). */
@@ -2031,6 +2046,7 @@ export class FloorplanViewer {
         this.zoomExtras();
       }
       this.options.onZoom?.(roomOnly ? 0 : m, near);
+      this.sky.fade(roomOnly ? 0 : m);
     }
     return m !== want;
   }
@@ -2203,6 +2219,7 @@ export class FloorplanViewer {
       for (const fv of this.floors) this.buildSpill(fv, this.lightSources(fv));
     }
     this.placeSky();
+    this.placeRealSky();
     this.buildSunFx();
     this.updateRealism();
     this.invalidate();
@@ -2231,6 +2248,7 @@ export class FloorplanViewer {
     for (const fv of this.floors) this.buildSun(fv);
     this.applyWeather();
     this.placeSky();
+    this.placeRealSky();
     this.buildSunFx();
     this.updateRealism();
     this.invalidate();
@@ -2328,7 +2346,8 @@ export class FloorplanViewer {
     const w = this.weather;
     const cloud = w?.cloud ?? 0;
     const night = !sun || sun.elevation < -3;
-    if (!sun || !w || w.disc === false || cloud > 0.85 || (!night && sun.elevation < 1)) {
+    // the real sky draws the sun and the moon in its phase (#476): no second, flat disc in 3D
+    if (!sun || !w || w.disc === false || cloud > 0.85 || (!night && sun.elevation < 1) || this.realSkyOn()) {
       this.skyDisc.visible = false;
       return;
     }
@@ -2528,7 +2547,8 @@ export class FloorplanViewer {
     const own = shadowBox(tris);
     if (!own) return this.sunFx.hideShadow();
     // the neighbours' houses from the map throw their shadows into the garden too (#463)
-    const box = neighbourShadows(tris, own, placedOnce(b), toSun, sun.elevation, gf.elevation + groundLevel(gf) - lawn);
+    // (on the map's own ground: moved up or down by its height, #482)
+    const box = neighbourShadows(tris, own, placedOnce(b), toSun, sun.elevation, gf.elevation + groundLevel(gf) + (placedOnce(b)?.y ?? 0) - lawn);
     // on a lawn just below the floor the shadow lies at the floor's height, so it falls over the terrace too; the
     // house's own floor stays clear of it
     const y = gf.elevation - lawn <= 0.35 ? gf.elevation + 0.012 : lawn + 0.012;
@@ -2909,6 +2929,9 @@ export class FloorplanViewer {
   }
 
   dispose(): void {
+    this.flyInLayer?.dispose();
+    this.flyInLayer = null;
+    this.sky.dispose();
     this.dropAround();
     this.projections.dispose();
     this.realism.dispose();
@@ -3103,7 +3126,47 @@ export class FloorplanViewer {
     this.camera.updateProjectionMatrix();
     // the phone turned or the bars above the view folded: an unmoved house view is framed for the new shape (#93)
     if (refitOnResize(this.fitted, this.controls.goal, before, this.camera.aspect)) this.fit(0);
+    this.sky.viewChanged();
     this.invalidate();
+  }
+
+  /** The real sky behind the house (#476, from NeonPlan 3D 3.5, MIT, (c) 2026 Mastershort). */
+  private readonly sky: SkyLayer;
+  private skyKey = "";
+  private mapBox: { placed: unknown; box: [number, number, number, number] | null } = { placed: null, box: null };
+
+  private realSkyOn(): boolean {
+    return realSkyShown(this.building?.settings, this.style.base);
+  }
+
+  private placeRealSky(): void {
+    // called from setters that also run while the constructor builds the first renderer
+    if (!this.sky) return;
+    const b = this.building;
+    const w = this.weather;
+    const now = new Date();
+    const input = b && this.realSkyOn() ? { sun: this.sun, north: b.settings.north ?? 0, cloud: w?.cloud ?? 0, wind: w?.wind ?? 0, ...skyMode(this.style), date: now } : null;
+    // set again only when something changed (the minute keeps the stars turning and the moon's phase current)
+    const key = input ? JSON.stringify({ ...input, date: Math.floor(now.getTime() / 60_000), q: this.lowQuality, map: b?.settings.surroundings?.on }) : "off";
+    if (key === this.skyKey) return;
+    this.skyKey = key;
+    this.sky.set(input);
+    // the flat 3D disc comes back when the real sky goes (switched off, an own background, the blueprint look)
+    this.placeSky();
+  }
+
+  /** How far down the picture the far edge of the neighbourhood from the map lies, or null without one (#1203 upstream). */
+  private mapEdge(): number | null {
+    const b = this.building;
+    const placed = b ? placedOnce(b) : null;
+    if (placed !== this.mapBox.placed) this.mapBox = { placed, box: placed ? outlineBox([...placed.buildings, ...placed.ways, ...placed.areas]) : null };
+    const id = b ? surroundFloorId(b) : undefined;
+    const fv = id ? this.floorMap.get(id) : undefined;
+    const box = this.mapBox.box;
+    if (!box || !fv) return null;
+    const ground = groundLevel(fv.floor) + (placed?.y ?? 0);
+    // the map hangs in the ground floor's group (placeAround): its points lie on that floor's ground, moved by the map's height (#482)
+    return boxEdgeOnScreen(box, (v, x, z) => fv.group.localToWorld(v.set(x, ground, z)), this.camera);
   }
 
   /** Materials of a previous build, disposed after the next frame (see clear()). */
@@ -3922,7 +3985,8 @@ export class FloorplanViewer {
     const fv = id ? this.floorMap.get(id) : undefined;
     const placed = b && fv ? placedOnce(b) : null;
     if (!b || !fv || !placed) return this.dropAround();
-    const ground = groundLevel(fv.floor);
+    // the map's own height moves the whole map up or down (a street higher or lower than the ground floor, #482)
+    const ground = groundLevel(fv.floor) + placed.y;
     const key = `${surroundKey(b)}|${b.settings.north ?? 0}|${[...hiddenBuildings(b.settings.surroundings!, b)].join(".")}|${paletteKey()}|${ground}`;
     if (this.around?.key === key) return this.hangAround(fv);
     if (this.aroundJob?.key === key) return;
@@ -4015,9 +4079,17 @@ export class FloorplanViewer {
           return y === null ? null : y - floor.elevation;
         }
       : undefined;
+    // under a dormer the walls rise to where its front starts (#480, NeonPlan 3D 3.4.2); none without dormers
+    const rise = sloped ? dormerRise(b, floor.elevation) : null;
+    const roofRise = rise
+      ? (x: number, z: number, top: number) => {
+          const y = rise(x, z, top);
+          return y === null ? null : y - floor.elevation;
+        }
+      : undefined;
     // curved car bodies (#252) are cut coarsely on the tablet level
     setShellDetail(this.lowQuality ? "low" : "full");
-    return { args: [withVehicles(this.placeBins(floor), this.parked), b.settings.wall_exterior, b.settings.wall_interior, stairHoleParts(b.floors, floor), garden, roofUnder], garden };
+    return { args: [withVehicles(this.placeBins(floor), this.parked), b.settings.wall_exterior, b.settings.wall_interior, stairHoleParts(b.floors, floor), garden, roofUnder, roofRise], garden };
   }
 
   /**
@@ -4179,6 +4251,12 @@ export class FloorplanViewer {
         if (geo.win.glass.count) win.add(new Mesh(geo.win.glass.geometry(), winGlass));
         wins.add(win);
       }
+      // a dormer's cheeks: their own mesh, so the house view can lift them with the roof and the floor view keep them
+      let cheeks: Mesh | null = null;
+      if (geo.cheeks?.count) {
+        cheeks = new Mesh(geo.cheeks.geometry(), winSolid);
+        wins.add(cheeks);
+      }
       for (const [floorId, w] of geo.winBelow ?? []) {
         if (!w.solid.count && !w.glass.count) continue;
         const g = new Group();
@@ -4187,7 +4265,14 @@ export class FloorplanViewer {
         wins.add(g);
         below.push({ floorId, win: g });
       }
-      return { group: part, floorId: geo.floor.id, rideId: roofRider(this.building!, geo.floor, geo.sections ?? []), base: geo.base, lift: geo.lift !== false, win };
+      let low = Infinity;
+      for (const c of part.children) {
+        if (!(c instanceof Mesh)) continue;
+        c.geometry.computeBoundingBox();
+        const y = c.geometry.boundingBox?.min.y;
+        if (y !== undefined && Number.isFinite(y)) low = Math.min(low, y);
+      }
+      return { group: part, floorId: geo.floor.id, rideId: roofRider(this.building!, geo.floor, geo.sections ?? []), base: geo.base, low: Number.isFinite(low) ? low : 0, lift: geo.lift !== false, win, cheeks, attic: !!geo.attic };
     });
     group.renderOrder = 8;
     this.scene.add(group);
@@ -4225,11 +4310,21 @@ export class FloorplanViewer {
       // the same slopes, #202) and lifts off it the same way (it follows that floor's own glide)
       const ride = this.floorMap.get(part.rideId) ?? fv;
       const apart = ride.ty > 0 ? Math.min(1, ride.y / ride.ty) : this.explode && this.floorId === null ? 1 : 0;
-      part.group.position.y = fv.floor.elevation + ride.y + part.base + this.roofLift() + (part.lift ? apart * ROOF_GAP : 0);
+      // pulled apart, the roof clears the floor it rides on: a loft inside the roof shows its walls below it (#480)
+      const clear = ride.floor.elevation + ride.floor.height + ROOF_CLEAR - (fv.floor.elevation + part.base + part.low);
+      const gap = part.lift ? apart * Math.max(ROOF_GAP, Math.min(clear, ride.floor.height + ROOF_CLEAR)) : 0;
+      part.group.position.y = fv.floor.elevation + ride.y + part.base + this.roofLift() + gap;
       // the windows stay in the slope over their floor's rooms while the roof lifts away (not in the cut view)
       if (part.win) {
-        part.win.position.y = fv.floor.elevation + ride.y + part.base + (part.lift ? apart * ROOF_GAP : 0);
+        part.win.position.y = fv.floor.elevation + ride.y + part.base + gap;
         part.win.visible = fv.group.visible && fv.o > 0.5 && this.wallMode !== "cut";
+      }
+      // a dormer's cheeks: in the house view they go with the roof (lifted, gone once it has faded – a box stood in the
+      // room below while the roof was lifted); in the floor view they stay as the room's walls, only over an attic
+      // (over a floor with its own ceiling they stood in its rooms or floated over it) (#480, NeonPlan 3D 3.5.1)
+      if (part.cheeks) {
+        part.cheeks.position.y = house ? part.group.position.y : fv.floor.elevation + ride.y + part.base + gap;
+        part.cheeks.visible = fv.group.visible && fv.o > 0.5 && this.wallMode !== "cut" && (house ? this.roofO > ROOF_OPACITY * 0.6 : part.attic);
       }
     }
     // windows in a slope over a lower floor: with that floor, wherever it glides
@@ -6415,6 +6510,43 @@ export class FloorplanViewer {
   }
 
   /**
+   * "Fly in from space" (#477): the camera waits high above the house, hidden behind a neon globe that turns to the
+   * home's place (lat, lon) and dives in. Then the camera comes down onto the house (quickly after a tap that skipped
+   * the globe). `done` is called when the globe is gone. False when it is already playing.
+   */
+  flyIn(lat: number, lon: number, done?: (skipped: boolean) => void): boolean {
+    if (this.flyInLayer?.active || this.disposed) return false;
+    const high = (v: OrbitView): OrbitView => ({ ...v, radius: Math.min(330, Math.max(90, v.radius * 6)), phi: 0.12, theta: v.theta - 1.1 });
+    let home = this.getView();
+    // a house that is still being built (or has not been moved) is fitted again when the camera comes down: its
+    // views are fitted while the globe shows, and a fit leaves a camera that is not at the fitted view alone
+    const refit = !this.fitted || stillFitted(this.fitted, home) || this.fitAll || this.fitBuilt;
+    this.controls.flyTo(high(home), 0);
+    this.invalidate();
+    this.flyInLayer = new FlyInLayer(this.host, lat, lon, {
+      dive: (fast) => {
+        if (refit && this.floors.length) {
+          this.fit(0);
+          home = this.getView();
+          this.controls.flyTo(high(home), 0);
+        }
+        this.controls.flyTo(home, fast ? 700 : 2600, true);
+        this.invalidate();
+      },
+      done: (skipped) => {
+        this.flyInLayer = null;
+        done?.(skipped);
+      },
+    });
+    return true;
+  }
+
+  get flyingIn(): boolean {
+    return !!this.flyInLayer?.active;
+  }
+  private flyInLayer: FlyInLayer | null = null;
+
+  /**
    * Look through a placed camera: the view moves to the camera's spot and along its direction (a wall
    * camera looks a little down, a dome straight down). False when the camera is not drawn in 3D.
    */
@@ -6546,10 +6678,13 @@ export class FloorplanViewer {
     this.renderer.render(this.scene, this.camera);
     this.disposeRetired();
     // labels are placed only when the view or something on it moved (style writes cost layout)
-    if (this.viewChanged() || floorsMoving || this.labelsDirty) {
+    const turned = this.viewChanged();
+    if (turned || floorsMoving || this.labelsDirty) {
       this.labelsDirty = false;
       this.updateLabels();
     }
+    // the real sky turns with the camera only (#476): not on every label change
+    if (turned) this.sky.viewChanged();
     // everything that keeps drawing (also the energy flow, effects, robots) shows in the frame rate
     this.reportStats(now, busy);
     if (moving) this.invalidate();

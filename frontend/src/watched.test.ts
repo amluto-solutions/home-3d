@@ -91,3 +91,10 @@ test("rack gear's linked entities are watched, so its status LEDs follow them (#
   assert.ok(ids.includes("binary_sensor.switch_status"));
   assert.ok(ids.includes("sensor.switch_temperature"));
 });
+
+test("the entities of a pack item's live parts are watched: a dishwasher's door opens when its contact does (#483)", () => {
+  const { hass, b, openings, furniture } = setup();
+  b.floors[0].furniture = [{ id: "dw", type: "pack:kitchen:dishwasher_60", x: 1, z: 1, rotation: 0, w: 0.6, d: 0.62, h: 0.91, variant: null, binds: { door: "binary_sensor.sample_dishwasher_door" } }];
+  const ids = watchedEntities(hass, b, { openings, furniture, heat: false, warnings: [], weatherEntityId: null });
+  assert.ok(ids.includes("binary_sensor.sample_dishwasher_door"));
+});

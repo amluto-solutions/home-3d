@@ -113,18 +113,22 @@ export class FloorsPart {
   }
 
   /** Turn everything on the floor by 90° (clockwise in the plan) about the middle of its rooms: when a floor was drawn the wrong way round. */
-  turnFloor(this: Fp3dEditor): void {
-    const floor = this.floor;
-    if (!floor || !this.isEditor) return;
-    // with "all floors" the house turns about the middle of every room on every floor
+  async turnFloor(this: Fp3dEditor): Promise<void> {
+    if (!this.floor || !this.isEditor) return;
     const all = this._shiftAll;
+    // a background picture turns about its middle (#1124): its height (from the picture) is needed, also on the other floors
+    const pics = (all ? this._doc.floors : [this.floor]).map((f) => f.background?.image_id).filter((id): id is string => !!id && !this._images[id]);
+    if (pics.length) await Promise.all(pics.map((id) => this.loadImage(id)));
+    const floor = this.floor;
+    if (!floor) return;
+    // with "all floors" the house turns about the middle of every room on every floor
     const pts = (all ? this._doc.floors : [floor]).flatMap((f) => f.rooms.flatMap((r) => r.points));
     if (!pts.length) return;
     const xs = pts.map((p) => p[0]);
     const zs = pts.map((p) => p[1]);
     const cx = (Math.min(...xs) + Math.max(...xs)) / 2;
     const cz = (Math.min(...zs) + Math.max(...zs)) / 2;
-    this.change((doc, f) => transformPlan(doc, all ? null : [f.id], turnAbout(cx, cz)));
+    this.change((doc, f) => transformPlan(doc, all ? null : [f.id], turnAbout(cx, cz), (id) => this._images[id]?.aspect));
   }
 
   updateFloor(this: Fp3dEditor, patch: Partial<Floor>): void {

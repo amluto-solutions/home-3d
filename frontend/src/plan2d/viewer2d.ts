@@ -296,6 +296,11 @@ export class Plan2dViewer implements ViewerSurface {
     if (typeof v.k === "number" && typeof v.tx === "number" && typeof v.ty === "number") this.moveView({ k: v.k, tx: v.tx, ty: v.ty });
   }
 
+  /** The flat plan has no camera to fly in (#477). */
+  flyIn(): boolean {
+    return false;
+  }
+
   /** Centre a point of the floor shown (a search hit, the director) and let its device flash. */
   focus(floorId: string, x: number, z: number, _y: number, entityId: string | null): void {
     if (entityId) this.flashDevices([entityId]);

@@ -18,6 +18,8 @@ export const SEARCH_WORDS: Readonly<Record<string, readonly string[]>> = {
   // scene
   sun_shadow: ["shadows", "sunrise", "sunset", "daylight", "solar", "path"],
   sun_patches: ["sunbeams", "sunshine", "rays", "patches", "spots"],
+  sky: ["night", "sunset", "dusk", "starry", "background", "heavens"],
+  flyin: ["earth", "planet", "dive", "zoom", "startup", "cinematic", "welcome"],
   window_glow: ["dusk", "evening", "lit", "shine", "lamplight", "outside"],
   weather_entity: ["weather", "conditions", "provider", "outdoor", "meteo", "temperature"],
   weather_effects: ["effects", "precipitation", "storm", "thunder", "sleet", "stars"],

@@ -180,12 +180,24 @@ def surroundings(plan: dict[str, Any]) -> dict[str, Any]:
     return plan
 
 
+# ---------------------------------------------------------------------------- 5 -> 6: front colours (1.7.0)
+
+
+def front_colours(plan: dict[str, Any]) -> dict[str, Any]:
+    """Version 5 -> 6: changes nothing. Home 3D 1.7.0 lets a plan hold the colour of door and drawer fronts (#478:
+    `front` in a placed item's `colors` and `materials`), the height of the surroundings (`settings.surroundings_y`,
+    #482) and the upper pitch of a mansard roof (`pitch_upper`, #479). A Home 3D that reads version 5 (1.6.x) would
+    leave the front colour out as invalid and show "plan repaired"; the bump makes it open such a plan read-only."""
+    return plan
+
+
 # MIGRATIONS[n - 1] turns a plan of version n into one of version n + 1
 MIGRATIONS: tuple[Callable[[dict[str, Any]], dict[str, Any]], ...] = (
     lights_to_lamps,
     pet_spots,
     style_plan,
     surroundings,
+    front_colours,
 )
 assert len(MIGRATIONS) == PLAN_VERSION - 1, "every plan version but the first has its migration"
 

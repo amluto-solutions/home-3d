@@ -39,6 +39,11 @@ HELD_FIELDS = ("role_names",)
 # Live parts (#466) came in 1.6.0: an item with slots, or a part with a bind or fan blades (spin), is refused before it.
 HELD_FIELDS += ("slots",)
 HELD_PART_FIELDS = ("bind", "spin")
+# Home 3D 1.7.0 (#478): a part that follows a colour role (`finish`), and the door and drawer front role `front` (in a
+# part's `color` or `top`, an item's `colors` or `role_names`): 1.6.x asks for an update (needs_update) instead of
+# reading them, so a pack that uses either is held back until 1.7.0 is out.
+HELD_PART_FIELDS += ("finish",)
+HELD_ROLE = "front"
 
 IKEA_PACK = "amluto.ikea-uk"
 IKEA_NOTICE = (
@@ -217,7 +222,19 @@ def held_back(pack: dict) -> list[str]:
     items = pack.get("items", [])
     fields = {field for item in items for field in HELD_FIELDS if field in item}
     fields |= {field for item in items for part in item.get("parts", []) for field in HELD_PART_FIELDS if field in part}
+    if any(_uses_role(item, HELD_ROLE) for item in items):
+        fields.add(f"role {HELD_ROLE}")
     return sorted(fields)
+
+
+def _uses_role(item: dict, role: str) -> bool:
+    """Whether an item draws a part in a colour role (or gives it a colour or a name)."""
+    parts = item.get("parts", [])
+    return (
+        any(role in (part.get("color"), part.get("top"), part.get("finish")) for part in parts)
+        or role in item.get("colors", {})
+        or role in item.get("role_names", {})
+    )
 
 
 def publish(target: Path, source: Path = BUNDLED_DIR, moves_file: Path | None = None) -> list[str]:

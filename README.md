@@ -24,6 +24,10 @@ Home 3D is free and open source, made by [Amluto Solutions Ltd](https://home3d.a
 
 You need Home Assistant 2025.1 or newer, and an administrator account to install it.
 
+[![Open your Home Assistant instance and open the Home 3D repository in the Marketplace.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=amluto-solutions&repository=home-3d&category=integration)
+
+The button opens the Marketplace of your installation (on Home Assistant before 2026.11 it opens HACS). By hand:
+
 1. Open *Settings → Marketplace* and choose **Add from link**.
 2. Paste `https://github.com/amluto-solutions/home-3d`. The first time, the Marketplace asks you to connect GitHub
    with a device sign-in.
@@ -31,7 +35,15 @@ You need Home Assistant 2025.1 or newer, and an administrator account to install
 4. Go to *Settings → Devices & services → Add integration → Home 3D*.
 5. Open **Home 3D** in the sidebar.
 
-Updates show under *Settings → Updates* and still need a restart.
+**Home Assistant before 2026.11:** the Marketplace is HACS there, and the steps differ. In HACS open the menu (⋮),
+choose **Custom repositories**, add the link above with the type **Integration**, install **Home 3D** and restart Home
+Assistant. If you installed Home 3D with HACS before, there is nothing to do: when you update to Home Assistant 2026.11
+the Marketplace takes it over, and updates keep coming as usual.
+
+**How do I get the latest update?** Open *Settings → System → Updates*. The Marketplace (or HACS) looks for new versions
+only every few hours, so a fresh release may not show there yet; look again a little later. With HACS you can ask at
+once: HACS → Home 3D → ⋮ → **Update information** → **Download**. Then restart Home Assistant and reload the page
+(Ctrl+F5; in the Companion app: *Settings → Companion app → reset frontend cache*).
 
 To install by hand, copy `custom_components/home_3d` into your `config/custom_components/` folder, restart, and add
 the integration under *Settings → Devices & services*.

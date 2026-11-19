@@ -6,6 +6,7 @@
 import type { Building, Floor, OutdoorArea, RoofSection, RoofWindow, SlopeDir, SolarField, StartView, Vec2 } from "./model.ts";
 import { fieldFace, fieldModules, fieldSize, GROUND, groundFace, groundFloor, roofFaces, rowCounts, topFloor, wallFaces, windowAsField, type RoofFace } from "./solar.ts";
 import { petFloor, placeFloor } from "./pet-place.ts";
+import { turnedBackground } from "./geometry/background.ts";
 
 /** A move of the plan: a shift (no turn) or a quarter turn clockwise in the plan about a point. */
 export interface PlanTransform {
@@ -56,6 +57,7 @@ export const PLAN_FIELDS = {
   "Placement.x": "moved",
   "Placement.z": "moved",
   "Placement.rotation": "turned",
+  // turned about the picture's middle (#1124): the corner then lands where the turned picture's corner lies
   "Background.x": "moved",
   "Background.z": "moved",
   "Background.rotation": "turned",
@@ -127,7 +129,10 @@ function moveArea(t: PlanTransform, a: OutdoorArea): void {
   }
 }
 
-function moveFloor(t: PlanTransform, f: Floor): void {
+/** A picture's height / width by its image id (for turning it about its middle), when known. */
+export type AspectOf = (imageId: string) => number | undefined;
+
+function moveFloor(t: PlanTransform, f: Floor, aspectOf?: AspectOf): void {
   for (const r of f.rooms) {
     r.points = r.points.map(t.point);
     if (r.label_offset && t.quarter) r.label_offset = dir(t, r.label_offset);
@@ -147,10 +152,10 @@ function moveFloor(t: PlanTransform, f: Floor): void {
     w.a = t.point(w.a);
     w.b = t.point(w.b);
   }
-  if (f.background) {
-    [f.background.x, f.background.z] = t.point([f.background.x, f.background.z]);
-    if (t.quarter) f.background.rotation = deg(t, f.background.rotation ?? 0);
-  }
+  // a turn turns the picture about its middle, so it stays under the rooms drawn on it (#1124); a square one when its
+  // size is not known
+  if (f.background && t.quarter) f.background = turnedBackground(f.background, aspectOf?.(f.background.image_id) ?? 1, t.point);
+  else if (f.background) [f.background.x, f.background.z] = t.point([f.background.x, f.background.z]);
   moveView(t, f.start_view);
 }
 
@@ -280,7 +285,7 @@ function mirror(f: SolarField, cols: boolean, rows: boolean): void {
  * also the roof sections, the free hologram, the house's start view, north and the neighbourhood map's origin. Changes
  * `doc` in place.
  */
-export function transformPlan(doc: Building, floorIds: readonly string[] | null, t: PlanTransform): void {
+export function transformPlan(doc: Building, floorIds: readonly string[] | null, t: PlanTransform, aspectOf?: AspectOf): void {
   const all = floorIds == null;
   const moved = new Set(all ? doc.floors.map((f) => f.id) : floorIds);
   const roof = doc.settings.roof;
@@ -302,7 +307,7 @@ export function transformPlan(doc: Building, floorIds: readonly string[] | null,
   // a pet's routine spots and trigger places (#337), each on its own floor
   const places = (doc.settings.pets?.list ?? []).flatMap((p) => [...(p.spots ?? []), ...(p.triggers ?? [])].filter((s) => s.x != null && s.z != null && moved.has(placeFloor(doc, p, s)?.id ?? "")));
 
-  for (const f of doc.floors) if (moved.has(f.id)) moveFloor(t, f);
+  for (const f of doc.floors) if (moved.has(f.id)) moveFloor(t, f, aspectOf);
   for (const f of doc.floors) {
     for (const a of f.outdoor) for (const p of a.pool?.pipes ?? []) if (moved.has(p.floor_id)) p.points = p.points.map(t.point);
   }

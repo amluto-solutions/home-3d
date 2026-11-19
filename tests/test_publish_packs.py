@@ -243,6 +243,27 @@ def test_a_pack_with_live_parts_is_held_back() -> None:
     assert publish_packs.held_back(live) == ["bind", "slots"]
 
 
+def test_a_pack_with_a_front_role_or_a_part_that_follows_a_role_is_held_back() -> None:
+    """The role `front` and a part's `finish` came in 1.7.0 (#478): 1.6.x asks for an update instead of reading them."""
+    part = CHAIR["parts"][0]
+    assert publish_packs.held_back({"items": [CHAIR]}) == []
+    assert publish_packs.held_back({"items": [{**CHAIR, "parts": [{**part, "finish": "wood"}]}]}) == ["finish"]
+    for changed in (
+        {"parts": [{**part, "color": "front"}]},
+        {"parts": [{**part, "top": "front"}]},
+        {"colors": {"front": "#445566"}},
+    ):
+        assert publish_packs.held_back({"items": [{**CHAIR, **changed}]}) == ["role front"]
+
+
+def test_no_bundled_item_uses_the_front_role_or_a_followed_role_yet() -> None:
+    """Our own packs load as they did (#478): the new role and part field are in the format, not in the packs yet."""
+    for _folder, pack in publish_packs._checked(BUNDLED):
+        for item in pack["items"]:
+            assert not publish_packs._uses_role(item, "front"), f"{pack['id']}/{item['id']}"
+            assert not any("finish" in part for part in item["parts"]), f"{pack['id']}/{item['id']}"
+
+
 def test_a_retired_pack_folder_is_replaced_by_a_readme_pointing_at_its_successors(tmp_path: Path) -> None:
     """A pack all of whose items moved away (#111) leaves the repository as a folder with only a README."""
     source, target = tmp_path / "source", tmp_path / "packs"

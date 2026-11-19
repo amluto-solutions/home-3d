@@ -119,7 +119,7 @@ export function neighbourShadows(
   const region: [number, number, number, number] = [box[0] - R, box[1] - R, box[2] + R, box[3] + R];
   const near = (p: Vec2) => p[0] > region[0] - R && p[0] < region[2] + R && p[1] > region[1] - R && p[1] < region[3] + R;
   const extra = blockShadows(
-    around.buildings.filter((bd) => bd.p.some(near)).map((bd) => ({ p: bd.p, h: rise + Math.max(1, bd.h) })),
+    around.buildings.filter((bd) => bd.p.some(near)).map((bd) => ({ p: bd.p, h: Math.max(0.1, rise + Math.max(1, bd.h)) })),
     toSun,
     elevation,
   );

@@ -19,6 +19,7 @@ const NAMED_ROLES: Partial<Record<ColourRole, PartName>> = {
   fabric: "fabric",
   cushion: "cushion",
   wood: "wood",
+  front: "fronts",
   metal: "metal",
   glass: "glass",
   plant: "plant",
@@ -55,6 +56,8 @@ export function partName(type: string, role: ColourRole, roles: readonly ColourR
     const part = VEHICLE_PARTS[role];
     if (part) return part;
   }
+  // where fronts and carcass are told apart (#478) the "white" parts are the carcass
+  if (role === "white" && roles.includes("front")) return "carcass";
   const named = NAMED_ROLES[role];
   if (named) return named;
   if (role === "accent") return "details";

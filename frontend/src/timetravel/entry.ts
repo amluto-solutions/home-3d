@@ -12,7 +12,7 @@ import { LiveLog } from "./live.ts";
 import { crossedEvent, eventNear, eventsIn, parseMoment, Playback, SPEEDS, tickMs, WEEK_SPEEDS } from "./playback.ts";
 import { Replay } from "./replay-hass.ts";
 import { robotRun } from "./robot.ts";
-import { roomEntities, roomOf, type RoomEntities } from "./rooms.ts";
+import { lampSwitches, roomEntities, roomOf, type RoomEntities } from "./rooms.ts";
 import { isNight, nightBands } from "./sun.ts";
 import { awaySuggestion, awaySummary, dayEnergy, daySummary, energyAt, energyIds, quietStretches, type AwayRow, type DaySummary } from "./summary.ts";
 import { buildTimeline, findGaps, indexAt, mergeTimelines, rowCount, statRows, thinPulses, THIN_ROWS, timelineBytes, trimTimeline, type Timeline, type WireDay } from "./timeline.ts";
@@ -561,7 +561,9 @@ export class Session implements TimeTravelSession {
   away(from: number, to: number): AwayRow[] {
     const timeline = this.timeline;
     if (!timeline) return [];
-    return awaySummary({ timeline, roles: this.roles, events: this.allEvents, lights: [...timeline.tracks.keys()].filter((id) => id.startsWith("light.")), motion: this.motion(), from, to });
+    // lights: light entities, and the switches that drive a lamp of the plan (a relay behind the ceiling light, #484)
+    const switches = lampSwitches(this.opts.building, this.opts.spec);
+    return awaySummary({ timeline, roles: this.roles, events: this.allEvents, lights: [...timeline.tracks.keys()].filter((id) => id.startsWith("light.") || switches.has(id)), motion: this.motion(), from, to });
   }
 
   /**

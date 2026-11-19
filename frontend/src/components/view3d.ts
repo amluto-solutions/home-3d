@@ -13,6 +13,7 @@ import { carState, type CarState, heatSensorOn, roomClimateValue,
   alarmTriggered,
   isActive,
   isUnavailable,
+  chargerStatus,
   kindOf,
   lightGlow,
   openingEntities,
@@ -31,6 +32,7 @@ import { carState, type CarState, heatSensorOn, roomClimateValue,
   isStatusSensor,
   favoriteCall,
   runButton,
+  haNavigate,
   climateModeGlow,
   cooktopLevel,
   onlyColor,
@@ -47,7 +49,7 @@ import { neonSignPicture, signFont, signLight, signLines } from "../neon-sign.ts
 import { uiIcon } from "../ui-icons.ts";
 import { applianceIdle, binColors, calendarItems, type DayEvent, fetchDayEvents, householdCalendars, binDue, binNext, binOut, binOutToggleable, binPlace, binTagsShown, doorsOf, fetchPickups, FinishedMemory, fridgeOpenTooLong, groupTags, hassCountry, isFinishedState, mailboxPost, nextFridgeCheck, plantThirsty, remainingMinutes, remainingText, servicesDue, sameHousehold, setHouseholdCountry, wasteCalendars, isPackPlant, type HouseholdItem, type HouseholdTag, type Pickup } from "../household.ts";
 import { BAR_RGB, CHARGE_BAR_COUNT, chargeBars, DARK_BAR_RGB } from "../charge-bars.ts";
-import { batteryCharge, deviceSensors, energySummary, fetchSolarRows, fetchTodayChange, type EnergyPrefs, fieldLevels, fieldPowers, findConsumers, flowDots, isLoad, flowSegments, mixColor, sourceMix, gridPoint, powerSensorFor, readPower, solarCurvePath, solarDayFromStats, type Consumer, type EnergySummary, type SolarDay, type FlowKind, type StatRow } from "../energy.ts";
+import { batteryCharge, deviceSensors, energySummary, pvWithStrings, stringsPower, fetchSolarRows, fetchTodayChange, type EnergyPrefs, fieldLevels, fieldPowers, findConsumers, flowDots, isLoad, flowSegments, mixColor, sourceMix, gridPoint, powerSensorFor, readPower, solarCurvePath, solarDayFromStats, type Consumer, type EnergySummary, type SolarDay, type FlowKind, type StatRow } from "../energy.ts";
 import { fieldFace, fieldSize, roofFaces, roofWindowRoom } from "../solar.ts";
 import { type CustomButton, type EnergySettings, type EntityRef, DEFAULT_HOLOGRAM, lockAlong, type PoolPipe, type RoofWindow, type SolarField, uid } from "../model.ts";
 
@@ -186,6 +188,7 @@ import type { PoolPiece } from "../viewer/pool-water.ts";
 import { EDITOR_SENSOR_SYNC_MS, pacedSyncDelay, sensorSyncDelay } from "../viewer/pace.ts";
 import { nextTask } from "../viewer/slices.ts";
 import { flowWidth } from "../viewer/flow-style.ts";
+import { flyInAllowed } from "../viewer/fly-in-gate.ts";
 import { roomSentence, sceneSummary, type FloorSummary } from "../room-summary.ts";
 import { floorCounts, floorInfoText, locatedPersons, personLook, personsInRooms, personsShown } from "../presence.ts";
 import { controls, tokens } from "../styles.ts";
@@ -1286,6 +1289,7 @@ export class Fp3dView3d extends LitElement {
         this.shownStartView = JSON.stringify(this.startViewOf());
         this.viewer.setStartView(this.startViewOf());
         this.viewer.setBuilding(this.viewPlan(this.building));
+        this.maybeFlyIn();
       }
       this.scheduleThumbs();
       this.syncDevicesSoon();
@@ -1491,6 +1495,8 @@ export class Fp3dView3d extends LitElement {
         this.shownStartView = start;
         v.setStartView(this.startViewOf());
         v.setBuilding(this.viewPlan(this.building));
+        // "Fly in from space" switched on (#477): it plays once right away
+        this.maybeFlyIn(this.flyinWas === false && !!this.building.settings.flyin);
       } else if (changed.has("roomCard") && changed.get("roomCard") !== undefined && this.building) {
         // a card made a room card or back (#463): the map comes or goes
         v.setBuilding(this.viewPlan(this.building));
@@ -1556,6 +1562,8 @@ export class Fp3dView3d extends LitElement {
       v.setFurnishMode(this.furnish);
       this.syncDevices(true);
     }
+    // the cards switched on or off: a speaker's pin steps aside only while its card shows (#484)
+    else if (["_holoShow", "holograms", "showEnergy"].some((k) => changed.has(k) && changed.get(k) !== undefined)) this.syncDevices(true);
     if (changed.has("selectedFurniture")) v.selectFurniture(this.selectedFurniture);
     if (changed.has("selectedSet")) v.selectFurnitureSet(this.selectedSet ?? []);
     if (changed.has("selectedDevice")) v.setSelectedDevice(this.selectedDevice);
@@ -1639,6 +1647,9 @@ export class Fp3dView3d extends LitElement {
         weatherEntityId: this.weatherEntityId,
       });
       if (anyModule()) this.watched = [...new Set([...this.watched, ...moduleWatched(this.sceneHost(hass, b))])];
+      // the helper that picks the style: its change alone redraws the house (#484)
+      const styleHelper = this.styleEntity || b.settings.style_entity;
+      if (styleHelper && !this.watched.includes(styleHelper)) this.watched = [...this.watched, styleHelper];
       force = true;
     }
     let changed = force || timed;
@@ -1735,7 +1746,8 @@ export class Fp3dView3d extends LitElement {
         // the own name under the pin: per device, or for every named device (card option marker_names)
         const caption = m.ownName && (m.showName || this.markerNames) ? m.ownName : "";
         // Klang & Kino: while a card floats over the speaker, its pin steps aside (it comes back when the music stops)
-        const carded = this.mediaCardUp(hass, m.id) || (!!m.furnitureId && carSpots.has(m.furnitureId));
+        // (only while the cards show at all: else the pin stays, it vanished with no card in its place, #484)
+        const carded = this.cardsOn() && (this.mediaCardUp(hass, m.id) || (!!m.furnitureId && carSpots.has(m.furnitureId)));
         // a lock at its door asks for its text itself (full): the symbol mode does not take that away
         return { ...marker, pin: (this.plan2d ? pinIn2d(marker, this.markerMode, this.showPin(marker)) : this.showPin(marker)) && !carded, full: m.show === "always" || m.full === true, caption };
       }),
@@ -1848,7 +1860,13 @@ export class Fp3dView3d extends LitElement {
     })();
     const mainAnchor = first ? anchorOn(first, holo.right + sharedRight, holo.up, holo.size) : null;
     const devicePower = this.devicePowers(hass, b);
-    const solarIds = summary.solar !== null ? (b.energy.solar ? [b.energy.solar] : deviceSensors(b, (f) => this.furnitureLinks?.get(f.id)?.power ?? null).solar) : [];
+    const ownSolarIds = b.energy.solar ? [b.energy.solar] : deviceSensors(b, (f) => this.furnitureLinks?.get(f.id)?.power ?? null).solar;
+    // today's yield from the same sensors the "now" comes from: the strings when they stand in for the plant's sensor
+    const ownSolar = ownSolarIds.map((id) => readPower(hass.states[id])).filter((v): v is number => v !== null);
+    const ownSum = ownSolar.length ? ownSolar.reduce((x, y) => x + y, 0) : null;
+    const stringIds = (b.settings.roof.strings ?? []).flatMap((st) => (st.entity && st.entity !== "none" ? [st.entity] : []));
+    const byStrings = pvWithStrings(ownSum, stringsPower(hass, b)) !== ownSum;
+    const solarIds = summary.solar !== null ? (byStrings ? stringIds : ownSolarIds) : [];
     if (mainAnchor) {
       anchors.push(mainAnchor);
       cards.push({ kind: "main", name: translate(hass, "holo_title"), w: null, dayIds: solarIds, battery: null });
@@ -1910,7 +1928,9 @@ export class Fp3dView3d extends LitElement {
           const field = (first && inv.id === mainInverter ? own.find((f) => f.id !== first.id) : null) ?? own[0];
           const sensor = this.furnitureLinks?.get(inv.id)?.power ?? null;
           const anchor = field ? anchorOn(field, inv.plant_right ?? 0, inv.plant_up ?? 0, holo.size * 0.85) : null;
-          if (!anchor || !sensor) continue;
+          // its PV: its own sensor, or what its strings report when that tells nothing
+          const fromStrings = stringsPower(hass, b, inv.id);
+          if (!anchor || (!sensor && fromStrings === null)) continue;
           // its battery: the nearest one on the same floor
           const bat = floor.furniture.filter((m) => energyRole(m.type) === "home_battery").sort((p, q) => Math.hypot(p.x - inv.x, p.z - inv.z) - Math.hypot(q.x - inv.x, q.z - inv.z))[0];
           const socRaw = bat?.soc && bat.soc !== "none" ? Number(hass.states[bat.soc]?.state) : NaN;
@@ -1918,8 +1938,8 @@ export class Fp3dView3d extends LitElement {
           cards.push({
             kind: "plant",
             name: inv.name || furnitureName(hass, inv.type),
-            w: Math.max(0, readPower(hass.states[sensor]) ?? 0),
-            dayIds: [sensor],
+            w: Math.max(0, pvWithStrings(sensor ? readPower(hass.states[sensor]) : null, fromStrings) ?? 0),
+            dayIds: sensor ? [sensor] : [],
             battery: bat ? { soc: Number.isFinite(socRaw) ? socRaw : null, w: devicePower.get(bat.id) ?? null } : null,
           });
         }
@@ -2296,6 +2316,39 @@ export class Fp3dView3d extends LitElement {
       return;
     }
   }
+
+  /**
+   * "Fly in from space" (#477, setting `flyin`, off by default): once per page load, the house view opens with a globe
+   * that turns to the home's place (Home Assistant's location, no network call) and dives in while the camera comes
+   * down onto the house. Never in the editor or the wall view, on the tablet level, in time travel, in the flat plan or
+   * with reduced motion. `force`: the setting was just switched on, play it once now.
+   */
+  private maybeFlyIn(force = false): void {
+    const v = this.viewer;
+    const on = !!this.building?.settings.flyin;
+    this.flyinWas = on;
+    if (!v || !on || (!force && this.flownIn)) return;
+    const cfg = this.hass?.config;
+    const lat = cfg?.latitude;
+    const lon = cfg?.longitude;
+    if (
+      !flyInAllowed({
+        lat,
+        lon,
+        low: this._low,
+        readOnly: this.ro,
+        walkable: this.walkable !== false,
+        plain: this.plan2d,
+        paced: this.syncPace > 0,
+        reducedMotion: matchMedia("(prefers-reduced-motion: reduce)").matches,
+      })
+    )
+      return;
+    if (typeof lat === "number" && typeof lon === "number" && v.flyIn(lat, lon)) this.flownIn = true;
+  }
+  private flownIn = false;
+  /** Whether "Fly in from space" was on at the last building update (undefined before the first one). */
+  private flyinWas: boolean | undefined;
 
   /** Now – or, during time travel, the replayed moment. */
   private now(): number {
@@ -2836,7 +2889,12 @@ export class Fp3dView3d extends LitElement {
     // so are the rack cards (#120): they have their own switch in the dashboard card
     const tagsOnly = () => this._holos.map((card, i) => (card.kind === "bin" ? this.renderBinCard(card, i) : card.kind === "rack" ? this.renderRackCard(card, i) : nothing));
     // the editor keeps the energy bar off but asks for the holograms in its energy tool
-    if ((this.roomId && !(this.building?.settings.roof.hologram ?? DEFAULT_HOLOGRAM).device_room) || !(this.showEnergy || this.holograms) || !this.holoVisible()) return tagsOnly();
+    if (!this.cardsOn()) return tagsOnly();
+    // in an opened room the energy and device cards come only when switched on ("Device cards in an opened room"); the
+    // music cards of the room always (#484: with that switch off they never showed, and their speaker's pin was gone too)
+    if (this.roomId && !(this.building?.settings.roof.hologram ?? DEFAULT_HOLOGRAM).device_room) {
+      return this._holos.map((card, i) => (card.kind === "media" ? this.renderMediaCard(card, i) : card.kind === "bin" ? this.renderBinCard(card, i) : card.kind === "rack" ? this.renderRackCard(card, i) : nothing));
+    }
     // the plants' cards belong to the house view – with a single floor that floor is the house view (#255)
     const house = this.floorId === null || (this.building?.floors.length ?? 0) <= 1;
     const plants = !!e && (e.solar !== null || e.grid !== null || e.battery !== null) && house;
@@ -4624,8 +4682,10 @@ export class Fp3dView3d extends LitElement {
   private wallboxText(hass: HomeAssistant, status: string | null, power: number | null): string {
     const st = status ? hass.states[status] : undefined;
     const raw = String(st?.state ?? "").toLowerCase();
-    const charging = (power ?? 0) > 50 || /charg/.test(raw);
-    const plugged = st?.entity_id.startsWith("binary_sensor.") ? raw === "on" : /connect|plug|ready|wait|paused|suspend/.test(raw);
+    // whole words: "not_charging", "ready_to_charge" or "charger_free" are no charging, "disconnected" no car
+    const read = chargerStatus(raw);
+    const charging = (power ?? 0) > 50 || read.charging;
+    const plugged = st?.entity_id.startsWith("binary_sensor.") ? raw === "on" : read.plugged;
     const label = charging ? translate(hass, "wallbox_charging") : plugged ? translate(hass, "wallbox_plugged") : st && !isUnavailable(st) && !st.entity_id.startsWith("binary_sensor.") ? stateText(hass, st) : "";
     const watts = power !== null && power > 50 ? formatPower(hass, power) : "";
     return [label, watts].filter(Boolean).join(" · ");
@@ -4947,14 +5007,16 @@ export class Fp3dView3d extends LitElement {
       // the whole range over about 220 pixels; up = brighter / blind up
       const value = Math.round(Math.min(100, Math.max(0, s.start - (dy / 220) * 100)));
       if (value !== s.value) this._swipe = { ...s, value };
-      // at most a few calls per second while the finger moves
+      // a lamp follows the finger, at most a few calls per second; a blind gets one position when the finger lifts:
+      // its motor cannot follow, every step in between was queued and it kept moving for a long while
       const now = performance.now();
-      if (now - this.swipeSent > 350) {
+      if (s.kind === "light" && now - this.swipeSent > 350) {
         this.swipeSent = now;
         this.applySwipe();
       }
     } else {
-      this.applySwipe();
+      // a pan that only started on a blind (back where it began) sends nothing
+      if (this._swipe && (this._swipe.kind === "light" || this._swipe.value !== this._swipe.start)) this.applySwipe();
       clearTimeout(this.swipeTimer);
       this.swipeTimer = setTimeout(() => (this._swipe = null), 700);
     }
@@ -6299,8 +6361,7 @@ export class Fp3dView3d extends LitElement {
   private openTab(event: "open-settings" | "open-extensions", url: string, section: string | null = null): void {
     const asked = new CustomEvent(event, { detail: { section, id: null }, bubbles: true, composed: true, cancelable: true });
     if (this.dispatchEvent(asked)) {
-      history.pushState(null, "", url);
-      window.dispatchEvent(new CustomEvent("location-changed", { detail: { replace: false } }));
+      haNavigate(url);
     }
   }
 
@@ -6842,8 +6903,7 @@ export class Fp3dView3d extends LitElement {
       moreInfo: (id) => openMoreInfo(this, id),
       camera: (id) => (this._menu = { entity: id, x, y }),
       navigate: (path) => {
-        history.pushState(null, "", path);
-        window.dispatchEvent(new CustomEvent("location-changed", { detail: { replace: false } }));
+        haNavigate(path);
       },
       openUrl: (url) => void window.open(url, "_blank", "noopener,noreferrer"),
       ownHost: location.host,
@@ -7076,6 +7136,11 @@ export class Fp3dView3d extends LitElement {
 
   private holoVisible(): boolean {
     return this.holograms ?? this._holoShow;
+  }
+
+  /** Whether the glass cards show at all (the card's options and the holograms switch) (#484). */
+  private cardsOn(): boolean {
+    return (this.showEnergy || !!this.holograms) && this.holoVisible();
   }
 
   /** Fold the energy row down to the Consumption tile, or unfold it again (#348). */

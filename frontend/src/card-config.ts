@@ -147,3 +147,13 @@ export type CardControl = (typeof CARD_CONTROLS)[number];
 export function showsPlan2d(config: CardConfig | undefined, chosen: boolean | null): boolean {
   return chosen ?? config?.view === "2d";
 }
+
+/**
+ * How far from the right edge the view's walk button sits (#484): clear of the card's own buttons at the top right as
+ * wide as they really are (`lefts`: their left edges in the card's body of `width` px). A dashboard button with a long
+ * label reached over a fixed 104 px.
+ */
+export function walkRightFor(lefts: readonly number[], width: number): number {
+  const left = Math.min(...lefts, Infinity);
+  return Number.isFinite(left) ? Math.max(104, width - left + 8) : 104;
+}

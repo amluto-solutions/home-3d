@@ -8,6 +8,7 @@ import type { LampModel } from "./viewer/viewer3d.ts";
 import type { RackFrameSpec } from "./rack-frame.ts";
 import type { RackGearSpec } from "./rack.ts";
 import type { PackSlot, PartBind } from "./live-parts.ts";
+import type { ColourRole } from "./colour-roles.ts";
 
 /** A cooking zone of a pack cooktop: a thin disc lying on the item's top. */
 export function isCooktopZone(p: Pick<PackPart, "shape" | "y" | "h" | "axis">): boolean {
@@ -36,9 +37,17 @@ export interface PackPart {
   /** Bottom and height in fractions of the item's height. */
   y: number;
   h: number;
-  /** "#rrggbb" or a palette role ("body", "fabric", "wood", …). */
+  /**
+   * "#rrggbb" or a palette role ("body", "fabric", "wood", …; "front" for door and drawer fronts since #478, drawn like
+   * "white", the carcass, until the placed item has a colour for it).
+   */
   color: string;
   top?: string;
+  /**
+   * The colour role a part in a colour of its own follows (#478): it keeps its colour until the placed item has a colour
+   * for that role (a gaming chair's red cover takes the fabric colour, a table's oak top the wood colour).
+   */
+  finish?: ColourRole;
   /** Outline: true (soft blue), "glow" (cyan like the walls) or "faint". */
   edges?: boolean | "glow" | "faint";
   /** Lamps: shines in the colour and brightness of the linked light. */
@@ -619,6 +628,8 @@ export function packName(pack: { id: string; name: string }, _language: string):
   return pack.name;
 }
 
+const CEILING_GAP = 0.005;
+
 /** Height of the bottom of a pack item, a wall light or an LED strip above the floor (0 for other built-in furniture). */
 type MountItem = Pick<Furniture, "type" | "x" | "z" | "h"> & { mount_y?: number | null; variant?: string | null };
 
@@ -657,7 +668,8 @@ function mountBaseNow(floor: Floor, f: MountItem): number {
     case "wall":
       return item.wall_y ?? 1;
     case "ceiling":
-      return Math.max(0, floor.height - f.h);
+      // 5 mm under the ceiling: flush with it, its top lay in the floor above and showed through it there
+      return Math.max(0, floor.height - f.h - CEILING_GAP);
     default:
       // built-in models: where they are drawn by default (a wall cabinet at 1.45 m)
       if (item) return groundUnder(floor, f);

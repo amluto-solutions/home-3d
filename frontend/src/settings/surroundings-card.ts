@@ -11,7 +11,7 @@ import { defineElement } from "../define.ts";
 import { loadOsm } from "../load-osm.ts";
 import type { Building, Surroundings, Vec2 } from "../model.ts";
 import { controls, tokens } from "../styles.ts";
-import { footprint, hiddenBuildings, homeBuilding, mapToPlan, OSM_ATTRIBUTION, OSM_COPYRIGHT, ownUnderPlan, planMiddle, SURROUND_RADII, turnMap } from "../surroundings.ts";
+import { footprint, hiddenBuildings, homeBuilding, mapToPlan, OSM_ATTRIBUTION, OSM_COPYRIGHT, ownUnderPlan, planMiddle, SURROUND_RADII, SURROUND_Y_MAX, surroundHeight, turnMap } from "../surroundings.ts";
 import { DEFAULT_RADIUS, errorKey, homeLocation, loaded } from "../surround-load.ts";
 import type { HomeAssistant } from "../types.ts";
 import { checkFits, messageBytes } from "../ws-size.ts";
@@ -91,6 +91,15 @@ export function toggled(b: Building, i: number): Building {
     if (show.length) sur.show = show;
     else delete sur.show;
   });
+}
+
+/** The plan with the whole map `v` metres above (+) or below (-) the ground floor's ground (to the centimetre, at most 30 m either way); 0 drops the key (#482). */
+export function raised(b: Building, v: number): Building {
+  const y = Math.round(Math.max(-SURROUND_Y_MAX, Math.min(SURROUND_Y_MAX, v)) * 100) / 100;
+  const settings = { ...b.settings };
+  if (Number.isFinite(y) && y !== 0) settings.surroundings_y = y;
+  else delete settings.surroundings_y;
+  return { ...b, settings };
 }
 
 export class Fp3dSurroundSettings extends LitElement {
@@ -190,7 +199,10 @@ export class Fp3dSurroundSettings extends LitElement {
 
   private removeMap(): void {
     const b = this.building;
-    if (b) this.commit({ ...b, settings: { ...b.settings, surroundings: null } });
+    if (!b) return;
+    // a new map starts at the ground floor's ground again; Load again keeps the height (#482)
+    const next = raised({ ...b, settings: { ...b.settings, surroundings: null } }, 0);
+    this.commit(next);
   }
 
   private set(change: (s: Surroundings) => Partial<Surroundings>): void {
@@ -279,6 +291,26 @@ export class Fp3dSurroundSettings extends LitElement {
       ${s
         ? html`<label class="check"><input type="checkbox" .checked=${s.on} @change=${(e: Event) => this.set(() => ({ on: (e.target as HTMLInputElement).checked }))} /> ${t("surround_show")}</label>
             <label class="check"><input type="checkbox" .checked=${s.flat === true} @change=${(e: Event) => this.set(() => ({ flat: (e.target as HTMLInputElement).checked }))} /> ${t("surround_flat")}</label>
+            <div class="row">
+              <label class="lbl" for="surround-y">${t("surround_y")}</label>
+              <input
+                id="surround-y"
+                class="num"
+                type="number"
+                inputmode="decimal"
+                step="0.05"
+                min=${-SURROUND_Y_MAX}
+                max=${SURROUND_Y_MAX}
+                .value=${String(surroundHeight(b))}
+                @change=${(e: Event) => {
+                  const input = e.target as HTMLInputElement;
+                  const v = Number(input.value.trim().replace(",", "."));
+                  if (input.value.trim() === "" || !Number.isFinite(v)) input.value = String(surroundHeight(b));
+                  else if (this.building) this.commit(raised(this.building, v));
+                }}
+              />
+            </div>
+            <p class="sub">${t("surround_y_hint")}</p>
             <p class="sub">${t("surround_stats", { buildings: s.buildings.length - hiddenBuildings(s, b).size, ways: s.ways.length, trees: s.trees.length, date: when })}</p>
             <h4>${t("surround_align")}</h4>
             <p class="sub">${t(typeof s.own === "number" ? "surround_align_hint" : "surround_no_own")}</p>
@@ -334,6 +366,9 @@ export class Fp3dSurroundSettings extends LitElement {
         gap: 8px;
         margin: 0 0 8px;
         font-size: 13.5px;
+      }
+      .num {
+        width: 7em;
       }
       .credit a {
         color: inherit;

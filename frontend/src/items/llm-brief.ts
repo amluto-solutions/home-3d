@@ -44,7 +44,8 @@ const ROLES: Record<(typeof COLOUR_ROLES)[number], string> = {
   fabric: "upholstery, rugs, curtains",
   cushion: "seat and back cushions, pillows",
   wood: "wood",
-  white: "white ceramics, white goods, white plastic",
+  white: "white ceramics, white goods, white plastic; in a cabinet, kitchen unit or dresser the carcass (the body behind the fronts)",
+  front: 'door and drawer fronts of a cabinet, kitchen unit or dresser (drawn like "white" until the owner gives fronts and carcass colours of their own)',
   metal: "steel, chrome, brass, handles",
   dark: "black parts, screens, rubber, shadows",
   glass: "glass (drawn see-through)",
@@ -99,6 +100,7 @@ ${f.shapes.map((s) => `  - "${s}": ${SHAPES[s]}`).join("\n")}
 - "color": a colour role (preferred: the plan's theme colours it) or "#rrggbb" for a fixed colour. Roles:
 ${f.colourRoles.map((r) => `  - "${r}": ${ROLES[r]}`).join("\n")}
 - "top": another colour (role or "#rrggbb") for the part's top face.
+- "finish": a colour role a part in a colour of its own ("#rrggbb" or a role like "dark") follows: it keeps its colour until the owner gives that role a colour. A gaming chair's red cover with "finish": "fabric", a table's oak top with "finish": "wood". Rarely needed: a part in the role itself already follows it.
 - "fix": the measures the part KEEPS when the item is resized: "w", "d", "h" or several ("wd", "wdh"). Legs keep "wd", table tops, shelves and plinths keep "h", handles keep "wdh". Parts without fix (the carcass, a seat) stretch between them.
 - "rot": a turn of the part around its own upright axis in degrees (${range(f.rot)}), for diagonal struts or spiral steps.
 - "glow": true for the part of a lamp that lights up (shade, bulb).

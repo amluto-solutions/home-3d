@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { batteryCharge, deviceSensors, energySummary, fieldPowers, findConsumers, flowColor, FLOW_COLORS, flowDots, flowSegments, sourceMix, type EnergySummary, gridPoint, meterPosition, powerSensorFor, proposeEnergySensors, readPower, solarCurvePath, solarDayFromStats, wattsPerUnit } from "./energy.ts";
+import { batteryCharge, deviceSensors, energySummary, pvWithStrings, stringsPower, fieldPowers, findConsumers, flowColor, FLOW_COLORS, flowDots, flowSegments, sourceMix, type EnergySummary, gridPoint, meterPosition, powerSensorFor, proposeEnergySensors, readPower, solarCurvePath, solarDayFromStats, wattsPerUnit } from "./energy.ts";
 import { proposeField, roofFaces } from "./solar.ts";
 import type { Building, Room } from "./model.ts";
 import { emptyBuilding, newFloor } from "./model.ts";
@@ -447,4 +447,53 @@ test("a battery shows its own charge, else its inverter's setup, else the house 
   assert.deepEqual(get("b1"), { soc: 77, own: true });
   assert.deepEqual(get("b2"), { soc: 30, own: false });
   assert.deepEqual(get("b3"), { soc: 80, own: false });
+});
+
+test("PV from the strings when the plant's sensor tells nothing or reads 0 while they make power", () => {
+  assert.equal(pvWithStrings(null, 1200), 1200);
+  assert.equal(pvWithStrings(0, 1200), 1200);
+  // a real reading wins; tiny string values (night, standby) do not override 0
+  assert.equal(pvWithStrings(900, 1200), 900);
+  assert.equal(pvWithStrings(0, 20), 0);
+  assert.equal(pvWithStrings(450, null), 450);
+  assert.equal(pvWithStrings(null, null), null);
+});
+
+test("the summary takes the strings' power when the plant's sensor reads 0, or when the plan has none", () => {
+  const b = house();
+  b.settings.roof.strings = [
+    { id: "s1", name: "S1", entity: "sensor.s1", inverter: null },
+    { id: "s2", name: "S2", entity: "sensor.s2", inverter: null },
+    { id: "s3", name: "S3", entity: "none", inverter: null },
+  ];
+  // a plant sensor that reads 0 beside two strings making power
+  let hass = hassWith([power("sensor.grid", "-300"), power("sensor.solar", "0"), power("sensor.s1", "0.4", "kW"), power("sensor.s2", "700")]);
+  assert.equal(stringsPower(hass, b), 1100);
+  assert.equal(energySummary(hass, b, []).solar, 1100);
+  // a plant sensor with a real reading stays
+  hass = hassWith([power("sensor.grid", "-300"), power("sensor.solar", "900"), power("sensor.s1", "400"), power("sensor.s2", "700")]);
+  assert.equal(energySummary(hass, b, []).solar, 900);
+  // no plant sensor at all: the strings count
+  b.energy = { ...b.energy, solar: null };
+  hass = hassWith([power("sensor.grid", "-300"), power("sensor.s1", "400"), power("sensor.s2", "700")]);
+  assert.equal(energySummary(hass, b, []).solar, 1100);
+  // strings whose sensors do not answer change nothing
+  hass = hassWith([power("sensor.grid", "-300")]);
+  assert.equal(stringsPower(hass, b), null);
+  assert.equal(energySummary(hass, b, []).solar, null);
+});
+
+test("strings by inverter: one plant's strings, and none counted twice for a setup of its own", () => {
+  const b = house();
+  b.settings.roof.strings = [
+    { id: "s1", name: "S1", entity: "sensor.s1", inverter: "inv1" },
+    { id: "s2", name: "S2", entity: "sensor.s2", inverter: "inv2" },
+  ];
+  const hass = hassWith([power("sensor.solar", "0"), power("sensor.solar2", "500"), power("sensor.s1", "300"), power("sensor.s2", "500")]);
+  assert.equal(stringsPower(hass, b, "inv1"), 300);
+  assert.equal(stringsPower(hass, b, "inv2"), 500);
+  assert.equal(stringsPower(hass, b, "inv3"), null);
+  // inverter 2 has a setup with its own sensor: its 500 W is not taken from the strings as well
+  b.energy = { ...b.energy, systems: [{ id: "sys", name: "Second", inverter: "inv2", grid: null, grid_invert: false, solar: "sensor.solar2", battery: null, battery_invert: false, battery_soc: null }] };
+  assert.equal(energySummary(hass, b, []).solar, 800);
 });

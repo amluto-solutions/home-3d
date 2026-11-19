@@ -4,6 +4,7 @@ pack; English stays in the page and is the fallback for every key a pack lacks."
 from __future__ import annotations
 
 import json
+from pathlib import Path
 
 from homeassistant.core import HomeAssistant
 from homeassistant.setup import async_setup_component
@@ -196,7 +197,12 @@ async def test_install_list_use_and_remove_a_language_pack(hass: HomeAssistant, 
 
 async def test_a_newer_copy_of_the_bundled_german_replaces_it(hass: HomeAssistant, hass_ws_client) -> None:
     client = await _client(hass, hass_ws_client)
-    newer = {**PACK_JSON, "language": "de", "id": "amluto.lang-de", "release": 3}
+    bundled = json.loads(
+        (
+            Path(__file__).parent.parent / "custom_components/home_3d/bundled_languages/amluto.lang-de/pack.json"
+        ).read_text(encoding="utf-8")
+    )
+    newer = {**PACK_JSON, "language": "de", "id": "amluto.lang-de", "release": bundled["release"] + 1}
     files = _folder(pack=newer, strings={"view": "Neu"})
     # from files it is refused: only the packs repository may carry our ids (#372)
     refused = await _call(client, type="home_3d/packs/import", files=files, confirm=True)

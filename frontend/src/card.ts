@@ -2,7 +2,7 @@
 
 import { defineElement } from "./define.ts";
 import { zonesOf, type Building } from "./model.ts";
-import { confirmEntities } from "./devices.ts";
+import { confirmEntities, haNavigate } from "./devices.ts";
 import { css, html, LitElement, nothing, type PropertyValues } from "lit";
 import { uiIcon } from "./ui-icons.ts";
 import { BuildingController, type PlanChange } from "./building-controller.ts";
@@ -12,7 +12,7 @@ import { need } from "./lazy-part.ts";
 import { languageReady, loadLanguage, translate, uiLanguage, type I18nKey } from "./i18n.ts";
 import { controls, tokens } from "./styles.ts";
 import type { HomeAssistant } from "./types.ts";
-import { showsPlan2d, type CardConfig, type CardControl } from "./card-config.ts";
+import { showsPlan2d, walkRightFor, type CardConfig, type CardControl } from "./card-config.ts";
 import { fitBar, type BarItem } from "./card-fit.ts";
 import { preload3d } from "./load3d.ts";
 import { nightActive } from "./kiosk.ts";
@@ -199,8 +199,7 @@ export class Floorplan3dCard extends LitElement {
 
   /** Opens another dashboard or view the way Home Assistant's own links do (no page reload). */
   private openDashboard(path: string): void {
-    history.pushState(null, "", path);
-    window.dispatchEvent(new CustomEvent("location-changed", { bubbles: true, composed: true, detail: { replace: false } }));
+    haNavigate(path);
   }
 
   private readonly onFullscreen = () => {
@@ -421,6 +420,13 @@ clearTimeout(this.cleanTimer);
         if (Math.abs(w - this._barW) > 1) this._barW = w;
       });
       this.barSizer.observe(body);
+    }
+    // the walk button steps aside for the card's own buttons at the top right, as wide as they really are: a
+    // dashboard button with a long label reached over it (#484)
+    const view = this.shadowRoot?.querySelector("fp3d-view3d") as HTMLElement | null;
+    if (view) {
+      const right = walkRightFor([...(this.shadowRoot?.querySelectorAll<HTMLElement>(".fp3d-card-full") ?? [])].map((el) => el.offsetLeft), view.clientWidth);
+      if (view.style.getPropertyValue("--fp3d-walk-right") !== `${right}px`) view.style.setProperty("--fp3d-walk-right", `${right}px`);
     }
   }
 

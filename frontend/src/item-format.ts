@@ -5,14 +5,17 @@
 /** The shapes a part can have, in the order the editor offers them. */
 export const PART_SHAPES = ["box", "cyl", "loft", "sphere", "lathe", "rbox", "shell"] as const;
 
-/** The colour roles, in the order the item panel lists them (colour-roles.ts). */
-export const COLOUR_ROLES = ["body", "fabric", "cushion", "wood", "white", "metal", "dark", "glass", "plant", "pot", "accent", "paint"] as const;
+/**
+ * The colour roles, in the order the item panel lists them (colour-roles.ts). `front` (#478) is the door and drawer
+ * fronts: drawn like `white` (the carcass) until the placed item has a colour for it.
+ */
+export const COLOUR_ROLES = ["body", "fabric", "cushion", "wood", "white", "front", "metal", "dark", "glass", "plant", "pot", "accent", "paint"] as const;
 
 /**
  * What a pack item may call the part drawn in a colour role (`role_names`, #411): the item panel names its colour rows
  * after them ("Paint", "Tyres and trim") instead of the role's colour word. The text of each is `part_<name>`.
  */
-export const PART_NAMES = ["main", "second", "third", "details", "paint", "trim", "tyres", "tyres_trim", "wheels", "windows", "lights", "frame", "legs", "seat", "fabric", "cushion", "wood", "metal", "glass", "plant", "pot", "case", "panels", "valves", "grille", "buttons", "screen", "top", "base", "fronts", "handles", "shade"] as const;
+export const PART_NAMES = ["main", "second", "third", "details", "paint", "trim", "tyres", "tyres_trim", "wheels", "windows", "lights", "frame", "legs", "seat", "fabric", "cushion", "wood", "metal", "glass", "plant", "pot", "case", "panels", "valves", "grille", "buttons", "screen", "top", "base", "fronts", "handles", "shade", "carcass"] as const;
 
 /** Where an item sits. */
 export const MOUNTS = ["floor", "surface", "wall", "ceiling"] as const;

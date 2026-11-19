@@ -80,7 +80,7 @@ test("parts are named by what they are: the pack's names, a vehicle's parts, els
   assert.equal(shown(rad, "metal"), "Valves");
   assert.equal(shown(rad, "accent"), "Details", "a name the list does not know falls back");
   // built-in items: the colour-word roles take Main colour, Second colour, Third colour in turn; materials keep theirs
-  assert.deepEqual(itemColourRoles("kitchen").map((r) => shown("kitchen", r)), ["Main colour", "Second colour", "Third colour"]);
+  assert.deepEqual(itemColourRoles("kitchen").map((r) => shown("kitchen", r)), ["Main colour", "Wood", "Second colour", "Third colour"]);
   assert.deepEqual(itemColourRoles("radiator").map((r) => shown("radiator", r)), ["Main colour", "Metal"]);
   assert.deepEqual(itemColourRoles("sofa").map((r) => shown("sofa", r)), ["Fabric", "Cushions", "Wood"]);
   assert.deepEqual(itemColourRoles("robot_vacuum").map((r) => shown("robot_vacuum", r)), ["Main colour", "Details"]);

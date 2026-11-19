@@ -424,12 +424,12 @@ def test_a_plan_with_surroundings_is_version_five_and_an_older_home_3d_opens_it_
     """#462: the neighbourhood from OpenStreetMap (`settings.surroundings`, its way and area kinds new choices) is plan
     version 5. The 4 -> 5 step changes nothing; a version-4 plan loads unchanged, keeps every key, and gets no map.
     A Home 3D that reads versions up to 4 (1.5.x) shows a plan with surroundings read-only instead of repairing it."""
-    assert PLAN_VERSION == 5
+    assert PLAN_VERSION >= 5
     older = {**copy.deepcopy(BUILDING), "version": 4}
     kept = copy.deepcopy(older)
     migrated = migrate_plan(older)
     assert older == kept, "the stored plan is left as it was"
-    assert migrated == {**kept, "version": 5}, "no key dropped, none added"
+    assert migrated == {**kept, "version": PLAN_VERSION}, "no key dropped, none added"
     assert migrate_plan(migrated) is migrated, "idempotent"
     assert "surroundings" not in BUILDING_SCHEMA(older)["settings"], "an older plan gets no map"
 
@@ -463,3 +463,46 @@ def test_the_sample_home_has_no_surroundings() -> None:
     sample = json.loads(SAMPLE.read_text(encoding="utf-8"))
     plans = [sample, *(h.get("building", {}) for h in sample.get("homes", []) if isinstance(h, dict))]
     assert all(not (p.get("settings") or {}).get("surroundings") for p in plans if isinstance(p, dict))
+
+
+def test_the_height_of_the_surroundings_is_an_optional_settings_key() -> None:
+    """#482: `settings.surroundings_y` (the whole map up or down, m) is optional and sits beside the map. A plan saved
+    without it loads unchanged (no key added), one with it keeps it, a value beyond 30 m either way is refused, and the
+    map is the same with or without it. It came with plan version 6."""
+    assert PLAN_VERSION >= 6
+    plain = {**copy.deepcopy(BUILDING), "version": 5}
+    plain["settings"] = {**plain.get("settings", {}), "surroundings": _surroundings()}
+    loaded = BUILDING_SCHEMA(plain)["settings"]
+    assert "surroundings_y" not in loaded, "an older plan gets no height added"
+    assert loaded["surroundings"] == _surroundings()
+    for good in (-30, -1.25, 0, 0.5, 30):
+        raised = {**plain, "settings": {**plain["settings"], "surroundings_y": good}}
+        kept = BUILDING_SCHEMA(raised)["settings"]
+        assert kept["surroundings_y"] == good
+        assert kept["surroundings"] == _surroundings(), "the map is as stored"
+    for bad in (-31, 30.5, "high"):
+        broken = {**plain, "settings": {**plain["settings"], "surroundings_y": bad}}
+        with pytest.raises(vol.Invalid):
+            BUILDING_SCHEMA(broken)
+    # a plan with a height but no map (the map was removed by hand in the file) is still a plan
+    assert BUILDING_SCHEMA({**plain, "settings": {**plain["settings"], "surroundings": None, "surroundings_y": 2}})
+
+
+def test_a_version_five_plan_loads_unchanged_as_version_six_and_1_6_x_opens_a_new_one_read_only(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Plan version 6 (Home 3D 1.7.0): the 5 -> 6 step changes nothing. A plan can then hold the front colour and
+    material of an item (`front`, #478), the height of the surroundings and the upper pitch of a mansard roof. A
+    Home 3D that reads versions up to 5 (1.6.x) refuses such a plan instead of repairing it."""
+    assert PLAN_VERSION == 6
+    older = {**copy.deepcopy(BUILDING), "version": 5}
+    kept = copy.deepcopy(older)
+    migrated = migrate_plan(older)
+    assert older == kept, "the stored plan is left as it was"
+    assert migrated == {**kept, "version": 6}, "no key dropped, none added"
+    assert migrate_plan(migrated) is migrated, "idempotent"
+
+    newer = {**copy.deepcopy(BUILDING), "version": 6}
+    monkeypatch.setattr("custom_components.home_3d.migrations.PLAN_VERSION", 5)
+    with pytest.raises(PlanTooNew, match=r"made by a newer Home 3D"):
+        migrate_plan(newer)

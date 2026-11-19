@@ -15,6 +15,9 @@ export const ROLE_NEON = {
   woodTop: 0x202d4b,
   white: 0x1d2946,
   whiteTop: 0x26375e,
+  // door and drawer fronts (#478): drawn like "white" until the placed item has a colour for them
+  front: 0x1d2946,
+  frontTop: 0x26375e,
   metal: 0x2a3a60,
   dark: 0x0b111f,
   glass: 0x1c3a52,
@@ -39,6 +42,8 @@ export const ROLE_NATURAL: typeof ROLE_NEON = {
   woodTop: 0xbd9067,
   white: 0xedebe7,
   whiteTop: 0xf8f7f4,
+  front: 0xedebe7,
+  frontTop: 0xf8f7f4,
   metal: 0x9da3ab,
   dark: 0x40454d,
   glass: 0xa9cfe0,

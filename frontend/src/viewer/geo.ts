@@ -493,6 +493,11 @@ export function pushPrism(
     topFace?: boolean;
     holes?: Vec2[][];
     skipSide?: (a: Vec2, b: Vec2) => boolean;
+    /**
+     * Only these height bands of a side are drawn, each clipped to the prism (the rest lies against a neighbouring
+     * solid, #1182); null draws the side whole.
+     */
+    sideBands?: (a: Vec2, b: Vec2) => [number, number][] | null;
     /** An own colour for one side (a wall colour, #437): given the side's corners and its outward unit normal in the plan. */
     sideColor?: (a: Vec2, b: Vec2, nx: number, nz: number) => number | null;
   } = {},
@@ -544,12 +549,25 @@ export function pushPrism(
       const yb = topY(b);
       const own = opts.sideColor ? opts.sideColor(a, b, (ccw ? dz : -dz) / l, (ccw ? -dx : dx) / l) : null;
       const col = own ?? side;
-      const lo = shade(col, k(y0) * dir);
-      const hiA = shade(col, k(ya) * dir);
-      const hiB = shade(col, k(yb) * dir);
-      if (own !== null) for (const c of [lo, hiA, hiB]) c.setRGB(c.r + WALL_TINT, c.g + WALL_TINT, c.b + WALL_TINT);
-      buf.tri([a[0], y0, a[1]], [a[0], ya, a[1]], [b[0], yb, b[1]], lo, hiA, hiB, undefined, fold);
-      buf.tri([a[0], y0, a[1]], [b[0], yb, b[1]], [b[0], y0, b[1]], lo, hiB, lo, undefined, fold);
+      const face = (u: number, va: number, vb: number) => {
+        const lo = shade(col, k(u) * dir);
+        const hiA = shade(col, k(va) * dir);
+        const hiB = shade(col, k(vb) * dir);
+        if (own !== null) for (const c of [lo, hiA, hiB]) c.setRGB(c.r + WALL_TINT, c.g + WALL_TINT, c.b + WALL_TINT);
+        buf.tri([a[0], u, a[1]], [a[0], va, a[1]], [b[0], vb, b[1]], lo, hiA, hiB, undefined, fold);
+        buf.tri([a[0], u, a[1]], [b[0], vb, b[1]], [b[0], u, b[1]], lo, hiB, lo, undefined, fold);
+      };
+      const bands = opts.sideBands?.(a, b);
+      if (!bands) {
+        face(y0, ya, yb);
+        continue;
+      }
+      for (const [u0, v] of bands) {
+        const u = Math.max(u0, y0);
+        const va = Math.max(u, Math.min(v, ya));
+        const vb = Math.max(u, Math.min(v, yb));
+        if (Math.max(va, vb) - u > 1e-4) face(u, va, vb);
+      }
     }
   }
 }

@@ -904,6 +904,7 @@ export class ItemFormPart {
               (v) => this.updateFurniture({ power: v }),
             )
           : nothing}
+        ${role === "inverter" ? html`<p class="fp3d-sub fp3d-wide">${this.t("inverter_power_hint")}</p>` : nothing}
         ${role === "meter" && !volumeMeter(f.type) && !(f.export && f.export !== "none")
           ? // which way its one signed sensor counts (#423): the plan's grid sign, the same choice as in the energy balance
             this.renderSignChoice("grid", this._doc.energy.grid_invert, (v) => this.setEnergy({ grid_invert: v }))

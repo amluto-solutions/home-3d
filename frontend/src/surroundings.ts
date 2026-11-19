@@ -229,6 +229,17 @@ export interface PlacedSurroundings {
   trees: Vec2[];
   /** The neighbours' houses only as outlines on the ground. */
   flat: boolean;
+  /** Up or down from the ground floor's ground (m, #482). */
+  y: number;
+}
+
+/** The most the map can be moved up or down (m). */
+export const SURROUND_Y_MAX = 30;
+
+/** How far the whole map lies above (+) or below (-) the ground floor's ground (m); 0 when unset or not a number. */
+export function surroundHeight(b: Pick<Building, "settings"> | null | undefined): number {
+  const y = b?.settings.surroundings_y;
+  return typeof y === "number" && Number.isFinite(y) ? Math.max(-SURROUND_Y_MAX, Math.min(SURROUND_Y_MAX, y)) : 0;
 }
 
 /** The neighbourhood in plan coordinates without the buildings the plan stands on; null when it is off or missing. */
@@ -244,6 +255,7 @@ export function placedSurroundings(b: Building | null | undefined): PlacedSurrou
     areas: s.areas.map((a) => ({ p: a.p.map(at), k: a.k })),
     trees: s.trees.map(at),
     flat: s.flat === true,
+    y: surroundHeight(b),
   };
 }
 
@@ -279,7 +291,7 @@ export function mapCorners(b: Building): Vec2[] {
 /** A short key that changes whenever what is drawn of the neighbourhood changes (for redrawing it and its shadows). */
 export function surroundKey(b: Building | null | undefined): string {
   const s = b?.settings.surroundings;
-  return s?.on ? `${s.at},${s.x},${s.z},${s.own ?? ""},${s.buildings.length},${s.hide?.join(".") ?? ""},${s.show?.join(".") ?? ""},${s.flat ? 1 : 0}` : "";
+  return s?.on ? `${s.at},${s.x},${s.z},${s.own ?? ""},${s.buildings.length},${s.hide?.join(".") ?? ""},${s.show?.join(".") ?? ""},${s.flat ? 1 : 0},${surroundHeight(b)}` : "";
 }
 
 /**

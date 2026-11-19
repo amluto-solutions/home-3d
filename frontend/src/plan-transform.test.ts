@@ -4,6 +4,7 @@ import { test } from "node:test";
 import { emptyBuilding, newFloor, type Building, type RoofSection, type SolarField, type Vec2 } from "./model.ts";
 import { fieldFace, fieldModules, GROUND, proposeField, proposeGroundField, proposeWallField, roofFaces, wallFaces, windowCorners, type RoofFace } from "./solar.ts";
 import { PLAN_FIELDS, shiftBy, transformPlan, turnAbout, type PlanTransform } from "./plan-transform.ts";
+import { backgroundMiddle } from "./geometry/background.ts";
 import { mapToPlan } from "./surroundings.ts";
 
 // ---------------------------------------------------------------------------------------------------------------
@@ -188,8 +189,9 @@ const CHECKS: Record<keyof typeof PLAN_FIELDS, (t: PlanTransform, a: Building, b
   "Placement.x": (t, a, b) => assert.deepEqual(xz(b.floors[0].placements[0]), pt(t, a.floors[0].placements[0])),
   "Placement.z": (t, a, b) => assert.deepEqual(xz(b.floors[0].placements[0]), pt(t, a.floors[0].placements[0])),
   "Placement.rotation": (t, a, b) => assert.equal(b.floors[0].placements[0].rotation, rot(t, a.floors[0].placements[0].rotation!)),
-  "Background.x": (t, a, b) => assert.deepEqual(xz(b.floors[0].background!), pt(t, a.floors[0].background!)),
-  "Background.z": (t, a, b) => assert.deepEqual(xz(b.floors[0].background!), pt(t, a.floors[0].background!)),
+  // a turn turns the picture about its middle (#1124; square when its size is not known)
+  "Background.x": (t, a, b) => assert.deepEqual(backgroundMiddle(b.floors[0].background!, 1), t.point(backgroundMiddle(a.floors[0].background!, 1))),
+  "Background.z": (t, a, b) => assert.deepEqual(backgroundMiddle(b.floors[0].background!, 1), t.point(backgroundMiddle(a.floors[0].background!, 1))),
   "Background.rotation": (t, a, b) => assert.equal(b.floors[0].background!.rotation, rot(t, a.floors[0].background!.rotation!)),
   "Floor.start_view": (t, a, b) => assert.deepEqual(xz(b.floors[0].start_view!.target!), pt(t, a.floors[0].start_view!.target!)),
   "FreeWall.a": (t, a, b) => assert.deepEqual(b.floors[0].walls![0].a, t.point(a.floors[0].walls![0].a)),

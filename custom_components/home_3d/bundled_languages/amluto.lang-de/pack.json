@@ -7,7 +7,7 @@
   "name": "Deutsch",
   "publisher": "Amluto Solutions",
   "licence": "MIT",
-  "release": 3,
+  "release": 4,
   "description": "German texts for Home 3D.",
-  "release_note": "Release 3: published by Amluto Solutions as amluto.lang-de (#424)."
+  "release_note": "Release 4: texts for Home 3D 1.7.0 (real sky, fly in from space, carcass colour, upper roof pitch, height of the surroundings)."
 }

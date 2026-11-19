@@ -6,14 +6,14 @@
 import { Color } from "three";
 import type { Furniture, Vec2 } from "../model.ts";
 import { builtinBase, gangsOf, stairPlan, stairsULayout, STAIR_WINDERS, POOL_VALVE_Y } from "../model.ts";
-import { isRobotVacuum, mountBase, packItem, packMotion, packMovingPart, packRobotCentre, packRobotPart, packScreen, type PackItem, type PackMotion, type PackPart } from "../packs.ts";
+import { isRobotVacuum, isPackType, mountBase, packItem, packMotion, packMovingPart, packRobotCentre, packRobotPart, packScreen, type PackItem, type PackMotion, type PackPart } from "../packs.ts";
 import { fitParts } from "../pack-scale.ts";
 import { isLivePart, liveKey, partBind, type PartBind } from "../live-parts.ts";
 import { rackLayout, rackMarks, readRackFrame, type RackLayout } from "../rack-frame.ts";
 import { rackContents, rackLedSpot } from "../rack.ts";
 import { COLOUR_ROLES, drawnColours, roleColour, type RoleColours } from "../colour-roles.ts";
 import { ROLE_NATURAL, ROLE_NEON } from "../look-surface.ts";
-import { palette, paletteKey } from "./palette.ts";
+import { naturalPalette, palette, paletteKey } from "./palette.ts";
 import { materialId, roleMaterial, type RoleMaterials } from "../role-materials.ts";
 import { binColors, binShape, householdCountry, mailboxShape, type BinShape, type MailboxShape } from "../household.ts";
 import type { Floor } from "../model.ts";
@@ -28,6 +28,9 @@ type Palette = Record<keyof typeof THEME, number>;
 
 /** The palette the models draw with: the theme's, or the one of the item being drawn with its own role colours (#12). */
 let C: Palette = THEME;
+
+/** The role colours of the item being drawn (its own over its pack item's, #478): what it follows and what it overrides. */
+let OWN: RoleColours | null = null;
 
 const EDGE_FURN = shade(0x5b7cff, 0.3);
 const EDGE_FAINT = shade(0x5b7cff, 0.17);
@@ -439,7 +442,12 @@ function shelf(b: Builder, w: number, d: number, h: number): void {
 function kitchen(b: Builder, w: number, d: number, h: number): void {
   const doors = Math.max(1, Math.round(w / 0.6));
   cabinet(b, w, d - 0.02, h - 0.04, doors, h - 0.2);
-  b.box(-w / 2, w / 2, h - 0.04, h, -d / 2, d / 2, C.whiteTop, C.whiteTop, EDGE_FURN);
+  b.box(-w / 2, w / 2, h - 0.04, h, -d / 2, d / 2, worktop(), worktop(), EDGE_FURN);
+}
+
+/** A built-in worktop's slab (#478): light like the white parts, or the placed item's own wood colour, the whole slab. */
+function worktop(): number {
+  return OWN && roleColour(OWN, "wood") ? C.woodTop : C.whiteTop;
 }
 
 function fridge(b: Builder, w: number, d: number, h: number): void {
@@ -495,18 +503,52 @@ function paletteWith(colors: RoleColours | null | undefined): Palette {
 }
 
 /**
+ * Blue colours in the homely styles (#478). Their shader turns the neon palette's dark navy leftovers neutral grey (theme.ts:
+ * blue far over red and green, and dark), and with the shading towards the floor a blue front fell into that rule on
+ * its darker faces only: grey on the underside of a rounded door beside its blue top. Vertices (from `from` on) that are
+ * dark and that blue get just enough green that the rule never takes them, also halfway to a lighter neighbour; every
+ * other colour stays exactly as it is.
+ */
+export function keepBlue(c: number[], from: number): void {
+  for (let i = from; i + 2 < c.length; i += 3) {
+    const r = c[i];
+    const g = c[i + 1];
+    const b = c[i + 2];
+    if (b > r * 1.8 && b > g * 1.4 && Math.max(r, g, b) < 0.32) c[i + 1] = Math.min(1, b / 1.4);
+  }
+}
+
+/**
+ * Fronts and carcass (#478): the "front" parts take the front colour, the "white" parts the carcass colour or, while
+ * there is none, the front colour as well (a front colour colours the whole cabinet, as a colour for the white parts
+ * always did).
+ */
+function frontsAndCarcass(colors: RoleColours | null): RoleColours | null {
+  const front = roleColour(colors, "front");
+  return front && !roleColour(colors, "white") ? { ...colors, white: front } : colors;
+}
+
+/**
  * Draws an item into `buf` with its own role colours (#12) and its materials per role (#40, each colour of a role
  * marks its triangles with the role's material for the realistic look), then goes back to the theme's palette.
  */
 function withColours<T>(buf: GeoBuffer, f: { type?: string; colors?: RoleColours | null; materials?: RoleMaterials | null }, draw: () => T, item?: PackItem): T {
   const prev = C;
+  const prevOwn = OWN;
   // a pack item's own role colours (#404, a car's colourway) under the placed item's
-  C = paletteWith(item?.colors ? { ...(item.colors as RoleColours), ...f.colors } : drawnColours(f.type, f.colors));
+  const own = (item?.colors ? { ...(item.colors as RoleColours), ...f.colors } : drawnColours(f.type, f.colors)) ?? null;
+  // only pack items have front parts: a built-in item has no "front" role to colour its white parts
+  OWN = item || (f.type && isPackType(f.type)) ? frontsAndCarcass(own) : own;
+  C = paletteWith(OWN);
   const was = buf.useMaterials(materialsOf(C, f.materials));
+  const c0 = buf.c.length;
   try {
     return draw();
   } finally {
+    // a pack item's parts are guarded one by one (packModel: a lit part keeps the light's colour)
+    if (!item && lightLook && OWN && naturalPalette()) keepBlue(buf.c, c0);
     C = prev;
+    OWN = prevOwn;
     buf.useMaterials(was);
   }
 }
@@ -1349,7 +1391,7 @@ function island(b: Builder, w: number, d: number, h: number): void {
   b.box(-w / 2 + 0.07, w / 2 - 0.07, 0, 0.08, -d / 2 + 0.04, -d / 2 + inner - 0.04, C.dark);
   fronts(b, -w / 2 + 0.05, w / 2 - 0.05, 0.08, h - 0.04, -d / 2 + inner, Math.max(2, Math.round(w / 0.6)), h - 0.2);
   // worktop overhangs on the front for bar stools
-  b.box(-w / 2, w / 2, h - 0.04, h, -d / 2, d / 2, C.whiteTop, C.whiteTop, EDGE_FURN);
+  b.box(-w / 2, w / 2, h - 0.04, h, -d / 2, d / 2, worktop(), worktop(), EDGE_FURN);
 }
 
 function dishwasher(b: Builder, w: number, d: number, h: number): void {
@@ -1988,7 +2030,7 @@ function buildFurniture(buf: GeoBuffer, lines: LineBuffer, shadow: GeoBuffer, f:
       break;
     case "worktop":
       // only the 4 cm top at its height, nothing below it (no contact shadow)
-      b.box(-w / 2, w / 2, Math.max(0, h - 0.04), h, -d / 2, d / 2, C.whiteTop, C.whiteTop, EDGE_FURN);
+      b.box(-w / 2, w / 2, Math.max(0, h - 0.04), h, -d / 2, d / 2, worktop(), worktop(), EDGE_FURN);
       return;
     case "dishwasher":
       dishwasher(b, w, d, h);
@@ -2253,9 +2295,12 @@ function packModel(
     if (only && !only(q)) continue;
     const p = onlyGlow ? { ...q, glow: true, w: q.w + 0.006 / w, d: q.d + 0.006 / d, y: Math.max(0, q.y - 0.002 / h), h: q.h + 0.004 / h } : q;
     const lit = p.glow && glow !== null;
-    const side = lit ? glow : (packColor(p.color, false) ?? C.body);
+    // a part in a colour of its own that follows a colour role (a gaming chair's red cover, a table's oak top, #478)
+    // takes the placed item's colour for that role; without one it keeps its own
+    const follow = p.finish && OWN && roleColour(OWN, p.finish) ? p.finish : null;
+    const side = lit ? glow : ((follow ? packColor(follow, false) : packColor(p.color, false)) ?? C.body);
     // without a top colour, the top is the role's top shade or a little lighter
-    const top = lit ? glow : (packColor(p.top, false) ?? packColor(p.color, true) ?? shade(side, 1.25).getHex());
+    const top = lit ? glow : follow ? (packColor(follow, true) ?? shade(side, 1.25).getHex()) : (packColor(p.top, false) ?? packColor(p.color, true) ?? shade(side, 1.25).getHex());
     const y0 = base + p.y * h;
     const y1 = base + Math.min(h, (p.y + p.h) * h);
     const c0 = b.colors.length;
@@ -2283,7 +2328,9 @@ function packModel(
     // a part in a colour of its own keeps it in the light looks down to the ground, like a waste bin (#609): the
     // shading towards the floor would push its lower half under the looks' signal-colour threshold (palette roles
     // follow the look and stay as they are)
-    if (lightLook && !lit && !onlyGlow && (p.color?.startsWith("#") || p.top?.startsWith("#"))) keepBright(b.colors, c0);
+    if (lightLook && !lit && !onlyGlow && !follow && (p.color?.startsWith("#") || p.top?.startsWith("#"))) keepBright(b.colors, c0);
+    // a blue colour of the placed item stays blue on the darker faces in the homely styles (#478)
+    if (lightLook && !lit && !onlyGlow && OWN && naturalPalette()) keepBlue(b.colors, c0);
   }
 }
 

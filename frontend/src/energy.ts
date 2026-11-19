@@ -342,6 +342,30 @@ export function findConsumers(hass: HomeAssistant, building: Building, devices: 
   return out;
 }
 
+/**
+ * What the PV strings report together (W), for one inverter or (without one) all of them; null when no string has a
+ * power sensor that answers.
+ */
+export function stringsPower(hass: HomeAssistant, building: Building, inverterId?: string, skipInverters?: ReadonlySet<string>): number | null {
+  const values = (building.settings.roof.strings ?? [])
+    .filter((s) => (inverterId === undefined || s.inverter === inverterId) && !(s.inverter && skipInverters?.has(s.inverter)) && s.entity && s.entity !== "none")
+    .map((s) => readPower(hass.states[s.entity!]))
+    .filter((v): v is number => v !== null);
+  return values.length ? values.reduce((a, b) => a + Math.max(0, b), 0) : null;
+}
+
+/**
+ * The PV power to show: the sensor's value, unless the strings tell more. A plant whose inverter has no power sensor,
+ * or one that reads (almost) 0 while its strings make more than 50 W (an inverter's output sensor instead of its PV
+ * power, as a Deye through Solarman gives), would show 0 W beside glowing fields. `skipInverters`: plants with a setup
+ * of their own (#285), whose sensor is added to the total afterwards.
+ */
+export function pvWithStrings(sensor: number | null, strings: number | null): number | null {
+  if (strings === null) return sensor;
+  if (sensor === null || (Math.max(0, sensor) < 5 && strings > 50)) return strings;
+  return sensor;
+}
+
 export function energySummary(hass: HomeAssistant, building: Building, consumers: Consumer[], devices: DeviceSensors = deviceSensors(building)): EnergySummary {
   const e = building.energy;
   // the balance sensors win; without them the placed devices bring theirs (the meter, the inverters, the battery)
@@ -357,6 +381,9 @@ export function energySummary(hass: HomeAssistant, building: Building, consumers
     const values = devices.solar.map((id) => readPower(hass.states[id])).filter((v): v is number => v !== null);
     solar = values.length ? values.reduce((a, b) => a + b, 0) : null;
   }
+  // the strings stand in for a plant sensor that tells nothing or reads 0 while they make power
+  const ownSetups = new Set((e.systems ?? []).filter((x) => x.solar && x.inverter).map((x) => x.inverter!));
+  solar = pvWithStrings(solar, stringsPower(hass, building, undefined, ownSetups));
   let battery: number | null = e.battery ? readPower(hass.states[e.battery], e.battery_invert) : null;
   if (!e.battery && devices.batteries.length) {
     // every battery on its own: a signed sensor (+ = discharging, inverted on request), or discharging and a

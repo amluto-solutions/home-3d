@@ -19,6 +19,7 @@ const USUAL: Partial<Record<ColourRole, Material>> = {
   metal: "metal",
   glass: "glass",
   white: "gloss",
+  front: "gloss",
   paint: "gloss",
 };
 

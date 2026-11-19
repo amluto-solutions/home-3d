@@ -18,7 +18,7 @@ export type Complete<T> = T extends readonly (infer U)[]
 
 // the recipe copies are checked by the pack format's own tests (packs.md); here the plan only has the field
 export const PLAN_CONTRACT = {
-  "version": 5,
+  "version": 6,
   "floors": [
     {
       "id": "text",
@@ -251,6 +251,7 @@ export const PLAN_CONTRACT = {
             "cushion": "#336699",
             "dark": "#336699",
             "fabric": "#336699",
+            "front": "#336699",
             "glass": "#336699",
             "metal": "#336699",
             "paint": "#336699",
@@ -265,6 +266,7 @@ export const PLAN_CONTRACT = {
             "cushion": "matt",
             "dark": "matt",
             "fabric": "matt",
+            "front": "matt",
             "glass": "matt",
             "metal": "matt",
             "paint": "matt",
@@ -657,6 +659,7 @@ export const PLAN_CONTRACT = {
           "eave_b": 12.5,
           "pitch_a": 20.0,
           "pitch_b": 20.0,
+          "pitch_upper": 25.0,
           "base": 12.5,
           "overhang": 0.5,
           "flip": true,
@@ -803,6 +806,8 @@ export const PLAN_CONTRACT = {
     "outage_entity": "text",
     "sun_patches": true,
     "sun_shadow": true,
+    "sky": true,
+    "flyin": true,
     "window_glow": true,
     "household": {
       "bin_from": 6.0,
@@ -958,6 +963,7 @@ export const PLAN_CONTRACT = {
       "key1": {}
     },
     "editor_floor": "g",
+    "surroundings_y": -1.25,
     "surroundings": {
       "on": true,
       "lat": 45.5,

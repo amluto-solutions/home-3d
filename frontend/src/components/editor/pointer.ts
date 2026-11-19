@@ -115,7 +115,8 @@ export class PointerPart {
       return;
     }
     if (this.pointers.size > 2) return;
-    if (e.button === 1 || e.button === 2 || !this.floor) {
+    // Space held: a mouse drag only pans the plan, whatever lies under the pointer (as in drawing tools, #484)
+    if (e.button === 1 || e.button === 2 || !this.floor || (this.spaceHeld && e.pointerType === "mouse")) {
       // the right button: dragged it moves the plan, a click without moving opens the item's menu (D518)
       if (e.button === 2) this.rightPress = { at: local, target: e.target as Element, moved: false };
       this.drag = { kind: "pan", last: local };

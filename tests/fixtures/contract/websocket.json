@@ -1,6 +1,6 @@
 {
   "protocol": 5,
-  "plan_version": 5,
+  "plan_version": 6,
   "commands": {
     "home_3d/backup/export": {
       "required": [],

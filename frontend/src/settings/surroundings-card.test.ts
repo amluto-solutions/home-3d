@@ -14,7 +14,7 @@ import type { HomeAssistant } from "../types.ts";
 import { audienceOf, mayChange, SECTIONS, searchSettings, settingById } from "./registry.ts";
 import { SEARCH_WORDS } from "./search-words.ts";
 import { sampleHass } from "./settings.fixture.ts";
-import { DEFAULT_RADIUS, errorKey, Fp3dSurroundSettings, homeLocation, loaded, realigned, shifted, STEP, toggled, turned, type Osm } from "./surroundings-card.ts";
+import { DEFAULT_RADIUS, errorKey, Fp3dSurroundSettings, homeLocation, loaded, raised, realigned, shifted, STEP, toggled, turned, type Osm } from "./surroundings-card.ts";
 
 const ANSWER = JSON.parse(readFileSync(new URL("../overpass-answer.fixture.json", import.meta.url), "utf8")) as { elements: OsmElement[] };
 const en = englishTable() as Record<string, string>;
@@ -252,6 +252,38 @@ test("Show in 3D keeps the data in the plan; the outline choice and Remove chang
   assert.equal(el.building.settings.surroundings, null);
   assert.equal(edits.length, 5);
   assert.doesNotMatch(text(el), /Align|Remove/);
+});
+
+// ------------------------------------------------------------------ height (#482)
+
+test("Height of the surroundings: raised() sets, rounds and clamps it beside the map, 0 drops the key; the field is on the card; Load again keeps it, Remove drops it", async () => {
+  const { el, edits } = card(house(), osmWith(fetcher()));
+  assert.doesNotMatch(text(el), /Height of the surroundings/, "no map, no field");
+  await el.load();
+  assert.equal(el.building.settings.surroundings_y, undefined, "a fresh map has no height");
+  assert.ok(text(el).includes("Height of the surroundings (m)"));
+  assert.match(text(el), /type="number"/);
+  const b = el.building as Building;
+  assert.equal(raised(b, -1.256).settings.surroundings_y, -1.26);
+  assert.equal(raised(b, 4).settings.surroundings_y, 4);
+  assert.equal(raised(b, 99).settings.surroundings_y, 30);
+  assert.equal(raised(b, -99).settings.surroundings_y, -30);
+  assert.ok(!("surroundings_y" in raised(raised(b, 2), 0).settings), "0 is the default: no key");
+  assert.ok(!("surroundings_y" in raised(b, Number.NaN).settings));
+  assert.equal(b.settings.surroundings_y, undefined, "the plan given is not changed");
+  assert.equal(raised(b, 3).settings.surroundings, b.settings.surroundings, "the map itself is not touched");
+  const n = edits.length;
+  el.commit(raised(el.building, 1.5));
+  assert.equal(edits.length, n + 1);
+  assert.equal(el.building.settings.surroundings_y, 1.5);
+  assert.ok(text(el).includes(".value=1.5"));
+  // Load again keeps the height; Remove takes it away with the map
+  el._radius = 100;
+  await el.load();
+  assert.equal(el.building.settings.surroundings_y, 1.5, "kept when the map is loaded again");
+  el.removeMap();
+  assert.equal(el.building.settings.surroundings, null);
+  assert.equal(el.building.settings.surroundings_y, undefined);
 });
 
 // ------------------------------------------------------------------ turning and moving

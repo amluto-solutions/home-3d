@@ -3,7 +3,7 @@
 
 import { html, nothing, svg } from "lit";
 import type { FreeWall } from "../../model.ts";
-import { generateWalls, type Wall } from "../../geometry/walls.ts";
+import { generateWalls, type Wall, type WallResult, type WallSource } from "../../geometry/walls.ts";
 import { wallSummary } from "../../geometry/room-walls.ts";
 import { isFixed, uid, type Floor, type Room, type Vec2 } from "../../model.ts";
 import { round } from "./helpers.ts";
@@ -12,6 +12,9 @@ import { colourReset } from "../../colour-reset.ts";
 import { hasWallColours } from "../../viewer/palette.ts";
 import { setSideFold, sideFoldOpen } from "./item-sections.ts";
 import type { Fp3dEditor } from "../editor.ts";
+
+/** The walls of a floor worked out once per state of the plan: the wall rows ask for them many times while drawing. */
+const wallsCache = new WeakMap<Floor["rooms"], { walls: Floor["walls"]; ext: number; int: number; res: WallResult }>();
 
 /** WallsPart: methods of `Fp3dEditor`, copied onto its prototype by editor.ts (see parts.ts). */
 export class WallsPart {
@@ -99,14 +102,55 @@ export class WallsPart {
     })}</g>`;
   }
 
-  /** Sets the height of one edge of a room, and of every wall piece shared with it. */
+  /** The walls of the current floor (generateWalls), worked out once per state of the plan. */
+  floorWalls(this: Fp3dEditor): WallResult | null {
+    const floor = this.floor;
+    if (!floor) return null;
+    const { wall_exterior: ext, wall_interior: int } = this._doc.settings;
+    const c = wallsCache.get(floor.rooms);
+    if (c && c.walls === floor.walls && c.ext === ext && c.int === int) return c.res;
+    const res = generateWalls(floor.rooms, { exterior: ext, interior: int }, floor.walls ?? []);
+    wallsCache.set(floor.rooms, { walls: floor.walls, ext, int, res });
+    return res;
+  }
+
   /** The parts another room splits an edge into (start distances along the edge), in order; one part when whole. */
   edgeParts(this: Fp3dEditor, room: Room, edge: number): number[] {
-    const floor = this.floor;
-    if (!floor) return [0];
     // the parts a per-part height list follows (#157): also the ones whose walls merged or are left out ("No wall")
-    const starts = generateWalls(floor.rooms, { exterior: this._doc.settings.wall_exterior, interior: this._doc.settings.wall_interior }, floor.walls ?? []).parts.get(`${room.id}:${edge}`) ?? [];
+    const starts = this.floorWalls()?.parts.get(`${room.id}:${edge}`) ?? [];
     return starts.length ? [...new Set(starts)].sort((a, b) => a - b) : [0];
+  }
+
+  /**
+   * The room edges sharing the wall of one part of a room edge (all parts when `part` is left out), itself included:
+   * standing walls and walls left out by a height of 0 (#1151, NeonPlan 3D 3.4.2).
+   */
+  edgeSources(this: Fp3dEditor, room: Room, edge: number, part?: number): WallSource[] {
+    const res = this.floorWalls();
+    if (!res) return [];
+    const t0 = part === undefined ? undefined : this.edgeParts(room, edge)[part];
+    const own = (s: WallSource) => s.room_id === room.id && s.edge === edge && (t0 === undefined || Math.abs(s.t0 - t0) < 1e-6);
+    const out = [...res.walls.map((w) => w.sources), ...res.noWalls].filter((g) => g.some(own)).flat();
+    return out.some(own) ? out : [...out, { room_id: room.id, edge, t0: t0 ?? 0, t1: 0 }];
+  }
+
+  /** The height set on the part of a room edge a wall source covers (a split edge may hold one per part). */
+  sourceHeight(this: Fp3dEditor, s: WallSource): number | null {
+    const r = this.floor?.rooms.find((x) => x.id === s.room_id);
+    const entry = r?.wall_heights?.[s.edge] ?? null;
+    if (!Array.isArray(entry)) return entry;
+    const k = this.edgeParts(r!, s.edge).findIndex((t) => Math.abs(t - s.t0) < 1e-6);
+    return entry[Math.max(0, k)] ?? null;
+  }
+
+  /**
+   * The height a wall row shows for a room edge (one part of it): its own setting, or "no wall" when the room on the
+   * other side left the shared wall out, so it shows (and comes back) from either room (#1151).
+   */
+  shownEdgeHeight(this: Fp3dEditor, room: Room, edge: number, part?: number): number | null {
+    const entry = room.wall_heights?.[edge] ?? null;
+    const own = Array.isArray(entry) ? (entry[part ?? 0] ?? null) : entry;
+    return own !== 0 && this.edgeSources(room, edge, part).some((s) => this.sourceHeight(s) === 0) ? 0 : own;
   }
 
   /** A sloping wall on a room edge: its heights at the edge's start and end corner, or null for a plain wall (D569). */
@@ -122,36 +166,35 @@ export class WallsPart {
     });
   }
 
-  /** Set a wall height on a room edge (and on the rooms sharing it), or on one part of a split edge only. */
+  /**
+   * Set a wall height on a room edge, or on one part of a split edge only, and on the rooms sharing that wall, so a
+   * wall another room left out ("no wall") comes back from either room; on a neighbour's edge only the shared part
+   * changes (#1151, NeonPlan 3D 3.4.2).
+   */
   setEdgeHeight(this: Fp3dEditor, room: Room, edge: number, height: number | null, part?: number): void {
     const floor = this.floor;
     if (!floor || !this.isEditor) return;
-    if (part !== undefined) {
-      const n = this.edgeParts(room, edge).length;
-      this.change((_, f) => {
-        const r = f.rooms.find((x) => x.id === room.id);
-        if (!r) return;
-        const list = (r.wall_heights ?? []).slice(0, r.points.length);
-        while (list.length < r.points.length) list.push(null);
-        const cur = list[edge];
-        const parts: (number | null)[] = Array.isArray(cur) ? [...cur] : new Array<number | null>(n).fill(typeof cur === "number" ? cur : null);
-        while (parts.length < n) parts.push(null);
-        parts[part] = height;
-        list[edge] = parts.every((h) => h === parts[0]) ? parts[0] : parts;
-        r.wall_heights = list.every((h) => h === null) ? undefined : list;
-      });
-      return;
-    }
-    const walls = generateWalls(floor.rooms, { exterior: this._doc.settings.wall_exterior, interior: this._doc.settings.wall_interior }, floor.walls ?? []).walls;
-    const sources = walls.filter((w) => w.sources.some((s) => s.room_id === room.id && s.edge === edge)).flatMap((w) => w.sources);
-    if (!sources.some((s) => s.room_id === room.id && s.edge === edge)) sources.push({ room_id: room.id, edge, t0: 0, t1: 0 });
+    // each source's part index on its own room edge, worked out before the change
+    const targets = this.edgeSources(room, edge, part).map((s) => {
+      const r = floor.rooms.find((x) => x.id === s.room_id);
+      const starts = r ? this.edgeParts(r, s.edge) : [0];
+      const whole = part === undefined && s.room_id === room.id && s.edge === edge;
+      return { s, n: starts.length, k: whole ? -1 : Math.max(0, starts.findIndex((t) => Math.abs(t - s.t0) < 1e-6)) };
+    });
     this.change((_, f) => {
-      for (const s of sources) {
+      for (const { s, n, k } of targets) {
         const r = f.rooms.find((x) => x.id === s.room_id);
         if (!r) continue;
         const list = (r.wall_heights ?? []).slice(0, r.points.length);
         while (list.length < r.points.length) list.push(null);
-        list[s.edge] = height;
+        if (n <= 1 || k < 0) list[s.edge] = height;
+        else {
+          const cur = list[s.edge];
+          const parts: (number | null)[] = Array.isArray(cur) ? [...cur] : new Array<number | null>(n).fill(typeof cur === "number" ? cur : null);
+          while (parts.length < n) parts.push(null);
+          parts[k] = height;
+          list[s.edge] = parts.every((h) => h === parts[0]) ? parts[0] : parts;
+        }
         r.wall_heights = list.every((h) => h === null) ? undefined : list;
       }
     });
@@ -268,10 +311,10 @@ export class WallsPart {
     const a = room.points[i];
     const b = room.points[(i + 1) % n];
     const len = this.m(Math.hypot(b[0] - a[0], b[1] - a[1]), 2);
-    const entry = room.wall_heights?.[i] ?? null;
     const slope = room.wall_slopes?.[i] ?? null;
     const parts = this.edgeParts(room, i).length;
-    const heights = Array.isArray(entry) ? entry : [entry];
+    // a wall the room on the other side left out shows as "no wall" here too (#1151)
+    const heights = parts > 1 ? Array.from({ length: parts }, (_, k) => this.shownEdgeHeight(room, i, k)) : [this.shownEdgeHeight(room, i)];
     const height = heights.every((h) => h === 0)
       ? this.t("wall_none")
       : slope
@@ -300,7 +343,6 @@ export class WallsPart {
     const a = room.points[i];
     const b = room.points[(i + 1) % n];
     const len = Math.hypot(b[0] - a[0], b[1] - a[1]);
-    const entry = room.wall_heights?.[i] ?? null;
     const slope = room.wall_slopes?.[i] ?? null;
     // an outer wall's default thickness is the exterior one
     const outer = generateWalls(this.floor!.rooms, { exterior: s.wall_exterior, interior: s.wall_interior }, this.floor!.walls ?? []).walls.some(
@@ -319,9 +361,10 @@ export class WallsPart {
     // an edge another room splits: one block per part, each with its own height (#77)
     const starts = this.edgeParts(room, i);
     const parts = starts.length > 1 ? starts.map((_, k) => k) : [undefined];
-    const first = Array.isArray(entry) ? (entry[0] ?? null) : entry;
+    // the room on the other side may have left this wall out: then it shows (and comes back) here too (#1151)
+    const first = this.shownEdgeHeight(room, i);
     return html`${parts.map((part) => {
-        const h = part === undefined ? first : Array.isArray(entry) ? (entry[part] ?? null) : entry;
+        const h = part === undefined ? first : this.shownEdgeHeight(room, i, part);
         const partLen = part === undefined ? len : (starts[part + 1] ?? len) - starts[part];
         const set = (v: number | null) => this.setEdgeHeight(room, i, v, part);
         return html`<div class="fp3d-edge-height${h !== null ? " fp3d-edge-low" : ""}" data-part=${part ?? "all"}>
