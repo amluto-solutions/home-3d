@@ -8,7 +8,8 @@ import { ACCENT_DEFAULT, colourReset, colourResetCss } from "./colour-reset.ts";
 // the shared colour field (#403): its element loads with this bundle (card.ts getConfigElement)
 import { colourField } from "./colour-field-tag.ts";
 import { labOn, UNRELEASED } from "./features.ts";
-import { CARD_CONTROLS, type CardConfig, type CardControl } from "./card-config.ts";
+import { CARD_CONTROLS, cardTemplate, isHaPath, PHONE_PARTS, PHONE_PLACE_KINDS, type CardConfig, type CardControl, type PhonePart, type PhonePlace } from "./card-config.ts";
+import type { Building, CardTemplate } from "./model.ts";
 import { languageReady, loadLanguage, translate, uiLanguage, type I18nKey } from "./i18n.ts";
 import { setCustomStyles, styleById, styleChoices } from "./looks.ts";
 import { ZOOM_LATE_DEFAULT, zoomChoices } from "./zoom-pref.ts";
@@ -31,9 +32,11 @@ const DEFAULTS: Partial<CardConfig> = {
   energy: true,
   room_panel: true,
   fill: false,
+  phone: false,
   controls: false,
   fullscreen_button: false,
   room_names: true,
+  surroundings: true,
   floor_stack: "dim",
   alerts: true,
   alert_jump: false,
@@ -58,19 +61,48 @@ const DEFAULTS: Partial<CardConfig> = {
 
 type Choice = [value: string, label: I18nKey];
 
+/** A card's own options that stay when it picks a template (#495): the home belongs to the dashboard, not to the template. */
+const CARD_OWN = ["home"] as const;
+
+/** The tabs of the form inside Settings (#495); on a dashboard it is one page as before. */
+export type CardTab = "for" | "view" | "show" | "features" | "kiosk";
+const TABS: [CardTab, I18nKey][] = [
+  ["for", "card_tab_for"],
+  ["view", "card_section_view"],
+  ["show", "card_section_show"],
+  ["features", "card_section_features"],
+  ["kiosk", "card_section_kiosk"],
+];
+
 export class Floorplan3dCardEditor extends LitElement {
   static properties = {
     hass: { attribute: false },
+    building: { attribute: false },
+    embedded: { type: Boolean, reflect: true },
+    _tab: { state: true },
+    _templates: { state: true },
     _config: { state: true },
     _floors: { state: true },
     _styles: { state: true },
+    _hasMap: { state: true },
   };
 
   declare hass: HomeAssistant | undefined;
+  /** Inside Settings (a card template, #495): the plan being edited, and no template choice of its own. */
+  declare building: Building | null;
+  declare embedded: boolean;
+  /** The open tab inside Settings. */
+  private declare _tab: CardTab;
+  /** The card templates of the card's home (#495), for the dashboard's template choice. */
+  private declare _templates: CardTemplate[];
+  /** The plan the floors were last taken from (inside Settings). */
+  private seenPlan: Building | null = null;
   private declare _config: CardConfig;
   private declare _floors: { id: string; name: string }[];
   /** The plan's own styles (`styles_custom`) of the card's home, for the style lists (#1077). */
   private declare _styles: readonly unknown[];
+  /** Whether the card's home has surroundings from the map, so the card form offers the switch (#492). */
+  private declare _hasMap: boolean;
   /** The homes to choose from (#53; editors only, empty for anyone else or a backend before #53). */
   private declare _homes: HomeInfo[];
   /** The home whose floors are loaded (or loading): undefined for none yet, "" for the active one. */
@@ -80,8 +112,13 @@ export class Floorplan3dCardEditor extends LitElement {
   constructor() {
     super();
     this._config = { type: "custom:home-3d-card" };
+    this.building = null;
+    this.embedded = false;
+    this._tab = "for";
+    this._templates = [];
     this._floors = [];
     this._styles = [];
+    this._hasMap = false;
     this._homes = [];
   }
 
@@ -95,6 +132,14 @@ export class Floorplan3dCardEditor extends LitElement {
     // the language its texts are in (#196)
     const lang = uiLanguage(this.hass);
     if (this.getAttribute("lang") !== lang) this.setAttribute("lang", lang);
+    // inside Settings the plan being edited is handed in (#495): nothing to fetch
+    if (this.embedded) {
+      if (this.building !== this.seenPlan) {
+        this.seenPlan = this.building;
+        if (this.building) this.takePlan(this.building);
+      }
+      return;
+    }
     // the floors of the card's home, for the floor choice
     const home = this._config.home ?? "";
     if (this.hass && this.floorsOf !== home) {
@@ -102,8 +147,7 @@ export class Floorplan3dCardEditor extends LitElement {
       fetchBuilding(this.hass, home || undefined).then(
         (res) => {
           if (this.floorsOf !== home) return;
-          this._floors = res.building.floors.map((f) => ({ id: f.id, name: f.name }));
-          this._styles = res.building.settings?.styles_custom ?? [];
+          this.takePlan(res.building);
         },
         () => undefined,
       );
@@ -115,6 +159,14 @@ export class Floorplan3dCardEditor extends LitElement {
         () => undefined,
       );
     }
+  }
+
+  /** What the form takes from the card's plan: its floors, own styles, map and card templates. */
+  private takePlan(b: Building): void {
+    this._floors = b.floors.map((f) => ({ id: f.id, name: f.name }));
+    this._styles = b.settings?.styles_custom ?? [];
+    this._hasMap = !!b.settings?.surroundings;
+    this._templates = b.card_templates ?? [];
   }
 
   private t(key: I18nKey, vars?: Record<string, string | number>): string {
@@ -130,8 +182,94 @@ export class Floorplan3dCardEditor extends LitElement {
     const next: CardConfig = { ...this._config };
     if (value === undefined || value === "" || DEFAULTS[key] === value) delete next[key];
     else next[key] = value;
+    this.emit(next);
+  }
+
+  private emit(next: CardConfig): void {
     this._config = next;
     this.dispatchEvent(new CustomEvent("config-changed", { detail: { config: next }, bubbles: true, composed: true }));
+  }
+
+  /** The options written in the card besides its type, template and own ones: they win over the template's. */
+  private ownOptions(): string[] {
+    return Object.keys(this._config).filter((k) => k !== "type" && k !== "template" && !(CARD_OWN as readonly string[]).includes(k));
+  }
+
+  /** A template picked (or none): the card's other options go, its home stays (#495). */
+  private pickTemplate(id: string | undefined): void {
+    const own = Object.fromEntries(CARD_OWN.filter((k) => this._config[k] !== undefined).map((k) => [k, this._config[k]]));
+    this.emit({ type: this._config.type, ...own, ...(id ? { template: id } : {}) });
+  }
+
+  /** The home choice (#53), above everything else on a dashboard. */
+  private renderHome() {
+    const v = this.value;
+    if (!(this._homes.length > 1 || this._config.home)) return nothing;
+    return html`<div class="grid home">
+      <label class="field wide"
+        >${this.t("card_home")}
+        <select
+          @change=${(e: Event) => {
+            // another home has other floors, rooms and templates
+            const next: CardConfig = { ...this._config };
+            delete next.floor;
+            delete next.room;
+            delete next.template;
+            const home = (e.target as HTMLSelectElement).value;
+            if (home) next.home = home;
+            else delete next.home;
+            this.emit(next);
+          }}
+        >
+          <option value="" ?selected=${!v.home}>${this.t("card_home_active")}</option>
+          ${this._homes.map((h) => html`<option value=${h.id} ?selected=${h.id === v.home}>${h.name}</option>`)}
+          ${v.home && !this._homes.some((h) => h.id === v.home) ? html`<option value=${v.home} selected>${v.home}</option>` : nothing}
+        </select>
+      </label>
+    </div>`;
+  }
+
+  /**
+   * The card template (#495, ported from NeonPlan 3D 4.0.0, MIT, Mastershort): a card on a dashboard may take every
+   * option from one set up in Settings; the form folds away then. Shown when the home has templates or the card names one.
+   */
+  private renderTemplate() {
+    const id = this._config.template;
+    if (!id && !this._templates.length) return nothing;
+    // a card set up with an earlier id of a renamed template shows that template
+    const tpl = cardTemplate({ card_templates: this._templates } as Building, id);
+    const chosen = tpl?.id ?? id;
+    const own = id ? this.ownOptions() : [];
+    return html`<h3>${this.t("card_template")}</h3>
+      <label class="field wide">
+        <select aria-label=${this.t("card_template")} @change=${(e: Event) => this.pickTemplate((e.target as HTMLSelectElement).value || undefined)}>
+          <option value="" ?selected=${!id}>${this.t("card_template_none")}</option>
+          ${this._templates.map((x) => html`<option value=${x.id} ?selected=${x.id === chosen}>${x.name || x.id}</option>`)}
+          ${id && !tpl ? html`<option value=${id} selected>${id}</option>` : nothing}
+        </select>
+      </label>
+      <p class="hint">${this.t(id ? "card_template_on" : "card_template_hint")}</p>
+      ${own.length
+        ? html`<p class="hint own">
+            ${this.t("card_template_own", { list: own.join(", ") })}
+            <button type="button" class="link" @click=${() => this.pickTemplate(id)}>${this.t("card_template_own_clear")}</button>
+          </p>`
+        : nothing}`;
+  }
+
+  /**
+   * What the card is for (#495): a tablet or a large screen, or a phone – the phone view with its bar at the bottom, and
+   * the bar's own options right below. A phone fills the screen.
+   */
+  private renderPurpose() {
+    const phone = this.value.phone === true;
+    return html`<h3>${this.t("card_for")}</h3>
+      <div class="purpose">
+        <button type="button" aria-pressed=${!phone} @click=${() => this.set("phone", undefined)}>${this.t("card_for_large")}</button>
+        <button type="button" aria-pressed=${phone} @click=${() => this.emit({ ...this._config, phone: true, fill: true })}>${this.t("card_for_phone")}</button>
+      </div>
+      <p class="hint">${this.t(phone ? "card_for_phone_hint" : "card_for_large_hint")}</p>
+      ${phone ? this.renderPhoneBar() : nothing}`;
   }
 
   private select<K extends keyof CardConfig>(key: K, label: I18nKey, choices: Choice[], current: string) {
@@ -167,12 +305,94 @@ export class Floorplan3dCardEditor extends LitElement {
     </label>`;
   }
 
-  private toggle(key: "explode" | "roof_fade" | "roof" | "camera_wall" | "energy" | "room_panel" | "stats" | "fullscreen_button" | "room_names" | "alerts" | "alert_jump" | "director" | "voice" | "scenes" | "idle_orbit" | "motion_trail" | "time_travel" | "household_card" | "rack_cards" | "weather", label: I18nKey, hint?: I18nKey) {
+  private toggle(key: "explode" | "roof_fade" | "roof" | "camera_wall" | "energy" | "room_panel" | "stats" | "fullscreen_button" | "room_names" | "surroundings" | "alerts" | "alert_jump" | "director" | "voice" | "scenes" | "idle_orbit" | "motion_trail" | "time_travel" | "household_card" | "rack_cards" | "weather" | "phone", label: I18nKey, hint?: I18nKey) {
     const on = this.value[key];
     return html`<label class="toggle">
       <input type="checkbox" .checked=${on} @change=${(e: Event) => this.set(key, (e.target as HTMLInputElement).checked)} />
       <span>${this.t(label)}${hint ? html`<small>${this.t(hint)}</small>` : nothing}</span>
     </label>`;
+  }
+
+  /**
+   * The bar on the phone (#494, shown with the phone view; ported from NeonPlan 3D 4.0.0, MIT, Mastershort): which parts
+   * it keeps, up to two own places, and whether the card opens with the list.
+   */
+  private renderPhoneBar() {
+    const hidden = new Set(this._config.phone_hide ?? []);
+    const part = (id: PhonePart) =>
+      html`<label class="toggle">
+        <input
+          type="checkbox"
+          .checked=${!hidden.has(id)}
+          @change=${(e: Event) => {
+            const next = new Set(hidden);
+            if ((e.target as HTMLInputElement).checked) next.delete(id);
+            else next.add(id);
+            this.set("phone_hide", next.size ? PHONE_PARTS.filter((x) => next.has(x)) : undefined);
+          }}
+        />
+        <span>${this.t(`card_phone_${id}`)}<small>${this.t(`card_phone_${id}_hint`)}</small></span>
+      </label>`;
+    return html`<h3>${this.t("card_section_phone")}</h3>
+      ${PHONE_PARTS.map(part)} ${[0, 1].map((i) => this.renderPlace(i))}
+      <p class="hint">${this.t("card_phone_place_hint")}</p>
+      <label class="toggle">
+        <input type="checkbox" .checked=${this._config.phone_start === "now"} @change=${(e: Event) => this.set("phone_start", (e.target as HTMLInputElement).checked ? "now" : undefined)} />
+        <span>${this.t("card_phone_start_now")}<small>${this.t("card_phone_start_now_hint")}</small></span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" .checked=${this._config.phone_solo === true} @change=${(e: Event) => this.set("phone_solo", (e.target as HTMLInputElement).checked || undefined)} />
+        <span>${this.t("nav_solo")}<small>${this.t("card_phone_solo_hint")}</small></span>
+      </label>`;
+  }
+
+  /** One of the two own places in the phone bar: its kind, word and symbol, and its scene or page. The second comes after the first. */
+  private renderPlace(index: number) {
+    const list = [...(this._config.phone_places ?? [])];
+    const place = list[index];
+    if (index > 0 && !list[index - 1]) return nothing;
+    const save = (next: PhonePlace | null) => {
+      if (next) list[index] = next;
+      else list.splice(index, 1);
+      this.set("phone_places", list.length ? list : undefined);
+    };
+    const runnable = Object.keys(this.hass?.states ?? {})
+      .filter((id) => /^(scene|script)\./.test(id))
+      .sort();
+    const text = (key: I18nKey, value: string | undefined, max: number, placeholder: string, apply: (v: string) => void) =>
+      html`<label class="field"
+        >${this.t(key)}
+        <input type="text" maxlength=${max} placeholder=${placeholder} .value=${value ?? ""} @change=${(e: Event) => apply((e.target as HTMLInputElement).value.trim())} />
+      </label>`;
+    return html`<div class="grid place">
+      <label class="field"
+        >${this.t("card_phone_place", { n: index + 1 })}
+        <select
+          @change=${(e: Event) => {
+            const kind = (e.target as HTMLSelectElement).value as PhonePlace["kind"] | "";
+            save(kind ? { kind, name: place?.name, icon: place?.icon, ...(kind === "action" ? { entity: runnable[0] } : kind === "link" ? { path: "/lovelace/0" } : {}) } : null);
+          }}
+        >
+          <option value="" ?selected=${!place}>${this.t("card_phone_place_none")}</option>
+          ${PHONE_PLACE_KINDS.map((k) => html`<option value=${k} ?selected=${place?.kind === k}>${this.t(`card_phone_place_${k}`)}</option>`)}
+        </select>
+      </label>
+      ${place
+        ? html`${text("card_phone_place_name", place.name, 24, "", (name) => save({ ...place, name: name || undefined }))}
+          ${text("card_phone_place_icon", place.icon, 4, "💡", (icon) => save({ ...place, icon: icon || undefined }))}
+          ${place.kind === "action"
+            ? html`<label class="field"
+                >${this.t("card_phone_place_entity")}
+                <select @change=${(e: Event) => save({ ...place, entity: (e.target as HTMLSelectElement).value })}>
+                  ${place.entity && !runnable.includes(place.entity) ? html`<option value=${place.entity} selected>${place.entity}</option>` : nothing}
+                  ${runnable.map((id) => html`<option value=${id} ?selected=${id === place.entity}>${(this.hass?.states[id]?.attributes.friendly_name as string | undefined) ?? id}</option>`)}
+                </select>
+              </label>`
+            : place.kind === "link"
+              ? text("card_phone_place_path", place.path, 200, "/lovelace/energy", (path) => isHaPath(path) && save({ ...place, path }))
+              : nothing}`
+        : nothing}
+    </div>`;
   }
 
   /** Floor pictures: on by default without a start floor, off with one (but can be switched on). */
@@ -344,26 +564,25 @@ export class Floorplan3dCardEditor extends LitElement {
     const v = this.value;
     const flows = v.flows === undefined ? "switch" : v.flows ? "on" : "off";
     const holos = v.holograms === undefined ? "switch" : v.holograms ? "on" : "off";
+    const head = this.embedded ? nothing : html`${this.renderHome()}${this.renderTemplate()}`;
+    // a card with a template takes its options from there: the form folds away (#495)
+    if (!this.embedded && v.template) return head;
+    const phone = v.phone === true;
+    // a phone has no wall tablet's kiosk options; inside Settings the form stands in tabs (#495)
+    const tabs = TABS.filter(([id]) => id !== "kiosk" || !phone);
+    const tab = tabs.some(([id]) => id === this._tab) ? this._tab : "for";
+    const on = (id: CardTab) => !this.embedded || tab === id;
     return html`
+      ${head}
+      ${this.embedded
+        ? html`<div class="tabs" role="tablist">
+            ${tabs.map(([id, label]) => html`<button type="button" role="tab" aria-selected=${tab === id} @click=${() => (this._tab = id)}>${this.t(label)}</button>`)}
+          </div>`
+        : nothing}
+      <section ?hidden=${!on("for")}>${this.renderPurpose()}</section>
+      <section ?hidden=${!on("view")}>
       <h3>${this.t("card_section_view")}</h3>
       <div class="grid">
-        ${this._homes.length > 1 || this._config.home
-          ? html`<label class="field wide"
-              >${this.t("card_home")}
-              <select
-                @change=${(e: Event) => {
-                  // another home has other floors and rooms
-                  this.set("floor", undefined);
-                  this.set("room", undefined);
-                  this.set("home", (e.target as HTMLSelectElement).value || undefined);
-                }}
-              >
-                <option value="" ?selected=${!v.home}>${this.t("card_home_active")}</option>
-                ${this._homes.map((h) => html`<option value=${h.id} ?selected=${h.id === v.home}>${h.name}</option>`)}
-                ${v.home && !this._homes.some((h) => h.id === v.home) ? html`<option value=${v.home} selected>${v.home}</option>` : nothing}
-              </select>
-            </label>`
-          : nothing}
         <label class="field wide"
           >${this.t("card_floor")}
           <select @change=${(e: Event) => this.set("floor", (e.target as HTMLSelectElement).value || undefined)}>
@@ -437,7 +656,8 @@ export class Floorplan3dCardEditor extends LitElement {
       </div>
       ${v.fill ? html`<p class="hint">${this.t("card_fill_hint")}</p>` : nothing}
       <p class="hint">${this.t("card_quality_hint")}</p>
-
+      </section>
+      <section ?hidden=${!on("show")}>
       <h3>${this.t("card_section_show")}</h3>
       <div class="grid">
         ${this.select("markers", "markers", [["none", "markers_none"], ["room", "markers_room"], ["important", "markers_important"], ["all", "markers_all"]], v.markers)}
@@ -466,13 +686,15 @@ export class Floorplan3dCardEditor extends LitElement {
           </select>
         </label>
       </div>
-      ${this.renderControls()}
-      ${this.renderThumbsToggle()} ${this.toggle("room_names", "card_room_names")}
+      ${phone ? nothing : this.renderControls()}
+      ${phone ? nothing : this.renderThumbsToggle()} ${this.toggle("room_names", "card_room_names")}
+      ${this._hasMap ? this.toggle("surroundings", "card_surroundings", "card_surroundings_hint") : nothing}
       ${this.toggle("energy", "card_energy")} ${this.toggle("room_panel", "card_room_panel", "card_room_panel_hint")}
       ${this.toggle("fullscreen_button", "card_fullscreen_button", "card_fullscreen_button_hint")}
       ${this.toggle("explode", "card_explode")} ${this.toggle("roof", "card_roof", "card_roof_hint")} ${this.toggle("roof_fade", "card_roof_fade", "card_roof_fade_hint")} ${this.toggle("stats", "card_stats", "card_stats_hint")}
-      ${this.renderFeatures()}
-      ${this.renderKiosk()}
+      </section>
+      <section ?hidden=${!on("features")}>${this.renderFeatures()}</section>
+      ${phone ? nothing : html`<section ?hidden=${!on("kiosk")}>${this.renderKiosk()}</section>`}
     `;
   }
 
@@ -508,6 +730,69 @@ export class Floorplan3dCardEditor extends LitElement {
     }
     .wide {
       grid-column: 1 / -1;
+    }
+    .place {
+      margin: 6px 0 12px;
+    }
+    .home {
+      margin-bottom: 12px;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--divider-color, #8884);
+    }
+    .tabs button {
+      padding: 10px 14px;
+      border: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      background: none;
+      color: var(--secondary-text-color);
+      font: inherit;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .tabs button[aria-selected="true"] {
+      color: var(--primary-text-color);
+      border-bottom-color: var(--primary-color);
+      font-weight: 600;
+    }
+    :host([embedded]) section > h3:first-child {
+      display: none;
+    }
+    .purpose {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .purpose button {
+      flex: 1 1 160px;
+      min-height: 44px;
+      padding: 12px 10px;
+      border: 1px solid var(--divider-color, #8884);
+      border-radius: 10px;
+      background: none;
+      color: inherit;
+      font: inherit;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .purpose button[aria-pressed="true"] {
+      border-color: var(--primary-color);
+      box-shadow: inset 0 0 0 1px var(--primary-color);
+      font-weight: 600;
+    }
+    .link {
+      padding: 0;
+      border: none;
+      background: none;
+      color: var(--primary-color);
+      font: inherit;
+      text-decoration: underline;
+      cursor: pointer;
     }
     .field {
       display: grid;

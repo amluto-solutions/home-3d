@@ -109,6 +109,28 @@ test("the flat outlines mode draws the neighbours flat on the ground, no block r
   assert.ok(tris.some((t) => t.every((p) => Math.abs(p[1] - (DEFAULT_GROUND + FLAT_Y)) < 1e-6)), "the outlines' floor");
 });
 
+test("the gable roof option gives a house a ridge at its height and eaves below it; big buildings stay blocks (#491)", () => {
+  const ridge = (b: Building) => {
+    const tris = triangles(geometry(b).solid).flat().filter(([x]) => x >= 20 && x <= 30);
+    const at = (z: number) => Math.max(...tris.filter(([, , pz]) => Math.abs(pz - z) < 1e-6).map(([, y]) => y));
+    const [z0, z1] = [Math.min(...tris.map(([, , z]) => z)), Math.max(...tris.map(([, , z]) => z))];
+    return { top: Math.max(...tris.map(([, y]) => y)), edge: at(z0), middle: at((z0 + z1) / 2) };
+  };
+  // off: a block, as high at its edge as in the middle
+  const block = ridge(house({ trees: [] }));
+  assert.ok(Math.abs(block.edge - (DEFAULT_GROUND + 9.5)) < 1e-6);
+  // on: the ridge (the map's height) along the 10 m side, the eave at the 8 m side lower
+  const roofed = ridge(house({ trees: [], roofs: true }));
+  assert.ok(Math.abs(roofed.top - (DEFAULT_GROUND + 9.5)) < 1e-6);
+  assert.ok(Math.abs(roofed.middle - (DEFAULT_GROUND + 9.5)) < 1e-6);
+  assert.ok(roofed.edge < DEFAULT_GROUND + 9.5 - 1, String(roofed.edge));
+  // a hall (too wide) stays a block even with the option on
+  const hall = house({ trees: [], roofs: true, buildings: [{ p: rect(-6, -4, 6, 4), h: 7 }, { p: rect(14, -4, 54, 21), h: 9.5 }] });
+  assert.ok(Math.abs(ridge(hall).edge - (DEFAULT_GROUND + 9.5)) < 1e-6);
+  // the outline mode wins: flat stays flat
+  assert.ok(triangles(geometry(house({ trees: [], roofs: true, flat: true })).solid).flat().every(([, y]) => y < DEFAULT_GROUND));
+});
+
 test("houses hidden by hand are not drawn; shown again they are", () => {
   const count = (b: Building) => placedSurroundings(b)!.buildings.length;
   assert.equal(count(house()), 2);
@@ -158,6 +180,7 @@ test("the neighbours near the house add their shadows into the garden; far ones 
     areas: [],
     trees: [],
     flat: false,
+    roofs: false,
     y: 0,
     ...extra,
   });
@@ -214,11 +237,11 @@ test("the floor keys leave the map out: a change of the map rebuilds no floor (t
 
 test("a room card shows the house without the map, the house view with it and the attribution", () => {
   const src = readFileSync(new URL("../components/view3d.ts", import.meta.url), "utf8");
-  assert.match(src, /if \(!this\.roomCard \|\| !plan\.settings\.surroundings\) return/);
+  assert.match(src, /if \(!this\.noMapView\(\) \|\| !plan\.settings\.surroundings\) return/);
   assert.match(src, /surroundings: null \} \}/);
   assert.match(src, /href=\$\{OSM_COPYRIGHT\} target="_blank" rel="noopener noreferrer">\$\{OSM_ATTRIBUTION\}<\/a>/);
   const card = readFileSync(new URL("../card.ts", import.meta.url), "utf8");
-  assert.match(card, /\.roomCard=\$\{!!c\?\.room\}/);
+  assert.ok(card.includes(".roomCard=${!!c?.room || rooms.length > 0}"), "a room card, and a card of some rooms (#500), has no map");
 });
 
 test("the 2D plans: the map on floors at the ground floor's level, the own house dashed, nothing upstairs", () => {

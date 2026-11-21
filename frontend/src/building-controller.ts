@@ -124,6 +124,9 @@ function newDraftId(): string {
   return `${Date.now().toString(36)}-${(draftCount++).toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
 }
 
+/** When a failed pack list is asked for again (ms). */
+const PACK_RETRY_MS = [1500, 4000, 10000, 30000];
+
 export class BuildingController implements ReactiveController {
   building: Building | null = null;
   error: string | null = null;
@@ -265,6 +268,7 @@ export class BuildingController implements ReactiveController {
 
   hostDisconnected(): void {
     this.connected = false;
+    clearTimeout(this.packTimer);
     globalThis.removeEventListener?.("pagehide", this.onHide);
     globalThis.document?.removeEventListener?.("visibilitychange", this.onHide);
     void this.flush();
@@ -754,14 +758,23 @@ export class BuildingController implements ReactiveController {
     return this.libraryLoading;
   }
 
+  private packTries = 0;
+  private packTimer: ReturnType<typeof setTimeout> | undefined;
+
   /** Load the furniture packs again (after an import or removal). */
   async reloadPacks(): Promise<void> {
     if (!this.hass) return;
     try {
       this.packs = await listPacks(this.hass);
-    } catch {
-      // backend without packs (before a restart): no pack furniture
-      this.packs = [];
+      this.packTries = 0;
+    } catch (err) {
+      // a backend without packs (before a restart) has none; any other failure (a large list, a busy or just
+      // returning connection) must not empty the library: what was loaded stays, and it is asked again (#1229)
+      if ((err as { code?: string } | null)?.code === "unknown_command" || (err as Error | null)?.message === "unknown_command") this.packs = [];
+      else if (this.packTries < PACK_RETRY_MS.length) {
+        clearTimeout(this.packTimer);
+        this.packTimer = setTimeout(() => void this.reloadPacks(), PACK_RETRY_MS[this.packTries++]);
+      }
     }
     setPacks(this.packs);
     this.packsLoaded = true;

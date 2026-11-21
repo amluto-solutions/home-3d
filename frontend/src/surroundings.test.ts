@@ -326,6 +326,7 @@ test("the own building and buildings standing in the plan's rooms are not drawn;
   assert.equal(placed.buildings.length, 1);
   assert.deepEqual(placed.buildings[0].p[0], [26, 4]);
   assert.equal(placed.flat, false);
+  assert.equal(placed.roofs, false);
   // on the ground floor's ground unless the map is moved up or down (#482); a map saved without a height is at 0
   assert.equal(placed.y, 0);
   const at = (y: number) => placedSurroundings({ ...b, settings: { ...b.settings, surroundings: s, surroundings_y: y } })!.y;
@@ -339,6 +340,7 @@ test("the own building and buildings standing in the plan's rooms are not drawn;
   assert.deepEqual([...hiddenBuildings(picked, b)].sort(), [0, 1]);
   const flat = placedSurroundings({ ...b, settings: { ...b.settings, surroundings: picked } })!;
   assert.equal(flat.flat, true);
+  assert.equal(placedSurroundings({ ...b, settings: { ...b.settings, surroundings: { ...s, roofs: true } } })!.roofs, true);
   assert.equal(flat.buildings.length, 1);
 });
 
@@ -442,6 +444,8 @@ test("the own outline, the corners to snap to and the redraw key follow the map"
   const key = surroundKey(withMap);
   assert.notEqual(key, "");
   assert.notEqual(surroundKey({ ...withMap, settings: { ...withMap.settings, surroundings: { ...s, flat: true } } }), key);
+  // the gable roof choice redraws it too (#491)
+  assert.notEqual(surroundKey({ ...withMap, settings: { ...withMap.settings, surroundings: { ...s, roofs: true } } }), key);
   // a new height redraws the map and its shadows (#482); no height and 0 are the same map
   assert.notEqual(surroundKey({ ...withMap, settings: { ...withMap.settings, surroundings_y: 1.5 } }), key);
   assert.equal(surroundKey({ ...withMap, settings: { ...withMap.settings, surroundings_y: 0 } }), key);
@@ -451,4 +455,10 @@ test("the own outline, the corners to snap to and the redraw key follow the map"
 test("the attribution names OpenStreetMap's contributors and links its copyright page", () => {
   assert.equal(OSM_ATTRIBUTION, "© OpenStreetMap contributors");
   assert.equal(OSM_COPYRIGHT, "https://www.openstreetmap.org/copyright");
+});
+
+test("a way mapped wider than 60 m is kept at 60 m, so the plan with it saves (#1234)", () => {
+  const way = (tags: Record<string, string>) => ({ type: "way", tags, geometry: [ll(-50, 0), ll(50, 0)] });
+  const s = parseOverpass({ elements: [way({ waterway: "river", width: "120" }), way({ highway: "residential", width: "2000" })] } as never, LAT, LON, 100);
+  assert.deepEqual(s.ways.map((w) => w.w), [60, 60]);
 });

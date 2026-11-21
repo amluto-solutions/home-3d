@@ -291,6 +291,7 @@ export class Fp3dSurroundSettings extends LitElement {
       ${s
         ? html`<label class="check"><input type="checkbox" .checked=${s.on} @change=${(e: Event) => this.set(() => ({ on: (e.target as HTMLInputElement).checked }))} /> ${t("surround_show")}</label>
             <label class="check"><input type="checkbox" .checked=${s.flat === true} @change=${(e: Event) => this.set(() => ({ flat: (e.target as HTMLInputElement).checked }))} /> ${t("surround_flat")}</label>
+            <label class="check"><input type="checkbox" .checked=${s.roofs === true} ?disabled=${s.flat === true} @change=${(e: Event) => this.set(() => ({ roofs: (e.target as HTMLInputElement).checked || undefined }))} /> ${t("surround_roofs")}</label>
             <div class="row">
               <label class="lbl" for="surround-y">${t("surround_y")}</label>
               <input

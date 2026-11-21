@@ -9,6 +9,7 @@ import { css, html, LitElement, nothing, svg } from "lit";
 import { KINDS, searchLibrary, sizeText, type LibraryEntry } from "../library-index.ts";
 import { tokens } from "../styles.ts";
 import { thumbFor } from "../thumbs.ts";
+import { onVeil } from "../veil.ts";
 
 const ROW = 48;
 const OVERSCAN = 4;
@@ -305,7 +306,7 @@ export class ItemPicker extends LitElement {
     const { rows, before, after } = this.visible();
     const sel = this.selected;
     const title = this.heading || t("item_picker_title");
-    return html`<div class="ip-back" @click=${(e: Event) => e.target === e.currentTarget && this.close()}>
+    return html`<div class="ip-back" @click=${(e: Event) => onVeil(e) && this.close()}>
       <div class="ip-dialog" role="dialog" aria-modal="true" aria-label=${title}>
         <header>
           <h3>${title}</h3>

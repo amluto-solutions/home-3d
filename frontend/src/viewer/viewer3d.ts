@@ -89,7 +89,7 @@ import { floorKeys } from "./floor-keys.ts";
 import { RebuildBatch } from "./rebuild-batch.ts";
 import { buildOrder } from "./floor-order.ts";
 import { buildRoof, type RoofGeometry, type RoofWindowState } from "./roof.ts";
-import { SunFx } from "./sun-fx.ts";
+import { SunFx, shadowWanted } from "./sun-fx.ts";
 import { boxEdgeOnScreen, outlineBox, SkyLayer, skyMode } from "./sky.ts";
 import { FlyInLayer } from "./fly-in.ts";
 import { realSkyShown } from "../backdrop.ts";
@@ -6596,7 +6596,9 @@ export class FloorplanViewer {
   focus(floorId: string, x: number, z: number, y: number, entityId: string | null, view?: { radius?: number; phi?: number; theta?: number }): void {
     const fv = this.floorMap.get(floorId);
     if (!fv) return;
-    this.controls.flyTo({ target: new Vector3(x, fv.floor.elevation + fv.ty + y, z), radius: view?.radius ?? 5.5, phi: view?.phi ?? 0.78, ...(view?.theta !== undefined ? { theta: view.theta } : {}) }, 900);
+    // an upright picture (a phone) shows less to the sides: step back until as much width is in view as on a square one (#493)
+    const back = 1 / Math.min(1, Math.max(0.5, this.camera.aspect || 1));
+    this.controls.flyTo({ target: new Vector3(x, fv.floor.elevation + fv.ty + y, z), radius: (view?.radius ?? 5.5) * back, phi: view?.phi ?? 0.78, ...(view?.theta !== undefined ? { theta: view.theta } : {}) }, 900);
     if (entityId) {
       this.flashes.set(entityId, performance.now() + 2400);
       const pin = this.host.querySelector<HTMLElement>(`.fp3d-dev[data-entity="${CSS.escape(entityId)}"]`);
@@ -6668,8 +6670,8 @@ export class FloorplanViewer {
     this.updateWalls();
     this.updateRackDetail();
     if (this.projections.active) this.updateProjections();
-    // the house's shadow belongs to the whole house
-    this.sunFx.showShadow(this.floorId === null && this.shadowSig !== "");
+    // the house's shadow belongs to the whole house; a house of one floor is whole with that floor shown, as a card shows it
+    this.sunFx.showShadow(shadowWanted(this.floorId, this.building?.floors.length ?? 0, this.shadowSig));
     // the realistic look: lit twins for new surfaces; the tablet level redraws its shadows only when more than the camera moved
     if (this.realism.active) this.realism.realize(this.scene, !!this.realPlan(), this.renderer, floorsMoving || openingsMoving || roofMoving || robotsMoving || fansTurning);
     // lamp glows keep a visible size when zoomed out (#89): one number per floor material, no rebuild

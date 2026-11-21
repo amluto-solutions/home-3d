@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "floors": [
     {
       "id": "text",
@@ -993,6 +993,7 @@
         0
       ],
       "flat": true,
+      "roofs": true,
       "buildings": [
         {
           "p": [
@@ -1110,5 +1111,15 @@
     }
   ],
   "recipes": {},
-  "opening_links_saved": true
+  "opening_links_saved": true,
+  "card_templates": [
+    {
+      "id": "text",
+      "name": "text",
+      "aliases": [
+        "text"
+      ],
+      "config": {}
+    }
+  ]
 }

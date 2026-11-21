@@ -36,6 +36,7 @@ import { RACK_MAX_LINKS, RACK_STATUS_COLOURS, type RackStatus } from "../rack-li
 import { modalFocus } from "../dialog-focus.ts";
 import { controls, tokens } from "../styles.ts";
 import type { PickerOption } from "./entity-picker.ts";
+import { onVeil } from "../veil.ts";
 
 type Translate = (key: string, vars?: Record<string, string | number>) => string;
 
@@ -443,7 +444,7 @@ export class RackSheet extends LitElement {
     const label = (p: number) => this.labels[p - 1] ?? p;
     const shown = this.slots.filter((s) => !s.on && this.onFace(s));
     const ghostType = this.pick ? ("add" in this.pick ? this.pick.add : this.slots.find((s) => this.pick && "move" in this.pick && s.id === this.pick.move)?.type) : undefined;
-    return html`<div class="fp3d-rack-veil" @click=${(e: Event) => e.target === e.currentTarget && this.close()} @keydown=${this.onKey}>
+    return html`<div class="fp3d-rack-veil" @click=${(e: Event) => onVeil(e) && this.close()} @keydown=${this.onKey}>
       <div class="fp3d-rack-sheet" role="dialog" aria-modal="true" aria-label=${t("rack_edit")} tabindex="-1" ${modalFocus()}>
         <div class="fp3d-rack-head">
           <h3>${this.heading || t("rack_edit")}</h3>

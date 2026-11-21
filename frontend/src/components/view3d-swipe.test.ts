@@ -37,7 +37,7 @@ test("a blind swiped in 3D gets one position when the finger lifts, not one per 
   const realNow = performance.now.bind(performance);
   performance.now = () => t;
   try {
-    for (const dy of [-20, -50, -80, -110]) {
+    for (const dy of [-20, -50, -80, -130]) {
       t += 400;
       el.onDeviceSwipe(id, "move", dy, 10, 10 + dy);
     }
@@ -45,7 +45,7 @@ test("a blind swiped in 3D gets one position when the finger lifts, not one per 
     performance.now = realNow;
   }
   assert.equal(calls.length, 0, "nothing while the finger moves");
-  el.onDeviceSwipe(id, "end", -110, 10, -100);
+  el.onDeviceSwipe(id, "end", -130, 10, -120);
   assert.equal(calls.length, 1);
   assert.equal(calls[0].service, "set_cover_position");
   assert.equal(calls[0].data.position, 100);
@@ -94,4 +94,26 @@ test("the wallbox reads its status by whole words: not_charging is no charging, 
   assert.equal(text("ready_to_charge"), plugged, "ready to charge: the car is plugged in");
   assert.notEqual(text("disconnected"), plugged, "disconnected: no car");
   assert.notEqual(text("unplugged"), plugged, "unplugged: no car");
+});
+
+test("a shaky tap on a blind is a tap: nothing is sent and the device is tapped instead (#1208)", () => {
+  const { el, calls } = setup();
+  const id = "cover.sample_blind";
+  const taps: string[] = [];
+  el.onDeviceTap = (e: string) => taps.push(e);
+  el.onDeviceSwipe(id, "start", 0, 10, 10);
+  el.onDeviceSwipe(id, "move", -9, 10, 1);
+  el.onDeviceSwipe(id, "move", 12, 10, 22);
+  el.onDeviceSwipe(id, "end", 0, 10, 10);
+  assert.deepEqual(positions(calls), []);
+  assert.deepEqual(taps, [id]);
+  assert.equal(el._swipe, null);
+  // past the slack it is a swipe again and no tap
+  const taps2 = taps.length;
+  el.onDeviceSwipe(id, "start", 0, 10, 10);
+  el.onDeviceSwipe(id, "move", -130, 10, -120);
+  el.onDeviceSwipe(id, "end", 0, 10, -120);
+  assert.equal(taps.length, taps2);
+  assert.equal(positions(calls).length, 1);
+  clearTimeout(el.swipeTimer);
 });

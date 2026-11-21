@@ -256,3 +256,37 @@ test("a page that becomes visible again reloads the plan, unless an edit is wait
     else delete (globalThis as { document?: unknown }).document;
   }
 });
+
+test("a failed pack reload keeps the loaded packs and asks again; an old backend without packs empties them (#1229)", async () => {
+  const host = { addController() {}, removeController() {}, requestUpdate() {}, updateComplete: Promise.resolve(true) };
+  const c = new BuildingController(host);
+  const pack = { id: "keep.pack", name: "Keep", publisher: "Demo", release: 1, items: [] };
+  let mode: "ok" | "busy" | "old" = "ok";
+  let asks = 0;
+  const hass = {
+    user: { is_admin: true },
+    callWS: async (msg: { type: string }) => {
+      if (msg.type !== "home_3d/packs/list") throw new Error(`unexpected ${msg.type}`);
+      asks++;
+      if (mode === "busy") throw { code: "timeout" };
+      if (mode === "old") throw { code: "unknown_command" };
+      return { packs: [pack] };
+    },
+    connection: { subscribeMessage: async () => async () => undefined },
+  } as unknown as HomeAssistant;
+  (c as unknown as { hass: HomeAssistant }).hass = hass;
+  await c.reloadPacks();
+  assert.equal(c.packs.length, 1);
+  mode = "busy";
+  await c.reloadPacks();
+  assert.equal(c.packs.length, 1, "the library stays");
+  assert.equal(asks, 2);
+  mode = "ok";
+  await new Promise((r) => setTimeout(r, 1700));
+  assert.equal(asks, 3, "asked again by itself");
+  mode = "old";
+  await c.reloadPacks();
+  assert.equal(c.packs.length, 0);
+  c.hostDisconnected();
+  setPlanRecipes(undefined);
+});

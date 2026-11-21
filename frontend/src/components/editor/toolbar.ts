@@ -15,6 +15,7 @@ import { furnitureName } from "../../furniture-names.ts";
 import type { ToolPanel } from "../tool-panel.ts";
 import { loadToolPanel, need } from "./lazy.ts";
 import type { Fp3dEditor } from "../editor.ts";
+import { onVeil } from "../../veil.ts";
 
 /** Select several: two items in a dashed frame, drawn like the toolbar's icons (ui-icons.ts). */
 const MULTI_ICON = svg`<svg class="fp3d-ui-icon" viewBox="0 0 24 24" width="1.15em" height="1.15em" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" style="vertical-align:-0.2em"><rect x="3" y="3" width="18" height="18" rx="2" stroke-dasharray="3 3"/><rect x="7" y="7" width="4" height="4"/><rect x="13" y="13" width="4" height="4"/></svg>`;
@@ -370,7 +371,7 @@ export class ToolbarPart {
                   : svg`<rect class="fp3d-help-sel" x="3" y="5" width="20" height="16" rx="2" />`;
       return html`<svg class="fp3d-help-mark" viewBox="0 0 26 26" aria-hidden="true">${shape}</svg>`;
     };
-    return html`<div class="fp3d-dialog-veil" @click=${(e: Event) => e.target === e.currentTarget && close()}>
+    return html`<div class="fp3d-dialog-veil" @click=${(e: Event) => onVeil(e) && close()}>
       <div class="fp3d-dialog fp3d-help-overlay" role="dialog" aria-modal="true" aria-label=${this.t("help_overlay_title")} tabindex="-1" ${modalFocus()}>
         <div class="fp3d-dialog-head">
           <h3>${this.t("help_overlay_title")}</h3>

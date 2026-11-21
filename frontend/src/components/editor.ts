@@ -74,6 +74,7 @@ import { settleSideDrag, syncSideDrag } from "./editor/side-drag.ts";
 import { ItemFoldsPart } from "./editor/item-folds.ts";
 import { DevicePanelPart } from "./editor/device-panel.ts";
 import { CamerasPart } from "./editor/cameras.ts";
+import { renderOverlap } from "./editor/overlap.ts";
 import { ToolbarPart } from "./editor/toolbar.ts";
 import { SidePanelPart } from "./editor/side-panel.ts";
 import { RacksPart } from "./editor/racks.ts";
@@ -1225,7 +1226,7 @@ export class Fp3dEditor extends LitElement {
         <!-- one toolbar row across the plan and the sidebar (#249) -->
         <div class="fp3d-toolbar">
           ${this._wallPick && !(this._phone && this.showsPhoneHint()) ? html`<div class="fp3d-pick-tip" style=${`left:${this.wallPickTip[0]}px;top:${this.wallPickTip[1]}px`} @click=${() => (this._wallPick = false)}>${touchWording(touchOnly(), "hint_wall_pick", (k, p) => this.t(k, p))}</div>` : nothing}
-          ${this.renderFloorMenu()} ${this.renderToolBar(floor, walls?.warnings.length ? html`<span class="fp3d-warn">${this.t("overlap_warning")}</span>` : nothing)}
+          ${this.renderFloorMenu()} ${this.renderToolBar(floor, walls?.warnings.length ? renderOverlap(this, floor, walls.warnings) : nothing)}
         </div>
         <div class="fp3d-main">
           <div class="fp3d-stage-pair ${this._split ? "fp3d-split" : ""}" style=${this._split && !this.narrow ? `--fp3d-split:${Math.round(this._splitRatio * 100)}%` : ""}>

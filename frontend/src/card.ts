@@ -7,12 +7,14 @@ import { css, html, LitElement, nothing, type PropertyValues } from "lit";
 import { uiIcon } from "./ui-icons.ts";
 import { BuildingController, type PlanChange } from "./building-controller.ts";
 import { loadView, readyView } from "./load-view.ts";
-import { loadColourField, loadRoomPanel } from "./load-parts.ts";
+import { loadColourField, loadPhoneShell, loadRoomPanel } from "./load-parts.ts";
+import type { Fp3dPhoneShell, PhoneView } from "./components/phone-shell.ts";
+import type { NowMode } from "./components/now-list.ts";
 import { need } from "./lazy-part.ts";
 import { languageReady, loadLanguage, translate, uiLanguage, type I18nKey } from "./i18n.ts";
 import { controls, tokens } from "./styles.ts";
 import type { HomeAssistant } from "./types.ts";
-import { showsPlan2d, walkRightFor, type CardConfig, type CardControl } from "./card-config.ts";
+import { cardTemplate, effectiveConfig, isHaPath, showsPlan2d, walkRightFor, type CardConfig, type CardControl } from "./card-config.ts";
 import { fitBar, type BarItem } from "./card-fit.ts";
 import { preload3d } from "./load3d.ts";
 import { nightActive } from "./kiosk.ts";
@@ -26,6 +28,8 @@ import { TimeTravel } from "./load-timetravel.ts";
 import { withDemo } from "./demo.ts";
 import { forwardHass, HASS_CHILDREN, HassWatch } from "./hass-watch.ts";
 import type { HistorySpec } from "./timetravel/types.ts";
+import { floorsOfRooms, roomsOnly, shownRoomIds } from "./rooms-filter.ts";
+import { savedSolo, saveSolo, soloOn, viewRooms } from "./phone-solo.ts";
 
 type HeatMode = NonNullable<CardConfig["heatmap"]>;
 
@@ -44,6 +48,8 @@ export class Floorplan3dCard extends LitElement {
     _config: { state: true },
     _roomId: { state: true },
     _shutRoom: { state: true },
+    _phoneMode: { state: true },
+    _solo: { state: true },
     _floorId: { state: true },
     _walls: { state: true },
     _heat: { state: true },
@@ -76,10 +82,23 @@ export class Floorplan3dCard extends LitElement {
   set hass(value: HomeAssistant) {
     this.rawHass = value;
   }
+  /** The options the card works with: its template's from the plan with its own YAML on top (#495, effectiveConfig). */
   private declare _config: CardConfig;
+  /** The card's own YAML, and the template it last applied (as text: the plan pushed again with it unchanged is no change). */
+  private yaml: CardConfig | null = null;
+  private appliedTemplate = "";
+  /**
+   * A preview of a card template (#495, Settings): it turns, zooms and opens rooms like the card, but changes nothing –
+   * the host hands it a hass whose service calls go nowhere (preview-hass.ts), and plan changes are not saved.
+   */
+  declare preview: boolean;
   private declare _roomId: string | null;
   /** The room whose panel was closed with its X (#354): the room stays selected and in view, only the panel goes. */
   private declare _shutRoom: string | null;
+  /** The phone view (card option `phone`, #493): only its bar, the list, or the house check. */
+  private declare _phoneMode: NowMode;
+  /** "Room on its own" chosen on this device (#500); null: not chosen, the card's `phone_solo` counts. */
+  private declare _solo: boolean | null;
   /** The configured start room was applied once the building arrived. */
   private roomApplied = false;
   /** Floor chosen in the card (null: the house; undefined: none chosen, the configured floor applies). */
@@ -117,8 +136,11 @@ export class Floorplan3dCard extends LitElement {
 
   constructor() {
     super();
+    this.preview = false;
     this._roomId = null;
     this._shutRoom = null;
+    this._phoneMode = "bar";
+    this._solo = savedSolo();
     this._floorId = undefined;
     this._walls = savedWalls();
     this._heat = null;
@@ -190,7 +212,7 @@ export class Floorplan3dCard extends LitElement {
       return;
     }
     this.tt.stop();
-    this._roomId = this._config?.room ?? null;
+    this._roomId = this.startRoom;
     this._floorId = undefined;
     this._plan2d = null;
     this.view3d()?.resetView();
@@ -305,8 +327,21 @@ clearTimeout(this.cleanTimer);
 
   setConfig(config: CardConfig): void {
     if (config.height !== undefined && !(config.height > 100)) throw new Error("height must be a number of pixels above 100");
+    this.yaml = config;
+    this.appliedTemplate = this.templateKey();
+    this.applyConfig(effectiveConfig(config, this.data.building));
+  }
+
+  /** The named template as it is in the plan now ("" without one, #495). */
+  private templateKey(): string {
+    const tpl = cardTemplate(this.data.building, this.yaml?.template);
+    return tpl ? JSON.stringify([tpl.name, tpl.config]) : "";
+  }
+
+  /** New options: from the dashboard, or a template changed in Settings (#495) – the card starts over with them. */
+  private applyConfig(config: CardConfig): void {
     // another home or start room (the dashboard editor): the room open in the old one closes, the new one opens (#150)
-    if (this._config && ((this._config.home || undefined) !== (config.home || undefined) || this._config.room !== config.room)) {
+    if (this._config && ((this._config.home || undefined) !== (config.home || undefined) || this._config.room !== config.room || String(this._config.rooms) !== String(config.rooms))) {
       this._roomId = null;
       this.roomApplied = false;
     }
@@ -377,6 +412,14 @@ clearTimeout(this.cleanTimer);
   }
 
   protected willUpdate(changed: PropertyValues): void {
+    // the plan came (or came again): a template changed in Settings reaches the tablet without a reload (#495)
+    if (this.yaml?.template) {
+      const key = this.templateKey();
+      if (key !== this.appliedTemplate) {
+        this.appliedTemplate = key;
+        this.applyConfig(effectiveConfig(this.yaml, this.data.building));
+      }
+    }
     // another room (or none): its panel opens again (#354)
     if (changed.has("_roomId") && this._shutRoom !== this._roomId) this._shutRoom = null;
     if (changed.has("hass") && this.rawHass) {
@@ -447,11 +490,34 @@ clearTimeout(this.cleanTimer);
     return this._config?.floor_thumbs ?? !this._config?.floor;
   }
 
+  /** The rooms a card of some rooms shows (`rooms`, those the plan still has, #500); empty: the whole house. */
+  private get shownRooms(): string[] {
+    return shownRoomIds(this.data.building, this._config?.rooms);
+  }
+
+  /** The room the card starts in: its `room`, else the one room of `rooms` (it opens with its panel, #500). */
+  private get startRoom(): string | null {
+    const rooms = this.shownRooms;
+    return this._config?.room ?? (rooms.length === 1 ? rooms[0] : null);
+  }
+
+  /** The plan cut down to the card's rooms, for the phone bar's lists (the 3D view cuts its own, #500). */
+  private roomsPlan(b: Building, rooms: readonly string[]): Building {
+    if (!rooms.length) return b;
+    const key = rooms.join(",");
+    if (this.roomsOf?.from !== b || this.roomsOf.key !== key) this.roomsOf = { from: b, key, to: roomsOnly(b, rooms) };
+    return this.roomsOf.to;
+  }
+
+  private roomsOf: { from: Building; key: string; to: Building } | null = null;
+
   /** One level up: room -> floor -> house. */
   /** The floor shown now: the one chosen, else the configured one; a single floor is always shown. */
   private currentFloor(): string | null {
     const b = this.data.building;
-    const chosen = this._floorId === undefined ? (this._config?.floor ?? null) : this._floorId;
+    // a card of some rooms on one floor starts on it (#500)
+    const own = b && !this._config?.floor ? floorsOfRooms(b, this.shownRooms) : [];
+    const chosen = this._floorId === undefined ? (this._config?.floor ?? (own.length === 1 ? own[0] : null)) : this._floorId;
     return b && b.floors.length === 1 ? b.floors[0].id : b?.floors.some((f) => f.id === chosen) ? chosen : null;
   }
 
@@ -459,6 +525,8 @@ clearTimeout(this.cleanTimer);
    * plan when someone else saved meanwhile. */
   private onPlanChange(e: CustomEvent<{ change: PlanChange }>): void {
     e.preventDefault();
+    // a template's preview (#495) saves nothing
+    if (this.preview) return;
     this.data.update(e.detail.change);
   }
 
@@ -473,10 +541,13 @@ clearTimeout(this.cleanTimer);
     const height = this._config?.height ?? 420;
     const c = this._config;
     // the configured room opens once, when the building is there; the kiosk return brings it back
-    if (!this.roomApplied && b && c?.room) {
+    const start = this.startRoom;
+    if (!this.roomApplied && b && start) {
       this.roomApplied = true;
-      if (b.floors.some((f) => zonesOf(f).some((r) => r.id === c.room))) this._roomId = c.room;
+      if (b.floors.some((f) => zonesOf(f).some((r) => r.id === start))) this._roomId = start;
     }
+    const rooms = this.shownRooms;
+    const solo = soloOn(this._solo, c?.phone_solo);
     // the configured floor is where the card starts; with floor pictures the user can switch
     const floorId = this.currentFloor();
     // the floor pictures have a house button of their own; a room with its panel has a close button
@@ -499,17 +570,20 @@ clearTimeout(this.cleanTimer);
           : "calc(100vh - var(--header-height, 56px) - 2px)"
         : `${height}px`;
     // the bar of switches at the bottom (the back button belongs to it)
-    const bar = !!b && !this._clean && (canGoBack || ((!!c?.controls || !!c?.time_travel) && !(this._roomId && this._shutRoom !== this._roomId && c.room_panel !== false)));
+    const bar = !!b && !this._clean && c?.phone !== true && (canGoBack || ((!!c?.controls || !!c?.time_travel) && !(this._roomId && this._shutRoom !== this._roomId && c.room_panel !== false)));
     const tt = this.tt.active;
     // a sample / demo home: devices this Home Assistant lacks show fixed demo states (#100)
     const hass = this.viewHass(this.rawHass!, b);
     this.shownHass = hass;
     const eye = c?.controls_hidden !== undefined || (c?.controls_hide_after ?? 0) > 0;
+    // the phone view (#493) brings its own bar: the card's switches and buttons make way
+    const phone = c?.phone === true && !!b && !tt;
+    if (phone) need(loadPhoneShell);
     const t = (k: Parameters<typeof translate>[1]) => translate(this.hass, k);
     // the card's own accent, else (while the look follows the HA theme) the theme's primary colour (#38)
     const accent = shownAccent(lookOf(c?.theme), c?.accent, this.hass, (n) => getComputedStyle(this).getPropertyValue(n));
     return html`<ha-card class="${this._night ? "fp3d-night" : ""} ${this._pseudoFull ? "fp3d-pseudo-full" : ""}" style=${accentVars(accent)} @pointerdown=${(e: PointerEvent) => (this.closeBarMenu(e), this.touch())} @keydown=${this.onKey} @wheel=${this.touch}>
-      <div class="fp3d-card-body ${tt ? "fp3d-tt" : ""}" style="height:${size}">
+      <div class="fp3d-card-body ${tt ? "fp3d-tt" : ""} ${phone ? `fp3d-phone fp3d-now-${this._phoneMode}` : ""}" style="height:${size}">
         ${b && b.floors.some((f) => f.rooms.length)
           ? html`<fp3d-view3d
               .hass=${hass}
@@ -521,10 +595,11 @@ clearTimeout(this.cleanTimer);
               .plan2d=${flat}
               .floorId=${floorId}
               .roomId=${this._roomId}
+              .rooms=${viewRooms({ phone, solo, roomId: this._roomId, rooms })}
               .wallMode=${walls}
               .explode=${explode}
               .keepRoof=${c?.roof_fade === false}
-              .hideRoof=${c?.roof === false}
+              .hideRoof=${c?.roof === false || rooms.length > 0}
               .quality=${this._config?.quality ?? "auto"}
               ?showStats=${this._config?.stats ?? false}
               .markerMode=${this._config?.markers ?? "important"}
@@ -548,9 +623,10 @@ clearTimeout(this.cleanTimer);
               .showEnergy=${this._config?.energy ?? true}
               .flows=${this._config?.flows ?? null}
               .holograms=${this._config?.holograms ?? null}
-              .floorThumbs=${this.thumbs}
+              .floorThumbs=${this.thumbs && !rooms.length}
               .roomLabels=${c?.room_names !== false}
-              .roomCard=${!!c?.room}
+              .roomCard=${!!c?.room || rooms.length > 0}
+              .surroundings=${c?.surroundings !== false}
               .controlsRight=${c?.controls_side === "right"}
               .keepView=${c?.keep_view === true}
               .angleLock=${c?.angle_lock === true}
@@ -568,8 +644,10 @@ clearTimeout(this.cleanTimer);
               .cameraWall=${this._cameraWall && !tt}
               @camera-wall-close=${() => (this._cameraWall = false)}
               @camera-wall-open=${() => (this._cameraWall = true)}
-              .clean=${this._clean}
-              .cleanButton=${eye}
+              .clean=${this._clean || phone}
+              .cleanButton=${eye && !phone}
+              .phoneView=${phone}
+              @status-change=${() => phone && setTimeout(() => (this.renderRoot.querySelector("fp3d-phone-shell") as Fp3dPhoneShell | null)?.requestUpdate(), 0)}
               @clean-toggle=${() => {
                 this._clean = !this._clean;
                 if (!this._clean) this.armClean();
@@ -606,10 +684,12 @@ clearTimeout(this.cleanTimer);
               @plan-change=${this.onPlanChange}
             ></fp3d-view3d>`
           : html`<p class="fp3d-card-msg">${this.data.error ?? (b ? translate(this.hass, "no_building") : translate(this.hass, "loading"))}</p>`}
-        ${this._roomId && this._shutRoom !== this._roomId && b && this._config?.room_panel !== false
+        ${b && c?.template && !cardTemplate(b, c.template) ? html`<div class="fp3d-card-tpl-missing" role="status">${translate(this.hass, "card_template_missing", { name: c.template })}</div>` : nothing}
+        ${this._roomId && this._shutRoom !== this._roomId && b && this._config?.room_panel !== false && !(phone && this._phoneMode === "check")
           ? (need(loadRoomPanel), html`<fp3d-room-panel
               @camera-look=${(e: CustomEvent<{ entity: string }>) => this.view3d()?.lookThrough(e.detail.entity)}
               class="fp3d-card-panel"
+              ?collapsible=${phone}
               .hass=${hass}
               ?readOnly=${tt}
               ?noLook=${flat}
@@ -624,14 +704,38 @@ clearTimeout(this.cleanTimer);
               @close=${() => (this._shutRoom = this._roomId)}
             ></fp3d-room-panel>`)
           : nothing}
+        ${phone && b
+          ? html`<fp3d-phone-shell
+              .hass=${hass}
+              .building=${this.roomsPlan(b, rooms)}
+              .view=${() => this.view3d() as unknown as PhoneView | null}
+              .floorId=${floorId}
+              .roomId=${this._roomId}
+              .solo=${solo}
+              @phone-solo=${(e: CustomEvent<boolean>) => saveSolo((this._solo = e.detail))}
+              .extras=${c?.dashboard ? [{ id: "dash", icon: "⌂", label: c.dashboard_label || c.dashboard }] : []}
+              .hide=${c?.phone_hide ?? []}
+              .start=${c?.phone_start}
+              .places=${c?.phone_places}
+              @phone-link=${(e: CustomEvent<string>) => isHaPath(e.detail) && this.openDashboard(e.detail)}
+              @phone-mode=${(e: CustomEvent<NowMode>) => (this._phoneMode = e.detail)}
+              @phone-room=${(e: CustomEvent<{ floorId: string | null; roomId: string | null }>) => {
+                // a card fixed to one floor keeps it (without floor pictures it cannot switch)
+                if (this.canSwitch) this._floorId = b.floors.length > 1 || e.detail.roomId ? e.detail.floorId : null;
+                this._roomId = e.detail.roomId;
+                this._shutRoom = null;
+              }}
+              @phone-more=${(e: CustomEvent<string>) => e.detail === "dash" && c?.dashboard && this.openDashboard(c.dashboard)}
+            ></fp3d-phone-shell>`
+          : nothing}
         ${bar && b ? this.renderBar(b, canGoBack, flat, walls, explode, floorId, heats, heat, t) : nothing}
         ${this.tt.session ? html`<fp3d-time-bar .session=${this.tt.session}></fp3d-time-bar>` : nothing}
-        ${c?.fullscreen_button && !this._clean && !(this._roomId && this._shutRoom !== this._roomId && c.room_panel !== false)
+        ${c?.fullscreen_button && !this._clean && !phone && !(this._roomId && this._shutRoom !== this._roomId && c.room_panel !== false)
           ? html`<button class="fp3d-card-full" title=${t(this._fullscreen ? "fullscreen_exit" : "fullscreen")} aria-label=${t(this._fullscreen ? "fullscreen_exit" : "fullscreen")} @click=${() => this.toggleFullscreen()}>
               ${this._fullscreen ? "✕" : uiIcon("expand")}
             </button>`
           : nothing}
-        ${c?.dashboard && !this._clean && !(this._roomId && this._shutRoom !== this._roomId && c.room_panel !== false)
+        ${c?.dashboard && !this._clean && !phone && !(this._roomId && this._shutRoom !== this._roomId && c.room_panel !== false)
           ? html`<button class="fp3d-card-full fp3d-card-dash ${c.fullscreen_button ? "fp3d-card-dash-2" : ""}" title=${c.dashboard_label || c.dashboard} aria-label=${c.dashboard_label || c.dashboard} @click=${() => this.openDashboard(c.dashboard!)}>
               ${c.dashboard_label ? html`<span>${c.dashboard_label}</span>` : "⌂"}
             </button>`
@@ -774,6 +878,19 @@ clearTimeout(this.cleanTimer);
       .fp3d-tt .fp3d-card-panel {
         bottom: calc(var(--fp3d-tt-h) + 4px);
       }
+      /* the phone view (#493): the view's own things and a room's panel stand above its bar, which is taller on a phone
+         with a home indicator (safe area) */
+      .fp3d-phone fp3d-view3d {
+        --fp3d-bottom-inset: calc(72px + env(safe-area-inset-bottom, 0px));
+      }
+      .fp3d-phone.fp3d-now-check fp3d-view3d {
+        --fp3d-bottom-inset: calc(190px + env(safe-area-inset-bottom, 0px));
+      }
+      .fp3d-phone .fp3d-card-panel {
+        bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+        height: auto;
+        max-height: calc(62% - 62px);
+      }
       .fp3d-tt-chip[aria-pressed="true"] {
         background: #ffb020;
         color: #1a1200;
@@ -850,6 +967,20 @@ clearTimeout(this.cleanTimer);
       }
       fp3d-view3d {
         flex: 1;
+      }
+      .fp3d-card-tpl-missing {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: calc(100% - 40px);
+        padding: 6px 12px;
+        border-radius: 10px;
+        background: var(--fp3d-chrome-solid, rgba(10, 16, 30, 0.92));
+        border: 1px solid rgba(255, 170, 60, 0.6);
+        color: var(--fp3d-text, #fff);
+        font-size: 13px;
+        z-index: 5;
       }
       .fp3d-card-msg {
         margin: auto;

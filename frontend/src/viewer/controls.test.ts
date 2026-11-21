@@ -274,3 +274,56 @@ test("a saved flight keeps its angle under the 3D lock, an ordinary one does not
     g.matchMedia = had;
   }
 });
+
+test("fingers on a label, a pin or a card join a pinch; the element under a zooming finger is not tapped", async () => {
+  const { OrbitControls } = await import("./controls.ts");
+  const g = globalThis as Record<string, unknown>;
+  const mk = () => {
+    const l: Record<string, ((e: unknown) => void)[]> = {};
+    return {
+      l,
+      addEventListener: (t: string, fn: (e: unknown) => void) => (l[t] ??= []).push(fn),
+      removeEventListener: (t: string, fn: (e: unknown) => void) => (l[t] = (l[t] ?? []).filter((f) => f !== fn)),
+      fire: (t: string, e: unknown) => (l[t] ?? []).forEach((f) => f(e)),
+    };
+  };
+  const win = mk();
+  const host = mk();
+  const el = {
+    ...mk(),
+    parentElement: host,
+    setPointerCapture: () => {},
+    getBoundingClientRect: () => ({ left: 0, top: 0, width: 100, height: 100 }),
+    clientHeight: 100,
+  };
+  const savedWindow = g.window;
+  g.window = win;
+  try {
+    const view = { target: new Vector3(), radius: 10, theta: 0, phi: 0.8 };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const c = new OrbitControls(el as any, { fov: 50 } as any, { tap() {}, doubleTap() {}, hold() {}, change() {} } as any);
+    c.view = view;
+    const label = { tagName: "DIV", parentElement: host, scrollHeight: 10, clientHeight: 10 };
+    const field = { tagName: "INPUT", parentElement: host };
+    const touch = (id: number, x: number, target: unknown) => ({ pointerId: id, pointerType: "touch", clientX: x, clientY: 50, target, button: 0, timeStamp: performance.now(), altKey: false, shiftKey: false });
+    // a finger on a text field is left alone
+    host.fire("pointerdown", touch(9, 10, field));
+    el.fire("pointerdown", touch(1, 60, el));
+    assert.equal(c.busy, true);
+    win.fire("pointerup", touch(9, 10, field));
+    el.fire("pointerup", touch(1, 60, el));
+    // one finger on a label, one on the picture: a pinch
+    host.fire("pointerdown", touch(2, 40, label));
+    el.fire("pointerdown", touch(3, 60, el));
+    const r0 = c.view.radius;
+    win.fire("pointermove", touch(2, 20, label)); // guest moves apart
+    el.fire("pointermove", touch(3, 80, el));
+    assert.ok(c.view.radius < r0, "spreading the fingers zooms in");
+    // the click of the element under the zooming finger is swallowed
+    let stopped = false;
+    host.fire("click", { stopPropagation: () => (stopped = true), preventDefault: () => {} });
+    assert.equal(stopped, true, "the pinch made the label's click a non-tap");
+  } finally {
+    g.window = savedWindow;
+  }
+});

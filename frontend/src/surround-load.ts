@@ -11,7 +11,8 @@ export const DEFAULT_RADIUS = 150;
 /** The plan with freshly loaded map data: the outline choice stays, the hidden-by-hand lists do not (the houses are numbered anew). */
 export function loaded(b: Building, res: { surroundings: Surroundings; north: number }): Building {
   const flat = b.settings.surroundings?.flat === true;
-  return { ...b, settings: { ...b.settings, north: res.north, surroundings: { ...res.surroundings, ...(flat ? { flat } : {}) } } };
+  const roofs = b.settings.surroundings?.roofs === true;
+  return { ...b, settings: { ...b.settings, north: res.north, surroundings: { ...res.surroundings, ...(flat ? { flat } : {}), ...(roofs ? { roofs } : {}) } } };
 }
 
 /** Why loading failed, as a text key: the map bundle's errors have a `kind` (they are not this bundle's class). */

@@ -27,3 +27,5 @@ export const loadWeatherForecast = once(() => import("./components/weather-forec
 export const loadColourField = once(() => import("./components/colour-field.ts"));
 /** The styles dialog (<fp3d-styles-dialog>, #441): every style as a tile, the house in the chosen one, own styles; loaded when the View panel's Styles button is pressed. */
 export const loadStylesDialog = once(() => import("./components/styles-dialog.ts"));
+/** The phone view (<fp3d-phone-shell>, #493): its bar, the list "What's going on?" and the house check; loaded when it is on. */
+export const loadPhoneShell = once(() => import("./components/phone-shell.ts"));

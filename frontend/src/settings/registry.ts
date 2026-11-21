@@ -53,7 +53,8 @@ export type SectionId =
   | "advanced"
   | "view3d"
   | "people"
-  | "tablets";
+  | "tablets"
+  | "cards";
 
 /** A text key: the page's own ("st_…") or a main one (i18n.ts). */
 export type TextKey = string;
@@ -145,6 +146,8 @@ export type Control =
   | { kind: "homes" }
   /** The neighbourhood map from OpenStreetMap (#464): load, align, hide houses; a lazy chunk draws it. */
   | { kind: "surroundings" }
+  /** The card templates (#495): the templates by kind, the card form in tabs and a preview; a lazy chunk draws it. */
+  | { kind: "card_templates" }
   /** A block the editor bundle draws (lists with their own logic: favourites, own buttons, backup …). */
   | { kind: "embed"; topic: EmbedTopic }
   /** Only words: where something is set instead (the card options, the modules' settings). */
@@ -197,8 +200,8 @@ export interface Setting<V = unknown> {
 // ---------------------------------------------------------------------------------------------------- sections
 
 /**
- * The menu (#248, option B of the redesign #219): who a change affects first (This home, This device), then topics.
- * Each group belongs to one side.
+ * Who a change affects (#248, option B of the redesign #219): each group belongs to one side, and each page says its
+ * side once. The dialog's menu (#496) lists the sections by TOPIC_GROUPS instead.
  */
 export const GROUPS: { id: GroupId; audience: Audience; title: TextKey }[] = [
   { id: "house", audience: "home", title: "st_group_house" },
@@ -212,6 +215,18 @@ export const GROUPS: { id: GroupId; audience: Audience; title: TextKey }[] = [
 export function audienceOf(sec: Pick<Section, "group">): Audience {
   return GROUPS.find((g) => g.id === sec.group)?.audience ?? "home";
 }
+
+/**
+ * The Settings dialog's topics (#496, ported from NeonPlan 3D 4.0.0): five groups on its left, both sides of the old
+ * menu together (each page still says who a change affects). Every section in the menu is in exactly one group.
+ */
+export const TOPIC_GROUPS: { id: string; title: TextKey; sections: SectionId[] }[] = [
+  { id: "house", title: "st_topics_house", sections: ["homes", "general", "scene", "energy", "favourites"] },
+  { id: "look", title: "st_topics_look", sections: ["look", "view3d", "effects"] },
+  { id: "screens", title: "st_topics_screens", sections: ["screen", "tablets", "cards", "cameras"] },
+  { id: "live", title: "st_topics_live", sections: ["warnings", "household", "people", "voice", "packs"] },
+  { id: "system", title: "st_topics_system", sections: ["access", "backup", "advanced"] },
+];
 
 export const SECTIONS: Section[] = [
   {
@@ -318,6 +333,8 @@ export const SECTIONS: Section[] = [
   /* "Tablets & access" split in two (#248) */
   { id: "access", group: "system", icon: "key", title: "st_sec_editors", hint: "st_sec_access_hint", cards: [{ id: "editors", title: "st_card_editors" }] },
   { id: "tablets", group: "system", icon: "tablet", title: "st_sec_tablets", hint: "st_sec_tablets_hint", cards: [{ id: "tablets", title: "st_card_tablets" }] },
+  /* dashboard cards set up once, picked by a tablet or a phone (#495) */
+  { id: "cards", group: "system", icon: "tablet", title: "st_sec_cards", hint: "st_sec_cards_hint", cards: [{ id: "cards", title: "st_card_cards" }] },
   { id: "packs", group: "system", icon: "package", title: "st_sec_packs", hint: "st_sec_packs_hint", cards: [{ id: "updates", title: "st_card_updates" }] },
   { id: "backup", group: "system", icon: "history", title: "st_sec_backup", hint: "st_sec_backup_hint", cards: [{ id: "backup", title: "st_card_backup" }] },
   {
@@ -1456,6 +1473,19 @@ const ADVANCED: Setting[] = [
 
 /** Where the dashboard cards' options are (they stay in each card's editor, as decided on #139). */
 const CARDS: Setting[] = [
+  /* the card templates (#495): saved in the plan, so every card that names one follows it */
+  {
+    id: "card_templates",
+    section: "cards",
+    card: "cards",
+    scope: "house",
+    permission: "editor",
+    label: "tpl_title",
+    keywords: ["template", "card", "dashboard", "tablet", "phone", "screen"],
+    control: { kind: "card_templates" },
+    default: null,
+    read: () => null,
+  },
   {
     id: "dashboard_cards",
     section: "view3d",

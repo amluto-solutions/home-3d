@@ -10,7 +10,7 @@ STORAGE_MINOR_VERSION = 2
 # the format of a plan (#165): its `version`; an older plan is brought up to this one by the steps in migrations.py.
 # One up (with a step) whenever the stored plan can hold a value an older Home 3D would not read, a new choice of a
 # field too (#379): tests/fixtures/plan-choices.json keeps the choices of each version
-PLAN_VERSION = 6
+PLAN_VERSION = 7
 # the websocket protocol (#166): one up whenever a command or a field of one is added, changed or removed, so the
 # frontend can tell what the backend it talks to understands (building/get and version send it). The commands are
 # listed in tests/fixtures/contract/websocket.json, which tests/test_contract.py keeps in step and the frontend

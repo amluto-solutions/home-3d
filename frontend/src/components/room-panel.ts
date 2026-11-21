@@ -2,7 +2,7 @@
 // scenes and scripts). Shown next to the 3D view when a room is selected.
 
 import { defineElement } from "../define.ts";
-import { css, html, LitElement, nothing, type TemplateResult } from "lit";
+import { css, html, LitElement, nothing, type PropertyValues, type TemplateResult } from "lit";
 import { areaEntities, coverControls, slatTilt, slatsInverted, entityName, groupByDevice, isUnavailable, kindOf, roomClimateSensors, roomClimateValue, roomPanelEntities, fromCelsius, tempUnit, type DeviceKind } from "../devices.ts";
 import { askConfirm } from "../ask.ts";
 import { callServiceSafe } from "../failure.ts";
@@ -58,6 +58,8 @@ export class Fp3dRoomPanel extends LitElement {
     readOnly: { type: Boolean },
     noLook: { type: Boolean },
     canEdit: { type: Boolean },
+    collapsible: { type: Boolean },
+    compact: { type: Boolean, reflect: true },
     _showAll: { state: true },
     _editing: { state: true },
     _tick: { state: true },
@@ -79,6 +81,12 @@ export class Fp3dRoomPanel extends LitElement {
   declare sheets: { id: string; icon: string; title: string }[] | null;
   /** On the editors list (#229): may change what the panel lists ("Edit list"), for every viewer. */
   declare canEdit: boolean;
+  /**
+   * The phone view (#493): the panel opens folded – the room's name, facts and buttons, the house stays in sight – and
+   * shows its devices on a tap. `compact` is the folded state (reflected for the styles).
+   */
+  declare collapsible: boolean;
+  declare compact: boolean;
   /** "Edit list" is open (#229); true once its lazy chunk has loaded. */
   private declare _editing: boolean;
   /** Show the other devices of the area as well (their main entities). */
@@ -97,6 +105,8 @@ export class Fp3dRoomPanel extends LitElement {
     this.sheets = null;
     this.readOnly = false;
     this.canEdit = false;
+    this.collapsible = false;
+    this.compact = false;
     this._editing = false;
     this._showAll = false;
     this._tick = 0;
@@ -192,6 +202,12 @@ export class Fp3dRoomPanel extends LitElement {
     this.renderRoot.querySelector<HTMLElement>(".fp3d-rp-head h2")?.focus();
   }
 
+  protected willUpdate(changed: PropertyValues<this>): void {
+    // a new room opens folded in the phone view
+    if (this.collapsible && (changed.has("room") || changed.has("collapsible")) && (changed.get("room") as Room | null | undefined)?.id !== this.room?.id) this.compact = true;
+    if (!this.collapsible && this.compact) this.compact = false;
+  }
+
   protected render() {
     const room = this.room;
     if (!room || !this.hass) return nothing;
@@ -275,6 +291,12 @@ export class Fp3dRoomPanel extends LitElement {
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
         </button>
       </header>
+      ${this.collapsible
+        ? html`<button class="fp3d-rp-fold" aria-expanded=${this.compact ? "false" : "true"} @click=${() => (this.compact = !this.compact)}>
+            <span aria-hidden="true">${this.compact ? "▴" : "▾"}</span>
+            ${this.compact ? `${this.t("panel_fold_open")}${lightsOn.length ? ` · 💡 ${this.t("panel_fold_lights", { n: lightsOn.length })}` : ""}` : this.t("panel_fold_close")}
+          </button>`
+        : nothing}
       <div class="fp3d-rp-body">
         <!-- time travel: one disabled fieldset greys out and disables every control inside it, with one tooltip (#210) -->
         <fieldset class="fp3d-rp-controls" ?disabled=${this.readOnly} title=${this.readOnly ? this.t("tt_past_no") : nothing}>
@@ -840,6 +862,28 @@ export class Fp3dRoomPanel extends LitElement {
         background: rgba(255, 255, 255, 0.06);
         color: var(--fp3d-text);
         cursor: pointer;
+      }
+      .fp3d-rp-fold {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 44px;
+        padding: 6px 14px;
+        border: none;
+        border-bottom: 1px solid var(--fp3d-line);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--fp3d-text);
+        font: inherit;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      :host([compact]) .fp3d-rp-fold {
+        border-bottom: none;
+      }
+      :host([compact]) .fp3d-rp-body {
+        display: none;
       }
       .fp3d-rp-body {
         overflow-y: auto;

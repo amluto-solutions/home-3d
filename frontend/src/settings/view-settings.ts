@@ -275,6 +275,8 @@ export const SCREEN: Setting[] = [
   deviceSwitch("floor_pictures", "screen", "controls", "floor_pictures", false, "st_floor_pictures", "st_floor_pictures_hint", ["floor", "pictures", "thumbnails"]),
   // #454: for wall tablets: a tap on a device of another room opens that room instead of switching it
   deviceSwitch("tap_in_room", "screen", "controls", "tap_in_room", false, "st_tap_in_room", "st_tap_in_room_hint"),
+  // #493: the phone view (a bar at the bottom, "What's going on?", the house check); a phone is asked once, off elsewhere
+  deviceSwitch("phone_view", "screen", "controls", "phone_view", false, "st_phone_view", "st_phone_view_hint", ["phone", "mobile", "bar", "bottom", "now"]),
 ];
 
 // ---------------------------------------------------------------------------------------------------- the View panel

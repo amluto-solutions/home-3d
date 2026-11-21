@@ -31,6 +31,7 @@ const PATHS: Record<string, TemplateResult> = {
   back: svg`<path d="m15 18-6-6 6-6"/>`,
   next: svg`<path d="m9 18 6-6-6-6"/>`,
   lock: svg`<rect x="4.5" y="11" width="15" height="10" rx="2"/><path d="M8 11V7.5a4 4 0 0 1 8 0V11"/>`,
+  close: svg`<path d="M6 6l12 12M18 6 6 18"/>`,
 };
 
 /** `<fp3d-line-icon name="sun">`: one icon of the family, hidden from screen readers. */

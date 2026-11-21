@@ -15,6 +15,7 @@ import { furnitureName } from "../../furniture-names.ts";
 import { mountBase } from "../../packs.ts";
 import { MAX_MOUNT_Y, round, RUN_GAP, type RunCtx } from "./helpers.ts";
 import type { Fp3dEditor } from "../editor.ts";
+import { onVeil } from "../../veil.ts";
 
 /** WallViewPart: methods of `Fp3dEditor`, copied onto its prototype by editor.ts (see parts.ts). */
 export class WallViewPart {
@@ -709,7 +710,7 @@ export class WallViewPart {
           },
         }
       : null);
-    return html`<div class="fp3d-wv-veil" @click=${(e: Event) => e.target === e.currentTarget && (this._wallView = null)}>
+    return html`<div class="fp3d-wv-veil" @click=${(e: Event) => onVeil(e) && (this._wallView = null)}>
       <div class="fp3d-wv" role="dialog" aria-modal="true" aria-label=${this.t("wall_view")} tabindex="0" @keydown=${key} ${modalFocus()}>
         <div class="fp3d-wv-head">
           <button class="fp3d-btn" title=${`${this.t("wall_prev")}: ${wallName(leftEdge)}`} @click=${() => go(leftEdge)}>‹</button>

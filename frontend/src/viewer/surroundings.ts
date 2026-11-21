@@ -9,6 +9,7 @@ import { Color, type BufferGeometry } from "three";
 import type { Vec2 } from "../model.ts";
 import { signedArea } from "../model.ts";
 import type { PlacedSurroundings } from "../surroundings.ts";
+import { gableHouse } from "../surround-roof.ts";
 import { ALWAYS, GeoBuffer, LineBuffer, pushPrism, shade, triangulate } from "./geo.ts";
 import { palette } from "./palette.ts";
 
@@ -123,6 +124,22 @@ export function* surroundingsSteps(buf: GeoBuffer, lines: LineBuffer, s: PlacedS
         lines.seg([p[0], ground + FLAT_Y / 2, p[1]], [q[0], ground + FLAT_Y / 2, q[1]], outline, ALWAYS);
       }
     } else {
+      const gable = s.roofs ? gableHouse(poly, b.h) : null;
+      if (gable) {
+        // one piece per slope: walls up to the eaves and into the gables, the slope as its top
+        const roofY = (x: number, z: number) => ground + gable.height(x, z);
+        for (const half of gable.halves) {
+          pushPrism(buf, half, ground, roofY, L.side, L.top, { aoFrom: ground, skipSide: (p, q) => gable.onRidge(p) && gable.onRidge(q) });
+          for (let i = 0; i < half.length; i++) {
+            const p = half[i];
+            const q = half[(i + 1) % half.length];
+            lines.seg([p[0], roofY(p[0], p[1]), p[1]], [q[0], roofY(q[0], q[1]), q[1]], edge, ALWAYS);
+            if (!gable.onRidge(p)) lines.seg([p[0], ground, p[1]], [p[0], roofY(p[0], p[1]), p[1]], edge, ALWAYS);
+          }
+        }
+        if (pause()) yield;
+        continue;
+      }
       const top = ground + Math.max(1, b.h);
       pushPrism(buf, poly, ground, top, L.side, L.top, { aoFrom: ground });
       // the edges: the outline at the top and the corners down to the ground

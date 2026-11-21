@@ -147,6 +147,7 @@ export const SEARCH_WORDS: Readonly<Record<string, readonly string[]>> = {
   door_pins: ["door", "window", "contact", "sensor", "pins", "buttons"],
   vacuum_maps: ["vacuum", "robot", "map", "cleaning", "dock", "floor"],
   floor_pictures: ["picker", "thumbs", "gallery", "panel", "level", "selector"],
+  phone_view: ["handset", "smartphone", "status", "check", "glance", "tabs"],
   // voice
   voice_here: ["voice", "mic", "talk", "dictation", "spoken", "command", "button"],
   screen_name: ["label", "title", "identifier", "tablet", "display", "ask"],
@@ -155,6 +156,7 @@ export const SEARCH_WORDS: Readonly<Record<string, readonly string[]>> = {
   mic_test: ["check", "diagnose", "verify", "mic", "trial", "audio"],
   // homes, access, tablets
   homes: ["house", "houses", "property", "building", "residence", "address"],
+  card_templates: ["preset", "kiosk", "mobile"],
   editors: ["owners", "collaborators", "rights", "access", "people", "staff"],
   tablet_users: ["viewers", "guests", "family", "lock", "display", "dashboard"],
   tablet_idle: ["timeout", "inactivity", "reset", "timer", "screensaver", "revert"],

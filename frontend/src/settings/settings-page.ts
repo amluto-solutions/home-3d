@@ -1,10 +1,13 @@
-// The Settings page (#139): every setting of Home 3D in one place. The menu (#248, option B of the menus redesign #219)
-// shows who a change affects first: This home (saved in the plan, every screen sees it) or This device (this browser
-// only), then topics on that side, with a search over both (arrow keys, Enter, Escape). Each page says once who it
-// affects (a row with a different rule says so under its label), house rows are locked for viewers who aren't editors,
-// and one save line says who a change was saved for. Changes save as they are made. A Back link returns to the 3D view
-// or the editor it was opened from. Under 760 px the menu is a list that drills into a section. It is a bundle of its own (home-3d-settings.js), loaded when someone
-// opens the Settings tab; it brings no texts table of its own beyond its few new texts (the panel lends `t`).
+// Settings (#139): every setting of Home 3D in one place, as one compact dialog over the page it was opened from (#496,
+// ported from NeonPlan 3D 4.0.0): the topics in five groups on the left (TOPIC_GROUPS), the chosen topic on the right,
+// with a search over all of them (arrow keys, Enter, Escape). The dialog keeps its size from topic to topic; the card
+// templates get its whole width, their topics folded away until "All settings" brings them back. Each page says once who
+// it affects: This home (saved in the plan, every screen sees it) or This device (this browser only); a row with a
+// different rule says so under its label, house rows are locked for viewers who aren't editors, and one save line says
+// who a change was saved for. Changes save as they are made. Close (or Escape) returns to the 3D view or the editor it
+// was opened from. Under 760 px the dialog fills the screen and the topics are a choice above the page. It is a bundle
+// of its own (home-3d-settings.js), loaded when someone opens the Settings tab; it brings no texts table of its own
+// beyond its few new texts (the panel lends `t`).
 
 import { setCustomStyles } from "../looks.ts";
 import { defineElement } from "../define.ts";
@@ -22,9 +25,11 @@ import { colourField } from "../colour-field-tag.ts";
 import { optionGroups, optionText } from "./view-settings.ts";
 import type { ExtensionEntry } from "./extensions-index.ts";
 import { controls, tokens } from "../styles.ts";
+import { modalFocus } from "../dialog-focus.ts";
+import { onVeil } from "../veil.ts";
 import {
-  GROUPS,
   LOADERS,
+  TOPIC_GROUPS,
   audienceOf,
   type Audience,
   liveSections,
@@ -58,6 +63,8 @@ const loadEntityPicker = loadTimeField;
 const loadHomes = once(() => import("./homes.ts"));
 // the neighbourhood map's card (#464) is a chunk of its own too
 const loadSurroundings = once(() => import("./surroundings-card.ts"));
+// the card templates page (#495) is a chunk of its own too, with the preview and the card form loaded by the card
+const loadCardTemplates = once(() => import("../components/card-templates.ts"));
 const loadMultiSelect = once(() => import("../components/multi-select.ts"));
 // the shared colour field (#403): Settings' first open has no room for it
 const loadColourField = once(() => import("../components/colour-field.ts"));
@@ -90,8 +97,10 @@ export const localPrefs: DevicePrefs = {
 /** Settings kept outside the plan: fetched when their section opens (by the setting's `loader`). */
 export type Loaders = Record<string, (hass: HomeAssistant) => Promise<unknown>>;
 
-/** Phone layout: the sidebar becomes a list that drills into a section. */
+/** Phone layout: the dialog fills the screen and the topics become a choice above the page. */
 const NARROW_PX = 760;
+/** Under this width the card templates' dialog has no room for the topics beside them: they are the choice on top. */
+const WIDE_PX = 1100;
 
 export class SettingsPage extends LitElement {
   static properties = {
@@ -111,12 +120,11 @@ export class SettingsPage extends LitElement {
     backTo: { attribute: false },
     version: { attribute: false },
     _section: { state: true },
-    _audience: { state: true },
+    _navOpen: { state: true },
     _cursor: { state: true },
     _saved: { state: true },
     _query: { state: true },
     _words: { state: true },
-    _drill: { state: true },
     _flash: { state: true },
     _remote: { state: true },
     _embedState: { state: true },
@@ -146,8 +154,8 @@ export class SettingsPage extends LitElement {
   /** The versions running, for the About card (#248). */
   declare version: { frontend: string; backend: string | null } | undefined;
   private declare _section: SectionId;
-  /** The side of the menu shown: This home or This device (#248). */
-  private declare _audience: Audience;
+  /** The card templates take the dialog's whole width: their topics are folded away until asked for (#496). */
+  private declare _navOpen: boolean;
   /** The search hit the arrow keys are on (#248). */
   private declare _cursor: number;
   /** Who the last change on this page was saved for (the save line, #248); null: nothing changed yet. */
@@ -161,8 +169,6 @@ export class SettingsPage extends LitElement {
   private declare _words: Readonly<Record<string, readonly string[]>> | null;
   /** What the Extensions tab holds, searched with the settings (#302); loaded with the search words. */
   private _extIndex: typeof import("./extensions-index.ts") | null = null;
-  /** Phones: a section is open (else the list of sections). */
-  private declare _drill: boolean;
   /** The row a deep link points at, highlighted for a moment. */
   private declare _flash: string | null;
   private declare _remote: Record<string, unknown>;
@@ -183,13 +189,12 @@ export class SettingsPage extends LitElement {
     this.lastView = null;
     this.t = (key) => key;
     this._section = "general";
-    this._audience = "home";
+    this._navOpen = false;
     this._cursor = 0;
     this._saved = null;
     this.backTo = null;
     this._query = "";
     this._words = null;
-    this._drill = false;
     this._flash = null;
     this._remote = {};
     this._embedState = customElements.get("fp3d-editor") ? "ready" : "idle";
@@ -230,11 +235,7 @@ export class SettingsPage extends LitElement {
       this._query = "";
       this._note = null;
       if (sectionOf(id)?.hidden) this.toExtensions();
-      else if (sectionOf(id)) {
-        // an unknown name opens the menu, not the first page (#256)
-        this._drill = true;
-        if (this.focusId) this.flash(this.focusId);
-      }
+      else if (sectionOf(id) && this.focusId) this.flash(this.focusId);
     }
     // people who cannot change the home's settings start on the device side, where they can change something (#255)
     if (!this.startPicked && this.hass && (changed.has("hass") || changed.has("canEdit"))) {
@@ -244,8 +245,6 @@ export class SettingsPage extends LitElement {
     }
     const sections = liveSections(this.env);
     if (sections.length && !sections.some((s) => s.id === this._section)) this._section = sections[0].id;
-    // the menu shows the open section's side
-    if (changed.has("section") || changed.has("focusId") || !this.hasUpdated) this._audience = audienceOf(sectionOf(this._section)!);
     this.askRemote();
   }
 
@@ -357,10 +356,10 @@ export class SettingsPage extends LitElement {
   private open(section: SectionId, focus: string | null = null): void {
     if (sectionOf(section)?.hidden) return this.toExtensions(null, focus);
     this._section = section;
-    this._audience = audienceOf(sectionOf(section)!);
+    // a topic chosen from the folded card templates' choice, or another one: the dialog is its usual self again
+    this._navOpen = false;
     if (focus) this.flash(focus);
     this._query = "";
-    this._drill = true;
     this._note = null;
     this.dispatchEvent(new CustomEvent("settings-nav", { detail: { section, id: focus }, bubbles: true, composed: true }));
     if (!focus) this.renderRoot.querySelector?.(".st-main")?.scrollTo?.({ top: 0 });
@@ -385,59 +384,67 @@ export class SettingsPage extends LitElement {
       </div>`;
     }
     const env = this.env;
-    const sections = liveSections(env).filter((s) => !s.hidden);
+    const shown = new Set(liveSections(env).filter((s) => !s.hidden).map((s) => s.id));
+    const groups = TOPIC_GROUPS.map((g) => ({ title: g.title, list: g.sections.filter((id) => shown.has(id)).map((id) => sectionOf(id)!) })).filter((g) => g.list.length);
     const query = this._query.trim();
     const hits = query ? this.hits(query) : null;
-    const side = this._audience;
-    const other: Audience = side === "home" ? "device" : "home";
     const ext = this.extHits(query);
     const n = (hits?.length ?? 0) + ext.length;
     const cursor = n ? Math.min(this._cursor, n - 1) : -1;
-    return html`<div class="st ${this._drill || query ? "st-drill" : ""} ${query ? "st-query" : ""}">
-      <nav class="st-nav" aria-label=${this.tr("st_title")}>
-        ${this.renderBackTo()}
-        <div class="st-sides" role="group" aria-label=${this.tr("st_audience")}>
-          ${(["home", "device"] as const).map(
-            (a) => html`<button class="st-side" aria-pressed=${a === side} @click=${() => this.showSide(a)}>
-              <span><b>${this.tr(a === "home" ? "st_audience_home" : "st_group_device")}</b>${this.tr(a === "home" ? "st_audience_home_sub" : "st_audience_device_sub")}</span>
-            </button>`,
+    // the card templates bring a list, a form and a preview of their own: the dialog's whole width (#496)
+    const wide = !hits && this._section === "cards";
+    const folded = wide && !this._navOpen;
+    return html`<div class="st-veil" @click=${(e: Event) => onVeil(e) && this.close()}>
+      <div
+        class="st ${wide ? "st-wide" : ""} ${folded ? "st-folded" : ""} ${query ? "st-query" : ""}"
+        role="dialog"
+        aria-modal="true"
+        aria-label=${this.tr("st_title")}
+        tabindex="-1"
+        ${modalFocus()}
+        @keydown=${this.dialogKey}
+      >
+        <header class="st-head">
+          <h2>${this.tr("st_title")}</h2>
+          ${wide
+            ? html`<button class="fp3d-btn st-fold" aria-expanded=${folded ? "false" : "true"} @click=${() => (this._navOpen = folded)}>${icon(folded ? "next" : "back", true)} ${this.tr("st_topics_all")}</button>`
+            : nothing}
+          ${this.renderClose()}
+        </header>
+        <nav class="st-nav" aria-label=${this.tr("st_title")}>
+          <label class="st-search">
+            ${icon("search")}
+            <input
+              type="search"
+              role="combobox"
+              aria-autocomplete="list"
+              aria-expanded=${hits ? "true" : "false"}
+              aria-controls="st-hits"
+              aria-activedescendant=${cursor >= 0 ? `st-hit-${cursor}` : ""}
+              .value=${this._query}
+              placeholder=${this.tr("st_search_all")}
+              aria-label=${this.tr("st_search_all")}
+              @focus=${this.loadWords}
+              @input=${(e: Event) => {
+                this._query = (e.target as HTMLInputElement).value;
+                this._cursor = 0;
+                this.loadWords();
+              }}
+              @keydown=${this.searchKey}
+            />
+          </label>
+          ${groups.map(
+            (g) => html`<div class="st-group">${this.tr(g.title)}</div>
+              ${g.list.map((s) => html`<button class="st-nav-btn" aria-current=${!query && s.id === this._section ? "page" : "false"} @click=${() => this.open(s.id)}>${this.tr(s.title)}</button>`)}`,
           )}
-        </div>
-        <label class="st-search">
-          ${icon("search")}
-          <input
-            type="search"
-            role="combobox"
-            aria-autocomplete="list"
-            aria-expanded=${hits ? "true" : "false"}
-            aria-controls="st-hits"
-            aria-activedescendant=${cursor >= 0 ? `st-hit-${cursor}` : ""}
-            .value=${this._query}
-            placeholder=${this.tr("st_search_all")}
-            aria-label=${this.tr("st_search_all")}
-            @focus=${this.loadWords}
-            @input=${(e: Event) => {
-              this._query = (e.target as HTMLInputElement).value;
-              this._cursor = 0;
-              this.loadWords();
-            }}
-            @keydown=${this.searchKey}
-          />
-        </label>
-        ${GROUPS.filter((g) => g.audience === side).map((g) => {
-          const list = sections.filter((s) => s.group === g.id);
-          return list.length
-            ? html`<div class="st-group">${this.tr(g.title)}</div>
-                ${list.map(
-                  (s) => html`<button class="st-nav-btn" aria-current=${!query && s.id === this._section ? "page" : "false"} @click=${() => this.open(s.id)}>
-                    <span class="st-ic">${icon(s.icon)}</span><span>${this.tr(s.title)}</span><span class="st-chev">${icon("next", true)}</span>
-                  </button>`,
-                )}`
-            : nothing;
-        })}
-        <button class="st-other" @click=${() => this.showSide(other)}><span>${this.tr(other === "home" ? "st_other_home" : "st_other_device")}</span>${icon("next", true)}</button>
-      </nav>
-      <main class="st-main">${hits ? this.renderResults(query, hits, ext, cursor) : this.renderSection(sectionOf(this._section)!)}</main>
+        </nav>
+        <select class="st-pick" aria-label=${this.tr("st_topics_pick")} @change=${(e: Event) => this.open((e.target as HTMLSelectElement).value as SectionId)}>
+          ${groups.map(
+            (g) => html`<optgroup label=${this.tr(g.title)}>${g.list.map((s) => html`<option value=${s.id} ?selected=${s.id === this._section}>${this.tr(s.title)}</option>`)}</optgroup>`,
+          )}
+        </select>
+        <main class="st-main">${hits ? this.renderResults(query, hits, ext, cursor) : this.renderSection(sectionOf(this._section)!)}</main>
+      </div>
     </div>`;
   }
 
@@ -495,23 +502,33 @@ export class SettingsPage extends LitElement {
 
   private cursorMoved = false;
 
-  /** One side of the menu (#248): on a wide screen its first page opens beside it, unless one of its pages is open. */
-  private showSide(a: Audience): void {
-    this._audience = a;
-    this._query = "";
-    this._note = null;
-    if (audienceOf(sectionOf(this._section)!) === a) return;
-    const first = liveSections(this.env).find((s) => !s.hidden && audienceOf(s) === a);
-    if (first) this._section = first.id;
+  /** Leaves Settings (#496: the dialog's close button, Escape, a tap beside it) for where it was opened from (#248). */
+  private close(): void {
+    this.dispatchEvent(new CustomEvent("settings-back", { detail: { mode: this.backTo ?? "view" }, bubbles: true, composed: true }));
   }
 
-  /** "‹ Back to 3D / Editor" (#248): where the page was opened from. */
-  private renderBackTo() {
+  /**
+   * The dialog's keys (#496): Escape closes it, except where a box inside used it (its list closes first, the focus
+   * comes back to the dialog). No key reaches the plan behind it: the editor's and the walk's keys are on the window.
+   */
+  private readonly dialogKey = (e: KeyboardEvent): void => {
+    e.stopPropagation();
+    if (e.key !== "Escape" || e.defaultPrevented) return;
+    const from = e.composedPath()[0] as Element | undefined;
+    const box = e.currentTarget as HTMLElement | null;
+    if ((from?.localName === "input" || from?.localName === "textarea") && !from.closest?.(".st-search")) {
+      box?.focus?.();
+      return;
+    }
+    e.preventDefault();
+    this.close();
+  };
+
+  /** The close button, named for where it goes: "Back to 3D / Editor" (#248), else Close. */
+  private renderClose() {
     const to = this.backTo;
-    if (!to) return nothing;
-    return html`<button class="st-backto" @click=${() => this.dispatchEvent(new CustomEvent("settings-back", { detail: { mode: to }, bubbles: true, composed: true }))}>
-      ${icon("back", true)}<span>${this.tr(`st_back_to_${to === "view" ? "3d" : to}`)}</span>
-    </button>`;
+    const label = to ? this.tr(`st_back_to_${to === "view" ? "3d" : to}`) : this.t("close");
+    return html`<button class="st-close" aria-label=${label} title=${label} @click=${() => this.close()}>${icon("close")}</button>`;
   }
 
   /** The one save line (#248): who the last change was saved for, read out politely when it changes. */
@@ -568,8 +585,7 @@ export class SettingsPage extends LitElement {
     const page = { side, install, admin };
     const sentence = side === "device" ? "st_page_device" : install ? "st_page_install" : admin ? "st_page_home_admin" : "st_page_home";
     const lock = admin && !who.haAdmin ? "st_admin_locked" : houseLocked ? "st_locked" : null;
-    return html`<button class="st-back" @click=${() => (this._drill = false)}>${icon("back", true)} ${this.tr("st_back")}</button>
-      <div class="st-title">
+    return html`<div class="st-title">
         <div>
           <h2>${this.tr(sec.title)}</h2>
           <p>${this.tr(sentence)}</p>
@@ -594,7 +610,7 @@ export class SettingsPage extends LitElement {
     // the start view's two buttons and its state line go under the label, so the label keeps its width (#246)
     // a segment of three or more choices and a select with long choices go under their label too, so the hint keeps its width (#256)
     const c = s.control;
-    const wide = (c.kind === "select" && c.options(this.env).some((o) => this.label(o).length > 24)) || (c.kind === "segment" && this.options(c).length > 2) || c.kind === "embed" || c.kind === "homes" || c.kind === "surroundings" || c.kind === "list" || c.kind === "checks" || c.kind === "entity" || (c.kind === "action" && c.action === "start_view");
+    const wide = (c.kind === "select" && c.options(this.env).some((o) => this.label(o).length > 24)) || (c.kind === "segment" && this.options(c).length > 2) || c.kind === "embed" || c.kind === "homes" || c.kind === "surroundings" || c.kind === "card_templates" || c.kind === "list" || c.kind === "checks" || c.kind === "entity" || (c.kind === "action" && c.action === "start_view");
     const rule = showRule ? this.rule(s, hit, page) : null;
     const more = planUnit(this.env) === "imperial" && s.hintImperial;
     return html`<div
@@ -753,6 +769,9 @@ export class SettingsPage extends LitElement {
         if (disabled) return html`<p class="st-sub">${icon("lock", true)}</p>`;
         need(loadSurroundings);
         return html`<fp3d-surround-settings .hass=${this.hass} .building=${this.building} .t=${this.t}></fp3d-surround-settings>`;
+      case "card_templates":
+        need(loadCardTemplates);
+        return html`<fp3d-card-templates .hass=${this.hass} .building=${this.building} .home=${this.homeId} .canEdit=${!disabled} .t=${this.t}></fp3d-card-templates>`;
       case "note":
         return nothing;
       case "info":
@@ -865,21 +884,84 @@ export class SettingsPage extends LitElement {
     tokens,
     controls,
     css`
+      /* one dialog over the page Settings was opened from (#496): the veil covers the panel, not Home Assistant's menu */
       :host {
+        position: absolute;
+        inset: 0;
+        z-index: 50;
         display: block;
-        min-height: 0;
-        overflow: hidden;
       }
       *,
       *::before,
       *::after {
         box-sizing: border-box;
       }
+      .st-veil {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        padding: 16px;
+        background: rgba(2, 6, 14, 0.55);
+      }
+      /* it keeps its size from topic to topic, so nothing jumps; the card templates get a wider and higher one */
       .st {
         display: grid;
-        grid-template-columns: 248px 1fr;
-        height: 100%;
-        min-height: 0;
+        grid-template-columns: 220px minmax(0, 1fr);
+        grid-template-rows: auto minmax(0, 1fr);
+        grid-template-areas: "head head" "nav main";
+        width: min(1020px, 100%);
+        height: min(780px, 100%);
+        overflow: hidden;
+        border: 1px solid var(--fp3d-line);
+        border-radius: var(--fp3d-radius-card);
+        background: var(--fp3d-bg);
+        box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+        outline: none;
+      }
+      .st.st-wide {
+        width: min(1800px, 100%);
+        height: min(1000px, 100%);
+      }
+      .st.st-folded {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "head" "main";
+      }
+      .st-folded .st-nav {
+        display: none;
+      }
+      .st-head {
+        grid-area: head;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 12px 10px 18px;
+        border-bottom: 1px solid var(--fp3d-line);
+        background: var(--fp3d-chrome);
+      }
+      .st-head h2 {
+        margin: 0 auto 0 0;
+        font-family: var(--fp3d-title-font);
+        font-size: 18px;
+      }
+      .st-fold {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .st-close {
+        display: inline-grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        border: 0;
+        border-radius: 8px;
+        background: none;
+        color: var(--fp3d-text);
+        cursor: pointer;
+      }
+      .st-close:hover {
+        background: var(--fp3d-bg2);
       }
       .st-stale {
         display: flex;
@@ -887,8 +969,10 @@ export class SettingsPage extends LitElement {
         align-items: center;
         gap: 12px;
         padding: 24px 16px;
+        background: var(--fp3d-bg);
       }
       .st-nav {
+        grid-area: nav;
         border-right: 1px solid var(--fp3d-line);
         background: var(--fp3d-chrome);
         padding: 12px;
@@ -896,58 +980,14 @@ export class SettingsPage extends LitElement {
         display: flex;
         flex-direction: column;
         gap: 2px;
+        min-height: 0;
       }
-      .st-backto,
-      .st-other,
-      .st-side,
       .st-link,
       .st-nav-btn {
         border: 0;
         background: none;
         font: inherit;
         cursor: pointer;
-      }
-      .st-backto,
-      .st-other {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        min-height: 40px;
-        padding: 0 8px;
-        color: var(--fp3d-accent);
-      }
-      .st-other {
-        margin-top: 12px;
-        border-top: 1px solid var(--fp3d-line);
-        justify-content: space-between;
-      }
-      .st-sides {
-        display: flex;
-        gap: 4px;
-        padding: 4px;
-        margin: 4px 0 10px;
-        border: 1px solid var(--fp3d-line);
-        border-radius: 8px;
-      }
-      .st-side {
-        flex: 1;
-        display: flex;
-        gap: 6px;
-        min-height: 44px;
-        padding: 6px;
-        border-radius: 6px;
-        color: var(--fp3d-muted);
-        font-size: 11.5px;
-        text-align: left;
-      }
-      .st-side b {
-        display: block;
-        font-size: 13.5px;
-        color: var(--fp3d-text);
-      }
-      .st-side[aria-pressed="true"] {
-        background: color-mix(in srgb, var(--fp3d-accent) 14%, transparent);
-        color: var(--fp3d-accent);
       }
       .st-search {
         display: flex;
@@ -956,7 +996,7 @@ export class SettingsPage extends LitElement {
         border: 1px solid var(--fp3d-line);
         border-radius: 10px;
         padding: 0 10px;
-        margin-bottom: 8px;
+        margin-bottom: 4px;
         background: var(--fp3d-bg2);
         color: var(--fp3d-muted);
       }
@@ -987,9 +1027,8 @@ export class SettingsPage extends LitElement {
       .st-nav-btn {
         display: flex;
         align-items: center;
-        gap: 10px;
-        min-height: 38px;
-        padding: 0 8px;
+        min-height: 36px;
+        padding: 0 10px;
         border-radius: 8px;
         color: var(--fp3d-text);
         font-size: 14px;
@@ -1003,17 +1042,23 @@ export class SettingsPage extends LitElement {
         color: var(--fp3d-accent);
         font-weight: 600;
       }
-      .st-ic {
-        display: inline-flex;
-        width: 18px;
-      }
-      .st-chev {
-        margin-left: auto;
-        color: var(--fp3d-muted);
+      .st-pick {
+        grid-area: pick;
         display: none;
+        margin: 0 12px;
+        min-height: 40px;
+        padding: 0 10px;
+        border: 1px solid var(--fp3d-line);
+        border-radius: 10px;
+        background: var(--fp3d-bg2);
+        color: var(--fp3d-text);
+        font: inherit;
+        font-size: 14px;
       }
       .st-main {
+        grid-area: main;
         overflow: auto;
+        min-height: 0;
         padding: 20px 24px 24px;
         display: flex;
         flex-direction: column;
@@ -1023,6 +1068,10 @@ export class SettingsPage extends LitElement {
       .st-main > * {
         max-width: 760px;
         width: 100%;
+      }
+      /* the card templates (#495): the list, the form and the preview side by side take the dialog's whole width */
+      .st-wide .st-main > * {
+        max-width: none;
       }
       .st-back {
         display: none;
@@ -1288,34 +1337,61 @@ export class SettingsPage extends LitElement {
       .st-save-error {
         color: var(--fp3d-danger);
       }
-      @media (max-width: ${NARROW_PX}px) {
-        .st {
-          grid-template-columns: 1fr;
+      /* a window too narrow for the card templates and the topics beside them: the topics are the choice on top */
+      @media (max-width: ${WIDE_PX}px) {
+        .st.st-wide,
+        .st.st-wide.st-folded {
+          grid-template-columns: minmax(0, 1fr);
+          grid-template-rows: auto auto auto minmax(0, 1fr);
+          grid-template-areas: "head" "nav" "pick" "main";
         }
-        .st-nav {
-          border-right: 0;
-        }
-        .st-drill .st-nav {
-          display: none;
-        }
-        /* a search in progress keeps its box on screen above the results (#254) */
-        .st-drill.st-query {
-          grid-template-rows: auto 1fr;
-        }
-        .st-drill.st-query .st-nav {
+        .st-wide .st-nav,
+        .st-wide.st-folded .st-nav {
           display: flex;
+          border-right: 0;
+          padding-bottom: 8px;
         }
-        .st-drill.st-query .st-nav > :not(.st-search) {
+        .st-wide .st-nav > :not(.st-search) {
           display: none;
         }
-        .st:not(.st-drill) .st-main {
+        .st-wide .st-pick {
+          display: block;
+        }
+        .st-fold {
           display: none;
         }
-        .st-chev {
-          display: inline;
+      }
+      @media (max-width: ${NARROW_PX}px) {
+        .st-veil {
+          padding: 0;
         }
-        .st-nav-btn {
-          min-height: 44px;
+        .st,
+        .st.st-wide,
+        .st.st-folded,
+        .st.st-wide.st-folded {
+          width: 100%;
+          height: 100%;
+          border: 0;
+          border-radius: 0;
+          grid-template-columns: minmax(0, 1fr);
+          grid-template-rows: auto auto auto minmax(0, 1fr);
+          grid-template-areas: "head" "nav" "pick" "main";
+        }
+        /* the search box stays on top; the topics are a choice under it */
+        .st-nav,
+        .st-folded .st-nav {
+          display: flex;
+          border-right: 0;
+          padding-bottom: 8px;
+        }
+        .st-nav > :not(.st-search) {
+          display: none;
+        }
+        .st-pick {
+          display: block;
+        }
+        .st-query .st-pick {
+          display: none;
         }
         .st-back {
           display: inline-flex;

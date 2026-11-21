@@ -96,3 +96,30 @@ test("other parts open the page with an open-settings event; locked tablet mode 
   assert.doesNotMatch(text, /fp3d-tab-settings/);
   assert.doesNotMatch(text, /fp3d-settings-page/);
 });
+
+test("Settings is a dialog over the page it was opened from, which stays drawn behind it (#496)", () => {
+  for (const k of ["EDITOR", "SETTINGS", "VIEWER", "ITEMS"]) g[`__FP3D_${k}_CHUNKS__`] ??= [];
+  at("");
+  const p = panel(true);
+  host(p);
+  p._settingsReady = true;
+  const view = shown(p);
+  assert.doesNotMatch(view, /fp3d-settings-page/);
+  p.openSettings("look", null);
+  assert.equal(p._mode, "settings");
+  assert.equal(p.pageBehind, "view");
+  const text = shown(p);
+  assert.match(text, /fp3d-settings-page/);
+  assert.match(text, /fp3d-view3d|fp3d-nav/, "the 3D view is still there behind it");
+  // from the editor: the editor stays behind it, and closing goes back there
+  p.setMode("editor");
+  p.openSettings();
+  assert.equal(p.pageBehind, "editor");
+  assert.match(shown(p), /fp3d-settings-page/);
+  p.setMode(p.settingsFrom);
+  assert.equal(p._mode, "editor");
+  // a locked wall tablet has neither
+  at("?tablet", "#settings");
+  const t = panel(false, "wall");
+  assert.equal(t.pageBehind, "view");
+});

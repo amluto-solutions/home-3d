@@ -191,6 +191,17 @@ def front_colours(plan: dict[str, Any]) -> dict[str, Any]:
     return plan
 
 
+# ---------------------------------------------------------------------------- 6 -> 7: gable neighbours (1.8.0)
+
+
+def gable_neighbours(plan: dict[str, Any]) -> dict[str, Any]:
+    """Version 6 -> 7: changes nothing. Home 3D 1.8.0 lets a plan hold `settings.surroundings.roofs` (the
+    neighbours' houses with a gable roof, #491) and `card_templates` (#495). A Home 3D that reads version 6
+    (1.7.x) would leave `roofs` out as invalid and show "plan repaired"; the bump makes it open such a plan
+    read-only."""
+    return plan
+
+
 # MIGRATIONS[n - 1] turns a plan of version n into one of version n + 1
 MIGRATIONS: tuple[Callable[[dict[str, Any]], dict[str, Any]], ...] = (
     lights_to_lamps,
@@ -198,6 +209,7 @@ MIGRATIONS: tuple[Callable[[dict[str, Any]], dict[str, Any]], ...] = (
     style_plan,
     surroundings,
     front_colours,
+    gable_neighbours,
 )
 assert len(MIGRATIONS) == PLAN_VERSION - 1, "every plan version but the first has its migration"
 

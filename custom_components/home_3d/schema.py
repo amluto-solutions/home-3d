@@ -1097,6 +1097,8 @@ SURROUNDINGS_SCHEMA = vol.Schema(
         vol.Optional("show"): vol.All([_MAP_INDEX], vol.Length(max=3000)),
         # the neighbours only as outlines on the ground
         vol.Optional("flat"): bool,
+        # the neighbours' houses with a simple gable roof (optional, #491)
+        vol.Optional("roofs"): bool,
         vol.Required("buildings"): vol.All(
             [
                 vol.Schema(
@@ -1599,6 +1601,20 @@ PRESENCE_SCHEMA = vol.Schema(
     extra=vol.ALLOW_EXTRA,
 )
 
+# A card template (#495, Settings > Card templates; ported from NeonPlan 3D 4.0.0, MIT, Mastershort): a dashboard card
+# on a wall tablet or a phone names it and takes its options from here, so a change in Settings reaches every card.
+# The options are the card's own (the card checks them); an optional key, so the plan format stays.
+CARD_TEMPLATE_SCHEMA = vol.Schema(
+    {
+        vol.Required("id"): vol.All(str, vol.Length(min=1, max=60)),
+        vol.Required("name"): vol.All(str, vol.Length(max=80)),
+        vol.Optional("aliases"): vol.All([vol.All(str, vol.Length(min=1, max=60))], vol.Length(max=10)),
+        vol.Optional("config", default=dict): vol.Schema({}, extra=vol.ALLOW_EXTRA),
+    },
+    extra=vol.ALLOW_EXTRA,
+)
+MAX_CARD_TEMPLATES = 30
+
 # the fields of a plan of the current version (#165)
 BUILDING_FIELDS = vol.Schema(
     {
@@ -1613,6 +1629,7 @@ BUILDING_FIELDS = vol.Schema(
         # one-off the frontend does (it needs Home Assistant's states), apart from the plan's version; no default, so
         # a plan without it is one still to do
         vol.Optional("opening_links_saved"): bool,
+        vol.Optional("card_templates"): vol.All([CARD_TEMPLATE_SCHEMA], vol.Length(max=MAX_CARD_TEMPLATES)),
     },
     extra=vol.ALLOW_EXTRA,
 )

@@ -11,6 +11,7 @@ import { errorText, isImagesFull } from "../../failure.ts";
 import { fetchBackup, type BackupFile, type BackupHome } from "../../api.ts";
 import { migratePlanTypes } from "../../packs.ts";
 import type { Fp3dEditor } from "../editor.ts";
+import { isConnectionLost } from "../../ws-size.ts";
 
 /** A size for people (#240): 900 B, 42 KB, 1.3 MB (1 KB = 1,024 bytes). */
 export function bytesText(bytes: number, lang?: string): string {
@@ -174,7 +175,9 @@ export class BackupPart {
         await this.tell(this.t("backup_part_too_large", { detail: String(e.message ?? "") }));
         return;
       }
-      await this.tell(this.t("backup_import_error", { error: String(e.message ?? e.error?.message ?? e.code ?? e.error?.code ?? err) }));
+      const text = String(e.message ?? e.error?.message ?? e.code ?? e.error?.code ?? err);
+      // the connection dropped: the file is not at fault (#1213)
+      await this.tell(isConnectionLost(text) ? this.t("backup_connection_error") : this.t("backup_import_error", { error: text }));
     } finally {
       this._backupBusy = false;
     }

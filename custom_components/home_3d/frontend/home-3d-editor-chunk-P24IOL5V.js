@@ -1,0 +1,1 @@
+var e=n=>new TextEncoder().encode(JSON.stringify(n)).length,r=(n,t)=>Object.assign(new Error(t),{code:n});function s(n,t="too_large"){let o=e(n);if(o>4190208)throw r(t,`${o} bytes as sent, at most 4190208`)}function c(n){return/connection lost|not_connected|^3$/i.test(n)}export{e as a,r as b,s as c,c as d};

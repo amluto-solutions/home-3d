@@ -296,8 +296,8 @@ test("Screen and controls holds the old View menu's Controls row and FPS, Appear
   assert.deepEqual(
     screen.map((s) => s.id).filter((id) => id !== "director_here" && id !== "reset_device"),
     // the floor bar's wrap switch went with the room chips (#249, Rooms picker option B); the floor pictures panel's
-    // switch came (#250)
-    ["stats", "controls", "keep_view", "angle_lock", "floor_pictures", "tap_in_room"],
+    // switch came (#250); the phone view's switch (#493)
+    ["stats", "controls", "keep_view", "angle_lock", "floor_pictures", "tap_in_room", "phone_view"],
   );
   // Quality sits on Appearance, as drawn (#248)
   assert.equal(settingById("quality")!.section, "look");

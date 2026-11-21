@@ -8,7 +8,7 @@ import { readFileSync } from "node:fs";
 import { englishTable } from "../i18n.ts";
 import { clearModules, registerModule, type NeonModule } from "../modules.ts";
 import type { HomeAssistant } from "../types.ts";
-import { audienceOf, GROUPS, liveSections, parseSettingsHash, searchSettings, SECTIONS, sectionOf, SETTINGS, settingById, type SettingsEnv } from "./registry.ts";
+import { audienceOf, GROUPS, liveSections, parseSettingsHash, searchSettings, SECTIONS, sectionOf, SETTINGS, settingById, TOPIC_GROUPS, type SettingsEnv } from "./registry.ts";
 import { SETTINGS_ICONS } from "./settings-icons.ts";
 import { sampleBuilding, sampleHass } from "./settings.fixture.ts";
 
@@ -70,27 +70,21 @@ const key = (k: string) => ({ key: k, preventDefault: () => undefined, stopPropa
 
 // ---- the menu
 
-test("the menu shows who a change affects first, then topics: This home and This device (option B)", () => {
-  const menu = (a: "home" | "device") => SECTIONS.filter((s) => !s.hidden && audienceOf(s) === a).map((s) => s.id);
-  assert.deepEqual(menu("device"), ["look", "view3d", "screen", "voice"]);
-  assert.deepEqual(menu("home"), ["general", "scene", "energy", "favourites", "warnings", "effects", "cameras", "household", "people", "homes", "access", "tablets", "packs", "backup", "advanced"]);
+test("the dialog lists both sides' topics in five groups; each page still says who it affects (#496)", () => {
+  const side = (a: "home" | "device") => SECTIONS.filter((s) => !s.hidden && audienceOf(s) === a).map((s) => s.id);
+  assert.deepEqual(side("device"), ["look", "view3d", "screen", "voice"]);
   for (const g of GROUPS) assert.ok(en[g.title], g.id);
   assert.deepEqual(
-    GROUPS.filter((g) => g.audience === "device").map((g) => en[g.title]),
-    ["How it looks", "How it works"],
+    TOPIC_GROUPS.map((g) => en[g.title]),
+    ["House & plan", "Appearance", "Screens", "Live & extensions", "System"],
   );
-  // the page opens on the side of its section, and the other side's link switches over
   const p = page();
-  let text = show(p, "general");
-  assert.equal(p._audience, "home");
-  assert.ok(text.includes(t("st_audience_home")) && text.includes(t("st_group_device")));
-  assert.ok(text.includes(t("st_other_device")));
-  assert.ok(!text.includes(`>${t("st_sec_voice")}<`), "the device side's pages are not listed on the home side");
-  p.showSide("device");
-  assert.equal(p._audience, "device");
-  assert.equal(p._section, "look");
-  text = flat(p.render());
-  assert.ok(text.includes(t("st_sec_screen")) && text.includes(t("st_other_home")));
+  const text = show(p, "general");
+  // every topic of both sides is in the one menu, and no side switch is left
+  for (const s of SECTIONS.filter((x) => !x.hidden)) assert.ok(text.includes(`>${t(s.title)}</button>`), s.id);
+  assert.doesNotMatch(text, /st-side|st-other/);
+  assert.ok(text.includes(t("st_page_home")));
+  assert.ok(show(p, "screen").includes(t("st_page_device")));
 });
 
 test("the fun switches left the menu for the Extensions tab, but search still finds them", () => {
@@ -103,11 +97,11 @@ test("the fun switches left the menu for the Extensions tab, but search still fi
   p.willUpdate(new Map([["section", null]]));
   assert.ok(p.events.some((e: { detail: { action?: string } }) => e.detail.action === "extensions"));
   assert.notEqual(p._section, "fun");
-  // an unknown name opens the menu, not the first page
+  // an unknown name keeps the page that is open
   const q = page();
   q.section = "bogus";
   q.willUpdate(new Map([["section", null]]));
-  assert.equal(q._drill, false);
+  assert.equal(q._section, "general");
 });
 
 test("every section has a line icon of the one family, no glyphs, and the page draws no glyph icons", () => {
@@ -189,11 +183,11 @@ test("one save line says who the change was saved for, read out politely", () =>
   assert.equal((text.match(/st-save /g) ?? []).length, 1, "one save line");
 });
 
-test("Back to 3D / Editor returns to where Settings was opened from", () => {
+test("the dialog's close button is named Back to 3D / Editor and returns to where Settings was opened from", () => {
   const p = page();
-  assert.ok(!show(p, "general").includes(t("st_back_to_3d")), "no link without a place to go back to");
+  assert.ok(show(p, "general").includes(`aria-label=${t("close")}`), "Close without a place to go back to");
   p.backTo = "editor";
-  const tpl = p.renderBackTo();
+  const tpl = p.renderClose();
   assert.ok(flat(tpl).includes(t("st_back_to_editor")));
   for (const h of handlers(tpl, /@click=$/)) h();
   assert.deepEqual(p.events.at(-1), { type: "settings-back", detail: { mode: "editor" } });
@@ -233,7 +227,6 @@ test("old links still open: every old section id, and rows that moved open their
   p.focusId = "quality";
   p.willUpdate(new Map([["section", null], ["focusId", null]]));
   assert.equal(p._section, "look");
-  assert.equal(p._audience, "device");
   clearTimeout(p.flashTimer);
 });
 
@@ -310,16 +303,16 @@ test("the fun extras' switches sit on the Extensions tab alone (no link back to 
 
 // ---- search on a phone, word starts, scope once (#254)
 
-test("search keeps its box: the page carries the search state so the phone layout shows the box above the results", () => {
+test("search keeps its box: on a phone the box stays above the results and the topic choice goes", () => {
   const p = page();
   p._query = "c";
   p.willUpdate(new Map());
-  assert.match(flat(p.render()), /st-drill\s+st-query/);
+  assert.match(flat(p.render()), /class="st\s[^"]*st-query/);
   p._query = "";
   assert.doesNotMatch(flat(p.render()), /st-query/);
   const code = src("./settings-page.ts");
-  assert.match(code, /\.st-drill\.st-query \.st-nav \{\s*display: flex/);
-  assert.match(code, /\.st-drill\.st-query \.st-nav > :not\(\.st-search\) \{\s*display: none/);
+  assert.match(code, /\.st-nav > :not\(\.st-search\) \{\s*display: none/);
+  assert.match(code, /\.st-query \.st-pick \{\s*display: none/);
 });
 
 test("search matches word starts, and a hint only by whole words", () => {
@@ -356,10 +349,10 @@ test("the save line names the page's own side, and a change only on the page it 
 test("the reset note and the search clear when the side or page changes", () => {
   const p = page();
   p._note = "x";
-  p.showSide("device");
+  p.renderRoot = {};
+  p.open("screen");
   assert.equal(p._note, null);
   p._note = "x";
-  p.renderRoot = {};
   p.open("look");
   assert.equal(p._note, null);
 });
@@ -369,11 +362,10 @@ test("someone who cannot change the home starts on This device", () => {
   viewer.canEdit = false;
   viewer.hass = { ...viewer.hass, user: { id: "u", name: "v", is_admin: false } };
   viewer.willUpdate(new Map([["hass", null]]));
-  assert.equal(viewer._audience, "device");
   assert.equal(audienceOf(sectionOf(viewer._section)!), "device");
   const editor = page();
   editor.willUpdate(new Map([["hass", null]]));
-  assert.equal(editor._audience, "home");
+  assert.equal(audienceOf(sectionOf(editor._section)!), "home");
   const linked = page();
   linked.canEdit = false;
   linked.section = "household";

@@ -88,6 +88,9 @@ So **bump `PLAN_VERSION` whenever the stored plan can hold a value an older rele
 
 ### Plan versions
 
+- **7**: Home 3D 1.8.0. The step from 6 changes nothing. The plan can hold `settings.surroundings.roofs` (the neighbours' houses
+  with a gable roof, #491) and `card_templates` (the saved card templates, up to 30, #495). A Home 3D that reads versions up to 6
+  (1.7.x) shows a version-7 plan read-only (the plan as stored before the upgrade stays as a restore point).
 - **6**: Home 3D 1.7.0. The step from 5 changes nothing. The plan can hold the colour and material of door and drawer
   fronts (`front` in an item's `colors` and `materials`, #478), the height of the surroundings (`settings.surroundings_y`, #482)
   and the upper pitch of a mansard roof section (`pitch_upper`, #479). A Home 3D that reads versions up to 5 (1.6.x)
@@ -105,6 +108,7 @@ So **bump `PLAN_VERSION` whenever the stored plan can hold a value an older rele
   | `own` | optional: the index in `buildings` of the house itself (not drawn, the plan stands there); `null` = none |
   | `hide`, `show` | optional: indices of map buildings hidden by hand, and of ones shown although they stand on the plan |
   | `flat` | optional: `true` draws the neighbours as outlines on the ground instead of blocks |
+  | `roofs` | optional: `true` gives the neighbours' houses a simple gable roof, the ridge along the longer side of the footprint, instead of a flat top (#491). Halls, blocks of flats and winding buildings stay blocks. Ignored while `flat` is on. Needs no plan format change: older plans load unchanged, and a Home 3D that does not know the key ignores it |
   | `buildings[]` | `p` (the footprint, 2 to 200 `[east, north]` points in metres from the origin) and `h` (height, 0 to 400 m) |
   | `ways[]` | `p` (a centre line), `w` (width, 0 to 60 m) and `k`: `"road"`, `"path"`, `"rail"` or `"water"` |
   | `areas[]` | `p` (an outline) and `k`: `"water"`, `"green"` or `"wood"` |
@@ -128,3 +132,22 @@ So **bump `PLAN_VERSION` whenever the stored plan can hold a value an older rele
 - A colour for a single wall (#460): a wall drawn on its own (`floors[].walls[]`) has an optional `color` (`"#rrggbb"`, `null` = the room's wall colour, outside rooms the facade colour), for both its sides. An optional key, so no bump.
 - Room names (#458): a room's optional `label_offset` (`[x, z]` in metres, -100 to 100: its name moved from the room's middle, in the plan and in 3D; `null` or missing = in the middle) and the setting `label_scale` (0.5 to 2, the size of the room names in 3D; missing = 1). Optional keys, so no bump.
 - Upper roof pitch (#479): a roof section's optional `pitch_upper` (degrees) sets the slope of the upper, flatter part of a **mansard** roof; `pitch_a` and `pitch_b` still set the steep lower part. The frontend keeps it in 5 to 60; `null`, missing or any other shape means 30 (the slope of every mansard drawn before), and a mansard's break and ridge position follow from it (a steeper upper slope raises the ridge, the break stays). The schema takes `null` or a number from 0 to 80 and the frontend clamps it. An optional key: older plans load unchanged and a section without it keeps 30 degrees. It came with version 6, so a Home 3D that does not know it (1.6.x) opens such a plan read-only.
+
+## Card templates
+
+Home 3D 1.8.0 adds the optional top-level key `card_templates` (beside `settings`), a list of up to 30 dashboard card
+templates (#495). It came with plan version 7 (with `settings.surroundings.roofs`): a plan without the key loads unchanged, and an older Home 3D
+(1.7.x) opens a version-7 plan read-only. Each entry has:
+
+| Key | Meaning |
+|---|---|
+| `id` | The template's id, 1 to 60 characters. A card names it with `template: <id>`. |
+| `name` | The name shown in Settings, up to 80 characters. |
+| `aliases` | Optional: up to 10 earlier ids. A renamed template keeps its old id here, so cards that name it keep working. |
+| `config` | The card options of the template, as in the card's YAML, without `type`, `template` and `home`. See [card-options.md](card-options.md). |
+
+The options in a card's own YAML win over the template's `config`.
+
+## Roofs for the neighbours' houses
+
+`settings.surroundings.roofs` is an optional boolean (#491). See the surroundings table above. It is why the plan format is 7.

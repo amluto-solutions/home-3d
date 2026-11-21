@@ -17,3 +17,8 @@ export function checkFits(msg: unknown, code = "too_large"): void {
   const bytes = messageBytes(msg);
   if (bytes > MESSAGE_ROOM) throw sizeError(code, `${bytes} bytes as sent, at most ${MESSAGE_ROOM}`);
 }
+
+/** Whether a failed call means the connection dropped (the file is not at fault): the lost-connection error or code 3. */
+export function isConnectionLost(text: string): boolean {
+  return /connection lost|not_connected|^3$/i.test(text);
+}

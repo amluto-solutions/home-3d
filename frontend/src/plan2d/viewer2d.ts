@@ -376,6 +376,9 @@ export class Plan2dViewer implements ViewerSurface {
     changes();
   }
 
+  /** The flat plan has no hologram cards to place: nothing to redraw. */
+  invalidate(): void {}
+
   busy(): boolean {
     return false;
   }

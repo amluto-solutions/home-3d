@@ -5,7 +5,11 @@ import { formatImperial, lengthUnit, parseLength, unitLabel } from "./units.ts";
 import { css, html, LitElement, nothing, unsafeCSS, type PropertyValues, type TemplateResult } from "lit";
 import { keyed } from "lit/directives/keyed.js";
 import { uiIcon, type UiIcon } from "./ui-icons.ts";
-import { COMPACT_MAX_PX, PHONE_MEDIA } from "./phone.ts";
+import { COMPACT_MAX_PX, linkedRoom, looksLikePhone, PHONE_MEDIA, phoneLink } from "./phone.ts";
+import type { Fp3dPhoneShell } from "./components/phone-shell.ts";
+import type { NowMode } from "./components/now-list.ts";
+import type { NavMoreItem } from "./components/phone-nav.ts";
+import type { NowInput, NowTarget } from "./now.ts";
 import { BuildingController, type PlanChange } from "./building-controller.ts";
 import { loadEditor, loadExtensionsPage } from "./load-editor.ts";
 import { loadSettings } from "./load-settings.ts";
@@ -13,7 +17,7 @@ import { extensionAnchor } from "./settings/extension-anchor.ts";
 import { loadLocate } from "./load-locate.ts";
 import { loadView, readyView } from "./load-view.ts";
 import { preload3d } from "./load3d.ts";
-import { loadFind, loadHomeSwitcher, loadRoomPanel, loadRoomsPicker, loadStylesDialog, loadViewPanel } from "./load-parts.ts";
+import { loadFind, loadHomeSwitcher, loadPhoneShell, loadRoomPanel, loadRoomsPicker, loadStylesDialog, loadViewPanel } from "./load-parts.ts";
 import { need } from "./lazy-part.ts";
 import { setTimeFormat } from "./time-format.ts";
 import { formatDateTime, timeStyleOf } from "./time-text.ts";
@@ -54,6 +58,7 @@ import { forwardHass, HASS_CHILDREN, HassWatch } from "./hass-watch.ts";
 import { loadSampleHome } from "./api.ts";
 import { tell } from "./ask.ts";
 import { announce, lookAnnouncement, viewChange, type ViewSpot } from "./announce.ts";
+import { savedSolo, saveSolo, viewRooms } from "./phone-solo.ts";
 import { BackLayers, navFollowAddress, navHost, navPage } from "./back-stack.ts";
 import { DISPLAY_HIDDEN_KEY, hiddenText, parseHidden, SHOW_FURNITURE_KEY, type ObjectType } from "./display-pref.ts";
 
@@ -158,6 +163,10 @@ export class Floorplan3dPanel extends LitElement {
     _cameraWall: { state: true },
     _clean: { state: true },
     _roomsOpen: { state: true },
+    _phone: { state: true },
+    _solo: { state: true },
+    _phoneAsk: { state: true },
+    _nowMode: { state: true },
     _findOpen: { state: true },
     _noticesHidden: { state: true },
     _accent: { state: true },
@@ -256,6 +265,21 @@ export class Floorplan3dPanel extends LitElement {
   private declare _clean: boolean;
   /** The Rooms picker on the floor bar is open (#249, option B of #219: one searchable list instead of a chip per room). */
   private declare _roomsOpen: boolean;
+  /** The phone view (#493): chosen per device (Settings › Screen and controls); a phone that has not chosen is asked once. */
+  private declare _phone: boolean;
+  /** "Room on its own" in the phone view (#500): a room jumped into stands alone; chosen per device. */
+  private declare _solo: boolean;
+  private declare _phoneAsk: boolean;
+  /**
+   * A notification's link (#494): ?view=now asks for the list, also on a device that has not switched the phone view
+   * on (for this page load); ?room= / ?show= open a room or fly to a device once the plan and the view are there.
+   */
+  private readonly link = phoneLink(typeof location === "undefined" ? "" : location.search);
+  private nowLinked = !!this.link?.now;
+  private nowLinkOpen = !!this.link?.now;
+  private linkFollowed = !this.link?.room && !this.link?.show;
+  /** What the phone view shows over the house: only its bar, the list, or the house check. */
+  private declare _nowMode: NowMode;
   /** The search beside the floor bar is open (#305). */
   private declare _findOpen: boolean;
   /** The notices (update, save failed …) the person put away (#249): their badge on the save line brings them back. */
@@ -319,7 +343,10 @@ export class Floorplan3dPanel extends LitElement {
     this._floorId = null;
     this._roomId = null;
     this._shutRoom = null;
+    this._nowMode = "bar";
     this.readPrefs();
+    // nothing changes by itself: a phone that has not chosen yet gets one question
+    this._phoneAsk = prefs.get("phone_view") === null && typeof screen !== "undefined" && looksLikePhone(screen.width, screen.height, navigator.maxTouchPoints ?? 0);
     this._furnish = false;
     this._selFurniture = null;
     this._selDevice = null;
@@ -378,6 +405,8 @@ export class Floorplan3dPanel extends LitElement {
     this._controlsRight = prefs.get("controls") === "right";
     this._keepView = prefs.get("keep_view") === "1";
     this._floorPics = prefs.get("floor_pictures") === "1";
+    this._phone = prefs.get("phone_view") === "1";
+    this._solo = savedSolo() === true;
     this._angleLock = prefs.get("angle_lock") === "1";
     this._windowSpill = prefs.get("window_spill") === "1";
     this._clockWeather = prefs.get("clock_weather") !== "0";
@@ -721,6 +750,69 @@ export class Floorplan3dPanel extends LitElement {
   }
 
   /** A room is selected and its panel is showing (closing the panel keeps the room, #354). */
+  /** The phone view is on (#493): this device chose it (or a link asked for the list, #494), in the 3D view, not on a locked wall tablet. */
+  private get phoneOn(): boolean {
+    return (this._phone || this.nowLinked) && !this._tablet && this.pageBehind === "view";
+  }
+
+  /** The page drawn: Settings is a dialog over the page it was opened from (#496), which stays as it was behind it. */
+  private get pageBehind(): Mode {
+    if (this._mode !== "settings" || this._tablet) return this._mode;
+    return this.settingsFrom === "settings" ? "view" : this.settingsFrom;
+  }
+
+  /** ?room= / ?show= (a notification's link, #494): into the room, or to the device, once the plan and the view are there. */
+  private followLink(): void {
+    const link = this.link;
+    const b = this.data.building;
+    if (this.linkFollowed || !link || !b || this._mode !== "view" || !this.view3d()) return;
+    this.linkFollowed = true;
+    const room = link.room ? linkedRoom(b.floors.map((f) => ({ id: f.id, rooms: zonesOf(f) })), link.room) : null;
+    if (room) {
+      this._floorId = room.floorId;
+      this._roomId = room.roomId;
+      this._shutRoom = null;
+    }
+    // the device's place is known once the view has gone through its devices
+    const show = link.show;
+    if (show) setTimeout(() => this.view3d()?.showNow({ entity: show }), 1200);
+  }
+
+  private phoneShell(): Fp3dPhoneShell | null {
+    return (this.renderRoot?.querySelector("fp3d-phone-shell") as Fp3dPhoneShell | null) ?? null;
+  }
+
+  private setPhone(on: boolean): void {
+    this._phone = on;
+    this._phoneAsk = false;
+    this._nowMode = "bar";
+    if (!on) this.nowLinked = false;
+    prefs.set("phone_view", on ? "1" : "0");
+  }
+
+  /** The panel's own entries under the phone view's More: what the header and the view's buttons offer elsewhere. */
+  private phoneExtras(b: Building): NavMoreItem[] {
+    return [
+      { id: "view", icon: "◐", label: this.t("view_btn") },
+      ...(this.hasCameras(b) ? [{ id: "cameras", icon: "📷", label: this.t("cameras_short") }] : []),
+      { id: "tt", icon: "⏪", label: this.t("tt_chip") },
+      { id: "settings", icon: "⚙", label: this.t("settings") },
+      { id: "menu", icon: "☰", label: "Home Assistant" },
+      { id: "off", icon: "📱", label: this.t("nav_off") },
+    ];
+  }
+
+  private phoneMore(id: string): void {
+    if (id === "view") {
+      need(loadViewPanel);
+      this.setViewOpen(true);
+    } else if (id === "cameras") this._cameraWall = true;
+    else if (id === "tt") this.toggleTimeTravel();
+    else if (id === "settings") this.openSettings();
+    else if (id === "menu") this.dispatchEvent(new CustomEvent("hass-toggle-menu", { bubbles: true, composed: true }));
+    else if (id === "off") this.setPhone(false);
+  }
+
   private get roomPanelShown(): boolean {
     return !!this._roomId && this._shutRoom !== this._roomId;
   }
@@ -961,7 +1053,7 @@ export class Floorplan3dPanel extends LitElement {
   }
 
   private view3d() {
-    return readyView(this.renderRoot) as (HTMLElement & { resetView(): void; endWalk(): boolean; lookThrough(entityId: string): void; historyEntities(): HistorySpec; currentView(): StartView | null; roomSheets(roomId: string): { id: string; icon: string; title: string }[]; openRoomSheet(roomId: string, id: string): void }) | null;
+    return readyView(this.renderRoot) as (HTMLElement & { resetView(): void; endWalk(): boolean; lookThrough(entityId: string): void; historyEntities(): HistorySpec; currentView(): StartView | null; roomSheets(roomId: string): { id: string; icon: string; title: string }[]; openRoomSheet(roomId: string, id: string): void; showNow(target: NowTarget): void }) | null;
   }
 
   /** Time travel on or off; without the Pro add-on its hint shows. `at`: a start moment from a link. */
@@ -1043,6 +1135,8 @@ export class Floorplan3dPanel extends LitElement {
     if (!this.locateLab && this.hass?.user?.is_admin && this.data.building && labOn()) {
       this.locateLab = mountLocateLab(() => ({ hass: this.hass, building: this.data.building }));
     }
+    // a notification's link (#494): the room or the device (the list opens through the shell's `start`)
+    this.followLink();
     // a link with ?tt=07:42 or ?tt=-3h opens the time travel there, once the plan is loaded (it brings the recipes of
     // its items; the view needs no library, #44)
     if (this.ttLinked || !this.data.building || this._mode !== "view" || !this.view3d()) return;
@@ -1063,6 +1157,7 @@ export class Floorplan3dPanel extends LitElement {
     // Esc first closes the View panel (focus back on its button, #247), then leaves the time travel, then goes up a level
     if (this._stylesOpen) this.setStylesOpen(false);
     else if (this._viewOpen) this.setViewOpen(false, true);
+    else if (this.phoneOn && this.phoneShell()?.close()) return;
     else if (this.tt.active) this.tt.stop();
     else this.back();
   };
@@ -1115,19 +1210,12 @@ export class Floorplan3dPanel extends LitElement {
     return html`
       <div class="fp3d-app ${this._clean && this._mode === "view" ? "fp3d-clean" : ""}" style=${this.accentStyle()}>
         ${this._micProbe && this.hass ? html`<fp3d-mic-probe .hass=${this.rawHass} .building=${b} @close=${() => ((this._micProbe = false), micProbeDone())}></fp3d-mic-probe>` : nothing}
-        ${this._clean && this._mode === "view" ? nothing : this._tablet ? this.renderTabletHeader() : this.renderHeader(notices.length)}
+        ${(this._clean || this.phoneOn) && this._mode === "view" ? nothing : this._tablet ? this.renderTabletHeader() : this.renderHeader(notices.length)}
         ${this.renderNotices(notices)}
         ${this.data.error && !b ? html`<p class="fp3d-message">${this.t("load_error")}: ${this.data.error}</p>` : nothing}
         ${!b && !this.data.error ? html`<p class="fp3d-message">${this.t("loading")}</p>` : nothing}
-        ${b
-          ? this._mode === "editor" && this.canEdit
-            ? this.renderEditor(b)
-            : this._mode === "extensions" && this.canEdit
-              ? this.renderExtensions()
-              : this._mode === "settings" && !this._tablet
-                ? this.renderSettings(b)
-                : this.renderView(b)
-          : nothing}
+        ${b ? (this.pageBehind === "editor" && this.canEdit ? this.renderEditor(b) : this.pageBehind === "extensions" && this.canEdit ? this.renderExtensions() : this.renderView(b)) : nothing}
+        ${b && this._mode === "settings" && !this._tablet ? this.renderSettings(b) : nothing}
       </div>
     `;
   }
@@ -1337,19 +1425,18 @@ export class Floorplan3dPanel extends LitElement {
     ></fp3d-extensions>`;
   }
 
-  /** The Settings page (#139): its own bundle, loaded the first time the tab opens. */
+  /** The Settings page (#139), a dialog over the page behind it (#496): its own bundle, loaded the first time the tab opens. */
   private renderSettings(b: Building) {
     if (!this._settingsReady) {
-      if (this._settingsError) return html`<div class="fp3d-empty"><p>${this.t("load_error")}: ${this._settingsError}</p></div>`;
+      if (this._settingsError) return html`<div class="fp3d-empty fp3d-settings-wait"><p>${this.t("load_error")}: ${this._settingsError}</p></div>`;
       loadSettings().then(
         () => (this._settingsReady = true),
         (err: unknown) => (this._settingsError = String(err)),
       );
-      return html`<div class="fp3d-empty"><p>${this.t("loading")}</p></div>`;
+      return html`<div class="fp3d-empty fp3d-settings-wait"><p>${this.t("loading")}</p></div>`;
     }
-    // Back to the page's plain address (#322) is a fresh page: a phone's list of sections, the first section elsewhere
+    // Back to the page's plain address (#322) is a fresh page: its first section
     return keyed(this.settingsKey, html`<fp3d-settings-page
-      class="fp3d-body"
       .hass=${this.rawHass}
       .building=${b}
       .canEdit=${this.data.canEdit}
@@ -1627,14 +1714,17 @@ export class Floorplan3dPanel extends LitElement {
       <button aria-pressed=${!this._plan2d} @click=${() => this.setPlan2d(false)}>${this.t("view_3d")}</button>
       <button aria-pressed=${this._plan2d} @click=${() => this.setPlan2d(true)}>${this.t("view_2d")}</button>
     </div>`;
+    // the phone view (#493): its bar at the bottom instead of the header, the floor bar and the view's buttons
+    const phone = this.phoneOn && !tt;
+    if (phone) need(loadPhoneShell);
     return html`
-      ${this._clean || (this._tablet && b.floors.length < 2) ? nothing : this.renderFloorBar(b, floor)}
-      <div class="fp3d-stage-wrap ${this.roomPanelShown ? "fp3d-room-open" : ""} ${this._controlsRight ? "fp3d-side-right" : ""} ${tt ? "fp3d-tt" : ""} ${this._cameraWall && !tt ? "fp3d-cams-open" : ""}">
+      ${this._clean || phone || (this._tablet && b.floors.length < 2) ? nothing : this.renderFloorBar(b, floor)}
+      <div class="fp3d-stage-wrap ${phone ? `fp3d-phone fp3d-now-${this._nowMode}` : ""} ${this.roomPanelShown ? "fp3d-room-open" : ""} ${this._controlsRight ? "fp3d-side-right" : ""} ${tt ? "fp3d-tt" : ""} ${this._cameraWall && !tt ? "fp3d-cams-open" : ""}">
         <!-- the floor bar picks the floor: the floor pictures beside the 3D view are a second picker, shown when Settings
              › Screen and controls says so (#249, #250; the card keeps its own switch) -->
         <fp3d-view3d
           class="fp3d-body"
-          .findInBar=${!(this._clean || (this._tablet && b.floors.length < 2))}
+          .findInBar=${!(this._clean || phone || (this._tablet && b.floors.length < 2))}
           .canEdit=${this.data.canEdit && !this._tablet}
           .noSettings=${this._tablet}
           .home=${this.data.homeId}
@@ -1659,8 +1749,10 @@ export class Floorplan3dPanel extends LitElement {
           .cameraWall=${this._cameraWall && !tt}
           @camera-wall-close=${() => (this._cameraWall = false)}
           @camera-wall-open=${() => (this._cameraWall = true)}
-          .clean=${this._clean}
-          .cleanButton=${true}
+          .clean=${this._clean || phone}
+          .cleanButton=${!phone}
+          .phoneView=${phone}
+          @status-change=${() => phone && setTimeout(() => this.phoneShell()?.requestUpdate(), 0)}
           @clean-toggle=${() => {
             this._clean = !this._clean;
             prefs.set("clean", this._clean ? "1" : "0");
@@ -1678,6 +1770,7 @@ export class Floorplan3dPanel extends LitElement {
           .panelOpen=${this.roomPanelShown}
           .floorId=${b.floors.length > 1 ? this._floorId : (b.floors[0]?.id ?? null)}
           .roomId=${this._roomId}
+          .rooms=${viewRooms({ phone, solo: this._solo, roomId: this._roomId })}
           .wallMode=${this._wallMode}
           .explode=${this._explode}
           .keepRoof=${this._keepRoof}
@@ -1709,9 +1802,10 @@ export class Floorplan3dPanel extends LitElement {
           @back=${() => this.back()}
           @plan-change=${this.onPlanChange}
         ></fp3d-view3d>
-        ${this.roomPanelShown
+        ${this.roomPanelShown && !(phone && this._nowMode === "check")
           ? (need(loadRoomPanel), html`<fp3d-room-panel
               class="fp3d-room-panel"
+              ?collapsible=${phone}
               @camera-look=${(e: CustomEvent<{ entity: string }>) => this.view3d()?.lookThrough(e.detail.entity)}
               .hass=${hass}
               ?readOnly=${tt}
@@ -1727,9 +1821,41 @@ export class Floorplan3dPanel extends LitElement {
               @close=${() => (this._shutRoom = this._roomId)}
             ></fp3d-room-panel>`)
           : nothing}
+        ${phone
+          ? html`<fp3d-phone-shell
+              .hass=${hass}
+              .building=${b}
+              .view=${() => this.view3d() as unknown as { nowInput(): NowInput | null; showNow(t: NowTarget): void } | null}
+              .floorId=${this._floorId}
+              .roomId=${this._roomId}
+              .solo=${this._solo}
+              @phone-solo=${(e: CustomEvent<boolean>) => saveSolo((this._solo = e.detail))}
+              .extras=${this.phoneExtras(b)}
+              .start=${this.nowLinkOpen ? "now" : undefined}
+              @phone-mode=${(e: CustomEvent<NowMode>) => {
+                this._nowMode = e.detail;
+                // the list a link asked for has opened: once per page load
+                this.nowLinkOpen = false;
+              }}
+              @phone-room=${(e: CustomEvent<{ floorId: string | null; roomId: string | null }>) => {
+                // into the room (or onto the whole floor): the house flies there and the room's panel comes up folded
+                this._floorId = b.floors.length > 1 || e.detail.roomId ? e.detail.floorId : null;
+                this._roomId = e.detail.roomId;
+                this._shutRoom = null;
+              }}
+              @phone-more=${(e: CustomEvent<string>) => this.phoneMore(e.detail)}
+            ></fp3d-phone-shell>`
+          : nothing}
+        ${this._phoneAsk && !tt && !this._tablet && this._mode === "view"
+          ? html`<div class="fp3d-now-ask" role="dialog" aria-label=${this.t("st_phone_view")}>
+              <span>${this.t("now_try")}</span>
+              <button class="fp3d-chip" @click=${() => this.setPhone(true)}>${this.t("now_try_yes")}</button>
+              <button class="fp3d-chip" @click=${() => this.setPhone(false)}>${this.t("now_try_no")}</button>
+            </div>`
+          : nothing}
         ${this.tt.session ? html`<fp3d-time-bar .session=${this.tt.session} ?demo=${showsDemo(hass)}></fp3d-time-bar>` : nothing}
         ${showsDemo(hass) && !this.tt.session ? html`<div class="fp3d-demo-chip" title=${this.t("demo_hint")}>${this.t("demo_chip")}</div>` : nothing}
-        ${this._clean ? nothing : html`<div class="fp3d-overlay">
+        ${this._clean || phone ? nothing : html`<div class="fp3d-overlay">
           ${this._tablet ? nothing : planView}
           ${this._tablet
             ? nothing
@@ -2156,6 +2282,15 @@ export class Floorplan3dPanel extends LitElement {
         flex: 1;
         min-height: 0;
       }
+      /* Settings loading: over the page behind, where its dialog will be (#496) */
+      .fp3d-settings-wait {
+        position: absolute;
+        inset: 0;
+        z-index: 50;
+        display: grid;
+        place-items: center;
+        background: rgba(2, 6, 14, 0.55);
+      }
       /* the floor bar (#249): the floors in one row that scrolls sideways, then the Rooms picker; it never wraps */
       .fp3d-nav {
         position: relative;
@@ -2351,6 +2486,38 @@ export class Floorplan3dPanel extends LitElement {
       }
       .fp3d-tt .fp3d-room-panel {
         bottom: calc(var(--fp3d-tt-h) + 6px);
+      }
+      /* the phone view (#493): the view's own things step up above its bar, a room's panel stands on it (folded it is
+         short); the bar is taller on a phone with a home indicator (safe area) */
+      .fp3d-phone fp3d-view3d {
+        --fp3d-bottom-inset: calc(72px + env(safe-area-inset-bottom, 0px));
+      }
+      .fp3d-phone.fp3d-now-check fp3d-view3d {
+        --fp3d-bottom-inset: calc(190px + env(safe-area-inset-bottom, 0px));
+      }
+      .fp3d-phone .fp3d-room-panel {
+        bottom: calc(70px + env(safe-area-inset-bottom, 0px));
+        height: auto;
+        max-height: calc(62% - 62px);
+      }
+      .fp3d-now-ask {
+        position: absolute;
+        left: 8px;
+        right: 8px;
+        top: calc(8px + env(safe-area-inset-top, 0px));
+        z-index: 10;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: var(--fp3d-chrome-solid);
+        border: 1px solid var(--fp3d-line);
+        color: var(--fp3d-text);
+      }
+      .fp3d-now-ask span {
+        flex: 1 1 180px;
       }
       .fp3d-tt-chip[aria-pressed="true"] {
         background: #ffb020;

@@ -7,7 +7,7 @@
   "name": "Deutsch",
   "publisher": "Amluto Solutions",
   "licence": "MIT",
-  "release": 4,
+  "release": 5,
   "description": "German texts for Home 3D.",
-  "release_note": "Release 4: texts for Home 3D 1.7.0 (real sky, fly in from space, carcass colour, upper roof pitch, height of the surroundings)."
+  "release_note": "Release 5: texts for Home 3D 1.8.0 (phone view, Now list and house check, card templates, settings topics, gable roofs for the neighbours)."
 }

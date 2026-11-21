@@ -9,6 +9,7 @@ import type { RoleColours } from "./colour-roles.ts";
 import type { SeasonRule } from "./seasons.ts";
 import type { CustomStyle } from "./looks.ts";
 import type { RoleMaterials } from "./role-materials.ts";
+import type { CardConfig } from "./card-config.ts";
 
 export type Vec2 = [number, number];
 
@@ -1079,6 +1080,8 @@ export interface Surroundings {
   show?: number[];
   /** The neighbours' houses only as their outline on the ground instead of blocks. */
   flat?: boolean;
+  /** The neighbours' houses with a simple gable roof instead of a flat top (large buildings stay blocks, #491). */
+  roofs?: boolean;
   buildings: SurroundBuilding[];
   ways: SurroundWay[];
   areas: SurroundArea[];
@@ -1522,7 +1525,7 @@ export interface PresenceLink {
  * version (custom_components/home_3d/migrations.py) before anyone sees it; the frontend never changes the version of a
  * plan it was given, so a plan it saves is migrated again where needed (an older backend keeps a version-1 plan).
  */
-export const PLAN_VERSION = 6;
+export const PLAN_VERSION = 7;
 
 /** Whether `version` is one of a plan this frontend reads (1 up to PLAN_VERSION). */
 export function knownPlanVersion(version: unknown): version is number {
@@ -1540,6 +1543,19 @@ export interface Building {
   recipes?: Record<string, PlanRecipe>;
   /** Set once the contact sensors that used to be matched with doors and windows automatically are saved as explicit links (#203). */
   opening_links_saved?: boolean;
+  /** Card templates (#495): a dashboard card names one (option `template`) and takes its options from here (absent: none). */
+  card_templates?: CardTemplate[];
+}
+
+/** A dashboard card set up once in Settings (#495): a wall tablet or a phone only picks it, and follows every change made there. */
+export interface CardTemplate {
+  /** Named in the card's YAML (`template: hall_tablet`); made from the name and following a new name. */
+  id: string;
+  name: string;
+  /** Earlier ids of a renamed template: a card that names one still finds it. */
+  aliases?: string[];
+  /** The card's options (as its visual editor makes them), without `type`, `template` and `home`. */
+  config: Partial<CardConfig>;
 }
 
 export const DEFAULT_ENERGY: EnergySettings = {
@@ -2298,7 +2314,8 @@ export function normalizeBuilding(b: Building): Building {
     f.rooms = f.rooms.map((r) => ({ ...r, panel: r.panel ?? [] }));
     f.ha_floor = f.ha_floor ?? null;
     f.placements = f.placements.map((p) => ({ ...p, mount: p.mount ?? null, rotation: p.rotation ?? 0 }));
-    f.furniture = f.furniture.map((m) => ({ ...m, entity: m.entity ?? null, power: m.power ?? null }));
+    // a "show only while" rule with no entity and no times is nothing (a copy without its links leaves one): none (#1217)
+    f.furniture = f.furniture.map((m) => ({ ...m, entity: m.entity ?? null, power: m.power ?? null, ...(m.show_when && (!m.show_when.entity || m.show_when.entity === "none") && !m.show_when.intervals?.length ? { show_when: null } : {}) }));
     // lights placed as devices (before lamps existed) become lamps of their mount type
     // (a light turned back into a pin on purpose stays a pin)
     const lights = f.placements.filter((p) => p.entity_id.startsWith("light.") && !p.pin);

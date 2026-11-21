@@ -979,3 +979,12 @@ test("a charger's status: whole words, so not_charging or charger_free is no cha
   assert.deepEqual(c("SuspendedEV"), { charging: false, plugged: true });
   assert.deepEqual(c("charge complete"), { charging: false, plugged: true });
 });
+
+test("a smart plug with a power sensor goes by its watts, not by the plug's own state", async () => {
+  const { isMeteredPlug } = await import("./devices.ts");
+  assert.equal(isMeteredPlug("switch.washer_plug", 3), true);
+  assert.equal(isMeteredPlug("input_boolean.washer", 0), true);
+  assert.equal(isMeteredPlug("switch.washer_plug", null), false, "no reading: the plug's state counts");
+  assert.equal(isMeteredPlug("light.lamp", 5), false);
+  assert.equal(isMeteredPlug(null, 5), false);
+});

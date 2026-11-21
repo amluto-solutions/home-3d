@@ -452,6 +452,14 @@ export function isWorkingState(state: string | undefined): boolean {
   return !!state && WORKING_STATES.has(state.toLowerCase());
 }
 
+/**
+ * A smart plug (a switch or input boolean) with a power sensor: the plug is on all day, so the watts say whether the
+ * thing behind it runs, not the plug's own state.
+ */
+export function isMeteredPlug(entity: string | null | undefined, power: number | null): boolean {
+  return !!entity && /^(switch|input_boolean)\./.test(entity) && power !== null;
+}
+
 /** Whether an entity is a status sensor (enum states such as running / idle / finish) that furniture can follow. */
 export function isStatusSensor(st: HassEntity | undefined): boolean {
   return !!st && st.entity_id.startsWith("sensor.") && st.attributes.device_class === "enum";

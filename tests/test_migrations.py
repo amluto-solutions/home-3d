@@ -488,18 +488,52 @@ def test_the_height_of_the_surroundings_is_an_optional_settings_key() -> None:
     assert BUILDING_SCHEMA({**plain, "settings": {**plain["settings"], "surroundings": None, "surroundings_y": 2}})
 
 
+def test_the_gable_roof_choice_of_the_surroundings_is_an_optional_key() -> None:
+    """#491: `settings.surroundings.roofs` (the neighbours' houses with a gable roof) is optional, sits beside `flat`,
+    must be a boolean, and a plan without it loads unchanged (no key added). The key is why the plan version is 7."""
+    plain = {**copy.deepcopy(BUILDING), "version": 7}
+    plain["settings"] = {**plain.get("settings", {}), "surroundings": _surroundings()}
+    assert "roofs" not in BUILDING_SCHEMA(plain)["settings"]["surroundings"]
+    for good in (True, False):
+        with_roofs = {**plain, "settings": {**plain["settings"], "surroundings": {**_surroundings(), "roofs": good}}}
+        assert BUILDING_SCHEMA(with_roofs)["settings"]["surroundings"]["roofs"] is good
+    broken = {**plain, "settings": {**plain["settings"], "surroundings": {**_surroundings(), "roofs": "yes"}}}
+    with pytest.raises(vol.Invalid):
+        BUILDING_SCHEMA(broken)
+
+
+def test_a_version_six_plan_loads_unchanged_as_version_seven_and_1_7_x_opens_a_new_one_read_only(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Plan version 7 (Home 3D 1.8.0): the 6 -> 7 step changes nothing. A plan can then hold the gable roof choice of
+    the neighbours (`settings.surroundings.roofs`, #491) and `card_templates` (#495). A Home 3D that reads versions
+    up to 6 (1.7.x) refuses such a plan instead of repairing it."""
+    assert PLAN_VERSION == 7
+    older = {**copy.deepcopy(BUILDING), "version": 6}
+    kept = copy.deepcopy(older)
+    migrated = migrate_plan(older)
+    assert older == kept, "the stored plan is left as it was"
+    assert migrated == {**kept, "version": 7}, "no key dropped, none added"
+    assert migrate_plan(migrated) is migrated, "idempotent"
+
+    newer = {**copy.deepcopy(BUILDING), "version": 7}
+    monkeypatch.setattr("custom_components.home_3d.migrations.PLAN_VERSION", 6)
+    with pytest.raises(PlanTooNew, match=r"made by a newer Home 3D"):
+        migrate_plan(newer)
+
+
 def test_a_version_five_plan_loads_unchanged_as_version_six_and_1_6_x_opens_a_new_one_read_only(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     """Plan version 6 (Home 3D 1.7.0): the 5 -> 6 step changes nothing. A plan can then hold the front colour and
     material of an item (`front`, #478), the height of the surroundings and the upper pitch of a mansard roof. A
     Home 3D that reads versions up to 5 (1.6.x) refuses such a plan instead of repairing it."""
-    assert PLAN_VERSION == 6
+    assert PLAN_VERSION >= 6
     older = {**copy.deepcopy(BUILDING), "version": 5}
     kept = copy.deepcopy(older)
     migrated = migrate_plan(older)
     assert older == kept, "the stored plan is left as it was"
-    assert migrated == {**kept, "version": 6}, "no key dropped, none added"
+    assert migrated == {**kept, "version": PLAN_VERSION}, "no key dropped, none added"
     assert migrate_plan(migrated) is migrated, "idempotent"
 
     newer = {**copy.deepcopy(BUILDING), "version": 6}

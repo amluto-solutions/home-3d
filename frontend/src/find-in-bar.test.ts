@@ -110,8 +110,8 @@ test("the view draws no floating magnifier when the bar has the search; the card
   assert.equal(flat(v.renderFind()), "");
   v.findInBar = false;
   assert.match(flat(v.renderFind()), /fp3d-find-btn/);
-  // the panel hands the flag over, off where the bar is hidden (clean view, one-floor wall tablet)
-  assert.match(src("./panel.ts"), /\.findInBar=\$\{!\(this\._clean \|\| \(this\._tablet && b\.floors\.length < 2\)\)\}/);
+  // the panel hands the flag over, off where the bar is hidden (clean view, the phone view #493, one-floor wall tablet)
+  assert.match(src("./panel.ts"), /\.findInBar=\$\{!\(this\._clean \|\| phone \|\| \(this\._tablet && b\.floors\.length < 2\)\)\}/);
   assert.doesNotMatch(src("./card.ts"), /findInBar/);
 });
 

@@ -13,6 +13,7 @@ export type ViewerSurface = Pick<
   | "currentView"
   | "getView"
   | "flyTo"
+  | "invalidate"
   | "flyIn"
   | "focus"
   | "flashDevices"

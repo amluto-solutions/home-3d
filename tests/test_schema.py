@@ -907,6 +907,33 @@ def test_the_opening_links_mark_is_an_optional_flag_apart_from_the_version() -> 
         BUILDING_SCHEMA({**plan, "opening_links_saved": "yes"})
 
 
+def test_card_templates_are_an_optional_list_in_the_plan() -> None:
+    # #495: a plan without templates keeps none (the plan format stays); a template keeps its card options as they are
+    plan = empty_building()
+    assert "card_templates" not in BUILDING_SCHEMA(plan)
+    tpl = {
+        "id": "hall_tablet",
+        "name": "Hall tablet",
+        "aliases": ["wall_tablet"],
+        "config": {"phone": True, "fill": True, "future_option": 3},
+    }
+    out = BUILDING_SCHEMA({**plan, "card_templates": [tpl]})
+    assert out["card_templates"] == [tpl]
+    assert out["version"] == plan["version"]
+    # no options yet: an empty set of them
+    assert BUILDING_SCHEMA({**plan, "card_templates": [{"id": "a", "name": "A"}]})["card_templates"][0]["config"] == {}
+    for bad in (
+        {"id": "", "name": "A"},
+        {"id": "a" * 61, "name": "A"},
+        {"name": "A"},
+        {"id": "a", "name": "A", "config": "phone"},
+    ):
+        with pytest.raises(vol.Invalid):
+            BUILDING_SCHEMA({**plan, "card_templates": [bad]})
+    with pytest.raises(vol.Invalid):
+        BUILDING_SCHEMA({**plan, "card_templates": [{"id": f"t{i}", "name": "T"} for i in range(31)]})
+
+
 def test_energy_systems_default_and_old_plan_untouched() -> None:
     """A plan with one inverter keeps its sensors and gains an empty list of further setups (#285)."""
     old = ENERGY_SCHEMA(

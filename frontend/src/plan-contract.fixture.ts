@@ -7,7 +7,7 @@
 // The values are made to pass both sides' checks, not to look like a home. Generic placeholders only.
 // After changing it: UPDATE_CONTRACT=1 node --test src/contract.test.ts
 
-import type { Building } from "./model.ts";
+import type { Building, CardTemplate } from "./model.ts";
 
 /** Every field required, all the way down (also those that may be null: they hold a value here). */
 export type Complete<T> = T extends readonly (infer U)[]
@@ -16,9 +16,10 @@ export type Complete<T> = T extends readonly (infer U)[]
     ? { [K in keyof T]-?: [NonNullable<T[K]>] extends [never] ? T[K] : Complete<NonNullable<T[K]>> }
     : T;
 
-// the recipe copies are checked by the pack format's own tests (packs.md); here the plan only has the field
+// the recipe copies are checked by the pack format's own tests (packs.md); here the plan only has the field. A card
+// template's options are the card's (card-config.ts, checked by the card), so its `config` is only there (#495)
 export const PLAN_CONTRACT = {
-  "version": 6,
+  "version": 7,
   "floors": [
     {
       "id": "text",
@@ -976,6 +977,7 @@ export const PLAN_CONTRACT = {
       "hide": [1],
       "show": [0],
       "flat": true,
+      "roofs": true,
       "buildings": [
         {
           "p": [[0.0, 0.0], [10.0, 0.0], [10.0, 8.0]],
@@ -1047,5 +1049,13 @@ export const PLAN_CONTRACT = {
     }
   ],
   "recipes": {},
-  "opening_links_saved": true
-} satisfies Complete<Omit<Building, "recipes">> & Pick<Building, "recipes">;
+  "opening_links_saved": true,
+  "card_templates": [
+    {
+      "id": "text",
+      "name": "text",
+      "aliases": ["text"],
+      "config": {}
+    }
+  ]
+} satisfies Complete<Omit<Building, "recipes" | "card_templates">> & Pick<Building, "recipes"> & { card_templates: (Complete<Omit<CardTemplate, "config">> & Pick<CardTemplate, "config">)[] };

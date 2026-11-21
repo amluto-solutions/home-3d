@@ -63,6 +63,11 @@ export interface ArcInput {
   light: boolean;
 }
 
+/** Whether the house's shadow shows: with the whole house, or with the one floor of a one-floor house (a card always shows that floor). */
+export function shadowWanted(floorId: string | null, floorCount: number, sig: string): boolean {
+  return (floorId === null || floorCount === 1) && sig !== "";
+}
+
 export class SunFx {
   /** Lives in the scene: the shadow on the ground and the arc in the sky. */
   readonly group = new Group();

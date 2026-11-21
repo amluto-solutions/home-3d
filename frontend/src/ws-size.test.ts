@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import { importPackFolder } from "./api.ts";
 import { inParts } from "./backup-send.ts";
-import { checkFits, messageBytes, MESSAGE_ROOM } from "./ws-size.ts";
+import { checkFits, isConnectionLost, messageBytes, MESSAGE_ROOM } from "./ws-size.ts";
 import type { HomeAssistant } from "./types.ts";
 
 test("a message is measured as UTF-8 JSON, the way Home Assistant receives it (#375)", () => {
@@ -30,4 +30,11 @@ test("a pack folder too large for one message is refused before it is sent (#375
   assert.deepEqual(calls, []);
   await importPackFolder(hass, { "pack.json": "{}" });
   assert.equal(calls.length, 1);
+});
+
+test("a dropped connection is told apart from a file that is no plan (#1213)", () => {
+  assert.equal(isConnectionLost("Connection lost"), true);
+  assert.equal(isConnectionLost("not_connected"), true);
+  assert.equal(isConnectionLost("3"), true);
+  assert.equal(isConnectionLost("invalid_format"), false);
 });

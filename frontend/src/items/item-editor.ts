@@ -42,6 +42,7 @@ import { controls, tokens } from "../styles.ts";
 const OWN_COLOUR_DEFAULT = "#888888";
 import type { HomeAssistant } from "../types.ts";
 import { llmBrief } from "./llm-brief.ts";
+import { onVeil } from "../veil.ts";
 
 export type Translate = (key: string, vars?: Record<string, string | number>) => string;
 
@@ -411,7 +412,7 @@ export class ItemEditor extends LitElement {
   // ------------------------------------------------------------------ rendering
 
   protected render() {
-    return html`<div class="ie-backdrop" @click=${(e: Event) => e.target === e.currentTarget && this.close()}>
+    return html`<div class="ie-backdrop" @click=${(e: Event) => onVeil(e) && this.close()}>
       <div class="ie" role="dialog" aria-modal="true" aria-label=${this.t("ie_title")} ${modalFocus()}>
         <header class="ie-head">
           <h2>${this.t("ie_title")}</h2>

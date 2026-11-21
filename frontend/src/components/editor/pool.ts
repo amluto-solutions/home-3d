@@ -12,6 +12,7 @@ import { type I18nKey } from "../../i18n.ts";
 import { bounds, centroid, pointInPolygon, uid, type Floor, type Furniture, type OutdoorArea, type Vec2 } from "../../model.ts";
 import { round, pathLengthOf } from "./helpers.ts";
 import type { Fp3dEditor } from "../editor.ts";
+import { onVeil } from "../../veil.ts";
 
 /** PoolPart: methods of `Fp3dEditor`, copied onto its prototype by editor.ts (see parts.ts). */
 export class PoolPart {
@@ -424,7 +425,7 @@ export class PoolPart {
     });
     const [done, all] = this.partStatus(a, card.part);
     const at = where();
-    return html`<div class="fp3d-wv-veil fp3d-pc-veil" @click=${(e: Event) => e.target === e.currentTarget && close()}>
+    return html`<div class="fp3d-wv-veil fp3d-pc-veil" @click=${(e: Event) => onVeil(e) && close()}>
       <div class="fp3d-pc" role="dialog" aria-modal="true" tabindex="0" ${modalFocus()} @keydown=${(e: KeyboardEvent) => e.key === "Escape" && close()}>
         <div class="fp3d-wv-head">
           ${joint && admin

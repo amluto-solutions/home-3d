@@ -1,24 +1,83 @@
+<div align="center">
+
+<img src="docs/brand/home-3d-icon.svg" alt="Home 3D" width="96">
+
 # Home 3D
 
-Home 3D is a Home Assistant integration that lets you draw your home as a floor plan and control it in 3D. It adds a
-sidebar panel with a plan editor and a live 3D view, plus a dashboard card (`custom:home-3d-card`).
+### Draw your home. Control it in 3D.
 
-- Plan editor inside Home Assistant: floors, rooms, walls, doors, windows, stairs, roofs, outdoor areas and solar fields.
-- Live 3D view: lights, covers, doors, cameras, sensors and warnings shown in the room they belong to.
-- Live room effects in 3D and 2D: a wet leak sensor turns its room's floor red until it is dry, motion lights the room
-  for a short time (30 s by default), radiators and hot-water cylinders shade from cold blue to warm red with their
-  temperature. Sensors are found from each room's area and placed devices; a room or item can name its own. Times
-  and temperature ranges are in the ⚙ settings.
-- Read-only 2D plan of the same building, for dashboards and wall tablets: device states, the same tap, hold and
-  double-tap actions as in 3D, camera pictures from the plan. Switch with the 2D/3D buttons in the panel (or open it
-  with `?view=2d`) and on the card.
-- Furniture library with thousands of free built-in models, plus free furniture packs you can make and share with the community.
-- Built-in extras: camera cockpit and motion trail, weather outside, live screens, energy view, sound, car,
-  household, time travel and the fun extras.
-- Restore points and a full backup of the plan, its pictures and the packs.
+**A floor plan editor and a live 3D house inside Home Assistant.**<br>
+Lights glow, blinds move, doors open, cameras watch and energy flows through the walls. Free and open source.
 
-Home 3D is free and open source, made by [Amluto Solutions Ltd](https://home3d.amluto.com). Try the live demo on
-[home3d.amluto.com](https://home3d.amluto.com) before you install it.
+[![Open your Home Assistant instance and open the Home 3D repository in the Marketplace.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=amluto-solutions&repository=home-3d&category=integration)
+
+[![Latest release](https://img.shields.io/github/v/release/amluto-solutions/home-3d?label=release&color=00e5ff)](https://github.com/amluto-solutions/home-3d/releases)
+[![Free and open source](https://img.shields.io/badge/free-open%20source%20(MIT)-2ea44f)](LICENSE)
+[![Runs locally](https://img.shields.io/badge/cloud-none%20needed-8a2be2)](#privacy)
+[![Home Assistant 2025.1+](https://img.shields.io/badge/Home%20Assistant-2025.1%2B-41BDF5?logo=homeassistant&logoColor=white)](#supported-versions)
+
+**[▶️ Try the live demo](https://home3d.amluto.com)** · **[📱 Phone view](docs/phone-view.md)** · **[🧩 Card templates](docs/card-options.md)** · **[💬 Discussions](https://github.com/amluto-solutions/home-3d/discussions)**
+
+[![The sample home in 3D, neon look, floors pulled apart](docs/images/home3d-3d-neon.png)](https://home3d.amluto.com)
+
+</div>
+
+---
+
+## ✨ Why Home 3D
+
+| | |
+|---|---|
+| 🏠 **Your own home, drawn once** | Floors, rooms, walls, doors, windows, stairs, roofs, the garden and solar fields. The 3D house grows beside the plan while you draw. |
+| 💡 **Live, not a picture** | Lights glow in their colours, covers move, doors open, cameras show their picture, leaks turn the floor red. |
+| 📱 **Made for phones and wall tablets** | A 2D plan, a lightest "Tablet" quality level and, new in 1.8, a phone view with a bar at the bottom. |
+| 🎨 **Your home in every style** | Neon, Day, Synthwave, Homely, Winter evening, Architect's model and your own styles. By time of day, by voice or by automation. |
+| 🔒 **100 % local** | No cloud, no account, no licence check, no usage reporting. Everything lives in your Home Assistant. |
+| 💚 **Free and open source** | MIT licence. Thousands of free furniture models, and free packs you can make and share. |
+
+---
+
+## 🆕 New in 1.8 – Home 3D in your pocket
+
+| The list "What's going on?" | The rooms as tiles | Places of your own |
+|---|---|---|
+| [![The list "What's going on?" on a phone](docs/images/home3d-phone-now.jpg)](docs/phone-view.md) | [![The rooms of a floor as tiles on a phone](docs/images/home3d-phone-rooms.jpg)](docs/phone-view.md) | [![A phone bar with Lights and Evening as places of its own](docs/images/home3d-phone-places.jpg)](docs/phone-view.md) |
+| Warnings, open windows, doors and locks, who is home, lights and energy, with a **house check** to run before you go out or to bed. | Each floor's rooms as tiles, with their devices one tap away. | Add up to two places to the bar: a page of all lights, a scene, the heating. |
+
+- 📱 **Phone view** – one bar at the bottom of the screen: **Now**, the rooms, the blinds and **More**. Links such as `/home_3d?view=now` open a place at once, for example from a notification. [Read more →](docs/phone-view.md)
+- 🧩 **Card templates** – set up a wall tablet or a phone once, then pick the template on every card. Change it later and every card follows. [Read more →](docs/card-options.md)
+- ⚙️ **One compact Settings dialog** with five groups and a search box, over the page you came from. [Read more →](docs/settings.md)
+- 🏘️ **A room on its own** – a card or a phone can show just one room, with its devices.
+- 🏡 **Gable roofs for the neighbours** and a card option to leave the neighbourhood out.
+- 🌍 **All 17 language packs** are up to date.
+
+| Card templates | The Settings dialog |
+|---|---|
+| [![The Card templates page](docs/images/home3d-card-templates.jpg)](docs/card-options.md) | [![The Settings dialog](docs/images/home3d-settings-dialog.jpg)](docs/settings.md) |
+
+---
+
+## 🎨 What it looks like
+
+| 3D, neon | 3D, Day look |
+|---|---|
+| [![The sample home in 3D, neon look, floors pulled apart](docs/images/home3d-3d-neon.png)](https://home3d.amluto.com) | [![The same home in the Day look](docs/images/home3d-3d-day.png)](https://home3d.amluto.com) |
+| **Energy flows on** | **The 2D plan** |
+| [![The house with energy flows on](docs/images/home3d-3d-energy.png)](https://home3d.amluto.com) | [![The 2D plan of the ground floor](docs/images/home3d-2d-plan.png)](https://home3d.amluto.com) |
+
+## 🧰 What it does
+
+- ✏️ **Plan editor inside Home Assistant** – floors, rooms, walls, doors, windows, stairs, roofs, outdoor areas and solar fields.
+- 💡 **Live 3D view** – lights, covers, doors, cameras, sensors and warnings shown in the room they belong to.
+- 🌡️ **Live room effects** in 3D and 2D – a wet leak sensor turns its room's floor red until it is dry, motion lights the room for a short time (30 s by default), radiators and hot-water cylinders shade from cold blue to warm red with their temperature. Sensors are found from each room's area and placed devices; a room or item can name its own. Times and temperature ranges are in the ⚙ settings.
+- 🗺️ **Read-only 2D plan** of the same building, for dashboards and wall tablets: device states, the same tap, hold and double-tap actions as in 3D, camera pictures from the plan. Switch with the 2D/3D buttons in the panel (or open it with `?view=2d`) and on the card.
+- 🛋️ **Furniture library** with thousands of free built-in models, plus free furniture packs you can make and share with the community.
+- 🎁 **Built-in extras** – camera cockpit and motion trail, weather outside, live screens, energy view, sound, car, household, time travel and the fun extras.
+- 💾 **Restore points** and a full backup of the plan, its pictures and the packs.
+
+Home 3D is free and open source, made by [Amluto Solutions Ltd](https://home3d.amluto.com).
+
+---
 
 ## Quick start
 
@@ -50,16 +109,6 @@ the integration under *Settings → Devices & services*.
 
 To keep Home 3D out of the sidebar for everyone, open the integration's **Configure** and turn off **Show in sidebar**. This takes effect at once, and the panel link (`/home_3d`) and the dashboard card keep working. Each user can also hide the entry in Home Assistant's own sidebar settings.
 
-### What it looks like
-
-![The sample home in 3D, neon look, floors pulled apart](docs/images/home3d-3d-neon.png)
-
-![The same home in the Day look](docs/images/home3d-3d-day.png)
-
-![The house with energy flows on](docs/images/home3d-3d-energy.png)
-
-![The 2D plan of the ground floor](docs/images/home3d-2d-plan.png)
-
 ### Your first 10 minutes
 
 Want to look around before you build? Open the home menu at the top and choose **Load the sample home**. It adds a small demo house with placeholder devices, and your own plan is left alone.
@@ -85,7 +134,21 @@ A background or screen picture that only a restore point still uses is kept for 
 - **Wall tablets** should use the 2D plan or set the quality to **Tablet** (in the view settings, or `quality` on the card). Tablet is the lightest level. Moving decorations rest after 30 seconds without a touch, and shadows and weather are reduced. **Auto** picks it for Fire tablets it recognises, such as the Fire HD 10.
 - **Locked tablet mode:** add `?tablet` to the panel address (for example in a kiosk browser's start URL) and the panel shows only the home name, the floors and the View menu: no editor, no view settings. `?tablet=0` turns it off again. You can also tick users for tablet mode in the settings. After a quiet spell the tablet returns to the whole house; `?idle=<seconds>` changes the wait and `?idle=0` disables it.
 - **WebGL:** the 3D view needs hardware WebGL. If a tablet shows a blank 3D view, check that the browser is up to date and that hardware acceleration is on (Android System WebView and Fully Kiosk Browser use the system's WebView, so update that). Old or very cheap tablets can run out of graphics memory; use the 2D plan there.
-- **Phones** can view and control the house. Drawing works best on a computer or a tablet.
+- **Phones** can view and control the house, with a layout of their own: see [Phone view](#phone-view). Drawing works best on a computer or a tablet.
+
+### Phone view
+
+On a phone, Home 3D can drop the header and the floor bar and show one bar at the bottom of the screen instead. It
+has **Now** (the list "What's going on?": warnings, open windows, doors and locks, who is home, lights and energy, with a
+house check you run before you go out), the **rooms** by floor, the **blinds** and **More**. A card can add up to two
+places of its own, such as a page of all lights or a scene. The first time you open Home 3D on a phone, it asks once
+whether to use the phone view. You can change this later in *Settings → Screen and controls → Phone view*.
+
+![The rooms of a floor as tiles in the phone view](docs/images/home3d-phone-rooms.jpg)
+
+A link can open a place at once, for example in a notification: `/home_3d?view=now`, `/home_3d?room=kitchen` and
+`/home_3d?show=<entity>`. Everything about the bar, the places of your own and the links is in
+[docs/phone-view.md](docs/phone-view.md).
 
 ## Dashboard card
 
@@ -103,6 +166,27 @@ type: custom:home-3d-card
 view: 2d
 controls: [view]
 ```
+
+Other options that came with 1.8.0:
+
+```yaml
+type: custom:home-3d-card
+surroundings: false      # leave the neighbourhood from the map out on this card
+rooms: [kitchen, lounge] # show only these rooms (by id), with their devices
+phone: true              # the phone view on this card
+template: hall_tablet    # take the options from a card template
+```
+
+A **card template** is a card you set up once in *Settings → Card templates* and use on many cards. A change to the
+template reaches each card that uses it, and an option in the card's own YAML wins. See
+[Card options and templates](docs/card-options.md).
+
+## Settings
+
+Settings opens as one compact dialog over the page you came from. Its topics are in five groups: House & plan, Appearance,
+Screens, Live & extensions and System. The search box finds a setting by name. The Scene topic can also give the neighbours' houses from the map a gable roof. See [docs/settings.md](docs/settings.md).
+
+![The Settings dialog](docs/images/home3d-settings-dialog.jpg)
 
 ## Looks and styles
 

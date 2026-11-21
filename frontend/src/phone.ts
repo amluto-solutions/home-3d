@@ -14,6 +14,11 @@ export function isPhoneWidth(width: number): boolean {
   return width <= PHONE_MAX_PX;
 }
 
+/** Whether this device looks like a phone (#493): a touch screen whose short side is a phone's (`maxShort` CSS px). */
+export function looksLikePhone(screenW: number, screenH: number, touchPoints: number, maxShort = PHONE_MAX_PX): boolean {
+  return touchPoints > 0 && Math.min(screenW, screenH) > 0 && Math.min(screenW, screenH) <= maxShort;
+}
+
 /** Whether the floor pictures at the side show as plain buttons: the stored choice ("1"/"0"), else folded on phones. */
 export function thumbsCompact(saved: string | null, phone: boolean): boolean {
   return saved === "1" || saved === "0" ? saved === "1" : phone;
@@ -50,4 +55,32 @@ export function sizeClass(width: number): SizeClass {
 
 export function isShortHeight(height: number): boolean {
   return height <= SHORT_MAX_PX;
+}
+
+/**
+ * A notification's link into the panel (#494, ported from NeonPlan 3D 4.0.0, MIT, Mastershort):
+ * `/home_3d?view=now` opens the list "What's going on?", `?room=<name or id>` a room, `?show=<entity>` flies to a
+ * device. Null when the address asks for none of them. An entity id that is not one is dropped.
+ */
+export interface PhoneLink {
+  now: boolean;
+  room: string | null;
+  show: string | null;
+}
+
+export function phoneLink(search: string): PhoneLink | null {
+  const q = new URLSearchParams(search);
+  const now = q.get("view") === "now";
+  const room = q.get("room")?.trim() || null;
+  const show = q.get("show")?.trim() || null;
+  const entity = show && /^[a-z_]+\.[a-z0-9_]+$/.test(show) ? show : null;
+  return now || room || entity ? { now, room, show: entity } : null;
+}
+
+/** The room a link names: by id first, else by its name (any case); null when the plan has none such. */
+export function linkedRoom(floors: readonly { id: string; rooms: readonly { id: string; name?: string }[] }[], want: string): { floorId: string; roomId: string } | null {
+  for (const f of floors) for (const r of f.rooms) if (r.id === want) return { floorId: f.id, roomId: r.id };
+  const name = want.trim().toLowerCase();
+  for (const f of floors) for (const r of f.rooms) if (r.name?.trim().toLowerCase() === name) return { floorId: f.id, roomId: r.id };
+  return null;
 }

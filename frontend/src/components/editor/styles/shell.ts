@@ -322,6 +322,16 @@ export const shellStyles = css`
         color: var(--fp3d-warm);
         font-size: 12.5px;
       }
+      .fp3d-warn-btn {
+        border: none;
+        background: none;
+        padding: 0;
+        font: inherit;
+        font-size: 12.5px;
+        text-align: left;
+        cursor: pointer;
+        text-decoration: underline dotted;
+      }
       .fp3d-picture-group {
         display: grid;
         gap: 6px;

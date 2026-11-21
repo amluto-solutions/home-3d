@@ -332,3 +332,16 @@ test("the size of the room names in 3D is 1 unless set, between half and double 
   assert.equal(labelScale({ label_scale: 0.1 }), 0.5);
   assert.equal(labelScale({ label_scale: Number.NaN }), 1);
 });
+
+test("a show-only-while rule with no entity and no times is healed to none on load (#1217)", () => {
+  const b = emptyBuilding();
+  const f = newFloor("g", "G", 0);
+  const item = (id: string, show_when: unknown) => ({ id, type: "lamp_ceiling", x: 1, z: 1, rotation: 0, w: 0.4, d: 0.4, h: 0.08, variant: null, entity: null, power: null, show_when }) as never;
+  f.furniture = [item("a", { entity: null, when: "on" }), item("b", { entity: "none", intervals: [] }), item("c", { entity: null, intervals: [{ start: "18:00", end: "22:00" }] }), item("d", { entity: "switch.xmas" })];
+  b.floors = [f];
+  const out = normalizeBuilding(b).floors[0].furniture;
+  assert.equal(out[0].show_when, null);
+  assert.equal(out[1].show_when, null);
+  assert.ok(out[2].show_when, "times alone are a rule");
+  assert.equal(out[3].show_when?.entity, "switch.xmas");
+});
