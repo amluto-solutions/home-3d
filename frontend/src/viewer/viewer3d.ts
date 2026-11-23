@@ -74,7 +74,7 @@ import { makeFoldable, type FoldMasks } from "./fold.ts";
 import { CameraProjections, PROJECTION_LAYER, type ProjectionSurface, type ProjectorPose } from "./projection.ts";
 import type { RoleColours } from "../colour-roles.ts";
 import type { RoleMaterials } from "../role-materials.ts";
-import { packGlowCentre, pushAwning, pushCameraModel, pushPackGlow, pushPackRobot, pushPackLamp, pushPackMotion, screenRect, screenPictureSize, pushFridgeDoors, pushFurniture, pushRackLeds, setLightLook, hasOwnColours, furnitureLook, setShellDetail } from "./furniture.ts";
+import { MIN_SIZE, packGlowCentre, pushAwning, pushCameraModel, pushPackGlow, pushPackRobot, pushPackLamp, pushPackMotion, screenRect, screenPictureSize, pushFridgeDoors, pushFurniture, pushRackLeds, setLightLook, hasOwnColours, furnitureLook, setShellDetail } from "./furniture.ts";
 import { pushPipeTube, type PipeTube } from "./pipes.ts";
 import { LiveParts } from "./live-view.ts";
 
@@ -1978,6 +1978,25 @@ export class FloorplanViewer {
     return { natural, cutTop: natural && s.cutDark ? 0x34373d : null, tints: (natural || s.base === "realistic") && hasWallColours(this.building) };
   }
 
+  /**
+   * The live parts of furniture (a cupboard door, a drawer) are drawn with plain vertex colours, outside the look's
+   * shader, so the homely styles' navy-to-grey rule never reaches them: built in the far neon palette under a zoom style,
+   * kitchen fronts stayed dark blue while the house around them was homely (#1259). A door is looked at from close up,
+   * so it is built in the zoom style's (near) palette, and a change of that palette builds it again.
+   */
+  private syncLive(): void {
+    const look = furnitureLook() + (this.zoomPalette ? `|z${JSON.stringify(this.zoomPalette)}` : "");
+    this.live.sync(this.floors, look, (make) => {
+      if (!this.zoomPalette) return make();
+      this.useZoomPalette();
+      try {
+        return make();
+      } finally {
+        this.usePalette();
+      }
+    });
+  }
+
   /** The zoom style's palette in the shared modules, for the second build (mode 2). */
   private useZoomPalette(): void {
     const p = this.zoomPalette;
@@ -2382,7 +2401,9 @@ export class FloorplanViewer {
     const north = (b?.settings.north ?? 0) * DEG;
     const cloud = this.weather?.cloud ?? 0;
     // the realistic look throws real shadows instead (and none on phones)
-    const shade = on && !this.lowQuality && sun.elevation > 1 && cloud < 0.9 && !this.roomTint && this.theme !== "realistic";
+    // the house's shadow lies outside on the ground, so coloured floors (a heatmap, a warning) leave it alone: a card
+    // with `heatmap:` showed no shadow at all while the panel beside it did (#1196)
+    const shade = on && !this.lowQuality && sun.elevation > 1 && cloud < 0.9 && this.theme !== "realistic";
     const sig = shade ? `${sun.elevation.toFixed(1)},${sun.azimuth.toFixed(1)},${north},${cloud.toFixed(1)},${this.theme},${this.roofGeos.length},${surroundKey(b)}` : "";
     if (sig !== this.shadowSig) {
       this.shadowSig = sig;
@@ -2655,7 +2676,7 @@ export class FloorplanViewer {
     if (!values.size && !this.live.size) return;
     this.live.setValues(values);
     this.usePalette();
-    this.live.sync(this.floors, furnitureLook());
+    this.syncLive();
     this.invalidate();
   }
 
@@ -3894,7 +3915,7 @@ export class FloorplanViewer {
     // a kept floor still has its lamps, lights, doors and cables (the device updates keep them current)
     const built = this.floors.filter((fv) => keep.get(fv.floor.id) !== fv);
     // live parts follow the plan, whatever the states (a part with no value yet stands as drawn)
-    this.live.sync(this.floors, furnitureLook());
+    this.syncLive();
     for (const fv of built) {
       this.applyHidden(fv);
       this.buildFridges(fv);
@@ -4931,8 +4952,8 @@ export class FloorplanViewer {
       const P = (x: number, y: number, z: number) => [f.x + x * c - z * s, y, f.z + x * s + z * c];
       if (st.faces) {
         // a state on the item itself: a glowing plate on its top (a half of it for a bed's side or a bunk)
-        const w = Math.max(0.05, f.w) * (f.mirror ? -1 : 1);
-        const d = Math.max(0.05, f.d);
+        const w = Math.max(MIN_SIZE, f.w) * (f.mirror ? -1 : 1);
+        const d = Math.max(MIN_SIZE, f.d);
         const h = Math.max(0.005, f.h);
         const base = mountBase(fv.floor, f);
         for (const face of st.faces) {
@@ -5698,7 +5719,7 @@ export class FloorplanViewer {
     // the tap's direction the same way (a tap on a glass or mesh door goes on to the gear behind it, #131)
     const q = fv.group.worldToLocal(point.clone().add(dir)).sub(p);
     const along: [number, number, number] = [(f.mirror ? -1 : 1) * (q.x * c + q.z * s), q.y, -q.x * s + q.z * c];
-    const [w, d, h] = [Math.max(0.05, f.w), Math.max(0.05, f.d), Math.max(0.005, f.h)];
+    const [w, d, h] = [Math.max(MIN_SIZE, f.w), Math.max(MIN_SIZE, f.d), Math.max(0.005, f.h)];
     const slotId = rackTapSlot(frame, w, d, h, rackContents(rackLayout(frame, w, d, h), slots, packItem), local, along);
     return { id, slot: slotId ? (slots.find((o) => o.id === slotId) ?? null) : null, f };
   }

@@ -32,6 +32,13 @@ let C: Palette = THEME;
 /** The role colours of the item being drawn (its own over its pack item's, #478): what it follows and what it overrides. */
 let OWN: RoleColours | null = null;
 
+/**
+ * The smallest width or depth a model is drawn at. It used to be 5 cm, so a socket (1.4 cm deep), a switch (1.2 cm)
+ * or a sensor made thinner by hand stood far out of the wall, while the plan and the selection showed them thin
+ * (#1236). Only a size of zero needs catching, the same floor the height has.
+ */
+export const MIN_SIZE = 0.005;
+
 const EDGE_FURN = shade(0x5b7cff, 0.3);
 const EDGE_FAINT = shade(0x5b7cff, 0.17);
 const EDGE_GLOW = shade(0x37e0ff, 0.45);
@@ -1693,8 +1700,8 @@ export function screenRect(f: Furniture, floor?: Floor): { x0: number; x1: numbe
 }
 
 function screenRectUnmirrored(f: Furniture, floor?: Floor): { x0: number; x1: number; y0: number; y1: number; z: number } | null {
-  const w = Math.max(0.05, f.w);
-  const d = Math.max(0.05, f.d);
+  const w = Math.max(MIN_SIZE, f.w);
+  const d = Math.max(MIN_SIZE, f.d);
   const h = Math.max(0.005, f.h);
   const part = packScreen(f.type);
   if (part) {
@@ -1866,8 +1873,8 @@ function buildFurniture(buf: GeoBuffer, lines: LineBuffer, shadow: GeoBuffer, f:
   const mx = f.mirror ? -1 : 1;
   const tf: Tf = (x, z) => [f.x + mx * x * c - z * s, f.z + mx * x * s + z * c];
   const b = new Builder(buf, lines, tf);
-  const w = Math.max(0.05, f.w);
-  const d = Math.max(0.05, f.d);
+  const w = Math.max(MIN_SIZE, f.w);
+  const d = Math.max(MIN_SIZE, f.d);
   const h = Math.max(0.005, f.h);
   switch (f.type) {
     case "sofa":
@@ -2205,7 +2212,7 @@ export function pushRackGear(buf: GeoBuffer, lines: LineBuffer, f: Furniture, ba
   const s = Math.sin(a);
   const mx = f.mirror ? -1 : 1;
   const b = new Builder(buf, lines, (x, z) => [f.x + mx * x * c - z * s, f.z + mx * x * s + z * c]);
-  const at = rackLayout(frame, Math.max(0.05, f.w), Math.max(0.05, f.d), Math.max(0.005, f.h));
+  const at = rackLayout(frame, Math.max(MIN_SIZE, f.w), Math.max(MIN_SIZE, f.d), Math.max(0.005, f.h));
   withColours(buf, f, () => rackGear(b, f, at, base, detail));
 }
 
@@ -2226,7 +2233,7 @@ export function pushRackLeds(buf: GeoBuffer, f: Pick<Furniture, "type" | "x" | "
   const s = Math.sin(a);
   const mx = f.mirror ? -1 : 1;
   const b = new Builder(buf, new LineBuffer(), (x, z) => [f.x + mx * x * c - z * s, f.z + mx * x * s + z * c]);
-  const at = rackLayout(frame, Math.max(0.05, f.w), Math.max(0.05, f.d), Math.max(0.005, f.h));
+  const at = rackLayout(frame, Math.max(MIN_SIZE, f.w), Math.max(MIN_SIZE, f.d), Math.max(0.005, f.h));
   for (const p of rackContents(at, slots, packItem)) {
     if (!want.has(p.slot.id) || out.has(p.slot.id)) continue;
     const led = rackLedSpot(p);
@@ -2371,7 +2378,7 @@ export function pushCameraModel(buf: GeoBuffer, model: "camera_wall" | "camera_c
 export function pushPackRobot(buf: GeoBuffer, item: PackItem, w: number, d: number, h: number): { radius: number; top: number } {
   const cz = packRobotCentre(item) * d;
   const b = new Builder(buf, new LineBuffer(), (x, z) => [x, z - cz]);
-  packModel(b, item, Math.max(0.05, w), Math.max(0.05, d), Math.max(0.005, h), 0, null, packRobotPart);
+  packModel(b, item, Math.max(MIN_SIZE, w), Math.max(MIN_SIZE, d), Math.max(0.005, h), 0, null, packRobotPart);
   let radius = 0;
   let top = 0;
   for (const p of fitParts(item, w, d, h)) {
@@ -2390,7 +2397,7 @@ export function pushPackGlow(buf: GeoBuffer, item: PackItem, f: Pick<Furniture, 
   const s = Math.sin(a);
   const mx = f.mirror ? -1 : 1;
   const tf: Tf = (x, z) => [f.x + mx * x * c - z * s, f.z + mx * x * s + z * c];
-  packModel(new Builder(buf, new LineBuffer(), tf), item, Math.max(0.05, f.w), Math.max(0.05, f.d), Math.max(0.005, f.h), base, color, pick);
+  packModel(new Builder(buf, new LineBuffer(), tf), item, Math.max(MIN_SIZE, f.w), Math.max(MIN_SIZE, f.d), Math.max(0.005, f.h), base, color, pick);
 }
 
 /**
@@ -2405,7 +2412,7 @@ export function pushPackMotion(buf: GeoBuffer, item: PackItem, kind: PackMotion,
   const s = Math.sin(a);
   const mx = f.mirror ? -1 : 1;
   const tf: Tf = (x, z) => [f.x + mx * x * c - z * s, f.z + mx * x * s + z * c];
-  withColours(buf, f, () => packModel(new Builder(buf, new LineBuffer(), tf), { ...item, parts }, Math.max(0.05, f.w), Math.max(0.05, f.d), Math.max(0.005, f.h), base, null), item);
+  withColours(buf, f, () => packModel(new Builder(buf, new LineBuffer(), tf), { ...item, parts }, Math.max(MIN_SIZE, f.w), Math.max(MIN_SIZE, f.d), Math.max(0.005, f.h), base, null), item);
 }
 
 /** The moving parts of such an item where they are at `open` (in the item's fractions of its size). */
@@ -2447,8 +2454,8 @@ export function packMotionParts(item: PackItem, kind: PackMotion, open: number, 
  * height y. Null for an item without glowing parts.
  */
 export function packGlowCentre(item: PackItem, f: Pick<Furniture, "x" | "z" | "rotation" | "w" | "d" | "h" | "mirror">, base: number): [number, number, number] | null {
-  const w = Math.max(0.05, f.w);
-  const d = Math.max(0.05, f.d);
+  const w = Math.max(MIN_SIZE, f.w);
+  const d = Math.max(MIN_SIZE, f.d);
   const h = Math.max(0.005, f.h);
   let weight = 0;
   let sx = 0;
@@ -2486,7 +2493,7 @@ export function pushPackLamp(buf: GeoBuffer, item: PackItem, f: Pick<Furniture, 
   const tf: Tf = (x, z) => [f.x + mx * x * c - z * s, f.z + mx * x * s + z * c];
   // lamps have no outlines: their edges are dropped; a ceiling fan's blades turn as a model of their own (pushPackLive)
   const skip = !still && item.parts.some(isLivePart) ? isLivePart : null;
-  withColours(buf, f, () => packModel(new Builder(buf, new LineBuffer(), tf), item, Math.max(0.05, f.w), Math.max(0.05, f.d), Math.max(0.005, f.h), base, glow, null, skip), item);
+  withColours(buf, f, () => packModel(new Builder(buf, new LineBuffer(), tf), item, Math.max(MIN_SIZE, f.w), Math.max(MIN_SIZE, f.d), Math.max(0.005, f.h), base, glow, null, skip), item);
 }
 
 /** What pushPackLive made: where the model turns (its pivot, in the item's own coordinates), its tie and rest colour. */
@@ -2514,8 +2521,8 @@ export interface LiveModel {
  * the item has no such group. `base`: where the item stands above the floor (its mount height, m).
  */
 export function pushPackLive(buf: GeoBuffer, lines: LineBuffer, item: PackItem, f: Pick<Furniture, "w" | "d" | "h" | "mirror" | "type" | "colors" | "materials">, key: string, base = 0): LiveModel | null {
-  const W = Math.max(0.05, f.w);
-  const D = Math.max(0.05, f.d);
+  const W = Math.max(MIN_SIZE, f.w);
+  const D = Math.max(MIN_SIZE, f.d);
   const H = Math.max(0.005, f.h);
   const parts = fitParts(item, W, D, H).filter((p) => {
     const b = partBind(p);

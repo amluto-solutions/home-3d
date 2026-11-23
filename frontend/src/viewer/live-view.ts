@@ -59,8 +59,10 @@ export class LiveParts {
   /**
    * The models for the floors' pack items with live parts: built where missing, rebuilt when the item, its place, size
    * or colours, the look (`look`) or the floor view changed, dropped for items that are gone. Cheap when nothing lives.
+   * `build` wraps the making of a model: the live parts are drawn with plain vertex colours outside the look's shader,
+   * so under a zoom style the view builds them in the near palette, not the far one (#1259).
    */
-  sync(floors: readonly LiveFloor[], look: string): void {
+  sync(floors: readonly LiveFloor[], look: string, build: <T>(make: () => T) => T = (make) => make()): void {
     const seen = new Set<string>();
     const version = packsVersion();
     for (const fv of floors) {
@@ -82,7 +84,7 @@ export class LiveParts {
           if (!part) {
             const buf = new GeoBuffer();
             const lines = new LineBuffer();
-            const model = pushPackLive(buf, lines, item, f, key, base);
+            const model = build(() => pushPackLive(buf, lines, item, f, key, base));
             if (!model) continue;
             const mat = model.lit ? new MeshBasicMaterial({ vertexColors: true }) : null;
             const mesh = new Mesh(buf.geometry(), mat ?? fv.materials.wall);

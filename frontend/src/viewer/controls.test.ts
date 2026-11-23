@@ -327,3 +327,56 @@ test("fingers on a label, a pin or a card join a pinch; the element under a zoom
     g.window = savedWindow;
   }
 });
+
+test("one finger that begins on a label turns the house; the wheel over a label zooms it (#1248, #1271)", async () => {
+  const { OrbitControls } = await import("./controls.ts");
+  const g = globalThis as Record<string, unknown>;
+  const mk = () => {
+    const l: Record<string, ((e: unknown) => void)[]> = {};
+    return {
+      l,
+      addEventListener: (t: string, fn: (e: unknown) => void) => (l[t] ??= []).push(fn),
+      removeEventListener: (t: string, fn: (e: unknown) => void) => (l[t] = (l[t] ?? []).filter((f) => f !== fn)),
+      fire: (t: string, e: unknown) => (l[t] ?? []).forEach((f) => f(e)),
+    };
+  };
+  const win = mk();
+  const host = mk();
+  const el = { ...mk(), parentElement: host, setPointerCapture: () => {}, getBoundingClientRect: () => ({ left: 0, top: 0, width: 100, height: 100 }), clientHeight: 100 };
+  const savedWindow = g.window;
+  g.window = win;
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const c = new OrbitControls(el as any, { fov: 50 } as any, { tap() {}, doubleTap() {}, hold() {}, change() {} } as any);
+    c.view = { target: new Vector3(), radius: 10, theta: 0, phi: 0.8 };
+    const label = { tagName: "DIV", parentElement: host, scrollHeight: 10, clientHeight: 10 };
+    const field = { tagName: "INPUT", parentElement: host };
+    const ptr = (type: string, x: number, target: unknown, buttons = 1) => ({ pointerId: 1, pointerType: type, clientX: x, clientY: 50, target, button: 0, buttons, timeStamp: performance.now(), altKey: false, shiftKey: false });
+    for (const type of ["touch", "mouse"]) {
+      // a small move is still a tap on the label
+      const t0 = c.view.theta;
+      host.fire("pointerdown", ptr(type, 50, label));
+      win.fire("pointermove", ptr(type, 53, label));
+      assert.equal(c.view.theta, t0, `${type}: a small move leaves the house`);
+      // a longer one turns the house
+      win.fire("pointermove", ptr(type, 90, label));
+      win.fire("pointermove", ptr(type, 20, label));
+      assert.notEqual(c.view.theta, t0, `${type}: a drag that begins on a label turns the house`);
+      win.fire("pointerup", ptr(type, 20, label));
+      // a text field keeps its own drag
+      const t1 = c.view.theta;
+      host.fire("pointerdown", ptr(type, 50, field));
+      win.fire("pointermove", ptr(type, 90, field));
+      assert.equal(c.view.theta, t1, `${type}: a field is left alone`);
+      win.fire("pointerup", ptr(type, 90, field));
+    }
+    // the wheel over a label zooms; over a field it does not
+    const r0 = c.view.radius;
+    host.fire("wheel", { target: field, deltaY: -100, deltaMode: 0, preventDefault() {}, timeStamp: performance.now(), clientX: 50, clientY: 50 });
+    assert.equal(c.view.radius, r0, "the wheel over a field is left alone");
+    host.fire("wheel", { target: label, deltaY: -100, deltaMode: 0, preventDefault() {}, timeStamp: performance.now(), clientX: 50, clientY: 50 });
+    assert.ok(c.view.radius < r0, "the wheel over a label zooms in");
+  } finally {
+    g.window = savedWindow;
+  }
+});

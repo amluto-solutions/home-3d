@@ -2,6 +2,20 @@
 
 All notable changes to Home 3D.
 
+## Home 3D 1.8.1 (23 November 2026)
+
+Fixes ported from NeonPlan 3D 4.0.1 (MIT, Mastershort). No plan format change.
+
+- A closed garage door no longer counts as open in the phone list (#503).
+- Sockets, switches and wall sensors keep their real thickness in 3D: the smallest size is 0.5 cm, not 5 cm (#505).
+- A hedge, fence or pergola on falling ground reaches down into the lawn (#506).
+- Cupboard fronts and other live parts take the palette of the zoom style (#507).
+- The house shadow also shows on a card with a heatmap (#508).
+- A finger or mouse that starts on a label, pin or glass card turns the house, and the wheel over them zooms (#509, #510).
+- The full-screen close button stays when the card hides its other buttons (#511).
+- Not needed in our copy: #504 (open-screens overview), #512 (plan manager), #513 (picture frames), #514 (new texts).
+- The gzip budget of the 3D bundle is now 300 KB.
+
 ## Home 3D 1.8.0 (21 November 2026)
 
 A phone view with a bar at the bottom, dashboard card templates, card options for rooms on their own and for leaving out the surroundings, one compact Settings dialog, gable roofs for the neighbours' houses and a round of fixes. Ported from NeonPlan 3D 3.5.2 and 4.0.0 (MIT, Mastershort). Plan format 7: the new keys `roofs` (in the surroundings) and `card_templates` are optional and older plans load unchanged, but Home 3D 1.7.x opens a plan saved by 1.8.0 read-only.
