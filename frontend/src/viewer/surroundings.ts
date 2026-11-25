@@ -20,6 +20,7 @@ const LOOK = palette(
     top: 0x18213d,
     edge: 0x5b7cff,
     edgeAlpha: 0.38,
+    ground: null as number | null,
     road: 0x121827,
     path: 0x19213a,
     rail: 0x22182e,
@@ -36,6 +37,7 @@ const LOOK = palette(
     top: 0xd3cdc4,
     edge: 0x5b7cff,
     edgeAlpha: 0.08,
+    ground: 0xb9b7a7 as number | null,
     road: 0x8f8d89,
     path: 0xc9c1b3,
     rail: 0x8a7f74,
@@ -102,6 +104,17 @@ export function* surroundingsSteps(buf: GeoBuffer, lines: LineBuffer, s: PlacedS
   const L = LOOK;
   let n = 0;
   const pause = () => ++n % STEP === 0;
+  // the ground itself, under everything, in the homely styles: where the map knows no area, the sky's haze showed
+  // between streets and lawns like a hole in the ground (#528). The neon looks keep their grid there
+  if (L.ground !== null && s.ground) {
+    const outer = ccw(s.ground.outer);
+    // holes run the other way round than the outline
+    const holes = s.ground.holes.map((ring) => [...ccw(ring)].reverse());
+    const all = [...outer, ...holes.flat()];
+    const y = ground - 0.16;
+    const c = new Color(L.ground);
+    for (const [i, j, k] of triangulate(outer, holes)) buf.tri([all[i][0], y, all[i][1]], [all[k][0], y, all[k][1]], [all[j][0], y, all[j][1]], c, c, c, undefined, ALWAYS);
+  }
   for (const a of s.areas) {
     flat(buf, a.p, ground + AREA_Y[a.k], new Color(L[a.k]));
     if (pause()) yield;

@@ -497,3 +497,25 @@ test("strings by inverter: one plant's strings, and none counted twice for a set
   b.energy = { ...b.energy, systems: [{ id: "sys", name: "Second", inverter: "inv2", grid: null, grid_invert: false, solar: "sensor.solar2", battery: null, battery_invert: false, battery_soc: null }] };
   assert.equal(energySummary(hass, b, []).solar, 800);
 });
+
+test("PowerCalc meters named after the lights' names go to their own light, a light without one gets none (#527)", () => {
+  const named = (id: string, state: string, name: string) => ({ ...st(id, state), attributes: { ...st(id, state).attributes, friendly_name: name } });
+  const meter = (id: string, name: string) => ({ ...power(id, "5"), attributes: { ...power(id, "5").attributes, friendly_name: name } });
+  const reg = (id: string) => ({ entity_id: id, device_id: "act" });
+  const ids = ["light.dg_bad_decke", "light.ug_flur_decke", "light.eg_flur_decke", "sensor.licht_dg_bad_decke_power", "sensor.pc_ug_flur"];
+  const hass = hassWith(
+    [
+      named("light.dg_bad_decke", "on", "DG Bad Decke"),
+      named("light.ug_flur_decke", "on", "UG Flur Decke"),
+      named("light.eg_flur_decke", "on", "EG Flur Decke"),
+      meter("sensor.licht_dg_bad_decke_power", "Licht DG Bad Decke power"),
+      meter("sensor.pc_ug_flur", "Licht UG Flur Decke power"),
+    ],
+    Object.fromEntries(ids.map((id) => [id, reg(id)])),
+  );
+  // by the entity id inside the meter's id, and by the light's name inside the meter's name
+  assert.equal(powerSensorFor(hass, "light.dg_bad_decke"), "sensor.licht_dg_bad_decke_power");
+  assert.equal(powerSensorFor(hass, "light.ug_flur_decke"), "sensor.pc_ug_flur");
+  // no meter of its own: not the bathroom's
+  assert.equal(powerSensorFor(hass, "light.eg_flur_decke"), null);
+});

@@ -3,7 +3,7 @@
 // Pure data, no DOM: the plan view turns it into SVG.
 
 import { itemColourRoles, roleColour } from "../colour-roles.ts";
-import { generateWalls, locateOpening, openingHost, pointOnRoomEdge, type Wall, type WallOptions } from "../geometry/walls.ts";
+import { freeOpeningTurned, generateWalls, locateOpening, openingHost, pointOnRoomEdge, type Wall, type WallOptions } from "../geometry/walls.ts";
 import { isFrontDoor, openingStyle, sidelightLayout, signedArea, zonesOf, type Building, type Floor, type Furniture, type Vec2 } from "../model.ts";
 import { packItem } from "../packs.ts";
 import { readRackFrame } from "../rack-frame.ts";
@@ -112,8 +112,8 @@ export function planOpenings(floor: Floor, wallOpts: WallOptions, targets: Reado
     const p1 = pointOnRoomEdge(room, edge, o.offset + o.width / 2);
     const ux = (p1[0] - p0[0]) / (o.width || 1);
     const uz = (p1[1] - p0[1]) / (o.width || 1);
-    // the normal into the room (outlines may run either way round)
-    const sgn = signedArea(room.points) >= 0 ? 1 : -1;
+    // the normal into the room (outlines may run either way round); a free wall along the outside: the side with the rooms (#519)
+    const sgn = (signedArea(room.points) >= 0 ? 1 : -1) * (freeOpeningTurned(o, floor.rooms, floor.walls ?? [], wallOpts.interior) ? -1 : 1);
     const n: Vec2 = [-uz * sgn, ux * sgn];
     let across: [number, number] = [0.06, 0.06];
     if (hit) across = hit.wall.free || hit.wall.roomLeft === room.id ? [hit.wall.left, hit.wall.right] : [hit.wall.right, hit.wall.left];

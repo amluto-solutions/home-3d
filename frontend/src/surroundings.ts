@@ -8,7 +8,7 @@
 // Ported from NeonPlan 3D 3.4.1 (MIT, Mastershort).
 
 import type { Building, Floor, SurroundArea, Surroundings, SurroundWay, Vec2 } from "./model.ts";
-import { centroid, pointInPolygon } from "./model.ts";
+import { centroid, pointInPolygon, polygonArea } from "./model.ts";
 import { sectionPolygon } from "./roof-sections.ts";
 
 /** The radii offered (metres). */
@@ -221,6 +221,44 @@ export function ownUnderPlan(s: Surroundings, b: Building): number | null | unde
   return best;
 }
 
+/** The part of a polygon on one side of a line square to the grid (`axis` 0 = x, 1 = z; `below`: the lower side). */
+function keepSide(poly: readonly Vec2[], axis: 0 | 1, limit: number, below: boolean): Vec2[] {
+  const out: Vec2[] = [];
+  const inside = (q: Vec2) => (below ? q[axis] <= limit : q[axis] >= limit);
+  poly.forEach((a, i) => {
+    const c = poly[(i + 1) % poly.length];
+    if (inside(a)) out.push(a);
+    if (inside(a) !== inside(c)) {
+      const t = (limit - a[axis]) / (c[axis] - a[axis]);
+      out.push([a[0] + (c[0] - a[0]) * t, a[1] + (c[1] - a[1]) * t]);
+    }
+  });
+  return out;
+}
+
+/**
+ * The own map building shown by hand, without the plan's house: in a terrace the map keeps the whole row as one
+ * building, so the neighbours' part of it stands beside the house instead of a block through it. Cut along the box
+ * around what the plan builds on that building (out to the outer wall faces); slivers left by an outline that does
+ * not quite match are dropped (#529).
+ */
+export function ownRest(poly: readonly Vec2[], b: Building): Vec2[][] {
+  const on = ownStructures(b).filter((r) => pointInPolygon(centroid(r), poly as Vec2[]));
+  if (!on.length) return [poly as Vec2[]];
+  const pts = on.flat();
+  const m = b.settings.wall_exterior ?? 0;
+  const [x0, x1] = [Math.min(...pts.map((q) => q[0])) - m, Math.max(...pts.map((q) => q[0])) + m];
+  const [z0, z1] = [Math.min(...pts.map((q) => q[1])) - m, Math.max(...pts.map((q) => q[1])) + m];
+  const strip = keepSide(keepSide(poly, 0, x0, false), 0, x1, true);
+  const parts = [keepSide(poly, 0, x0, true), keepSide(poly, 0, x1, false), keepSide(strip, 1, z0, true), keepSide(strip, 1, z1, false)];
+  return parts.filter((q) => {
+    if (q.length < 3) return false;
+    const long = Math.max(Math.max(...q.map((v) => v[0])) - Math.min(...q.map((v) => v[0])), Math.max(...q.map((v) => v[1])) - Math.min(...q.map((v) => v[1])));
+    const area = polygonArea(q);
+    return area >= 6 && area / long >= 1.5;
+  });
+}
+
 /** The neighbourhood in plan coordinates, ready to draw. */
 export interface PlacedSurroundings {
   buildings: { p: Vec2[]; h: number }[];
@@ -233,6 +271,71 @@ export interface PlacedSurroundings {
   roofs: boolean;
   /** Up or down from the ground floor's ground (m, #482). */
   y: number;
+  /**
+   * The ground under the map (#528): the square everything of the map lies in, with holes around what the plan
+   * draws below the ground - a pool, a drive down to the cellar, a light well, the floors below. Null when one of
+   * them does not lie inside the map.
+   */
+  ground: { outer: Vec2[]; holes: Vec2[][] } | null;
+}
+
+/** The convex outline around points (Andrew's chain). */
+export function hull(points: Vec2[]): Vec2[] {
+  const pts = [...points].sort((p, q) => p[0] - q[0] || p[1] - q[1]);
+  if (pts.length < 3) return pts;
+  const turn = (o: Vec2, a: Vec2, b: Vec2) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+  const half = (list: Vec2[]) => {
+    const out: Vec2[] = [];
+    for (const p of list) {
+      while (out.length >= 2 && turn(out[out.length - 2], out[out.length - 1], p) <= 0) out.pop();
+      out.push(p);
+    }
+    out.pop();
+    return out;
+  };
+  return [...half(pts), ...half(pts.reverse())];
+}
+
+/** The ground under the map: its square (areas are cut at 1.5 radii, see parseOverpass) around what lies below the ground. */
+function mapGround(b: Building, s: Surroundings, at: (p: Vec2) => Vec2): PlacedSurroundings["ground"] {
+  const h = (Number.isFinite(s.radius) && s.radius > 0 ? s.radius : 100) * 1.5;
+  const outer = ([[-h, -h], [h, -h], [h, h], [-h, h]] as Vec2[]).map(at);
+  const floors = [...b.floors].sort((p, q) => Math.abs(p.elevation) - Math.abs(q.elevation));
+  const level = floors[0]?.elevation ?? 0;
+  // below the ground: the rooms of lower floors, pools in the ground, areas set or falling below it, cut-out patches
+  const sunk: Vec2[][] = [];
+  for (const f of b.floors) {
+    if (f.elevation < level - 0.05) for (const r of f.rooms) if (r.points.length >= 3) sunk.push(r.points);
+    for (const a of f.outdoor ?? []) {
+      if (a.points.length < 3) continue;
+      if ((a.type === "pool" && !a.above) || a.cut || (a.offset ?? 0) < -0.1 || a.slope) sunk.push(a.points);
+    }
+  }
+  // holes must not touch: what lies close together shares one, the outline around all of it
+  type Box = { pts: Vec2[]; x0: number; x1: number; z0: number; z1: number };
+  const boxOf = (pts: Vec2[]): Box => ({ pts, x0: Math.min(...pts.map((p) => p[0])) - 0.3, x1: Math.max(...pts.map((p) => p[0])) + 0.3, z0: Math.min(...pts.map((p) => p[1])) - 0.3, z1: Math.max(...pts.map((p) => p[1])) + 0.3 });
+  let groups = sunk.map(boxOf);
+  for (let merged = true; merged; ) {
+    merged = false;
+    for (let i = 0; i < groups.length && !merged; i++)
+      for (let j = i + 1; j < groups.length && !merged; j++) {
+        const [p, q] = [groups[i], groups[j]];
+        if (p.x0 > q.x1 || q.x0 > p.x1 || p.z0 > q.z1 || q.z0 > p.z1) continue;
+        groups = [...groups.filter((_, k) => k !== i && k !== j), boxOf([...p.pts, ...q.pts])];
+        merged = true;
+      }
+  }
+  // each hole a little wider than what it holds, so the ground's edge lies under a rim or a wall
+  const holes = groups.map((g) => {
+    const ring = hull(g.pts);
+    const c = centroid(ring);
+    return ring.map(([x, z]): Vec2 => {
+      const d = Math.hypot(x - c[0], z - c[1]) || 1;
+      return [x + ((x - c[0]) / d) * 0.05, z + ((z - c[1]) / d) * 0.05];
+    });
+  });
+  if (holes.some((ring) => ring.length < 3 || !ring.every((p) => pointInPolygon(p, outer)))) return null;
+  return { outer, holes };
 }
 
 /** The most the map can be moved up or down (m). */
@@ -252,13 +355,14 @@ export function placedSurroundings(b: Building | null | undefined): PlacedSurrou
   const at = (p: Vec2) => mapToPlan(s, north, p);
   const hidden = hiddenBuildings(s, b);
   return {
-    buildings: s.buildings.filter((_, i) => !hidden.has(i)).map((bd) => ({ p: bd.p.map(at), h: bd.h })),
+    buildings: s.buildings.flatMap((bd, i) => (hidden.has(i) ? [] : (i === s.own ? ownRest(bd.p.map(at), b) : [bd.p.map(at)]).map((p) => ({ p, h: bd.h })))),
     ways: s.ways.map((w) => ({ p: w.p.map(at), w: w.w, k: w.k })),
     areas: s.areas.map((a) => ({ p: a.p.map(at), k: a.k })),
     trees: s.trees.map(at),
     flat: s.flat === true,
     roofs: s.roofs === true,
     y: surroundHeight(b),
+    ground: mapGround(b, s, at),
   };
 }
 

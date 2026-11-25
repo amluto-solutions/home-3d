@@ -2,6 +2,25 @@
 
 All notable changes to Home 3D.
 
+## Home 3D 1.8.2 (24 November 2026)
+
+Fixes and one card option, ported from NeonPlan 3D 4.0.2 (MIT, Mastershort). No plan format change.
+
+- Card option `start_view_portrait`: a second start view for a screen held upright. Turn the tablet and the house moves to the view that fits; without the line nothing changes (#520, idea: bpaludo).
+- A robot vacuum with maps of several floors cleans on the floor of the room it reports, and one in a U- or L-shaped room does not drive through a wall to its first lane (#521).
+- A low roof beside a higher storey, such as a garage roof, ends at the wall under the higher roof (#517).
+- A hedge, fence or pergola lifted by a height offset keeps its underside; only one standing on the ground reaches into a falling lawn (#518).
+- A door in a free wall along the outside of the house has the same room side in the plan and in 3D (#519).
+- A wall painted dark blue keeps its colour in the homely styles (#522).
+- A thin line across the 3D picture under the real sky is gone: sky and haze meet on a whole pixel (#523).
+- A towel radiator and other flat items on a wall glow on the wall behind them, and a towel radiator on a switch alone glows too (#524).
+- The full-screen button stays in full screen in the phone view (#525).
+- A dormer's cheeks stand on the roof slope instead of in the room below (#526).
+- Each lamp takes the PowerCalc meter that carries its name, and none when it has no meter of its own (#527).
+- The surroundings from the map lie on a plain ground in the homely styles, so the sky no longer shows between streets and lawns (#528).
+- A terraced house on the map shown by hand leaves out what the plan builds, so the neighbours' part of the row stands beside the house (#529).
+- Not needed in our copy: the camera cone over a small step (no view cones), Slovak texts (no Slovak pack), long press on add-on markers (no such markers).
+
 ## Home 3D 1.8.1 (23 November 2026)
 
 Fixes ported from NeonPlan 3D 4.0.1 (MIT, Mastershort). No plan format change.

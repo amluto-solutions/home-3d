@@ -135,7 +135,8 @@ test("houses hidden by hand are not drawn; shown again they are", () => {
   const count = (b: Building) => placedSurroundings(b)!.buildings.length;
   assert.equal(count(house()), 2);
   assert.equal(count(house({ hide: [1] })), 1);
-  assert.equal(count(house({ hide: [1], show: [0] })), 2);
+  // the own building shown by hand leaves out what the plan builds on it: here that is all of it (#529)
+  assert.equal(count(house({ hide: [1], show: [0] })), 1);
 });
 
 test("the homely styles draw the map in their natural colours", () => {
@@ -172,6 +173,7 @@ test("a neighbour's block throws its height away from the sun", () => {
 
 test("the neighbours near the house add their shadows into the garden; far ones and the flat mode add none", () => {
   const placed = (extra: Partial<PlacedSurroundings> = {}): PlacedSurroundings => ({
+    ground: null,
     buildings: [
       { p: rect(16, 0, 20, 4), h: 8 },
       { p: rect(400, 0, 404, 4), h: 30 },

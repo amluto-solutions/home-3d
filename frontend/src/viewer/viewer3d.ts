@@ -114,7 +114,7 @@ import { ALWAYS, DEG, GeoBuffer, LineBuffer, pushPrism, triangulate } from "./ge
 import { floorsToSlice } from "./edit-slices.ts";
 import { buildLightSurface, lightSurfaceSteps, relight, roomIndexAt, type GlowCache, type LightKind, type LightSource, type LightSurface, zoneOf } from "./lighting.ts";
 import { buildOpeningParts, CLOSED, lightCover, type OpeningState } from "./openings.ts";
-import { circlePath, cleaningPath, stepRobot, type RobotInfo, type RobotMotion } from "./robot.ts";
+import { circlePath, cleaningPath, crossesOutline, stepRobot, type RobotInfo, type RobotMotion } from "./robot.ts";
 import { decorDelay, lowEndDevice, petDelay } from "./pace.ts";
 import { flowSpeed } from "./flow-style.ts";
 import { HALO_SIZE, haloSize } from "./halo-size.ts";
@@ -3556,7 +3556,7 @@ export class FloorplanViewer {
       pattern: patternMaterial(this.patternTexture, this.themeUniform),
       // the walls sit a hair behind their glowing edges in depth: lines lying on a wall's top or face no longer
       // flicker in and out at corners and joints as the view turns (#417)
-      wall: themed(makeFoldable(new MeshBasicMaterial({ vertexColors: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }), mask, "solid"), this.themeUniform, false, 1),
+      wall: Object.assign(themed(makeFoldable(new MeshBasicMaterial({ vertexColors: true, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }), mask, "solid"), this.themeUniform, false, 1), { defines: { FP3D_WALL: "" } }),
       glassWall: makeFoldable(new MeshBasicMaterial({ vertexColors: true, transparent: true, depthWrite: false }), mask, "glass"),
       // result = floor colour * vertex colour (white leaves the floor untouched)
       shadow: new MeshBasicMaterial({
@@ -5189,6 +5189,25 @@ export class FloorplanViewer {
             }
             continue;
           }
+          if (face.part === "all" && packItem(f.type)?.mount === "wall" && h >= d * 3) {
+            // a flat pack item on the wall (a towel radiator, a mirror): its top is a narrow strip, so it glows on the
+            // wall behind it, all over, with a soft halo round it - like a radiator on the wall (#524)
+            const col = new Color(...face.color.map((v) => Math.min(1, v * (0.3 + 0.5 * face.level))) as [number, number, number]);
+            const dark = new Color(0, 0, 0);
+            const hw = Math.abs(w) / 2;
+            const zb = -d / 2 + 0.004;
+            const g = 0.1 + 0.08 * face.level;
+            const inner = [P(-hw, base, zb), P(hw, base, zb), P(hw, base + h, zb), P(-hw, base + h, zb)];
+            const outer = [P(-hw - g, base - g, zb), P(hw + g, base - g, zb), P(hw + g, base + h + g, zb), P(-hw - g, base + h + g, zb)];
+            buf.tri(inner[0], inner[1], inner[2], col);
+            buf.tri(inner[0], inner[2], inner[3], col);
+            for (let i = 0; i < 4; i++) {
+              const j = (i + 1) % 4;
+              buf.tri(inner[i], outer[i], outer[j], col, dark, dark);
+              buf.tri(inner[i], outer[j], inner[j], col, dark, col);
+            }
+            continue;
+          }
           const x0 = face.part === "right" ? 0.03 : -Math.abs(w) / 2 + 0.03;
           const x1 = face.part === "left" ? -0.03 : Math.abs(w) / 2 - 0.03;
           const y = base + (face.part === "bottom" ? h * 0.45 : h) + 0.006;
@@ -6284,7 +6303,8 @@ export class FloorplanViewer {
         r.motion.path = path2;
         r.motion.next = best;
         // a robot reported in another room appears there instead of driving through the walls
-        if (info.room && !pointInPolygon(r.motion.pos, info.room)) r.motion.pos = [path2[best][0], path2[best][1]];
+        // - and so does one whose straight way to the first lane would cross a wall of its own room (a U- or L-shaped room, #521)
+        if (info.room && (!pointInPolygon(r.motion.pos, info.room) || crossesOutline(info.room, r.motion.pos, path2[best]))) r.motion.pos = [path2[best][0], path2[best][1]];
       }
       r.led.color.setHex(ROBOT_LED[info.mode]);
     }

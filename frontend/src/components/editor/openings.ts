@@ -6,7 +6,7 @@ import { entityName, openingEntities, slatTilt, windowPosition } from "../../dev
 import { snapOnWall, snapTolerance, wallGuides, type Span } from "../../geometry/snap-guides.ts";
 import { isPulseDrive } from "../../devices.ts";
 import { sidelightLayout } from "../../model.ts";
-import { edgeReach, generateWalls, locateOpening, openingHost, pointOnRoomEdge, type Wall } from "../../geometry/walls.ts";
+import { edgeReach, freeOpeningTurned, generateWalls, locateOpening, openingHost, pointOnRoomEdge, type Wall } from "../../geometry/walls.ts";
 import { edgeStartCorner, openingTap } from "../../geometry/openings.ts";
 import type { I18nKey } from "../../i18n.ts";
 import { signedArea, OPENING_PRESETS, openingPreset, type OpeningPreset, pointInPolygon, uid, type Floor, type Opening, type OpeningType, type Room, type Vec2, SILL_BOARDS, openingStyle, isFrontDoor, type SillBoard } from "../../model.ts";
@@ -297,8 +297,9 @@ export class OpeningsPart {
       const p1 = pointOnRoomEdge(room, edge, o.offset + o.width / 2);
       const ux = (p1[0] - p0[0]) / (o.width || 1);
       const uz = (p1[1] - p0[1]) / (o.width || 1);
-      // normal into the room (room outlines may run either way round)
-      const sgn = signedArea(room.points) >= 0 ? 1 : -1;
+      // normal into the room (room outlines may run either way round); in a free wall along the house's outside the
+      // room side is the side with the rooms, as in 3D (#519)
+      const sgn = (signedArea(room.points) >= 0 ? 1 : -1) * (freeOpeningTurned(o, floor.rooms, floor.walls ?? [], this._doc.settings.wall_interior) ? -1 : 1);
       const n: Vec2 = [-uz * sgn, ux * sgn];
       // gap across the whole wall thickness
       let across: [number, number] = [0.06, 0.06];

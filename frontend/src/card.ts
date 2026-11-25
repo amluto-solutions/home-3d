@@ -14,7 +14,7 @@ import { need } from "./lazy-part.ts";
 import { languageReady, loadLanguage, translate, uiLanguage, type I18nKey } from "./i18n.ts";
 import { controls, tokens } from "./styles.ts";
 import type { HomeAssistant } from "./types.ts";
-import { cardTemplate, effectiveConfig, isHaPath, showsPlan2d, walkRightFor, type CardConfig, type CardControl } from "./card-config.ts";
+import { cardStartView, cardTemplate, effectiveConfig, isHaPath, screenUpright, showsPlan2d, walkRightFor, type CardConfig, type CardControl } from "./card-config.ts";
 import { fitBar, type BarItem } from "./card-fit.ts";
 import { preload3d } from "./load3d.ts";
 import { nightActive } from "./kiosk.ts";
@@ -57,6 +57,7 @@ export class Floorplan3dCard extends LitElement {
     _plan2d: { state: true },
     _fullscreen: { state: true },
     _pseudoFull: { state: true },
+    _upright: { state: true },
     _vh: { state: true },
     _top: { state: true },
     _cameraWall: { state: true },
@@ -148,6 +149,7 @@ export class Floorplan3dCard extends LitElement {
     this._plan2d = null;
     this._fullscreen = false;
     this._pseudoFull = false;
+    this._upright = screenUpright(globalThis.screen);
     this._vh = window.innerHeight;
     this._top = null;
     this._cameraWall = false;
@@ -233,7 +235,12 @@ export class Floorplan3dCard extends LitElement {
    * Full screen and "fill the screen" follow the screen that is really visible: 100vh misses on some Android
    * tablets (the HA app in landscape), and the dashboard header may be hidden (kiosk mode) – a black bar stayed (#344).
    */
+  /** The screen is held upright: a card with `start_view_portrait` then starts from that view (#520). */
+  private declare _upright: boolean;
+
   private readonly onViewport = () => {
+    const upright = screenUpright(globalThis.screen);
+    if (upright !== this._upright) this._upright = upright;
     const vh = Math.round(window.visualViewport?.height ?? window.innerHeight);
     if (Math.abs(vh - this._vh) > 1) this._vh = vh;
     if (this._config?.fill && !this._fullscreen) {
@@ -256,6 +263,7 @@ export class Floorplan3dCard extends LitElement {
     document.addEventListener("fullscreenchange", this.onFullscreen);
     window.addEventListener("resize", this.onViewport);
     window.visualViewport?.addEventListener("resize", this.onViewport);
+    globalThis.screen?.orientation?.addEventListener?.("change", this.onViewport);
     requestAnimationFrame(this.onViewport);
     // the dashboard may still be laying out: measure once more a moment later
     this.viewportTimer = setTimeout(this.onViewport, 600);
@@ -270,6 +278,7 @@ export class Floorplan3dCard extends LitElement {
     document.removeEventListener("fullscreenchange", this.onFullscreen);
     window.removeEventListener("resize", this.onViewport);
     window.visualViewport?.removeEventListener("resize", this.onViewport);
+    globalThis.screen?.orientation?.removeEventListener?.("change", this.onViewport);
     this.tt.stop();
     clearTimeout(this.viewportTimer);
 clearTimeout(this.cleanTimer);
@@ -657,7 +666,7 @@ clearTimeout(this.cleanTimer);
               .weatherEntityId=${c?.weather_entity ?? null}
               .dimmed=${this._night}
               .autoOrbit=${this._orbit}
-              .startView=${c?.start_view ?? null}
+              .startView=${cardStartView(c, this._upright)}
               style=${tt ? `--fp3d-bottom-inset: ${bar ? "calc(52px + var(--fp3d-tt-h))" : "var(--fp3d-tt-h)"}` : bar ? "--fp3d-bottom-inset: 52px" : ""}
               @room-tap=${(e: CustomEvent<{ floorId: string; roomId: string | null }>) => {
                 // in the house view (or on another floor) a tap first opens the whole floor; the floor as it is now,
@@ -731,7 +740,7 @@ clearTimeout(this.cleanTimer);
         ${bar && b ? this.renderBar(b, canGoBack, flat, walls, explode, floorId, heats, heat, t) : nothing}
         ${this.tt.session ? html`<fp3d-time-bar .session=${this.tt.session}></fp3d-time-bar>` : nothing}
         ${/* in full screen the button stays, whatever the card hides by itself: it is the way back (#1261) */ ""}
-        ${c?.fullscreen_button && (!this._clean || this._fullscreen) && !phone && !(this._roomId && this._shutRoom !== this._roomId && c.room_panel !== false)
+        ${c?.fullscreen_button && (!this._clean || this._fullscreen) && (!phone || this._fullscreen) && !(this._roomId && this._shutRoom !== this._roomId && c.room_panel !== false)
           ? html`<button class="fp3d-card-full" title=${t(this._fullscreen ? "fullscreen_exit" : "fullscreen")} aria-label=${t(this._fullscreen ? "fullscreen_exit" : "fullscreen")} @click=${() => this.toggleFullscreen()}>
               ${this._fullscreen ? "✕" : uiIcon("expand")}
             </button>`

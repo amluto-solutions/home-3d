@@ -24,6 +24,8 @@ export interface CardConfig {
   view?: "3d" | "2d";
   /** A start view of this card's own (theta, phi, radius and target as the editor shows them); default: the plan's. */
   start_view?: StartView;
+  /** A start view for while the screen is held upright (a tablet turned to portrait); default: `start_view` (idea: bpaludo, #520). */
+  start_view_portrait?: StartView;
   height?: number;
   walls?: WallMode;
   /** The floor pictures, star, search and eye on the right instead of the left (#285). */
@@ -234,6 +236,21 @@ export function walkRightFor(lefts: readonly number[], width: number): number {
 
 /** Options a template never holds: the card's type, the template itself and the home (a template belongs to its home's plan). */
 const NOT_IN_TEMPLATE = ["type", "template", "home"] as const;
+
+/**
+ * Whether the screen itself is held upright - what the device tells, else the screen's own shape. Not the window's or
+ * the card's: a keyboard pushing the page up or a split screen must not turn the house (#520).
+ */
+export function screenUpright(screen: { orientation?: { type?: string } | null; width?: number; height?: number } | null | undefined): boolean {
+  const type = screen?.orientation?.type;
+  if (typeof type === "string" && type) return type.startsWith("portrait");
+  return (screen?.height ?? 0) > (screen?.width ?? 0);
+}
+
+/** The card's own start view: the upright one while the screen is held upright (if set), else `start_view`; null = the plan's. */
+export function cardStartView(c: Pick<CardConfig, "start_view" | "start_view_portrait"> | null | undefined, upright: boolean): StartView | null {
+  return (upright ? c?.start_view_portrait : undefined) ?? c?.start_view ?? null;
+}
 
 /** The template a card names (by its id or an earlier one), if the plan has it. */
 export function cardTemplate(b: Building | null | undefined, id: string | undefined): CardTemplate | undefined {

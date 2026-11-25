@@ -104,3 +104,11 @@ test("Cozy's unlit shade is the one Evening already shows (#474)", () => {
   assert.equal(unlitShade("day", true), unlitShade("neon", true));
   assert.equal(unlitShade("day", true), unlitShade("neon", false));
 });
+
+test("the walls are left out of the rule that turns neon leftovers grey (#522)", async () => {
+  const { readFileSync } = await import("node:fs");
+  const theme = readFileSync(new URL("./theme.ts", import.meta.url), "utf8");
+  const viewer = readFileSync(new URL("./viewer3d.ts", import.meta.url), "utf8");
+  assert.match(theme, /#ifdef FP3D_WALL\s+vec3 cc = c;\s+#else\s+vec3 cc = \(!tint/);
+  assert.ok(viewer.includes('{ defines: { FP3D_WALL: "" } }'));
+});

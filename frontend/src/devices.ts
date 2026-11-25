@@ -1156,12 +1156,53 @@ function isPower(hass: HomeAssistant, id: string): boolean {
   return id.startsWith("sensor.") && hass.states[id]?.attributes.device_class === "power";
 }
 
-/** Power sensor of an entity's device. */
-function devicePower(hass: HomeAssistant, id: string): string | null {
-  if (isPower(hass, id)) return id;
-  const device = hass.entities?.[id]?.device_id;
+/**
+ * Power sensor of an entity: the entity itself, or a power sensor of the same device. On a hub (one device for a
+ * whole house, its entities in several areas) only a power sensor in the entity's own area counts, else every light
+ * of the house would get the first meter of the hub (#243).
+ */
+export function powerSensorOf(hass: HomeAssistant, entityId: string): string | null {
+  if (isPower(hass, entityId)) return entityId;
+  // a motion, door or presence sensor uses no power worth a pin: the meter of its device (a wired presence sensor,
+  // a hub) belongs to something else, and the pin said "3 W" at a motion sensor (#337)
+  if (entityId.startsWith("binary_sensor.")) return null;
+  const device = hass.entities?.[entityId]?.device_id;
   if (!device) return null;
-  return powerSensorsOf(hass, device).find((e) => e !== id) ?? null;
+  const hub = isHubDevice(hass, device);
+  const area = entityAreaId(hass, entityId);
+  const list = powerSensorsOf(hass, device).filter((e) => e !== entityId);
+  if (!list.length) return null;
+  // the entity's own meter first: PowerCalc names it after the entity (sensor.<light>_power) ...
+  const own = `sensor.${entityId.slice(entityId.indexOf(".") + 1)}_power`;
+  if (list.includes(own)) return own;
+  // ... or after its name ("Licht Bad Decke power" for the light "Bad Decke"): each meter goes to the entity of the
+  // device whose name it carries - the longest one, so "Kueche Insel power" is not the meter of "Kueche" (#527)
+  const label = (id: string) => String(hass.states[id]?.attributes.friendly_name ?? "").trim().toLowerCase();
+  const named = (meter: string, id: string): number => {
+    const obj = id.slice(id.indexOf(".") + 1);
+    const name = label(id);
+    if (obj.length >= 4 && meter.slice(meter.indexOf(".") + 1).includes(obj)) return obj.length;
+    return name.length >= 4 && label(meter).includes(name) ? name.length : 0;
+  };
+  const siblings = list.length > 1 || hub ? Object.values(hass.entities ?? {}).filter((e) => e.device_id === device && !e.entity_id.startsWith("sensor.")).map((e) => e.entity_id) : [entityId];
+  const ownerOf = (meter: string): string | null => {
+    let best: string | null = null;
+    let score = 0;
+    for (const id of siblings) {
+      const n = named(meter, id);
+      if (n > score) [best, score] = [id, n];
+    }
+    return best;
+  };
+  const owners = new Map(list.map((m) => [m, ownerOf(m)]));
+  const mine = list.find((m) => owners.get(m) === entityId);
+  if (mine) return mine;
+  // then one in the same area; a meter filed under another room, or named after another entity of the device,
+  // belongs to that one (#743)
+  const free = list.filter((m) => owners.get(m) === null);
+  const same = free.find((e) => area !== null && entityAreaId(hass, e) === area);
+  if (same || hub) return same ?? null;
+  return free.find((e) => area === null || entityAreaId(hass, e) === null || entityAreaId(hass, e) === area) ?? null;
 }
 
 /**
@@ -1222,7 +1263,7 @@ export function furnitureEntities(hass: HomeAssistant, floors: readonly Floor[])
       }
       let power: string | null = f.power === "none" ? null : (f.power ?? null);
       if (f.power == null) {
-        power = entity ? devicePower(hass, entity) : null;
+        power = entity ? powerSensorOf(hass, entity) : null;
         if (!power && pattern && room && !lamp) {
           const all = areaEntities(hass, room.area_id);
           power = all.find((id) => isPower(hass, id) && !used.has(id) && pattern.test(name(id))) ?? null;
@@ -1445,13 +1486,47 @@ export function robotRoom<R extends { name: string; area_id?: string | null }>(h
   return null;
 }
 
-/** The room a robot's name for it means ("Kitchen", "kitchen", the area's id). */
-export function roomNamed<R extends { name: string; area_id?: string | null }>(hass: HomeAssistant, rooms: readonly R[], raw: unknown): R | null {
+/**
+ * The room a robot's name for it means ("Kitchen", "kitchen", the area's id): the room named exactly so, else one whose
+ * name holds it or is held by it. `match` asks for one of the two only.
+ */
+export function roomNamed<R extends { name: string; area_id?: string | null }>(hass: HomeAssistant, rooms: readonly R[], raw: unknown, match?: "exact" | "loose"): R | null {
   if (typeof raw !== "string" || !raw || raw === "unknown" || raw === "unavailable") return null;
   const want = roomKey(raw);
   if (!want) return null;
   const names = (r: R) => [r.name, r.area_id ?? "", (r.area_id && hass.areas?.[r.area_id]?.name) || ""].map(roomKey).filter(Boolean);
-  return rooms.find((r) => names(r).includes(want)) ?? rooms.find((r) => names(r).some((n) => n.length >= 3 && (n.includes(want) || want.includes(n)))) ?? null;
+  return (
+    (match !== "loose" ? rooms.find((r) => names(r).includes(want)) : undefined) ??
+    (match !== "exact" ? rooms.find((r) => names(r).some((n) => n.length >= 3 && (n.includes(want) || want.includes(n)))) : undefined) ??
+    null
+  );
+}
+
+/**
+ * The room a robot with maps of several floors reports, on whichever floor it lies (idea: akobza, upstream 1132):
+ * one dock, and the robot is carried to another floor. The dock's floor comes first, then the others in the order
+ * given - a room named exactly so anywhere before a room merely named alike, so "Bad" upstairs does not catch
+ * "Bad unten". Floors in `skip` are left out: they have a dock of their own for this vacuum, which shows it there.
+ */
+export function robotRoomAcross<F extends { id: string; rooms: readonly { name: string; area_id?: string | null }[] }>(
+  hass: HomeAssistant,
+  floors: readonly F[],
+  dockFloor: string,
+  vacuum: string | null,
+  sensor: string | null,
+  skip: ReadonlySet<string> = new Set(),
+): { floor: F; room: F["rooms"][number] } | null {
+  const attrs = vacuum ? hass.states[vacuum]?.attributes : undefined;
+  const order = [...floors.filter((f) => f.id === dockFloor), ...floors.filter((f) => f.id !== dockFloor && !skip.has(f.id))];
+  for (const raw of [sensor ? hass.states[sensor]?.state : undefined, attrs?.current_room, attrs?.room, attrs?.current_segment]) {
+    for (const match of ["exact", "loose"] as const) {
+      for (const floor of order) {
+        const room = roomNamed<F["rooms"][number]>(hass, floor.rooms, raw, match);
+        if (room) return { floor, room };
+      }
+    }
+  }
+  return null;
 }
 
 /** Covers that are doors rather than blinds: a central "close all" leaves them alone. */

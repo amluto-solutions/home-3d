@@ -650,3 +650,13 @@ test("a roof that begins at a floor's own level sits on that floor: its rooms ar
   // the garage roof beside it at the same height has no room of the upper floor under it
   assert.equal(sectionFloor(b, { base: 2.6, x0: 13, z0: 0, x1: 20, z1: 6 })?.id, "eg");
 });
+
+test("a low roof beside a higher storey is no wing of the roof above it: it ends at the wall under that roof (#517)", () => {
+  // the upper storey's roof begins at 5.2 m; the garage's roof beside it has its ridge at about 3.2 m
+  const upper = section({ id: "upper", x0: 1.2, z0: 0, x1: 12.7, z1: 7.4, axis: "z", eave_a: 5.2, eave_b: 5.2, pitch_a: 25, pitch_b: 25, base: 5.2 });
+  const garage = section({ id: "garage", x0: -0.2, z0: 1.2, x1: 1.2, z1: 7.4, axis: "x", eave_a: 1.66, eave_b: 1.66, pitch_a: 26.57, pitch_b: 26.57, base: 1.66 });
+  assert.equal(wingJunction([upper, garage], garage), null);
+  // as high as the roof's eave and above, it is a wing again
+  const high = { ...garage, eave_a: 4.5, eave_b: 4.5, base: 4.5 };
+  assert.ok(wingJunction([upper, high], high));
+});

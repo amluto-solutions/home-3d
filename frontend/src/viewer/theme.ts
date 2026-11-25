@@ -347,9 +347,14 @@ vec3 fp3dStyled(vec3 c, bool line, float mx, float sat, bool tint) {
   // written without branches (selects only): the house's programs compile faster so
   float l = dot(c, vec3(0.299, 0.587, 0.114));
   float k = fp3dStyleLight();
-  // natural materials: neon leftovers the natural palette does not reach (devices, small parts) turn a neutral grey;
+  // natural materials: neon leftovers the natural palette does not reach (devices, small parts) turn a neutral grey -
+  // not on the walls: they have no leftovers, and a wall painted dark blue turned grey, or grey where it is shaded (#522);
   // shaded, with the floors' structure; in the evening the house dims warm
+#ifdef FP3D_WALL
+  vec3 cc = c;
+#else
   vec3 cc = (!tint && mx < 0.2 && c.b > c.r * 2.0 && c.b > c.g * 1.5) ? vec3(0.32 + l * 1.4) : c;
+#endif
   vec3 nat = cc * (k * fp3dStyleFloor(cc)) * mix(vec3(1.0), vec3(0.62, 0.52, 0.42), uStDim) * (1.0 - 0.75 * uStDim);
   // a palette: dark to light by the neon brightness, with some of its hue
   vec3 g = mix(uStDark, uStLight, clamp(uStLift + sqrt(l) * uStContrast, 0.0, 1.0));
