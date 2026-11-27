@@ -19,7 +19,7 @@ import { basicTypes, buildIndex, roomKindOf, type LibraryEntry } from "../../lib
 import { packsVersion as libPacksVersion } from "../../packs.ts";
 import { setCameraLook } from "../../camera-models.ts";
 import { furnitureName } from "../../furniture-names.ts";
-import { furnitureSize, isElectric, isRobotVacuum, packItemName, packName, packType, type FurniturePack } from "../../packs.ts";
+import { furnitureSize, isElectric, isRobotVacuum, packItem, packItemName, packName, packType, type FurniturePack } from "../../packs.ts";
 import { MAX_MOUNT_Y, round, isEnergyDevice, EN_HASS, type PlaceTarget } from "./helpers.ts";
 import type { Fp3dEditor } from "../editor.ts";
 import { need, loadItemPicker, loadLibrary, loadPackBrowser } from "./lazy.ts";
@@ -273,9 +273,11 @@ export class FurniturePart {
     // placed by a click (#76): into the room under the pointer itself (#173), not under the snapped point
     if (target) this._roomId = target.roomId ?? this._roomId;
     const [w, d, h0] = furnitureSize(type);
-    // stairs reach up to the next floor
+    // stairs reach up to the next floor, a pack's stairs too (the ones that open the floor above): they came at their
+    // own fixed height whatever the storey (#557, NeonPlan 3D 4.0.3)
     const above = this._doc.floors.filter((f) => f.elevation > floor.elevation).sort((p, q) => p.elevation - q.elevation)[0];
-    const h = STAIR_TYPES.has(type) ? round(above ? above.elevation - floor.elevation : floor.height + 0.25) : h0;
+    const stairs = STAIR_TYPES.has(type) || !!packItem(type)?.hole;
+    const h = stairs ? round(above ? above.elevation - floor.elevation : floor.height + 0.25) : h0;
     const room = this.room;
     const [x, z] = at ?? (room ? centroid(room.points) : this.toWorld(this._size.w / 2, this._size.h / 2));
     let rotation = target?.wall ? target.rotation : 0;

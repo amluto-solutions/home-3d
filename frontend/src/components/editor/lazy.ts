@@ -21,6 +21,11 @@ export const loadTimeField = loadParts;
 export const loadExtensions = loadParts;
 /** The item picker (#293): a chunk of its own, as only an open Item field draws it. */
 export const loadItemPicker = once(() => import("../item-picker.ts"));
+/** The "Show and hide" rules (#539): a chunk of its own, drawn when an item's visibility, a device or the solar card settings open. */
+let rulesPart: typeof import("./show-rules.ts") | null = null;
+export const loadShowRules = once(() => import("./show-rules.ts").then((m) => void (rulesPart = m)));
+/** The rules chunk once it is there (null: still loading; loadShowRules starts it). */
+export const rulesChunk = () => rulesPart;
 /** The icon picker (#327): a chunk of its own, drawn by every icon field. */
 export const loadIconPicker = once(() => import("./icon-picker.ts"));
 /** The Library's Browse tab (#336): a chunk of its own, as only an editor who opens the tab draws it. */

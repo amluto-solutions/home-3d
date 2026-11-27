@@ -1,4 +1,4 @@
-// The item panel: the furniture form and its fields, floor, actions, show-when, state links, colours and paint,
+// The item panel: the furniture form and its fields, floor, actions, state links, colours and paint,
 // household, awning, motion, tech, gangs, main links, parking, car and picture rules.
 
 import { html, nothing } from "lit";
@@ -13,7 +13,7 @@ import { ACTION_TYPES, GESTURES, actionTypeChoosable, parseActionData, performAc
 import { furnitureFootprint } from "../../model.ts";
 import { formatNumber, type I18nKey } from "../../i18n.ts";
 import { type FurnitureField } from "../../item-panel.ts";
-import { gangPlateWidth, gangsOf, splitAliases, MAX_GANGS, TECH_SIZE, type Gang, isLamp, pointInPolygon, polygonArea, uid, type Furniture, type ShowInterval, type ShowWhen, type ScreenPicture, clearFirstState } from "../../model.ts";
+import { gangPlateWidth, gangsOf, splitAliases, MAX_GANGS, TECH_SIZE, type Gang, isLamp, pointInPolygon, polygonArea, uid, type Furniture, type ScreenPicture, clearFirstState } from "../../model.ts";
 import { itemColourRoles, itemRoleColour, parseHex, roleColour, setRoleColour, type ColourRole } from "../../colour-roles.ts";
 import { familyPresets, partFamily, partFinishes, partName, partOrder } from "../../colour-parts.ts";
 import { ownMaterial, setRoleMaterial, usualMaterial, type Material } from "../../role-materials.ts";
@@ -22,7 +22,6 @@ import { itemTempSource, shadeKind } from "../../room-effects.ts";
 import { energyRole, isElectric, isRobotVacuum, mountBase, packInfo, packItem, packItemName, packMotion, packName, packType } from "../../packs.ts";
 import { packSpinAxis } from "../../live-parts.ts";
 import { isThermostatItem, linkField, linkFilter } from "../../furniture-links.ts";
-import { itemShown, setIntervalPart } from "../../show-when.ts";
 import { MAX_MOUNT_Y, round, isEnergyDevice, volumeMeter, numberish, binaryish } from "./helpers.ts";
 import { colourReset } from "../../colour-reset.ts";
 import { SIGN_DEFAULT, SIGN_FONTS, signFont } from "../../neon-sign.ts";
@@ -283,73 +282,6 @@ export class ItemFormPart {
             : nothing}
         </div>`;
       })}`;
-  }
-
-  /** When the item shows (#15): while an entity is available and/or inside intervals of days and times of day (editors only). */
-  renderShowWhen(this: Fp3dEditor, f: Furniture) {
-    const rule: ShowWhen = f.show_when ?? {};
-    const list = rule.intervals ?? [];
-    const off = !this.isEditor;
-    const set = (patch: ShowWhen) => {
-      const next = { ...rule, ...patch };
-      // the state options only mean something with an entity: without one they go (#338)
-      if (!next.entity || next.entity === "none") {
-        delete next.when;
-        delete next.state;
-        delete next.unavailable;
-      }
-      this.updateFurniture({ show_when: (next.entity && next.entity !== "none") || next.intervals?.length ? next : null });
-    };
-    // never half-open (#46): picking one end fills the other, clearing one clears both
-    const setAt = (i: number, patch: ShowInterval) => set({ intervals: list.map((iv, j) => (j === i ? setIntervalPart(iv, patch) : iv)) });
-    // days are kept without a year ("MM-DD"); the picker shows a leap year so 29 February can be picked
-    const field = (label: string, kind: "date" | "time", v: string | null | undefined, on: (v: string | null) => void) =>
-      html`<label class="fp3d-field"
-        >${label}
-        <input type=${kind} ?disabled=${off} .value=${v ? (kind === "date" ? `2028-${v}` : v) : ""} @change=${(e: Event) => {
-          const raw = (e.target as HTMLInputElement).value;
-          on(raw ? (kind === "date" ? raw.slice(5) : raw) : null);
-        }}
-      /></label>`;
-    return html`<div class="fp3d-when-section">
-      <div class="fp3d-with-info"><h4>${this.t("show_when")}</h4>${this.infoButton("show_when_hint", this.t("show_when"))}</div>
-      <div class="fp3d-form">
-        ${this.entitySelect(this.t("show_when_entity"), rule.entity ?? null, undefined, this.entityOptions(() => true), (v) => set({ entity: v === "none" ? null : v }))}
-        ${rule.entity && rule.entity !== "none"
-          ? html`<label class="fp3d-field"
-                >${this.t("show_when_state")}
-                <select ?disabled=${off} @change=${(e: Event) => set({ when: ((e.target as HTMLSelectElement).value || null) as ShowWhen["when"] })}>
-                  <option value="" ?selected=${!rule.when}>${this.t("show_when_available")}</option>
-                  <option value="on" ?selected=${rule.when === "on"}>${this.t("show_when_on")}</option>
-                  <option value="off" ?selected=${rule.when === "off"}>${this.t("show_when_off")}</option>
-                  <option value="state" ?selected=${rule.when === "state"}>${this.t("show_when_typed")}</option>
-                </select></label
-              >
-              ${rule.when === "state"
-                ? html`<label class="fp3d-field"
-                    >${this.t("show_when_typed_state")}
-                    <input type="text" maxlength="255" ?disabled=${off} .value=${rule.state ?? ""} @change=${(e: Event) => set({ state: (e.target as HTMLInputElement).value.trim() || null })}
-                  /></label>`
-                : nothing}
-              ${rule.when
-                ? html`<label class="fp3d-field"
-                    >${this.t("show_when_unavailable")}
-                    <select ?disabled=${off} @change=${(e: Event) => set({ unavailable: (e.target as HTMLSelectElement).value === "hide" ? "hide" : null })}>
-                      <option value="" ?selected=${rule.unavailable !== "hide"}>${this.t("show_when_keep")}</option>
-                      <option value="hide" ?selected=${rule.unavailable === "hide"}>${this.t("show_when_hide")}</option>
-                    </select></label
-                  >`
-                : nothing}`
-          : nothing}
-        ${list.map(
-          (iv, i) => html`${field(this.t("show_from"), "date", iv.from, (v) => setAt(i, { from: v }))} ${field(this.t("show_to"), "date", iv.to, (v) => setAt(i, { to: v }))}
-            ${field(this.t("show_start"), "time", iv.start, (v) => setAt(i, { start: v }))} ${field(this.t("show_end"), "time", iv.end, (v) => setAt(i, { end: v }))}
-            <button class="fp3d-pin" aria-label=${this.t("delete")} title=${this.t("delete")} ?disabled=${off} @click=${() => set({ intervals: list.filter((_, j) => j !== i) })}>✕</button>`,
-        )}
-      </div>
-      ${off || list.length >= 12 ? nothing : html`<div class="fp3d-actions"><button class="fp3d-btn" @click=${() => set({ intervals: [...list, {}] })}>+ ${this.t("show_add_interval")}</button></div>`}
-      ${f.show_when && this.hass && !itemShown(f, this.hass.states, new Date()) ? html`<p class="fp3d-sub">${this.t("show_when_ghost")}</p>` : nothing}
-    </div>`;
   }
 
   /**

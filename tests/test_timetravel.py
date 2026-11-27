@@ -211,6 +211,31 @@ def test_rule_trackers_come_from_the_show_when_rules() -> None:
     assert rule_trackers({}) == set()
 
 
+def test_rule_trackers_come_from_the_show_rules_too() -> None:
+    """#535: a show rule's fixed person or tracker is replayed as home or away; "self" is never an entity."""
+    cond = lambda entity: {"type": "state", "entity": entity, "when": "on"}  # noqa: E731
+    building = {
+        "floors": [
+            {
+                "furniture": [
+                    {
+                        "type": "lamp",
+                        "show_rules": {"icon": {"match": "any", "conditions": [cond("person.bob"), {"type": "time"}]}},
+                    },
+                    {"type": "lamp", "show_rules": {"card": {"conditions": [cond("self"), cond("light.porch")]}}},
+                    {"type": "lamp", "show_rules": {"icon": None}},
+                    {"type": "lamp", "show_rules": None},
+                ],
+                "placements": [
+                    {"entity_id": "switch.a", "show_rules": {"card": {"conditions": [cond("device_tracker.van")]}}},
+                    {"entity_id": "switch.b", "show_rules": {"icon": {"conditions": "broken"}}},
+                ],
+            }
+        ]
+    }
+    assert rule_trackers(building) == {"person.bob", "device_tracker.van"}
+
+
 async def _setup(hass: HomeAssistant) -> None:
     await async_setup_component(hass, "http", {})
     entry = MockConfigEntry(domain=DOMAIN, data={})

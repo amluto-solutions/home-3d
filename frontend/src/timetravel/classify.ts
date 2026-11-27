@@ -35,14 +35,22 @@ export function locationLike(hass: HomeAssistant, id: string): boolean {
   return LOCATION_NAME.test(`${id} ${String(attrs.friendly_name ?? "")} ${key}`);
 }
 
-/** The people and trackers an item's "When it shows" rule follows (#394): replayed as home or away only. */
+/** The fixed entities of an item's show rules (#535): "this item" is the item itself, never one of its own. */
+function showRuleEntities(item: Pick<Furniture, "show_rules">): string[] {
+  const rules = item.show_rules;
+  return [rules?.icon, rules?.card].flatMap((r) => (Array.isArray(r?.conditions) ? r.conditions : [])).flatMap((c) => (c?.type === "state" && typeof c.entity === "string" ? [c.entity] : []));
+}
+
+/** The people and trackers an item's "When it shows" rule (#394) or show rules (#535) follow: replayed as home or away only. */
 export function ruleTrackers(building: Building): string[] {
   const out = new Set<string>();
-  for (const fl of building.floors)
-    for (const f of fl.furniture) {
-      const e = f.show_when?.entity;
-      if (e && (e.startsWith("person.") || e.startsWith("device_tracker."))) out.add(e);
-    }
+  const add = (e: string | null | undefined) => {
+    if (e && (e.startsWith("person.") || e.startsWith("device_tracker."))) out.add(e);
+  };
+  for (const fl of building.floors) {
+    for (const f of fl.furniture) [f.show_when?.entity, ...showRuleEntities(f)].forEach(add);
+    for (const p of fl.placements) showRuleEntities(p).forEach(add);
+  }
   return [...out];
 }
 

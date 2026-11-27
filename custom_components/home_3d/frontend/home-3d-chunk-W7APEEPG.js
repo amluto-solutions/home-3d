@@ -1,0 +1,1 @@
+var l="card_hold";var u="card_zoom_close";function s(n){try{return globalThis.localStorage?.getItem(`home3d.${n}`)??null}catch{return null}}function r(n){if(n===null||n.trim()==="")return null;let t=Number(n);return Number.isFinite(t)&&t>=0?Math.min(t,3600):null}function c(n){return(r(n)??0)*1e3}function i(n){return(r(n)??30)*1e3}export{l as a,u as b,s as c,c as d,i as e};

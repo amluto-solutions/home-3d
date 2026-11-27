@@ -237,6 +237,55 @@ export interface ShowWhen {
 
 export type ShowWhenState = "on" | "off" | "state";
 
+/**
+ * The entity of a rule condition that means the item itself (#535): its own main entity, looked up when the rule is
+ * judged and never written as an entity id, so a rule copied to another item works there at once. No entity id is
+ * without a dot, so it never stands for one.
+ */
+export const THIS_ITEM = "self";
+
+/** What a state condition asks of its entity (#535, #538): on, off, one of typed states, or a number above or below a value. */
+export const RULE_WHENS = ["on", "off", "state", "above", "below"] as const;
+export type RuleWhen = (typeof RULE_WHENS)[number];
+
+/** A condition on an entity's state (#535). */
+export interface StateCondition {
+  type: "state";
+  /** `THIS_ITEM` (the item's own entity, found when judged) or one fixed entity id. */
+  entity: string;
+  when: RuleWhen;
+  /** `when: "state"`: the state(s) to match, comma separated, any letter case (empty: any state). */
+  state?: string | null;
+  /** `when: "above"` / `"below"`: the number the state is compared with (strictly above or below; #538). */
+  value?: number | null;
+  /** An unavailable, unknown or missing entity: the condition counts as met ("show", the default) or not ("hide"). */
+  unavailable?: "show" | "hide" | null;
+}
+
+/** A condition on the clock (#535): a time of day ("HH:MM", over midnight when start > end) and/or weekdays. */
+export interface TimeCondition {
+  type: "time";
+  /** From start up to (not including) end; both or neither (null = all day). Over midnight the night belongs to the day it started. */
+  start?: string | null;
+  end?: string | null;
+  /** Weekdays, 0 = Monday … 6 = Sunday (null or empty = every day). */
+  days?: number[] | null;
+}
+
+export type RuleCondition = StateCondition | TimeCondition;
+
+/** When something shows (#535): all of the conditions are met, or any of them. No conditions: it always shows. */
+export interface ShowRule {
+  match: "all" | "any";
+  conditions: RuleCondition[];
+}
+
+/** The show rules of a placed device or furniture item (#535): when its icon shows (#536) and when its card shows (#537). */
+export interface ShowRules {
+  icon?: ShowRule | null;
+  card?: ShowRule | null;
+}
+
 export interface Furniture {
   /** Colour per role (#12): "#rrggbb" for each overridden role; missing roles (or null) follow the theme. */
   colors?: RoleColours | null;
@@ -244,6 +293,8 @@ export interface Furniture {
   materials?: RoleMaterials | null;
   /** Seasonal and conditional items (#15): when it shows in 3D (null = always). */
   show_when?: ShowWhen | null;
+  /** When its icon and its card show (#535; null = as before: the icon setting and the card's own options decide). */
+  show_rules?: ShowRules | null;
   /** A rack (a pack item with a `rack_frame`, #113): the gear in its U positions (rules in rack.ts). */
   rack?: RackContents | null;
   /** Fixed against moving by accident. */
@@ -460,6 +511,8 @@ export interface Placement {
   actions?: ItemActions | null;
   /** Its marker in 3D: automatic (null), always shown, shown without watts, or hidden. */
   marker?: MarkerShow | null;
+  /** When its icon and its card show (#535; null = as before). "This item" is `entity_id`. */
+  show_rules?: ShowRules | null;
   /** An own symbol for the marker: a Material Design icon name without "mdi:" (null = by kind). */
   icon?: string | null;
   /** An own name in the plan (null = the entity's name), without renaming the entity in Home Assistant. */
@@ -689,6 +742,8 @@ export interface HologramSettings {
   device_room?: boolean;
   /** The house balance and the plant cards also in a floor view, on the floor of their field (off by default, #193). */
   plant_floor?: boolean;
+  /** When the main solar card (the house balance) shows (#537; null = always). "This item" is the plant's main sensor. */
+  card_rule?: ShowRule | null;
 }
 
 export const DEFAULT_HOLOGRAM: HologramSettings = { field: null, size: 1, right: 0, up: 0 };
@@ -991,7 +1046,7 @@ export interface BuildingSettings {
    * Household: from which hour the day before a bin glows (null = 14) and until which hour on the day (null = 12);
    * only the bins of the next pickup wear a tag (`bin_next_only`), tags only from `bin_days` days before (null = always).
    */
-  household?: { bin_from?: number | null; bin_until?: number | null; notes?: EntityRef; bin_next_only?: boolean | null; bin_days?: number | null; /** Calendars (calendar.*) whose entries of today stand in "Today in the household". */ calendars?: string[] | null } | null;
+  household?: { bin_from?: number | null; bin_until?: number | null; notes?: EntityRef; bin_next_only?: boolean | null; bin_days?: number | null; /** Calendars (calendar.*) whose entries of today stand in "Today in the household". */ calendars?: string[] | null; /** When the card "Today in the household" shows (#537; null = always); it has no sensor of its own for "this item". */ card_rule?: ShowRule | null } | null;
   /** The floor the editor opens with (null: the first of the list) (D418). */
   editor_floor?: string | null;
   /** Located people in 3D: a neon figure (null = default), a pin, or not shown. */
@@ -1150,6 +1205,20 @@ export function outdoorZones(floor: Floor): Room[] {
 /** The rooms of a floor and its outdoor areas that act as rooms. */
 export function zonesOf(floor: Floor): Room[] {
   return [...floor.rooms, ...outdoorZones(floor)];
+}
+
+/**
+ * Whether a point of the floor belongs to a room or area: inside its outline, and not inside a smaller one lying in
+ * it. A garden drawn around the house took every device of the house for its own, so its panel listed them and its
+ * "everything off" switched them (#555); a room inside another keeps its devices to itself. A room also wins over an
+ * area however large it is. Ported from NeonPlan 3D 4.0.3 (MIT, Mastershort).
+ */
+export function inZone(floor: Floor | null, room: Room): (x: number, z: number) => boolean {
+  const size = polygonArea(room.points);
+  const inner = (floor ? zonesOf(floor) : []).filter(
+    (r) => r.id !== room.id && r.points.length >= 3 && ((room.outdoor && !r.outdoor) || polygonArea(r.points) < size - 0.01),
+  );
+  return (x, z) => room.points.length >= 3 && pointInPolygon([x, z], room.points) && !inner.some((r) => pointInPolygon([x, z], r.points));
 }
 
 /** The directions an area can fall towards: +x (right in the plan), −x, +z (down in the plan), −z. */
@@ -1525,7 +1594,7 @@ export interface PresenceLink {
  * version (custom_components/home_3d/migrations.py) before anyone sees it; the frontend never changes the version of a
  * plan it was given, so a plan it saves is migrated again where needed (an older backend keeps a version-1 plan).
  */
-export const PLAN_VERSION = 7;
+export const PLAN_VERSION = 8;
 
 /** Whether `version` is one of a plan this frontend reads (1 up to PLAN_VERSION). */
 export function knownPlanVersion(version: unknown): version is number {

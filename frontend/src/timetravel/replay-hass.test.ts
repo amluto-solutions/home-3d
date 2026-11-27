@@ -363,6 +363,19 @@ test("the request: the person or tracker of a show/hide rule is fetched as a car
   assert.ok(!req.hidden.includes("person.mia"));
 });
 
+test("the request: the fixed person or tracker of a show rule is fetched like that of a show/hide rule; 'this item' is none (#535)", () => {
+  const { hass } = live();
+  hass.states["person.mia"] = { entity_id: "person.mia", state: "home", attributes: { device_trackers: ["device_tracker.phone"] } };
+  hass.states["device_tracker.van"] = { entity_id: "device_tracker.van", state: "home", attributes: {} };
+  const b = emptyBuilding();
+  b.floors.push(newFloor("ground", "Ground", 0));
+  const cond = (entity: string) => ({ type: "state" as const, entity, when: "on" as const });
+  b.floors[0].furniture.push({ id: "l", type: "lamp_floor", x: 0, z: 0, w: 1, d: 1, h: 1, rotation: 0, variant: null, show_rules: { icon: { match: "any", conditions: [cond("person.mia"), cond("self"), { type: "time" }] } } });
+  b.floors[0].placements.push({ entity_id: "switch.a", x: 0, z: 0, y: null, show_rules: { card: { match: "all", conditions: [cond("device_tracker.van"), cond("light.porch")] } } });
+  const req = historyRequest(hass, b, { entities: [], openings: [], furniture: [], low: false });
+  assert.deepEqual(req.cars.sort(), ["device_tracker.van", "person.mia"]);
+});
+
 test("the request: a car's tracker is fetched for the car feature, a person's own tracker never", () => {
   const { hass } = live();
   hass.states["device_tracker.car"] = { entity_id: "device_tracker.car", state: "home", attributes: {} };

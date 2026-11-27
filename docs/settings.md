@@ -47,6 +47,15 @@ the dialog, and the list of topics folds away. **All settings** brings the list 
 
 In a narrow window the topics become a choice under the search box.
 
+## Card times for this device
+
+**Settings → 3D view** has two times, in seconds, that belong to the device you are on:
+
+- **Close a card shown larger after** closes a [card shown larger](card-zoom.md) after this time without a touch. Empty:
+  it stays open.
+- **A touched card follows its rule again after** says how long a touched card stays although its
+  [show rule](show-and-hide.md#a-card-you-touch) would hide it. Empty: 30 seconds.
+
 ## Surroundings: gable roofs for the neighbours
 
 **Settings → Scene → Surroundings → Neighbours' houses with a gable roof** gives the houses from the map a simple gable

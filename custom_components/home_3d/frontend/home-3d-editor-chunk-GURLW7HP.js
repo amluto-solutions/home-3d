@@ -1,0 +1,1 @@
+import{e as r}from"./home-3d-editor-chunk-AQSZK3EU.js";import{A as m,k as a,u as i}from"./home-3d-editor-chunk-CJKJVRX6.js";function f(t,e){if(!a(e))return r(t,`furn_${e}`);let n=i(e);return n?m(n,t?.language??navigator.language):r(t,"pack_missing_item")}export{f as a};

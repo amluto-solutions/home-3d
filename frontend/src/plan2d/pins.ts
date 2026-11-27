@@ -8,10 +8,11 @@ type MarkerMode = "none" | "important" | "all" | "room";
 /**
  * Whether a marker carries a pin in 2D: every pin the 3D view shows (`in3d`), and lights and cameras, whose pins the
  * 3D view leaves out because their lamp or camera model stands for them. The plan has no models, and a lamp seen
- * from above is too small to find with a finger on a wall tablet.
+ * from above is too small to find with a finger on a wall tablet. `ruled`: an icon rule decided `in3d` (#536).
  */
-export function pinIn2d(m: Pick<DeviceMarker, "id" | "show" | "lamp" | "model" | "furnitureId">, mode: MarkerMode, in3d: boolean): boolean {
-  if (in3d) return true;
+export function pinIn2d(m: Pick<DeviceMarker, "id" | "show" | "lamp" | "model" | "furnitureId">, mode: MarkerMode, in3d: boolean, ruled = false): boolean {
+  // an icon rule (#536) decided `in3d`: the plan follows it, lamps and cameras too
+  if (in3d || ruled) return in3d;
   if (m.show === "never" || mode === "none" || mode === "room") return false;
   return !!m.lamp || !!m.model;
 }

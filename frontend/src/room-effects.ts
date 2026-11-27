@@ -3,7 +3,7 @@
 
 import { areaEntities, toCelsius, tempUnit } from "./devices.ts";
 import { isPackHeater } from "./packs.ts";
-import { pointInPolygon, type Building, type EffectSettings, type Floor, type Furniture, type Room } from "./model.ts";
+import { inZone, type Building, type EffectSettings, type Floor, type Furniture, type Room } from "./model.ts";
 import type { HomeAssistant } from "./types.ts";
 
 /** A wet leak sensor's room floor. */
@@ -27,7 +27,7 @@ export function roomLiveSensors(hass: HomeAssistant, floor: Floor | null, room: 
   if (chosen) return hass.states[chosen] ? [chosen] : [];
   const classes = LIVE_CLASSES[kind];
   const fits = (id: string) => id.startsWith("binary_sensor.") && classes.has(String(hass.states[id]?.attributes.device_class ?? ""));
-  const inRoom = (x: number, z: number) => room.points.length >= 3 && pointInPolygon([x, z], room.points);
+  const inRoom = inZone(floor, room);
   const placed = floor?.placements.filter((p) => fits(p.entity_id)) ?? [];
   const here = placed.filter((p) => inRoom(p.x, p.z)).map((p) => p.entity_id);
   const elsewhere = new Set(placed.filter((p) => !inRoom(p.x, p.z)).map((p) => p.entity_id));

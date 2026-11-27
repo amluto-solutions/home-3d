@@ -1,6 +1,6 @@
 // Seasonal and conditional items (#15): an item shows while an entity is available and/or inside one of its intervals.
 
-import type { Building, Furniture, ShowInterval, ShowWhen } from "./model.ts";
+import type { Building, Furniture, ShowInterval, ShowWhen, ShowWhenState } from "./model.ts";
 import type { HassEntity } from "./types.ts";
 
 const two = (n: number) => String(n).padStart(2, "0");
@@ -75,16 +75,29 @@ export function onOff(entityId: string, state: string): boolean | null {
   return /^(person|device_tracker)\./.test(entityId) ? false : null;
 }
 
+/** A state that says nothing: unavailable, unknown or missing (the entity is gone). */
+export function absentState(state: string | undefined): state is undefined {
+  return state === undefined || state === "unavailable" || state === "unknown";
+}
+
+/**
+ * Whether an entity's (present) state is on, off, or one of the typed states (comma separated, any letter case; none
+ * typed: any state). Shared by "When it shows" (#338) and the show rules (#535).
+ */
+export function stateIs(entityId: string, state: string, when: ShowWhenState, typed?: string | null): boolean {
+  if (when === "state") {
+    const wanted = (typed ?? "").split(",").map((x) => x.trim().toLowerCase()).filter(Boolean);
+    return !wanted.length || wanted.includes(state.trim().toLowerCase());
+  }
+  return onOff(entityId, state) === (when === "on");
+}
+
 /** Whether the item's entity condition (#338) lets it show: only rules with `when` look at the state, not at availability alone. */
 function stateShown(rule: ShowWhen, states: Record<string, HassEntity>): boolean {
   const e = rule.entity as string;
   const state = states[e]?.state;
-  if (state === undefined || state === "unavailable" || state === "unknown") return rule.unavailable !== "hide";
-  if (rule.when === "state") {
-    const wanted = (rule.state ?? "").split(",").map((x) => x.trim().toLowerCase()).filter(Boolean);
-    return !wanted.length || wanted.includes(state.trim().toLowerCase());
-  }
-  return onOff(e, state) === (rule.when === "on");
+  if (absentState(state)) return rule.unavailable !== "hide";
+  return stateIs(e, state, rule.when as ShowWhenState, rule.state);
 }
 
 /** Whether the item is hidden by an entity's state (#338), the cheap kind: the 3D view only collapses it, no rebuild. */

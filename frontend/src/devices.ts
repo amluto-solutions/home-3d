@@ -2,7 +2,7 @@
 // what their state looks like. Pure functions (no Lit, no three.js) so they can be tested directly.
 
 import type { Building, Furniture, EntityRef, Floor, LampMount, Opening, Placement, RoofWindow, Room, Vec2 } from "./model.ts";
-import { centroid, outdoorZones, pointInPolygon } from "./model.ts";
+import { centroid, inZone, outdoorZones, pointInPolygon } from "./model.ts";
 import { isCameraItem, isRobotVacuum, isThermostatItem, packInfo, packMotion, packScreen } from "./packs.ts";
 import { callServiceSafe } from "./failure.ts";
 import type { HassEntity, HomeAssistant } from "./types.ts";
@@ -316,7 +316,7 @@ export function roomClimateSensors(hass: HomeAssistant, floor: Floor | null, roo
   if (chosen === "none") return [];
   if (chosen) return hass.states[chosen] ? [chosen] : [];
   const dc = CLIMATE_CLASSES[key];
-  const inRoom = (x: number, z: number) => pointInPolygon([x, z], room.points);
+  const inRoom = inZone(floor, room);
   const placed = floor?.placements.filter((p) => p.entity_id.startsWith("sensor.")) ?? [];
   const here = placed.filter((p) => inRoom(p.x, p.z)).map((p) => p.entity_id);
   const elsewhere = new Set(placed.filter((p) => !inRoom(p.x, p.z)).map((p) => p.entity_id));
@@ -694,6 +694,20 @@ export function autoPlace(room: Room, entityIds: readonly string[], taken: reado
 const COVER_CLASSES = new Set([undefined, "shutter", "blind", "awning", "shade", "curtain", "window"]);
 const GARAGE_COVERS = new Set(["garage", "gate"]);
 const WINDOW_CONTACTS = new Set(["window", "opening"]);
+/**
+ * An "opening" that is no window: a heating valve or its actuator reports open the same way. Paired with a window, the
+ * window stood open in 3D whenever the room heated (#559, NeonPlan 3D 4.0.3). Told by its name.
+ */
+const NO_WINDOW = /valve|ventil|actuator|aktor|stellantrieb|klep/i;
+const A_WINDOW = /window|fenster|raam|fen[eê]tre|finestra|ventana/i;
+function isWindowContact(hass: HomeAssistant, id: string): boolean {
+  const st = hass.states[id];
+  const cls = st?.attributes.device_class as string | undefined;
+  if (!cls || !WINDOW_CONTACTS.has(cls)) return false;
+  if (cls === "window") return true;
+  const name = `${id} ${String(st?.attributes.friendly_name ?? "")}`;
+  return !NO_WINDOW.test(name) || A_WINDOW.test(name);
+}
 
 export interface OpeningEntities {
   cover: string | null;
@@ -748,7 +762,7 @@ export function legacyContactPairs(hass: HomeAssistant, floors: readonly Floor[]
       const cls = (id: string) => hass.states[id]?.attributes.device_class as string | undefined;
       const binary = (ok: (c: string | undefined) => boolean) => ids.filter((id) => kindOf(id) === "binary" && ok(cls(id)));
       const pairs = [
-        pair(own.filter((o) => o.type === "window"), binary((c) => WINDOW_CONTACTS.has(c!))),
+        pair(own.filter((o) => o.type === "window"), ids.filter((id) => kindOf(id) === "binary" && isWindowContact(hass, id))),
         pair(own.filter((o) => o.type === "door"), binary((c) => c === "door")),
         pair(own.filter((o) => o.type === "garage"), binary((c) => c === "garage_door")),
       ];
@@ -1312,7 +1326,7 @@ export function appColor(st: HassEntity | undefined): [number, number, number] |
  * panel. `more` are the other entities of the room's area, offered on request.
  */
 export function roomPanelEntities(hass: HomeAssistant, floor: Floor, room: Room, roofWindows: readonly RoofWindow[] = []): { shown: string[]; more: string[] } {
-  const inRoom = (x: number, z: number) => pointInPolygon([x, z], room.points);
+  const inRoom = inZone(floor, room);
   const furniture = furnitureEntities(hass, [floor]);
   const openings = openingEntities(hass, [floor]);
   const shown = [

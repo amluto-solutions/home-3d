@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "floors": [
     {
       "id": "text",
@@ -207,6 +207,51 @@
             }
           },
           "marker": "always",
+          "show_rules": {
+            "icon": {
+              "match": "all",
+              "conditions": [
+                {
+                  "type": "state",
+                  "entity": "self",
+                  "when": "above",
+                  "state": "text",
+                  "value": 50.5,
+                  "unavailable": "hide"
+                },
+                {
+                  "type": "time",
+                  "start": "22:00",
+                  "end": "06:00",
+                  "days": [
+                    0,
+                    6
+                  ]
+                }
+              ]
+            },
+            "card": {
+              "match": "any",
+              "conditions": [
+                {
+                  "type": "state",
+                  "entity": "light.sample_lounge",
+                  "when": "on",
+                  "state": "text",
+                  "value": -1.5,
+                  "unavailable": "show"
+                },
+                {
+                  "type": "time",
+                  "start": "07:30",
+                  "end": "08:00",
+                  "days": [
+                    3
+                  ]
+                }
+              ]
+            }
+          },
           "icon": "text",
           "mount_y": 2.5,
           "state_entity": "text",
@@ -408,6 +453,51 @@
             }
           },
           "marker": "always",
+          "show_rules": {
+            "icon": {
+              "match": "all",
+              "conditions": [
+                {
+                  "type": "state",
+                  "entity": "self",
+                  "when": "above",
+                  "state": "text",
+                  "value": 50.5,
+                  "unavailable": "hide"
+                },
+                {
+                  "type": "time",
+                  "start": "22:00",
+                  "end": "06:00",
+                  "days": [
+                    0,
+                    6
+                  ]
+                }
+              ]
+            },
+            "card": {
+              "match": "any",
+              "conditions": [
+                {
+                  "type": "state",
+                  "entity": "light.sample_lounge",
+                  "when": "on",
+                  "state": "text",
+                  "value": -1.5,
+                  "unavailable": "show"
+                },
+                {
+                  "type": "time",
+                  "start": "07:30",
+                  "end": "08:00",
+                  "days": [
+                    3
+                  ]
+                }
+              ]
+            }
+          },
           "icon": "text",
           "name": "text",
           "aliases": [
@@ -740,7 +830,29 @@
         "device_house": true,
         "device_room": true,
         "plant_floor": true,
-        "device_min_w": 25000
+        "device_min_w": 25000,
+        "card_rule": {
+          "match": "all",
+          "conditions": [
+            {
+              "type": "state",
+              "entity": "self",
+              "when": "above",
+              "state": "text",
+              "value": 50,
+              "unavailable": "hide"
+            },
+            {
+              "type": "time",
+              "start": "09:00",
+              "end": "18:00",
+              "days": [
+                0,
+                4
+              ]
+            }
+          ]
+        }
       },
       "cables": [
         {
@@ -800,7 +912,29 @@
       "notes": "todo.sample_notes",
       "calendars": [
         "calendar.sample_family"
-      ]
+      ],
+      "card_rule": {
+        "match": "any",
+        "conditions": [
+          {
+            "type": "time",
+            "start": "07:00",
+            "end": "09:00",
+            "days": [
+              5,
+              6
+            ]
+          },
+          {
+            "type": "state",
+            "entity": "binary_sensor.sample_dark",
+            "when": "below",
+            "state": "text",
+            "value": 3,
+            "unavailable": "show"
+          }
+        ]
+      }
     },
     "facade_color": "#d9c7a3",
     "style_day": "cozy",

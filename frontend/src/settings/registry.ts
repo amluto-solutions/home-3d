@@ -12,6 +12,7 @@ import { doorbellCamera, doorbellEntities, HOLD_DEFAULT, HOLD_MAX, HOLD_MIN } fr
 import { isRainSource, weatherEntity } from "../weather.ts";
 import { backdropImage } from "../backdrop.ts";
 import { TABLET_IDLE_DEFAULT } from "../kiosk.ts";
+import { CARD_HOLD_DEFAULT, CARD_HOLD_KEY, CARD_TIME_MAX, ZOOM_CLOSE_KEY } from "../card-times.ts";
 import { fetchPackUpdates, getVoiceSettings, setPackUpdateSettings, setVoiceSentences, type SentenceMode } from "../api.ts";
 import type { PackUpdateSettings, PackUpdateStatus } from "../pack-updates.ts";
 import { SHOW_PRESENCE } from "../flags.ts";
@@ -167,6 +168,7 @@ export type EmbedTopic =
   | "backdrop_picture"
   | "energy_balance"
   | "hologram"
+  | "household_card"
   | "presence";
 
 /** What a write did: a new plan to save, a promise (a setting kept elsewhere), or nothing more (a device pref). */
@@ -1191,6 +1193,9 @@ const embedded = (id: string, section: SectionId, card: string, topic: EmbedTopi
   read,
 });
 
+// when "Today in the household" shows (#537): its card rule, drawn by the editor's rule chunk
+const HOUSEHOLD_RULE: Setting[] = [embedded("household.card_rule", "household", "pinboard", "household_card", "hh_card_rule", "hh_card_rule_hint", ["rule", "hide", "show", "when", "time", "today"], "editor", (env) => householdOf(env).card_rule ?? null)];
+
 const FAVOURITES: Setting[] = [
   embedded("favorites", "favourites", "favourites", "favorites", "favorites", undefined, ["star", "scene", "script", "central menu"], "editor", (env) => env.building?.settings.favorites ?? []),
   embedded("buttons", "favourites", "buttons", "own_buttons", "own_buttons", "own_buttons_hint", ["button", "navigate", "dashboard", "popup", "browser_mod"], "editor", (env) => env.building?.settings.buttons ?? []),
@@ -1472,6 +1477,49 @@ const ADVANCED: Setting[] = [
 ];
 
 /** Where the dashboard cards' options are (they stay in each card's editor, as decided on #139). */
+/** This device's card times (card-times.ts): read by the 3D view and the zoom view each time they are used. */
+const CARD_TIMES: Setting[] = [
+  // #543: a touched card that its rule would hide stays this long without a touch on it, then follows its rule again
+  {
+    id: "card_hold",
+    section: "view3d",
+    card: "show",
+    scope: "device",
+    permission: "everyone",
+    label: "st_card_hold",
+    hint: "st_card_hold_hint",
+    keywords: ["card", "rule", "touch", "hold", "hide", "tablet", "seconds"],
+    control: { kind: "number", step: 5, min: 0, max: CARD_TIME_MAX, unit: "st_seconds", clearable: true },
+    default: CARD_HOLD_DEFAULT,
+    prefKeys: [CARD_HOLD_KEY],
+    read: (env) => {
+      const raw = env.prefs.get(CARD_HOLD_KEY);
+      const v = Number(raw);
+      return raw && Number.isFinite(v) && v >= 0 ? v : CARD_HOLD_DEFAULT;
+    },
+    write: (env, v) => env.prefs.set(CARD_HOLD_KEY, v === null ? null : String(Math.round(clamp(v, 0, CARD_TIME_MAX)))),
+  } as Setting<number | null>,
+  // #541: a card opened near full screen closes by itself after this time without a touch (a wall tablet); off by default
+  {
+    id: "card_zoom_close",
+    section: "view3d",
+    card: "show",
+    scope: "device",
+    permission: "everyone",
+    label: "st_zoom_close",
+    hint: "st_zoom_close_hint",
+    keywords: ["zoom", "larger", "full screen", "card", "close", "tablet", "timer"],
+    control: { kind: "number", step: 5, min: 0, max: CARD_TIME_MAX, unit: "st_seconds", clearable: true },
+    default: null,
+    prefKeys: [ZOOM_CLOSE_KEY],
+    read: (env) => {
+      const v = Number(env.prefs.get(ZOOM_CLOSE_KEY));
+      return env.prefs.get(ZOOM_CLOSE_KEY) && Number.isFinite(v) && v > 0 ? v : null;
+    },
+    write: (env, v) => env.prefs.set(ZOOM_CLOSE_KEY, v === null || v <= 0 ? null : String(Math.round(clamp(v, 1, CARD_TIME_MAX)))),
+  } as Setting<number | null>,
+];
+
 const CARDS: Setting[] = [
   /* the card templates (#495): saved in the plan, so every card that names one follows it */
   {
@@ -1502,7 +1550,7 @@ const CARDS: Setting[] = [
 ];
 
 /** Every setting, in the order the page shows them. */
-export const SETTINGS: Setting[] = [...GENERAL, ...SCENE, ...ENERGY, ...FUN, ...WARNINGS, ...EFFECTS, ...CAMERAS, ...HOUSEHOLD, ...FAVOURITES, ...LOOK, ...LANGUAGE, ...CARDS, ...SCREEN, ...VOICE, ...HOMES, ...ACCESS, ...PACKS, ...BACKUP, ...ADVANCED] as Setting[];
+export const SETTINGS: Setting[] = [...GENERAL, ...SCENE, ...ENERGY, ...FUN, ...WARNINGS, ...EFFECTS, ...CAMERAS, ...HOUSEHOLD, ...HOUSEHOLD_RULE, ...FAVOURITES, ...LOOK, ...LANGUAGE, ...CARDS, ...SCREEN, ...CARD_TIMES, ...VOICE, ...HOMES, ...ACCESS, ...PACKS, ...BACKUP, ...ADVANCED] as Setting[];
 
 // ---------------------------------------------------------------------------------------------------- lengths
 

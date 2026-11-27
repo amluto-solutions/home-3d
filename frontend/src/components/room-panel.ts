@@ -58,6 +58,7 @@ export class Fp3dRoomPanel extends LitElement {
     readOnly: { type: Boolean },
     noLook: { type: Boolean },
     canEdit: { type: Boolean },
+    viewOnly: { type: Boolean },
     collapsible: { type: Boolean },
     compact: { type: Boolean, reflect: true },
     _showAll: { state: true },
@@ -75,6 +76,8 @@ export class Fp3dRoomPanel extends LitElement {
   declare confirmEntities: Set<string> | null;
   /** Time travel: the panel shows the past and switches nothing. */
   declare readOnly: boolean;
+  /** With readOnly: the card only looks (#553), it is not the past that is shown. */
+  declare viewOnly: boolean;
   /** The 2D plan (#41) has no camera to look through: the button stays away. */
   declare noLook: boolean;
   /** What modules offer in this room (📢 an announcement …): a button each, a tap fires "sheet-open" with its id. */
@@ -104,6 +107,7 @@ export class Fp3dRoomPanel extends LitElement {
     this.building = null;
     this.sheets = null;
     this.readOnly = false;
+    this.viewOnly = false;
     this.canEdit = false;
     this.collapsible = false;
     this.compact = false;
@@ -271,7 +275,7 @@ export class Fp3dRoomPanel extends LitElement {
           <h2 tabindex="-1">${room.name}</h2>
           ${facts.length ? html`<p class="fp3d-rp-facts">${facts.join(" · ")}</p>` : nothing}
           ${this.renderHere(room)}
-          ${this.readOnly ? html`<p class="fp3d-rp-facts fp3d-rp-ro-note">⏪ ${this.t("tt_readonly")}</p>` : nothing}
+          ${this.readOnly ? html`<p class="fp3d-rp-facts fp3d-rp-ro-note">${this.viewOnly ? `👁 ${this.t("card_view_only")}` : `⏪ ${this.t("tt_readonly")}`}</p>` : nothing}
           ${this.sheets?.length && !this.readOnly
             ? html`<div class="fp3d-rp-sheets">
                 ${this.sheets.map(
@@ -299,7 +303,7 @@ export class Fp3dRoomPanel extends LitElement {
         : nothing}
       <div class="fp3d-rp-body">
         <!-- time travel: one disabled fieldset greys out and disables every control inside it, with one tooltip (#210) -->
-        <fieldset class="fp3d-rp-controls" ?disabled=${this.readOnly} title=${this.readOnly ? this.t("tt_past_no") : nothing}>
+        <fieldset class="fp3d-rp-controls" ?disabled=${this.readOnly} title=${this.readOnly ? this.t(this.viewOnly ? "card_view_only_hint" : "tt_past_no") : nothing}>
         ${!room.area_id
           ? html`<p class="fp3d-rp-note">${this.t(this.canEdit ? "panel_no_area" : "panel_no_area_viewer")}</p>`
           : !ids.length

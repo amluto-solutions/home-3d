@@ -1,5 +1,6 @@
 // Sidebar page: 3D view and editor.
 
+import { navEdges } from "./nav-edges.ts";
 import { defineElement } from "./define.ts";
 import { formatImperial, lengthUnit, parseLength, unitLabel } from "./units.ts";
 import { css, html, LitElement, nothing, unsafeCSS, type PropertyValues, type TemplateResult } from "lit";
@@ -83,11 +84,8 @@ function modeOf(page: string): Mode {
 }
 
 /** What counts as someone using a wall tablet: its idle return waits again (#92). */
-/** Whether a sideways-scrolling row has more past its start and its end (1 px of rounding allowed) (#259). */
-export const navEdges = (left: number, scrollWidth: number, clientWidth: number): { start: boolean; end: boolean } => ({
-  start: left > 1,
-  end: left + clientWidth < scrollWidth - 1,
-});
+/** The floor row's fade (#259), shared with the card's floor tabs (#548). */
+export { navEdges };
 /** How long (ms) a notice's buttons wait after it appears before a tap acts (#258). */
 export const NOTICE_ARM_MS = 800;
 /** Whether a tap at `now` came too soon after the notices appeared at `shownAt` to have been aimed at them (#258). */

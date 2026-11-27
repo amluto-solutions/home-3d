@@ -98,7 +98,7 @@ export const turnBy = (a: number, d: number): number => {
 
 /** Topics of the ⚙ settings menu (everything that belongs to the whole plan). */
 /** The parts of the editor the Settings page shows on their own (#139; the same names as its registry's EmbedTopic). */
-export type EditorTopic = "favorites" | "own_buttons" | "media_presets" | "director_triggers" | "editors" | "tablet_users" | "backup" | "backdrop_picture" | "energy_balance" | "hologram" | "presence" | `module:${string}`;
+export type EditorTopic = "favorites" | "own_buttons" | "media_presets" | "director_triggers" | "editors" | "tablet_users" | "backup" | "backdrop_picture" | "energy_balance" | "hologram" | "household_card" | "presence" | `module:${string}`;
 
 /** Wall view side bar: what stands or hangs at a wall, by kind. */
 export const WALL_CATS: Record<string, string[]> = {

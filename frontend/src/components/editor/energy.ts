@@ -4,7 +4,7 @@
 import { html, nothing, svg } from "lit";
 import { entityName, furnitureEntities } from "../../devices.ts";
 import { snapToWall } from "../../geometry/snap.ts";
-import { deviceSensors, energySummary, flowSegments, gridPoint, proposeEnergySensors, type EnergyPrefs, type FlowSegment, proposeMeters } from "../../energy.ts";
+import { deviceSensors, energySummary, flowSegments, gridPoint, mainSolarSensor, proposeEnergySensors, type EnergyPrefs, type FlowSegment, proposeMeters } from "../../energy.ts";
 import { energySensorFor } from "../../wire-ends.ts";
 import { ON_OFF_RATE, ratesFromSensors, tariffStates } from "../../cheap-rate.ts";
 import { prefsRates, type EnergyInfo, type RatePrefs } from "../../energy-rates.ts";
@@ -278,7 +278,32 @@ export class EnergyPart {
           ${this.t("holo_mirror")}</label
         >
       </div>
+      ${this.renderRules((m) =>
+        m.renderRuleBlock(this, { id: "main", title: this.t("holo_card_rule"), note: this.t("holo_card_rule_note"), rule: h.card_rule, self: this.mainCardSensor(), selfPick: true, set: (r) => set({ card_rule: r }) }),
+      )}
     </section>`;
+  }
+
+  /** When "Today in the household" shows (#537): its rule, on the Settings page; it has no sensor for "This item". */
+  renderHouseholdCardRule(this: Fp3dEditor) {
+    const rule = this._doc.settings.household?.card_rule;
+    return this.renderRules((m) =>
+      m.renderRuleBlock(this, {
+        id: "household",
+        title: this.t("hh_card_rule"),
+        rule,
+        self: null,
+        selfPick: false,
+        none: this.t("rules_s_none_hh"),
+        set: (r) => this.change((d) => (d.settings.household = { ...(d.settings.household ?? {}), card_rule: r })),
+      }),
+    );
+  }
+
+  /** "This item" in the main solar card's rule (#537): the sensor the 3D view judges (mainSolarSensor), found sensors included. */
+  mainCardSensor(this: Fp3dEditor): string | null {
+    const links = this.keptForPlan("solar-card|links", () => (this.hass ? furnitureEntities(this.hass, this._doc.floors) : new Map<string, { power: string | null }>()));
+    return mainSolarSensor(this._doc, (f) => this.devicePower(f, links));
   }
 
   /** A power sensor: device class power, or a plain sensor in W or kW (templates, MQTT, many meters have no class). */

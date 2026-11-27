@@ -52,6 +52,7 @@ const DEFAULTS: Partial<CardConfig> = {
   controls_hidden: false,
   controls_hide_after: 0,
   marker_names: false,
+  view_only: false,
   central: true,
   pets: true,
   ghost: true,
@@ -413,6 +414,19 @@ export class Floorplan3dCardEditor extends LitElement {
         }}
       />
       <span>${this.t("card_floor_thumbs")}<small>${this.t(this._config.floor ? "card_floor_thumbs_hint_start" : "card_floor_thumbs_hint")}</small></span>
+    </label>
+    ${on ? this.renderTabsChoice() : nothing}`;
+  }
+
+  /** The floor switcher as tabs or as pictures (#548): unset is tabs on a phone-sized card, pictures on a larger one. */
+  private renderTabsChoice() {
+    const tabs = this._config.floor_tabs;
+    const current = tabs === true ? "on" : tabs === false ? "off" : "auto";
+    return html`<label class="field"
+      >${this.t("card_floor_tabs")}
+      <select @change=${(e: Event) => this.set("floor_tabs", { auto: undefined, on: true, off: false }[(e.target as HTMLSelectElement).value as "auto" | "on" | "off"])}>
+        ${(["auto", "on", "off"] as const).map((v) => html`<option value=${v} ?selected=${v === current}>${this.t(`card_floor_tabs_${v}`)}</option>`)}
+      </select>
     </label>`;
   }
 
@@ -447,6 +461,10 @@ export class Floorplan3dCardEditor extends LitElement {
       <label class="toggle">
         <input type="checkbox" .checked=${v.marker_names} @change=${(e: Event) => this.set("marker_names", (e.target as HTMLInputElement).checked ? true : undefined)} />
         <span>${this.t("card_marker_names")}<small>${this.t("card_marker_names_hint")}</small></span>
+      </label>
+      <label class="toggle">
+        <input type="checkbox" .checked=${v.view_only} @change=${(e: Event) => this.set("view_only", (e.target as HTMLInputElement).checked ? true : undefined)} />
+        <span>${this.t("card_view_only")}<small>${this.t("card_view_only_hint")}</small></span>
       </label>
       <label class="toggle">
         <input type="checkbox" .checked=${v.controls_hidden} @change=${(e: Event) => this.set("controls_hidden", (e.target as HTMLInputElement).checked ? true : undefined)} />

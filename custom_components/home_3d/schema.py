@@ -454,6 +454,63 @@ SHOW_WHEN_SCHEMA = vol.Schema(
     }
 )
 
+# show rules (#535, #538): when an item's icon and its card show. A rule is all or any of up to 12 conditions; a state
+# condition asks "self" (the item's own entity, found when the rule is judged and never stored as an entity id) or one
+# fixed entity, a time condition a time of day (over midnight when start > end) and/or weekdays (0 = Monday).
+_RULE_ENTITY = vol.Any("self", vol.All(str, vol.Length(max=255), vol.Match(r"^[a-z0-9_]+\.\S+$")))
+_RULE_NUMBER = vol.All(vol.Coerce(float), vol.Range(min=-1e12, max=1e12))
+
+
+def _number_has_value(condition: dict) -> dict:
+    """An above or below condition compares with a number of its own: never one fixed in code (#538)."""
+    if condition["when"] in ("above", "below") and condition.get("value") is None:
+        raise vol.Invalid(f"a condition '{condition['when']}' needs its value", path=["value"])
+    return condition
+
+
+def _whole_times(condition: dict) -> dict:
+    """Both start and end, or neither."""
+    if (condition.get("start") is None) != (condition.get("end") is None):
+        raise vol.Invalid("a time condition needs both start and end, or neither")
+    return condition
+
+
+_STATE_CONDITION = vol.All(
+    vol.Schema(
+        {
+            vol.Required("type"): vol.In(["state"]),
+            vol.Required("entity"): _RULE_ENTITY,
+            vol.Required("when"): vol.In(["on", "off", "state", "above", "below"]),
+            vol.Optional("state"): vol.Any(None, vol.All(str, vol.Length(max=255))),
+            vol.Optional("value"): vol.Any(None, _RULE_NUMBER),
+            vol.Optional("unavailable"): vol.Any(None, vol.In(["show", "hide"])),
+        }
+    ),
+    _number_has_value,
+)
+_TIME_CONDITION = vol.All(
+    vol.Schema(
+        {
+            vol.Required("type"): vol.In(["time"]),
+            vol.Optional("start"): _TIME,
+            vol.Optional("end"): _TIME,
+            vol.Optional("days"): vol.Any(None, vol.All([vol.All(int, vol.Range(min=0, max=6))], vol.Length(max=7))),
+        }
+    ),
+    _whole_times,
+)
+SHOW_RULE_SCHEMA = vol.Schema(
+    {
+        vol.Optional("match", default="all"): vol.In(["all", "any"]),
+        vol.Optional("conditions", default=[]): vol.All(
+            [vol.Any(_STATE_CONDITION, _TIME_CONDITION)], vol.Length(max=12)
+        ),
+    }
+)
+SHOW_RULES_SCHEMA = vol.Schema(
+    {vol.Optional("icon"): vol.Any(None, SHOW_RULE_SCHEMA), vol.Optional("card"): vol.Any(None, SHOW_RULE_SCHEMA)}
+)
+
 # a url action opens a web page or a path on this Home Assistant, never javascript: or another scheme (#51)
 # "//host" and "/\host" are other hosts, not paths (#384): a browser reads the backslash as a slash
 _WEB_ADDRESS = re.compile(r"^(https?://[^\s]+|/(?![/\\])\S*)$", re.IGNORECASE)
@@ -685,6 +742,8 @@ FURNITURE_SCHEMA = vol.Schema(
         vol.Optional("mods"): _MODULE_DATA,
         # when it shows in 3D (None = always)
         vol.Optional("show_when"): vol.Any(None, SHOW_WHEN_SCHEMA),
+        # when its icon and its card show (#535; None or left out = as before)
+        vol.Optional("show_rules"): vol.Any(None, SHOW_RULES_SCHEMA),
         # a rack (#113): the gear in its U positions (racks.py)
         vol.Optional("rack"): vol.Any(None, RACK_CONTENTS_SCHEMA),
     },
@@ -712,6 +771,8 @@ PLACEMENT_SCHEMA = vol.Schema(
         vol.Optional("actions"): _ITEM_ACTIONS,
         # its marker in 3D: None = automatic, always, without watts, or hidden
         vol.Optional("marker", default=None): vol.Any(None, vol.In(["always", "no_power", "never"])),
+        # when its icon and its card show (#535; None or left out = as before); "self" is entity_id
+        vol.Optional("show_rules"): vol.Any(None, SHOW_RULES_SCHEMA),
         # an own symbol for the marker: a Material Design icon name without "mdi:"
         vol.Optional("icon", default=None): vol.Any(None, vol.All(str, vol.Length(max=64))),
         # an own name in the plan, without renaming the entity; show_name puts it under the marker
@@ -1013,6 +1074,8 @@ HOLOGRAM_SCHEMA = vol.Schema(
         # the house balance and the plant cards also in a floor view
         vol.Optional("plant_floor", default=False): bool,
         vol.Optional("device_min_w", default=0): vol.All(vol.Coerce(float), vol.Range(min=0, max=100000)),
+        # when the main card (the house balance) shows (#537; None = always); "self" is the plant's main sensor
+        vol.Optional("card_rule"): vol.Any(None, SHOW_RULE_SCHEMA),
     },
     extra=vol.ALLOW_EXTRA,
 )
@@ -1269,6 +1332,8 @@ SETTINGS_SCHEMA = vol.Schema(
                     ),
                     # a to-do list for the household's notes (#166: was only in model.ts)
                     vol.Optional("notes"): vol.Any(None, vol.All(str, vol.Length(max=255))),
+                    # when the card "Today in the household" shows (#537; None = always)
+                    vol.Optional("card_rule"): vol.Any(None, SHOW_RULE_SCHEMA),
                 },
                 extra=vol.ALLOW_EXTRA,
             ),

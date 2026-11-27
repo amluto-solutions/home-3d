@@ -5,7 +5,7 @@ import { alertText, type Alert } from "./alerts.ts";
 import { areaEntities, fromCelsius, kindOf, primaryEntities, roomClimateValue, tempUnit } from "./devices.ts";
 import { formatNumber, translate } from "./i18n.ts";
 import type { Building, Floor } from "./model.ts";
-import { pointInPolygon, zonesOf } from "./model.ts";
+import { inZone, zonesOf } from "./model.ts";
 import type { HomeAssistant } from "./types.ts";
 
 export interface RoomSummary {
@@ -42,7 +42,8 @@ function roomSummary(hass: HomeAssistant, building: Building, floor: Floor, room
   // main entities only: a LED strip with 30 segment entities is one light
   const ids = new Set<string>();
   for (const id of primaryEntities(hass, areaEntities(hass, room.area_id))) if (kindOf(id) === "light") ids.add(id);
-  for (const pl of floor.placements) if (kindOf(pl.entity_id) === "light" && room.points.length >= 3 && pointInPolygon([pl.x, pl.z], room.points)) ids.add(pl.entity_id);
+  const inRoom = inZone(floor, room);
+  for (const pl of floor.placements) if (kindOf(pl.entity_id) === "light" && inRoom(pl.x, pl.z)) ids.add(pl.entity_id);
   const t = roomClimateValue(hass, floor, room, "temperature");
   const concerning = alerts.filter((a) => !a.quiet && (a.roomId === room.id || (!a.roomId && (!a.floorId || a.floorId === floor.id))));
   return {

@@ -17,6 +17,10 @@ import { refocusItemBar, renderItemBar } from "./item-bar.ts";
 import { forgetPanelUi } from "./item-sections.ts";
 import type { PanelAction } from "./panel-head.ts";
 import type { Fp3dEditor } from "../editor.ts";
+import { copiedRule, ruleNeedsSelf } from "../../rule-clip.ts";
+
+/** What the last paste of a rule onto several items did (#540), per editor: shown under the buttons. */
+const pasteNotes = new WeakMap<object, string>();
 
 /** One action on an item from the plan (#398): the right-click menu shows `icon` + `text` (or `label`), the toolbar an icon named `label`. */
 export interface ItemAct {
@@ -595,8 +599,36 @@ export class SelectionPart {
         <button class="fp3d-btn ${some ? "fp3d-primary" : ""}" title=${withKeys(this.t(fixed || some ? "unfix" : "fix"), ["L"])} @click=${() => this.lockSelection(!fixed && !some)}>${fixed ? `🔓 ${this.t("unfix")}` : some ? `🔓 ${this.t("unfix_all")}` : `🔒 ${this.t("fix")}`}</button>
         <button class="fp3d-btn fp3d-danger" title=${withKeys(this.t("delete"), ["Del"])} @click=${() => this.deleteFurniture()}>${this.t("delete")}</button>
       </div>
+      ${this.isEditor && copiedRule()
+        ? html`<div class="fp3d-actions">
+              <button class="fp3d-btn" @click=${() => this.pasteRuleOnto(items.map((m) => m.id), "icon")}>${this.t("rules_paste_icon_n", { n: items.length })}</button>
+              <button class="fp3d-btn" @click=${() => this.pasteRuleOnto(items.map((m) => m.id), "card")}>${this.t("rules_paste_card_n", { n: items.length })}</button>
+            </div>
+            ${pasteNotes.get(this) ? html`<p class="fp3d-sub" role="status">${pasteNotes.get(this)}</p>` : nothing}`
+        : nothing}
       ${block ? nothing : this.renderAlignTools(items.length, fixed || some)}
     </section>`;
+  }
+
+  /**
+   * Pastes the copied rule onto these items as their icon or card rule (#540), in one step that one undo takes back.
+   * Each gets its own copy; "This item" stays relative. An item without an entity of its own cannot use a rule that
+   * asks "This item": it is left out and named.
+   */
+  pasteRuleOnto(this: Fp3dEditor, ids: string[], which: "icon" | "card"): void {
+    const rule = copiedRule();
+    const floor = this.floor;
+    if (!rule || !floor) return;
+    const items = floor.furniture.filter((m) => ids.includes(m.id));
+    const skipped = ruleNeedsSelf(rule) ? items.filter((m) => !this.furnitureSelf(m)) : [];
+    const ok = new Set(items.filter((m) => !skipped.includes(m)).map((m) => m.id));
+    if (ok.size)
+      this.change((_, fl) => {
+        for (const m of fl.furniture) if (ok.has(m.id)) m.show_rules = { ...(m.show_rules ?? {}), [which]: structuredClone(rule) };
+      });
+    const names = skipped.map((m) => m.name || furnitureName(this.hass, m.type)).join(", ");
+    pasteNotes.set(this, [this.t("rules_pasted", { n: ok.size }), skipped.length ? this.t("rules_pasted_skip", { list: names }) : ""].filter(Boolean).join(" "));
+    this.requestUpdate();
   }
 
   /** Align and distribute buttons (#235): a bundle of their own, loaded the first time several items are chosen. */

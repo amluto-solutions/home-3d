@@ -7,7 +7,7 @@
   "name": "Deutsch",
   "publisher": "Amluto Solutions",
   "licence": "MIT",
-  "release": 5,
+  "release": 9,
   "description": "German texts for Home 3D.",
-  "release_note": "Release 5: texts for Home 3D 1.8.0 (phone view, Now list and house check, card templates, settings topics, gable roofs for the neighbours)."
+  "release_note": "Release 9: texts for Home 3D 1.9.0 (show and hide rules for icons, cards and the whole item, pasting a rule onto many items, card zoom, card times, floor tabs, view only cards)."
 }

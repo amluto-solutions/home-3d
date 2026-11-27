@@ -37,6 +37,24 @@ Lights glow, blinds move, doors open, cameras watch and energy flows through the
 
 ---
 
+## 🆕 New in 1.9 – show what matters, when it matters
+
+- 👁️ **Show and hide rules** – a rule says when an item's icon or floating card shows: this item or another entity is
+  on, off or in a state, a number is above or below a value, times and weekdays. Ready choices set a rule in one tap.
+  [Read more →](docs/show-and-hide.md)
+- 📋 **Copy a rule onto many items** at once, furniture and devices alike.
+  [Read more →](docs/show-and-hide.md#copy-a-rule-to-other-items)
+- ☀️ **Rules for the solar card and "Today in the household"**.
+  [Read more →](docs/show-and-hide.md#the-solar-card-and-today-in-the-household)
+- 🔍 **Show a card larger** – the ⤢ button, or a second tap on the grown solar card, opens it near full screen.
+  [Read more →](docs/card-zoom.md)
+- ⏱️ **Two times for each device:** when a larger card closes by itself, and when a touched card follows its rule again.
+  [Read more →](docs/card-zoom.md#two-times-for-each-device)
+- 🌍 **All 17 language packs** are up to date.
+- ⚠️ **Plan format 8.** Plans from 1.8.x and older open unchanged. A 1.8.x install shows a plan saved by 1.9.0 read-only.
+
+---
+
 ## 🆕 New in 1.8 – Home 3D in your pocket
 
 | The list "What's going on?" | The rooms as tiles | Places of your own |
@@ -73,6 +91,8 @@ Lights glow, blinds move, doors open, cameras watch and energy flows through the
 - 🗺️ **Read-only 2D plan** of the same building, for dashboards and wall tablets: device states, the same tap, hold and double-tap actions as in 3D, camera pictures from the plan. Switch with the 2D/3D buttons in the panel (or open it with `?view=2d`) and on the card.
 - 🛋️ **Furniture library** with thousands of free built-in models, plus free furniture packs you can make and share with the community.
 - 🎁 **Built-in extras** – camera cockpit and motion trail, weather outside, live screens, energy view, sound, car, household, time travel and the fun extras.
+- 👁️ **Show and hide rules** for the icon and the floating card of each item, and cards you can open near full screen
+  (see [Show and hide rules](docs/show-and-hide.md) and [Show a card larger](docs/card-zoom.md)).
 - 💾 **Restore points** and a full backup of the plan, its pictures and the packs.
 
 Home 3D is free and open source, made by [Amluto Solutions Ltd](https://home3d.amluto.com).
@@ -180,6 +200,13 @@ template: hall_tablet    # take the options from a card template
 A **card template** is a card you set up once in *Settings → Card templates* and use on many cards. A change to the
 template reaches each card that uses it, and an option in the card's own YAML wins. See
 [Card options and templates](docs/card-options.md).
+
+## Show and hide, and larger cards
+
+In the editor, an item's **Show and hide** section says when its icon and its floating card show. Pick a ready choice
+(**When on**, **When off**, **At set times**, **When dark**) or **Custom**, and copy a rule onto many items at once. In
+the 3D view, the ⤢ button on a floating card opens it near full screen. See [Show and hide rules](docs/show-and-hide.md)
+and [Show a card larger](docs/card-zoom.md).
 
 ## Settings
 

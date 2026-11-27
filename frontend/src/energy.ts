@@ -186,6 +186,15 @@ export function deviceSensors(building: Building, power: (f: Furniture) => strin
   return out;
 }
 
+/**
+ * The main solar card's own sensor, "this item" in its show rule (#537): the plant's solar sensor, else the first power
+ * sensor of an inverter or solar panel item, else the grid meter. The 3D view and the editor both ask here, so the
+ * editor's "This item" is the sensor the view judges.
+ */
+export function mainSolarSensor(building: Building, power: (f: Furniture) => string | null): string | null {
+  return ref(building.energy.solar) ?? deviceSensors(building, power).solar[0] ?? ref(building.energy.grid);
+}
+
 /** Where the cables meet: the meter cabinet in the plan, else the meter spot set in older plans. */
 export function meterPosition(building: Building): { floor_id: string; x: number; z: number } | null {
   for (const floor of building.floors) {

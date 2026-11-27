@@ -331,6 +331,7 @@ export class DevicePanelPart {
         ${this.renderAsFurniture(pl)}
       </div>
       ${this.renderItemActions(pl.actions, pl.entity_id, (a) => this.updateDevice({ actions: a }))}
+      ${this.renderRules((m) => m.renderShowRules(this, `p:${pl.entity_id}`, pl.show_rules, pl.entity_id, (r) => this.updateDevice({ show_rules: r })))}
     </section>`;
   }
 

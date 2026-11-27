@@ -88,6 +88,10 @@ So **bump `PLAN_VERSION` whenever the stored plan can hold a value an older rele
 
 ### Plan versions
 
+- **8**: Home 3D 1.9.0. The step from 7 changes nothing. A placed device or furniture item can hold `show_rules`
+  (when its icon and its card show, #535). See [Show rules](#show-rules). A Home 3D that reads versions up to 7 (1.8.x)
+  shows a version-8 plan read-only. The step changes only the version, so the upgrade itself makes no restore point:
+  take a backup first if you may go back to 1.8.x.
 - **7**: Home 3D 1.8.0. The step from 6 changes nothing. The plan can hold `settings.surroundings.roofs` (the neighbours' houses
   with a gable roof, #491) and `card_templates` (the saved card templates, up to 30, #495). A Home 3D that reads versions up to 6
   (1.7.x) shows a version-7 plan read-only (the plan as stored before the upgrade stays as a restore point).
@@ -151,3 +155,48 @@ The options in a card's own YAML win over the template's `config`.
 ## Roofs for the neighbours' houses
 
 `settings.surroundings.roofs` is an optional boolean (#491). See the surroundings table above. It is why the plan format is 7.
+
+## Show rules
+
+Home 3D 1.9.0 adds the optional key `show_rules` to a placed device (`placements[]`) and a furniture item
+(`furniture[]`), #535. It came with plan version 8. `null` or no key: the item behaves as before. The object has two
+optional rules, `icon` (when the item's icon shows, #536) and `card` (when its floating card shows), each `null` or:
+
+| Key | Meaning |
+|---|---|
+| `match` | `"all"` (the default): every condition must be met. `"any"`: one is enough. |
+| `conditions` | Up to 12 conditions. An empty list always shows. |
+
+A condition is one of two kinds:
+
+| Key | Meaning |
+|---|---|
+| `type` | `"state"` or `"time"`. |
+| `entity` | State: `"self"` (this item: the item's own main entity, looked up each time the rule is judged, never stored as an entity id, so a copied rule works on another item at once) or one fixed entity id. |
+| `when` | State: `"on"`, `"off"`, `"state"` (one of the typed states), `"above"` or `"below"` (a number, strictly). |
+| `state` | State, with `"state"`: the states to match, comma separated, any letter case. Empty matches any state. |
+| `value` | State, with `"above"` or `"below"`: the number to compare with. Required for those two. |
+| `unavailable` | State: an unavailable, unknown or missing entity counts as met (`"show"`, the default) or not (`"hide"`). |
+| `start`, `end` | Time: `"HH:MM"`, both or neither (neither: all day). A start after the end runs over midnight, and the night belongs to the day it started. |
+| `days` | Time: weekdays, `0` = Monday to `6` = Sunday. Empty or absent: every day. |
+
+"On" and "off" use the same words as an item's `show_when` (the editor's **Object** row): on, true, home, open, opening against off, false, not_home,
+away, closed, closing; a person or tracker anywhere but home is off. A condition that cannot be judged is left out of
+its rule: "this item" on an item without an entity, or a kind a newer release added. A rule with no condition left
+shows.
+
+The icon setting of the item (Automatic, Always show, Without watts, Hide) decides whether the item may have an icon.
+With an icon rule, the rule decides when; Hide still hides it. A hidden icon does not stop a tap, hold or double tap
+on the item's 3D object. The editor shows every item.
+
+The card rule decides when the item's floating card shows (#537): a device's power card, a TV's or speaker's card, an
+inverter's plant card, a parked car's, a rack's, a bin's tag and a module card hung on the item. A hidden card takes its
+line to the item with it. "This item" is the placed device's entity, or the furniture item's linked entity, else its
+power sensor (an inverter). Two cards that belong to no item have their rule in the settings, with the same keys:
+`settings.roof.hologram.card_rule` (the main solar card, the house balance; "this item" is the plant's main sensor:
+`energy.solar`, else the power sensor of the first inverter or solar panel item in the plan, set by hand or found on
+its device, else `energy.grid`) and `settings.household.card_rule` ("Today
+in the household"; it has no sensor of its own, so a "this item" condition there is left out). A card the viewer
+touched stays while its rule would hide it, until they touch something else or this device's hold time passes without a
+touch on it (30 seconds by default, #543); a card in the larger view (#541) stays until it closes. "Hide this TV card on
+this screen" works as before. The editor shows every card.

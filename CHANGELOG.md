@@ -2,6 +2,34 @@
 
 All notable changes to Home 3D.
 
+## Home 3D 1.9.0 (27 November 2026)
+
+Show and hide rules for icons and floating cards, a rule copied onto many items, and floating cards shown near full screen. Plan format 8: the new keys `show_rules` and `card_rule` are optional and older plans load unchanged, but Home 3D 1.8.x opens a plan saved by 1.9.0 read-only.
+
+- Show and hide rules (#535, #538): a placed device or a furniture item has a rule for its icon and one for its floating card, each all or any of up to 12 conditions: an entity ("this item" or a fixed one) is on, off or in a state you type, a number is above or below a value, and times of day and weekdays. See [Show and hide rules](docs/show-and-hide.md).
+- Icon rules count in 3D and in the 2D plan (#536): the rule decides when the icon shows, in place of the automatic choice; Hide still hides it, and a hidden icon keeps the item's tap actions in 3D.
+- Card rules count for every floating card (#537): device, TV and speaker, plant, car, rack, bin and module cards, the main solar card and "Today in the household" (the rules of these two are in Settings). A card you touch stays while you use it.
+- The editor has a "Show and hide" section on each item (#539), shorter since #544: each rule reads as one sentence with "hidden now", a tap opens it, and ready choices (when on, when off, at set times, when dark, custom) set a whole rule.
+- On furniture, the old "When it shows" section is the first row of "Show and hide", **Object** (#547): it hides the whole item, not only its icon or card, and reads as one sentence ("Always shows", "Show 1 Dec–6 Jan") with "hidden now". Ready choices: no rule, dates and times, when dark, custom (the entity and up to 12 intervals, as before). Saved rules (`show_when`) are unchanged and work as before.
+- A copied rule goes into another rule, onto a selection of items, or onto many items of every floor at once from a list with a search and "All lights" (#540). "This item" stays relative.
+- A floating card opens near full screen with its ⤢ button, on a phone across the whole screen (#541, #546); a second tap on the grown solar card does the same (#545). It closes with ✕, a tap outside, Escape or Back. See [Show a card larger](docs/card-zoom.md).
+- Two times for each device (Settings → 3D view): a card shown larger closes by itself after a time without a touch (off by default, #541), and a touched card follows its rule again after 30 seconds, or the time you set (#543).
+- Fixes found before the release: a held card's time runs again when its larger view closes because the card went, and when the view comes back to the page (#543); the solar card rule's "This item" in the editor is the sensor the 3D view judges (#537); the weekday buttons of a rule are named "Days" for screen readers, and a Nynorsk rule sentence no longer shows English weekdays and "and" in Chrome (#544).
+- A dashboard card on a phone switches floors with tabs at the top left (**Whole house**, then each floor), like the panel, in place of the floor pictures at the side and the name boxes of the floors over the house. A wider card keeps the pictures. The card option `floor_tabs` (in the card form: **Floors as**) chooses tabs or pictures on every size. See [Card options](docs/card-options.md) (#548).
+- On a phone every energy value shows: values that do not fit go into a second row instead of a row that scrolls them out of sight, and the heat legend and a clock at the top move below them. The Walk button of a dashboard card sits in the top right corner, past the card's own buttons only when it has them (#549). With a room open it stands left of the room panel, and a panel dragged up over it lies on top, so the panel can always be closed (#562).
+- On a narrow card the star button, the eye and the microphone no longer stand over an open room panel: the panel lies over them (#563).
+- Dragging a slider in a pop-up (a blind or a light in the quick menu, the device pop-up, the room panel, a card shown larger) no longer turns the house behind it at the same time; a drag that starts on a pin or a floor's name still turns the house (#550).
+- On a phone all floor tabs show: names that do not fit become short ones (**House**, **Top**, **First**, **Ground**), and the two switches by the energy values (flows and floating cards) always stand side by side (#551).
+- Card option `view_only` (in the card form: **View only**), for wall tablets: the card shows everything and switches nothing, and the room panel shows its controls locked. See [Card options](docs/card-options.md#view-only) (#553, idea: NeonPlan 3D).
+- A tour through the house shows what each stop is, with its number ("2 / 5"). It looks at a window from farther back and higher, and from above in a shallow room (#554).
+- A garden drawn around the house leaves the house's devices to its rooms: its room panel, "everything off", climate values and live effects no longer take them, and a room inside another keeps its devices to itself. Deleting a room keeps the devices of a room inside it (#555).
+- A dormer's side walls no longer hang over the room as slanting triangles in the floor view (#556).
+- Stairs from a pack are placed as tall as the storey, like the built-in stairs (#557).
+- A changed start view moves the camera in a plan with one floor too (#558).
+- A heating valve that reports "opening" is not saved as a window contact when an older plan's automatic links are made permanent (#559).
+- #554 to #559 are ported from NeonPlan 3D 4.0.3 (MIT, Mastershort).
+- All 17 language packs are up to date, release 9 (#542, #547, #548, #560).
+
 ## Home 3D 1.8.2 (24 November 2026)
 
 Fixes and one card option, ported from NeonPlan 3D 4.0.2 (MIT, Mastershort). No plan format change.

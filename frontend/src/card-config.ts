@@ -51,6 +51,8 @@ export interface CardConfig {
   marker_size?: "small" | "normal" | "large";
   /** Every device with an own name shows it under its marker (#156). */
   marker_names?: boolean;
+  /** Only look (#553): the card shows everything but switches nothing, so a touch on a wall tablet changes nothing. */
+  view_only?: boolean;
   /** The star with the central menu: all lights / blinds of the floor or house and the favourites (default true, #145). */
   central?: boolean;
   /** The walk through the house at eye height (default on). */
@@ -126,8 +128,13 @@ export interface CardConfig {
   /** A button that opens another dashboard or view (its path, e.g. "/lovelace/home"), with an optional label. */
   dashboard?: string;
   dashboard_label?: string;
-  /** Small pictures of the floors to switch between them (default: on without a start floor). */
+  /** A floor switcher, small pictures of the floors or tabs (default: on without a start floor). */
   floor_thumbs?: boolean;
+  /**
+   * The floor switcher as tabs at the top left, in place of the pictures and the floors' name boxes over the house
+   * (#548): true always, false never (the pictures), unset on a phone-sized card only.
+   */
+  floor_tabs?: boolean;
   /** Warnings (smoke, water, alarm, window in the rain) as pulsing rooms and a banner (default true). */
   alerts?: boolean;
   /** Jump to the room of a new warning (default false). */
@@ -224,11 +231,15 @@ export function showsPlan2d(config: CardConfig | undefined, chosen: boolean | nu
 /**
  * How far from the right edge the view's walk button sits (#484): clear of the card's own buttons at the top right as
  * wide as they really are (`lefts`: their left edges in the card's body of `width` px). A dashboard button with a long
- * label reached over a fixed 104 px.
+ * label reached over a fixed 104 px. Without such buttons it is in the corner, 12 px from the edge as in the panel: a
+ * fixed 104 px left it a third of the way across a phone (#549). A room panel at the side (`panelLeft`: its left edge)
+ * takes the corner too, or the button lay over its close button (#562); a sheet at the bottom starts at the left edge.
  */
-export function walkRightFor(lefts: readonly number[], width: number): number {
-  const left = Math.min(...lefts, Infinity);
-  return Number.isFinite(left) ? Math.max(104, width - left + 8) : 104;
+export const WALK_CORNER = 12;
+export function walkRightFor(lefts: readonly number[], width: number, panelLeft: number | null = null): number {
+  const side = panelLeft !== null && panelLeft > width / 3 ? panelLeft : Infinity;
+  const left = Math.min(...lefts, side);
+  return Number.isFinite(left) ? Math.max(WALK_CORNER, Math.round(width - left + 8)) : WALK_CORNER;
 }
 
 // ---------------------------------------------------------------------------------------------------- card templates

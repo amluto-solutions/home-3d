@@ -1,0 +1,1 @@
+import{E as t}from"./home-3d-editor-chunk-CJKJVRX6.js";var o=null;function n(e){o=structuredClone(e)}function r(){return o?structuredClone(o):null}function i(e){return e.conditions.some(l=>l.type==="state"&&l.entity===t)}export{n as a,r as b,i as c};

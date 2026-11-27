@@ -23,3 +23,12 @@ test("in 2D markers switched off stay off", () => {
   // symbols only in an open room: as in 3D
   assert.equal(pinIn2d(lamp, "room", false), false);
 });
+
+test("in 2D an icon rule decides as in 3D: a lamp hidden by its rule has no pin, one shown by it has (#536)", () => {
+  const lamp = { id: "light.hall", lamp: "ceiling" as const };
+  assert.equal(pinIn2d(lamp, "important", false, true), false, "hidden by its rule: no lamp pin in 2D either");
+  assert.equal(pinIn2d(lamp, "important", true, true), true);
+  assert.equal(pinIn2d({ id: "media_player.tv", furnitureId: "tv" }, "important", true, true), true);
+  // no rule: as before
+  assert.equal(pinIn2d(lamp, "important", false, false), true);
+});

@@ -15,6 +15,7 @@ import { isElectric, packInfo } from "../../packs.ts";
 import { isPackBin, isPackPlant } from "../../household.ts";
 import { isVehicleItem } from "../../furniture-links.ts";
 import { volumeMeter } from "./helpers.ts";
+import { loadShowRules, rulesChunk } from "./lazy.ts";
 import { renderLiveSlots } from "./live-slots.ts";
 import type { Fp3dEditor } from "../editor.ts";
 
@@ -163,8 +164,9 @@ export class ItemFoldsPart {
       }
       case "taps": {
         const own = GESTURES.filter((g) => f.actions?.[g]).length;
-        const set = own + (f.show_when ? 1 : 0) + (f.confirm ? 1 : 0);
-        return [join([own ? this.t("taps_own", { n: own }) : this.t("taps_default"), f.show_when ? this.t("shown_rule") : this.t("shown_always"), f.confirm && this.t("device_confirm")]), set];
+        const rules = (f.show_rules?.icon ? 1 : 0) + (f.show_rules?.card ? 1 : 0);
+        const set = own + (f.show_when ? 1 : 0) + (f.confirm ? 1 : 0) + rules;
+        return [join([own ? this.t("taps_own", { n: own }) : this.t("taps_default"), f.show_when ? this.t("shown_rule") : this.t("shown_always"), rules > 0 && this.t("rules_title"), f.confirm && this.t("device_confirm")]), set];
       }
       case "more": {
         const parts: string[] = [];
@@ -208,7 +210,12 @@ export class ItemFoldsPart {
           ${this.sideFold("taps-gestures", f.id, false, this.t("taps_row"), own ? this.t("taps_own", { n: own }) : this.t("item_action_default"), own, () =>
             this.renderItemActions(f.actions, f.entity && f.entity !== "none" ? f.entity : null, (a) => this.updateFurniture({ actions: a })),
           )}
-          ${this.renderShowWhen(f)}`;
+          ${this.renderRules((m) =>
+            m.renderShowRules(this, `f:${f.id}`, f.show_rules, this.furnitureSelf(f), (r) => this.updateFurniture({ show_rules: r }), {
+              item: f,
+              set: (r) => this.updateFurniture({ show_when: r }),
+            }),
+          )}`;
       }
       case "more": {
         const electric = isElectric(f.type);
@@ -224,6 +231,24 @@ export class ItemFoldsPart {
           ${(p.consumable || linked(f.service)) && electric ? this.renderServiceFields(f) : nothing}`;
       }
     }
+  }
+
+  /** "Show and hide" (#539), drawn by its lazy chunk (lazy.ts): nothing until it is there, then the panel draws again. */
+  renderRules(this: Fp3dEditor, draw: (m: NonNullable<ReturnType<typeof rulesChunk>>) => unknown) {
+    const m = rulesChunk();
+    if (m) return draw(m);
+    loadShowRules().then(
+      () => this.requestUpdate(),
+      (err: unknown) => console.error("Home 3D: a part of the page failed to load", err),
+    );
+    return nothing;
+  }
+
+  /** The entity "This item" means for a furniture item in a rule (#535): its linked entity, else its power sensor. */
+  furnitureSelf(this: Fp3dEditor, f: Furniture): string | null {
+    const ref = (v: string | null | undefined) => (v && v !== "none" ? v : null);
+    const entity = f.entity === "none" ? null : (ref(f.entity) ?? this.autoFurnitureLink(f, "entity"));
+    return ref(entity) ?? (f.power === "none" ? null : (ref(f.power) ?? ref(this.autoFurnitureLink(f, "power"))));
   }
 
   /** The model of an inverter, home battery or pendant (#132): part of its appearance. */

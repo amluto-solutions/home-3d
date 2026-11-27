@@ -19,7 +19,7 @@ export type Complete<T> = T extends readonly (infer U)[]
 // the recipe copies are checked by the pack format's own tests (packs.md); here the plan only has the field. A card
 // template's options are the card's (card-config.ts, checked by the card), so its `config` is only there (#495)
 export const PLAN_CONTRACT = {
-  "version": 7,
+  "version": 8,
   "floors": [
     {
       "id": "text",
@@ -227,6 +227,51 @@ export const PLAN_CONTRACT = {
             }
           },
           "marker": "always",
+          "show_rules": {
+            "icon": {
+              "match": "all",
+              "conditions": [
+                {
+                  "type": "state",
+                  "entity": "self",
+                  "when": "above",
+                  "state": "text",
+                  "value": 50.5,
+                  "unavailable": "hide"
+                },
+                {
+                  "type": "time",
+                  "start": "22:00",
+                  "end": "06:00",
+                  "days": [
+                    0,
+                    6
+                  ]
+                }
+              ]
+            },
+            "card": {
+              "match": "any",
+              "conditions": [
+                {
+                  "type": "state",
+                  "entity": "light.sample_lounge",
+                  "when": "on",
+                  "state": "text",
+                  "value": -1.5,
+                  "unavailable": "show"
+                },
+                {
+                  "type": "time",
+                  "start": "07:30",
+                  "end": "08:00",
+                  "days": [
+                    3
+                  ]
+                }
+              ]
+            }
+          },
           "icon": "text",
           "mount_y": 2.5,
           "state_entity": "text",
@@ -426,6 +471,51 @@ export const PLAN_CONTRACT = {
             }
           },
           "marker": "always",
+          "show_rules": {
+            "icon": {
+              "match": "all",
+              "conditions": [
+                {
+                  "type": "state",
+                  "entity": "self",
+                  "when": "above",
+                  "state": "text",
+                  "value": 50.5,
+                  "unavailable": "hide"
+                },
+                {
+                  "type": "time",
+                  "start": "22:00",
+                  "end": "06:00",
+                  "days": [
+                    0,
+                    6
+                  ]
+                }
+              ]
+            },
+            "card": {
+              "match": "any",
+              "conditions": [
+                {
+                  "type": "state",
+                  "entity": "light.sample_lounge",
+                  "when": "on",
+                  "state": "text",
+                  "value": -1.5,
+                  "unavailable": "show"
+                },
+                {
+                  "type": "time",
+                  "start": "07:30",
+                  "end": "08:00",
+                  "days": [
+                    3
+                  ]
+                }
+              ]
+            }
+          },
           "icon": "text",
           "name": "text",
           "aliases": [
@@ -758,7 +848,26 @@ export const PLAN_CONTRACT = {
         "device_house": true,
         "device_room": true,
         "plant_floor": true,
-        "device_min_w": 25000.0
+        "device_min_w": 25000.0,
+        "card_rule": {
+          "match": "all",
+          "conditions": [
+            {
+              "type": "state",
+              "entity": "self",
+              "when": "above",
+              "state": "text",
+              "value": 50.0,
+              "unavailable": "hide"
+            },
+            {
+              "type": "time",
+              "start": "09:00",
+              "end": "18:00",
+              "days": [0, 4]
+            }
+          ]
+        }
       },
       "cables": [
         {
@@ -816,7 +925,14 @@ export const PLAN_CONTRACT = {
       "bin_next_only": true,
       "bin_days": 15,
       "notes": "todo.sample_notes",
-      "calendars": ["calendar.sample_family"]
+      "calendars": ["calendar.sample_family"],
+      "card_rule": {
+        "match": "any",
+        "conditions": [
+          { "type": "time", "start": "07:00", "end": "09:00", "days": [5, 6] },
+          { "type": "state", "entity": "binary_sensor.sample_dark", "when": "below", "state": "text", "value": 3.0, "unavailable": "show" }
+        ]
+      }
     },
     "facade_color": "#d9c7a3",
     "style_day": "cozy",

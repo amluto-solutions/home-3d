@@ -247,7 +247,7 @@ test("#259 V13: a room chosen in 2D under the phone's room sheet is zoomed to ab
 
 test("#259 V14: on a narrow stage the energy row stops before the Walk button", () => {
   const narrow3d = block(view3dCss, "@container fp3d (max-width: 900px)");
-  assert.match(narrow3d, /\.fp3d-stage:has\(> \.fp3d-walk-btn\) \.fp3d-energy \{\s*max-width: calc\(100% - 20px - var\(--fp3d-walk-right, 12px\) - var\(--fp3d-walk-w, 96px\)\)/);
+  assert.match(narrow3d, /\.fp3d-stage:has\(> \.fp3d-walk-btn\) > \.fp3d-energy \{\s*max-width: calc\(100% - 20px - var\(--fp3d-walk-right, 12px\) - var\(--fp3d-walk-w, 96px\)\)/);
   assert.match(view3dCss, /\.fp3d-stage \{\s*--fp3d-walk-w: 44px;\s*\}\s*\.fp3d-walk-btn \{\s*z-index: 5;\s*width: 44px;/);
 });
 

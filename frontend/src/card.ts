@@ -17,7 +17,7 @@ import type { HomeAssistant } from "./types.ts";
 import { cardStartView, cardTemplate, effectiveConfig, isHaPath, screenUpright, showsPlan2d, walkRightFor, type CardConfig, type CardControl } from "./card-config.ts";
 import { fitBar, type BarItem } from "./card-fit.ts";
 import { preload3d } from "./load3d.ts";
-import { nightActive } from "./kiosk.ts";
+import { nightActive, viewOnlyHass } from "./kiosk.ts";
 import { lookOf } from "./themes.ts";
 import { allStyles, type StylePlan } from "./looks.ts";
 import { contrastChrome, lightChrome } from "./scheme.ts";
@@ -417,7 +417,13 @@ clearTimeout(this.cleanTimer);
 
   /** The hass the 3D view gets: the replayed past while travelling in time, a demo home's states over the live ones. */
   private viewHass(hass: HomeAssistant, b: Building | null | undefined): HomeAssistant {
-    return withDemo(this.tt.hass(hass), b);
+    const shown = withDemo(this.tt.hass(hass), b);
+    return this.viewOnly ? viewOnlyHass(shown) : shown;
+  }
+
+  /** Card option view_only (#553): everything is shown, nothing is switched or saved. */
+  private get viewOnly(): boolean {
+    return this._config?.view_only === true;
   }
 
   protected willUpdate(changed: PropertyValues): void {
@@ -474,10 +480,11 @@ clearTimeout(this.cleanTimer);
       this.barSizer.observe(body);
     }
     // the walk button steps aside for the card's own buttons at the top right, as wide as they really are: a
-    // dashboard button with a long label reached over it (#484)
+    // dashboard button with a long label reached over it (#484); and for a room panel at the side (#562)
     const view = this.shadowRoot?.querySelector("fp3d-view3d") as HTMLElement | null;
     if (view) {
-      const right = walkRightFor([...(this.shadowRoot?.querySelectorAll<HTMLElement>(".fp3d-card-full") ?? [])].map((el) => el.offsetLeft), view.clientWidth);
+      const panel = this.shadowRoot?.querySelector<HTMLElement>(".fp3d-card-panel");
+      const right = walkRightFor([...(this.shadowRoot?.querySelectorAll<HTMLElement>(".fp3d-card-full") ?? [])].map((el) => el.offsetLeft), view.clientWidth, panel?.offsetLeft ?? null);
       if (view.style.getPropertyValue("--fp3d-walk-right") !== `${right}px`) view.style.setProperty("--fp3d-walk-right", `${right}px`);
     }
   }
@@ -534,6 +541,8 @@ clearTimeout(this.cleanTimer);
    * plan when someone else saved meanwhile. */
   private onPlanChange(e: CustomEvent<{ change: PlanChange }>): void {
     e.preventDefault();
+    // a card that only looks (#553) saves nothing
+    if (this.viewOnly) return;
     // a template's preview (#495) saves nothing
     if (this.preview) return;
     this.data.update(e.detail.change);
@@ -596,7 +605,8 @@ clearTimeout(this.cleanTimer);
         ${b && b.floors.some((f) => f.rooms.length)
           ? html`<fp3d-view3d
               .hass=${hass}
-              .canEdit=${this.data.canEdit}
+              .viewOnly=${this.viewOnly}
+              .canEdit=${this.viewOnly ? false : this.data.canEdit}
               .home=${this.data.homeId}
               .replay=${this.tt.session?.replay ?? null}
               .building=${b}
@@ -633,6 +643,7 @@ clearTimeout(this.cleanTimer);
               .flows=${this._config?.flows ?? null}
               .holograms=${this._config?.holograms ?? null}
               .floorThumbs=${this.thumbs && !rooms.length}
+              .floorTabs=${c?.floor_tabs ?? null}
               .roomLabels=${c?.room_names !== false}
               .roomCard=${!!c?.room || rooms.length > 0}
               .surroundings=${c?.surroundings !== false}
@@ -700,9 +711,10 @@ clearTimeout(this.cleanTimer);
               class="fp3d-card-panel"
               ?collapsible=${phone}
               .hass=${hass}
-              ?readOnly=${tt}
+              ?readOnly=${tt || this.viewOnly}
+              ?viewOnly=${this.viewOnly && !tt}
               ?noLook=${flat}
-              ?canEdit=${this.data.canEdit}
+              ?canEdit=${this.data.canEdit && !this.viewOnly}
               @plan-change=${this.onPlanChange}
               .room=${b.floors.flatMap((f) => zonesOf(f)).find((r) => r.id === this._roomId) ?? null}
               .floor=${b.floors.find((f) => zonesOf(f).some((r) => r.id === this._roomId)) ?? null}
@@ -915,9 +927,9 @@ clearTimeout(this.cleanTimer);
       .fp3d-card-dash-2 {
         right: 56px;
       }
-      /* the view's walk button steps aside for the card's own buttons at the top right */
+      /* the view's walk button steps aside for the card's own buttons and a side panel at the top right (measured, walkRightFor) */
       fp3d-view3d {
-        --fp3d-walk-right: 104px;
+        --fp3d-walk-right: 12px;
       }
       .fp3d-card-full {
         position: absolute;

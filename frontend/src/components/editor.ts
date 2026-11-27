@@ -11,6 +11,7 @@ import { wallViewStyles } from "./editor/styles/wall-view.ts";
 import { menuStyles } from "./editor/styles/menus.ts";
 import { wallsRoofStyles } from "./editor/styles/walls-roof.ts";
 import { formStyles } from "./editor/styles/forms.ts";
+import { ruleStyles } from "./editor/styles/rules.ts";
 import { phoneStyles } from "./editor/styles/phone.ts";
 import { typeCardStyles } from "./editor/styles/type-cards.ts";
 import type { Snapshot } from "../api.ts";
@@ -1380,6 +1381,7 @@ export class Fp3dEditor extends LitElement {
     menuStyles,
     wallsRoofStyles,
     formStyles,
+    ruleStyles,
     typeCardStyles,
     phoneStyles,
   ];

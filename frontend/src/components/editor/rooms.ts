@@ -11,7 +11,7 @@ import { furnishRoom, PACKAGES, type PackageId } from "../../packages.ts";
 import { nameNewRoom, roomNameSuggestions } from "../../room-naming.ts";
 import { carryRectResize, strandedBy } from "../../geometry/room-resize.ts";
 import { formatNumber, type I18nKey } from "../../i18n.ts";
-import { bounds, centroid, labelPoint, FLOOR_MATERIALS, isLamp, splitAliases, FURNITURE_SIZE, isAxisRect, spotGrid, step, type Direction, pointInPolygon, polygonArea, uid, type Building, type Floor, type Furniture, type FurnitureType, type Room, type Vec2 } from "../../model.ts";
+import { bounds, centroid, labelPoint, FLOOR_MATERIALS, isLamp, splitAliases, FURNITURE_SIZE, isAxisRect, spotGrid, step, type Direction, inZone, polygonArea, uid, type Building, type Floor, type Furniture, type FurnitureType, type Room, type Vec2 } from "../../model.ts";
 import { roomLiveSensors, type LiveKind } from "../../room-effects.ts";
 import { askConfirm } from "../../ask.ts";
 import { cornerLoss, removeCorner } from "../../geometry/room-corners.ts";
@@ -252,7 +252,9 @@ export class RoomsPart {
       const room = floor.rooms.find((r) => r.id === id);
       floor.rooms = floor.rooms.filter((r) => r.id !== id);
       floor.openings = floor.openings.filter((o) => o.room_id !== id || o.wall);
-      if (room) floor.placements = floor.placements.filter((pl) => !pointInPolygon([pl.x, pl.z], room.points));
+      // only its own devices go: not those of a room lying inside it (#555)
+      const inRoom = room && inZone(floor, room);
+      if (inRoom) floor.placements = floor.placements.filter((pl) => !inRoom(pl.x, pl.z));
     });
     this._roomId = null;
     this._vertex = null;
@@ -653,7 +655,7 @@ export class RoomsPart {
   roomDeviceCount(this: Fp3dEditor, room: Room): number {
     const floor = this.floor;
     if (!floor) return 0;
-    const inRoom = (x: number, z: number) => pointInPolygon([x, z], room.points);
+    const inRoom = inZone(floor, room);
     return floor.placements.filter((pl) => inRoom(pl.x, pl.z)).length + floor.furniture.filter((m) => isLamp(m.type) && !!m.entity && m.entity !== "none" && inRoom(m.x, m.z)).length;
   }
 

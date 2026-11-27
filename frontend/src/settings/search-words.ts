@@ -96,6 +96,7 @@ export const SEARCH_WORDS: Readonly<Record<string, readonly string[]>> = {
   "household.bin_until": ["collection", "garbage", "recycling", "trash", "end", "stop"],
   "household.bin_next_only": ["next", "upcoming", "single", "only", "collection", "sticker", "label", "hide"],
   "household.bin_days": ["countdown", "lead", "advance", "notice", "tags", "timing", "hide", "pickup"],
+  "household.card_rule": ["visibility", "condition", "schedule", "hours", "weekdays", "pinboard"],
   "household.kerb": ["kerbside", "curb", "pavement", "pickup", "collection", "verge", "spot", "set"],
   "household.notes": ["note", "message", "memo", "board", "reminder", "post"],
   "household.calendars": ["appointments", "events", "agenda", "schedule", "diary", "family", "today", "amber"],
@@ -157,6 +158,8 @@ export const SEARCH_WORDS: Readonly<Record<string, readonly string[]>> = {
   // homes, access, tablets
   homes: ["house", "houses", "property", "building", "residence", "address"],
   card_templates: ["preset", "kiosk", "mobile"],
+  card_hold: ["touched", "held", "linger", "release", "again"],
+  card_zoom_close: ["enlarge", "expand", "fullscreen", "dismiss", "wall"],
   editors: ["owners", "collaborators", "rights", "access", "people", "staff"],
   tablet_users: ["viewers", "guests", "family", "lock", "display", "dashboard"],
   tablet_idle: ["timeout", "inactivity", "reset", "timer", "screensaver", "revert"],

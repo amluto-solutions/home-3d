@@ -13,9 +13,9 @@ test("a lamp switched by a relay takes colour and brightness from its colour ent
   // the bulb unavailable: the relay's own (plain) glow
   assert.deepEqual(lightGlow(relay as never, { ...bulb, state: "unavailable" } as never)!.color, [1, 0.71, 0.28]);
 });
-import { chargerStatus, slatTilt, slatsInverted, climateReading, coverTiltButtons, isPulseDrive, isRelevant, apOnline, fanSpeed, climateModeGlow, cooktopLevel, onlyColor, appColor, carLocked, areaEntities, otherAreaEntities, roomClimateSensors, roomClimateValue, unassignedEntities, autoPlace, entityName, fridgeDoors, furnitureEntities, groupByDevice, isActive, kindOf, lightGlow, openingEntities, openingOpen, openingState, powerSensorsOf, primaryEntities, roomPanelEntities, windowPosition, confirmEntities, robotRoom, robotRoomAcross, robotRoomSensor, roomKey, vacuumCleaning } from "./devices.ts";
+import { chargerStatus, legacyContactPairs, slatTilt, slatsInverted, climateReading, coverTiltButtons, isPulseDrive, isRelevant, apOnline, fanSpeed, climateModeGlow, cooktopLevel, onlyColor, appColor, carLocked, areaEntities, otherAreaEntities, roomClimateSensors, roomClimateValue, unassignedEntities, autoPlace, entityName, fridgeDoors, furnitureEntities, groupByDevice, isActive, kindOf, lightGlow, openingEntities, openingOpen, openingState, powerSensorsOf, primaryEntities, roomPanelEntities, windowPosition, confirmEntities, robotRoom, robotRoomAcross, robotRoomSensor, roomKey, vacuumCleaning } from "./devices.ts";
 import type { Floor, Opening, Room } from "./model.ts";
-import { centroid, newFloor, pointInPolygon } from "./model.ts";
+import { centroid, newFloor, outdoorZones, pointInPolygon } from "./model.ts";
 import type { HomeAssistant } from "./types.ts";
 
 /** Opening state without the "sensed" flag (tested on its own below). */
@@ -141,6 +141,23 @@ test("doors and windows get the blind of their room's area; contact sensors only
   assert.deepEqual(links.get("w2"), { cover: "cover.blind", contact: null, tilt: null, contact2: null, tilt2: null, position: null, positionInverted: false, tiltAngle: null, tiltMax: null, tiltOffset: null, tiltInvert: false, shut: false, lock: null });
   assert.deepEqual(links.get("w3"), { cover: null, contact: "binary_sensor.door", tilt: null, contact2: null, tilt2: null, position: null, positionInverted: false, tiltAngle: null, tiltMax: null, tiltOffset: null, tiltInvert: false, shut: false, lock: null });
   assert.deepEqual(links.get("d"), { cover: null, contact: null, tilt: null, contact2: null, tilt2: null, position: null, positionInverted: false, tiltAngle: null, tiltMax: null, tiltOffset: null, tiltInvert: false, shut: false, lock: null });
+});
+
+test("the one-time contact pairing leaves out a heating valve that reports \"opening\" (#559)", () => {
+  const add = (hass: HomeAssistant, id: string, name: string) => {
+    hass.entities![id] = { entity_id: id, area_id: "living" };
+    hass.states[id] = { entity_id: id, state: "on", attributes: { device_class: "opening", friendly_name: name } } as never;
+  };
+  const win: Opening = { id: "w", room_id: "r", edge: 0, offset: 1, width: 1, type: "window", sill: 0.9, height: 1.3, hinge: "left", leaves: 1, swing: "in", cover: null, contact: null, contact2: null, tilt: null };
+  const floor: Floor = { ...newFloor("f", "F", 0), rooms: [{ ...room, area_id: "living" }], openings: [win] };
+  const valve = hassWith();
+  add(valve, "binary_sensor.living_valve", "Living room valve");
+  assert.equal(legacyContactPairs(valve, [floor]).get("w"), undefined);
+  // a window sensor of the same class is still taken, also next to the valve
+  const both = hassWith();
+  add(both, "binary_sensor.living_valve", "Living room valve");
+  add(both, "binary_sensor.boiler_room_window", "Boiler room window");
+  assert.equal(legacyContactPairs(both, [floor]).get("w"), "binary_sensor.boiler_room_window");
 });
 
 test("a position sensor drives the blind live, as a percentage or a fraction", () => {
@@ -344,6 +361,22 @@ test("the room panel shows what the plan shows in the room, plus picked entities
   // the rest of the area is offered, not shown
   assert.ok(more.includes("sensor.temp"));
   assert.ok(!more.includes("light.ceiling"));
+});
+
+test("a garden drawn around the house leaves the house's devices to its rooms (#555)", () => {
+  const hass = hassWith();
+  const floor: Floor = {
+    ...newFloor("f", "F", 0),
+    rooms: [{ ...room, area_id: "living" }],
+    outdoor: [{ id: "g", type: "lawn", name: "Garden", area_id: "garden", points: [[-20, -20], [30, -20], [30, 30], [-20, 30]] }] as Floor["outdoor"],
+    placements: [
+      { entity_id: "light.ceiling", x: 1, z: 1, y: null, mount: null },
+      { entity_id: "light.floor_lamp", x: -10, z: -10, y: null, mount: null },
+    ],
+  };
+  const garden = outdoorZones(floor)[0];
+  assert.deepEqual(roomPanelEntities(hass, floor, garden).shown, ["light.floor_lamp"]);
+  assert.deepEqual(roomPanelEntities(hass, floor, floor.rooms[0]).shown, ["light.ceiling"]);
 });
 
 test("window handles with three states, HomematicIP window_state and plain contacts", () => {

@@ -508,12 +508,12 @@ def test_a_version_six_plan_loads_unchanged_as_version_seven_and_1_7_x_opens_a_n
     """Plan version 7 (Home 3D 1.8.0): the 6 -> 7 step changes nothing. A plan can then hold the gable roof choice of
     the neighbours (`settings.surroundings.roofs`, #491) and `card_templates` (#495). A Home 3D that reads versions
     up to 6 (1.7.x) refuses such a plan instead of repairing it."""
-    assert PLAN_VERSION == 7
+    assert PLAN_VERSION >= 7
     older = {**copy.deepcopy(BUILDING), "version": 6}
     kept = copy.deepcopy(older)
     migrated = migrate_plan(older)
     assert older == kept, "the stored plan is left as it was"
-    assert migrated == {**kept, "version": 7}, "no key dropped, none added"
+    assert migrated == {**kept, "version": PLAN_VERSION}, "no key dropped, none added"
     assert migrate_plan(migrated) is migrated, "idempotent"
 
     newer = {**copy.deepcopy(BUILDING), "version": 7}

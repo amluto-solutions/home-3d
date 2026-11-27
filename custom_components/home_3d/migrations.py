@@ -202,6 +202,16 @@ def gable_neighbours(plan: dict[str, Any]) -> dict[str, Any]:
     return plan
 
 
+# ---------------------------------------------------------------------------- 7 -> 8: show rules (1.9.0)
+
+
+def show_rules(plan: dict[str, Any]) -> dict[str, Any]:
+    """Version 7 -> 8: changes nothing. Home 3D 1.9.0 lets a placed device or furniture item hold `show_rules` (#535:
+    when its icon and its card show), with new choices (`match`, a condition's `type` and `when`). A Home 3D that reads
+    version 7 (1.8.x) would keep the rules but follow none of them; the bump makes it open such a plan read-only."""
+    return plan
+
+
 # MIGRATIONS[n - 1] turns a plan of version n into one of version n + 1
 MIGRATIONS: tuple[Callable[[dict[str, Any]], dict[str, Any]], ...] = (
     lights_to_lamps,
@@ -210,6 +220,7 @@ MIGRATIONS: tuple[Callable[[dict[str, Any]], dict[str, Any]], ...] = (
     surroundings,
     front_colours,
     gable_neighbours,
+    show_rules,
 )
 assert len(MIGRATIONS) == PLAN_VERSION - 1, "every plan version but the first has its migration"
 

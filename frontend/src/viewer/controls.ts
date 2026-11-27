@@ -143,7 +143,7 @@ export class OrbitControls {
   private readonly listeners: [string, EventListener][] = [];
   private readonly guestListeners: [EventTarget, string, EventListener][] = [];
   /** Fingers down on an element over the picture (see watchGuests), and when one of them last zoomed. */
-  private guests = new Map<number, { x: number; y: number; x0: number; y0: number; type: string; button: number }>();
+  private guests = new Map<number, { x: number; y: number; x0: number; y0: number; type: string; button: number; hit: EventTarget | undefined }>();
   private guestPinchAt = -1e9;
 
   constructor(el: HTMLElement, camera: PerspectiveCamera, events: ControlEvents) {
@@ -187,29 +187,48 @@ export class OrbitControls {
       target.addEventListener(type, fn as EventListener, true);
       this.guestListeners.push([target, type, fn as EventListener]);
     };
-    // what is used with a pointer of its own: a field, a slider, a list that scrolls
-    const ownUse = (target: EventTarget | null): boolean => {
-      for (let n = target as HTMLElement | null; n && n !== host; n = n.parentElement) {
-        if (/^(INPUT|SELECT|TEXTAREA)$/.test(n.tagName)) return true;
+    // what is used with a pointer of its own: a field, a slider, a list that scrolls. The composed path, not the
+    // target: inside a pop-up's shadow root (quick menu, device pop-up, room panel, zoom view) the target is the
+    // pop-up itself, so a blind's slider counted as a finger on the picture and the house turned with it (#550).
+    const first = (e: Event): EventTarget | undefined => (typeof e.composedPath === "function" ? e.composedPath()[0] : (e.target ?? undefined));
+    const ownUse = (e: Event): boolean => {
+      const path = typeof e.composedPath === "function" ? e.composedPath() : [];
+      const nodes: EventTarget[] = path.length ? path : [];
+      if (!path.length) for (let n = e.target as HTMLElement | null; n; n = n.parentElement) nodes.push(n);
+      for (const t of nodes) {
+        if (t === host || t === this.el) break;
+        const n = t as HTMLElement;
+        if (typeof n.tagName !== "string") continue; // a shadow root
+        if (/^(INPUT|SELECT|TEXTAREA)$/.test(n.tagName) || n.getAttribute?.("role") === "slider" || n.hasAttribute?.("data-own-pointer")) return true;
         if (n.scrollHeight > n.clientHeight + 1 && /auto|scroll/.test(getComputedStyle(n).overflowY)) return true;
+        // a row that scrolls sideways (the card's floor tabs, #548)
+        if (n.scrollWidth > n.clientWidth + 1 && /auto|scroll/.test(getComputedStyle(n).overflowX)) return true;
       }
       return false;
     };
     add(host, "pointerdown", (e) => {
       if ((e.pointerType !== "touch" && e.pointerType !== "mouse") || e.target === this.el || this.grabbing || this.swiping) return;
-      if (ownUse(e.target)) return;
-      this.guests.set(e.pointerId, { x: e.clientX, y: e.clientY, x0: e.clientX, y0: e.clientY, type: e.pointerType, button: e.button });
+      if (ownUse(e)) return;
+      this.guests.set(e.pointerId, { x: e.clientX, y: e.clientY, x0: e.clientX, y0: e.clientY, type: e.pointerType, button: e.button, hit: first(e) });
       this.joinGuests();
     });
     // the wheel over a pin, a name or a glass card zooms the house: it never reached the picture, so zooming stopped
     // wherever the pointer happened to rest (#1271)
     add(host, "wheel", ((e: WheelEvent) => {
-      if (e.target === this.el || this.grabbing || this.swiping || ownUse(e.target)) return;
+      if (e.target === this.el || this.grabbing || this.swiping || ownUse(e)) return;
       this.onWheel(e);
     }) as unknown as (e: PointerEvent) => void);
     add(window as unknown as EventTarget, "pointermove", (e) => {
       const g = this.guests.get(e.pointerId);
       if (!g) return;
+      // an element that took the pointer for itself (a time bar's handle, a panel's title bar, the walk stick) drags
+      // its own thing: the finger is no guest of the house (#550). A finger is always held by the element it first
+      // touched (implicit capture), so for touch only another element's capture counts.
+      const now = first(e) as Element | undefined;
+      if (now && now !== this.el && !this.pointers.has(e.pointerId) && now.hasPointerCapture?.(e.pointerId) && (g.type === "mouse" || now !== g.hit)) {
+        this.guests.delete(e.pointerId);
+        return;
+      }
       g.x = e.clientX;
       g.y = e.clientY;
       if (this.pointers.has(e.pointerId)) this.onMove(e);

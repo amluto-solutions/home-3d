@@ -159,14 +159,14 @@ test("the form asks what the card is for; a phone gets the bar's options, and op
   const large = flat(editor({ type: "custom:home-3d-card" }, true).render());
   assert.match(large, /Tablet or large screen/);
   assert.doesNotMatch(large, /The bar on the phone/);
-  assert.match(large, /Floors as miniatures/);
+  assert.match(large, /Floor switcher/);
   assert.match(large, /Switches in the card/);
   const el = editor({ type: "custom:home-3d-card", phone: true, fill: true }, true);
   const phone = flat(el.render());
   assert.match(phone, /The bar on the phone/);
   assert.ok(!phone.includes(">Wall tablet (kiosk)</button>"), "no kiosk tab for a phone");
   assert.doesNotMatch(phone, /Switches in the card/);
-  assert.doesNotMatch(phone, /Floors as miniatures/);
+  assert.doesNotMatch(phone, /Floor switcher/);
   // picking "phone" fills the screen
   const sent: CardConfig[] = [];
   const pick = editor({ type: "custom:home-3d-card" }, true);

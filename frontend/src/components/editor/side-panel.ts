@@ -45,6 +45,7 @@ export class SidePanelPart {
     } else if (topic === "backup") body = this.renderBackup();
     else if (topic === "energy_balance") body = this.renderEnergyBalance();
     else if (topic === "hologram") body = this.renderHologramSettings();
+    else if (topic === "household_card") body = this.renderHouseholdCardRule();
     else if (topic === "presence") body = this.renderPresenceSettings();
     // an extension's own settings, on its card on the Extensions tab (#248)
     else if (topic.startsWith("module:")) body = this.renderFields(this.memoFields(doc, () => moduleSettings(topic.slice(7), this.editorHost())));

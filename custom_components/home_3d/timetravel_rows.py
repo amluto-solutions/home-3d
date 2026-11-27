@@ -262,15 +262,31 @@ def _ref(value: Any) -> str | None:
     return value if isinstance(value, str) and value and value != "none" else None
 
 
+def _show_rule_entities(item: Mapping[str, Any]) -> list[str]:
+    """The fixed entities of an item's show rules (#535); "self" is the item itself, never an entity of its own."""
+    rules = item.get("show_rules")
+    out: list[str] = []
+    for rule in rules.values() if isinstance(rules, Mapping) else ():
+        conditions = rule.get("conditions") if isinstance(rule, Mapping) else None
+        for c in conditions if isinstance(conditions, list) else ():
+            ref = _ref(c.get("entity")) if isinstance(c, Mapping) and c.get("type") == "state" else None
+            if ref and ref != "self":
+                out.append(ref)
+    return out
+
+
 def rule_trackers(building: Mapping[str, Any]) -> set[str]:
-    """The people and trackers an item's "When it shows" rule follows: answered as home or away only (#394)."""
+    """The people and trackers an item's "When it shows" rule (#394) or show rules (#535) follow: answered as home or
+    away only."""
     out: set[str] = set()
     for floor in building.get("floors") or []:
         for item in floor.get("furniture") or []:
             rule = item.get("show_when")
-            ref = _ref(rule.get("entity")) if isinstance(rule, Mapping) else None
-            if ref and domain_of(ref) in ("person", "device_tracker"):
-                out.add(ref)
+            refs = [_ref(rule.get("entity")) if isinstance(rule, Mapping) else None, *_show_rule_entities(item)]
+            out.update(r for r in refs if r and domain_of(r) in ("person", "device_tracker"))
+        for item in floor.get("placements") or []:
+            if isinstance(item, Mapping):
+                out.update(r for r in _show_rule_entities(item) if domain_of(r) in ("person", "device_tracker"))
     return out
 
 

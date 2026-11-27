@@ -1,5 +1,6 @@
 // Kiosk helpers of the dashboard card (wall tablets): when the night dimming is active.
 
+import { changesSomething } from "./preview-hass.ts";
 import type { HomeAssistant } from "./types.ts";
 
 /**
@@ -15,6 +16,38 @@ export function nightActive(night: string | undefined, hass: HomeAssistant | und
   const to = Number(m[3]) * 60 + Number(m[4]);
   const t = now.getHours() * 60 + now.getMinutes();
   return from <= to ? t >= from && t < to : t >= from || t < to;
+}
+
+const lookOnly = new WeakMap<HomeAssistant, HomeAssistant>();
+
+/** Whether a message must not leave a card that only looks. */
+function switches(msg: Record<string, unknown>): boolean {
+  // Assist carries out what it is told
+  if (msg.type === "conversation/process") return true;
+  // reads that look like changes: the weather forecast comes as a service call, and a view answers Assist's question
+  if (msg.type === "call_service" && msg.domain === "weather" && msg.service === "get_forecasts") return false;
+  if (msg.type === "home_3d/voice/answer") return false;
+  return changesSomething(msg);
+}
+
+/**
+ * Home Assistant as a card that only looks sees it (card option view_only, #553): everything can be read, but a
+ * service call or a message that changes something goes nowhere – a tap on a lamp, a blind's buttons, "all off" and
+ * a module's actions do nothing. Home Assistant's own details dialog is not part of the card and stays as it is. The
+ * same copy for the same hass, so nothing below draws again because of it. Idea from NeonPlan 3D 4.0.3 (MIT,
+ * Mastershort).
+ */
+export function viewOnlyHass(hass: HomeAssistant): HomeAssistant {
+  let copy = lookOnly.get(hass);
+  if (!copy) {
+    copy = {
+      ...hass,
+      callService: async () => undefined,
+      callWS: <T>(msg: Record<string, unknown>) => (switches(msg) ? Promise.resolve(undefined as T) : hass.callWS<T>(msg)),
+    } as HomeAssistant;
+    lookOnly.set(hass, copy);
+  }
+  return copy;
 }
 
 /** Address values that switch tablet mode off for this page even when the user has it ticked. */
